@@ -44,13 +44,13 @@ init 2:
                 ("pioneer", "cas")
             ),
             "ant":(
-                ("normal", "serious", "smile", "surprise"), 
+                ("normal", "serious", "smile", "surprise"),
                 ("shirt", )
-            ), 
+            ),
             "kla":(
-                ("laugh", "normal", "smile", "shy", "surprise"), 
+                ("laugh", "normal", "smile", "shy", "surprise"),
                 ("pioneer", "sport")
-            ), 
+            ),
             "el":(
                 ("angry", "fingal", "grin", "laugh", "normal", "sad", "scared", "serious", "shocked", "smile", "surprise", "upset"),
                 ("shirt", )
@@ -122,17 +122,17 @@ label bkrr_test:
 
 label bkrr_test_song:
     show bkrr_lyrics_screen with bkrr_blindstotop_transition
-    show bkrr_song bkrr_songs["d4_mi"]:
-        xalign 0.5 
+    show bkrr_song "d4_mi":
+        xalign 0.5
         ypos 1.0
-        linear 25.0 ypos -1.0 
+        linear 25.0 ypos -1.0
     $ renpy.pause(25.0)
     hide bkrr_lyrics_screen
     hide bkrr_song
     with bkrr_blindstobottom_transition
     show bkrr_lyrics_screen with bkrr_blindstotop_transition
-    show bkrr_song bkrr_songs["d6_dv"]:
-        xalign 0.5 
+    show bkrr_song "d6_dv":
+        xalign 0.5
         ypos 1.0
         linear 35.0 ypos -2.0
     $ renpy.pause(35.0)
@@ -140,8 +140,8 @@ label bkrr_test_song:
     hide bkrr_song
     with bkrr_blindstobottom_transition
     show bkrr_lyrics_screen with bkrr_blindstotop_transition
-    show bkrr_song bkrr_songs["d9_sem"]:
-        xalign 0.5 
+    show bkrr_song "d9_sem":
+        xalign 0.5
         ypos 1.0
         linear 25.0 ypos -1.0
     $ renpy.pause(25.0)
