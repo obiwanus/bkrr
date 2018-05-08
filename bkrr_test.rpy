@@ -97,6 +97,7 @@ label bkrr_test:
     scene black with dissolve
     $ bkrr_set_time()
     scene bg ext_square_day with dissolve
+
     window show
     "Тест."
     window hide
