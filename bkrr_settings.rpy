@@ -1002,6 +1002,16 @@ init 1:
     $ style.bkrr_thought.text_align = 0.5
     $ renpy.image("bkrr_thought", ParameterizedText(style="bkrr_thought", size=40))
 
+    # Стиль текста для для TODO
+
+    $ style.bkrr_todo_style = Style(style.default)
+    $ style.bkrr_todo_style.color = "#F00"
+    $ style.bkrr_todo_style.drop_shadow = [ (1, 1), (1, 1), (1, 1), (1, 1) ]
+    $ style.bkrr_todo_style.drop_shadow_color = "#800"
+    $ style.bkrr_todo_style.text_align = 0.5
+    $ style.bkrr_todo_style.align = (0.5, 0.5)
+    $ renpy.image("bkrr_todo", ParameterizedText(style="bkrr_todo_style", size=48))
+
     python:
 
         def bkrr_thoughts_show(*args):
