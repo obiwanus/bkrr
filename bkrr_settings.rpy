@@ -2014,6 +2014,13 @@ init 2:
         "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/far/mz/mz_3_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mz/mz_3_sport.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mz/mz_3_smile.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mz/mz_3_mask.png"), bkrr_tint["night"]),
         True, im.Composite((630, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/far/mz/mz_3_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mz/mz_3_sport.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mz/mz_3_smile.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mz/mz_3_mask.png"))
 
+    # Женя зомбак в спортивной форме
+
+    image mz normal zombie far = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mz/mz_zomb.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mz/mz_zomb.png"), bkrr_tint["night"]),
+        True, im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mz/mz_zomb.png"))
+
     # Женя в платье
 
     image mz angry bkrr_dress = ConditionSwitch(
