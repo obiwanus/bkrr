@@ -572,12 +572,8 @@ label bkrr_day17_common:
 
     "Шурик неторопливо сматывал леску, пока, наконец, из воды не показалась увесистая жирная рыба. Может, и меньше тарелки, но не намного."
 
-    show bkrr_todo "New item Карась? Нужна картинка тогда"
-
     me "Как называется?"
     "Кибернетик представил мне свой улов."
-
-    hide bkrr_todo
 
     show sh normal pioneer at cright with dissolve
 
@@ -837,17 +833,15 @@ label bkrr_day17_common:
 
     mz "Мальчишки…"
     "Женя вздохнула и махнула на меня рукой."
-
-    show mz normal mask bkrr_sport with dspr
-
     mz "Сам ты варенье!"
 
-    show mz normal mask bkrr_sport at cleft with ease
+    show mz shy mask bkrr_sport at cleft with ease
     show sl normal sport far at cright with dissolve
 
     sl "Семён? Доброе утро!"
     "Славя вытирала мокрое лицо."
 
+    show mz normal mask with dspr
     show sl smile sport far with dspr
 
     sl "Ты не пугайся, это мы делали ягодную маску. Здесь жёсткая вода, солнце сильно печёт, надо увлажнять кожу, иначе станем сморщенные, как печёная картошка. А ты чего в такую рань?"
@@ -1105,14 +1099,7 @@ label bkrr_day17_common:
 
     show mi normal pioneer close with dissolve
 
-    mi "Держи."
-
-    show bkrr_todo "New item? Нужна картинка"
-
     me "А что это? Похоже на зуб. Какой здоровый…"
-
-    hide bkrr_todo
-
     mi "Это зуб акулы. Его мне подарили перед моим первым выступлением, когда я боялась играть… Нет, погоди. Давай лучше я начну с начала."
     "Мику села поудобнее и принялась рассказывать."
 
@@ -1186,6 +1173,8 @@ label bkrr_day17_common:
         zoom 1.2
         ease 1.0 zoom 1.0
     with None
+
+    $ bkrr_get_item("shark_tooth")
 
     mi "Береги его, ладно?"
     me "После концерта верну в целости и сохранности!"
