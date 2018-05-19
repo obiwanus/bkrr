@@ -269,7 +269,8 @@ init python:
         "cat":[u"Пират", "#B6DAF1"],
         "ant":[u"Антон", "#FFF"],
         "kla":[u"Клаус", "#FFF"],
-        "tru":[u"Трук", "#FFF"],
+        "tr":[u"Трук", "#FFF"],
+        "vz":[u"Возница", "#FFF"],
         # специальные
         "dy":[u"Голос из динамика", "#B3B3B3"], # для 1.2
         "bus":[u"Автобус", "#68A01D"],
@@ -295,10 +296,9 @@ init python:
                 gl[i] = Character(None, kind=kind, what_color=what_color, what_drop_shadow=drop_shadow, what_prefix="~ ", what_suffix=" ~", ctc=ctc, ctc_position="fixed")
             else:
                 gl[i] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
-                if i in ("mi", "us", "dv", "mt", "mz", "sh", "sl", "el", "un", "cs", "pi", "uv", "nt", "tol", "ant", "kla"):
-                    gl[i+"_r"] = Character(j[0], kind=kind, who_color=what_color, who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
-                    gl[i+"_v"] = Character(u"Голос", kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
-                    gl[i+"_radio"] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_prefix=" {image=bkrr_radio_icon} ", what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
+                gl[i+"_r"] = Character(j[0], kind=kind, who_color=what_color, who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
+                gl[i+"_v"] = Character(u"Голос", kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
+                gl[i+"_radio"] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_prefix=" {image=bkrr_radio_icon} ", what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
 
     # Создание / объявление парных персонажей
 
