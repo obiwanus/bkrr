@@ -1715,10 +1715,10 @@ label bkrr_day17_common:
     show tr smile1 with dspr
 
     tr "Трук!"
-    ant "Друг, друг. А зовут тебя как?"
 
     show ant normal with dspr
 
+    ant "Друг, друг. А зовут тебя как?"
     "Азиат покачал головой, и повторил:"
 
     show tr smile2 with dspr
@@ -1802,7 +1802,7 @@ label bkrr_day17_common:
 
     "Рыжая отобрала у Трука рюкзак и взвалила его на спину."
 
-    show us surp1 pioneer at cright with dissolve
+    show us calml pioneer at cright with dissolve
 
     us "Ох, ничего себе… Что ж ты там такое носишь? Надо было его на Сеньку нагрузить. Что у тебя?"
 
@@ -1810,25 +1810,33 @@ label bkrr_day17_common:
 
     tr "Вещи. Спасибо, что помогай!"
 
-    show us grin with dspr
+    show us smile with dspr
 
     us "Меня Ульяна зовут!"
 
     show tr smile1 with dspr
 
     tr "Чень Прятно! Трук!"
+
+    show us grin with dspr
+
     us "Друг! Какой хорошенький. Всегда хотела младшего братика!"
 
+    show us grin:
+        ease 0.5 pos (0.5, 0)
+        ease 0.5 pos (0.645, 0)
+    with None
     show tr surp with dspr
 
     "Ульяна провела ладонью по чёрным жёстким волосам. Азиат удивлённо посмотрел на неё, но промолчал."
 
     show ant normal shirt at left behind tr with dissolve
+    show tr normal with dspr
 
     "Антон Иванович улыбнулся."
     ant "Вообще-то ему четырнадцать."
 
-    show us surp1 with dspr
+    show us normal with dspr
 
     us "Да?"
     "Ульяна недоверчиво посмотрела на вьетнамца."
@@ -1837,28 +1845,59 @@ label bkrr_day17_common:
     show us grin with dspr
 
     "Я ожидал, что азиат обидится, но он только стрелял по нам своими смышлёными узкими глазёнками и время от времени повторял за нами отдельные слова."
+
+    show tr smile2 with dspr
+
     tr "Кшать! Кшать!"
+
+    hide tr with dissolve
+    show us normal with dspr
+
     "Вожатая посмотрела на эту сцену с умилением."
 
-    hide tr
-    hide ant
-    with dissolve
-
-    show mt smile panama pioneer at cleft with dissolve
+    show mt smile panama pioneer at fright behind us with dissolve
 
     mt "Уля… может, тогда и возьмёшь над ним шефство?{w} Ну, покажешь что и где. А мы пока посмотрим, в какой из домиков им заселиться."
     mt "Только я тебя умоляю, без международных скандалов. Сможешь два дня не хулиганить?"
 
-    show us surp1 with dspr
+    show us upset with dspr
 
     us "Два дня?"
     "Уля вздохнула."
+
+    show us normal with dspr
+
     us "Я попробую."
+
+    hide us with dissolve
+    show mt smile at center with ease
+
     mt "Тогда берите их и ведите в столовую. А мы с Антоном Ивановичем…"
+
+    show ant smile with dspr
+
     ant "Просто Антон, прошу вас. Мне двадцать пять всего, хотя я и бородат."
-    mt "Хорошо. Мы с Антоном перекусим вместе с вожатыми. Когда поедите, Серёжа покажет гостям лагерь… а где Сыроежкин?"
+
+    show mt grin with dspr
+
+    mt "Хорошо. Мы с Антоном перекусим вместе с вожатыми. Когда поедите, Серёжа покажет гостям лагерь…"
+
+    show mt normal with dspr
+
+    mt "А где Сыроежкин?"
+
+    show ant normal with dspr
+
     "Сыроежка с Женей уже улизнули куда-то, оставив нас наедине с приезжими. Я подумал о Мику и вздохнул."
+
+    show mt sad with dspr
+
     mt "Жалко. Я думала, он будет экскурсоводом, у него хорошо получается. Ну, тогда – Семён, Ульяна, Славяна, поручаю всё вам! Мы подготовим жильё, а вы проводите гостей на заватра."
+
+    hide mt
+    hide ant
+    with dissolve
+
     "С этими словами, Ольга Дмитриевна увела вожатого в сторону админкорпуса."
     "Славя с Ульяной вопросительно смотрели на меня, видимо ждали, что я проявлю инициативу."
     th "Ну да. Единственный мужчина, если не считать приезжих, значит и командовать мне. Хотя и не люблю я лишнее внимание. Лидерство – не моё это. Я махнул рукой в сторону ворот."
