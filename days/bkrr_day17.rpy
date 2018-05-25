@@ -779,8 +779,11 @@ label bkrr_day17_common:
     "Из-за двери донёсся стук, сдавленный стон, а потом шторка на окне сдвинулась в сторону и в паре сантиметров от меня возникло самое жуткое лицо, которое я когда-либо видел. Кожа с него была начисто содрана."
 
     # SCP CONTAINMENT BREACH!
-    play sound bkrr_sfx_list["jumpscare"]
+    # TODO: выбрать
+    # play sound bkrr_sfx_list["jumpscare"]
+    play sound sfx_suspence_bang
     play sound2 bkrr_sfx_list["heartbeat"]
+    play music music_list["you_lost_me"] fadein 3.5
 
     scene bg ext_house_of_sl_day_zhenya:
         zoom 4.7
@@ -793,7 +796,7 @@ label bkrr_day17_common:
 
     "Я заорал от неожиданности и отскочил на пару шагов назад, чуть не упав с лестницы."
 
-    stop sound2 fadeout 7
+    stop sound2 fadeout 7  # heartbeat
 
     th "Что же это такое? Привет, безумие!"
 
@@ -803,6 +806,8 @@ label bkrr_day17_common:
     "Я приготовился было заорать «Славя, держись» и броситься в рукопашную, но чудовище провело пальцем по лицу, облизало его и поинтересовалось Жениным голосом:"
 
     show mz normal zombie far with dissolve
+
+    stop music fadeout 5
 
     mz "Доброе утро! Чего орёшь? Я споткнулась, палец ушибла! Всё из-за тебя."
     me "Извини! Я от неожиданности. Можно к вам?"
