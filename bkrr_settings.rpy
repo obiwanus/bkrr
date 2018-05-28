@@ -769,6 +769,7 @@ init 2:
     image cg d15_mi_sleep = im.Scale(bkrr_im_filepath["mod"] + "cg/d15_mi_sleep.png", config.screen_width, config.screen_height)
     image cg d16_cryptography = bkrr_im_filepath["mod"] + "cg/d16_cryptography.png"
     image cg d16_gulls = bkrr_im_filepath["mod"] + "cg/d16_gulls.jpg"
+    image cg d17_alisa_klaus = bkrr_im_filepath["mod"] + "cg/d17_alisa_klaus.jpg"
 
     # Комбинированные сюжетные вставки, анимированные и статичные (тоже идут под тегом cg)
 
