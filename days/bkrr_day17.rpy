@@ -570,6 +570,8 @@ label bkrr_day17_common:
 
     "Наверное, прошло не меньше получаса, прежде чем раздался звук колокольчика."
 
+    play music music_list["sweet_darkness"] fadein 6
+
     show sh normal pioneer at cright with dissolve
 
     sh "Ну, наконец-то. А я уж думал, вернёмся с пустыми руками."
@@ -656,6 +658,7 @@ label bkrr_day17_common:
 
     stop ambience fadeout 2
     stop sound_loop fadeout 3
+    stop music fadeout 6
     play ambience ambience_camp_center_day fadein 3
 
     # ДОРОГА ДО КУХНИ
@@ -1119,7 +1122,7 @@ label bkrr_day17_common:
     $ renpy.pause(2.5, hard=True)
     window show
 
-    play music music_list["sweet_darkness"] fadein 6
+    play music music_list["what_do_you_think_of_me"] fadein 5
 
     show mi normal pioneer with dissolve
 
@@ -1200,8 +1203,6 @@ label bkrr_day17_common:
 
     show mi normal with dspr
 
-    stop music fadeout 5
-
     "Я искренне восхитился."
     me "У меня самая удивительная девушка на свете."
     mi "Ничего особенного."
@@ -1219,8 +1220,6 @@ label bkrr_day17_common:
     with None
 
     $ bkrr_get_item("shark_tooth")
-
-    play music music_list["what_do_you_think_of_me"] fadein 5
 
     mi "Береги его, ладно?"
     me "После концерта верну в целости и сохранности!"
@@ -2567,8 +2566,9 @@ label bkrr_day17_common:
 
     tr "Да! Уля – друг! И Трук друг!"
 
+    stop ambience fadeout 3
     scene bg ext_dining_hall_near_day with fade2
-    # TODO: ambience
+    play ambience ambience_camp_center_day fadein 3
 
     "Наконец, обед был съеден, посуда отнесена в мойку, а нам предстояло решить, что делать. Вожатые куда-то подевалась, так что, видимо, мне предстояло развлекать гостей и дальше."
     me "Чем займёмся? Осмотрим лагерь, посидим у нас в клубе, или пойдёте отдыхать?"
