@@ -2301,12 +2301,12 @@ label bkrr_day17_common:
         truecenter
         ypos 0
         zoom 2.5
-        xalign 0.3
-        linear 1.5 xalign 0.5
-        ease 0.5 zoom 1.1 ypos 0.5
+        xalign 0.2
+        # linear 0.5 xalign 0.5
+        linear 0.7 zoom 1.1 ypos 0.5 xalign 0.5
     with dissolve
 
-    $ renpy.pause(1.8, hard=True)
+    $ renpy.pause(0.3, hard=True)
 
     play sound_loop bkrr_sfx_list["paperslap"]
 
