@@ -1956,7 +1956,7 @@ label bkrr_day14_common:
     show un surprise pioneer close at cleft with dspr
 
     "Мы с Леной уставились на неё."
-    me "Чего-чего?" 
+    me "Чего-чего?"
 
     show us calml sport close at cright with dspr
 
@@ -2286,7 +2286,7 @@ label bkrr_day14_common:
 
     show us grin bkrr_dress at cright with dspr
 
-    us "Ладно, ладно. Микуля, бери поднос, а мы пошли. Виола, я на одну секундочку, можно? Сенька, мне нужно твое мнение!"
+    us "Ладно, ладно. Микуля, бери поднос, а мы пошли. Виола, я на одну секундочку, можно? Сенька, мне нужно твоё мнение!"
 
     show cs smile dress at cleft with dspr
 
@@ -3565,7 +3565,7 @@ label bkrr_day14_common:
     show mi smile yukata close at center with dspr
 
     "Мику просияла улыбкой."
-    mi "Тебе нравится?"    
+    mi "Тебе нравится?"
     me "Очень вкусно! А это что?"
     "В коробке лежал ещё какой-то небольшой бумажный свёрток, размером с фонарик."
     mi "Секрет!"
