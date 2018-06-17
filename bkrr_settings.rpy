@@ -767,6 +767,7 @@ init 2:
             (bkrr_im_filepath["mod"] + "cg/d14_rocket_2.png")
             ease 15.0 alpha 0.0
     image cg d15_mi_sleep = im.Scale(bkrr_im_filepath["mod"] + "cg/d15_mi_sleep.png", config.screen_width, config.screen_height)
+    image cg d16_boat_shed = bkrr_im_filepath["mod"] + "cg/d16_boat_shed.jpg"
     image cg d16_cryptography = bkrr_im_filepath["mod"] + "cg/d16_cryptography.png"
     image cg d16_gulls = bkrr_im_filepath["mod"] + "cg/d16_gulls.jpg"
     image cg d17_alisa_klaus = bkrr_im_filepath["mod"] + "cg/d17_alisa_klaus.jpg"

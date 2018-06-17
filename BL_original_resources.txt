@@ -1,0 +1,716 @@
+Фоны:
+bg bus_stop
+bg ext_aidpost_day
+bg ext_aidpost_night
+bg ext_bathhouse_night
+bg ext_beach_day
+bg ext_beach_night
+bg ext_beach_sunset
+bg ext_boathouse_day
+bg ext_boathouse_night
+bg ext_bus
+bg ext_bus_night
+bg ext_camp_entrance_day
+bg ext_camp_entrance_night
+bg ext_clubs_day
+bg ext_clubs_night
+bg ext_dining_hall_away_day
+bg ext_dining_hall_away_night
+bg ext_dining_hall_away_sunset
+bg ext_dining_hall_near_day
+bg ext_dining_hall_near_night
+bg ext_dining_hall_near_sunset
+bg ext_house_of_dv_day
+bg ext_house_of_dv_night
+bg ext_house_of_mt_day
+bg ext_house_of_mt_night
+bg ext_house_of_mt_night_without_light
+bg ext_house_of_mt_sunset
+bg ext_house_of_sl_day
+bg ext_house_of_un_day
+bg ext_houses_day
+bg ext_houses_sunset
+bg ext_island_day
+bg ext_island_night
+bg ext_library_day
+bg ext_library_night
+bg ext_musclub_day
+bg ext_no_bus
+bg ext_no_bus_night
+bg ext_no_bus_sunset
+bg ext_old_building_night
+bg ext_old_building_night_moonlight
+bg ext_path_day
+bg ext_path_night
+bg ext_path_sunset
+bg ext_path2_day
+bg ext_path2_night
+bg ext_playground_day
+bg ext_playground_night
+bg ext_polyana_day
+bg ext_polyana_night
+bg ext_polyana_sunset
+bg ext_road_day
+bg ext_road_night
+bg ext_road_night2
+bg ext_road_sunset
+bg ext_square_day
+bg ext_square_day_city
+bg ext_square_night
+bg ext_square_night_party
+bg ext_square_night_party2
+bg ext_square_sunset
+bg ext_stage_big_night
+bg ext_stage_normal_day
+bg ext_stage_normal_night
+bg ext_washstand_day
+bg ext_washstand2_day
+bg int_aidpost_day
+bg int_aidpost_day_apple
+bg int_aidpost_night
+bg int_bus
+bg int_bus_black
+bg int_bus_night
+bg int_bus_people_day
+bg int_bus_people_night
+bg int_catacombs_door
+bg int_catacombs_entrance
+bg int_catacombs_entrance_red
+bg int_catacombs_hole
+bg int_catacombs_living
+bg int_catacombs_living_nodoor
+bg int_clubs_male_day
+bg int_clubs_male_sunset
+bg int_clubs_male2_night
+bg int_clubs_male2_night_nolight
+bg int_dining_hall_day
+bg int_dining_hall_night
+bg int_dining_hall_people_day
+bg int_dining_hall_sunset
+bg int_house_of_dv_day
+bg int_house_of_dv_night
+bg int_house_of_mt_day
+bg int_house_of_mt_night
+bg int_house_of_mt_night2
+bg int_house_of_mt_noitem_night
+bg int_house_of_mt_sunset
+bg int_house_of_sl_day
+bg int_house_of_un_day
+bg int_house_of_un_night
+bg int_liaz
+bg int_library_day
+bg int_library_night
+bg int_library_night2
+bg int_mine
+bg int_mine_coalface
+bg int_mine_crossroad
+bg int_mine_door
+bg int_mine_exit_night_light
+bg int_mine_exit_night_nolight
+bg int_mine_exit_night_torch
+bg int_mine_halt
+bg int_mine_room
+bg int_mine_room_red
+bg int_musclub_day
+bg int_old_building_night
+bg intro_xx
+bg semen_room
+bg semen_room_window
+
+Иллюстрации:
+cg d1_food_normal
+cg d1_food_skolop
+cg d1_grasshopper
+cg d1_rena_sunset
+cg d1_sl_dinner
+cg d1_sl_dinner_0
+cg d1_uv
+cg d1_uv_2
+cg d2_2ch_beach
+cg d2_lineup
+cg d2_micu_lib
+cg d2_miku_piano
+cg d2_miku_piano2
+cg d2_mirror
+cg d2_mt_undressed
+cg d2_mt_undressed_2
+cg d2_slavya_forest
+cg d2_sovenok
+cg d2_ussr_falling
+cg d2_water_dan
+cg d3_disco
+cg d3_dv_guitar
+cg d3_dv_scene_1
+cg d3_dv_scene_2
+cg d3_sl_bathhouse
+cg d3_sl_dance
+cg d3_sl_evening
+cg d3_sl_library
+cg d3_soccer
+cg d3_un_dance
+cg d3_un_forest
+cg d3_us_dinner
+cg d3_us_library_1
+cg d3_us_library_2
+cg d3_us_library_3
+cg d3_us_library_4
+cg d3_ussr_catched
+cg d4_catac
+cg d4_catac_dv
+cg d4_catac_sl
+cg d4_catac_un
+cg d4_catac_us
+cg d4_catac_us_2
+cg d4_dv_mt
+cg d4_el_wash
+cg d4_mi_guitar
+cg d4_mi_sing
+cg d4_sh_sit
+cg d4_sh_stay
+cg d4_us_cancer
+cg d4_us_morning
+cg d4_uv
+cg d4_uv_1
+cg d5_boat
+cg d5_boat_2
+cg d5_cake
+cg d5_clubs_robot
+cg d5_cs
+cg d5_dv_argue
+cg d5_dv_argue_2
+cg d5_dv_argue_3
+cg d5_dv_island
+cg d5_dv_us_wash
+cg d5_dv_us_wash_2
+cg d5_dv_us_wash_3
+cg d5_dv_us_wash_4
+cg d5_mi
+cg d5_sh_us
+cg d5_sl_sleep
+cg d5_sl_sleep_2
+cg d5_strawberry_race
+cg d5_un_island
+cg d5_un_sleep
+cg d5_us_ghost
+cg d5_us_ghost_2
+cg d5_us_kiss
+cg d5_us_sit
+cg d5_uv
+cg d5_uv_2
+cg d6_dv_fight
+cg d6_dv_fight_2
+cg d6_dv_fight_3
+cg d6_dv_hentai
+cg d6_dv_hentai_2
+cg d6_pioneer
+cg d6_sl_forest
+cg d6_sl_forest_2
+cg d6_sl_swim
+cg d2_sl_swim
+cg d6_sl_hentai_1
+cg d6_sl_hentai_2
+cg d6_un_evening_1
+cg d6_un_evening_2
+cg d6_un_punch
+cg d6_us_film
+cg d6_us_night_2
+cg d6_uv
+cg d6_uv_2
+cg d7_dv
+cg d7_dv_2
+cg d7_pioneers_leaving
+cg d7_pioneers_leaving_without_us
+cg d7_sl_morning
+cg d7_sl_morning_2
+cg d7_un_hentai
+cg d7_un_hentai_3
+cg d7_un_suicide
+cg d7_uv
+cg day4_us_morning
+cg epilogue_dv_2
+cg epilogue_dv_3
+cg epilogue_mi_1
+cg epilogue_mi_2
+cg epilogue_mi_3
+cg epilogue_mi_4
+cg epilogue_mi_5
+cg epilogue_mi_6
+cg epilogue_mi_7
+cg epilogue_mi_8
+cg epilogue_mi_9
+cg epilogue_sl
+cg epilogue_sl_2
+cg epilogue_un
+cg epilogue_un_bad
+cg epilogue_un_good
+cg epilogue_un_bad_red
+cg epilogue_us
+cg epilogue_us_3_a
+cg epilogue_us_alone
+cg epilogue_uv
+cg epilogue_uv_2
+cg miku_h_1_cenz
+cg miku_h_2_cenz
+cg final_all_2
+cg uvao_h_cenz
+cg epilogue_uv_uv
+cg epilogue_uv_us
+cg epilogue_uv_dv
+cg epilogue_uv_sl
+cg epilogue_uv_mi
+cg epilogue_uv_un
+
+Остальные:
+anim blink_down
+anim blink_up
+anim candle_1
+anim candle_2
+anim intro_1
+anim intro_10
+anim intro_11
+anim intro_12
+anim intro_13
+anim intro_14
+anim intro_15
+anim intro_16
+anim intro_2
+anim intro_3
+anim intro_4
+anim intro_5
+anim intro_6
+anim intro_7
+anim intro_8
+anim intro_9
+anim owl_1
+anim owl_2
+anim prolog_1
+anim prolog_10
+anim prolog_11
+anim prolog_14
+anim prolog_15
+anim prolog_2
+anim prolog_3
+anim prolog_4
+anim prolog_5
+anim prologue_1
+anim prologue_2
+anim prologue_3
+anim prologue_keyboard_1
+anim prologue_keyboard_2
+anim prologue_keyboard_3
+anim prologue_keyboard_4
+anim prologue_keyboard_monitor_1
+anim prologue_keyboard_monitor_2
+anim prologue_keyboard_monitor_3
+anim prologue_keyboard_monitor_4
+anim prologue_monitor_1
+anim prologue_monitor_2
+anim prologue_monitor_3
+anim prologue_monitor_4
+anim snow
+anim stars_1
+anim stars_3
+soviet_games
+disclaimer
+disclaimer_en
+disclaimer_es
+splashscreen_day
+logo_day
+splashscreen_night
+logo_night
+splashscreen_sunset
+logo_sunset
+achievement
+achievement3
+collector
+dv_bad
+dv_bad_en
+dv_good
+dv_good_en
+un_bad
+un_bad_en
+un_good
+un_good_en
+sl_bad
+sl_bad_en
+sl_good
+sl_good_en
+us_bad
+us_bad_en
+us_good
+us_good_en
+main_bad
+main_good
+main_good_en
+mi
+uv_city
+uv_good
+uv_good_en
+dv_bad_es
+dv_good_es
+sl_bad_es
+un_bad_es
+un_good_es
+us_bad_es
+us_good_es
+uv_good_es
+cg lvl_1
+cg lvl_2_lena_win
+cg lvl_2_semen_win
+cg lvl_4_semen_win
+
+op_back
+op_sl
+op_un
+op_us
+op_dv
+op_mi
+op_uv1
+op_uv2
+op_uv3
+
+backdrop_text
+
+ru_ground
+ru_hover
+
+en_ground
+en_hover
+
+es_ground
+es_hover
+
+
+Sounds:
+
+Музыка:
+music_list["a_promise_from_distant_days"]
+music_list["a_promise_from_distant_days_v2"]
+music_list["afterword"]
+music_list["always_ready"]
+music_list["awakening_power"]
+music_list["blow_with_the_fires"]
+music_list["confession_oboe"]
+music_list["dance_of_fireflies"]
+music_list["dinner_horn_processed"]
+music_list["doomed_to_be_defeated"]
+music_list["door_to_nightmare"]
+music_list["doubt_everyone"]
+music_list["drown"]
+music_list["eat_some_trouble"]
+music_list["eternal_longing"]
+music_list["everlasting_summer"]
+music_list["everyday_theme"]
+music_list["faceless"]
+music_list["farewell_to_the_past_edit"]
+music_list["farewell_to_the_past_full"]
+music_list["forest_maiden"]
+music_list["gentle_predator"]
+music_list["get_to_know_me_better"]
+music_list["glimmering_coals"]
+music_list["goodbye_home_shores"]
+music_list["heather"]
+music_list["i_dont_blame_you"]
+music_list["i_want_to_play"]
+music_list["into_the_unknown"]
+music_list["just_think"]
+music_list["kostry"]
+music_list["lets_be_friends"]
+music_list["lightness"]
+music_list["lightness_radio_bus"]
+music_list["meet_me_there"]
+music_list["memories"]
+music_list["memories_piano_outdoors"]
+music_list["miku_song_flute"]
+music_list["miku_song_voice"]
+music_list["my_daily_life"]
+music_list["mystery_girl_v2"]
+music_list["no_tresspassing"]
+music_list["orchid"]
+music_list["pile"]
+music_list["pioneer2_loudspeaker_tape"]
+music_list["raindrops"]
+music_list["reflection_on_water"]
+music_list["reminiscences"]
+music_list["revenga"]
+music_list["scarytale"]
+music_list["she_is_kind"]
+music_list["silhouette_in_sunset"]
+music_list["smooth_machine"]
+music_list["so_good_to_be_careless"]
+music_list["sparkles"]
+music_list["sunny_day"]
+music_list["sweet_darkness"]
+music_list["take_me_beautifully"]
+music_list["that_s_our_madhouse"]
+music_list["timid_girl"]
+music_list["torture"]
+music_list["trapped_in_dreams"]
+music_list["tried_to_bring_it_back"]
+music_list["two_glasses_of_melancholy"]
+music_list["waltz_of_doubts"]
+music_list["went_fishing_caught_a_girl"]
+music_list["what_do_you_think_of_me"]
+music_list["you_lost_me"]
+music_list["you_won_t_let_me_down"]
+music_list["your_bright_side"]
+music_list["410"]
+music_list["opening"]
+
+Амбиенс:
+ambience_boat_station_day
+ambience_boat_station_night
+ambience_camp_center_day
+ambience_camp_center_evening
+ambience_camp_center_night
+ambience_camp_entrance_day
+ambience_camp_entrance_evening
+ambience_camp_entrance_day_people
+ambience_camp_entrance_night
+ambience_catacombs
+ambience_catacombs_stones
+ambience_clubs_inside_day
+ambience_cold_wind_loop
+ambience_day_countryside_ambience
+ambience_dining_hall_empty
+ambience_dining_hall_full
+ambience_ext_road_day
+ambience_ext_road_evening
+ambience_ext_road_night
+ambience_forest_day
+ambience_forest_evening
+ambience_forest_night
+ambience_grasshoper_clean
+ambience_int_cabin_day
+ambience_int_cabin_evening
+ambience_int_cabin_night
+ambience_lake_shore_day
+ambience_lake_shore_evening
+ambience_lake_shore_night
+ambience_library_day
+ambience_medium_crowd_indoors_1
+ambience_medium_crowd_outdoors
+ambience_medstation_inside_day
+ambience_medstation_inside_night
+ambience_music_club_day
+ambience_music_club_night
+ambience_old_camp_outside
+ambience_soccer_play_background
+
+Звуки:
+sfx_armature_swish
+sfx_angry_ulyana
+sfx_bed_squeak1
+sfx_bed_squeak2
+sfx_body_bump
+sfx_bodyfall_1
+sfx_borshtch
+sfx_brass_drop
+sfx_break_grid
+sfx_broken_dish
+sfx_broom_sweep
+sfx_bus_interior_moving
+sfx_bus_loop
+sfx_bus_out
+sfx_bus_stop
+sfx_bus_window_hit
+sfx_bush_body_fall
+sfx_bush_leaves
+sfx_campus_door_rattle
+sfx_cellular_phone_error
+sfx_chair_fall
+sfx_cigarette_pack_crumple
+sfx_clench2
+sfx_click_1
+sfx_click_2
+sfx_click_3
+sfx_close_cabinet
+sfx_close_door_1
+sfx_close_door_campus_1
+sfx_close_water_sink
+sfx_concert_applause
+sfx_cooling_bus_motor
+sfx_cooling_engine_loop
+sfx_dinner_horn_processed
+sfx_dinner_jingle_normal
+sfx_dinner_jingle_speaker
+sfx_dinner_jingle_speaker_tape
+sfx_draw_water
+sfx_dropped_chair
+sfx_energy_door_bus
+sfx_fall_metal_door
+sfx_forest_fireplace
+sfx_ghost_children_laugh
+sfx_gusty_wind
+sfx_hell_alarm_clock
+sfx_hiding_in_bush
+sfx_inhale
+sfx_insert_crowbar_door
+sfx_intro_bus_door_open
+sfx_intro_bus_engine_loop
+sfx_intro_bus_engine_start
+sfx_intro_bus_stop_sigh
+sfx_intro_bus_stop_steps
+sfx_intro_bus_transition
+sfx_keyboard_mouse
+sfx_keys_rattle
+sfx_knock_door2
+sfx_knock_door3_dull
+sfx_knock_door6_closed
+sfx_knock_door7_polite
+sfx_knock_glass
+sfx_knocking_door_2
+sfx_knocking_door_outside
+sfx_lena_plays_tennis_fail
+sfx_lock_click
+sfx_lock_close
+sfx_lock_open
+sfx_lock_open_close_1
+sfx_medpunkt_door_open
+sfx_metal_door_handle_rattle
+sfx_metal_door_heavy_close
+sfx_metal_door_large_close_basement
+sfx_miku_song_learn1
+sfx_miku_song_learn2
+sfx_muffled_explosion
+sfx_nightmare_explosion
+sfx_nightmare_underground_rumble
+sfx_open_cupboard
+sfx_open_dooor_campus_1
+sfx_open_dooor_campus_2
+sfx_open_door_1
+sfx_open_door_2
+sfx_open_door_clubs
+sfx_open_door_clubs_2
+sfx_open_door_kick
+sfx_open_door_strong
+sfx_open_cabinet_1
+sfx_open_cabinet_2
+sfx_open_journal
+sfx_open_metal_door
+sfx_open_metal_hatch
+sfx_open_table
+sfx_open_water_sink
+sfx_owl_far
+sfx_pat_shoulder_hard
+sfx_piano_head_bump
+sfx_punch_medium
+sfx_rowboat_loop
+sfx_run_forest
+sfx_scary_sting
+sfx_shoulder_dive_water
+sfx_slam_door_campus
+sfx_soccer_ball_catch
+sfx_soccer_ball_gate
+sfx_soccer_ball_kick
+sfx_stomach_growl
+sfx_suspence_bang
+sfx_swimming
+sfx_tennis_serve_1
+sfx_tennis_serve_2
+sfx_terminator
+sfx_tree_branches
+sfx_underwater_dive
+sfx_unlock_medpunkt_door
+sfx_unzip_sleepbag
+sfx_water_emerge
+sfx_water_sink_stream
+sfx_water_splash
+sfx_wind_gust
+
+sfx_key_drawer
+sfx_eat_apple
+sfx_jump_into_hole_2
+sfx_open_window
+sfx_alisa_falls
+sfx_jump_over_hole
+sfx_simon_fall_1
+sfx_simon_fall_2
+sfx_break_flashlight
+sfx_alisa_lighter
+sfx_ignite_torch
+sfx_carousel_squeak
+sfx_open_door_mines
+sfx_signal_pistol
+sfx_shurik_mines_far
+sfx_shurik_opens_door
+sfx_cellar_open
+sfx_put_sugar_cart
+sfx_boat_impact
+sfx_wood_friction
+sfx_lena_plays_tennis_fail
+sfx_blanket_off_stand
+sfx_lena_hits_alisa
+sfx_slavya_gets_out
+sfx_open_door_clubs_nextroom
+sfx_steps_clubs_nextroom
+sfx_close_door_clubs_nextroom
+sfx_knock_door_closed_hard1
+sfx_knock_door_closed_hard2
+sfx_drop_alisa_bag
+sfx_bus_honk
+sfx_fall_grass
+sfx_break_monitor
+sfx_home_phone_ring
+sfx_home_phone_take
+sfx_home_phone_break
+sfx_light_candle
+sfx_blow_out_candle
+sfx_hell_crickets_1
+sfx_hell_crickets_2
+sfx_hell_crickets_3
+sfx_hell_crickets_3
+sfx_salt_impact
+sfx_break_cupboard
+sfx_alisa_masha_enter
+sfx_punch_washstand
+sfx_slavya_run
+sfx_thunder_crack
+sfx_thunder_rumble
+sfx_thunder_wood
+sfx_bus_idle
+sfx_keyboard_mouse_computer_noise
+sfx_computer_noise
+sfx_street_traffic_outside
+sfx_throw_compote
+sfx_terminator_parody
+sfx_cooking_eggs_2
+sfx_cooking_eggs_1
+sfx_radio_squelch_1
+sfx_radio_squelch_2
+sfx_ikarus_arrive
+sfx_ikarus_open_doors
+sfx_door_squeak_light
+sfx_paper_bag
+sfx_unlock_door_campus
+sfx_drawer_rattle
+sfx_uliana_jumps_down
+sfx_match_candle
+sfx_wood_floor_squeak
+sfx_simon_applause
+sfx_fall_wood_floor
+sfx_radio_tune
+sfx_hatch_drop
+sfx_open_door_mines_metal
+sfx_open_drapes
+sfx_achievement
+sfx_grate_open_hand
+sfx_break_flashlight_alisa
+sfx_torch
+sfx_shurik_snore
+sfx_face_slap
+sfx_mystery_movement
+sfx_open_door_squeak_2
+sfx_far_steps
+sfx_drop_pipe
+sfx_scoop_water_cup
+sfx_bones_breaking
+sfx_head_explode
+sfx_table_hit
+sfx_grate_hand_fall
+sfx_konami_on
+sfx_konami_off
+sfx_alisa_picklock
+sfx_head_heartbeat
+sfx_door_bell
+
