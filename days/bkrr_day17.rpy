@@ -1429,7 +1429,7 @@ label bkrr_day17_common:
     scene bg ext_camp_entrance_day with dissolve
     play ambience ambience_camp_center_day fadein 3
 
-    play music music_list["everyday_theme"] fadein 5
+    play music music_list["my_daily_life"] fadein 5
 
     "Переодеваться не пришлось, так что вся моя подготовка свелась к тому, что я пару раз махнул тряпкой по обуви, стерев пыль, попытался причесаться и перевязал кривоватый узел галстука.{w} Пока остальные наводили на себя красоту, мы с Ольгой стояли в тени дерева у ворот в лагерь."
     me "Так странно смотреть на них снаружи!"
@@ -2878,7 +2878,7 @@ label bkrr_day17_common:
     mi "Я поняла."
     mt "Ну, раз так – до вечера свободны."
 
-    play music music_list["goodbye_home_shores"] fadein 10
+    play music music_list["reminiscences"] fadein 10
     stop ambience fadeout 2
     scene bg ext_music_club_verandah_day_v7 with dissolve
     play ambience ambience_camp_center_day fadein 3
@@ -3029,7 +3029,7 @@ label bkrr_day17_common:
 
     "Я почему-то смутился и отвернулся.{w} Какое-то время мы молчали, потом Алиса внезапно предложила:"
 
-    play music music_list["gentle_predator"] fadein 7
+    play music music_list["gentle_predator"] fadein 2
 
     dv "Хочешь, посмотрим вместе?"
     me "Алиса, не начинай.{w} Не надо."
@@ -3040,7 +3040,7 @@ label bkrr_day17_common:
     show dv normal pioneer far at cleft with dissolve
 
     "Я, обернулся и увидел, что Алиса отложила гитару и держит в руках кофр с инструментом Клауса."
-    "А, ты про это… В смысле, на гитару посмотрим?"
+    me "А, ты про это… В смысле, на гитару посмотрим?"
     dv "Конечно, про это."
     "Она призадумалась, потом засмеялась."
 
@@ -3208,7 +3208,7 @@ label bkrr_day17_common:
     $ bkrr_set_volume("sound", 1.0)
     play sound sfx_open_door_1
     window hide
-    $ renpy.pause(1.0, hard=True)
+    $ renpy.pause(2.0, hard=True)
     window show
 
     "На самом деле, мне просто хотелось побыть одному.{w} Принимать иностранных гостей, конечно, было интересно, но я устал от людей и сейчас хотел тишины."
@@ -4282,7 +4282,7 @@ label bkrr_day17_common:
     play ambience ambience_camp_center_night fadein 4
 
     "Опустив Мику на тёплый асфальт, вожатая сорвала присохшую тряпку у меня с уха."
-    me "Ай! Вы что тво…рите."
+    me "Ай! Вы что тво… {w}рите."
     "Я схватился за ухо, но пореза там уже не было."
 
     show mt normal with dspr
