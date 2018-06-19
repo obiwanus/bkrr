@@ -2609,6 +2609,49 @@ init 2:
         "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/far/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mt/mt_1_nightdress.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mt/mt_1_surprise.png"), bkrr_tint["night"]),
         True, im.Composite((630, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/far/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mt/mt_1_nightdress.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mt/mt_1_surprise.png"))
 
+    # Ольга с отрезанным подолом
+
+    image mt angry torn = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_2_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_2_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_2_angry.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_2_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_2_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_2_angry.png"), bkrr_tint["night"]),
+        True, im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_2_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_2_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_2_angry.png"))
+
+    image mt grin torn = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_3_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_3_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_3_grin.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_3_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_3_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_3_grin.png"), bkrr_tint["night"]),
+        True, im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_3_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_3_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_3_grin.png"))
+
+    image mt laugh torn = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_3_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_3_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_3_laugh.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_3_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_3_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_3_laugh.png"), bkrr_tint["night"]),
+        True, im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_3_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_3_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_3_laugh.png"))
+
+    image mt normal torn = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_1_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_normal.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_1_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_normal.png"), bkrr_tint["night"]),
+        True, im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_1_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_normal.png"))
+
+    image mt rage torn = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_2_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_2_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_2_rage.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_2_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_2_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_2_rage.png"), bkrr_tint["night"]),
+        True, im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_2_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_2_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_2_rage.png"))
+
+    image mt sad torn = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_1_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_sad.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_1_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_sad.png"), bkrr_tint["night"]),
+        True, im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_1_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_sad.png"))
+
+    image mt smile torn = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_1_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_smile.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_1_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_smile.png"), bkrr_tint["night"]),
+        True, im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_1_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_smile.png"))
+
+    image mt surprise torn = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_1_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_surprise.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_1_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_surprise.png"), bkrr_tint["night"]),
+        True, im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mt/mt_1_torn.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mt/mt_1_surprise.png"))
+
+
     # Шурик в банном халате
 
     image sh cry bathrobe = ConditionSwitch(
