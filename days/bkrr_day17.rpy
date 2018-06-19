@@ -547,6 +547,7 @@ label bkrr_day17_common:
     "Я сглотнул. Надеюсь, не эротический?"
 
     show sh serious pioneer with dspr
+    stop music fadeout 10
 
     sh "Ага. Словно мы друг за другом гоняемся по подземелью какому-то. И девчонка с нами, вроде и знакомая, а кто – не пойму. А может, это и не ты был. Просто, такой же заросший."
     me "Подземелья? Погони? Меньше радиодетали по убежищам воровать надо! Это говорит твоя нечистая совесть!"
@@ -561,11 +562,11 @@ label bkrr_day17_common:
 
     sh "Как скажешь.{w} Ладно, где же наша потенциальная уха? Она ставит меня в глупое положение. Обещал же хороший улов, а рыбы и нет."
 
-    stop music fadeout 4
 
     hide sh with dissolve
     window hide
-    $ renpy.pause(2.0, hard=True)
+    $ bkrr_timeskip_short()
+    scene bg ext_boathouse_sunset_bkrr with bkrr_timeskip_transition()
     window show
 
     "Наверное, прошло не меньше получаса, прежде чем раздался звук колокольчика."
@@ -648,6 +649,7 @@ label bkrr_day17_common:
     "Я развёл руками. Шурик от души засмеялся."
 
     show sh laugh pioneer with dspr
+    stop music fadeout 6
 
     sh "Какой у меня, оказывается, образ в лагере сложился. Есть предложение: закончить рыбалку и доставить улов на кухню."
 
@@ -658,19 +660,18 @@ label bkrr_day17_common:
 
     stop ambience fadeout 2
     stop sound_loop fadeout 3
-    stop music fadeout 6
     play ambience ambience_camp_center_day fadein 3
 
     # ДОРОГА ДО КУХНИ
 
-    scene bg ext_houses_day with dissolve
+    scene bg ext_houses_day with fade2
 
     "Подъём ещё не сыграли, но лагерь постепенно просыпался. На подступах к туалетам выстраивались очереди, на дорожках мелькали заспанные пионеры. {w}Самые нетерпеливые, воровато озираясь, удалялись в кустики и вершили своё чёрное дело в них."
 
     stop ambience fadeout 3
     scene bg int_dining_hall_day with dissolve
     play ambience ambience_dining_hall_empty fadein 5
-    play music music_list["smooth_machine"] fadein 3
+    play music music_list["she_is_kind"] fadein 3
 
     "Мы пересекли пустой обеденный зал и зашли на кухню. Пират, лежащий на табуретке, лениво взглянул на нас одним глазом и снова заснул."
     "Тётя Наташа уже хлопотала на кухне, от больших кастрюль тянуло чем-то непонятным, пряно-душистым, отчего сразу захотелось ухватить ложку и попробовать её стряпню."
@@ -701,8 +702,10 @@ label bkrr_day17_common:
     # ВСТРЕЧА С ЛЕНОЙ
 
     stop ambience fadeout 3
-    scene bg ext_houses_day with dissolve
+    window hide
+    scene bg ext_houses_day with fade2
     play ambience ambience_camp_center_day fadein 3
+    window show
 
     "По пути обратно я встретил Лену. В руках она несла полотенце и небольшую сумочку, наверное с банными принадлежностями."
 
@@ -1680,7 +1683,6 @@ label bkrr_day17_common:
 
     hide mt with dissolve
 
-    #kla, tr, ant – теги для вновь прибывших. Клаус, Трук, Антон
     "Рыжий пионер огляделся и с лёгким акцентом поздоровался:"
 
     show kla normal sport far at fright with dissolve
@@ -1695,14 +1697,18 @@ label bkrr_day17_common:
     show tr smile1 with dspr
 
     tr "ЗдравствУйте!"
+
     "Ольга явно перестала удивляться чему бы то ни было и сделала приглашающий жест."
 
     show mt smile panama pioneer far at left with dissolve
+
 
     mt "Добро пожаловать в пионерский лагерь «Совёнок»! С приездом!{w} А где остальные? С вами есть кто-нибудь из взрослых?"
     "Из кучи сена донёсся приятный баритон."
 
     show mt surprise with dspr
+
+    play music music_list["gentle_predator"] fadein 5
 
     ant_v "Взрослые тут, они слегка задремали от жары."
 
@@ -1753,6 +1759,9 @@ label bkrr_day17_common:
     hide bkrr_todo
 
     th "Кажется, рыжих музыкантов в этом лагере становится всё больше и больше."
+
+    stop music fadeout 7
+
     "Антон Иванович повернулся к вознице."
 
     show ant normal shirt far at cright with dissolve
@@ -1865,6 +1874,8 @@ label bkrr_day17_common:
     with dissolve
 
     "Я с сожалением посмотрел в сторону музклуба… Нянчить иностранных гостей совсем не хотелось.{w} Но они с ожиданием смотрели на нас, и сказать «извините, гости дорогие, идите сами, а у меня тут любимая девушка скучает» я не смог."
+
+    play music music_list["everyday_theme"] fadein 7
     me "Конечно! Пойдём!"
 
     scene bg ext_no_bus with dissolve
@@ -2055,6 +2066,8 @@ label bkrr_day17_common:
     kla "Не бабушка. Она молодая."
     me "Тем более."
 
+    stop music fadeout 10
+
     hide kla with dissolve
 
     "Я подхватил один из них, а Клаус взял кофр с гитарой."
@@ -2136,6 +2149,8 @@ label bkrr_day17_common:
     mi "У меня всё равно были свои дела. Ничего, сейчас освободишься и пойдём репетировать, а то ведь до концерта осталось совсем недолго, а нам ещё нужно много чего сделать, так что нельзя терять времени."
 
     hide mi with dissolve
+
+    play music music_list["so_good_to_be_careless"] fadein 5
 
     "Я подвёл её к нашей разрастающейся компании."
     me "Знакомьтесь: наши гости: Клаус Шульц и Нгуен Ван Трук, Мику.{w} Наш самый главный музыкант и массовик-затейник."
@@ -2256,6 +2271,8 @@ label bkrr_day17_common:
     stop ambience fadeout 2
     scene bg ext_houses_day with fade2
     play ambience ambience_camp_center_day fadein 2
+
+    stop music fadeout 10
 
     "Мы вышли из клуба и прошли уже половину пути до центральной аллеи, когда Клаус резко остановился."
 
@@ -2482,6 +2499,7 @@ label bkrr_day17_common:
     $ bkrr_timeskip_short()
     scene bg int_dining_hall_day with bkrr_timeskip_transition()
     play ambience ambience_dining_hall_empty fadein 5
+    play music music_list["went_fishing_caught_a_girl"] fadein 5
 
     "Наконец, мы добрались до столовой. До обеда оставалось ещё больше двух часов, так что никого кроме нас здесь не было, даже дежурных.{w} Славяна уже ушла, но тётя Наташа увидев нас, набрала две тарелки ухи."
 
@@ -2628,6 +2646,7 @@ label bkrr_day17_common:
     mi "Все тайны, тайны. Пойдём, покажем гостям наши богатства."
 
     stop ambience fadeout 2
+    stop music fadeout 5
     scene bg int_music_club_mattresses_day with fade2
     play ambience bkrr_ambience_list["indoors_day"] fadein 2
 
@@ -2859,6 +2878,7 @@ label bkrr_day17_common:
     mi "Я поняла."
     mt "Ну, раз так – до вечера свободны."
 
+    play music music_list["goodbye_home_shores"] fadein 10
     stop ambience fadeout 2
     scene bg ext_music_club_verandah_day_v7 with dissolve
     play ambience ambience_camp_center_day fadein 3
@@ -2942,6 +2962,7 @@ label bkrr_day17_common:
 
     hide mi with dissolve
     play sound sfx_open_door_1
+    stop music fadeout 7
 
     "Мику скрылась за дверью. Мне предстояло скоротать время до вечера. Спать не хотелось, так что я решил вернуться в клуб."
 
@@ -3007,6 +3028,9 @@ label bkrr_day17_common:
     hide dv with dissolve
 
     "Я почему-то смутился и отвернулся.{w} Какое-то время мы молчали, потом Алиса внезапно предложила:"
+
+    play music music_list["gentle_predator"] fadein 7
+
     dv "Хочешь, посмотрим вместе?"
     me "Алиса, не начинай.{w} Не надо."
     dv "Да ладно тебе, никто и не узнает."
@@ -3059,7 +3083,10 @@ label bkrr_day17_common:
 
     show dv shy with dspr
 
-    $ renpy.pause(0.5, hard=True)
+    window hide
+    $ renpy.pause(1.0, hard=True)
+    stop music fadeout 5
+    window show
 
     "Алиса слегка смутилась и сменила тему."
 
@@ -4145,7 +4172,7 @@ label bkrr_day17_common:
 
     stop music fadeout 10
     window hide
-    $ renpy.pause
+    $ renpy.pause(1.0, hard=True)
     window show
 
     "Вожатая деловито выправила подол рубашки, подобрала нож и стала резать ткань на полосы."
@@ -4240,6 +4267,8 @@ label bkrr_day17_common:
     me "Не надо верёвок. Сначала попробуем так."
 
     window hide
+    $ bkrr_set_volume("sound", 0.1)
+    play sound bkrr_sfx_list["trapdoor_open"]
     $ renpy.pause(1.0, hard=True)
     window show
 
@@ -4295,6 +4324,7 @@ label bkrr_day17_common:
     window hide
     scene bg ext_music_club_verandah_night_v2 with fade2
     pause 0.5
+    $ bkrr_set_volume("sound", 0.2)
     play sound sfx_open_door_1
     stop ambience fadeout 2
     scene bg int_music_club_mattresses_night with dissolve
