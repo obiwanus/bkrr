@@ -876,6 +876,11 @@ init 2:
             "mi smile yukata close"
             center
 
+    # Прочие эффекты
+
+    image d17_knife_slice = bkrr_im_filepath["mod"] + "misc/d17_knife_slice.png"
+    image d17_knife_slice2 = bkrr_im_filepath["mod"] + "misc/d17_knife_slice2.png"
+
     ##    Звуки    ##
 
     $ bkrr_sfx_list = bkrr_form_files_list("mods/bkrr/sound/sfx/")
@@ -1268,6 +1273,22 @@ init 1:
             ease 5.0 alpha 0.0 zoom 1.0
         contains:
             im.MatrixColor(ImageReference(imgn), im.matrix.brightness(0.5))
+            truecenter
+            alpha 0.9
+            zoom 1.075
+            ease 5.0 alpha 0.0 zoom 1.0
+
+    transform bkrr_awakening_dark(imgn):
+        contains:
+            ImageReference(imgn)
+        contains:
+            im.MatrixColor(ImageReference(imgn), im.matrix.brightness(0.1))
+            truecenter
+            alpha 0.9
+            zoom 1.05
+            ease 5.0 alpha 0.0 zoom 1.0
+        contains:
+            im.MatrixColor(ImageReference(imgn), im.matrix.brightness(0.1))
             truecenter
             alpha 0.9
             zoom 1.075
