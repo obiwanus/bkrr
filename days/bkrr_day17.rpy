@@ -3408,6 +3408,7 @@ label bkrr_day17_common:
 
     pi_v "Эй, ты живой?"
 
+    $ bkrr_set_volume("sound", 0.3)
     play sound [ sfx_face_slap, "<silence 0.5>", sfx_face_slap ]
 
     play music music_list["drown"] fadein 10
@@ -3417,6 +3418,8 @@ label bkrr_day17_common:
     window show
 
     "Меня похлопали по щекам."
+
+    $ bkrr_set_volume("sound", 1.0)
 
     play sound bkrr_sfx_list["whiteout2"]
     show bkrr_pi smile close at bkrr_sit_center with dissolve
