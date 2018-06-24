@@ -4545,11 +4545,20 @@ label bkrr_day17_common:
     # - Дрочеры не нужны
     #   © Сергей Нипалов
 
-    scene cg d17_tmp_sex with bkrr_fade(10.0, "black")
+    scene cg d17_tmp_sex:
+        zoom 2.0
+        xalign 1.0
+        yalign 0.7
+    with bkrr_fade(10.0, "black")
+    scene cg d17_tmp_sex:
+        zoom 2.0
+        xalign 1.0
+        yalign 0.7
+        ease 17.0 xalign 0.2
     $ renpy.pause(15.0)
     scene black with fade2
-    stop music fadeout 5
-    $ renpy.pause(5.0)
+    stop music fadeout 8
+    $ renpy.pause(8.0)
 
     $ persistent.bkrr_check[18] = True
 

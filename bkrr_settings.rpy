@@ -775,7 +775,7 @@ init 2:
             im.Scale(bkrr_im_filepath["mod"] + "cg/d15_mi_sleep.png", config.screen_width, config.screen_height)
         contains:
             Solid("#000")
-            alpha 0.95
+            alpha 0.90
     image cg d18_bed_1 = im.Scale(bkrr_im_filepath["mod"] + "cg/d18_bed_1.jpg", config.screen_width, config.screen_height)
     image cg d18_bed_2 = im.Scale(bkrr_im_filepath["mod"] + "cg/d18_bed_2.jpg", config.screen_width, config.screen_height)
 
