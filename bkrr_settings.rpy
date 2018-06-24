@@ -691,8 +691,7 @@ init 2:
             xalign 0.57
             yalign 1.0
             zoom 0.93
-    image cg d9_wounded_dv_1 = bkrr_im_filepath["mod"] + "cg/d9_wounded_dv_1.png"
-    image cg d9_wounded_dv_2 = bkrr_im_filepath["mod"] + "cg/d9_wounded_dv_2.png"
+    image cg d9_wounded_dv = bkrr_im_filepath["mod"] + "cg/d9_wounded_dv.png"
     image cg d9_squirrel_1 = im.MatrixColor(bkrr_im_filepath["mod"] + "cg/d9_squirrel_1.png", bkrr_tint["sunset"])
     image cg d9_squirrel_2 = im.MatrixColor(bkrr_im_filepath["mod"] + "cg/d9_squirrel_2.png", bkrr_tint["sunset"])
     image cg d9_kiss = bkrr_im_filepath["mod"] + "cg/d9_kiss.png"
@@ -771,6 +770,14 @@ init 2:
     image cg d16_cryptography = bkrr_im_filepath["mod"] + "cg/d16_cryptography.png"
     image cg d16_gulls = bkrr_im_filepath["mod"] + "cg/d16_gulls.jpg"
     image cg d17_alisa_klaus = bkrr_im_filepath["mod"] + "cg/d17_alisa_klaus.jpg"
+    image cg d17_tmp_sex:
+        contains:
+            im.Scale(bkrr_im_filepath["mod"] + "cg/d15_mi_sleep.png", config.screen_width, config.screen_height)
+        contains:
+            Solid("#000")
+            alpha 0.95
+    image cg d18_bed_1 = im.Scale(bkrr_im_filepath["mod"] + "cg/d18_bed_1.jpg", config.screen_width, config.screen_height)
+    image cg d18_bed_2 = im.Scale(bkrr_im_filepath["mod"] + "cg/d18_bed_2.jpg", config.screen_width, config.screen_height)
 
     # Комбинированные сюжетные вставки, анимированные и статичные (тоже идут под тегом cg)
 

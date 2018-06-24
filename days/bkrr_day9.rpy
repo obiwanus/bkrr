@@ -1477,7 +1477,7 @@ label bkrr_day9_common:
 
     window hide
 
-    scene cg d9_wounded_dv_1 with dissolve
+    scene cg d9_wounded_dv with dissolve
 
     play music music_list["went_fishing_caught_a_girl"] fadein 5
 
@@ -1499,8 +1499,6 @@ label bkrr_day9_common:
     window hide
 
     stop ambience fadeout 3
-
-    scene cg d9_wounded_dv_2 with fade3
 
     play ambience ambience_camp_center_day fadein 3
 
