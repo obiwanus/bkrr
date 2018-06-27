@@ -813,7 +813,7 @@ label bkrr_day17_common:
     $ renpy.pause(0.3, hard=True)  # чтобы не скипнули сразу
 
     scene bg ext_house_of_sl_day_zhenya at bkrr_shake_atl with vpunch
-    play audio bkrr_sfx_list["sem_falls_on_floor"]
+    play sound3 bkrr_sfx_list["sem_falls_on_floor"]
     scene bg ext_house_of_sl_day with dissolve
 
     "Я заорал от неожиданности и отскочил на пару шагов назад, чуть не упав с лестницы."
