@@ -7508,6 +7508,99 @@ init 2:
         "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_3_upset.png"), bkrr_tint["night"]),
         True, im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_3_upset.png"))
 
+    # Мику в простынях (только close)
+
+    image mi angry sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_angry.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_angry.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_angry.png"))
+
+    image mi cry sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_cry.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_cry.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_cry.png"))
+
+    image mi cry_smile sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_cry_smile.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_cry_smile.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_cry_smile.png"))
+
+    image mi dontlike sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_dontlike.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_dontlike.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_dontlike.png"))
+
+    image mi grin sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_grin.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_grin.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_grin.png"))
+
+    image mi happy sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_happy.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_happy.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_happy.png"))
+
+    image mi laugh sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_laugh.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_laugh.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_laugh.png"))
+
+    image mi normal sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_normal.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_normal.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_normal.png"))
+
+    image mi rage sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_rage.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_rage.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_rage.png"))
+
+    image mi sad sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_sad.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_sad.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_sad.png"))
+
+    image mi sad_smile sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sad_smile.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sad_smile.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sad_smile.png"))
+
+    image mi scared sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_scared.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_scared.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_scared.png"))
+
+    image mi serious sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_serious.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_serious.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_serious.png"))
+
+    image mi shocked sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_shocked.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_shocked.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_shocked.png"))
+
+    image mi shy sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_shy.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_shy.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_shy.png"))
+
+    image mi smile sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_smile.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_smile.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_smile.png"))
+
+    image mi surprise sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_surprise.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_surprise.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_surprise.png"))
+
+    image mi upset sheet close = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_upset.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_upset.png"), bkrr_tint["night"]),
+        True, im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_sheet.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_upset.png"))
+
+
     # Мику в пионерской форме и с распущенными волосами
 
     image mi angry pioneer_loo = ConditionSwitch(

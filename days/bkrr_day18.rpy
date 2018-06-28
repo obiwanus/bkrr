@@ -54,13 +54,9 @@ label bkrr_day18_common:
 
     scene bg int_music_club_mattresses_sunset with fade2
 
-    show bkrr_todo "Нужен спрайт Мику в простыне"
-
     "Мику села, покрывало, которым мы были укрыты, сползло вниз, почти оголив её грудь. С тихим «ой» она вернула его назад."
 
-    hide bkrr_todo
-
-    show mi upset shorts close with dissolve
+    show mi upset sheet close with dissolve
 
     mi "Отвернись, пожалуйста! Я стесняюсь."
     me "Думаешь, ещё нужно?"
@@ -93,7 +89,7 @@ label bkrr_day18_common:
 
     me "Что-то потеряла?"
 
-    show mi shy shorts close with dissolve
+    show mi shy sheet close with dissolve
 
     mi "Она присела рядом."
     mi "Да."
@@ -118,7 +114,7 @@ label bkrr_day18_common:
 
     "Она бесцеремонно стащила с меня покрывало.{w} От присутствия рядом любимой девушки, мой организм демонстрировал готовность продолжить ночные игры."
 
-    show mi surprise shorts close with dissolve
+    show mi surprise sheet close with dissolve
 
     mi "Ой… Ты опять?"
     me "Это потому, что я тебя очень люблю!"
@@ -141,7 +137,7 @@ label bkrr_day18_common:
 
     "Не найдя искомую деталь одежды, Мику махнула рукой и надела юбку и рубашку."
 
-    show mi normal pioneer with dissolve
+    show mi normal pioneer_loo with dissolve
 
     mi "Я скоро вернусь!"
     me "Куда ты?"
@@ -169,7 +165,7 @@ label bkrr_day18_common:
 
     $ bkrr_timeskip_short()
     scene bg int_music_club_mattresses_sunset
-    show mi smile pioneer close
+    show mi smile pioneer_loo close
     with bkrr_timeskip_transition()
 
     stop music fadeout 20
@@ -202,7 +198,7 @@ label bkrr_day18_common:
     me "Очень красиво!"
     "Ушко Мику было слишком близко, так что я быстро коснулся губами нежной кожи за ним."
 
-    show mi upset pioneer close with dissolve
+    show mi upset pioneer_loo close with dissolve
 
     mi "Знаешь… Я теперь немного волнуюсь.{w} Что будет дальше?{w} Ну, ты понимаешь? С нами."
     "Я заколебался, не зная, что ответить.{w} Сказать: «прости, милая, но через три дня я могу исчезнуть отсюда и оказаться в другом времени и месте» я не мог."
@@ -217,7 +213,7 @@ label bkrr_day18_common:
     "Она вздохнула и прижалась ко мне. Я провел пальцем по её щеке."
     me "Кажется, кто-то решил, будто я получил что хотел, и теперь сбегу в кусты? Так вот, не дождётесь!"
 
-    show mi normal pioneer close with dissolve
+    show mi normal pioneer_loo close with dissolve
 
     mi "А ты получил, что хотел?"
     me "Да! Только мне не нравится, как это звучит…{w} Случилось то, о чем я долго мечтал - встретил девушку своей мечты, мы с ней вместе и любим друг друга."
@@ -231,7 +227,7 @@ label bkrr_day18_common:
     "Узнать, что подумала моя любимая, я не успел. На дорожке, ведущей к клубу, показалась бегущая рыжая девочка…{w} А затем ещё одна. Рыжая, бегущая и, кажется, злая."
 
     play music music_list["awakening_power"] fadein 5
-    show mi scared pioneer close with dissolve
+    show mi scared pioneer_loo close with dissolve
 
     "Мику широко открыла глаза и схватила меня за руку."
     mi "Ой, они же сюда бегут! Сеня, прячься, быстро!"
@@ -393,7 +389,6 @@ label bkrr_day18_common:
 
     hide dv with dissolve
     scene bg int_music_club_mattresses_sunset at bkrr_shake_atl:
-        # ease 1.0 zoom 1.0
         bkrr_shiver_lite
     with vpunch
 
@@ -422,7 +417,7 @@ label bkrr_day18_common:
     me "Алиса, успокойся! Никто никого не насилует."
     dv "Ты? Ты почему голый? Ах, ты, кобелина! Маньяк!"
 
-    show mi smile pioneer at cright with dissolve
+    show mi smile pioneer_loo at cright with dissolve
 
     mi "Тихо!"
     "Мику улыбнулась, отпустила Алису и протянула ей руку, чтобы помочь встать."
@@ -459,7 +454,7 @@ label bkrr_day18_common:
     me "Алис, ну не ругайся. Мы ничего такого не сделали. И потом - я же её люблю!"
 
     hide mi with dissolve
-    show mi smile pioneer close at right with dissolve
+    show mi smile pioneer_loo close at right with dissolve
 
     "Я подошел поближе к Мику и обнял её. Алиса снова покраснела и проворчала:"
 
@@ -494,7 +489,7 @@ label bkrr_day18_common:
     dv "Да ладно. От легкого подзатыльника еще никто не умирал."
     me "Я про Ульяну… "
 
-    show mi smile pioneer close at right with dissolve
+    show mi smile pioneer_loo close at right with dissolve
 
     mi "Сенька, ты не девушка, тебе не понять! Это для её же пользы было!"
 
@@ -508,7 +503,7 @@ label bkrr_day18_common:
     dv "Дальше эта мелкая зараза обиделась! И принялась мне на юбке крючки переставлять.{w} День за днем."
     dv "Я по одежде смотрю: толстею.{w} У Виолы взвешусь – нет, вес падает.{w} Чуть с ума не сошла."
 
-    show mi smile pioneer at cright with dissolve
+    show mi smile pioneer_loo at cright with dissolve
 
     mi "Алиса по этому поводу переживает!"
     "Мику ласково погладила подругу по голове."
