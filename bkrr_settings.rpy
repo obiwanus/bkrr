@@ -1221,6 +1221,22 @@ init 1:
             ease 0.15 ypos 0.505
             repeat
 
+    transform bkrr_shiver_lite:
+        truecenter
+        ease 0.25 zoom 1.005
+        parallel:
+            ease 0.35 zoom 1.006 rotate 0.01
+            ease 0.35 zoom 1.005 rotate -0.01
+            repeat
+        parallel:
+            ease 0.15 xpos 0.499
+            ease 0.15 xpos 0.501
+            repeat
+        parallel:
+            ease 0.25 ypos 0.499
+            ease 0.25 ypos 0.501
+            repeat
+
     # Отсвет от пламени (да, быдлокод)
 
     transform bkrr_glow_atl(imgf):
