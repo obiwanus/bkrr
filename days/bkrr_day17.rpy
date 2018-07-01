@@ -3068,11 +3068,16 @@ label bkrr_day17_common:
 
     window hide
     $ renpy.pause(1.0, hard=True)
+    scene cg d17_klaus_guitar with dissolve
     window show
 
     "Наконец, замок со щелчком поддался и Алиса открыла кофр."
-    "Внутри лежала тёмно-коричневая гитара.{w} Была она чем-то похожа на наш акустический бас: вместо круглой дыры-розетки под струнами, на этой было два фигурных выреза, словно на скрипке. На грифе желтела полустёртая надпись «Мusima».{w} Никаких ручек-регуляторов не было, но звукосниматель под струнами не оставлял сомнений, что гитара электрическая."
+    "Внутри лежала тёмно-коричневая гитара.{w} Была она чем-то похожа на наш акустический бас: вместо круглой дыры-розетки под струнами, на этой было два фигурных выреза, словно на скрипке. На грифе желтела полустёртая надпись «Мusima»."
+    "Никаких ручек-регуляторов не было, но звукосниматель под струнами не оставлял сомнений, что гитара электрическая."
     dv "Интересная какая… Ну-ка!"
+
+    scene bg int_music_club_mattresses_day with fade2
+
     "Она, никуда не включая, устроила гитару на коленях и попробовала сыграть."
 
     show dv normal pioneer far at cleft with dissolve
@@ -3378,7 +3383,7 @@ label bkrr_day17_common:
         ease 0.5 alpha 1.0
     with None
 
-    play sound [ bkrr_sfx_list["silence1"],  bkrr_sfx_list["body_hit"], bkrr_sfx_list["silence1"], bkrr_sfx_list["silence1"],  bkrr_sfx_list["body_hit"], sfx_bodyfall_1 ]
+    play sound [ bkrr_sfx_list["silence1"],  bkrr_sfx_list["body_hit"], bkrr_sfx_list["silence2"], bkrr_sfx_list["body_hit"], sfx_bodyfall_1 ]
     play sound2 [ bkrr_sfx_list["silence1"],  bkrr_sfx_list["ear_buzz"] ]
     stop ambience fadeout 1.5
 
@@ -4023,7 +4028,7 @@ label bkrr_day17_common:
     pi "Мне нужна не ты. Не мешай!{w=2.0}{nw}"
     "Он замахнулся ножом, метя в Ольгу, но не успел.{w=2.0}{nw}"
 
-    play sound [ bkrr_sfx_list["silence05"], bkrr_sfx_list["body_hit"], sfx_bodyfall_1 ]
+    play sound [ bkrr_sfx_list["silence03"], bkrr_sfx_list["body_hit"], sfx_bodyfall_1 ]
 
     show uv rage:
         xalign -1.0

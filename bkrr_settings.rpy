@@ -770,6 +770,7 @@ init 2:
     image cg d16_cryptography = bkrr_im_filepath["mod"] + "cg/d16_cryptography.png"
     image cg d16_gulls = bkrr_im_filepath["mod"] + "cg/d16_gulls.jpg"
     image cg d17_alisa_klaus = bkrr_im_filepath["mod"] + "cg/d17_alisa_klaus.jpg"
+    image cg d17_klaus_guitar = im.Scale(bkrr_im_filepath["mod"] + "cg/d17_klaus_guitar.jpg", config.screen_width, config.screen_height)
     image cg d17_tmp_sex:
         contains:
             im.Scale(bkrr_im_filepath["mod"] + "cg/d15_mi_sleep.png", config.screen_width, config.screen_height)
