@@ -1651,7 +1651,7 @@ label bkrr_day17_common:
     "Та присмотрелась и покачала головой."
     mt "Я с вами с ума сойду!"
 
-    play sound [ "<silence 2>",  bkrr_sfx_list["horse"] ]
+    play sound [ bkrr_sfx_list["silence1"],  bkrr_sfx_list["horse"] ]
 
     "Вскоре я понял, что её так удивило. Вместо большого автобуса или хотя бы машины по шоссе неторопливо ехала телега, запряжённая белой лошадью. Кажется, на ней лежал стог сена и кто-то сидел."
 
@@ -2227,7 +2227,7 @@ label bkrr_day17_common:
 
     kla "Здорово! Сколько у вас всего. Даже рояль есть!"
 
-    show mi smile pioneer fat at cright with dissolve
+    show mi smile pioneer at cright with dissolve
 
     mi "И не он один!"
 
@@ -2309,7 +2309,8 @@ label bkrr_day17_common:
 
     tr "Сирк? Нет… А что такое сирк?"
 
-    play music music_list["doomed_to_be_defeated"] fadein 7
+    # play music music_list["doomed_to_be_defeated"] fadein 7
+    play music music_list["revenga"] fadein 5
 
     us "Вон туда смотри, сейчас сам увидишь."
 
@@ -2369,7 +2370,6 @@ label bkrr_day17_common:
 
     stop sound_loop
     hide bkrr_bang
-    stop music fadeout 3
 
     "Алиса остановила журнал на замахе. {w} Потом сообразила, что одета не полностью, бросила журнал, прикрылась руками и взвизгнула:"
 
@@ -2442,6 +2442,8 @@ label bkrr_day17_common:
     kla "Нет, он говорил, что ты играешь на гитаре."
 
     show dv normal with dspr
+
+    stop music fadeout 5
 
     dv "Ну, есть такое. Хочешь послушать?"
 
@@ -2647,7 +2649,6 @@ label bkrr_day17_common:
     mi "Все тайны, тайны. Пойдём, покажем гостям наши богатства."
 
     stop ambience fadeout 2
-    stop music fadeout 5
     scene bg int_music_club_mattresses_day with fade2
     play ambience bkrr_ambience_list["indoors_day"] fadein 2
 
@@ -2700,8 +2701,9 @@ label bkrr_day17_common:
     with dissolve
 
     window hide
-    $ bkrr_set_volume("sound", 0.2)
+    $ bkrr_set_volume("sound", 0.7)
     play sound sfx_dinner_horn_processed
+    stop music fadeout 5
     $ renpy.pause(1.5, hard=True)
     window show
 
@@ -3184,7 +3186,7 @@ label bkrr_day17_common:
     $ bkrr_set_time("sunset")
 
     $ bkrr_set_volume("sound", 0.2)
-    play sound [ "<silence 1.5>", sfx_dinner_horn_processed ]
+    play sound [ bkrr_sfx_list["silence1"], sfx_dinner_horn_processed ]
 
     "До самого ужина так никто и не пришёл. Мику, наверное, всё ещё сидела с вожатыми, Ульяна занималась неизвестно чем, так что репетиция шла, как должна идти: скучно, правильно и продуктивно."
     "Услышав сигнал к ужину, Алиса встала и отложила гитару."
@@ -3223,7 +3225,7 @@ label bkrr_day17_common:
     "Я пошёл в столовую длинным путём.{w} Мы недавно пили чай, есть особо и не хотелось, но вечером мы с Мику пойдём гулять.{w} Глупо получится, если в самый ответственный момент живот заурчит от голода."
 
     $ bkrr_set_volume("sound", 0.3)
-    play sound [ "<silence 1.5>", bkrr_sfx_list["lighter"] ]
+    play sound [ bkrr_sfx_list["silence1"], bkrr_sfx_list["lighter"] ]
 
     "Уединённая тропинка густо поросла кустами, кое-где среди них торчали лавочки, словно приглашающие какую-нибудь влюблённую парочку присесть и целоваться без посторонних глаз."
     "Щёлк-щёлк."
@@ -3349,7 +3351,7 @@ label bkrr_day17_common:
 
     window show
 
-    play sound [ "<silence 1>", sfx_bush_leaves ]
+    play sound [ bkrr_sfx_list["silence1"], sfx_bush_leaves ]
     "Впереди сквозь деревья уже почти показался бронзовый Генда, когда сзади что-то зашуршало."
 
     scene bg ext_path_sunset:
@@ -3376,8 +3378,8 @@ label bkrr_day17_common:
         ease 0.5 alpha 1.0
     with None
 
-    play sound [ "<silence 1>",  bkrr_sfx_list["body_hit"], "<silence 2>",  bkrr_sfx_list["body_hit"], sfx_bodyfall_1 ]
-    play sound2 [ "<silence 1.1>",  bkrr_sfx_list["ear_buzz"] ]
+    play sound [ bkrr_sfx_list["silence1"],  bkrr_sfx_list["body_hit"], bkrr_sfx_list["silence1"], bkrr_sfx_list["silence1"],  bkrr_sfx_list["body_hit"], sfx_bodyfall_1 ]
+    play sound2 [ bkrr_sfx_list["silence1"],  bkrr_sfx_list["ear_buzz"] ]
     stop ambience fadeout 1.5
 
     "Я подумал, что это Виола догоняет меня, но тут меня сильно ударили по голове.{p=1.5}От первого удара зазвенело в ушах, я попытался повернуться, но второй удар окончательно лишил меня сознания.{w=2.5}{nw}"
@@ -3410,7 +3412,7 @@ label bkrr_day17_common:
     pi_v "Эй, ты живой?"
 
     $ bkrr_set_volume("sound", 0.3)
-    play sound [ sfx_face_slap, "<silence 0.5>", sfx_face_slap ]
+    play sound [ sfx_face_slap, bkrr_sfx_list["silence1"], sfx_face_slap ]
 
     play music music_list["drown"] fadein 10
 
@@ -3423,7 +3425,7 @@ label bkrr_day17_common:
     $ bkrr_set_volume("sound", 1.0)
 
     play sound bkrr_sfx_list["whiteout2"]
-    show bkrr_pi smile close at bkrr_sit_center with dissolve
+    show bkrr_pi smile at bkrr_sit_center with dissolve
 
 
     "Зрение медленно сфокусировалось и я смог разглядеть, кто говорит. Мы уже встречались.{w} Снова это странное ощущение, словно смотришься в зеркало. Только отражение кое-где покрыто грязью и слегка растрёпано."
@@ -3438,7 +3440,7 @@ label bkrr_day17_common:
     "Тёмный коридор уходил в темноту, оттуда доносился звук капающей воды и тянуло холодом.{w} На полу поблёскивали лужи, потолок хищно скалился каменными остриями сталактитов."
     me "Голова трещит. Что случилось? Где я?"
 
-    show bkrr_pi normal close at bkrr_sit_center with dissolve
+    show bkrr_pi normal at bkrr_sit_center with dissolve
 
     pi "А что ты помнишь?"
     me "Как меня ударили по голове… Хорошо ударили. Совсем как Алиса гитарой."
@@ -3496,7 +3498,7 @@ label bkrr_day17_common:
     "Второй Семён разложил на полу казённое синее одеяло и перекатил меня на него. Стало немного теплее.{w} Последней каплей стало то, что он подложил мне под голову свёрнутую куртку от спортивного костюма."
     "Я всё ещё был как в тумане, голова болела, так что и молча слушал своего двойника, пытаясь придумать, как освободиться.{w} Я не мог понять, чем он стянул мне руки, но вязка была умелая и крепкая."
 
-    show bkrr_pi smile close at bkrr_sit_center with dissolve
+    show bkrr_pi smile at bkrr_sit_center with dissolve
 
     pi "Так лучше? Меня вчера вот так же скрутили, завернули в брезент, да ещё и ногами сверху встали.{w} Тряпка пыльная, рыбой воняет… думал, задохнусь. Больше часа пролежал.{w} И ты ещё: «Извините! Мне бы папку забрать!» "
 
@@ -3513,7 +3515,7 @@ label bkrr_day17_common:
     $ renpy.pause(1.5, hard=True)
     play sound bkrr_sfx_list["whiteout2"]
     scene bg int_mine_coalface
-    show bkrr_pi normal close at bkrr_sit_center
+    show bkrr_pi normal at bkrr_sit_center
     with bkrr_fade(2.0)
     window show
 
@@ -3684,7 +3686,7 @@ label bkrr_day17_common:
 
     "Двойник вскочил и теперь оглядывался по сторонам, словно высматривая что-то. Или кого-то."
 
-    show bkrr_pi normal far with dissolve
+    show bkrr_pi normal with dissolve
 
     pi "Извини, рассказ придётся отложить. Скоро у нас будут гости."
     me "Ты же говорил «два часа»?"
@@ -3852,7 +3854,7 @@ label bkrr_day17_common:
     mi "Он тебя всегда находит, и мы решили попробовать. И он не подвёл! Ты моя умница!"
 
     # $ bkrr_set_volume("sound", 0.4)
-    # play sound [ "<silence 1>", bkrr_sfx_list["meow2"] ]
+    # play sound [ "<silence 1.>", bkrr_sfx_list["meow2"] ]
 
     # "С этими словами, она расцеловала мохнатую кошачью морду. Тот фыркнул и попытался освободиться. Дурачок, я бы с ним охотно поменялся."
 
@@ -4021,7 +4023,7 @@ label bkrr_day17_common:
     pi "Мне нужна не ты. Не мешай!{w=2.0}{nw}"
     "Он замахнулся ножом, метя в Ольгу, но не успел.{w=2.0}{nw}"
 
-    play sound [ "<silence 0.3>", bkrr_sfx_list["body_hit"], sfx_bodyfall_1 ]
+    play sound [ bkrr_sfx_list["silence05"], bkrr_sfx_list["body_hit"], sfx_bodyfall_1 ]
 
     show uv rage:
         xalign -1.0
@@ -4067,7 +4069,7 @@ label bkrr_day17_common:
         pause 0.5
         ease 0.1 ypos 0.1
         ease 0.2 ypos 0.0
-    play sound [ "<silence 0.5>", bkrr_sfx_list["balls_kick"] ]
+    play sound [ bkrr_sfx_list["silence05"], bkrr_sfx_list["balls_kick"] ]
 
     "Он попытался коснуться её лица, но тут же пропустил хороший удар в лоб."
     uv "Ты меня не любишь?"
