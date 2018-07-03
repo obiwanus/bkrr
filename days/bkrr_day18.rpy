@@ -75,7 +75,8 @@ label bkrr_day18_common:
     me "Мне не понять!"
 
     hide mi
-    show blink
+    show black:
+        alpha 0.95
     with dissolve
 
     "Я улыбнулся и накрыл лицо краем покрывала."
@@ -84,9 +85,7 @@ label bkrr_day18_common:
     "Разумеется, я не послушался. Приподняв краешек ткани, я наблюдал, как Мику, завернувшись во второе покрывало, что-то торопливо ищет."
     mi "Да где же они! Ну… "
 
-    scene bg int_music_club_mattresses_sunset
-    show unblink
-    with None
+    hide black with dissolve
 
     me "Что-то потеряла?"
 
@@ -227,7 +226,7 @@ label bkrr_day18_common:
 
     "Узнать, что подумала моя любимая, я не успел. На дорожке, ведущей к клубу, показалась бегущая рыжая девочка…{w} А затем ещё одна. Рыжая, бегущая и, кажется, злая."
 
-    play music music_list["awakening_power"] fadein 5
+    play music music_list["awakening_power"] fadein 3
     show mi scared pioneer_loo close with dissolve
 
     "Мику широко открыла глаза и схватила меня за руку."
@@ -316,15 +315,13 @@ label bkrr_day18_common:
 
     us "А нечего про мои размеры шутить!"
 
-    show dv rage at cleft
-    show us evsmile at cright
-    with ease
+    show dv rage at cleft with ease
 
     dv "Ой, скажешь тоже! «Размеры». Какие там у тебя размеры, прыщики одни."
 
     show us evsmile pioneer:
-        ease 0.5 pos (0.5, 0)
-        ease 0.5 pos (0.645, 0)
+        ease 0.35 pos (0.5, 0)
+        ease 0.3 pos (0.645, 0)
 
     "Ульяна аж подскочила и сделала выпад ракеткой, едва не задев нос Алисы."
     us "Лучше прыщики, чем такое вымя! Корова!"
@@ -369,7 +366,7 @@ label bkrr_day18_common:
 
     show dv shocked:
         zoom 1.4
-        linear 7.0 zoom 1.1
+        linear 6.0 zoom 1.1
 
     "Я вдруг понял, что из одежды на мне только зуб-медиатор, и тот висит на шее."
     "Схватив первое, что попалось под руку, я прикрылся, но было поздно. Алиса уже пятилась от меня и пронзительно кричала:"
@@ -386,6 +383,9 @@ label bkrr_day18_common:
     "С этими словами она увернулась от Мику и, смеясь, пулей выскочила из музклуба."
 
     hide dv with dissolve
+
+    play sound bkrr_sfx_list["body_hit"]
+
     scene bg int_music_club_mattresses_sunset at bkrr_shake_atl:
         bkrr_shiver_lite
     show red:
@@ -399,13 +399,23 @@ label bkrr_day18_common:
     with vpunch
 
     "Алиса тем временем схватила толстую нотную папку и принялась от души молотить меня по голове, не переставая оглашать клуб воплями."
+
+    show dv shocked pioneer2 with dissolve
+
     dv "Не подходи! Зашибу! Только подойди! НАСИЛУЮТ!!! Мику, беги, зови вожатую!"
     "Да что же это делается? Я кое-как увернулся от очередного удара, одной рукой придерживал тряпку, которой прикрывался, а второй защищал голову."
     mi "Алиса, успокойся!"
 
+    show mi dontlike pioneer_loo at cleft with easeinleft
+
     play sound bkrr_sfx_list["sem_falls_on_floor"] fadein 1
     scene bg int_music_club_mattresses_sunset
+    show mi dontlike pioneer_loo at cleft
+    show dv shocked pioneer2
     with vpunch
+
+    hide dv with easeoutbottom
+    hide mi with easeoutbottom
 
     "Мику ухватила Алису за плечи, ловко подсекла ей ноги и очень осторожно уложила на пол, придерживая, чтобы не ушибить."
     dv "И ты с ним? Не трогай меня! Пустите! Мама! Спасите кто-нибудь!"
@@ -485,12 +495,33 @@ label bkrr_day18_common:
 
     "Алиса вздохнула, отошла к вазочке, где обычно лежали конфеты, пошуршала пустыми фантиками, ничего не нашла и разочарованно вернулась к нам."
 
-    play music music_list["timid_girl"] fadein 7
+    play music music_list["timid_girl"] fadein 5
 
     show dv guilty pioneer2 at cleft with dissolve
 
-    dv "У нас за неделю до твоего приезда были танцы. И Ульяна так сильно переживала из-за своего размера, что насовала за пазуху платков.{w}Чтобы больше казалось."
+    dv "У нас за неделю до твоего приезда были танцы…"
+
+    play sound bkrr_sfx_list["whiteout1"]
+    scene expression bkrr_make_sepia_img("bg ext_square_night_party")
+    show prologue_dream:
+        alpha 0.0
+        ease 3.0 alpha 0.25
+        ease 3.0 alpha 0.0
+    with bkrr_fade(2.0)
+
+    dv "И Ульяна так сильно переживала из-за своего размера, что насовала за пазуху платков.{w} Чтобы больше казалось."
+
+    show dv angry pioneer2 sepia at cleft
+    show us angry pioneer sepia at cright
+    with dissolve
+
     dv "Я её затащила в угол, отобрала платки и сказала не заниматься глупостями. Кто-то из младших нас заметил, стали дразниться.{w} Я, конечно, подошла и обещала им носы поломать, если еще один смешок услышу."
+
+    play sound bkrr_sfx_list["whiteout2"]
+    scene bg int_music_club_mattresses_sunset
+    show dv normal pioneer2 at cleft
+    with bkrr_fade(2.0)
+
     me "Жестоко…"
     dv "Да ладно. От легкого подзатыльника еще никто не умирал."
     me "Я про Ульяну… "
@@ -568,7 +599,10 @@ label bkrr_day18_common:
     stop music fadeout 7
     stop ambience fadeout 2
     play sound sfx_open_door_1
-    scene bg ext_music_club_verandah_day_v9 with dissolve
+    scene bg ext_music_club_verandah_day_v9:
+    show black:
+        alpha 0.2
+    with dissolve
     play ambience ambience_camp_center_day fadein 3
 
     "Я помахал им и вышел из клуба. Душ надо, однозначно, но сначала придется сходить в домик."
@@ -576,7 +610,10 @@ label bkrr_day18_common:
     # УТРЕННИЕ ОТВЕТЫ У ВОЖАТОЙ
 
     stop ambience fadeout 2
-    scene bg int_house_of_mt_sunset with fade2
+    scene bg int_house_of_mt_sunset
+    show black:
+        alpha 0.2
+    with fade2
     play ambience ambience_int_cabin_day fadein 3
 
     "Я добрался до нашего с Ольгой жилища и вошел.{w} Уже открыв дверь, я сообразил, что надо бы постучать."
@@ -638,6 +675,9 @@ label bkrr_day18_common:
 
     show mt normal with dspr
 
+    stop ambience fadeout 3
+    play music music_list["just_think"] fadein 5
+
     mt "Совсем не простой."
     "Наконец-то! Я приготовился слушать рассказ о том, что же это за место, но не тут-то оно было."
     "Вместо того, чтобы достать из-за пазухи желто-черную книжку «Мистический пионерский лагерь для чайников», вожатая продолжила:"
@@ -645,9 +685,6 @@ label bkrr_day18_common:
     show mt smile with dspr
 
     mt "Только я и сама не знаю, что это за место.{w} Просто я здесь дольше тебя, вот и всё."
-
-    stop ambience fadeout 3
-    play music music_list["just_think"] fadein 10
 
     hide mt with dissolve
 
@@ -742,7 +779,7 @@ label bkrr_day18_common:
 
     show mt smile with dspr
 
-    "Ольга подумала немного, затем улыбнулась"
+    "Ольга подумала немного, затем улыбнулась."
     mt "Смешно… Мы сейчас почти повторяем тот разговор, только роли поменялись. Те же вопросы, те же ответы…"
 
     hide mt with dissolve
@@ -795,6 +832,8 @@ label bkrr_day18_common:
     mt "Вот ведь, зануда, а? Я его кормлю, пою и воспитываю, а он брюзжит."
     me "Сами спросили. А остальные вожатые, они тоже, как мы?"
 
+    stop music fadeout 10
+    play ambience ambience_int_cabin_day fadein 5
 
     show mt normal with dspr
 
@@ -824,7 +863,16 @@ label bkrr_day18_common:
 
     show mt normal with dspr
 
-    mt "Не знаю. И Андрей тоже не знал. Я думаю, – это всё сам лагерь!"
+    mt "Не знаю. И Андрей тоже не знал."
+
+    show mt sad with dspr
+    window hide
+    $ renpy.pause(1.0, hard=True)
+    window show
+
+    show mt smile with dspr
+
+    mt "Я думаю, – это всё сам лагерь!"
 
     hide mt with dissolve
 
@@ -853,11 +901,15 @@ label bkrr_day18_common:
     me "Да, пожалуй, мне повезло.{w} Ладно, значит, время от времени сюда попадают такие, как мы, выдернутые из своего времени. А часто?"
     mt "Время от времени. Чаще все-таки приезжают обычные пионеры. Приезжают, уезжают…{w} Такие, как мы – здесь редкие гости."
     "Наконец, я задал главный вопрос. Тот, что волновал меня больше всего. Тот, на который я боялся услышать ответ."
-    me  "И… что со мной будет дальше?"
+
+    stop ambience fadeout 3
+    play music music_list["you_won_t_let_me_down"] fadein 5
+
+    me "И… что со мной будет дальше?"
 
     show mt smile with dspr
 
-    mt "Да кто ж тебя знает? Это вопрос не ко мне. Моё дело – присматривать за вами в лагере, а что будет дальше – не знаю."
+    mt "Да кто ж тебя знает? Это вопрос не ко мне.{w} Моё дело – присматривать за вами в лагере, а что будет дальше – не знаю."
     mt "Может, эти твои друзья что-нибудь скажут. Те, что мы в подземелье видели."
     me "Они уже наговорили. Такого наговорили, что я теперь боюсь ложиться спать."
 
@@ -1412,10 +1464,14 @@ label bkrr_day18_common:
 
     show mi smile pioneer close at cright
     show dv grin pioneer close at left
+
     with dissolve
 
     "Я присел рядом."
     "На столе меня и Ульяну уже поджидали две порции гречневой каши с сардельками."
+
+    show dv smile with dspr
+
     me "М-м-м… как же я проголодался. Спасибо, что на меня тоже взяли. Кто же это у нас такой заботливый?"
 
     show mi normal with dspr
@@ -1443,7 +1499,7 @@ label bkrr_day18_common:
     dv "Вы посмотрите на эту наглую морду. Ладно, объедай несчастную подругу."
     me "Ну не делай такое лицо. Я же сказал, что принесу, если тебе двух тарелок не хватит.{w} Хочешь, сардельку отдам? Я бутерброд с колбасой утром cъел, так что обойдусь."
 
-    show dv
+    show dv grin with dspr
 
     dv "Вот как? Сам, значит, колбасу трескает, а мне утром – «На холодный чай без сахара и заварки, а больше ничего нет»?"
     me "Неправда! Заварка там была. И он был почти горячий. Ладно, раз не хочешь…"
@@ -1455,7 +1511,7 @@ label bkrr_day18_common:
     "И тут же отобрала тарелку у Ульяны."
     us "Алиса, ты чего, с дуба рухнула?"
     dv "Тихо!"
-    "Алиса порылаcь вилкой в ульянкиной тарелке, вытащила из её каши несколько горошин черного перца и отложила их на салфетку"
+    "Алиса порылаcь вилкой в ульянкиной тарелке, вытащила из её каши несколько горошин черного перца и отложила их на салфетку."
     dv "Вот. Теперь лопай."
     us "Это что такое? Перец? Ты совсем ошалела? Он же горький!"
     dv "Не ной, я же убрала!"
