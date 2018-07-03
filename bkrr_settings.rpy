@@ -9112,7 +9112,7 @@ init 2:
     image dv angry pioneer2 sepia = im.Sepia(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/dv/dv_5_body.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/dv/dv_5_pioneer2.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/dv/dv_5_angry.png"))
 
     image us grin pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/us/us_1_body.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/us/us_1_pioneer.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/us/us_1_grin.png"))
-    image us angry pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/us/us_2_body.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/us/us_2_pioneer.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/us/us_2_angry.png"))
+    image us angry dress sepia = im.Sepia(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["es"] + "sprites/normal/us/us_2_body.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/us/us_2_dress.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/us/us_2_angry.png"))
 
     ## Спрайты для единичного использования
 
