@@ -624,6 +624,8 @@ init 2:
 
     image bg ext_meadow_day = bkrr_im_filepath["mod"] + "bg/ext_meadow_day.jpg"
 
+    image bg ext_camp_car = im.Scale(bkrr_im_filepath["mod"] + "bg/ext_camp_car.png", config.screen_width, config.screen_height)
+
     # Дождливые, пасмурные фоны
 
     image bg ext_music_club_day_rainy_bkrr = bkrr_make_rainy_img(bkrr_im_filepath["es"] + "bg/ext_musclub_day.jpg")
@@ -773,7 +775,7 @@ init 2:
     image cg d17_klaus_guitar = im.Scale(bkrr_im_filepath["mod"] + "cg/d17_klaus_guitar.jpg", config.screen_width, config.screen_height)
     image cg d17_tmp_sex:
         contains:
-            im.Scale(bkrr_im_filepath["mod"] + "cg/d15_mi_sleep.png", config.screen_width, config.screen_height)
+            im.Scale(bkrr_im_filepath["mod"] + "cg/d15_mi_sleep.jpg", config.screen_width, config.screen_height)
         contains:
             Solid("#000")
             alpha 0.90
