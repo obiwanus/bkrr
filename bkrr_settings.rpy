@@ -2983,6 +2983,12 @@ init 2:
         "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/sh/sh_1_shirt.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/sh/sh_1_upset.png"), bkrr_tint["night"]),
         True, im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/sh/sh_1_shirt.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/sh/sh_1_upset.png"))
 
+    # Шурик-ведроид
+
+    image el vedro = bkrr_im_filepath["mod"] + "sprites/normal/el/vedro_normal.png"
+    image el vedro close = bkrr_im_filepath["mod"] + "sprites/close/el/vedro_close.png"
+    image el vedro far = bkrr_im_filepath["mod"] + "sprites/far/el/vedro_far.png"
+
     # Электроник в футболке
 
     image el angry shirt:
