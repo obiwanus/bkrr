@@ -880,7 +880,7 @@ label bkrr_day17_common:
     sl "Семён? Доброе утро!"
     "Славя вытирала мокрое лицо."
 
-    show mz normal mask with dspr
+    show mz normal mask bkrr_sport with dspr
     show sl smile sport far with dspr
 
     sl "Ты не пугайся, это мы делали ягодную маску. Здесь жёсткая вода, солнце сильно печёт, надо увлажнять кожу, иначе станем сморщенные, как печёная картошка. А ты чего в такую рань?"
