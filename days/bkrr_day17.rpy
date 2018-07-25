@@ -985,22 +985,22 @@ label bkrr_day17_common:
     me "Не беда. Всё равно, мне ещё переодеваться к завтраку. Смотри, что я принёс!"
     "Я достал гребень и показал ей."
 
-    show mi surprise with dspr
+    show mi surprise shorts with dspr
 
     mi "Ой… ты у Слави побывал?"
     me "Ага. И не только. С утра успел погулять, с Шуриком порыбачили, так что на обед будет уха. Я сегодня ранняя пташка."
 
-    show mi smile with dspr
+    show mi smile shorts with dspr
 
     mi "А я соня. Если бы Лена не разбудила, то я и купаться бы не пошла. Мне волосы подсушить надо. Поможешь мне?"
     "Мику посмотрела на меня и провела языком по губам."
 
-    show mi happy with dspr
+    show mi happy shorts with dspr
 
     mi "А то, если я сама, они пола касаются, мне неудобно."
     me "Ну, конечно!"
 
-    show mi smile with dspr
+    show mi smile shorts with dspr
 
     th "Она ещё спрашивает!"
 
@@ -1024,24 +1024,24 @@ label bkrr_day17_common:
     "Мику засмеялась."
     mi "Ай! Я и забыла, что футболку сняла!"
 
-    show mi happy with dspr
+    show mi happy shorts with dspr
 
     "Она поймала край полотенца и прикрыла грудь."
     me "Ага-ага. Забыла она."
     "Я легко потянул полотенце вниз."
 
-    show mi smile with dspr
+    show mi smile shorts with dspr
 
     mi "Глупый! Я правда, забыла. Честно!"
     me "Верю! Ну, раз уже я увидел, то и смысла её надевать нет, правильно?"
     "Мику посмотрела на дверь и с сомнением поинтересовалась:"
 
-    show mi upset with dspr
+    show mi upset shorts with dspr
 
     mi "А если Лена зайдёт?"
     me "Не зайдёт. Она сказала, что до завтрака будет в медпункте."
 
-    show mi normal with dspr
+    show mi normal shorts with dspr
 
     mi "Тогда ладно."
     "Она улыбнулась и отпустила край полотенца, дав ему полностью сползти вниз."
@@ -1049,18 +1049,18 @@ label bkrr_day17_common:
     "Но под полотенцем на ней оказался верх от купальника"
     hide bkrr_todo
 
-    show mi smile with dspr
+    show mi smile shorts with dspr
 
     "Кажется, Мику поняла, что я думал. Во всяком случае, она подмигнула мне и шутливо покачала головой, глядя мне в глаза."
     mi "Я девушка приличная!"
     "Вместо ответа я коснулся губами её плеча, потом шеи и только потом ответил:"
 
-    show mi happy with dspr
+    show mi happy shorts with dspr
 
     me "Я знаю!"
 
     play sound bkrr_sfx_list["whiteout1"]
-    show mi happy:
+    show mi happy shorts:
         truecenter
         parallel:
             ease 10.0 zoom 2.0
@@ -1087,14 +1087,14 @@ label bkrr_day17_common:
     mi "Сеня, волосы… Нужно высушить до завтрака…"
     me "Да-да. Точно."
 
-    show mi normal with dspr
+    show mi normal shorts with dspr
 
     "Я снова взялся за полотенце. Через несколько минут я довольно кивнул."
     me "Кажется, более-менее подсушили!"
     mi "Спасибо! Сейчас причешусь, и пойдём завтракать!"
     "Мику взяла гребень и провела по волосам. Даже на вытянутой руке ей неудобно дотянуться до кончиков.{w} Она пробовала так и эдак, но слишком длинные волосы ей мешали."
 
-    show mi upset with dspr
+    show mi upset shorts with dspr
 
     mi "Ну вот. Одни неудобства. А подстричь жалко, я их очень долго отращивала да и мама не позволит, а папа так вообще расстроится."
     me "Только попробуй эту красоту тронуть! Давай, лучше я помогу?"
@@ -1112,7 +1112,7 @@ label bkrr_day17_common:
 
     stop music fadeout 5
 
-    show mi smile with dspr
+    show mi smile shorts with dspr
 
     "Я улыбнулся и ещё несколько раз провёл гребнем сверху донизу."
 
