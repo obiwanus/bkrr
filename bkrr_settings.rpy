@@ -4928,6 +4928,11 @@ init 2:
         "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_civil2.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/cs/cs_1_shy.png"), bkrr_tint["night"]),
         True, im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_civil2.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/cs/cs_1_shy.png"))
 
+    image cs sad civil2 = ConditionSwitch(
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_civil2.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_sad.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_civil2.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_sad.png"), bkrr_tint["night"]),
+        True, im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_civil2.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_sad.png"))
+
     image cs smile civil2 = ConditionSwitch(
         "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_civil2.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/cs/cs_1_smile.png"), bkrr_tint["sunset"]),
         "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_body.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/cs/cs_1_civil2.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/cs/cs_1_smile.png"), bkrr_tint["night"]),
