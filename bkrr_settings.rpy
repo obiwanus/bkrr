@@ -781,8 +781,16 @@ init 2:
         contains:
             Solid("#000")
             alpha 0.90
-    image cg d18_bed_1 = im.Scale(bkrr_im_filepath["mod"] + "cg/d18_bed_1.jpg", config.screen_width, config.screen_height)
-    image cg d18_bed_2 = im.Scale(bkrr_im_filepath["mod"] + "cg/d18_bed_2.jpg", config.screen_width, config.screen_height)
+    image cg d18_bed_1:
+        contains:
+            im.Scale(bkrr_im_filepath["mod"] + "cg/d18_bed.jpg", config.screen_width, config.screen_height)
+        contains:
+            im.Scale(bkrr_im_filepath["mod"] + "cg/d18_bed_mi_closed.png", config.screen_width, config.screen_height)
+    image cg d18_bed_2:
+        contains:
+            im.Scale(bkrr_im_filepath["mod"] + "cg/d18_bed.jpg", config.screen_width, config.screen_height)
+        contains:
+            im.Scale(bkrr_im_filepath["mod"] + "cg/d18_bed_mi_open.png", config.screen_width, config.screen_height)
     image cg d18_klaus_play = bkrr_im_filepath["mod"] + "cg/d18_klaus_play.png"
 
     # Комбинированные сюжетные вставки, анимированные и статичные (тоже идут под тегом cg)
