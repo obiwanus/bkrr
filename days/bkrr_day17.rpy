@@ -523,7 +523,7 @@ label bkrr_day17_common:
     show sh normal_smile shirt at cright with dspr
 
     sh "А теперь сидим, ждём и получаем удовольствие."
-    me "Это я умею, Сидеть и ждать. В этом я большой специалист!"
+    me "Это я умею, сидеть и ждать. В этом я большой специалист!"
     sh "Не забывай про получение удовольствия!"
     "Шурик прищурился, посмотрел на небо."
 
@@ -577,16 +577,16 @@ label bkrr_day17_common:
 
     sh "Как скажешь.{w} Ладно, где же наша потенциальная уха? Она ставит меня в глупое положение. Обещал же хороший улов, а рыбы и нет."
 
-
     hide sh with dissolve
     window hide
     $ bkrr_timeskip_short()
     scene bg ext_boathouse_sunset_bkrr with bkrr_timeskip_transition()
     window show
 
-    "Наверное, прошло не меньше получаса, прежде чем раздался звук колокольчика."
-
     play music music_list["sweet_darkness"] fadein 6
+    play sound bkrr_sfx_list["fishing_bell"] fadeout 3
+
+    "Наверное, прошло не меньше получаса, прежде чем раздался звук колокольчика."
 
     show sh normal shirt at cright with dissolve
 
