@@ -2339,11 +2339,11 @@ label bkrr_day17_common:
     mi "В клубе! В углу, где подушки лежат.{w} И если она проснется и увидит постороннего мальчика…"
 
     hide mi with dissolve
-    show us grin sport at cleft with easeinleft
+    show us grin sport at cright with dissolve
 
     us "Трук, а ты в цирке когда-нибудь бывал?"
 
-    show tr normal cas at cright with dissolve
+    show tr normal cas at cleft with dissolve
 
     play music music_list["revenga"] fadein 5
 
@@ -2362,6 +2362,15 @@ label bkrr_day17_common:
     $ renpy.pause(0.2, hard=True)
 
     play sound bkrr_sfx_list["broken_glass"]
+
+    $ renpy.pause(0.2, hard=True)
+
+    scene bg ext_music_club_verandah_day_v9:
+        truecenter
+        zoom 3.0
+        pos (0.35, 0.75)
+    with vpunch
+
     "Из клуба раздался крик «СТОЯТЬ!!!» и что-то зазвенело."
     $ renpy.pause(0.5, hard=True)  # чтобы звон успел доиграть
     play sound sfx_open_door_1
@@ -2379,7 +2388,7 @@ label bkrr_day17_common:
         ypos 0.5
         xpos 0.4
         zoom 1.15
-        ease 0.3 xpos 0.45 zoom 1.2
+        ease 0.3 xpos 0.42 zoom 1.2
         pause 0.5
         ease 0.2 xpos 0.3 zoom 1.15 alpha 0.0
     show ext_music_club_verandah_day_v9_double:  # чтобы дверь сама закрылась
@@ -2390,7 +2399,7 @@ label bkrr_day17_common:
         pause 1.0
         ease 0.5 alpha 1.0
     with dissolve
-    play sound [bkrr_sfx_list["silence1"], sfx_close_door_1]
+    play sound [bkrr_sfx_list["silence05"], sfx_close_door_1]
     "В дверях показалась рыжая голова Клауса, но тут же исчезла."
     scene bg ext_music_club_verandah_day_v9:
         truecenter
@@ -2402,6 +2411,7 @@ label bkrr_day17_common:
     "Мы c Мику побежали назад, Ульяна с Труком пошли за нами. Кажется, назревал небольшой международный скандальчик."
 
     $ renpy.pause(0.5, hard=True)
+    play sound sfx_open_door_1
 
     window hide
     stop ambience fadeout 2
