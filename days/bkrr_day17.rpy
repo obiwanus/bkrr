@@ -1700,7 +1700,7 @@ label bkrr_day17_common:
     show mt surprise panama pioneer far at left with dissolve
 
     mt "З-з-дравствуйте. Вы все к нам?"
-    vz "Только эти трое. Я в Бирюки еду, к куме. У этих троих машина сломалась, вот я и подвёз, мне по пути."
+    vz "Только эти трое. Я в Бирюки еду, к куме. У них машина сломалась, вот я и подвёз, мне по пути."
     "Узнав, что лошадь в лагере устраивать не придётся, вожатая с облегчением вздохнула."
 
     show mt smile panama pioneer far with dspr
@@ -1731,7 +1731,7 @@ label bkrr_day17_common:
     mt "Добро пожаловать в пионерский лагерь «Совёнок»! С приездом!{w} А где остальные? С вами есть кто-нибудь из взрослых?"
     "Из кучи сена донёсся приятный баритон."
 
-    show mt surprise with dspr
+    show mt surprise panama pioneer far with dspr
 
     play music music_list["gentle_predator"] fadein 5
 
@@ -1744,29 +1744,32 @@ label bkrr_day17_common:
     ant_unk "А остальные из-за шторма остались в «Дорожнике», вы уж извините.{w} Их там устроили, а до вас ехать далеко, так что в области решили переиграть и прислать только нас. Но к концерту ещё кое-кто приедет."
     "Он помолчал и добавил:"
 
-    show ant smile with dspr
+    show ant smile shirt far with dspr
 
     ant_unk "Мы сильно опоздали на завтрак?"
     "Ольга всё ещё пребывая в замешательстве, покачала головой."
     mt "Нет, сейчас мы вас накормим."
 
-    show mt smile with dspr
+    show mt smile panama pioneer far with dspr
 
     ant_unk "Это было бы здорово. Зовут меня Антон Иванович, только по отчеству всё равно никто не зовёт. Здравствуйте! Я с ними, вроде как сопровождаю."
     mt "Очень приятно! Я вожатая старшего отряда: Ольга…"
 
-    show mt normal with dspr
+    show mt normal panama pioneer far with dspr
     "Она сделала паузу, потом неохотно добавила:"
+
+    show mt smile panama pioneer far with dspr
+
     mt "Дмитриевна."
     ant "Очень! Очень приятно!"
 
-    show ant normal with dspr
+    show ant normal shirt far with dspr
 
     mt "А это пионеры из нашего отряда. Славяна, Женя, Сергей и Семён."
     "Из-за лошади лошади обиженно донеслось:"
     us_v "И Ульяна."
 
-    show mt smile with dspr
+    show mt grin panama pioneer far with dspr
 
     mt "Да, и Ульяна!"
 
@@ -2703,7 +2706,7 @@ label bkrr_day17_common:
     show mi surprise at cleft with ease
     show kla normal pioneer at cright with dissolve
 
-    kla "Нет-нет. Просто мы очень-очень рано выехали. По жаре, ещё и много поели. Вот его и раз-мо-ри-ло."
+    kla "Нет-нет. Просто мы очень-очень рано выехали. По жаре, ещё и много поели. Вот его и раз-{w=0.1}мо-{w=0.1}ри-{w=0.1}ло."
 
     hide kla with dissolve
     show us smile sport at right with dissolve
