@@ -281,6 +281,7 @@ init python:
     }
 
     renpy.image("bkrr_radio_icon", im.FactorScale(bkrr_im_filepath["mod"] + "ui/dialogue_box/radio_icon.png", 0.051))
+    renpy.image("bkrr_speaker_icon", im.FactorScale(bkrr_im_filepath["mod"] + "ui/dialogue_box/speaker_icon.png", 0.051))
 
     def bkrr_chars_define(kind=adv):
         gl = globals()
@@ -302,6 +303,7 @@ init python:
                 gl[i+"_r"] = Character(j[0], kind=kind, who_color=what_color, who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
                 gl[i+"_v"] = Character(u"Голос", kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
                 gl[i+"_radio"] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_prefix=" {image=bkrr_radio_icon} ", what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
+                gl[i+"_speaker"] = Character(j[0], kind=kind, who_color=j[1], who_drop_shadow=drop_shadow, who_suffix=who_suffix, what_color=what_color, what_prefix=" {image=bkrr_speaker_icon} ", what_drop_shadow=drop_shadow, ctc=ctc, ctc_position="fixed")
 
     # Создание / объявление парных персонажей
 
