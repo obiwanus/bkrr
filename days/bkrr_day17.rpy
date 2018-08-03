@@ -1683,11 +1683,14 @@ label bkrr_day17_common:
     "Вскоре я понял, что её так удивило. Вместо большого автобуса или хотя бы машины по шоссе неторопливо ехала телега, запряжённая белой лошадью. Кажется, на ней лежал стог сена и кто-то сидел."
 
     # ПРИЕЕЕЕХАЛИ!!!"
+    show bkrr_todo "TODO: комик-музон"
 
     scene bg ext_no_bus_horse with dissolve
 
     "Белая кобылка остановилась прямо перед воротами. На… как же их называют. На ко́злах? На облучке? На водительском месте, словом, сидел немолодой улыбчивый дядька в широкополой соломенной шляпе."
     "Из телеги на нас с интересом смотрели две мордахи, одна – круглая и рыжая, вторая – худая-прехудая, с чёрными прямыми волосами и большими раскосыми глазами.{w} Рыжий осматривался и улыбался, а азиат бодро грыз большой бублик."
+
+    hide bkrr_todo
 
     play sound bkrr_sfx_list["horse_frrr"]
 
@@ -1788,7 +1791,7 @@ label bkrr_day17_common:
 
     th "Кажется, рыжих музыкантов в этом лагере становится всё больше и больше."
 
-    stop music fadeout 7
+    show bkrr_todo "Рекорд: предложения по музыке приветствуются"
 
     "Антон Иванович повернулся к вознице."
 
@@ -1798,6 +1801,8 @@ label bkrr_day17_common:
     "Возница махнул рукой."
     vz "До свидания! А за машину не волнуйтесь, у нас всё как в сберкассе: оставил-забрал. Механизатор посмотрит, что там у вас, и попробует починить. "
     vz "Главное – не подпускать его к бутылке до начала ремонта, а то плуг приделает, гусеницы от трактора или ещё что-нибудь."
+
+    hide bkrr_todo
 
     show ant surprise with dspr
 
@@ -1824,11 +1829,11 @@ label bkrr_day17_common:
 
     ant "Неудобно как вышло. Меня в последний момент дёрнули, списков не дали, и вообще. Как тебя зовут?"
 
-    "Азиат улыбнулся, ткнул пальцем в грудь "
+    "Азиат улыбнулся, ткнул пальцем в грудь:"
 
     show tr smile1 with dspr
 
-    tr "Трук!"
+    tr_unk "Трук!"
 
     show ant normal with dspr
 
@@ -1837,7 +1842,7 @@ label bkrr_day17_common:
 
     show tr smile2 with dspr
 
-    tr "Трук! Нгуен Ван Трук."
+    tr_unk "Трук! Нгуен Ван Трук."
 
     show ant smile with dspr
 
@@ -1903,8 +1908,6 @@ label bkrr_day17_common:
 
     "Я с сожалением посмотрел в сторону музклуба… Нянчить иностранных гостей совсем не хотелось.{w} Но они с ожиданием смотрели на нас, и сказать «извините, гости дорогие, идите сами, а у меня тут любимая девушка скучает» я не смог."
 
-    show bkrr_todo "Рекорд: предложения по музыке приветствуются"
-
     play music music_list["everyday_theme"] fadein 7
     me "Конечно! Пойдём!"
 
@@ -1912,19 +1915,19 @@ label bkrr_day17_common:
 
     "Ульяна тем временем наблюдала за попытками крошечного вьетнамца оторвать рюкзак от земли. Рюкзак мало уступал ему по размерам."
 
-    show us grin sport at cright with dissolve
+    show us grin sport at right with dissolve
 
     us "Давай, помогу!"
 
-    hide us with dissolve
+    hide us with easeoutbottom
 
     "Рыжая отобрала у Трука рюкзак и взвалила его на спину."
 
-    show us calml sport at cright with dissolve
+    show us calml sport at right with easeinbottom
 
     us "Ох, ничего себе… Что ж ты там такое носишь? Надо было его на Сеньку нагрузить. Что у тебя?"
 
-    show tr smile2 cas at cleft with dissolve
+    show tr smile2 cas at center with dissolve
 
     tr "Вещи. Спасибо, что помогай!"
 
@@ -1941,17 +1944,21 @@ label bkrr_day17_common:
     us "Друг! Какой хорошенький. Всегда хотела младшего братика!"
 
     show us grin:
-        ease 0.5 pos (0.5, 0)
-        ease 0.5 pos (0.645, 0)
+        linear 0.3 pos (0.6, 0)
     with None
     show tr surp with dspr
 
     "Ульяна провела ладонью по чёрным жёстким волосам. Азиат удивлённо посмотрел на неё, но промолчал."
 
     show ant normal shirt at left behind tr with dissolve
-    show tr normal with dspr
 
     "Антон Иванович улыбнулся."
+
+    show us grin:
+        linear 0.5 pos (0.7, 0)
+    with None
+    show tr normal with dspr
+
     ant "Вообще-то ему четырнадцать."
 
     show us normal with dspr
@@ -1969,7 +1976,8 @@ label bkrr_day17_common:
     tr "Кшать! Кшать!"
 
     hide tr with dissolve
-    show us normal with dspr
+    show us normal sport:
+        ease 0.5 pos (0.6, 0)
 
     "Вожатая посмотрела на эту сцену с умилением."
 
@@ -2299,10 +2307,11 @@ label bkrr_day17_common:
     # ДОРОГА ДО СТОЛОВОЙ
 
     stop ambience fadeout 2
+    window hide
     scene bg ext_houses_day with fade2
     play ambience ambience_camp_center_day fadein 2
-
     stop music fadeout 10
+    window show
 
     "Мы вышли из клуба и прошли уже половину пути до центральной аллеи, когда Клаус резко остановился."
 
