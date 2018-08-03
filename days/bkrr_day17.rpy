@@ -2243,7 +2243,7 @@ label bkrr_day17_common:
 
     "Я проводил её взглядом, а затем подхватил чемодан и догнал остальных."
 
-    scene bg ext_music_club_verandah_day_v7 with dissolve
+    scene bg ext_music_club_verandah_day_v9 with dissolve
 
     "Ещё сотня шагов – и мы остановились на веранде у входа в наш кружок."
 
@@ -2345,20 +2345,59 @@ label bkrr_day17_common:
 
     show tr normal cas at cright with dissolve
 
+    play music music_list["revenga"] fadein 5
+
     tr "Сирк? Нет… А что такое сирк?"
 
-    # play music music_list["doomed_to_be_defeated"] fadein 7
-    play music music_list["revenga"] fadein 5
+    scene bg ext_music_club_verandah_day_v9 with dissolve
 
     us "Вон туда смотри, сейчас сам увидишь."
 
     # ОБРАТНО В КЛУБ
 
-    scene bg ext_music_club_verandah_day_v7 with dissolve
+    scene bg ext_music_club_verandah_day_v9:
+        truecenter
+        ease 0.5 zoom 3.0 pos (0.35, 0.75)
 
+    $ renpy.pause(0.2, hard=True)
+
+    play sound bkrr_sfx_list["broken_glass"]
+    "Из клуба раздался крик «СТОЯТЬ!!!» и что-то зазвенело."
+    $ renpy.pause(0.5, hard=True)  # чтобы звон успел доиграть
     play sound sfx_open_door_1
-    "Из клуба раздался крик «СТОЯТЬ!!!», в дверях показалась рыжая голова Клауса, но тут же исчезла."
-    play sound sfx_close_door_1
+    scene bg ext_music_club_verandah_day_v9_ajar:
+        truecenter
+        zoom 3.0
+        pos (0.35, 0.75)
+    show ext_music_club_verandah_day_v9_blocker:
+        truecenter
+        zoom 3.0
+        pos (0.35, 0.75)
+    show kla shy sport far behind ext_music_club_verandah_day_v9_blocker:
+        truecenter
+        rotate 5
+        ypos 0.5
+        xpos 0.4
+        zoom 1.15
+        ease 0.3 xpos 0.45 zoom 1.2
+        pause 0.5
+        ease 0.2 xpos 0.3 zoom 1.15 alpha 0.0
+    show ext_music_club_verandah_day_v9_double:  # чтобы дверь сама закрылась
+        truecenter
+        zoom 3.0
+        pos (0.35, 0.75)
+        alpha 0.0
+        pause 1.0
+        ease 0.5 alpha 1.0
+    with dissolve
+    play sound [bkrr_sfx_list["silence1"], sfx_close_door_1]
+    "В дверях показалась рыжая голова Клауса, но тут же исчезла."
+    scene bg ext_music_club_verandah_day_v9:
+        truecenter
+        zoom 3.0
+        pos (0.35, 0.75)
+        ease 0.7 zoom 1.0 pos (0.5, 0.5)
+    with None
 
     "Мы c Мику побежали назад, Ульяна с Труком пошли за нами. Кажется, назревал небольшой международный скандальчик."
 
@@ -2371,7 +2410,6 @@ label bkrr_day17_common:
         ypos 0
         zoom 2.5
         xalign 0.2
-        # linear 0.5 xalign 0.5
         linear 0.7 zoom 1.1 ypos 0.5 xalign 0.5
     with dissolve
 
@@ -2921,7 +2959,7 @@ label bkrr_day17_common:
 
     play music music_list["reminiscences"] fadein 10
     stop ambience fadeout 2
-    scene bg ext_music_club_verandah_day_v7 with dissolve
+    scene bg ext_music_club_verandah_day_v9 with dissolve
     play ambience ambience_camp_center_day fadein 3
 
     "Ольга отправилась по своим делам, а мы с Мику присели на нагретой солнцем веранде."
