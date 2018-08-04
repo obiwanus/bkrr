@@ -1558,52 +1558,6 @@ init 2:
 
         ##    Спрайты    ##
 
-        distance_to_position = {
-            "far": (675, 1080),
-            "normal": (900, 1080),
-            "close": (1125, 1080)
-        }
-
-        def bkrr_make_sprites_for_new_characters():
-            characters = {
-                "ant":{
-                    "clothes":[("shirt", False)],
-                    "emotions":[("normal", "serious", "smile", "surprise")]
-                },
-                "kla":{
-                    "clothes":[("pioneer", False), ("sport", False)],
-                    "emotions":[("laugh", "normal", "smile"), ("shy", "surprise")]
-                },
-                "nt":{
-                    "clothes":[("cook", True)],
-                    "emotions":[("laugh", "normal", "sad", "smile")]
-                },
-                "tol":{
-                    "clothes":[("pioneer", True)],
-                    "emotions":[("normal", "pain", "sad", "shy", "smile")]
-                },
-                "tr":{
-                    "clothes":[("pioneer", True), ("cas", True)],
-                    "emotions":[("normal", "smile1", "surp", "upset2"), ("smile2", "smile3", "upset1")]
-                }
-            }
-
-            for name, content in characters.items():
-                for pose in range(0, len(content["emotions"])):
-                    for emotion in content["emotions"][pose]:
-                        for clothes in content["clothes"]:
-                            for distance in distance_to_position:
-                                if distance == "normal":
-                                    sprite_name = "%s %s % s" % (name, emotion, clothes[0])
-                                else:
-                                    sprite_name = "%s %s %s %s" % (name, emotion, clothes[0], distance)
-                                if not clothes[1]:
-                                    sprite = im.Composite(distance_to_position[distance], (0, 0), "%ssprites/%s/%s/%s_%d_body.png" % (MOD_IMAGES, distance, name, name, pose+1), (0, 0), "%ssprites/%s/%s/%s_%d_%s.png" % (MOD_IMAGES, distance, name, name, pose+1, clothes[0]), (0, 0), "%ssprites/%s/%s/%s_%d_%s.png" % (MOD_IMAGES, distance, name, name, pose+1, emotion))
-                                else:
-                                    sprite = im.Composite(distance_to_position[distance], (0, 0), "%ssprites/%s/%s/%s_%d_%s.png" % (MOD_IMAGES, distance, name, name, pose+1, clothes[0]), (0, 0), "%ssprites/%s/%s/%s_%d_%s.png" % (MOD_IMAGES, distance, name, name, pose+1, emotion))
-                                renpy.image(sprite_name, ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(sprite, bkrr_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(sprite, bkrr_tint["night"]), "persistent.sprite_time == 'sepia'", im.Sepia(sprite), True, sprite))
-
-
         # Эмоции спрайтов старых персонажей и их отношение к позе
 
         emotion_to_pose = {
@@ -1631,7 +1585,27 @@ init 2:
             'mi': {
                 'cry': 1, 'dontlike': 1, 'laugh': 1, 'shocked': 1, 'shy': 1, 'surprise': 1, 'cry_smile': 2, 'grin': 2, 'happy': 2, 'sad': 2, 'sad_smile': 2, 'smile': 2, 'angry': 3, 'normal': 3, 'rage': 3, 'serious': 3, 'upset': 3,
             },
+            "ant": {
+                'normal': 1, 'serious': 1, 'smile': 1, 'surprise': 1,
+            },
+            "kla": {
+                'laugh': 1, 'normal': 1, 'smile': 1, 'shy': 2, 'surprise': 2,
+            },
+            "nt": {
+                'laugh': 1, 'normal': 1, 'sad': 1, 'smile': 1,
+            },
+            "tol": {
+                'normal': 1, 'pain': 1, 'sad': 1, 'shy': 1, 'smile': 1,
+            },
+            "tr": {
+                'normal': 1, 'smile1': 1, 'surp' : 1, 'upset2': 1, 'smile2': 2, 'smile3': 2, 'upset1': 2,
+            },
+        }
 
+        distance_to_position = {
+            "far": (675, 1080),
+            "normal": (900, 1080),
+            "close": (1125, 1080)
         }
 
         # Генератор новых спрайтов для персонажей из оригинального БЛ
@@ -1688,10 +1662,8 @@ init 2:
             make_sprites_for(*args, emotions=custom_emotions)
 
 
-        # Объявляем новых персонажей
-        bkrr_make_sprites_for_new_characters()
+        # Объявляем спрайты
 
-        # Объявляем новые спрайты для старых персонажей
         make_sprites_for('dv', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
         make_sprites_for('dv', 'swim', ['es:body', 'mod:swim', 'es:<emotion>'], emotions=('angry', 'guilty', 'rage', 'sad', 'shy'))
 
@@ -1744,8 +1716,16 @@ init 2:
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'body_loo', ['mod:body_loo', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'body', ['es:body', 'es:<emotion>'])
 
+        # Новые персонажи
         make_sprites_for('mi', 'sheet', ['mod:body_loo', 'mod:sheet', 'es:<emotion>'], distances=['close'])
         make_sprites_for('mi', 'pioneer', ['mod:body', 'es:pioneer', 'mod:<emotion>'], emotions=['sad_smile'])
+        make_sprites_for('ant', 'shirt', ['mod:body', 'mod:shirt', 'mod:<emotion>'])
+        make_sprites_for('kla', 'sport', ['mod:body', 'mod:sport', 'mod:<emotion>'])
+        make_sprites_for('kla', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('nt', 'cook', ['mod:cook', 'mod:<emotion>'])
+        make_sprites_for('tol', 'pioneer', ['mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('tr', 'pioneer', ['mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('tr', 'cas', ['mod:cas', 'mod:<emotion>'])
 
 
     # Новая эмоция sad_smile для Мику в стандартной одежде
