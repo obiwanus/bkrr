@@ -978,7 +978,11 @@ label bkrr_day17_common:
 
     # ПЕРЕБИРАЕМСЯ К МИКУ
 
+    window hide
     scene bg ext_house_of_un_day with fade2
+
+    play sound sfx_knocking_door_2
+    $ renpy.pause(1.5, hard=True)
 
     play sound sfx_open_door_1
 
@@ -986,6 +990,7 @@ label bkrr_day17_common:
 
     show mi smile shorts_hair with dissolve
 
+    window show
     "Лена не обманула. После моего стука дверь приоткрылась, и показалась Мику. {w}Увидев неприкрытую полоску тела между шортами и полотенцем, я с удовольствием подумал, что одежды на ней не слишком много. Как удачно я угадал с визитом! Ниже пояса приятно потяжелело."
     me "Привет! Я не помешал?"
 
@@ -2659,9 +2664,8 @@ label bkrr_day17_common:
     "Клаус улыбнулся."
     tr "Улья надо бить сильняя! Ей мой сумка ещё до дом донести!"
 
-    show us normal_dontlike
-    show tr normal
-    with dspr
+    show us normal_dontlike sport close with dspr
+    show tr normal with dspr
 
     "Ульяна со смесью удивления и возмущения посмотрела на вьетнамца. Тот снова дежурно улыбался."
 
@@ -4166,6 +4170,7 @@ label bkrr_day17_common:
 
     "Спустя секунду, нас стало четверо. Я уловил только размытое движение и колебание воздуха, и двойник отлетел к стене. Верхом на нём сидела уже знакомая мне миниатюрная девочка c кошачьими ушами и выкручивала ему руку."
 
+    window hide
     scene bg int_mine_halt:
         ease 2 zoom 1.01
         ease 2 zoom 1.0
@@ -4179,6 +4184,7 @@ label bkrr_day17_common:
             ease 2 alpha 0.05
             repeat
     with fade2
+    window show
 
     play sound [ bkrr_sfx_list["body_hit"], bkrr_sfx_list["balls_kick"], bkrr_sfx_list["breaking_arm"], bkrr_sfx_list["body_hit"] ] fadeout 5
 

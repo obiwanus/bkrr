@@ -1381,8 +1381,6 @@ label bkrr_day9_common:
     dv "Ой-ой, это кто тут у нас чемпионом себя считает? Играем без форы?"
     "Мику отобрала у Ульяны мяч и завертела его на указательном пальце."
 
-    show mi serious bkrr_sport close with dspr
-
     mi "А давай."
 
     window hide

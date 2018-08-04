@@ -46,7 +46,7 @@ label bkrr_day7_common:
     th "Нет. Я всё ещё здесь."
     "Ольга Дмитриевна проснулась раньше меня, переоделась и уже успела включить чайник."
     "От мысли, что она переодевалась вот тут, рядом, приятно закружилась голова. Она шутливо отсалютовала."
-    "Я, не вставая, взял шорты со стула и натянул их под одеялом." 
+    "Я, не вставая, взял шорты со стула и натянул их под одеялом."
     me "Доброе. Спасибо, хорошо. Комары только достали."
 
     show mt smile bkrr_sport close at center with dspr
@@ -88,7 +88,7 @@ label bkrr_day7_common:
 
     window show
 
-    "Чайник напомнил о себе пронзительным свистом. Ольга вопросительно посмотрела на меня." 
+    "Чайник напомнил о себе пронзительным свистом. Ольга вопросительно посмотрела на меня."
 
     show mt normal bkrr_sport at center with dspr
 
@@ -111,7 +111,7 @@ label bkrr_day7_common:
     show mt smile bkrr_sport at center with dspr
 
     mt "Но сегодня не будет ни линейки, ни зарядки. По распорядку – свободный день."
-    me "Свободный… звучит красиво. Да? И что делают пионеры в этот день?" 
+    me "Свободный… звучит красиво. Да? И что делают пионеры в этот день?"
 
     show mt normal bkrr_sport at center with dspr
 
@@ -126,11 +126,11 @@ label bkrr_day7_common:
     show mt angry bkrr_sport at center with dspr
 
     mt "РУКИ!"
-    me "Чего?" 
+    me "Чего?"
 
     show mt normal bkrr_sport at center with dspr
 
-    mt "Руки мыл?" 
+    mt "Руки мыл?"
     me "Когда бы? Я же только встал."
     mt "Давай, бегом умываться, пока остывает."
 
@@ -191,7 +191,7 @@ label bkrr_day7_common:
 
     mt "Да так, ерунда. Набор болгарской косметики. Кремы для кожи. Обещали два, а привезли только один, никак поделить не можем."
     mt "Я предлагала ей стоимость вернуть – упёрлась, и ни в какую."
-    "Ольга помолчала, затем ехидно добавила:" 
+    "Ольга помолчала, затем ехидно добавила:"
 
     show mt smile bkrr_sport at center with dspr
 
@@ -274,7 +274,7 @@ label bkrr_day7_common:
 
     show el sad pioneer at bkrr_sit_right with dspr
 
-    me "Женя, доброе утро! Приятного аппетита!" 
+    me "Женя, доброе утро! Приятного аппетита!"
     el "Пр-р-н-ого апта!"
     "Женя посмотрела на него, потом на меня, затем кивнула."
 
@@ -448,7 +448,7 @@ label bkrr_day7_common:
     with bkrr_fade(1.0)
 
     play ambience ambience_dining_hall_full fadein 3
- 
+
     window show
 
     me "Ну, тогда – в четыре часа. Танцы начинаются в шесть вечера, так что делай свои дела, а потом встречаемся возле мастерской."
@@ -1238,7 +1238,7 @@ label bkrr_day7_common:
 
     show us dontlike sport at center with dissolve
 
-    window show    
+    window show
 
     us "Ай, не ворчи, классные песни!"
 
@@ -1248,7 +1248,7 @@ label bkrr_day7_common:
 
     show mi normal pioneer at center with dissolve
 
-    window show    
+    window show
 
     mi "Мне тоже нравятся. Ну… четыре мелодии у нас есть, сейчас я только Сене напишу его партию."
 
@@ -1948,7 +1948,7 @@ label bkrr_day7_common:
     $ renpy.pause(1.0, hard=True)
 
     window show
- 
+
     "Электроник подбежал, запыхавшись."
 
     show el normal pioneer at center with dissolve
@@ -2331,7 +2331,7 @@ label bkrr_day7_common:
 
     stop music fadeout 3
 
-    scene bg ext_square_night_party_glow with fade3
+    scene bg ext_square_night_party2 with fade3
 
     $ bkrr_set_volume("music", 1.0)
 
@@ -2461,7 +2461,7 @@ label bkrr_day7_common:
 
     window  hide
 
-    scene bg ext_square_night_party_glow
+    scene bg ext_square_night_party2
     show mi normal bkrr_dress close at center
     with dissolve
 
@@ -2523,7 +2523,7 @@ label bkrr_day7_common:
 
     window hide
 
-    scene bg ext_square_night_party_glow
+    scene bg ext_square_night_party2
     show mt normal panama dress close at center
     with fade
 
@@ -2534,7 +2534,7 @@ label bkrr_day7_common:
 
     window hide
 
-    scene bg ext_square_night_party_glow
+    scene bg ext_square_night_party2
     show us dontlike dress close at center
     with fade
 
@@ -2545,7 +2545,7 @@ label bkrr_day7_common:
 
     window hide
 
-    scene bg ext_square_night_party_glow
+    scene bg ext_square_night_party2
     show dv guilty pioneer at center
     with fade
 
@@ -2933,7 +2933,7 @@ label bkrr_day7_common:
 
     window hide
 
-    scene bg ext_square_night_party_glow with fade3
+    scene bg ext_square_night_party2 with fade3
 
     window show
 
@@ -3160,7 +3160,7 @@ label bkrr_day7_common:
 
     show mi happy bkrr_dress close at center with dspr
 
-    mi "Я тоже буду ждать! И ещё…" 
+    mi "Я тоже буду ждать! И ещё…"
     me "Да?"
 
     show mi smile bkrr_dress close at center with dspr
@@ -3280,7 +3280,7 @@ label bkrr_day7_common:
     "Где тут выключатель, я, конечно, не имел ни малейшего представления. Ладно, так найду. Луна светила довольно ярко, так что даже без фонарика можно было ориентироваться. Где-то там в задней части я видел диван и столик с журналами."
     th "Уверен, что он там дрыхнет."
     "Я вошёл в библиотеку и поинтересовался у темноты:"
-    me "Эй… Серёжка, ты где?" 
+    me "Эй… Серёжка, ты где?"
     "Ответа не было."
     th "Обиделся? Или спит?"
     me "Прости за замок, глупая шутка была. Выходи! Можешь мне по морде дать."
@@ -3355,7 +3355,7 @@ label bkrr_day7_common:
 
     show sl normal pioneer at center with dissolve
 
-    sl "Ну, как они там?" 
+    sl "Ну, как они там?"
     me "Они… {w}Славя, так ты знала про вторую дверь?"
 
     show sl shy pioneer at center with dspr
