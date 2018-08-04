@@ -823,7 +823,6 @@ label bkrr_day17_common:
     "Из-за двери донёсся стук, сдавленный стон, а потом шторка на окне сдвинулась в сторону и в паре сантиметров от меня возникло самое жуткое лицо, которое я когда-либо видел. Кожа с него была начисто содрана."
 
     # SCP CONTAINMENT BREACH!
-    # TODO: выбрать
     # play sound bkrr_sfx_list["jumpscare"]
     play sound sfx_suspence_bang
     play sound2 bkrr_sfx_list["heartbeat"]
@@ -962,7 +961,7 @@ label bkrr_day17_common:
     mz "Знаю. А хочешь, мы тебя подстрижём? У нас и машинка есть! У меня подруга из другого отряда хорошо умеет!"
     me "Надо бы подровнять, а то и правда зарос. Если у тебя действительно есть подруга-парикмахер, то было бы здорово."
     mz "Ну… она не совсем парикмахер. У неё папа овец разводит, а она их стричь помогает."
-    "Я с серьёзным видом посмотрел в зеркало, зажал прядь волос пальцами, задумчиво сказал: «Бе-е-е!»." #TODO М. б. «проблеял»?
+    "Я с серьёзным видом посмотрел в зеркало, зажал прядь волос пальцами, задумчиво сказал: «Бе-е-е!»."
 
     show mz laugh mask bkrr_sport
     show sl laugh sport
@@ -985,12 +984,12 @@ label bkrr_day17_common:
 
     $ renpy.pause(0.5, hard=True)
 
-    show mi smile shorts with dissolve
+    show mi smile shorts_hair with dissolve
 
     "Лена не обманула. После моего стука дверь приоткрылась, и показалась Мику. {w}Увидев неприкрытую полоску тела между шортами и полотенцем, я с удовольствием подумал, что одежды на ней не слишком много. Как удачно я угадал с визитом! Ниже пояса приятно потяжелело."
     me "Привет! Я не помешал?"
 
-    show mi grin shorts with dspr
+    show mi grin shorts_hair with dspr
 
     mi "Доброе утро! Заходи!"
 
@@ -1002,34 +1001,34 @@ label bkrr_day17_common:
     "Мику взяла меня за руку, завела в домик, и, как только за нами закрылась дверь, прижалась ко мне и с чувством расцеловала. Я обнял её в ответ, коснувшись бархатистой кожи на спине."
     "Её волосы оставили большие мокрые пятна на моей футболке. Увидев это, она смутилась."
 
-    show mi shy shorts with dissolve
+    show mi shy shorts_hair with dissolve
 
     mi "Извини, я только после душа, волосы мокрые…"
     me "Не беда. Всё равно, мне ещё переодеваться к завтраку. Смотри, что я принёс!"
     "Я достал гребень и показал ей."
 
-    show mi surprise shorts with dspr
+    show mi surprise shorts_hair with dspr
 
     mi "Ой… ты у Слави побывал?"
     me "Ага. И не только. С утра успел погулять, с Шуриком порыбачили, так что на обед будет уха. Я сегодня ранняя пташка."
 
-    show mi smile shorts with dspr
+    show mi smile shorts_hair with dspr
 
     mi "А я соня. Если бы Лена не разбудила, то я и купаться бы не пошла. Мне волосы подсушить надо. Поможешь мне?"
     "Мику посмотрела на меня и провела языком по губам."
 
-    show mi happy shorts with dspr
+    show mi happy shorts_hair with dspr
 
     mi "А то, если я сама, они пола касаются, мне неудобно."
     me "Ну, конечно!"
 
-    show mi smile shorts with dspr
+    show mi smile shorts_hair with dspr
 
     th "Она ещё спрашивает!"
 
     play music music_list["smooth_machine"] fadein 6
 
-    show mi smile shorts close with dissolve
+    show mi smile shorts_hair close with dissolve
 
     "Мику присела на край кровати, слегка наклонила голову, отчего её волосы скатились вниз тяжёлой, приятно пахнущей волной, а затем показала мне, как нужно взять полотенце."
     mi "Вот так… и веди вниз. Только не зажимай сильно и не дёргай, ладно?"
@@ -1038,52 +1037,49 @@ label bkrr_day17_common:
     hide mi with dissolve
     $ renpy.pause(1.0, hard=True)
 
-    show bkrr_todo "TODO: сделать лифчик под полотенцем и волосы спереди"
-
     "Чем ниже я спускался, тем больше полотенце сползало с её плеч."
 
-    show mi grin shorts close with dissolve
+    show mi grin shorts_hair close with dissolve
 
     "Мику засмеялась."
     mi "Ай! Я и забыла, что футболку сняла!"
 
-    show mi happy shorts close with dspr
+    show mi happy shorts_hair close with dspr
 
     "Она поймала край полотенца и прикрыла грудь."
     me "Ага-ага. Забыла она."
     "Я легко потянул полотенце вниз."
 
-    show mi smile shorts close with dspr
+    show mi smile shorts_hair close with dspr
 
     mi "Глупый! Я правда, забыла. Честно!"
     me "Верю! Ну, раз уже я увидел, то и смысла её надевать нет, правильно?"
     "Мику посмотрела на дверь и с сомнением поинтересовалась:"
 
-    show mi upset shorts close with dspr
+    show mi upset shorts_hair close with dspr
 
     mi "А если Лена зайдёт?"
     me "Не зайдёт. Она сказала, что до завтрака будет в медпункте."
 
-    show mi normal shorts close with dspr
+    show mi normal shorts_hair close with dspr
 
     mi "Тогда ладно."
     "Она улыбнулась и отпустила край полотенца, не мешая ему полностью сползти вниз."
     "Я вздрогнул, предвкушая что сейчас наконец-то увижу…"
     "Но под полотенцем на ней оказался верх от купальника."
-    hide bkrr_todo
 
-    show mi smile shorts close with dspr
+    show mi smile shorts_hair close with dspr
 
     "Кажется, Мику поняла, что я думал. Во всяком случае, она подмигнула мне и шутливо покачала головой, глядя мне в глаза."
     mi "Я девушка приличная!"
     "Вместо ответа я коснулся губами её плеча, потом шеи и только потом ответил:"
 
-    show mi happy shorts close with dspr
+    show mi happy shorts_hair close with dspr
 
     me "Я знаю!"
 
     play sound bkrr_sfx_list["whiteout1"]
-    show mi happy shorts close:
+    show mi happy shorts_hair close:
         truecenter
         parallel:
             linear 10.0 zoom 2.0
@@ -1105,21 +1101,21 @@ label bkrr_day17_common:
     window hide
     play sound bkrr_sfx_list["whiteout2"]
     scene bg int_house_of_un_day
-    show mi upset shorts close at center
+    show mi upset shorts_hair close at center
     with fade2
     window show
 
     mi "Сеня, волосы… Нужно высушить до завтрака…"
     me "Да-да. Точно."
 
-    show mi normal shorts close with dspr
+    show mi normal shorts_hair close with dspr
 
     "Я снова взялся за полотенце. Через несколько минут я довольно кивнул."
     me "Кажется, более-менее подсушили!"
     mi "Спасибо! Сейчас причешусь, и пойдём завтракать!"
     "Мику взяла гребень и провела по волосам. Даже на вытянутой руке ей неудобно дотянуться до кончиков.{w} Она пробовала так и эдак, но слишком длинные волосы ей мешали."
 
-    show mi upset shorts close with dspr
+    show mi upset shorts_hair close with dspr
 
     mi "Ну вот. Одни неудобства. А подстричь жалко, я их очень долго отращивала да и мама не позволит, а папа так вообще расстроится."
     me "Только попробуй эту красоту тронуть! Давай, лучше я помогу?"
@@ -1130,14 +1126,14 @@ label bkrr_day17_common:
     "Снова плавное скольжение гребня у неё в волосах, пальцы слегка покалывало, словно электрическими разрядами.{w} Мику довольно щурилась и покусывала губы, кажется, процесс доставлял ей столько же удовольствия, сколько и мне.{w} Ох, непростой это гребешок."
     "Мику выдохнула:"
 
-    show mi happy shorts close with dissolve
+    show mi happy shorts_hair close with dissolve
 
     mi "Хорошо-то как… Ещё! Ну, пожалуйста!"
     me "Всё-то ей мало…"
 
     stop music fadeout 5
 
-    show mi smile shorts close with dspr
+    show mi smile shorts_hair close with dspr
 
     "Я улыбнулся и ещё несколько раз провёл гребнем сверху донизу."
 
@@ -1792,9 +1788,6 @@ label bkrr_day17_common:
     hide bkrr_todo
 
     th "Кажется, рыжих музыкантов в этом лагере становится всё больше и больше."
-
-    show bkrr_todo "Рекорд: предложения по музыке приветствуются"
-
     "Антон Иванович повернулся к вознице."
 
     show ant normal shirt far at cright with dissolve
@@ -1803,8 +1796,6 @@ label bkrr_day17_common:
     "Возница махнул рукой."
     vz "До свидания! А за машину не волнуйтесь, у нас всё как в сберкассе: оставил-забрал. Механизатор посмотрит, что там у вас, и попробует починить. "
     vz "Главное – не подпускать его к бутылке до начала ремонта, а то плуг приделает, гусеницы от трактора или ещё что-нибудь."
-
-    hide bkrr_todo
 
     show ant surprise with dspr
 

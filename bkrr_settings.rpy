@@ -7537,6 +7537,116 @@ init 2:
         "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_3_upset.png"), bkrr_tint["night"]),
         True, im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_3_upset.png"))
 
+    # Мику в шортах + волосы закрывают лифчег
+
+    image mi angry shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_3_angry.png")
+
+    image mi cry shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_1_cry.png")
+
+    image mi cry_smile shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_2_cry_smile.png")
+
+    image mi dontlike shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_1_dontlike.png")
+
+    image mi grin shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_2_grin.png")
+
+    image mi happy shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_2_happy.png")
+
+    image mi laugh shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_1_laugh.png")
+
+    image mi normal shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_3_normal.png")
+
+    image mi rage shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_3_rage.png")
+
+    image mi sad shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_2_sad.png")
+
+    image mi sad_smile shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_sad_smile.png")
+
+    image mi scared shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_1_scared.png")
+
+    image mi serious shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_3_serious.png")
+
+    image mi shocked shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_1_shocked.png")
+
+    image mi shy shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_1_shy.png")
+
+    image mi smile shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_2_smile.png")
+
+    image mi surprise shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_1_surprise.png")
+
+    image mi upset shorts_hair = im.Composite((900, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/normal/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/normal/mi/mi_3_upset.png")
+
+    image mi angry shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_angry.png")
+
+    image mi cry shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_cry.png")
+
+    image mi cry_smile shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_cry_smile.png")
+
+    image mi dontlike shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_dontlike.png")
+
+    image mi grin shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_grin.png")
+
+    image mi happy shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_happy.png")
+
+    image mi laugh shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_laugh.png")
+
+    image mi normal shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_normal.png")
+
+    image mi rage shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_rage.png")
+
+    image mi sad shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_sad.png")
+
+    image mi sad_smile shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_sad_smile.png")
+
+    image mi scared shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_scared.png")
+
+    image mi serious shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_serious.png")
+
+    image mi shocked shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_shocked.png")
+
+    image mi shy shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_shy.png")
+
+    image mi smile shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_2_smile.png")
+
+    image mi surprise shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_1_surprise.png")
+
+    image mi upset shorts_hair close = im.Composite((1050,1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/close/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/close/mi/mi_3_upset.png")
+
+    image mi angry shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_3_angry.png")
+
+    image mi cry shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_1_cry.png")
+
+    image mi cry_smile shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_2_cry_smile.png")
+
+    image mi dontlike shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_1_dontlike.png")
+
+    image mi grin shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_2_grin.png")
+
+    image mi happy shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_2_happy.png")
+
+    image mi laugh shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_1_laugh.png")
+
+    image mi normal shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_3_normal.png")
+
+    image mi rage shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_3_rage.png")
+
+    image mi sad shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_2_sad.png")
+
+    image mi sad_smile shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_sad_smile.png")
+
+    image mi scared shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_1_scared.png")
+
+    image mi serious shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_3_serious.png")
+
+    image mi shocked shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_1_shocked.png")
+
+    image mi shy shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_1_shy.png")
+
+    image mi smile shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_2_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_2_smile.png")
+
+    image mi surprise shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_1_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_1_surprise.png")
+
+    image mi upset shorts_hair far = im.Composite((630, 1080), (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_body_loo.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_shorts.png", (0, 0), bkrr_im_filepath["mod"] + "sprites/far/mi/mi_3_hair.png", (0, 0), bkrr_im_filepath["es"] + "sprites/far/mi/mi_3_upset.png")
+
     # Мику в простынях (только close)
 
     image mi angry sheet close = ConditionSwitch(
