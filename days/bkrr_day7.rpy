@@ -2331,7 +2331,7 @@ label bkrr_day7_common:
 
     stop music fadeout 3
 
-    scene bg ext_square_night_party2 with fade3
+    scene bg ext_square_night_party_glow with fade3
 
     $ bkrr_set_volume("music", 1.0)
 
@@ -2461,7 +2461,7 @@ label bkrr_day7_common:
 
     window  hide
 
-    scene bg ext_square_night_party2
+    scene bg ext_square_night_party_glow
     show mi normal bkrr_dress close at center
     with dissolve
 
@@ -2523,7 +2523,7 @@ label bkrr_day7_common:
 
     window hide
 
-    scene bg ext_square_night_party2
+    scene bg ext_square_night_party_glow
     show mt normal panama dress close at center
     with fade
 
@@ -2534,7 +2534,7 @@ label bkrr_day7_common:
 
     window hide
 
-    scene bg ext_square_night_party2
+    scene bg ext_square_night_party_glow
     show us dontlike dress close at center
     with fade
 
@@ -2545,7 +2545,7 @@ label bkrr_day7_common:
 
     window hide
 
-    scene bg ext_square_night_party2
+    scene bg ext_square_night_party_glow
     show dv guilty pioneer at center
     with fade
 

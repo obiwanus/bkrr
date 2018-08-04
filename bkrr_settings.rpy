@@ -550,6 +550,25 @@ init 2:
     image bg ext_music_club_sunset_bkrr = bkrr_im_filepath["mod"] + "bg/ext_music_club_sunset.png"
     image bg ext_music_club_night_bkrr = im.Scale(bkrr_im_filepath["mod"] + "bg/ext_music_club_night.png", config.screen_width, config.screen_height)
 
+    image bg ext_square_night_party_glow:
+        contains:
+            "bg ext_square_night_party"
+        contains:
+            (bkrr_im_filepath["mod"] + "misc/ext_square_night_party_glow_blue.png")
+            alpha 0.5
+            block:
+                ease 1.25 alpha 0.25
+                ease 1.25 alpha 0.5
+                repeat
+        contains:
+            (bkrr_im_filepath["mod"] + "misc/ext_square_night_party_glow_magenta.png")
+            alpha 0.5
+            pause 0.5
+            block:
+                ease 1.25 alpha 0.25
+                ease 1.25 alpha 0.5
+                repeat
+
     image bg ext_house_of_sl_day_zhenya:
         contains:
             "bg ext_house_of_sl_day"
