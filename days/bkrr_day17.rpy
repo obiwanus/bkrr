@@ -1246,7 +1246,9 @@ label bkrr_day17_common:
         ease 1.0 zoom 1.0
     with None
 
+    window hide
     $ bkrr_get_item("shark_tooth", sounded=False)
+    window show
 
     mi "Береги его, ладно?"
     me "После концерта верну в целости и сохранности!"
@@ -2882,7 +2884,13 @@ label bkrr_day17_common:
     hide kla with dissolve
 
     "Он улыбнулся и зашёл в каменную постройку с табличкой «М». Я отошёл в сторону и встал в тени у забора."
-    "На выступе стены лежал коробок спичек. «Спички детям не игрушка» гласила надпись на этикетке.{w} Я машинально подобрал его и сунул в карман. А то подберёт кто-нибудь, пожар устроит."
+    "На выступе стены лежал коробок спичек. «Спички детям не игрушка» гласила надпись на этикетке."
+
+    window hide
+    $ bkrr_get_item("matchbox")
+    window show
+
+    "Я машинально подобрал его и сунул в карман. А то подберёт кто-нибудь, пожар устроит."
 
     window hide
     $ renpy.pause(1.5, hard=True)
@@ -4425,7 +4433,7 @@ label bkrr_day17_common:
     show mt normal with dspr
 
     mt "Как я и думала."
-    me "Что здесь творится?"
+    me "Что за чертовщина?"
     mt "Давай без вопросов прямо сейчас. Я правда, очень устала.{w} Разматывай руки, я думаю там тоже всё в порядке."
 
     hide mt with dissolve
@@ -4460,7 +4468,8 @@ label bkrr_day17_common:
 
     window hide
     scene bg ext_music_club_verandah_night_v2 with fade2
-    pause 0.5
+    pause 1.0
+    $ bkrr_set_volume("ambience", 1.0)
     $ bkrr_set_volume("sound", 0.2)
     play sound sfx_open_door_1
     stop ambience fadeout 2
@@ -4555,10 +4564,17 @@ label bkrr_day17_common:
     window hide
     hide mt with dissolve
     $ renpy.pause(1.0, hard=True)
+    play sound sfx_open_door_1
     window show
 
+    $ bkrr_set_volume("music", 0.3)
+
     "Вожатая вышла, прикрыв за собой двери. Я подошёл к окну и посмотрел на её удаляющийся силуэт.{w} Сумасшедший дом, а не пионерлагерь. Ну, хоть не улетела, обернувшись летучей мышью, и то хорошо."
-    "Я присел на пол рядом с Мику, так что наши лица оказались почти на одном уровне.{w} Какая она всё-таки миленькая, когда спит. Очень захотелось лечь с ней рядом и обнять, но вместо этого я просто отвёл прядь волос с её лица и погладил по щеке."
+    "Я присел на пол рядом с Мику, так что наши лица оказались почти на одном уровне."
+
+    play music bkrr_music_list["yume_akari"] fadein 20
+
+    "Какая она всё-таки миленькая, когда спит. Очень захотелось лечь с ней рядом и обнять, но вместо этого я просто отвёл прядь волос с её лица и погладил по щеке."
     "На лице Мику появилась улыбка. Она, не открывая глаз, выдохнула:"
     mi "Сеня…"
 
@@ -4569,7 +4585,7 @@ label bkrr_day17_common:
     "Время шло, Мику посапывала, иногда что-то негромко бормотала.{w} Когда в бессвязном потоке слов проскальзывало моё имя, хотелось скакать от радости."
     "Как настоящая девушка, Мику проснулась точно в тот момент, когда дали сигнал на отбой. Протёрла глаза, села, и посмотрела на меня."
 
-    show mi upset pioneer close with dissolve
+    show mi upset pioneer close at cright with dissolve
 
     mi "Сеня…"
     me "Привет! А кто тут у нас спит вместо репетиции?"
@@ -4608,7 +4624,7 @@ label bkrr_day17_common:
 
     mi "А если придёт кто…?"
 
-    show mi normal pioneer close at cright with ease
+    show mi normal pioneer close at center with ease
 
     "Спросив это, Мику подвинулась, освобождая место на одного не слишком упитанного пионера."
     me "А я двери запер!"
@@ -4629,7 +4645,7 @@ label bkrr_day17_common:
     "Сегодня Мику не останавливала меня, и долго, волнующе долго мы обнимались и гладили друг друга."
     "Вдруг Мику вздрогнула и шепнула мне в ухо:"
 
-    show mi upset pioneer close at cright with dissolve
+    show mi upset pioneer close at center with dissolve
 
     mi "Лена… Она не придёт меня искать?"
     me "Нет. Я её видел, и сказал, что ты задремала прямо в клубе.{w} Она обрадовалась, сказала, что хоть раз выспится, раз уж ты не будешь во сне петь…{w} и строго-настрого велела тебя не раздевать перед сном. «А то знаю я вас, мальчишек»."
@@ -4653,7 +4669,8 @@ label bkrr_day17_common:
     "Мику поколебалась, но кивнула."
     mi "Не будем."
 
-    play music music_list["i_dont_blame_you"] fadein 15
+    # play music music_list["i_dont_blame_you"] fadein 15
+    $ bkrr_set_volume("music", 0.5, 20.0)
 
     "Пять пуговиц, и вот уже рубашка улетела следом за моими шортами.{w} Мику смущённо улыбнулась, прикрываясь руками, затем ухватила край моей футболки и потянула её вверх."
     mi "Теперь ты!"
@@ -4675,6 +4692,8 @@ label bkrr_day17_common:
     mi "А дальше?{w} Я… ну, никогда раньше.{w} Не знаю, что делать…"
     me "Я тоже.{w} Но мы же музыканты?{w} Будем импровизировать!"
 
+    $ bkrr_set_volume("music", 1.0, 5.0)
+
     window hide
 
     # - Дрочеры не нужны
@@ -4690,10 +4709,12 @@ label bkrr_day17_common:
         xalign 1.0
         yalign 0.7
         ease 17.0 xalign 0.2
-    $ renpy.pause(15.0)
+    $ renpy.pause(20.0)
     scene black with fade2
     stop music fadeout 8
     $ renpy.pause(8.0)
+
+    $ bkrr_get_achievement("exactly_what_you_think")
 
     $ persistent.bkrr_check[18] = True
 

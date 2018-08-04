@@ -175,10 +175,12 @@ label bkrr_day18_common:
     "Ладно, никто ведь не видит."
     "Не одеваясь, я встал, и подошел к столику. Воды в кувшине как раз хватило на пару чашек. Включив чайник, я на секундочку прилег лицом вниз и прикрыл глаза."
 
+    window hide
     $ bkrr_timeskip_short()
     scene bg int_music_club_mattresses_sunset
     show mi smile pioneer_loo close
     with bkrr_timeskip_transition()
+    window show
 
     stop music fadeout 20
 

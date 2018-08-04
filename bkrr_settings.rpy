@@ -404,19 +404,21 @@ init python:
         # ("far", u"Проснуться с Мику."), # не актуально
         ("bath", u"С лёгким паром!"),
         ("cold", u"Живо в изолятор!"),
-        ("bass2", u"Наш басист – молодец!")
+        ("bass2", u"Наш басист – молодец!"),
+        ("exactly_what_you_think", u"Да. Именно."),
     )
 
     if not persistent.bkrr_ach:
         persistent.bkrr_ach = dict()
-        for ach in bkrr_ach_list:
-            persistent.bkrr_ach[ach[0]] = False
 
     for ach in bkrr_ach_list:
         renpy.image("bkrr_ach_" + ach[0], im.Scale(bkrr_im_filepath["mod"] + "ui/achievements/" + ach[0] + ".png", 450, 125))
+        if ach[0] not in persistent.bkrr_ach:
+            persistent.bkrr_ach[ach[0]] = False
+
     renpy.image("bkrr_ach_blank", im.Scale(bkrr_im_filepath["mod"] + "ui/achievements/blank.png", 450, 125))
 
-    bkrr_item_list = ("knife", "paint", "tape", "key", "food", "powder", "accumulator", "comb", "pills", "apple", "note", "shark_tooth")
+    bkrr_item_list = ("knife", "paint", "tape", "key", "food", "powder", "accumulator", "comb", "pills", "apple", "note", "shark_tooth", "matchbox")
 
     for item in bkrr_item_list:
         renpy.image("bkrr_item_" + item, im.Scale(bkrr_im_filepath["mod"] + "ui/items/" + item + ".png", 450, 360))
