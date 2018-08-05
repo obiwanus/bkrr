@@ -1583,7 +1583,7 @@ init 2:
                 'normal': 1, 'shy': 1, 'smile': 1, 'sad': 1,
             },
             'mi': {
-                'cry': 1, 'dontlike': 1, 'laugh': 1, 'shocked': 1, 'shy': 1, 'surprise': 1, 'cry_smile': 2, 'grin': 2, 'happy': 2, 'sad': 2, 'sad_smile': 2, 'smile': 2, 'angry': 3, 'normal': 3, 'rage': 3, 'serious': 3, 'upset': 3,
+                'cry': 1, 'dontlike': 1, 'laugh': 1, 'shocked': 1, 'scared': 1, 'shy': 1, 'surprise': 1, 'cry_smile': 2, 'grin': 2, 'happy': 2, 'sad': 2, 'sad_smile': 2, 'smile': 2, 'angry': 3, 'normal': 3, 'rage': 3, 'serious': 3, 'upset': 3,
             },
             "ant": {
                 'normal': 1, 'serious': 1, 'smile': 1, 'surprise': 1,
