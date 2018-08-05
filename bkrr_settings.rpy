@@ -1608,13 +1608,40 @@ init 2:
             "close": (1125, 1080)
         }
 
+        def _sprite_for_all_times(full_sprite_name, composite_image):
+            """
+            Объявляем спрайт для всех времен суток
+            """
+            renpy.image(
+                full_sprite_name,
+                ConditionSwitch(
+                    "persistent.sprite_time == 'sunset'", im.MatrixColor(composite_image, bkrr_tint["sunset"]),
+                    "persistent.sprite_time == 'night'", im.MatrixColor(composite_image, bkrr_tint["night"]),
+                    True, composite_image,
+                )
+            )
+
+        def _sepia_sprite(full_sprite_name, composite_image):
+            """
+            Спрайт, окрашенный в сепию
+            """
+            renpy.image(full_sprite_name, im.Sepia(composite_image))
+
         # Генератор новых спрайтов для персонажей из оригинального БЛ
 
-        def make_sprites_for(character, sprite_name, parts, emotions=None, distances=None, exclude=None):
+        def make_sprites_for(character, sprite_name, layers, emotions=None, distances=None, exclude=None, sprite_define_func=None):
+            """
+            Позволяет объявить почти любой спрайт, состоящий из нескольких слоев,
+            каждый слой может идти либо из мода, либо из оригинала.
+            Картинки должны класться в папки строго как в оригинале, чтобы это работало.
+            """
+
             if emotions is None:
                 emotions = emotion_to_pose[character].keys()
             if distances is None:
                 distances = distance_to_position.keys()
+            if sprite_define_func is None:
+                sprite_define_func = _sprite_for_all_times
 
             for emotion in emotions:
                 if exclude and emotion in exclude:
@@ -1628,27 +1655,19 @@ init 2:
                     if distance != 'normal':
                         full_sprite_name += ' ' + distance
 
-                    # Все части картинки
+                    # Комбинируем изображение
                     image_parts = [distance_to_position[distance]]
-                    for part in parts:
-                        source, file_name = part.split(':')
+                    for layer in layers:
+                        source, file_name = layer.split(':')
                         base_path = MOD_IMAGES if source == 'mod' else ES_IMAGES
                         image_path = base_path + "sprites/%s/%s/%s_%s_%s.png" % (
                             distance, character, character, pose, file_name if file_name != '<emotion>' else emotion,
                         )
                         image_parts += [(0, 0), image_path]
-
                     composite_image = im.Composite(*image_parts)
 
                     # Объявляем спрайт
-                    renpy.image(
-                        full_sprite_name,
-                        ConditionSwitch(
-                            "persistent.sprite_time == 'sunset'", im.MatrixColor(composite_image, bkrr_tint["sunset"]),
-                            "persistent.sprite_time == 'night'", im.MatrixColor(composite_image, bkrr_tint["night"]),
-                            True, composite_image,
-                        )
-                    )
+                    sprite_define_func(full_sprite_name, composite_image)
 
 
         def make_sprites_with_custom_emotions(custom_emotions, *args):
@@ -1728,127 +1747,14 @@ init 2:
         make_sprites_for('tr', 'pioneer', ['mod:pioneer', 'mod:<emotion>'])
         make_sprites_for('tr', 'cas', ['mod:cas', 'mod:<emotion>'])
 
+        # Спрайты, окрашенные в сепию
+        make_sprites_for('mi', 'pioneer sepia', ['es:body', 'es:pioneer', 'es:<emotion>'], exclude=['sad_smile'], sprite_define_func=_sepia_sprite)
+        make_sprites_for('mi', 'pioneer sepia', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['sad_smile'], sprite_define_func=_sepia_sprite)
+        make_sprites_for('dv', 'pioneer2 sepia', ['es:body', 'es:pioneer2', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
+        make_sprites_for('us', 'dress sepia', ['es:body', 'es:dress', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
 
-    ## Спрайты, окрашенные в сепию
 
-    # Мику
-
-    image mi angry pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_angry.png"))
-
-    image mi cry pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_cry.png"))
-
-    image mi cry_smile pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_cry_smile.png"))
-
-    image mi dontlike pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_dontlike.png"))
-
-    image mi grin pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_grin.png"))
-
-    image mi happy pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_happy.png"))
-
-    image mi laugh pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_laugh.png"))
-
-    image mi normal pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_normal.png"))
-
-    image mi rage pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_rage.png"))
-
-    image mi sad pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_sad.png"))
-
-    image mi sad_smile pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_pioneer.png", (0, 0), MOD_IMAGES + "sprites/normal/mi/mi_2_sad_smile.png"))
-
-    image mi scared pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_scared.png"))
-
-    image mi serious pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_serious.png"))
-
-    image mi shocked pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_shocked.png"))
-
-    image mi shy pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_shy.png"))
-
-    image mi smile pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_smile.png"))
-
-    image mi surprise pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_1_surprise.png"))
-
-    image mi upset pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_3_upset.png"))
-
-    image mi angry pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_angry.png"))
-
-    image mi cry pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_cry.png"))
-
-    image mi cry_smile pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_cry_smile.png"))
-
-    image mi dontlike pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_dontlike.png"))
-
-    image mi grin pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_grin.png"))
-
-    image mi happy pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_happy.png"))
-
-    image mi laugh pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_laugh.png"))
-
-    image mi normal pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_normal.png"))
-
-    image mi rage pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_rage.png"))
-
-    image mi sad pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_sad.png"))
-
-    image mi sad_smile pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_pioneer.png", (0, 0), MOD_IMAGES + "sprites/close/mi/mi_2_sad_smile.png"))
-
-    image mi scared pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_scared.png"))
-
-    image mi serious pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_serious.png"))
-
-    image mi shocked pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_shocked.png"))
-
-    image mi shy pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_shy.png"))
-
-    image mi smile pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_smile.png"))
-
-    image mi surprise pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_1_surprise.png"))
-
-    image mi upset pioneer sepia close = im.Sepia(im.Composite((1050,1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_upset.png"))
-
-    image mi angry pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_angry.png"))
-
-    image mi cry pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_cry.png"))
-
-    image mi cry_smile pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_cry_smile.png"))
-
-    image mi dontlike pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_dontlike.png"))
-
-    image mi grin pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_grin.png"))
-
-    image mi happy pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_happy.png"))
-
-    image mi laugh pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_laugh.png"))
-
-    image mi normal pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_normal.png"))
-
-    image mi rage pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_rage.png"))
-
-    image mi sad pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_sad.png"))
-
-    image mi sad_smile pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_pioneer.png", (0, 0), MOD_IMAGES + "sprites/far/mi/mi_2_sad_smile.png"))
-
-    image mi scared pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_scared.png"))
-
-    image mi serious pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_serious.png"))
-
-    image mi shocked pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_shocked.png"))
-
-    image mi shy pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_shy.png"))
-
-    image mi smile pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_smile.png"))
-
-    image mi surprise pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_1_surprise.png"))
-
-    image mi upset pioneer sepia far = im.Sepia(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_pioneer.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_3_upset.png"))
-
-    # Остальные
-
-    image dv normal pioneer2 sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/dv/dv_4_body.png", (0, 0), ES_IMAGES + "sprites/normal/dv/dv_4_pioneer2.png", (0, 0), ES_IMAGES + "sprites/normal/dv/dv_4_normal.png"))
-    image dv angry pioneer2 sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/dv/dv_5_body.png", (0, 0), ES_IMAGES + "sprites/normal/dv/dv_5_pioneer2.png", (0, 0), ES_IMAGES + "sprites/normal/dv/dv_5_angry.png"))
-
-    image us grin pioneer sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/us/us_1_body.png", (0, 0), ES_IMAGES + "sprites/normal/us/us_1_pioneer.png", (0, 0), ES_IMAGES + "sprites/normal/us/us_1_grin.png"))
-    image us angry dress sepia = im.Sepia(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/us/us_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/us/us_2_dress.png", (0, 0), ES_IMAGES + "sprites/normal/us/us_2_angry.png"))
-
+    ## Спрайты, которые не подходят для создания автоматически
 
     # Мику в юкате (силуэт)
 
