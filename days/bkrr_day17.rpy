@@ -2499,11 +2499,11 @@ label bkrr_day17_common:
         fright
         rotate -17
         ypos -0.1
-    with easeinbottom
+    with easeinright
 
     us "И посмотрел! У Алисы есть на что посмотреть!"
 
-    hide us with easeoutbottom
+    hide us with easeoutright
 
     show dv angry with dspr
 
