@@ -1080,7 +1080,7 @@ label bkrr_day17_common:
     show mi normal towel_only close as mi_towel:
         truecenter
         pause 1.2
-        ease 1.0 ypos 0.6 alpha 0.0
+        ease 1.0 ypos 0.6 xpos 0.51 alpha 0.0
     show mi normal hair_only close as mi_hair:
         pause 1.2
         ease 1.0 alpha 0.0
