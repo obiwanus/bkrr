@@ -1716,9 +1716,10 @@ init 2:
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'body_loo', ['mod:body_loo', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'body', ['es:body', 'es:<emotion>'])
 
-        # Новые персонажи
         make_sprites_for('mi', 'sheet', ['mod:body_loo', 'mod:sheet', 'es:<emotion>'], distances=['close'])
-        make_sprites_for('mi', 'pioneer', ['mod:body', 'es:pioneer', 'mod:<emotion>'], emotions=['sad_smile'])
+        make_sprites_for('mi', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['sad_smile'])
+
+        # Новые персонажи
         make_sprites_for('ant', 'shirt', ['mod:body', 'mod:shirt', 'mod:<emotion>'])
         make_sprites_for('kla', 'sport', ['mod:body', 'mod:sport', 'mod:<emotion>'])
         make_sprites_for('kla', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
@@ -1727,38 +1728,6 @@ init 2:
         make_sprites_for('tr', 'pioneer', ['mod:pioneer', 'mod:<emotion>'])
         make_sprites_for('tr', 'cas', ['mod:cas', 'mod:<emotion>'])
 
-
-    # Новая эмоция sad_smile для Мику в стандартной одежде
-
-    image mi sad_smile pioneer = ConditionSwitch(
-        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_pioneer.png", (0, 0), MOD_IMAGES + "sprites/normal/mi/mi_2_sad_smile.png"), bkrr_tint["sunset"]),
-        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_pioneer.png", (0, 0), MOD_IMAGES + "sprites/normal/mi/mi_2_sad_smile.png"), bkrr_tint["night"]),
-        True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_pioneer.png", (0, 0), MOD_IMAGES + "sprites/normal/mi/mi_2_sad_smile.png"))
-
-    image mi sad_smile pioneer far = ConditionSwitch(
-        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_pioneer.png", (0, 0), MOD_IMAGES + "sprites/far/mi/mi_2_sad_smile.png"), bkrr_tint["sunset"]),
-        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_pioneer.png", (0, 0), MOD_IMAGES + "sprites/far/mi/mi_2_sad_smile.png"), bkrr_tint["night"]),
-        True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_pioneer.png", (0, 0), MOD_IMAGES + "sprites/far/mi/mi_2_sad_smile.png"))
-
-    image mi sad_smile pioneer close = ConditionSwitch(
-        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_pioneer.png", (0, 0), MOD_IMAGES + "sprites/close/mi/mi_2_sad_smile.png"), bkrr_tint["sunset"]),
-        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_pioneer.png", (0, 0), MOD_IMAGES + "sprites/close/mi/mi_2_sad_smile.png"), bkrr_tint["night"]),
-        True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_pioneer.png", (0, 0), MOD_IMAGES + "sprites/close/mi/mi_2_sad_smile.png"))
-
-    image mi sad_smile swim = ConditionSwitch(
-        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_swim.png", (0, 0), MOD_IMAGES + "sprites/normal/mi/mi_2_sad_smile.png"), bkrr_tint["sunset"]),
-        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_swim.png", (0, 0), MOD_IMAGES + "sprites/normal/mi/mi_2_sad_smile.png"), bkrr_tint["night"]),
-        True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/mi/mi_2_swim.png", (0, 0), MOD_IMAGES + "sprites/normal/mi/mi_2_sad_smile.png"))
-
-    image mi sad_smile swim far = ConditionSwitch(
-        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_swim.png", (0, 0), MOD_IMAGES + "sprites/far/mi/mi_2_sad_smile.png"), bkrr_tint["sunset"]),
-        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_swim.png", (0, 0), MOD_IMAGES + "sprites/far/mi/mi_2_sad_smile.png"), bkrr_tint["night"]),
-        True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/far/mi/mi_2_swim.png", (0, 0), MOD_IMAGES + "sprites/far/mi/mi_2_sad_smile.png"))
-
-    image mi sad_smile swim close = ConditionSwitch(
-        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_swim.png", (0, 0), MOD_IMAGES + "sprites/close/mi/mi_2_sad_smile.png"), bkrr_tint["sunset"]),
-        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_swim.png", (0, 0), MOD_IMAGES + "sprites/close/mi/mi_2_sad_smile.png"), bkrr_tint["night"]),
-        True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_2_swim.png", (0, 0), MOD_IMAGES + "sprites/close/mi/mi_2_sad_smile.png"))
 
     ## Спрайты, окрашенные в сепию
 
