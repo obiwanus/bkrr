@@ -1033,58 +1033,76 @@ label bkrr_day17_common:
 
     play music music_list["smooth_machine"] fadein 6
 
-    show mi smile shorts_hair close with dissolve
+    show mi smile underwear loose towel hair close with dissolve
 
     "Мику присела на край кровати, слегка наклонила голову, отчего её волосы скатились вниз тяжёлой, приятно пахнущей волной, а затем показала мне, как нужно взять полотенце."
     mi "Вот так… и веди вниз. Только не зажимай сильно и не дёргай, ладно?"
     "Хорошо."
 
     hide mi with dissolve
+    window hide
     $ renpy.pause(1.0, hard=True)
+    window show
 
     "Чем ниже я спускался, тем больше полотенце сползало с её плеч."
 
-    show mi grin shorts_hair close with dissolve
+    show mi grin underwear loose towel hair close with dissolve
 
     "Мику засмеялась."
     mi "Ай! Я и забыла, что футболку сняла!"
 
-    show mi happy shorts_hair close with dspr
+    show mi happy underwear loose towel hair close with dspr
 
     "Она поймала край полотенца и прикрыла грудь."
     me "Ага-ага. Забыла она."
     "Я легко потянул полотенце вниз."
 
-    show mi smile shorts_hair close with dspr
+    show mi smile underwear loose towel hair close with dspr
 
     mi "Глупый! Я правда, забыла. Честно!"
     me "Верю! Ну, раз уже я увидел, то и смысла её надевать нет, правильно?"
     "Мику посмотрела на дверь и с сомнением поинтересовалась:"
 
-    show mi upset shorts_hair close with dspr
+    show mi upset underwear loose towel hair close with dspr
 
     mi "А если Лена зайдёт?"
     me "Не зайдёт. Она сказала, что до завтрака будет в медпункте."
 
-    show mi normal shorts_hair close with dspr
+    show mi normal underwear loose close
+    show mi normal towel_only close as mi_towel
+    show mi normal hair_only close as mi_hair
+    with dspr
 
     mi "Тогда ладно."
     "Она улыбнулась и отпустила край полотенца, не мешая ему полностью сползти вниз."
     "Я вздрогнул, предвкушая что сейчас наконец-то увижу…"
+
+    show mi normal towel_only close as mi_towel:
+        truecenter
+        pause 1.2
+        ease 1.0 ypos 0.6 alpha 0.0
+    show mi normal hair_only close as mi_hair:
+        pause 1.2
+        ease 1.0 alpha 0.0
+
+    window hide
+    $ renpy.pause(1.0, hard=True)
+    window show
+
     "Но под полотенцем на ней оказался верх от купальника."
 
-    show mi smile shorts_hair close with dspr
+    show mi smile underwear loose close with dspr
 
     "Кажется, Мику поняла, что я думал. Во всяком случае, она подмигнула мне и шутливо покачала головой, глядя мне в глаза."
     mi "Я девушка приличная!"
     "Вместо ответа я коснулся губами её плеча, потом шеи и только потом ответил:"
 
-    show mi happy shorts_hair close with dspr
+    show mi happy underwear loose close with dspr
 
     me "Я знаю!"
 
     play sound bkrr_sfx_list["whiteout1"]
-    show mi happy shorts_hair close:
+    show mi happy underwear loose close:
         truecenter
         parallel:
             linear 10.0 zoom 2.0
@@ -1106,21 +1124,21 @@ label bkrr_day17_common:
     window hide
     play sound bkrr_sfx_list["whiteout2"]
     scene bg int_house_of_un_day
-    show mi upset shorts_hair close at center
+    show mi upset underwear loose close at center
     with fade2
     window show
 
     mi "Сеня, волосы… Нужно высушить до завтрака…"
     me "Да-да. Точно."
 
-    show mi normal shorts_hair close with dspr
+    show mi normal underwear loose close with dspr
 
     "Я снова взялся за полотенце. Через несколько минут я довольно кивнул."
     me "Кажется, более-менее подсушили!"
     mi "Спасибо! Сейчас причешусь, и пойдём завтракать!"
     "Мику взяла гребень и провела по волосам. Даже на вытянутой руке ей неудобно дотянуться до кончиков.{w} Она пробовала так и эдак, но слишком длинные волосы ей мешали."
 
-    show mi upset shorts_hair close with dspr
+    show mi upset underwear loose close with dspr
 
     mi "Ну вот. Одни неудобства. А подстричь жалко, я их очень долго отращивала да и мама не позволит, а папа так вообще расстроится."
     me "Только попробуй эту красоту тронуть! Давай, лучше я помогу?"
@@ -1131,14 +1149,14 @@ label bkrr_day17_common:
     "Снова плавное скольжение гребня у неё в волосах, пальцы слегка покалывало, словно электрическими разрядами.{w} Мику довольно щурилась и покусывала губы, кажется, процесс доставлял ей столько же удовольствия, сколько и мне.{w} Ох, непростой это гребешок."
     "Мику выдохнула:"
 
-    show mi happy shorts_hair close with dissolve
+    show mi happy underwear loose close with dissolve
 
     mi "Хорошо-то как… Ещё! Ну, пожалуйста!"
     me "Всё-то ей мало…"
 
     stop music fadeout 5
 
-    show mi smile shorts_hair close with dspr
+    show mi smile underwear loose close with dspr
 
     "Я улыбнулся и ещё несколько раз провёл гребнем сверху донизу."
 

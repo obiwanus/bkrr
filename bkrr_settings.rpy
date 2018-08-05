@@ -1736,6 +1736,11 @@ init 2:
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'body', ['es:body', 'es:<emotion>'])
 
         make_sprites_for('mi', 'sheet', ['mod:body_loo', 'mod:sheet', 'es:<emotion>'], distances=['close'])
+        make_sprites_for('mi', 'underwear loose', ['mod:body_loo', 'mod:underwear', 'es:<emotion>'], distances=['close'])
+        make_sprites_for('mi', 'underwear loose hair', ['mod:body_loo', 'mod:underwear', 'mod:hair', 'es:<emotion>'], distances=['close'])
+        make_sprites_for('mi', 'underwear loose towel hair', ['mod:body_loo', 'mod:underwear', 'mod:towel', 'mod:hair', 'es:<emotion>'], distances=['close'])
+        make_sprites_for('mi', 'towel_only', ['mod:towel'], distances=['close'])
+        make_sprites_for('mi', 'hair_only', ['mod:hair'], distances=['close'])
         make_sprites_for('mi', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['sad_smile'])
 
         # Новые персонажи
