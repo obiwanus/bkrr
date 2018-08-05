@@ -2380,7 +2380,7 @@ label bkrr_day17_common:
         truecenter
         zoom 3.0
         pos (0.35, 0.75)
-    show kla shy sport far behind ext_music_club_verandah_day_v9_blocker:
+    show kla surprise sport far behind ext_music_club_verandah_day_v9_blocker:
         truecenter
         rotate 5
         ypos 0.5
