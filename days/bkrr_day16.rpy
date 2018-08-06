@@ -847,6 +847,9 @@ label bkrr_day16_common:
     "Я выбрал себе место поуютнее, устроил бас на коленях. Моё внимание привлекла знакомая тетрадь на полке. Та самая, из-за которой Алиса бросалась босоножками."
     th "Интересно, что там?"
     "Я отложил гитару и подобрался поближе к полке, протянул руку, но откуда-то раздался голос:"
+
+    scene bg int_music_club_mattresses_day with vpunch
+
     us_v "Если Алиска узнает, что ты там рылся, она тебя зашибёт."
     "От неожиданности я чуть не опрокинул подставку для нот."
     me "Ульяна? Ты где?"
@@ -1076,21 +1079,21 @@ label bkrr_day16_common:
 
     "Виола и Лена сидели в смотровой и болтали о чём-то своём. Виола при виде меня широко улыбнулась, Лена привычно потупилась и негромко что-то сказала вполголоса."
 
-    show cs smile civil at center with dissolve
+    show cs smile stethoscope at center with dissolve
 
     cs "Вот он! Злостный нарушитель режима, как лагерного, так и постельного. {w}Да, пионер?"
     me "Я не виноват! Меня подставили!"
 
-    show cs normal civil at center with dspr
+    show cs normal stethoscope at center with dspr
 
-    cs "Да, конечно. Насильно выгнали из лазарета и заставили бродить по лагерю. Давай-ка, снимай штаны, пора тебе узнать, чем ректальная термометрия отличается от обычной."
-    me "Виола, давайте не будем, при ребёнке-то."
+    cs "Да, конечно. Насильно выгнали из лазарета и заставили бродить по лагерю.{w} Давай-ка, снимай штаны, пора тебе узнать, чем ректальная термометрия отличается от обычной."
+    me "Виола, давайте не будем, при детях-то."
 
-    show cs smile civil at center with dspr
+    show cs smile stethoscope at center with dspr
 
     cs "Это кто ребёнок? {w}Лена, что ли? Ну, ладно."
 
-    show cs normal civil at center with dspr
+    show cs normal stethoscope at center with dspr
 
     cs "Жалобы есть?"
     me "Отсутствуют."
@@ -1106,14 +1109,14 @@ label bkrr_day16_common:
 
     "После беглого осмотра медсестра довольно улыбнулась и взяла меня за руку."
 
-    show cs smile civil at center with dissolve
+    show cs smile stethoscope at center with dissolve
 
     cs "Всё, пионер, поздравляю! Иди, и чтоб больше я тебя тут не видела до конца смены."
     me "Ну вот, а я ещё в гости хотел набиться."
     "Я с сожалением вздохнул."
     me "У вас чай вкусный."
 
-    show cs normal civil at center with dissolve
+    show cs normal stethoscope at center with dissolve
 
     cs "То-то я думаю, куда пол-коробки делось! Лена, ты его поила?"
 
@@ -1143,12 +1146,12 @@ label bkrr_day16_common:
     th "Вкусно… Как в детстве."
     me "Я свободен?"
 
-    show cs normal civil at center with dissolve
+    show cs normal stethoscope at center with dissolve
 
     cs "Свободен, как негры в Африке. Постельное не трогай, это наше, а вещи, одеяло и одежду забирай. {w}И гитару свою."
     "Лена встала, посмотрела на кучу моих пожитков."
 
-    show un shy dress at left with easeinleft
+    show un shy dress at left with dissolve
 
     un "Я вам пока не нужна?"
     "Виола покачала головой."
@@ -1685,7 +1688,7 @@ label bkrr_day16_common:
 
     "Взвизгнув, они одновременно сели на пол, одёргивая юбки."
 
-    show dv angry pioneer2 at cleft
+    show dv angry pioneer at cleft
     show us dontlike pioneer at cright
     with easeinbottom
 
@@ -1698,6 +1701,7 @@ label bkrr_day16_common:
     stop ambience fadeout 0.5
 
     play sound sfx_open_door_2
+    stop music fadeout 5
 
     scene bg ext_music_club_verandah_day_v9
     show mi normal pioneer close at center
@@ -1717,16 +1721,16 @@ label bkrr_day16_common:
 
     hide mi with dissolve
 
-    "На аллее было пусто, так что никто не видел, как Мику бросилась мне на шею и обняла. Потом моё внимание привлекло перешёптывание. Из приоткрытой двери на нас смотрели две пары глаз."
+    "На аллее было пусто, так что никто не видел, как Мику бросилась мне на шею и обняла.{w} Потом моё внимание привлекло перешёптывание. Из приоткрытой двери на нас смотрели две пары глаз."
 
-    show dv grin pioneer2 far at cleft
+    show dv grin pioneer far at cleft
     show us smile pioneer far at cright
     with dissolve
 
-    dv "Ну только посмотри на эти нежности. Мне вот завидно, на меня вот так не бросался."
+    dv "Ну только посмотри на эти нежности. Мне вот завидно, на меня он так не бросался."
     us "А на меня бросался! Когда я котлету украла."
 
-    show dv smile pioneer2 far at cleft with dspr
+    show dv smile pioneer far at cleft with dspr
 
     dv "Да? Попробовать, что ли, и себе так… Когда там котлеты на завтрак будут?"
 
@@ -1734,7 +1738,7 @@ label bkrr_day16_common:
 
     us "По-моему, каждый день!"
 
-    show dv normal pioneer2 far at cleft with dspr
+    show dv normal pioneer far at cleft with dspr
 
     dv "Сень, вы там долго? Мы по тебе тоже соскучились!"
 
@@ -1742,12 +1746,10 @@ label bkrr_day16_common:
 
     us "Может, прервёшься и поздороваешься?"
 
-    stop music fadeout 10
-
     "Я с сожалением отпустил Мику."
     me "Так мы же с вами уже виделись."
 
-    show dv smile pioneer2 far at cleft with dspr
+    show dv smile pioneer far at cleft with dspr
 
     dv "То не в счёт! Сейчас ты у нас официально вернулся в строй!"
     me "И что мне делать?"
@@ -1765,26 +1767,41 @@ label bkrr_day16_common:
 
     window show
 
-    "После этого рыжие музыкантки одновременно обняли меня, а потом втолкнули в клуб. На этом торжественная часть внезапно закончилась, и они вернулись к своему занятию."
-    me "Алиса, Уля, а что вы тут, на четвереньках?"
+    "После этого рыжие музыкантки одновременно обняли меня, а потом втолкнули в клуб."
+    "На этом торжественная часть внезапно закончилась, и они вернулись к своему занятию."
+
+    window hide
+    scene cg d16_cryptography:
+        truecenter
+        yalign 0.1
+        xalign 0.57
+        zoom 2.0
+    with fade2
+    play music music_list["timid_girl"] fadein 5
+    window show
+
+    me "Алиса, Уля, а что это вы тут, на четвереньках?"
     "Я присмотрелся к тому, чем они занимались. Это точно была не репетиция."
     "На полу были разложены план лагеря, украденный с главных ворот, и куча бумажек, на каждой из которых было по букве."
     "Ульяна перекладывала карточки так и эдак, пытаясь понять, что же написано на бумажке, а Алиса изучала план, прикидывала, какая его часть могла быть изображена на схеме."
     "Им явно было не до музыки. Клубом овладела золотая лихорадка."
-    "Уля повернулась ко мне передом, а к шифру задом, и принялась излагать."
 
-    play music music_list["timid_girl"] fadein 5
+    window hide
+    scene bg int_music_club_mattresses_day with fade2
+    window show
+
+    "Уля повернулась ко мне передом, а к шифру задом, и принялась излагать."
 
     show us normal pioneer at center with dissolve
 
-    us "Шифр подбираем! Вот смотри. Здесь несколько букв стоят отдельно, значит, это могут быть букы «Я», «И», «В» или «К». Ну, может, ещё «О». Понимаешь?"
+    us "Шифр подбираем! Вот смотри. Здесь несколько букв стоят отдельно, значит, это могут быть букы «Я», «И», «В» или «К».{w} Ну, может, ещё «О». Понимаешь?"
     me "Более-менее. Хотите определить их, а потом, подставляя в слова, разгадать остальные? Как Холмс?"
 
     show us smile pioneer at center with dspr
 
     us "Во-о-от! Ты понимаешь, не то что эта, рыжая!"
 
-    show dv normal pioneer2 close:
+    show dv normal pioneer close:
         fleft
         rotate 17
     with easeinleft
@@ -1843,7 +1860,7 @@ label bkrr_day16_common:
     us "Конфет куплю. Много! Целую тонну! И ударную установку самую лучшую. И…"
     "Алиса немного охладила её пыл."
 
-    show dv normal pioneer2 at left with dissolve
+    show dv normal pioneer at left with dissolve
 
     dv "Улька, как ты думаешь, откуда у пионеров может быть сокровище? И какое? {w}Набор фломастеров? {w}Коллекция значков? За это много конфет не купишь."
     "Ульяна не сдавалась."
@@ -1852,7 +1869,7 @@ label bkrr_day16_common:
 
     us "Мало ли! Может, они клад нашли! Тут ведь монастырь был!"
 
-    show dv smile pioneer2 at left with dspr
+    show dv smile pioneer at left with dspr
 
     dv "Ага. Нашли, а потом закопали назад и написали самим себе записку, где его искать."
     th "«Не похож на остальных», «Ты здесь не просто так». Странно это всё."
@@ -1872,10 +1889,7 @@ label bkrr_day16_common:
     mi "Я думаю, что про подготовку к завтрашнему дню они забыли, до обеда, по крайней мере, и что мы с тобой вполне можем пойти погулять."
     "Ульяна возмутилась."
 
-    show us dontlike pioneer close:
-        cright
-        xzoom -1.0
-    with easeinright
+    show us dontlike pioneer close at cright with dissolve
 
     us "Как «погулять»? А клад? У вас двоих одно на уме!"
 
@@ -1884,14 +1898,11 @@ label bkrr_day16_common:
     "Мику показала на часы на стене."
     mi "Уля, «в четыре» – это после обеда. Даже если мы пойдём искать эти ваши белые камни, то ещё рано."
 
-    show us upset pioneer close:
-        cright
-        xzoom -1.0
-    with easeinright
+    show us upset pioneer close at cright with dspr
 
     us "Ну и ладно."
 
-    hide us with easeoutright
+    hide us with dissolve
 
     "Мы с Мику оставили музыкальных кладоискателей строить планы и вышли на свежий воздух."
 
@@ -1950,8 +1961,12 @@ label bkrr_day16_common:
 
     show mi laugh pioneer close at center with dspr
 
-    mi "А у него колёсики маленькие, будут застревать. Или барабаны, это же придётся звать Ульяну с Алиской, чтобы помогли тащить, увяжутся за нами, будут комментировать и советы давать, какое же это тогда свидание получается? А если мы при них начнём… {w}Ой…"
-    me "Нет-нет. Я сегодня не в настроении рояли по горам катать, гитары нам хватит. А какую взять? Их там три, кажется."
+    mi "А у него колёсики маленькие, будут застревать.{w} Или барабаны, это же придётся звать Ульяну с Алиской, чтобы помогли тащить, увяжутся за нами, будут комментировать и советы давать, какое же это тогда свидание получается? А если мы при них начнём…"
+
+    show mi shy pioneer close with dspr
+
+    mi "Ой…"
+    me "Нет-нет. Я сегодня не в настроении рояли по горам катать, гитары нам хватит.{w} А какую взять? Их там три, кажется."
 
     show mi normal pioneer close at center with dspr
 
@@ -1996,31 +2011,30 @@ label bkrr_day16_common:
     us "У, ты какая жадная. Отдам я! Семёныч, так ты не за мной?"
     me "Э… нет. Дайте мне гитару, пожалуйста. Мику просила."
 
-    show dv smile pioneer2 at cleft
-    show us normal pioneer at offscreenright
-    with ease
+    hide us with dissolve
+    show dv smile pioneer2 at cleft with ease
 
     "Алиса вздохнула, подошла к стойке с гитарами."
     dv "Мою, конечно? Тёмненькую?"
     me "Угу…"
 
-    show dv normal pioneer2 at center with ease
+    show dv normal pioneer2 at cleft with dspr
 
     dv "Семён, а ты знаешь, что с тобой произойдёт, если на ней будет хоть царапина?"
-    me "Фантазия у тебя однообразная. Думаю, ты мне врежешь. Давай тогда и чехол."
+    me "Фантазия у тебя однообразная. Думаю, ты мне врежешь.{w} Давай тогда и чехол."
 
-    show dv grin pioneer2 at center with dspr
+    show dv grin pioneer2 at cleft with dspr
 
     dv "Чего? А ты не обнаглел? Где я чехол возьму?"
     me "Давай, давай, не жмись, у тебя есть, я же помню!"
 
-    show dv guilty pioneer2 at center with dspr
+    show dv guilty pioneer2 at cleft with dspr
 
     "Алиса вздохнула."
     dv "Это мой, личный! Я его из дому привезла. Что я с этого буду иметь?"
     me "Гитару без царапинок. Могу ещё поцеловать!"
 
-    show dv laugh pioneer2 at center with dspr
+    show dv laugh pioneer2 at cleft with dspr
 
     dv "Вот только угрожать не надо!"
 
@@ -2067,6 +2081,7 @@ label bkrr_day16_common:
     scene bg ext_music_club_day with dissolve
 
     play ambience ambience_camp_center_day fadein 3
+    play music bkrr_music_list["r_dro"] fadein 15
 
     window show
 
@@ -2310,6 +2325,7 @@ label bkrr_day16_common:
     window hide
 
     stop ambience fadeout 3
+    stop music fadeout 10
 
     # ВЕРШИНА ХОЛМА.
     # ПИКНИК, ПЕТТИНГ И ПЕРЕБОРЫ СТРУН
