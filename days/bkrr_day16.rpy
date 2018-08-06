@@ -2080,6 +2080,8 @@ label bkrr_day16_common:
 
     scene bg ext_music_club_day with dissolve
 
+    $ bkrr_set_volume('ambience', 0.4, 15.0)
+
     play ambience ambience_camp_center_day fadein 3
     play music bkrr_music_list["r_dro"] fadein 15
 
@@ -2326,6 +2328,7 @@ label bkrr_day16_common:
 
     stop ambience fadeout 3
     stop music fadeout 10
+    $ bkrr_set_volume('ambience', 1.0, 10.0)
 
     # ВЕРШИНА ХОЛМА.
     # ПИКНИК, ПЕТТИНГ И ПЕРЕБОРЫ СТРУН
@@ -2368,6 +2371,8 @@ label bkrr_day16_common:
 
     window hide
 
+    $ bkrr_set_volume('ambience', 0.4, 5.0)
+    $ bkrr_set_volume('sound_loop', 0.4, 5.0)
     play music music_list["so_good_to_be_careless"] fadein 10
 
     $ renpy.pause(1.0, hard=True)
@@ -2436,6 +2441,8 @@ label bkrr_day16_common:
     mi "Не понимаю. Наверное, как у человека, который ищет ответ на вопрос. Или думает о чём-то неприятном."
 
     stop music fadeout 15
+    $ bkrr_set_volume('ambience', 1.0, 20.0)
+    $ bkrr_set_volume('sound_loop', 1.0, 20.0)
 
     me "Глупые вещи в голову лезут. Совсем не те, о которых надо думать наедине с любимой девушкой."
 
