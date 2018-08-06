@@ -386,7 +386,8 @@ label bkrr_day17_common:
 
     window show
 
-    scene bg ext_beach_sunset
+    scene bg ext_beach_sunset:
+    show sh smile shirt at bkrr_sit_center
     show unblink
     with vpunch
 
@@ -395,8 +396,6 @@ label bkrr_day17_common:
     "Я снова прикрыл глаза, но меня тут же потрясли за руку."
 
     # ШУРИК ЗАМАНИЛ НА РЫБАЛКУ
-
-    show sh smile shirt at bkrr_sit_center with dissolve
 
     sh "Семён, так ты действительно сбежал? А почему здесь сидишь? Пришёл бы к нам переночевать. Вставай, земля холодная, почки застудишь!"
 
