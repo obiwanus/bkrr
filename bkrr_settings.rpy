@@ -750,6 +750,7 @@ init 2:
             (MOD_IMAGES + "cg/d14_rocket_2.png")
             ease 15.0 alpha 0.0
     image cg d15_mi_sleep = im.Scale(MOD_IMAGES + "cg/d15_mi_sleep.jpg", config.screen_width, config.screen_height)
+    image cg d16_catmiku = MOD_IMAGES + "cg/d16_catmiku.jpg"
     image cg d16_boat_shed = MOD_IMAGES + "cg/d16_boat_shed.jpg"
     image cg d16_cryptography = MOD_IMAGES + "cg/d16_cryptography.png"
     image cg d16_gulls = MOD_IMAGES + "cg/d16_gulls.jpg"
