@@ -26,9 +26,6 @@ label bkrr:
 
     play sound_loop sfx_gusty_wind fadein 3
 
-    if persistent.bkrr_rekord_hit:
-        jump bkrr_start_normal
-
     play music bkrr_music_list["menu"] fadein 15
     $ renpy.pause(1.5, hard=True)
 
@@ -75,10 +72,6 @@ label bkrr:
         with None
 
         stop music fadeout 1.0
-
-        $ renpy.run(OpenURL("https://bitbucket.org/obiwanus/bkrr/issues/40/sourcetree-pull"))
-
-        $ persistent.bkrr_rekord_hit = True
 
         jump bkrr_start_normal
 
