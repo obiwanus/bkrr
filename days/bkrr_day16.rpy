@@ -2083,7 +2083,7 @@ label bkrr_day16_common:
     $ bkrr_set_volume('ambience', 0.4, 15.0)
 
     play ambience ambience_camp_center_day fadein 3
-    play music bkrr_music_list["r_dro"] fadein 15
+    play music bkrr_music_list["tee"] fadein 15
 
     window show
 
@@ -2500,6 +2500,7 @@ label bkrr_day16_common:
 
     mi "Тогда…"
     "Мику улыбнулась, взяла меня за руку и положила мою ладонь себе на грудь."
+
     mi "Тебе положен маленький утешительный приз."
     "Я оторопел на секунду, кровь тут же хлынула в лицо и ещё кое-куда, пониже. Если второе осталось моим маленьким секретом, то первое…"
     "Я смутился и едва слышно ответил:"
