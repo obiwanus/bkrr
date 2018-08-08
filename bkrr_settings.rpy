@@ -799,29 +799,6 @@ init 2:
             pause 3.45
             linear 0.05 alpha 1.0
 
-    image cg rekord_guitar_hit:
-        contains:
-            "bg ext_music_club_day"
-        contains:
-            (MOD_IMAGES + "misc/d6_dv_hit.png")
-            pos(0.75, 0.5)
-            anchor(0.5, 0.5)
-            linear 3.4 pos(0.5, 0.5)
-            linear 0.1 zoom 1.33
-        contains:
-            im.Scale(MOD_IMAGES + "misc/d6_dv_hit_text.png", 585, 155)
-            pos(0.5, 0.9)
-            anchor(0.5, 0.5)
-            alpha 0.0
-            pause 1.2
-            ease 2.0 pos(0.5, 0.75) alpha 1.25 zoom 2
-            ease 0.3 zoom 2.0
-        contains:
-            "white"
-            alpha 0.0
-            pause 3.45
-            linear 0.05 alpha 1.0
-
     image cg d8_theft:
         contains:
             "bg int_dining_hall_people_day"
@@ -896,6 +873,8 @@ init 2:
         contains:
             "mi smile yukata close"
             center
+
+
 
     # Прочие эффекты
 
