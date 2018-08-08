@@ -874,7 +874,42 @@ init 2:
             "mi smile yukata close"
             center
 
-
+    image cg d16_picnic:
+        contains:
+            "white"
+        contains:
+            (MOD_IMAGES + "cg/d16_picnic1.jpg")
+            alpha 0.0
+            xalign 1.0
+            parallel:
+                linear 1.5 alpha 1.0
+            parallel:
+                linear 12.0 xalign 0.0
+            parallel:
+                pause 10.0
+                linear 2.0 alpha 0.0
+        contains:
+            (MOD_IMAGES + "cg/d16_picnic2.jpg")
+            alpha 0.0
+            xalign 0.0
+            pause 10.0
+            parallel:
+                linear 1.5 alpha 1.0
+            parallel:
+                linear 10.0 xalign 1.0
+            parallel:
+                pause 8.0
+                linear 2.0 alpha 0.0
+        contains:
+            (MOD_IMAGES + "cg/d16_picnic3.jpg")
+            truecenter
+            alpha 0.0
+            zoom 1.5
+            pause 18.0
+            parallel:
+                linear 1.5 alpha 1.0
+            parallel:
+                linear 15.0 zoom 1.0
 
     # Прочие эффекты
 
