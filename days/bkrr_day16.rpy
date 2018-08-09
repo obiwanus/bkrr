@@ -2954,16 +2954,15 @@ label bkrr_day16_common:
     "Я поспешил к пристани."
 
     window hide
+    play music music_list["just_think"] fadein 5
 
     stop ambience fadeout 3
 
-    scene bg ext_boathouse_day with dissolve
+    scene bg ext_boathouse_day with fade2
 
     play ambience ambience_boat_station_day fadein 3
 
     window show
-
-    play music music_list["just_think"] fadein 5
 
     th "Сарай, сарай… Их тут было целых два. {w}И ещё сторожка. Ищи, где хочешь."
     th "Ладно, я помню папку. Она заметная, ярко-красная, и если никто её не унёс, то найдётся."
@@ -2985,6 +2984,7 @@ label bkrr_day16_common:
     scene cg d16_boat_shed:
         truecenter
         zoom 1.6
+        xalign 0.4
         yalign 0.0
         linear 25.0 zoom 1.0
     with bkrr_fade(1.0)
@@ -3236,7 +3236,7 @@ label bkrr_day16_common:
 
     "Я пробежался до нашего с Ольгой домика и бросил папку на столе, запер дверь и бегом вернулся к ожидающим меня девочкам."
 
-    play sound2 bkrr_sfx_list["ducks"]
+    play sound2 bkrr_sfx_list["ducks"] fadein 1
 
     "На пляже не было никого, кроме утиной семьи, мирно выискивающей корм на мелководье. При виде нас они отплыли подальше и недовольно загалдели."
     "Ульяна развернула бумажку."
@@ -4218,7 +4218,8 @@ label bkrr_day16_common:
     $ bkrr_set_volume("sound_loop", 1.0, 10.0)
     $ bkrr_set_volume("sound", 1.0, 10.0)
 
-    "Я осторожно выглянул и поморщился. Не завидую тому, кто будет отмывать эту пристань. Алиса и Ульяна выбирались из-под щита."
+    "Я осторожно выглянул и поморщился.{w} Не завидую тому, кто будет отмывать эту пристань."
+    "Алиса и Ульяна выбирались из-под щита."
 
     show us sad sport at center with dissolve
 
@@ -4269,15 +4270,13 @@ label bkrr_day16_common:
     dv "Бр-р-р. Холодная! Как я дала себя уболтать, не понимаю."
 
     window hide
-
-    scene bg ext_boathouse_sunset_bkrr with dissolve
-
+    $ renpy.pause(1.0, hard=True)
     window show
 
     "До колена – не до колена, но шорты Алисы не пострадали, и вскоре таинственная банка оказалась у нас в руках."
     "Золотых монет там не оказалось, даже завалящей серебряной серёжки. Ульяна вздохнула."
 
-    show us dontlike sport at center with dissolve
+    show us dontlike sport at center with dspr
 
     us "Они что, издеваются? Ладно, идём на берег!"
 
@@ -4285,11 +4284,11 @@ label bkrr_day16_common:
 
     hide us with dissolve
 
-    $ renpy.pause(1.0, hard=True)
+    scene bg ext_boathouse_sunset_bkrr with dissolve
 
     window show
 
-    "Мы присели не перевёрнутую лодку и развернули очередное послание. {w}Вместо карты там обнаружилось письмо в самодельном синем конверте."
+    "Мы присели на перевёрнутую лодку и развернули очередное послание. {w}Вместо карты там обнаружилось письмо в самодельном синем конверте."
 
     show us surp1 sport at center with dissolve
 
@@ -4298,8 +4297,10 @@ label bkrr_day16_common:
 
     show us calml sport at center with dspr
 
-    us "Тьфу… Ерунда какая-то. Сопли мармеладные."
+    us "Тьфу… Ерунда какая-то.{w} Сопли мармеладные."
     mi "Читай вслух!"
+
+    play music music_list["memories"] fadein 5
 
     window hide
 
@@ -4334,20 +4335,48 @@ label bkrr_day16_common:
 
     us "Блин!"
     "Ульяна сплюнула."
-    us "И вот ради этого мы весь вечер копали?{w} Алиска, ты чего носом шмыгаешь? Простыла?"
+
+    show bkrr_todo "Дальше пока не готово"
+
+    show us calml sport at cleft with dissolve
+
+    us "И вот ради этого мы весь вечер копали?"
+
+    show us surp1 sport with dspr
+
+    us "Алиска, ты чего носом шмыгаешь? Простыла?"
+
+    show dv guilty sport at cright with dissolve
+
     dv "Дурочка ты, Ульянка! Девчонка-то так старалась! А этот её дружок не пришёл!"
+
+    show us normal sport with dspr
+
     us "С чего ты решила?"
+
+    show dv sad sport with dspr
+
     dv "Ну головой подумай! Записки-то на местах. Значит, что-то помешало их найти."
     us "Копать поленился!"
     "Мику взяла меня под руку и положила голову на плечо."
     mi "Грустно. Жалко мне их! И Ульянку жалко. Она так на клад рассчитывала. И Алису зря с собой таскали."
-    dv "Ничего не зря! Хорошо прошлись! А то всю смену из клуба не выглядываем. И история интересная. Найти бы этого Следопыта, да…"
+
+    show dv guilty sport with dspr
+
+    dv "Ничего не зря! Хорошо прошлись! А то всю смену из клуба не выглядываем. И история интересная.{w} Найти бы этого Следопыта, да…"
     "Алиса задумалась."
+
+    show us grin sport with dspr
+
     us "По морде?"
     "Предположила Ульяна. И не угадала."
+
+    show dv normal sport with dspr
+
     dv "Сюда привести!"
     us "И что дальше?"
-    us "Ну, как это «что». Увидит письмо, узнает, что в него кто-то там влюблён был. Аня эта, или как её."
+    dv "Ну, как это «что». Увидит письмо, узнает, что в него кто-то там влюблён был. Аня эта, или как её."
+
     "Мику посмотрела на солнце и развела руками."
     mi "Наверное, сегодня мы уже не порепетируем. А завтра – как получится. Иностранцы приедут, у всех будет куча дел. Но мы попробуем. На линейке решим, когда соберёмся, да?"
     "Алиса поправила волосы и похвасталась:"
@@ -4595,6 +4624,6 @@ label bkrr_day16_common:
 
     window hide
 
-    $ persistent. bkrr_check[17] = True
+    $ persistent.bkrr_check[17] = True
 
     jump bkrr_day17_start
