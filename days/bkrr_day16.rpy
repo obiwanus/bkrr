@@ -2624,7 +2624,7 @@ label bkrr_day16_common:
 
     stop ambience fadeout 3
 
-    play music bkrr_music_list["warm_cats_vocal"] fadein 2
+    play sound2 bkrr_music_list["koty"] fadein 2
 
     scene cg d4_mi_guitar:
         align(0.5, 0.0)
@@ -2633,14 +2633,14 @@ label bkrr_day16_common:
         linear 25.0 zoom 1.15
     with Dissolve(2.5)
 
-    $ renpy.pause(27.5)
+    $ renpy.pause(29.0, hard=True)  # непропускаемое, чтоб народ начал слушать. Дальше смогут пропустить если захотят
 
     show bkrr_lyrics_screen with bkrr_blindstotop_transition
 
     show bkrr_song "Зима так холодна, \n\nТак бесприютна и бела. \n\nСкоро будет неизбежный\n\nДефицит тепла. \n\n\nНачнём спасаться мы\n\nОт этой теплонищеты, \n\nЗначит, снова будут в моде\n\nТёплые коты. \n\n\nБудем гладить всех мурчащих, \n\nТёплых, сонных, настоящих, \n\nЗапуская руки в меховые животы.\n\nПеременчивы все вещи\n\nВ странном мире человечьем, \n\nПостоянны мягкие, \n\nМурчащие коты.":
         xalign 0.5
         ypos 1.0
-        linear 43.0 ypos -1.7
+        linear 60.0 ypos -1.7
 
     $ renpy.pause(43.0)
 
@@ -2648,9 +2648,7 @@ label bkrr_day16_common:
     hide bkrr_song
     with bkrr_blindstobottom_transition
 
-    $ renpy.pause(166.0)
-
-    stop music fadeout 5
+    $ renpy.pause(7.5)
 
     scene bg ext_meadow_day with dissolve
 
@@ -2662,6 +2660,9 @@ label bkrr_day16_common:
 
     th "Ну, конечно. Целая песня про котиков, как же она могла ей не понравиться?"
     "Я любовался Мику и вспоминал холодную зиму, которая окружала меня всего пару недель назад. {w}Песни из моего времени пришлись Мику по душе."
+
+    stop sound2 fadeout 5
+
     th "Интересно, а как бы ей понравилось там, в будущем?"
 
     window hide
