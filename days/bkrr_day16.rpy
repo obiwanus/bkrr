@@ -3120,13 +3120,14 @@ label bkrr_day16_common:
 
     "Женя втянула воздух и пояснила:"
 
-    stop music fadeout 1
-
     mz "Горелой резиной."
 
     show mi upset pioneer at cright with dspr
 
     mi "Резиной?"
+
+    stop music fadeout 1
+
     mz "По-моему, у Семёна кеды горят."
 
     window hide
@@ -3369,9 +3370,14 @@ label bkrr_day16_common:
 
     stop music fadeout 1
 
+    show bkrr_todo "Может какой-нибудь лузерский звук здесь?"
+
     "Круглую жестяную банку из-под краски. {w}Очень-очень ржавую."
     th "Наверное, красили что-то, хоть ту же радиомачту, поленились выбросить, вот и закопали банку в песок."
     "Мику с Алисой, сидящие на валуне и наблюдающие за нами, обидно засмеялись."
+
+    hide bkrr_todo
+
     "Я ухмыльнулся, погладил Ульяну по голове."
     me "Я отказываюсь от своей доли. Забирай. {w}Только не порежься, а то столбняк будет."
 
@@ -4021,6 +4027,7 @@ label bkrr_day16_common:
     "Мику зажмурилась и запрокинула голову, словно пытаясь увидеть то, о чём мы говорим."
 
     $ bkrr_set_volume("sound_loop2", 0.2)
+    $ bkrr_set_volume("ambience", 0.4, 2.0)
     play sound_loop2 bkrr_sfx_list["gulls"] fadein 10
 
     me "Только ты и я, на яхте, в открытом океане… {w}Ветер раздувает паруса, рядом резвятся дельфины, в небе кричат чайки…"
@@ -4036,6 +4043,7 @@ label bkrr_day16_common:
     stop sound_loop fadeout 3
     stop music fadeout 5
     scene bg ext_pier_day with bkrr_fade(2.0)
+    $ bkrr_set_volume("ambience", 1.0, 2.0)
     $ bkrr_set_volume("sound_loop2", 0.5, 2.0)
 
     window show
