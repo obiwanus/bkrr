@@ -4528,7 +4528,7 @@ label bkrr_day16_common:
 
     window hide
     $ bkrr_timeskip_short()
-    scene ext_houses_sunset with bkrr_timeskip_transition()
+    scene bg ext_houses_sunset with bkrr_timeskip_transition()
     window show
 
     "Оставив Ульяну и Алису в их домике, мы втроём отправились по домам.{w} В присутствии вожатой мы чувствовали себя скованно, а она, напротив, расспрашивала нас о том, как идёт подготовка к концерту."
