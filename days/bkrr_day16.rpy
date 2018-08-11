@@ -4484,7 +4484,7 @@ label bkrr_day16_common:
 
     stop ambience fadeout 2
     window hide
-    scene ext_square_sunset with fade2
+    scene bg ext_square_sunset with fade2
     window show
     play ambience ambience_camp_center_evening fadein 3
 
