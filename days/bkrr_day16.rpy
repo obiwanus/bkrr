@@ -2971,12 +2971,14 @@ label bkrr_day16_common:
 
     window hide
     $ renpy.pause(1.0, hard=True)
+    play sound bkrr_sfx_list["saray_door1"]
     window show
 
     "Первый сарай. Грязные стеллажи с рухлядью, вёсла-буйки и никаких признаков папки."
 
     window hide
     $ renpy.pause(1.0, hard=True)
+    play sound bkrr_sfx_list["saray_door2"]
     window show
 
     "Второй сарай. Пара старых байдарок, ящики, а на ящиках…"
