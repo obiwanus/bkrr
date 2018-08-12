@@ -9,18 +9,18 @@ label bkrr_day16_start:
 
 label bkrr_day16_common:
 
+    play music music_list["sparkles"] fadein 5
+
     scene cg d16_catmiku:
         yalign 0.85
-        linear 10.0 yalign 0.1
+        ease 10.0 yalign 0.1
     show prologue_dream:
         alpha 0.45
     with fade3
 
     $ bkrr_set_time("prologue")
 
-    play music music_list["sparkles"] fadein 3
-
-    $ renpy.pause(1.0, hard=True)
+    $ renpy.pause(0.5, hard=True)
 
     window show
 
