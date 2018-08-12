@@ -2127,16 +2127,19 @@ label bkrr_day17_common:
     "Уже до этого, поднимая на руки Мику или Ульяну, я удивлялся, насколько это тело сильнее моего старого. Вот и сейчас увесистый чемодан оторвался от земли не без усилий, но легко."
     me "Я помогу. Как ты его таскал? Не оторвёшь."
 
-    show kla shy sport with dissolve
+    show kla shyleft sport with dissolve
 
     kla "Извини, он такой недавно. После того как в деревне переночевали."
     me "А что там? Подковы у лошадей взял? На удачу?"
 
-    show kla normal with dspr
+    show kla shy sport with dspr
 
     kla "Нет! Хозяйка положила нам с собой домашний мармелад в банках… Нет не мармелад.{w} Ва-рень-е."
     kla "Я объяснял, что нам не надо, но она дала шесть банок. Выбросить жалко, а нести тяжело. Антон Иванович посмеялся и сказал, что она обидится, если я не возьму."
     me "Наши бабушки они такие."
+
+    show kla normal sport with dspr
+
     kla "Не бабушка. Она молодая."
     me "Тем более."
 
@@ -2525,7 +2528,7 @@ label bkrr_day17_common:
 
     hide mi with dissolve
     show dv angry bkrr_sport at cright with ease
-    show kla shy sport at cleft with easeinbottom
+    show kla shyleft sport at cleft with easeinbottom
 
     kla "Прости. Я гитарист.{w} Немного.{w} Хотел посмотреть."
 
@@ -2547,6 +2550,9 @@ label bkrr_day17_common:
 
     "Алиса возмутилась."
     dv "Дура!"
+
+    show kla shy sport with dspr
+
     "Клаус покраснел ещё гуще."
     kla "Нет. Гитару посмотреть."
 
@@ -2554,6 +2560,9 @@ label bkrr_day17_common:
 
     "Алиса подозрительно оглядела гостя."
     dv "Ты? Гитарист?{w} Ну, посмотрим. Ладно, я тебя не зашибла?{w} Меня Алиса зовут."
+
+    show kla shyright sport with dspr
+
     kla "Алиса? Семён мне говорил про тебя."
 
     show dv guilty with dspr
@@ -2860,6 +2869,9 @@ label bkrr_day17_common:
 
     kla "Нет, я это… ну…"
     "Он понизил голос."
+
+    show kla shyright pioneer far with dspr
+
     kla "{i}Где у вас тут туалет?{/i}"
 
     show us sad
@@ -2961,7 +2973,7 @@ label bkrr_day17_common:
     stop ambience fadeout 2
     scene bg int_music_club_mattresses_day
     show mt normal pioneer far at cright
-    show ant smile shirt far at cleft
+    show ant normal shirt far at cleft
     with fade2
     play ambience bkrr_ambience_list["indoors_day"] fadein 2
     window show

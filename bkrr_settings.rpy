@@ -1637,7 +1637,7 @@ init 2:
                 'normal': 1, 'serious': 1, 'smile': 1, 'surprise': 1,
             },
             "kla": {
-                'laugh': 1, 'normal': 1, 'smile': 1, 'shy': 2, 'surprise': 2,
+                'laugh': 1, 'normal': 1, 'smile': 1, 'shy': 2, 'surprise': 2, 'shyleft': 2, 'shyright': 2, 'surpleft': 2, 'surpright': 2,
             },
             "nt": {
                 'laugh': 1, 'normal': 1, 'sad': 1, 'smile': 1,
