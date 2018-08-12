@@ -4319,6 +4319,10 @@ label bkrr_day16_common:
 
     "Мы присели на перевёрнутую лодку и развернули очередное послание. {w}Вместо карты там обнаружилось письмо в самодельном синем конверте."
 
+    window hide
+    $ bkrr_get_item("love_letter")
+    window show
+
     show us surp1 sport at center with dissolve
 
     us "Ух ты!"
