@@ -3434,14 +3434,14 @@ label bkrr_day17_common:
     cs "Тогда иди. Дай старой глупой тётке похандрить без свидетелей."
     me "Вы не старая. И не глупая."
 
-    hide cs with dissolve
-    scene bg ext_houses_sunset:
-        parallel:
-            ease 1.0 zoom 1.2
-        parallel:
-            ease 1.0 pos (0.0, -0.2)
+    scene bg ext_houses_sunset_viola:
+        ease 1.0 zoom 1.2 pos (0.0, -0.2)
     $ renpy.pause(1.0, hard=True)
-    show cs normal civil2 at cleft with dissolve
+    scene bg ext_houses_sunset:
+        zoom 1.2
+        pos (0.0, -0.2)
+    with dissolve
+    show cs normal civil2 at center with dissolve
 
     "Я присел рядом."
 
@@ -3467,7 +3467,7 @@ label bkrr_day17_common:
 
     "Разговор не клеился. Кажется, она разберётся и без меня.{w} Я уже думал идти, когда она негромко сказала:"
 
-    show cs normal civil2 at cleft with dissolve
+    show cs normal civil2 with dissolve
 
     cs "Я завтра уеду…"
     me "Надолго?"

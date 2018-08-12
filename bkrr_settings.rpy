@@ -608,6 +608,13 @@ init 2:
 
     image bg ext_camp_car = im.Scale(MOD_IMAGES + "bg/ext_camp_car.png", config.screen_width, config.screen_height)
 
+    image bg ext_houses_sunset_viola:
+        contains:
+            "bg ext_houses_sunset"
+        contains:
+            "cs normal civil2 far"
+            cleft
+
     # Дождливые, пасмурные фоны
 
     image bg ext_music_club_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/ext_musclub_day.jpg")
