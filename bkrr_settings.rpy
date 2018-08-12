@@ -1334,8 +1334,8 @@ init 1:
             parallel:
                 linear t alpha 0.3 zoom (z + 0.05)
             parallel:
-                linear 5.0 rotate -19
-                linear 10.0 rotate 19
+                linear 5.0 rotate -39
+                linear 10.0 rotate 39
                 linear 5.0 rotate 0
                 repeat
         contains:
@@ -1346,10 +1346,13 @@ init 1:
             pause zt
             linear t alpha 0.2 zoom (z + 0.05)
             parallel:
-                linear 1.0 rotate 19
-                linear 2.0 rotate -19
+                linear 1.0 rotate 25
+                linear 2.0 rotate -25
                 linear 1.0 rotate 0
                 repeat
+            parallel:
+                linear 1.5 zoom (z + 0.15)
+                linear 2.5 zoom (z + 0.05)
 
     # Горящая спичка
 
