@@ -91,8 +91,9 @@ label bkrr_day16_common:
 
     play sound bkrr_sfx_list["whiteout1"]
 
-    scene cg d5_sl_sleep
-    show prologue_dream with bkrr_fade(0.5)
+    scene expression bkrr_make_sepia_img("cg d5_sl_sleep")
+    show prologue_dream
+    with bkrr_fade(0.5)
 
     $ bkrr_set_time("night")
 
