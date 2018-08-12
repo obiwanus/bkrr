@@ -1719,11 +1719,11 @@ label bkrr_day17_common:
     "Я присмотрелся в куче сена на телеге. Или делегация была невидимой, или…"
     "Куча зашевелилась, и на асфальт спрыгнула странного вида парочка."
 
-    show kla smile sport far at fright with dissolve
+    show kla smile sport far at center with dissolve
 
     "Первый гость широко улыбался и осматривался по сторонам. Он был рыжим, щекастым и на его лице явственно читалось «Есть чего пожевать?»"
 
-    show tr normal cas far at cright with dissolve
+    show tr normal cas far at left with dissolve
 
     "Второй же приезжий являл собой полную его противоположность. Миниатюрный, ростом с Ульяну, он грыз большой бублик и быстро постреливал по сторонам глазками-щёлочками."
 
@@ -1731,17 +1731,15 @@ label bkrr_day17_common:
 
     "Ольга удивлённо осматривала лошадь, прибывших, снова лошадь. Она явно думала, чем же эту скотину кормить и куда поставить на ночь."
 
-    show mt surprise panama pioneer far at left with dissolve
+    show mt surprise panama pioneer at fright with dissolve
 
     mt "З-з-дравствуйте. Вы все к нам?"
     vz "Только эти трое. Я в Бирюки еду, к куме. У них машина сломалась, вот я и подвёз, мне по пути."
     "Узнав, что лошадь в лагере устраивать не придётся, вожатая с облегчением вздохнула."
 
-    show mt smile panama pioneer far with dspr
+    show mt smile panama pioneer with dspr
 
     mt "А… понятно. Здравствуйте!"
-
-    hide mt with dissolve
 
     "Рыжий пионер огляделся и с лёгким акцентом поздоровался:"
 
@@ -1754,6 +1752,9 @@ label bkrr_day17_common:
     show tr smile2 with dspr
 
     tr_unk "…… …!"
+
+    show mt normal panama pioneer with dspr
+
     "Азиат сперва чирикнул что-то не по-нашему, потом помотал головой улыбнулся."
 
     show tr smile1 with dspr
@@ -1764,19 +1765,19 @@ label bkrr_day17_common:
 
     "Ольга явно перестала удивляться чему бы то ни было и сделала приглашающий жест."
 
-    show mt smile panama pioneer far at left with dissolve
+    show mt smile panama pioneer with dspr
 
     mt "Добро пожаловать в пионерский лагерь «Совёнок»! С приездом!{w} А где остальные? С вами есть кто-нибудь из взрослых?"
     "Из кучи сена донёсся приятный баритон."
 
-    show mt surprise panama pioneer far with dspr
+    show mt surprise panama pioneer with dspr
 
     ant_v "Взрослые тут, они слегка задремали от жары."
 
     "Вслед за этими словами, из кучи сена показался тот, кто их сказал."
 
-    show tr normal cas far at right with ease
-    show ant normal shirt far at cright behind tr, kla with dissolve
+    show tr normal cas far at cleft with ease
+    show ant normal shirt far at fleft behind tr, kla with dissolve
 
     "Добродушного вида мужчина в джинсах, светлой рубашке, с боцманской бородой cпрыгнул с телеги и выбирал сено из волос."
 
@@ -1789,15 +1790,15 @@ label bkrr_day17_common:
     "Ольга всё ещё пребывая в замешательстве, покачала головой."
     mt "Нет, сейчас мы вас накормим."
 
-    show mt smile panama pioneer far with dspr
+    show mt smile panama pioneer with dspr
 
     ant_unk "Это было бы здорово. Зовут меня Антон Иванович, только по отчеству всё равно никто не зовёт. Здравствуйте! Я с ними, вроде как сопровождаю."
     mt "Очень приятно! Я вожатая старшего отряда: Ольга…"
 
-    show mt normal panama pioneer far with dspr
+    show mt normal panama pioneer with dspr
     "Она сделала паузу, потом неохотно добавила:"
 
-    show mt smile panama pioneer far with dspr
+    show mt smile panama pioneer with dspr
 
     mt "Дмитриевна."
     ant "Очень! Очень приятно!"
@@ -1808,7 +1809,7 @@ label bkrr_day17_common:
     "Из-за лошади лошади обиженно донеслось:"
     us_v "И Ульяна."
 
-    show mt grin panama pioneer far with dspr
+    show mt grin panama pioneer with dspr
 
     mt "Да, и Ульяна!"
 
@@ -1824,14 +1825,14 @@ label bkrr_day17_common:
     th "Кажется, рыжих музыкантов в этом лагере становится всё больше и больше."
     "Антон Иванович повернулся к вознице."
 
-    show ant normal shirt far at cright with dissolve
+    show ant normal shirt far at left with dissolve
 
     ant "Ещё раз, спасибо вам, что подвезли. Мы вернёмся послезавтра. Вам машина во дворе не очень помешает?"
     "Возница махнул рукой."
     vz "До свидания! А за машину не волнуйтесь, у нас всё как в сберкассе: оставил-забрал. Механизатор посмотрит, что там у вас, и попробует починить. "
     vz "Главное – не подпускать его к бутылке до начала ремонта, а то плуг приделает, гусеницы от трактора или ещё что-нибудь."
 
-    show ant surprise with dspr
+    show ant surprise shirt far with dspr
 
     "Услышав это, бородач закашлялся и замахал руками."
     ant "Нет-нет! Я сам! Не подпускайте его! Она не моя, казённая!"
@@ -1847,13 +1848,13 @@ label bkrr_day17_common:
     "Ольга посмотрела на исходящую паром кучу и вздохнула."
     "Бородач подвёл пионеров к нам."
 
-    show ant normal shirt at right with dissolve
-    show kla normal sport at cleft with dissolve
+    show ant normal shirt at left with dissolve
+    show kla normal sport at right with dissolve
     show tr smile2 cas at center with dissolve
 
     ant "Познакомьтесь с нашими гостями! Клаус Шульц, из ГДР, и… "
 
-    show ant surprise with dspr
+    show ant serious shirt with dspr
 
     ant "Неудобно как вышло. Меня в последний момент дёрнули, списков не дали, и вообще. Как тебя зовут?"
 
@@ -1889,15 +1890,16 @@ label bkrr_day17_common:
     scene bg ext_camp_entrance_day with dissolve
 
     "Славя с караваем вышла вперёд, гости отломили по кусочку хлеба, обмакнули в солонку и попробовали.{w} На лицах всех троих расплылись блаженные улыбки. Ещё бы. Я, даже не пробуя, мог сказать, что выпечка у тёти Наташи и Слави получилась очень вкусной."
-    "Что и говорить, торжественная часть вышла скомканной. Ожидалась большая делегация, а вместо этого – три человека. Или два с половиной?{w} Миниатюрного Трука, или Нгуена, или как там его, можно смело считать за половинку. Бородач тем временем оживлённо рассказывал:"
+    "Что и говорить, торжественная часть вышла скомканной. Ожидалась большая делегация, а вместо этого – три человека. Или два с половиной?{w} Миниатюрного Трука, или Нгуена, или как там его, можно смело считать за половинку."
+    "Бородач тем временем оживлённо рассказывал:"
 
-    show ant normal shirt at cright with dissolve
+    show ant normal shirt at cleft with dissolve
 
     ant "Мы приехали в «Дорожник», и тут погода испортилась, дождь, ветер… Там до шоссе дорога плохая, решили не рисковать и переждать там непогоду, чтобы автобус не застрял."
     ant "А гости закапризничали, их тоже можно понять: три лагеря уже объехали за две недели. Везде шумиха, ну, знаете как это бывает. Устали они. "
     ant "Созвонились с управлением культуры, а они говорят: как же так, люди готовились, наверное. Нельзя вот так взять и отменить визит. Так что добровольцы погрузились в машину, и… В общем, нас мало, но мы в тельняшках!"
 
-    show mt smile panama pioneer at cleft with dissolve
+    show mt smile panama pioneer at cright with dissolve
 
     mt "Значит, больше никого не будет?"
     "Странно, но Ольга не выглядела расстроенной."
@@ -1921,8 +1923,10 @@ label bkrr_day17_common:
     mt "Простите, я с этой лошадью, отвлеклась и забыла приветственную речь прочитать. Но вы наверное проголодались?"
     "Рыжий немец, до сих пор не участвовавший в разговоре, улыбнулся и спросил:"
 
-    hide ant with dissolve
-    show kla smile sport at cright with dissolve
+    show kla smile sport:
+        truecenter
+        xpos 0.95
+    with easeinright
 
     kla "А можно вместо речи сразу на завтрак?"
 
@@ -1931,6 +1935,7 @@ label bkrr_day17_common:
     mt "Поняла. Торжественную часть считаем законченной. Семён, Славя, проводите к домикам четырнадцать и пятнадцать, потом разберёмся."
 
     hide mt
+    hide ant
     hide kla
     with dissolve
 
@@ -1978,7 +1983,7 @@ label bkrr_day17_common:
 
     "Ульяна провела ладонью по чёрным жёстким волосам. Азиат удивлённо посмотрел на неё, но промолчал."
 
-    show ant normal shirt at left behind tr with dissolve
+    show ant smile shirt at left behind tr with dissolve
 
     "Антон Иванович улыбнулся."
 
@@ -1993,6 +1998,9 @@ label bkrr_day17_common:
 
     us "Да?"
     "Ульяна недоверчиво посмотрела на вьетнамца."
+
+    show ant normal shirt with dspr
+
     us "А чего он тогда такой маленький? Ну, ладно. Пойдём кушать! Настоящие советские продукты! Откормим тебя, будешь большой-пребольшой."
 
     show us grin with dspr
@@ -2024,7 +2032,7 @@ label bkrr_day17_common:
     us "Я попробую."
 
     hide us with dissolve
-    show mt smile at center with ease
+    show mt smile at cright with ease
 
     mt "Тогда берите их и ведите в столовую. А мы с Антоном Ивановичем…"
 
@@ -2949,12 +2957,14 @@ label bkrr_day17_common:
 
     kla "Понятно… у нас тоже такое было. Когда дорогу к ферме размыло дождём. Неделю не могли проехать, только на лошадях."
 
+    window hide
     stop ambience fadeout 2
     scene bg int_music_club_mattresses_day
     show mt normal pioneer far at cright
     show ant smile shirt far at cleft
     with fade2
     play ambience bkrr_ambience_list["indoors_day"] fadein 2
+    window show
 
     "Когда мы вернулись в клуб, Ольга и Антон уже сидели там. Вожатая улыбнулась нам."
 
@@ -2972,7 +2982,7 @@ label bkrr_day17_common:
     with dissolve
 
     $ renpy.pause(1.0, hard=True)
-
+    play sound sfx_open_door_2
     window show
 
     "Антон Иванович увёл пионеров в их временное жильё. Гитару Клаус оставил у нас, как и две банки варенья.{w} От варенья Мику попробовала отказаться, но немец был неумолим."
