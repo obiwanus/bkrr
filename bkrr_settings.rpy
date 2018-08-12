@@ -874,6 +874,16 @@ init 2:
             "mi smile yukata close"
             center
 
+    image d16_kote_vs_miku:
+        truecenter
+        contains:
+            "bg int_infirmary_day_guitar"
+        contains:
+            "cat full"
+            center
+            ypos(0.08)
+            zoom 1.8
+
     image cg d16_picnic:
         contains:
             "white"

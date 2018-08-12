@@ -13,7 +13,7 @@ label bkrr_day16_common:
         yalign 0.85
         linear 10.0 yalign 0.1
     show prologue_dream:
-        alpha 0.35
+        alpha 0.45
     with fade3
 
     $ bkrr_set_time("prologue")
@@ -33,9 +33,28 @@ label bkrr_day16_common:
     mi "А если я лизну тебя в носик?"
     me "Что?"
     th "Наверное, я ослышался. Или это их странные японские шалости?"
+
+    scene cg d16_catmiku:
+        truecenter
+        yalign 0.1
+        ease 6.0 zoom 1.4
+    show prologue_dream:
+        alpha 0.45
+    with dissolve
+
     "Мику наклоняется, обжигая мою кожу прикосновением своей груди и лижет меня в нос."
     th "Непривычная ласка, но такая приятная!"
     th "Ещё… и ещё… и ещё… {w}Её язык, скользящий по моему лицу, шершавый, словно у кошки."
+
+    show d16_kote_vs_miku:
+        alpha 0.0
+        pause 1.0
+        parallel:
+            ease 1.5 alpha 0.3
+            ease 1.0 alpha 0.2
+            ease 1.5 alpha 0.4
+            repeat
+
     "Мику такая тёплая… такая маленькая… такая… лёгкая… пушистая… {w}с усами… {w}и её жёлтые глаза напротив…"
     th "Почему жёлтые? Призрак с пляжа вернулся? Нет!"
 
