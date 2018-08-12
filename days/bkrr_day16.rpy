@@ -2545,6 +2545,7 @@ label bkrr_day16_common:
     window hide
     play sound bkrr_sfx_list["whiteout1"]
     scene cg d16_picnic with bkrr_fade(2.0)
+    $ renpy.pause(12.5, hard=True)
     window show
 
     "Мику вздрогнула, облизнула губы, прикрыла глаза и снова накрыла мою кисть своей.{w} Она не пыталась убрать мою руку, так что я принял это как приглашение продолжать."
