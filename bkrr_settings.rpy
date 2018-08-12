@@ -1320,6 +1320,37 @@ init 1:
             pause zt
             linear t xpos 0.51 alpha 0.2 zoom (z + 0.05)
 
+    transform bkrr_vertigo_atl(imgn, z=1.1, zt=1.0, t=1.0):
+        contains:
+            ImageReference(imgn)
+            truecenter
+            linear zt zoom z
+        contains:
+            ImageReference(imgn)
+            truecenter
+            zoom z
+            alpha 0.0
+            pause zt
+            parallel:
+                linear t alpha 0.3 zoom (z + 0.05)
+            parallel:
+                linear 5.0 rotate -19
+                linear 10.0 rotate 19
+                linear 5.0 rotate 0
+                repeat
+        contains:
+            ImageReference(imgn)
+            truecenter
+            zoom z
+            alpha 0.0
+            pause zt
+            linear t alpha 0.2 zoom (z + 0.05)
+            parallel:
+                linear 1.0 rotate 19
+                linear 2.0 rotate -19
+                linear 1.0 rotate 0
+                repeat
+
     # Горящая спичка
 
     image bkrr_match_glow = bkrr_glow_atl(MOD_IMAGES + "effects/match_glow.png")

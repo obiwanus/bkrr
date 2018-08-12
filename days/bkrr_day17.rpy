@@ -3837,7 +3837,7 @@ label bkrr_day17_common:
 
     "Тут он согнулся и сжал виски руками."
 
-    scene expression bkrr_appdouble_atl("bg int_mine_coalface", 1.1, 0.6, 0.6)
+    scene expression bkrr_vertigo_atl("bg int_mine_coalface", 1.1, 0.6, 0.6)
     show black:
         alpha 0.3
     with None
