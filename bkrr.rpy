@@ -28,6 +28,6 @@ label bkrr:
 
     play music bkrr_music_list["menu"] fadein 15
 
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(1.5, hard=True)
 
     call screen bkrr_menu

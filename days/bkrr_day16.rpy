@@ -3124,13 +3124,13 @@ label bkrr_day16_common:
 
     "Женя втянула воздух и пояснила:"
 
+    stop music fadeout 1
+
     mz "Горелой резиной."
 
     show mi upset pioneer at cright with dspr
 
     mi "Резиной?"
-
-    stop music fadeout 1
 
     mz "По-моему, у Семёна кеды горят."
 
@@ -3372,15 +3372,13 @@ label bkrr_day16_common:
 
     "Ульяна изобразила танец африканского дикаря, размахивая руками и виляя задом, а потом полезла в яму руками и вытащила… "
 
+    $ bkrr_set_volume("sound3", 0.6)
     stop music fadeout 1
-
-    show bkrr_todo "Может какой-нибудь лузерский звук здесь?"
+    play sound3 bkrr_sfx_list["venil2"]
 
     "Круглую жестяную банку из-под краски. {w}Очень-очень ржавую."
     th "Наверное, красили что-то, хоть ту же радиомачту, поленились выбросить, вот и закопали банку в песок."
     "Мику с Алисой, сидящие на валуне и наблюдающие за нами, обидно засмеялись."
-
-    hide bkrr_todo
 
     "Я ухмыльнулся, погладил Ульяну по голове."
     me "Я отказываюсь от своей доли. Забирай. {w}Только не порежься, а то столбняк будет."
@@ -3555,6 +3553,7 @@ label bkrr_day16_common:
 
     $ renpy.pause(1.0, hard=True)
 
+    stop music fadeout 7
     window show
 
     "Мы так увлеклись перепалкой, что не заметили Славяну. Она играла в волейбол и теперь подошла к нам." #TODO Она отвлеклась от игры в волейбол и подошла к нам.
@@ -3652,7 +3651,6 @@ label bkrr_day16_common:
     "Ульяна вытряхнула из банки содержимое."
 
     show us smile sport at center with dissolve
-    stop music fadeout 7
 
     us "Ага! Ну, и куда дальше?"
 
@@ -4312,7 +4310,8 @@ label bkrr_day16_common:
     us "Тьфу… Ерунда какая-то.{w} Сопли мармеладные."
     mi "Читай вслух!"
 
-    play sound music_list["memories"] fadein 5  # чтобы не циклилось
+    $ bkrr_set_volume("sound3", 0.7)
+    play sound3 music_list["memories"] fadein 5  # чтобы не циклилось
 
     window hide
 
