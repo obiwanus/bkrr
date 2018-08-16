@@ -1850,6 +1850,18 @@ init 2:
 
     ## Спрайты, которые не подходят для создания автоматически
 
+    # Дед Григорий
+
+    image ded smile crossedarms = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_1.png")
+    image ded normal crossedarms = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_1.png", (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_normal.png")
+    image ded sad crossedarms = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_1.png", (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_sad.png")
+    image ded wink crossedarms = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_1.png", (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_wink.png")
+
+    image ded smile thumbsup = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_2.png")
+    image ded normal thumbsup = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_2.png", (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_normal.png")
+    image ded sad thumbsup = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_2.png", (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_sad.png")
+    image ded wink thumbsup = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_2.png", (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_wink.png")
+
     # Мику в юкате (силуэт)
 
     image mi yukata dark = im.MatrixColor(MOD_IMAGES + "sprites/normal/mi/mi_3_yukata.png", im.matrix.brightness(-0.99))
