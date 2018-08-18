@@ -615,6 +615,13 @@ init 2:
             "cs normal civil2 far"
             cleft
 
+    image bg int_mine_halt_olga:
+        contains:
+            "bg int_mine_halt"
+        contains:
+            "mt normal pioneer far"
+            center
+
     # Дождливые, пасмурные фоны
 
     image bg ext_music_club_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/ext_musclub_day.jpg")
@@ -1346,8 +1353,8 @@ init 1:
             pause zt
             linear t alpha 0.2 zoom (z + 0.05)
             parallel:
-                linear 1.0 rotate 25
-                linear 2.0 rotate -25
+                linear 1.0 rotate 11
+                linear 2.0 rotate -11
                 linear 1.0 rotate 0
                 repeat
             parallel:
