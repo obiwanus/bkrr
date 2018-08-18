@@ -2193,7 +2193,7 @@ label bkrr_day18_common:
     play ambience ambience_music_club_day fadein 3
     window show
 
-    show dv laugh pioneer2 far at left with dissolve
+    show dv laugh pioneer far at left with dissolve
 
     dv "Ага! Вот они! Кто последний, тот басист!"
     me "Алиса, ты назвала меня басистом?{w} А то «не смеши меня», «ты личинка музыканта». Сейчас лопну от гордости!"
@@ -2271,7 +2271,7 @@ label bkrr_day18_common:
     kla "Если можно, я бы посидел у вас и послушал, как вы играете.{w} Семён много рассказывал о вашем клубе. Я не очень помешаю?"
 
     hide us with dissolve
-    show dv smile pioneer2 far at left with dissolve
+    show dv smile pioneer far at left with dissolve
 
     dv "Да нет, чем больше народу, тем веселее. Садись, конечно.{w} А Семёну не верь! Он наверное опять жаловался, что мы его насильно заманили и издеваемся, да?"
     kla "Нет. Он говорил, вы очень хорошие и веселые."
@@ -2301,7 +2301,7 @@ label bkrr_day18_common:
     "Алиса, хотя и видела уже это чудо немецкого мебелестроения, но все равно восхищенно вздохнула."
 
     hide us with dissolve
-    show dv grin pioneer2 at cright with dissolve
+    show dv grin pioneer at cright with dissolve
 
     dv "Да что ты понимаешь. Она не старая, она классическая!"
 
@@ -2309,8 +2309,10 @@ label bkrr_day18_common:
 
     us "Ой, глазки-то как вспыхнули! Клаус, она теперь твоя!"
 
-    show dv rage with dspr
     hide us with easeoutbottom
+    show dv rage with dspr
+
+    with vpunch
 
     dv "ДУРА! Щас врежу!"
 
@@ -2343,7 +2345,7 @@ label bkrr_day18_common:
     mi "Может, я?"
 
     hide us with dissolve
-    show dv smile pioneer2 at cright with dissolve
+    show dv smile pioneer at cright with dissolve
 
     dv "Нет, Микуля, у тебя слишком нежный голос для такой песни. Придется самой! Толика-то нет. Ну, поехали, что ли?"
 
@@ -2372,14 +2374,14 @@ label bkrr_day18_common:
 
     nvl show dissolve
 
-    "Весёлый Роджер в небе, "
-    "Британский герб на теле, "
-    "Стреляет из обрезов"
-    "Толпа головорезов.\n"
-    "Они не трусят смерти, "
-    "проворные, как черти"
-    "и, обкурившись планом, "
-    "гордятся капитаном!"
+    "{i}Весёлый Роджер в небе, {/i}"
+    "{i}Британский герб на теле, {/i}"
+    "{i}Стреляет из обрезов{/i}"
+    "{i}Толпа головорезов.\n{/i}"
+    "{i}Они не трусят смерти, {/i}"
+    "{i}проворные, как черти{/i}"
+    "{i}и, обкурившись планом, {/i}"
+    "{i}гордятся капитаном!{/i}"
 
     nvl hide dissolve
 
@@ -2396,7 +2398,7 @@ label bkrr_day18_common:
     "По законам жанра, мне бы полагалось напортачить от волнения, но в таком простом мотиве это было почти невозможно."
     "Наконец, последние ноты были сыграны и Алиса горделиво посмотрела по сторонам."
 
-    show dv grin pioneer2 at cright with dissolve
+    show dv grin pioneer at cright with dissolve
 
     dv "Ну, как?"
     "Мику вздохнула, всплеснула руками."
@@ -2426,7 +2428,7 @@ label bkrr_day18_common:
 
     mi "Будь внимательнее, ладно?"
 
-    show dv smile pioneer2 at cright with dissolve
+    show dv smile pioneer at cright with dissolve
 
     dv "Ну, я постараюсь. Клаус, как тебе песня?"
 
@@ -2450,7 +2452,7 @@ label bkrr_day18_common:
     hide us with easeoutleft
 
     scene bg int_music_club_mattresses_day
-    show dv rage pioneer2 at cright
+    show dv rage pioneer at cright
     with hpunch
 
     show bkrr_todo "TODO: звук удара шлепанца об доску"
@@ -2636,7 +2638,7 @@ label bkrr_day18_common:
     stop music fadeout 5
     window hide
     scene bg int_music_club_mattresses_day:
-    show dv guilty pioneer2 at cleft
+    show dv guilty pioneer at cleft
     show kla normal pioneer at cright
     with bkrr_fade(2.0)
     window show
@@ -2696,7 +2698,7 @@ label bkrr_day18_common:
     me "Ладно, что играть-то будем сегодня перед зрителями?"
 
     hide kla with dissolve
-    show dv grin pioneer2 at right with dissolve
+    show dv grin pioneer at right with dissolve
 
     dv "Так «пирата» же!"
 
@@ -2786,7 +2788,7 @@ label bkrr_day18_common:
     "Ульяна вскочила и побежала открывать."
 
     play sound sfx_open_door_1
-    show dv normal pioneer2 at left with dissolve
+    show dv normal pioneer at left with dissolve
 
     dv "Не музклуб, а проходной двор! Куда мы их всех денем?"
 
@@ -2873,7 +2875,7 @@ label bkrr_day18_common:
 
     us "Нет! Вот они! Сенька, бери гитару! Следующая остановка – клуб кибернетиков!"
 
-    show dv angry pioneer2 at left with dissolve
+    show dv angry pioneer at left with dissolve
 
     dv "Я не поняла! А репетировать? Сенька, на место!"
     me "Гав-гав. По-человечьи не понимаю!"
@@ -3340,7 +3342,7 @@ label bkrr_day18_common:
 
     mi "Ой! Какие люди! Леночка, ты пришла, наконец."
 
-    show dv smile pioneer2 at cleft with dissolve
+    show dv smile pioneer at cleft with dissolve
 
     dv "Лена, привет! Знакомьтесь: Клаус – Лена. Лена – Клаус."
 
@@ -3364,7 +3366,7 @@ label bkrr_day18_common:
     kla "Да! Еще раз спасибо."
 
     hide kla with dissolve
-    show dv normal pioneer2 at cleft with dissolve
+    show dv normal pioneer at cleft with dissolve
 
     dv "Во-о-от как. Очень интересно."
     "Алиса вздохнула."
@@ -3406,7 +3408,7 @@ label bkrr_day18_common:
     un "Рада, что вам нравится! Сейчас нарисую."
     me "А Ульянка не будет против? На звуке не скажется?"
 
-    show dv grin pioneer2 at cright with dissolve
+    show dv grin pioneer at cright with dissolve
 
     dv "А мы не краской, мы фломастерами. Они ничего не испортят. Лена, у тебя ведь есть? Если что, я к Женьке сбегаю."
 
@@ -3464,7 +3466,7 @@ label bkrr_day18_common:
     "Мику просияла и энергично кивнула."
     mi "С удовольствием. Бери старый бас, сыграемся еще разик. Алиса, ты с нами?"
 
-    show dv guilty pioneer2 at cleft with dissolve
+    show dv guilty pioneer at cleft with dissolve
 
     dv "Еще чего! Не могу же я оставить их одних… в смысле, вдруг помощь нужна!"
 
