@@ -1763,7 +1763,7 @@ label bkrr_day17_common:
 
     "Азиат сперва чирикнул что-то не по-нашему, потом помотал головой улыбнулся."
 
-    show tr smile1 with dspr
+    show tr smile with dspr
 
     tr_unk "ЗдравствУйте!"
 
@@ -1877,7 +1877,7 @@ label bkrr_day17_common:
     window hide
     show ant normal shirt at left with dissolve
     show kla normal sport at right with dissolve
-    show tr smile2 cas at center with dissolve
+    show tr normal2 cas at center with dissolve
     window show
 
     ant "Познакомьтесь с нашими гостями! Клаус Шульц, из ГДР, и… "
@@ -1886,9 +1886,11 @@ label bkrr_day17_common:
 
     ant "Неудобно как вышло. Меня в последний момент дёрнули, списков не дали, и вообще. Как тебя зовут?"
 
+    show tr smile2 cas with dspr
+
     "Азиат улыбнулся, ткнул пальцем в грудь:"
 
-    show tr smile1 with dspr
+    show tr smile cas with dspr
 
     tr_unk "Трук!"
 
@@ -1906,16 +1908,19 @@ label bkrr_day17_common:
     ant "А, ты в этом смысле.{w} И Нг… гн…{w} В общем, пионер Трук из Вьетнама."
     "Антон Иванович повернулся к нам и развёл руками."
 
+    show tr normal2 cas with dspr
     show ant normal with dspr
 
     ant "Трук плохо говорит по-русски, но всё понимает."
 
-    show tr smile3 with dspr
+    show tr laugh with dspr
 
     "Вьетнамец улыбнулся ещё шире и покивал."
     tr "Да!"
 
+    window hide
     scene bg ext_camp_entrance_day with dissolve
+    window show
 
     "Славя с караваем вышла вперёд, гости отломили по кусочку хлеба, обмакнули в солонку и попробовали.{w} На лицах всех троих расплылись блаженные улыбки. Ещё бы. Я, даже не пробуя, мог сказать, что выпечка у тёти Наташи и Слави получилась очень вкусной."
     "Что и говорить, торжественная часть вышла скомканной. Ожидалась большая делегация, а вместо этого – три человека. Или два с половиной?{w} Миниатюрного Трука, или Нгуена, или как там его, можно смело считать за половинку."
@@ -1996,7 +2001,7 @@ label bkrr_day17_common:
 
     us "Меня Ульяна зовут!"
 
-    show tr smile1 with dspr
+    show tr smile with dspr
 
     tr "Чень Прятно! Трук!"
 
@@ -2090,7 +2095,9 @@ label bkrr_day17_common:
 
     "С этими словами, Ольга Дмитриевна увела вожатого в сторону админкорпуса."
 
+    window hide
     scene bg ext_camp_entrance_day with dissolve
+    window show
 
     "Славя с Ульяной вопросительно смотрели на меня, видимо ждали, что я проявлю инициативу."
     th "Ну да. Единственный мужчина, если не считать приезжих, значит и командовать мне.{w} Хотя и не люблю я лишнее внимание. Лидерство – не моё это."
@@ -2177,7 +2184,9 @@ label bkrr_day17_common:
 
     "Я подхватил один из них, а Клаус взял кофр с гитарой."
 
+    window hide
     scene bg ext_clubs_day with dissolve
+    window show
 
     me "Клаус, ты тоже музыкант?"
 
@@ -2215,15 +2224,20 @@ label bkrr_day17_common:
     "Вьетнамец кивнул."
     tr "Мяуленкий. И чеурний.{w} Все."
 
-    hide tr
-    hide us
-    with dissolve
+    show us laugh2 sport:
+        cleft
+        ease 0.5 xpos 0.52
+    with None
+    $ renpy.pause(0.5, hard=True)
+    show tr sad cas with dspr
 
     "Его мяукающий акцент приводил Ульяну в такой восторг, что она тут же почесала ему макушку, словно ожидая, что тот замурлычет. Вьетнамец вздохнул, косо посмотрел на неё, но не протестовал.{w} В конце концов, она тащила его рюкзак."
 
     # ИДЁМ ПО ЛАГЕРЮ, У АЛЛЕИ ВЕДУЩЕЙ К КЛУБУ
 
+    window hide
     scene bg ext_houses_day with dissolve
+    window show
 
     "Я уже подумывал, как бы половчее спихнуть экскурсию на Славяну и сбежать к Мику, когда на аллее, ведущей к музклубу, увидел знакомую фигурку.{w} Та, к которой я собирался сбежать, стояла спиной к нам и читала что-то на доске объявлений."
     me "Вы меня извините? Я на секундочку!"
@@ -2253,21 +2267,25 @@ label bkrr_day17_common:
     mi "Не страшно."
     mi "У меня всё равно были свои дела. Ничего, сейчас освободишься и пойдём репетировать, а то ведь до концерта осталось совсем недолго, а нам ещё нужно много чего сделать, так что нельзя терять времени."
 
+    window hide
     hide mi with dissolve
 
+    $ renpy.pause(0.5, hard=True)
     play music music_list["so_good_to_be_careless"] fadein 5
+    window show
 
     "Я подвёл её к нашей разрастающейся компании."
     me "Знакомьтесь: наши гости: Клаус Шульц и Нгуен Ван Трук, Мику.{w} Наш самый главный музыкант и массовик-затейник."
 
     show kla smile sport far at fright
-    show tr smile1 cas far at cright
+    show tr smile cas far at cright
     with dissolve
 
     kla "Очень приятно."
     tr "Приятня!"
 
     show mi normal pioneer at cleft with dissolve
+    show tr normal cas far with dspr
 
     mi "Рада познакомиться. Я вижу, Клаус тоже музыкант? Мику показала на гитару."
     "Немец смущённо кивнул."
@@ -2310,7 +2328,9 @@ label bkrr_day17_common:
 
     "Я проводил её взглядом, а затем подхватил чемодан и догнал остальных."
 
+    window hide
     scene bg ext_music_club_verandah_day_v9 with dissolve
+    window show
 
     "Ещё сотня шагов – и мы остановились на веранде у входа в наш кружок."
 
@@ -2320,10 +2340,12 @@ label bkrr_day17_common:
     "Мику сделала приглашающий жест."
 
     # В КЛУБЕ
+    window hide
     stop ambience fadeout 2
     play sound sfx_open_door_1
     scene bg int_music_club_mattresses_day with dissolve
     play ambience bkrr_ambience_list["indoors_day"] fadein 2
+    window show
 
     "Немец восторженно охнул, увидев наши богатства. Подошёл к усилителям, погладил полированный бок одного из них."
 
@@ -2392,7 +2414,9 @@ label bkrr_day17_common:
 
     kla "Да. Извините за беспокойство."
 
+    window hide
     hide kla with easeoutleft
+    window show
 
     "Он взял мой ключ и рысцой побежал к клубу. Ещё минута, и гость скрылся за дверью."
     "Мику проводила его взглядом."
@@ -2416,7 +2440,9 @@ label bkrr_day17_common:
 
     tr "Сирк? Нет… А что такое сирк?"
 
+    window hide
     scene bg ext_music_club_verandah_day_v9 with dissolve
+    window show
 
     us "Вон туда смотри, сейчас сам увидишь."
 
@@ -2734,7 +2760,7 @@ label bkrr_day17_common:
 
     us "Ну, ты чего! Ешь, я пошутила."
 
-    show tr smile1 with dspr
+    show tr smile with dspr
 
     tr "Ня! Я не хотел, а ты хотела. Кушай!"
     us "Друг, ну я не могу тебя объедать."
@@ -2750,13 +2776,15 @@ label bkrr_day17_common:
 
     us "Какой хитрюга! Мы с ним сработаемся!"
 
-    show tr smile3 with dspr
+    show tr laugh with dspr
 
     tr "Да! Уля – друг! И Трук друг!"
 
+    window hide
     stop ambience fadeout 3
     scene bg ext_dining_hall_near_day with fade2
     play ambience ambience_camp_center_day fadein 3
+    window show
 
     "Наконец, обед был съеден, посуда отнесена в мойку, а нам предстояло решить, что делать.{w} Вожатые куда-то подевалась, так что, видимо, мне предстояло развлекать гостей и дальше."
     me "Чем займёмся? Осмотрим лагерь, посидим у нас в клубе, или пойдёте отдыхать?"
@@ -2773,7 +2801,7 @@ label bkrr_day17_common:
     mi "Да, конечно пойдёмте! А потом мы вам вещи поможем отнести.{w} Как здорово, ещё музыкант. Концерт станет ещё интереснее!{w} Трук, а ты играешь на чём-то?"
 
     hide kla with dissolve
-    show tr smile1 pioneer at cright with dissolve
+    show tr smile pioneer at cright with dissolve
 
     tr "Трук играет! Ня…"
     "Он прочирикал какое-то совсем незнакомое слово."
@@ -2791,7 +2819,9 @@ label bkrr_day17_common:
 
     tr "Я показывать! Потом!"
 
+    window hide
     scene bg ext_houses_day with dissolve
+    window show
 
     "Обратная дорога заняла чуть больше времени.{w} Сытная еда, да ещё жара… Не хотелось куда-то спешить и что-то делать."
     "Почему-то никто не обращал на нас особого внимания. Как будто по лагерю так и должны ходить посторонние пионеры. Может, просто потому, что они были одеты почти в такую же форму, как и мы?"
@@ -2808,9 +2838,11 @@ label bkrr_day17_common:
     me "А? Нет-нет. Так, мысли вслух."
     mi "Все тайны, тайны. Пойдём, покажем гостям наши богатства."
 
+    window hide
     stop ambience fadeout 2
     scene bg int_music_club_mattresses_day with fade2
     play ambience bkrr_ambience_list["indoors_day"] fadein 2
+    window show
 
     "Когда мы вернулись Алиса сидела с гитарой и негромко наигрывала какую-то незнакомую мне мелодию. Увидев всю нашу бригаду, она прервалась."
 
@@ -2926,9 +2958,11 @@ label bkrr_day17_common:
     mi "Возвращайтесь скорее!"
     "Мику подмигнула мне."
 
+    window hide
     stop ambience fadeout 2
     scene bg ext_houses_day with dissolve
     play ambience ambience_camp_center_day fadein 3
+    window show
 
     "Немец огляделся по сторонам и поинтересовался:"
 
@@ -2947,7 +2981,9 @@ label bkrr_day17_common:
 
     kla "Не очень. Когда много людей, торжественные речи, все хотят поговорить, познакомиться. От этого устаёшь.{w} А здесь спокойно и тихо."
 
+    window hide
     scene bg ext_washstand_day with dissolve
+    window show
 
     me "Я понимаю, о чём ты. Вот, нам сюда.{w} Только не пугайся, ты наверное к такому не привык. Сам понимаешь, лес кругом, канализации нет."
 
@@ -3052,10 +3088,12 @@ label bkrr_day17_common:
     mi "Я поняла."
     mt "Ну, раз так – до вечера свободны."
 
+    window hide
     play music music_list["reminiscences"] fadein 10
     stop ambience fadeout 2
     scene bg ext_music_club_verandah_day_v9 with dissolve
     play ambience ambience_camp_center_day fadein 3
+    window show
 
     "Ольга отправилась по своим делам, а мы с Мику присели на нагретой солнцем веранде."
     me "Ну и денёк!"
@@ -3085,7 +3123,9 @@ label bkrr_day17_common:
     mi "Я имела в виду – только мы вдвоём."
     me "Я тоже!"
 
+    window hide
     scene bg ext_square_day with dissolve
+    window show
 
     "Посидев ещё немного, мы встали и отправились к домику Мику."
     me "У тебя такой серьёзный вид… О чём задумалась?"
@@ -3128,11 +3168,9 @@ label bkrr_day17_common:
     "Мы засмеялись, глядя друг другу в глаза. На какое-то время мысли о скором конце смены были забыты."
 
     window hide
-
     scene bg ext_house_of_un_day
     show mi normal pioneer
     with fade2
-
     window show
 
     mi "Мне пора идти. Увидимся на ужине?"

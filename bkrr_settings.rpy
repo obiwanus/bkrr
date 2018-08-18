@@ -1687,7 +1687,7 @@ init 2:
                 'normal': 1, 'pain': 1, 'sad': 1, 'shy': 1, 'smile': 1,
             },
             "tr": {
-                'normal': 1, 'smile1': 1, 'surp' : 1, 'upset2': 1, 'smile2': 2, 'smile3': 2, 'upset1': 2,
+                'normal': 1, 'sad': 1, 'smile': 1, 'surp': 1, 'upset': 1, 'laugh': 1, 'normal2': 2, 'sad2': 2, 'smile2': 2, 'surp2': 2, 'upset2': 2, 'laugh2': 2,
             },
         }
 
