@@ -782,6 +782,12 @@ init 2:
             im.Scale(MOD_IMAGES + "cg/d18_bed.png", config.screen_width, config.screen_height)
         contains:
             im.Scale(MOD_IMAGES + "cg/d18_bed_mi_open.png", config.screen_width, config.screen_height)
+    image cg d18_no_squirrel_1 = MOD_IMAGES + "cg/d9_squirrel_1.png"
+    image cg d18_no_squirrel_2:
+        contains:
+            (MOD_IMAGES + "cg/d9_squirrel_1.png")
+        contains:
+            (MOD_IMAGES + "cg/d18_no_squirrel.png")
     image cg d18_klaus_play = MOD_IMAGES + "cg/d18_klaus_play.png"
 
     # Комбинированные сюжетные вставки, анимированные и статичные (тоже идут под тегом cg)

@@ -1440,12 +1440,12 @@ label bkrr_day18_common:
     "В шутку потолкавшись в двери, мы одновременно ввалились в столовую."
 
     #В СТОЛОВОЙ
-
+    window hide
     stop ambience fadeout 3
     scene bg int_dining_hall_people_sunset_bkrr with dissolve
     play ambience ambience_dining_hall_full fadein 3
-
     play music music_list["went_fishing_caught_a_girl"] fadein 5
+    window show
 
     "Я уже так давно не ел вот так, вместе со всеми. Не в больнице, не в клубе, не в домике, а в столовой, под шум голосов, звон посуды и перестук ложек."
     "Ольга Дмитриевна уже стояла у раздачи и о чём-то беседовала с тетей Наташей. Увидев нас, она кивнула и сделала отметку в тетради, которую держала в руках."
@@ -1606,7 +1606,7 @@ label bkrr_day18_common:
 
     show mi grin with dspr
 
-    mi "Алиса очень заботится, чтобы ты не сделал что-нибудь эм… не-по-до-ба-ю-ще-е.{w} Спасибо ей! Я это очень ценю."
+    mi "Алиса очень заботится, чтобы ты не сделал что-нибудь эм… не-{w=0.05}по-{w=0.05}до-{w=0.05}ба-{w=0.05}ю-{w=0.05}ще-{w=0.05}е.{w} Спасибо ей! Я это очень ценю."
     me "Предательница!"
     dv "То-то же! Рано вам!"
 
@@ -1643,6 +1643,9 @@ label bkrr_day18_common:
     show dv smile with dspr
 
     dv "Ладно, не подлизывайся. Проехали!"
+
+    show us normal with dspr
+
     "Алиса сыто похлопала себя по животу."
 
     show dv grin with dspr
@@ -1668,13 +1671,14 @@ label bkrr_day18_common:
     show mi grin pioneer close at cright with dissolve
 
     mi "Это они не ругаются. Вот если начнут вежливо-вежливо, через спасибо-пожалуйста, вот тогда жди беды. Я такое один раз видела, еле помирила потом."
-    dv_us_d "Да не ссорились мы!"
 
-    hide mi with dissolve
 
+    hide mi
     show dv laugh pioneer close at cleft
     show us laugh pioneer close at cright
-    with dspr
+    with dissolve
+
+    dv_us_d "Да не ссорились мы!"
 
     "Они посмотрели друг на дружку и расхохотались. Вожатая посмотрела в нашу сторону и сделала замечание:"
     mt "Второй столик, прекратите шуметь! А то на кухне картошка нечищеная, крикунов ждёт!"
@@ -1754,7 +1758,7 @@ label bkrr_day18_common:
     "Я подошел к вожатой, присел рядом."
     me "Я не помешаю?"
 
-    show mt normal pioneer close with dissolve
+    show mt normal pioneer close at bkrr_sit_center with dissolve
 
     mt "Если не будешь задавать глупых вопросов. У меня голова вот такая со всеми этими приготовлениями."
     "Ольга развела руки, показав, какая именно у неё голова."
@@ -1823,14 +1827,12 @@ label bkrr_day18_common:
 
     mi "Так-так. Она тоже говорит о тебе с восторгом."
 
-    show mi smile:
+    show mi grin:
         truecenter
         ease 1.0 zoom 1.3
+    with dspr
 
     "Мику обняла меня."
-
-    show mi grin with dspr
-
     mi "Может, мне тебя приревновать?"
     me "Обожаю, когда ты меня ревнуешь… Но ты же знаешь: Ульяна безответно влюблена в нашего блондина-кибернетика."
 
@@ -1983,11 +1985,11 @@ label bkrr_day18_common:
 
     show mi happy:
         truecenter
-        ease 3.0 zoom 1.4
+        linear 3.0 zoom 1.5
 
     $ renpy.pause(1.0, hard=True)
 
-    scene cg d9_squirrel_1:
+    scene cg d18_no_squirrel_1:
         truecenter
         zoom 1.05
         linear 5.0 zoom 1.2
@@ -2004,34 +2006,18 @@ label bkrr_day18_common:
     # me "Я подзабыл, как же мы это делали?"
     "Мику несколько раз попыталась убрать мои руки повыше, но безуспешно."
 
-    scene cg d9_squirrel_2:
+    scene cg d18_no_squirrel_2:
         truecenter
         zoom 1.2
     with dissolve
-
-    show bkrr_todo "Убрать беличью жопу"
 
     mi "Сень, ну руки… ну что ты делаешь? А вдруг кто-то увидит… "
-
-    hide bkrr_todo
-
     me "Пусть завидуют!"
-
-    window hide
-    $ renpy.pause(1.0, hard=True)
-
-    scene cg d9_squirrel_1:
-        truecenter
-        zoom 1.2
-    with dissolve
-
-    window show
-
     "Мику оглянулась по сторонам, потом отпустила галстук, обняв меня за шею и прикрыла глаза."
 
     window hide
 
-    scene cg d9_squirrel_1:
+    scene cg d18_no_squirrel_1:
         truecenter
         zoom 1.2
         linear 5.0 zoom 1.6
@@ -2044,6 +2030,7 @@ label bkrr_day18_common:
         rotate -7.5
         alpha 0.0
         linear 15.0 alpha 1.0
+    with dissolve
 
     play sound bkrr_sfx_list["whiteout1"]
     $ renpy.pause(1.0, hard=True)
@@ -2062,14 +2049,11 @@ label bkrr_day18_common:
 
     window hide
     $ renpy.pause(1.0, hard=True)
-    play sound bkrr_sfx_list["whiteout2"]
     stop music fadeout 10
     scene bg ext_path_day with bkrr_fade(3.0)
     window show
 
     "Мы очень старались, но наглый грызун больше не появлялся.{w} Не знаю, сколько мы провели вот так, стоя в тени сосен на берегу."
-
-    play sound sfx_radio_squelch_2
 
     "Оживший с вчерашнего дня радиоузел приятным женским голосом объявил, что московское время – половина десятого и предложил прослушать песню.{w} Я не разобрал ни исполнителя ни названия, все-таки репродуктор висел далеко."
 
