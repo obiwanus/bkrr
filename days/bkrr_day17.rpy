@@ -3408,8 +3408,7 @@ label bkrr_day17_common:
     "Она улыбнулась и взяла первые аккорды своей партии."
 
     window hide
-    $ bkrr_timeskip_short()
-    scene bg int_music_club_mattresses_sunset with bkrr_timeskip_transition()
+    scene bg int_music_club_mattresses_sunset with Dissolve(2.0)
     window show
 
     $ bkrr_set_time("sunset")
