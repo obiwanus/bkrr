@@ -788,7 +788,18 @@ init 2:
             (MOD_IMAGES + "cg/d9_squirrel_1.png")
         contains:
             (MOD_IMAGES + "cg/d18_no_squirrel.png")
-    image cg d18_klaus_play = MOD_IMAGES + "cg/d18_klaus_play.png"
+    image cg d18_klaus_play:
+        contains:
+            "bg int_music_club_mattresses_day"
+        contains:
+            "dv shy pioneer"
+            left
+        contains:
+            "us surp1 pioneer"
+            center
+        contains:
+            "mi surprise pioneer"
+            right
 
     # Комбинированные сюжетные вставки, анимированные и статичные (тоже идут под тегом cg)
 

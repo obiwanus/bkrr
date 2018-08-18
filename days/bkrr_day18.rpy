@@ -2393,10 +2393,10 @@ label bkrr_day18_common:
 
     window show
 
-    stop music fadeout 5
-
     "По законам жанра, мне бы полагалось напортачить от волнения, но в таком простом мотиве это было почти невозможно."
     "Наконец, последние ноты были сыграны и Алиса горделиво посмотрела по сторонам."
+
+    stop music fadeout 5
 
     show dv grin pioneer at cright with dissolve
 
@@ -2477,11 +2477,14 @@ label bkrr_day18_common:
 
     dv "Помелом не болтай!"
 
-    show kla shy pioneer at cright with dissolve
+    show kla shyright pioneer at cright with dissolve
     show dv smile with dspr
 
     "Алиса моментально напустила радушный вид и обернулась к покрасневшему Клаусу."
     dv "Может, сыграешь нам что-нибудь?"
+
+    show kla shyleft pioneer with dspr
+
     kla "Ну…"
     mi "Пожалуйста! Ну, давай!"
 
@@ -2497,14 +2500,13 @@ label bkrr_day18_common:
     hide dv with dissolve
 
     window hide
-    $ renpy.pause(1.0, hard=True)
-    window show
-
+    $ renpy.pause(0.5, hard=True)
     play music bkrr_music_list["cruel_world"] fadein 5
-
+    $ renpy.pause(3.0, hard=True)
+    window show
     "Я ожидал какого-нибудь простого этюда, может быть – чего-то быстрого и несложного, но вместо этого…"
-
     window hide
+    $ renpy.pause(1.5, hard=True)
     scene cg d18_klaus_play:
         zoom 1.8
         xalign 0.0
@@ -2517,7 +2519,7 @@ label bkrr_day18_common:
         parallel:
             ease 8.0 xalign 1.0
         parallel:
-            linear 4.0 yalign 0.6
+            linear 4.0 yalign 0.45
             linear 4.0 yalign 0.3
         xalign 1.0
         parallel:
@@ -2526,6 +2528,9 @@ label bkrr_day18_common:
             linear 2.0 yalign 0.5
         parallel:
             linear 2.0 zoom 1.0
+
+    $ renpy.pause(8.0, hard=True)
+
     window show
 
     "Когда-то, еще дома, я слышал выражение «Он заставил гитару говорить»."
@@ -2533,19 +2538,25 @@ label bkrr_day18_common:
 
     window hide
     scene bg int_music_club_mattresses_day
-    show dv guilty pioneer at right
-    show mi surprise pioneer at left
+    show dv guilty pioneer at left
+    show mi surprise pioneer at right
     with bkrr_fade(1.0)
     window show
 
     "Вдруг к мелодии подмешались ударные.{w} Это Ульяна, ухватив ритм, принялась негромко подыгрывать Клаусу.{w} Мне очень захотелось присоединиться, пальцы уже легли на струны, но я отлично понимал, что и близко не подобрался к тому уровню, когда смогу сыграть наравне с ними."
-    "Алиса слушала, лицо её выражало сложную гамму чувств.{w} Зависть, удивление и восхищение, всего понемножку."
 
     window hide
     $ renpy.pause(2.0, hard=True)
     window show
 
+    "Алиса слушала, лицо её выражало сложную гамму чувств.{w} Зависть, удивление и восхищение, всего понемножку."
+
     stop music fadeout 5
+
+    window hide
+    $ renpy.pause(2.0, hard=True)
+    window show
+
 
     "Когда музыка стихла, рыжая удивленно покачала головой."
 
@@ -2555,7 +2566,7 @@ label bkrr_day18_common:
 
     hide mi with dissolve
 
-    show kla smile pioneer at cleft with dissolve
+    show kla smile pioneer at cright with dissolve
 
     kla "Джва года."
     dv "Чего? Всего два года? Да быть не может."
