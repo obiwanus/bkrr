@@ -98,7 +98,7 @@ label bkrr_day18_common:
 
     show mi shy sheet close with dissolve
 
-    mi "Она присела рядом."
+    "Она присела рядом."
     mi "Да."
     "Она мило покраснела."
     mi "Из одежды… кое-что. Не видел?"
@@ -391,6 +391,7 @@ label bkrr_day18_common:
 
     "С этими словами она увернулась от Мику и, смеясь, пулей выскочила из музклуба."
 
+    window hide
     hide dv with dissolve
 
     play sound bkrr_sfx_list["body_hit"]
@@ -406,6 +407,7 @@ label bkrr_day18_common:
         zoom 1.1
         linear 0.5 alpha 0.0 zoom 0.9
     with vpunch
+    window show
 
     "Алиса тем временем схватила толстую нотную папку и принялась от души молотить меня по голове, не переставая оглашать клуб воплями."
 
@@ -415,6 +417,7 @@ label bkrr_day18_common:
     "Да что же это делается? Я кое-как увернулся от очередного удара, одной рукой придерживал тряпку, которой прикрывался, а второй защищал голову."
     mi "Алиса, успокойся!"
 
+    window hide
     show mi dontlike pioneer_loo at cleft with easeinleft
 
     play sound bkrr_sfx_list["sem_falls_on_floor"] fadein 1
@@ -425,6 +428,7 @@ label bkrr_day18_common:
 
     hide dv with easeoutbottom
     hide mi with dissolve
+    window show
 
     "Мику ухватила Алису за плечи, ловко подсекла ей ноги и очень осторожно уложила на пол, придерживая, чтобы не ушибить."
     dv "И ты с ним? Не трогай меня! Пустите! Мама! Спасите кто-нибудь!"
@@ -611,6 +615,7 @@ label bkrr_day18_common:
 
     dv "Холодный! Чтобы ничего не хотелось!"
 
+    window hide
     stop music fadeout 7
     stop ambience fadeout 2
     play sound sfx_open_door_1
@@ -619,8 +624,9 @@ label bkrr_day18_common:
         alpha 0.2
     with dissolve
     play ambience ambience_camp_center_day fadein 3
+    window show
 
-    "Я помахал им и вышел из клуба. Душ надо, однозначно, но сначала придется сходить в домик."
+    "Я помахал им и вышел из клуба.{w} Душ надо, однозначно, но сначала придется сходить в домик."
 
     # УТРЕННИЕ ОТВЕТЫ У ВОЖАТОЙ
     window hide
@@ -637,7 +643,7 @@ label bkrr_day18_common:
 
     me "Доброе утро, Ольга Дмитриевна! Хорошо поёте! Красиво!"
 
-    show mt surprise bkrr_sport with dissolve
+    show mt surprise nightdress with dissolve
 
     "Вожатая замолчала, испуганно прикрыв рот ладонью, потом облегченно рассмеялась."
 
@@ -669,7 +675,7 @@ label bkrr_day18_common:
 
     "Ольга села на кровати, пододвинула ко мне тарелку с тремя внушительными бутербродами, взяла один и принялась с аппетитом его уплетать."
 
-    show mt normal bkrr_sport with dissolve
+    show mt normal nightdress with dissolve
 
     mt "Ты ведь без ужина вчера остался? Я с утра на кухне завтрак на вынос взяла, есть хочется!{w} Кефир холодный, наливай, если хочешь. Только пей осторожно, а то опять простудишься."
     "Я тоже взял бутерброд и последовал её примеру.{w} Вопросов у меня было море, но после разговоров со своими «близнецами», я не был уверен, что ответы мне понравятся. С чего же начать?"
@@ -712,7 +718,7 @@ label bkrr_day18_common:
     me "Да. Про то, как я сюда попал."
     "Я слегка напрягся, ожидая, что сейчас она достанет серебристую палочку и наденет темные очки, или выкинет еще что-нибудь в этом же духе.{w} Но Ольга всего лишь прошлась по комнате, села напротив и посмотрела на меня."
 
-    show mt normal bkrr_sport close with dissolve
+    show mt normal nightdress close with dissolve
 
     mt "Ты не единственный, кто сел в электричку, а очнулся в автобусе у странного пионерлагеря, с головной болью и в панике."
     "Она задумчиво посмотрела на меня."
@@ -765,7 +771,7 @@ label bkrr_day18_common:
     me "А как было там, откуда вы пришли?"
     "Ольга вздрогнула."
 
-    show mt normal bkrr_sport close with dissolve
+    show mt normal nightdress close with dissolve
 
     mt "Не хочу рассказывать, извини. Плохо там было.{w} Очень плохо."
     mt "Хотя, если бы я пришла из спокойного места, то до прихода Юли мы могли и не дожить.{w} Я про твоего близнеца с ножом, там, в пещере. Или кто он тебе?"
@@ -806,7 +812,7 @@ label bkrr_day18_common:
     me "Значит, он мог и соврать?"
     "Ольга взяла последний бутерброд, откусила, прожевала… И только потом ответила."
 
-    show mt normal bkrr_sport close with dissolve
+    show mt normal nightdress close with dissolve
 
     mt "Мог, конечно. Только я так не думаю."
     mt "И вот, значит, в последний день смены Андрей меня в сторонку отвел, и сказал не садиться в автобус.{w} Переспросил, твердо ли я решила? Потом велел стоять там и ждать, пока все уедут."
@@ -836,7 +842,7 @@ label bkrr_day18_common:
     "Ольга машинально провела рукой по местам, чудесным образом дважды сменившим свой размер.{w} Маслом кашу не испортишь, так что я добавил:"
     me "И красавица, к тому же. Кстати, я и сейчас больше двадцати не дал бы."
 
-    show mt smile bkrr_sport close with dissolve
+    show mt smile nightdress close with dissolve
 
     mt "Спасибо! Я побежала к Андрею, а тот смеется. Кто не работает, тот не ест, говорит, так что поработаешь вожатой."
     mt "Велел приготовиться и через три дня принимать отряд.{w} Главное, говорит, веди себя, как положено вести вожатой, ничего сложного тут нет. Я и постаралась."
@@ -895,7 +901,7 @@ label bkrr_day18_common:
     me "Он чего, разумный, что ли?"
     "Я огляделся и припомнил, не говорил ли я каких-то гадостей в адрес лагеря. Вроде бы, ничего такого.{w} Ну, странным обзывал, не больше."
 
-    show mt normal bkrr_sport close with dissolve
+    show mt normal nightdress close with dissolve
 
     mt "А кто его знает. Вообще-то не похоже. Во всяком случае, не в том смысле, какой ты в это вкладываешь.{w} Так что если ты собираешься задавать ему вопросы о параллельных мирах, то ничего не выйдет."
     mt "Зато здесь частенько бывают странные случайности, которые подталкивают тебя к определенным действиям. Настолько своевременные, что похожи на закономерности.{w} Не замечал?"
@@ -1060,12 +1066,8 @@ label bkrr_day18_common:
 
     mt "Особенно после сегодняшней ночи?"
 
-    show bkrr_todo "Может ачивку с вруном вставить? :)"
-
     me "Да не было ничего!"
     "На лице Ольги так явственно читалось: «Ага! Ври больше!», что я поспешил сменить тему."
-
-    hide bkrr_todo
 
     show mt smile with dspr
 
@@ -1127,7 +1129,7 @@ label bkrr_day18_common:
     mt "То же, что и раньше."
     "Ольга достала вешалку со своей парадной формой."
 
-    show mt normal bkrr_sport at cright with dspr
+    show mt normal nightdress at cright with dspr
 
     mt "Может, тебе и плевать на предстоящий праздник, но для девчонок он значит очень много. Не расстраивай их."
     mt "А ещё кое-кто сидит, и ждёт не дождется, когда увидит тебя на завтраке. Наверняка, улыбается и считает минуты."
@@ -1153,8 +1155,6 @@ label bkrr_day18_common:
     show mt smile with dspr
 
     mt "Да ладно, нормальная история.{w} Тут иногда такое сочиняли, что только держись."
-    "Она подумала, потом добавила:"
-    mt "А если это была правда, то вообще ужас."
     me "Значит, нет ни документов, ни паспорта, ничего…"
 
     show mt normal with dspr
@@ -1174,7 +1174,7 @@ label bkrr_day18_common:
     "Когда она обняла меня в ответ, то ощущение были совсем не похожи на те, что я испытывал, обнимая Мику. Пожалуй, больше всего напоминало, как в детстве, пока я ещё жил с семьёй, мама обнимала меня, чтобы успокоить."
     "Только чувство это было куда ярче и сильнее. Странное ощущение, что всё будет хорошо и не о чем беспокоиться."
 
-    show mt smile bkrr_sport close with dissolve
+    show mt smile nightdress close with dissolve
 
     mt "На здоровье."
     "Она спокойно кивнула и похлопала меня по спине. Когда я разжал руки, то она, словно ни в чем не бывало, продолжила."
@@ -1204,11 +1204,13 @@ label bkrr_day18_common:
     mt "Один раз оговорилась, а он запомнил.{w} Кстати, тебя Клаус искал вчера, хотел что-то спросить. Ты иди, прими душ, завтрак скоро… А я еще не переоделась."
     me "Понял! Удаляюсь."
 
+    window hide
     stop ambience fadeout 3
     play sound sfx_open_door_1
     scene bg ext_house_of_mt_sunset with dissolve
     play ambience ambience_camp_center_day fadein 3
     play music music_list["trapped_in_dreams"] fadein 10
+    window show
 
     # ПОХОД В ДУШ С ШУРИКОМ (NOT GAY)
 
@@ -1222,29 +1224,29 @@ label bkrr_day18_common:
     "Несмотря на предупреждение вожатой, я собирался выкроить время и поговорить с Мику о своём происхождении. Лишь бы хватило смелости. Или глупости?{w} Наверное, после концерта будет в самый раз."
     "Пока мы с Ольгой беседовали о других мирах, утро окончательно вступило в свои права. Снова по дорожкам снуют пионеры, и никого знакомого. Разве что… "
 
-    show sh upset shirt at cright with dissolve
+    show sh upset bathrobe at cright with dissolve
 
     sh "Семен, доброе утро!"
     "Прямо передо мной стоял заспанный Шурик с полотенцем в руках."
     me "Привет! А чего не на рыбалке?"
 
-    show sh smile shirt with dspr
+    show sh smile bathrobe with dspr
 
     sh "Хоть ты не подкалывай. Я рыбачу не каждый день! Ты в душ?"
     "Вместо ответа я показал ему полотенце. Он кивнул."
 
-    show sh normal shirt with dspr
+    show sh normal bathrobe with dspr
 
     sh "Да, глупый вопрос. А куда ты вчера исчез? Мы весь ужин отгоняли Ульяну от твоей порции… А в итоге вышло что зря."
     me "В клубе, где же ещё. Заснул и спал до утра."
     sh "Да, я тоже вчера ходил сонный. Погода, наверное, такая. Все жалуются."
 
-    show sh serious shirt with dspr
+    show sh serious bathrobe with dspr
 
     sh "Кстати, вчера приходила Алиса, просила помочь с пультом. Вы там, кажется, устраиваете генеральную репетицию? Я после обеда зайду, посмотрю. Сережку-то не дозовешься."
     me "Генеральную репетицию? Уля говорила, что они что-то собирались сыграть перед концертом. А что, когда – не сказала.{w} Всё эти секреты, секреты… Ну, раз говорят, что устраиваем, значит так оно и есть."
 
-    show sh normal_smile shirt with dspr
+    show sh normal_smile bathrobe with dspr
 
     sh "Мы с Виолой придем послушать! Если, конечно, вы не против."
     "«Я завтра уезжаю …» – вспомнил я печальный голос медсестры. Кажется, Шурик еще не знает. Жестко она с ним. Но, может так и лучше? Долгие проводы – лишние слезы."
@@ -1254,7 +1256,9 @@ label bkrr_day18_common:
 
     "Я старался не встречаться с ним взглядом, но он был слишком счастлив, чтобы это заметить. Пока что – счастлив."
 
+    window hide
     scene bg ext_washstand_day with dissolve
+    window show
 
     "Мы вышли к душевым. Я разделся, с удовольствием встал под прохладные струи воды и принялся намыливаться. Сегодня было настолько тепло, что вода в трубах согрелась до приятно-комнатной температуры."
     "Шурик встал под душ чуть в стороне и с энтузиазмом тер спину мочалкой, что-то напевая при этом. Я посматривал на него со смесью жалости и сочувствия. Грызла неприятная мысль, что мы с Виолой в сходном положении."
@@ -1266,12 +1270,14 @@ label bkrr_day18_common:
 
     # ВОЗВРАЩЕНИЕ В ДОМИК И ПОХОД В СТОЛОВУЮ
 
+    window hide
     stop ambience fadeout 2
     $ bkrr_timeskip_short()
     scene bg int_house_of_mt_sunset
     with bkrr_timeskip_transition()
     play ambience ambience_int_cabin_day fadein 2
     stop music fadeout 7
+    window show
 
     "Вернувшись в домик, я стал переодеваться к завтраку."
     "Вожатая уже ушла, так что я разделся догола и потратил несколько минут, рассматривая в зеркале свою спину и места порезов.{w} Синяки сошли полностью, шрамов тоже нет. Вообще ничего. Как будто, ничего и не было."
@@ -1289,6 +1295,7 @@ label bkrr_day18_common:
     play music music_list["i_want_to_play"] fadein 3
 
     "Я подкрался к ней со спины, положил руки ей на плечи и громким шепотом заявил: «Попалась!»"
+    with vpunch
 
     show us fear pioneer close with easeinbottom
 
@@ -1308,7 +1315,9 @@ label bkrr_day18_common:
     hide us with dissolve
     "Ульяна огляделась, взяла меня под руку и потащила к столовой."
 
+    window hide
     scene bg ext_dining_hall_away_sunset with dissolve
+    window show
 
     show us normal pioneer with dissolve
 
@@ -1414,8 +1423,10 @@ label bkrr_day18_common:
 
     us "А… Ну, Алиска-то, она зря не скажет. Заслужил, значит!"
 
+    window hide
     scene bg ext_dining_hall_near_sunset with dissolve
     stop music fadeout 5
+    window show
 
     me "Хватит уже, на завтрак опоздаем. Я первый!"
 
@@ -1917,6 +1928,7 @@ label bkrr_day18_common:
     mi "Не надо бояться. Я не сон, я вот она, и я настоящая.{w} Как же тебе доказать? Хочешь, ущипну?"
     me "Давай. Мне так будет спокойнее."
 
+    window hide
     hide mi with dissolve
 
     # Столько кода на один щипочек
@@ -1938,6 +1950,7 @@ label bkrr_day18_common:
         ease 0.25 alpha 0.05
         ease 0.25 alpha 0.0
     with None
+    window show
 
     "Мику аккуратно ущипнула меня за щеку, а затем поцеловала в то же место."
 
@@ -2084,8 +2097,10 @@ label bkrr_day18_common:
 
     "Она освободилась из моих рук, пригнулась и быстро двинулась в сторону, откуда звучала музыка.{w} Я застыл было, залюбовавшись её фигуркой, но потом любопытство взяло верх и я заспешил следом."
 
+    window hide
     play sound sfx_bush_leaves fadein 0.5
     scene bg ext_path3_day_bkrr with dissolve
+    window show
 
     "Мы пробрались через негустой кустарник и оказались на краю полянки. Я удивленно почесал в затылке.{w} За кустами обнаружилась небольшая полянка, а на ней… "
 
@@ -2188,10 +2203,12 @@ label bkrr_day18_common:
 
     # ВОЗВРАЩЕНИЕ В КЛУБ
 
+    window hide
     stop ambience fadeout 2
     play sound sfx_open_door_1
     scene bg int_music_club_mattresses_day with dissolve
     play ambience ambience_music_club_day fadein 3
+    window show
 
     show dv laugh pioneer2 far at left with dissolve
 
@@ -2766,8 +2783,10 @@ label bkrr_day18_common:
 
     kla "Если вы не против. Я не люблю когда много людей, знакомятся, вопросы задают, слишком много внимания. Как в зоопарке.\nУ вас интереснее."
 
+    window hide
     $ bkrr_timeskip_short()
     scene bg int_music_club_mattresses_day with bkrr_timeskip_transition()
+    window show
 
     play sound sfx_knocking_door_outside fadein 1
 
@@ -2881,10 +2900,12 @@ label bkrr_day18_common:
     me "Обязательно вернусь. Помогу отнести, и сразу назад!"
     mi "Тогда иди. Ты будь осторожен с басом, ладно? Он у нас один. Мы пока сами порепетируем."
 
+    window hide
     stop ambience fadeout 2
     play sound sfx_open_door_1
     scene bg ext_music_club_verandah_day_v9 with dissolve
     play ambience ambience_camp_center_day fadein 3
+    window show
 
     # ПУТЬ В ГЕЙКЛУБ КИБЕРНЕТИКОВ
 
@@ -3217,11 +3238,13 @@ label bkrr_day18_common:
 
     # ОБРАТНАЯ ДОРОГА И ВСТРЕЧА С ЛЕНОЙ
 
+    window hide
     stop ambience fadeout 2
     play sound sfx_open_door_1
     scene bg ext_clubs_day with dissolve
     $ bkrr_set_volume("ambience", 1.0, 2.0)
     play ambience ambience_camp_center_day fadein 3
+    window show
 
     "Я прикрыл двери клуба и улыбнулся. Кажется, Ульяна собирается утешить Шурика… И воспользоваться моментом. Надо бы ей то белое платье надеть… В своей обычной футболке она никак не тянула на роль роковой соблазнительницы."
     "Я вспомнил, как она переживала: её расспросы на баскетбольной площадке, тренинг по поцелуям… "
@@ -3308,18 +3331,22 @@ label bkrr_day18_common:
     un "Просто, догадка. Разве не все парни таким страдают? Замужем я, конечно, ещё не была, но многие мои знакомые, у кого есть братья, жалуются на это."
     me "Ну, наверное."
 
+    window hide
     scene bg ext_music_club_verandah_day_v9
     with dissolve
     show un smile sport at cleft with dissolve
+    window show
 
     un "В любом случае, мне кажется, что вы подходите друг другу. Может, тебя я и не знаю – но уж её-то знаю хорошо."
     me "Спасибо за поддержку."
     un "Не за что. Для чего же еще существуют друзья? Вот мы и пришли. Давай, я дверь подержу."
 
+    window hide
     stop ambience fadeout 2
     play sound sfx_open_door_1
     scene bg int_music_club_mattresses_day with dissolve
     play ambience bkrr_ambience_list["indoors_day"] fadein 3
+    window show
 
     # СНОВА В МУЗКЛУБЕ
     "Она открыла двери в клуб. Там полным ходом шла важнейшая часть репетиции: Мику разливала чай, а Алиса развлекала гостя. Клаус сидел в обнимку с гитарой и был явно смущен."
@@ -3409,10 +3436,12 @@ label bkrr_day18_common:
 
     "Лена промолчала, но красноречиво сморщила нос и помахала рукой перед лицом."
 
+    window hide
     stop ambience fadeout 2
     play sound sfx_open_door_1
     scene bg ext_music_club_verandah_day_v9 with dissolve
     play ambience ambience_camp_center_day
+    window show
 
     "Я вздохнул и ушел на веранду. Увы, чуда не произошло и Славя с подсолнечным маслом не появилась.{w} Немного усилий, немного растворителя, и моя ладонь из синей стала светло-голубой и приобрела дивный химический запах."
 
@@ -3494,10 +3523,12 @@ label bkrr_day18_common:
     un "Жарко же. Мне что, шерстяную спортивку было надевать?"
     dv "Вот кстати отличная идея, но нет, ты же…"
 
+    window hide
     stop ambience fadeout 2
     play sound sfx_open_door_1
     scene bg ext_music_club_verandah_day_v9 with dissolve
     play ambience ambience_camp_center_day fadein 3
+    window show
 
     "Мы с Мику вышли наружу и присели на теплой от солнца скамейке."
     me "Наконец-то вдвоем."
@@ -3877,9 +3908,11 @@ label bkrr_day18_common:
     me "Постара… юсь!"
     "Я не договорил, когда Ульяна потащила меня к выходу."
 
+    window hide
     stop ambience fadeout 2
     scene bg ext_dining_hall_near_sunset with dissolve
     play ambience ambience_camp_center_day fadein 3
+    window show
 
     "По закону подлости, Ольга Дмитриевна как раз шла нам навстречу и с ней был весь цветник нашего отряда: Лена, Славяна, Женя и Алиса. Следом шли Антон Иванович и его подопечные. Вожатая улыбнулась, и заговорила с нами."
 
@@ -3957,12 +3990,14 @@ label bkrr_day18_common:
 
     "Пионер держался руками за ведро, пытаясь не то снять его, не то натянуть поглубже, его пошатывало и он почти упал с крыльца."
 
+    window hide
     hide el with dissolve
 
     play sound bkrr_sfx_list["sem_falls_on_floor"]
     scene bg ext_clubs_day:
     show el vedro close
     with vpunch
+    window show
 
     "Я подхватил его под мышки, не давая упасть."
 
@@ -4082,11 +4117,13 @@ label bkrr_day18_common:
     "Похоже, Шурик разошелся не на шутку. Не то, чтобы я ощутил приступ героизма, на самом деле колени предательски дрожали, а в желудке образовался комок льда размером с дыньку."
     "Но Ульяна так на меня смотрела, что ноги сами собой подошли ко входу, а рука, не спросив разрешения, легла на ручку и повернула её."
 
+    window hide
     $ bkrr_set_volume("sound_loop", 0.4, 2)
     stop ambience fadeout 2
     play sound sfx_open_door_1
     scene bg int_clubs_male_day with dissolve
     play ambience ambience_int_cabin_day fadein 3
+    window show
 
     show bkrr_todo "Можно попробовать тряску синхронизировать со звуками потом"
 
