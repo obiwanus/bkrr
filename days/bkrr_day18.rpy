@@ -487,14 +487,16 @@ label bkrr_day18_common:
 
     dv "Да знаю я! Тьфу на вас!"
 
-    show bkrr_todo "звяк чашки о блюдце"
+    window hide
     hide dv
     hide mi
     with dissolve
-
+    play sound bkrr_sfx_list["cup_clank1"]
+    $ renpy.pause(1.5, hard=True)
+    play sound bkrr_sfx_list["cup_clank2"]
+    window show
     "Она бесцеремонно выпила мой чай, к которому я так и не притронулся."
 
-    hide bkrr_todo
     show dv normal pioneer2 at cleft with dissolve
 
     dv "В горле пересохло, пока с этой ругалась."
