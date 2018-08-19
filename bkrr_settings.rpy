@@ -471,6 +471,7 @@ init 2:
     image black = Solid("#000")
     image white = Solid("#FFF")
     image red = Solid("#F00")
+    image orange = Solid("#CC4D14")
 
     # Новые фоны
 
@@ -792,7 +793,7 @@ init 2:
         contains:
             "bg int_music_club_mattresses_day"
         contains:
-            "dv shy pioneer"
+            "dv shy pioneer2"
             left
         contains:
             "us surp1 pioneer"
@@ -800,6 +801,13 @@ init 2:
         contains:
             "mi surprise pioneer"
             right
+
+    # ЦГшные спрайты
+
+    image dv d18_guitar1 = MOD_IMAGES + "cg/d18_alisa_guitar1.png"
+    image dv d18_guitar2 = MOD_IMAGES + "cg/d18_alisa_guitar2.png"
+    image kla d18_guitar1 = MOD_IMAGES + "cg/d18_klaus_guitar1.png"
+    image kla d18_guitar2 = MOD_IMAGES + "cg/d18_klaus_guitar2.png"
 
     # Комбинированные сюжетные вставки, анимированные и статичные (тоже идут под тегом cg)
 
@@ -1303,6 +1311,23 @@ init 1:
             repeat
         parallel:
             ease 0.25 ypos 0.499
+            ease 0.25 ypos 0.501
+            repeat
+
+    transform bkrr_shiver_guitar_fight:
+        truecenter
+        ease 0.25 zoom 1.005
+        parallel:
+            ease 0.35 zoom 1.006
+            ease 0.35 zoom 1.005
+            repeat
+        parallel:
+            ease 0.15 xpos 0.499
+            ease 0.15 xpos 0.501
+            repeat
+        parallel:
+            pause 1.0
+            ease 0.75 ypos 0.499
             ease 0.25 ypos 0.501
             repeat
 
@@ -1843,7 +1868,7 @@ init 2:
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'apron', ['es:body', 'mod:apron', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'dirt apron', ['es:body', 'mod:apron', 'mod:apron_dirt', 'es:<emotion>'])
-        make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'shorts', ['mod:body_loo', 'mod:shorts', 'es:<emotion>'])
+        # make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'shorts', ['mod:body_loo', 'mod:shorts', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'shorts_hair', ['mod:body_loo', 'mod:shorts', 'mod:hair', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'body_loo', ['mod:body_loo', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'body', ['es:body', 'es:<emotion>'])

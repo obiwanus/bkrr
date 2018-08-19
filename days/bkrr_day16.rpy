@@ -3013,7 +3013,7 @@ label bkrr_day16_common:
     with bkrr_fade(1.0)
     window show
 
-    "На ящиках сидели незнакомые пионеры и страстно целовались.{w} Темноволосый заросший парень обнимал миниатюрную пионерку в зелёной панаме, и им было явно не до меня."
+    "На ящиках сидели незнакомые пионеры и страстно целовались.{w} Темноволосый заросший парень обнимал миниатюрную пионерку в панаме, и им было явно не до меня."
     "Под ногами у них лежал какой-то непонятный свёрток вроде большого рулона парусины, пионер положил на него ноги."
     "Я бы скромно ушёл, но парень сидел на той самой папке. Отсюда мне был виден её угол."
 
@@ -4060,7 +4060,7 @@ label bkrr_day16_common:
 
     window hide
 
-    $ renpy.pause(2.0, hard=True)
+    $ renpy.pause(3.0, hard=True)
     stop sound_loop fadeout 3
     stop music fadeout 5
     scene bg ext_pier_day with bkrr_fade(2.0)
@@ -4070,6 +4070,9 @@ label bkrr_day16_common:
     window show
 
     "Эта идиллия продлилась всего пару минут. Как только я потянулся губами к шее Мику, из-за спины раздался крик Ульяны:"
+
+    play music music_list["you_lost_me"] fadein 3
+
     us "Ой… там Алиску сейчас заклюют!"
     me "Кто?"
 
@@ -4078,8 +4081,6 @@ label bkrr_day16_common:
     us "Чайки!"
     th "Чтоб вам пропасть. И Алисе, и Ульяне, и чайкам. Никакой личной жизни…"
     me "Ульянка, одна чайка Алису не съест."
-
-    play music music_list["you_lost_me"] fadein 3
 
     show us fear sport at center with dspr
 
@@ -4219,7 +4220,7 @@ label bkrr_day16_common:
     "Я рванул висящий на стене плащ-палатку, пропахший табаком и рыбой, обнял Мику и увлёк её на дощатый пол, накрыв нас обоих брезентом."
 
     window hide
-    $ renpy.pause(1.0, hard=True)
+    $ renpy.pause(3.0, hard=True)
     window show
 
     "Шум крыльев, голоса чаек и мягкие шлепки стали отдаляться. Мику вполголоса поинтересовалась:"
@@ -4751,7 +4752,7 @@ label bkrr_day16_common:
 
     nvl hide dissolve
 
-    stop music fadeout 5
+    stop music fadeout 3
 
     $ renpy.pause(1.0, hard=True)
 

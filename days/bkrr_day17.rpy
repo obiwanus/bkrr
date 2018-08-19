@@ -687,10 +687,12 @@ label bkrr_day17_common:
 
     "Подъём ещё не сыграли, но лагерь постепенно просыпался. На подступах к туалетам выстраивались очереди, на дорожках мелькали заспанные пионеры. {w}Самые нетерпеливые, воровато озираясь, удалялись в кустики и вершили своё чёрное дело в них."
 
+    window hide
     stop ambience fadeout 3
     scene bg int_dining_hall_day with dissolve
     play ambience ambience_dining_hall_empty fadein 5
     play music music_list["she_is_kind"] fadein 3
+    window show
 
     "Мы пересекли пустой обеденный зал и зашли на кухню. Пират, лежащий на табуретке, лениво взглянул на нас одним глазом и снова заснул."
     "Тётя Наташа уже хлопотала на кухне, от больших кастрюль тянуло чем-то непонятным, пряно-душистым, отчего сразу захотелось ухватить ложку и попробовать её стряпню."
@@ -819,7 +821,7 @@ label bkrr_day17_common:
 
     play sound bkrr_sfx_list["bump"]
 
-    "Из-за двери донёсся стук, сдавленный стон, а потом шторка на окне сдвинулась в сторону и в паре сантиметров от меня возникло самое жуткое лицо, которое я когда-либо видел. Кожа с него была начисто содрана."
+    "Из-за двери донёсся стук, сдавленный стон, а потом шторка на окне сдвинулась в сторону и в паре сантиметров от меня возникло самое жуткое лицо, которое я когда-либо видел.{w} Кожа с него была начисто содрана."
 
     # SCP CONTAINMENT BREACH!
     # play sound bkrr_sfx_list["jumpscare"]
@@ -968,10 +970,12 @@ label bkrr_day17_common:
 
     "Женя со Славей рассмеялись, и через пару секунд я к ним присоединился."
 
+    window hide
     stop ambience fadeout 1
     scene bg ext_house_of_sl_day with dissolve
     play ambience ambience_camp_center_day fadein 3
     stop music fadeout 5
+    window show
 
     "Попрощавшись с девчонками, я направился к тринадцатому домику.{w} Запоздало мелькнула мысль, что надо бы переодеться, но потом я решил, что сойдёт и так."
 
@@ -997,10 +1001,12 @@ label bkrr_day17_common:
 
     mi "Доброе утро! Заходи!"
 
+    window hide
     stop ambience fadeout 3
     play sound sfx_close_door_1
     scene bg int_house_of_un_day with dissolve
     play ambience bkrr_ambience_list["indoors_day"] fadein 3
+    window show
 
     "Мику взяла меня за руку, завела в домик, и, как только за нами закрылась дверь, прижалась ко мне и с чувством расцеловала. Я обнял её в ответ, коснувшись бархатистой кожи на спине."
     "Её волосы оставили большие мокрые пятна на моей футболке. Увидев это, она смутилась."
@@ -1089,6 +1095,10 @@ label bkrr_day17_common:
     window show
 
     "Но под полотенцем на ней оказался верх от купальника."
+
+    hide mi_hair
+    hide mi_towel
+    with None
 
     show mi smile underwear loose close with dspr
 
@@ -1334,13 +1344,17 @@ label bkrr_day17_common:
 
     play sound sfx_open_door_1
 
+    window hide
     stop ambience fadeout 0.5
     scene bg ext_house_of_un_day with dissolve
     play ambience ambience_camp_center_day fadein 3
+    window show
 
     "Я вышел на улицу и поспешил к нашему с Ольгой домику."
 
+    window hide
     scene bg ext_house_of_mt_day with dissolve
+    window show
 
     "Быстро сменив одежду, я улыбнулся, коснувшись шнурка на шее."
     th "Чем чёрт не шутит, вдруг и правда поможет? Интересно, сработает, если играть пальцами, а он просто повисит на шее?"
@@ -1348,9 +1362,11 @@ label bkrr_day17_common:
 
     # ПРОПУСК, СТОЛОВАЯ
 
+    window hide
     $ bkrr_timeskip_short()
     scene bg int_dining_hall_people_day with bkrr_timeskip_transition()
     play ambience ambience_dining_hall_full fadein 3
+    window show
 
     "Увы, спокойно позавтракать с девчонками мне не дали."
     "Вожатая перехватила меня на входе в столовую и повела за дальний стол. Мику с Ульяной вопросительно посмотрели на меня, но я только развёл руками."
@@ -1466,7 +1482,6 @@ label bkrr_day17_common:
     # ПРОПУСК, У ВОРОТ
     window hide
     $ bkrr_timeskip()
-    window show
 
     $ bkrr_set_time("day")
 
@@ -1474,6 +1489,8 @@ label bkrr_day17_common:
     play ambience ambience_camp_center_day fadein 3
 
     play music music_list["everyday_theme"] fadein 5
+
+    window show
 
     "Переодеваться не пришлось, так что вся моя подготовка свелась к тому, что я пару раз махнул тряпкой по обуви, стерев пыль, попытался причесаться и перевязал кривоватый узел галстука.{w} Пока остальные наводили на себя красоту, мы с Ольгой стояли в тени дерева у ворот в лагерь."
     me "Так странно смотреть на них снаружи!"
@@ -2023,7 +2040,7 @@ label bkrr_day17_common:
     show us grin:
         linear 0.5 pos (0.7, 0)
     with None
-    show tr normal with dspr
+    show tr sad with dspr
 
     ant "Вообще-то ему четырнадцать."
 
