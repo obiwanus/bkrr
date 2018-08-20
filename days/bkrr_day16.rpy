@@ -4118,7 +4118,7 @@ label bkrr_day16_common:
     window hide
     $ renpy.pause(2.0, hard=True)
     stop music fadeout 1.0
-    play sound bkrr_sfx_list["ulyababah"]
+    play sound bkrr_sfx_list["ulyababah2"]
     play sound2 [ bkrr_sfx_list["silence05"], bkrr_sfx_list["bird_flapping"] ]
     stop sound_loop2 fadeout 2
     $ renpy.pause(0.2, hard=True)
