@@ -2112,7 +2112,7 @@ label bkrr_day16_common:
     $ bkrr_set_volume('ambience', 0.4, 15.0)
 
     play ambience ambience_camp_center_day fadein 3
-    $ bkrr_set_volume('music', 0.5)  # почему-то трек выведен громче чем остальные
+    $ bkrr_set_volume('music', 0.8)  # почему-то трек выведен громче чем остальные
     play music bkrr_music_list["tee"] fadein 15
 
     window show
