@@ -358,7 +358,7 @@ init python:
         ("bath", u"С лёгким паром!"),
         ("cold", u"Живо в изолятор!"),
         ("bass2", u"Наш басист – молодец!"),
-        ("exactly_what_you_think", u"Да. Именно."),
+        ("exactly_what_you_think", u"Именно то, что вы подумали"),
     )
 
     if not persistent.bkrr_ach:
@@ -615,6 +615,13 @@ init 2:
         contains:
             "cs normal civil2 far"
             cleft
+
+    image bg int_mine_coalface_bkrrpi:
+        contains:
+            "bg int_mine_coalface"
+        contains:
+            "bkrr_pi normal"
+            center
 
     image bg int_mine_halt_olga:
         contains:

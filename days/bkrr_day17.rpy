@@ -3485,6 +3485,9 @@ label bkrr_day17_common:
     play ambience ambience_camp_center_evening fadein 3
 
     "…И увидел нашу медсестру."
+
+    stop sound fadeout 2
+
     "Виола сидела на скамейке и безуспешно пыталась зажечь сигарету.{w} Наконец, психанув, она зашвырнула зажигалку в кусты. Медсестра была настолько погружена в свои мысли, что даже не заметила моего приближения."
 
     $ bkrr_set_volume("sound", 1.0)
@@ -4135,19 +4138,29 @@ label bkrr_day17_common:
     "До Ольги и Мику оставалась всего пара шагов, когда Пират зашипел и выгнул спину, а затем протяжно завыл, глядя на что-то за моей спиной."
 
     window hide
-    scene bg int_mine_coalface
-    show bkrr_pi smile
+    scene bg int_mine_coalface_bkrrpi:
+        truecenter
+        zoom 1.1
+        ease 1.0 zoom 1.0
     with dissolve
     window show
 
     "Я обернулся и увидел двойника совсем рядом. В руке у него был нож.{w} Обычный кухонный нож, может быть даже тот самый, которым мы чистили картошку."
     me "Эй… ты что…"
+
+    scene bg int_mine_coalface
+    show bkrr_pi smile
+    with dissolve
+
+    $ bkrr_set_volume("sound2", 0.5)
+
     pi "Он где-то рядом.. Может, сейчас выйдет?"
 
     show d17_knife_slice:
         truecenter
         zoom 2.5
         ease 1 alpha 0
+    play sound2 sfx_scary_sting
     play sound bkrr_sfx_list["knife_slice2"]
     show bg int_mine_coalface
     show red:
@@ -4158,6 +4171,7 @@ label bkrr_day17_common:
     "С этими словами он ловко полоснул меня по руке. Сначала в месте пореза стало холодно, словно кто-то приложил туда лёд, а потом – больно и горячо.{w} Мику и Ольга с удивлением уставились на меня, а я – на свою руку."
     mi "Что с тобой такое? У тебя кровь!"
 
+    $ bkrr_set_volume("sound2", 1.0)
     $ bkrr_set_volume("sound", 0.2)
     play sound bkrr_sfx_list["hiss1"] fadeout 1
 
