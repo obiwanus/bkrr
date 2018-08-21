@@ -2313,6 +2313,8 @@ label bkrr_day18_common:
     show dv rage with dspr
     hide us with easeoutbottom
 
+    with vpunch
+
     dv "ДУРА! Щас врежу!"
 
     hide dv with dissolve
@@ -2415,15 +2417,15 @@ label bkrr_day18_common:
     "Алиса закашлялась и потянулась с стакану с водой."
     dv "Связки сорву с этим хрипением."
 
-    show mi serious with dspr
+    show mi upset with dspr
 
     mi "Я тебя прошу, как дойдет до дела… "
 
-    show mi upset with dspr
+    show mi normal with dspr
 
     "Она бросила быстрый взгляд в мою сторону и тут же отвела его."
 
-    show mi normal with dspr
+    show mi upset with dspr
 
     mi "Будь внимательнее, ладно?"
 
@@ -2450,15 +2452,10 @@ label bkrr_day18_common:
     show dv rage with dspr
     hide us with easeoutleft
 
-    scene bg int_music_club_mattresses_day
-    show dv rage pioneer2 at cright
+    play sound bkrr_sfx_list["slap1"]
     with hpunch
 
-    show bkrr_todo "TODO: звук удара шлепанца об доску"
-
     "Не успев договорить, она покинула свой табурет и бросилась на пол. По клубу разнеся рык раненного носорога. Метко брошенный шлепанец Алисы просвистел там, где была голова Ульяны и врезался в расчерченную нотными станами доску, выбив меловую пыль из надписи «Сенька+Микуська=Любовь»."
-
-    hide bkrr_todo
 
     th "Интересно, не замечал её раньше. Давно она здесь? И кто автор?"
     "Ульяна выглянула из-за установки."
@@ -2492,6 +2489,11 @@ label bkrr_day18_common:
     kla "Хорошо."
 
     hide kla with dissolve
+
+    window hide
+    $ renpy.pause(1.0, hard=True)
+    play sound bkrr_sfx_list["plugin"] fadein 2
+    window show
 
     "Он устроил гитару на коленях, попросил Алису подключить её, поколдовал с усилителем, и вздохнул."
     kla "Я названия не знаю, просто ноты в тетрадке были. Но мне очень нравится."
