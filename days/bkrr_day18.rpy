@@ -2558,7 +2558,6 @@ label bkrr_day18_common:
     $ renpy.pause(2.0, hard=True)
     window show
 
-
     "Когда музыка стихла, рыжая удивленно покачала головой."
 
     show dv smile with dspr
@@ -2592,55 +2591,74 @@ label bkrr_day18_common:
 
     hide dv with dissolve
 
-    window hide
     play music bkrr_music_list["six_string_samurai_duel"] fadein 2
-    $ renpy.pause(1.0, hard=True)
-    window show
 
-    scene bg int_music_club_mattresses_sunset:
+    scene bg int_music_club_mattresses_day:
         bkrr_shiver_guitar_fight
-    show orange:
+    show red:
         alpha 0.0
         ease 5.0 alpha 0.2
         parallel:
-            ease 1.0 alpha 0.3
-            ease 0.5 alpha 0.2
-            ease 1.5 alpha 0.3
-            ease 1.0 alpha 0.1
+            ease 1.0 alpha 0.25
+            ease 0.5 alpha 0.15
+            ease 1.5 alpha 0.25
+            ease 1.0 alpha 0.05
             repeat
-    with dissolve
+    show kla smile pioneer at cright
+    with Dissolve(1.0)
 
     "Алиса босой ногой включила ритм-бокс, тот громко щелкнул и выдал частую дробь. Вроде, мы не репетировали эту мелодию, откуда взялся этот ритм?"
     "Несколько секунд Клаус слушал ритм, наклонив голову, затем кивнул."
 
-    window hide
-    $ renpy.pause(1.0, hard=True)
-    window show
+    hide kla with dissolve
+
+    show kla d18_guitar1:
+        xalign 0.1
+        pause 0.5
+        parallel:
+            ease 2.0 xalign 0.13
+            ease 2.0 xalign 0.1
+            repeat
+    with dissolve
 
     "Немец прищёлкнул пальцами и подхватил свою гитару, почти скрывшись за её огромным корпусом."
-
-    show kla d18_guitar1 at left with dissolve
-
     "Пальцы Клауса пробежались по струнам и инструмент отозвался короткими отрывистыми аккордами."
-    "Даже без усилителя звук гитары словно заполнял собой помещение музклуба…{w} И очень неплохо попадал в ритм ударных.  "
-    "Вот в череду аккордов стала вплетаться более приятная мелодия, смутно отдающая чем-то…{w} Испанским? Не знаю… "
 
     window hide
     $ renpy.pause(1.0, hard=True)
     window show
 
-    show dv d18_guitar1 at right with easeinright
+    "Вот в череду аккордов стала вплетаться более приятная мелодия, смутно отдающая чем-то… Испанским? Не знаю… "
+    "Даже без усилителя звук гитары словно заполнял собой помещение музклуба… И очень неплохо попадал в ритм ударных."
+
+    window hide
+    $ renpy.pause(2.0, hard=True)
+    window show
+
+    show dv d18_guitar1:
+        xalign 0.95
+        parallel:
+            ease 2.5 xalign 0.92
+            ease 2.5 xalign 0.95
+            repeat
+    with dissolve
 
     "Алиса, опомнившись, вскочила на ноги и навстречу чеканным музыкальным фразам старенького немецкого инструмента понёслись размытые риффы её электрогитары. "
     "Такие непохожие звуки двух гитар сплетались, бились друг о друга, словно споря  о том, кто из них лучше. "
-    "Мы только смотрели, как они, сверля друг друга взглядами, играли вдвоём одну мелодию."
-    "Клаус подмигнул Алисе и выдал сложный пассаж.{w} Она скривилась, но все-таки догнала его, снова попав в ритм."
 
-    hide bkrr_todo
+    show kla d18_guitar2 with dspr
+
+    # "Мы только смотрели, как они, сверля друг друга взглядами, играли вдвоём одну мелодию."
+
+    show dv d18_guitar2 with dspr
+
+    "Клаус подмигнул Алисе и выдал сложный пассаж.{w} Она скривилась, но все-таки догнала его, снова попав в ритм."
 
     window hide
     $ renpy.pause(1.0, hard=True)
     window show
+
+    show kla d18_guitar1 with dspr
 
     "Глаза немца сузились, он брал ноты, словно гвозди вколачивал."
 
@@ -2654,11 +2672,11 @@ label bkrr_day18_common:
     $ renpy.pause(2.0, hard=True)
     window show
 
-
     "Так продолжалось несколько минут, пока, наконец, она не прекратила играть."
 
     stop music fadeout 5
     window hide
+    $ renpy.pause(0.5, hard=True)
     scene bg int_music_club_mattresses_day:
     show dv guilty pioneer2 at cleft
     show kla normal pioneer at cright

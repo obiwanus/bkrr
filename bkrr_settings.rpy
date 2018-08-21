@@ -1332,21 +1332,21 @@ init 1:
     transform bkrr_shiver_guitar_fight:
         truecenter
         ease 0.25 zoom 1.005
+        pause 1.2
         parallel:
             ease 0.35 zoom 1.006
             ease 0.35 zoom 1.005
             repeat
+        # parallel:
+        #     ease 0.15 xpos 0.499
+        #     ease 0.15 xpos 0.501
+        #     repeat
         parallel:
-            ease 0.15 xpos 0.499
-            ease 0.15 xpos 0.501
-            repeat
-        parallel:
-            pause 1.0
-            ease 0.75 ypos 0.499
-            ease 0.25 ypos 0.501
+            ease 0.25 ypos 0.499
+            ease 0.11 ypos 0.501
             repeat
 
-    # Отсвет от пламени (да, быдлокод)
+    # Отсвет от пламени
 
     transform bkrr_glow_atl(imgf):
         im.MatrixColor(imgf, im.matrix.brightness(0.17))
