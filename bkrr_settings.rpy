@@ -1853,6 +1853,7 @@ init 2:
         make_sprites_for('sh', 'shirt', ['mod:shirt', 'es:<emotion>'])
 
         make_sprites_with_custom_emotions(['shy_smile'], 'un', 'bkrr_dress', ['es:body', 'mod:dress', 'es:<emotion>'])
+        make_sprites_with_custom_emotions(['shy_smile'], 'un', 'paint sport', ['es:body', 'es:sport', 'mod:pn', 'es:<emotion>'])
         make_sprites_for('un', 'bra', ['es:body', 'mod:bra', 'es:<emotion>'], emotions=['cry', 'cry_smile', 'sad', 'scared', 'shocked', 'surprise'])
         make_sprites_for('un', 'jacket', ['es:body', 'mod:jacket', 'es:<emotion>'])
         make_sprites_for('un', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['shy_smile'])
