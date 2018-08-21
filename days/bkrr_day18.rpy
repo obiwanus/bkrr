@@ -1983,17 +1983,18 @@ label bkrr_day18_common:
     mi "А до тех пор тебя нужно как-нибудь отвлечь… Иди сюда!"
     window hide
 
-    show mi happy:
+    scene bg ext_path_day_mi_d18:
         truecenter
-        linear 3.0 zoom 1.5
+        linear 3.0 zoom 1.2
+    with dspr
 
     $ renpy.pause(1.0, hard=True)
 
     scene cg d18_no_squirrel_1:
         truecenter
         zoom 1.05
-        linear 5.0 zoom 1.2
-    with dissolve
+        ease 5.0 zoom 1.2
+    with Dissolve(2.0)
 
     $ renpy.pause(1.0, hard=True)
 

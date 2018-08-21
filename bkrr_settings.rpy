@@ -630,6 +630,14 @@ init 2:
             "mt normal pioneer far"
             center
 
+    image bg ext_path_day_mi_d18:
+        contains:
+            "bg ext_path_day"
+        contains:
+            "mi happy pioneer close"
+            truecenter
+            zoom 1.3
+
     # Дождливые, пасмурные фоны
 
     image bg ext_music_club_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/ext_musclub_day.jpg")
