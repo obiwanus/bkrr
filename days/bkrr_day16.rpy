@@ -1164,6 +1164,11 @@ label bkrr_day16_common:
     window show
 
     "Она протянула мне свёрток с большими белыми таблетками. «Аскорбиновая кислота». {w}Помню такие."
+
+    window hide
+    $ bkrr_get_item("pills")
+    window show
+
     "Я немедленно развернул упаковку и разгрыз одну."
     th "Вкусно… Как в детстве."
     me "Я свободен?"
@@ -2236,13 +2241,14 @@ label bkrr_day16_common:
 
     window hide
 
+    $ bkrr_set_volume("sound", 0.6)
     show un surprise bra far with dissolve
-
-    play sound bkrr_sfx_list["oh"]
+    $ bkrr_play_random(bkrr_oi_list)
 
     $ renpy.pause(0.7, hard=True)
 
     hide un with easeoutbottom
+    $ bkrr_set_volume("sound", 1.0)
 
     window show
 

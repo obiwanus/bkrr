@@ -2467,6 +2467,7 @@ init 2:
     # Звуки
 
     $ bkrr_meow_list = [bkrr_sfx_list[i] for i in bkrr_sfx_list.keys() if i.startswith("meow")]
+    $ bkrr_oi_list = [bkrr_sfx_list[i] for i in bkrr_sfx_list.keys() if i.startswith("oi")]
 
     # Музыка
 
