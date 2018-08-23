@@ -2656,8 +2656,8 @@ label bkrr_day16_common:
     scene cg d4_mi_guitar:
         align(0.5, 0.0)
         subpixel True
-        zoom 1.4
-        linear 25.0 zoom 1.15
+        zoom 1.45
+        linear 34.0 zoom 1.15
     with Dissolve(2.5)
 
     $ renpy.pause(29.0, hard=True)  # непропускаемое, чтоб народ начал слушать. Дальше смогут пропустить если захотят
@@ -2844,8 +2844,6 @@ label bkrr_day16_common:
     "Ещё один ничем не примечательный обед. {w}Бутерброды на пикнике были немаленькими, но всё равно хотелось есть."
 
     window hide
-
-    stop music fadeout 3
 
     scene bg ext_dining_hall_near_day with dissolve
 
@@ -3076,7 +3074,7 @@ label bkrr_day16_common:
 
     scene bg int_library_day with fade3
 
-    play ambience ambience_library_day fadein 3
+    play ambience ambience_int_cabin_day fadein 3
 
     window show
     stop music fadeout 7
@@ -3883,7 +3881,7 @@ label bkrr_day16_common:
 
     window hide
 
-    scene bg ext_pier_day with dissolve
+    scene bg ext_pier_sunset with dissolve
 
     window show
 
@@ -4069,7 +4067,7 @@ label bkrr_day16_common:
     $ renpy.pause(3.0, hard=True)
     stop sound_loop fadeout 3
     stop music fadeout 5
-    scene bg ext_pier_day with bkrr_fade(2.0)
+    scene bg ext_pier_sunset with bkrr_fade(2.0)
     $ bkrr_set_volume("ambience", 1.0, 2.0)
     $ bkrr_set_volume("sound_loop2", 0.5, 2.0)
 
@@ -4201,7 +4199,7 @@ label bkrr_day16_common:
 
     window hide
 
-    scene bg ext_pier_day
+    scene bg ext_pier_sunset
     show us surp2 sport at center
     with dissolve
 
@@ -4246,7 +4244,7 @@ label bkrr_day16_common:
     window hide
     $ renpy.pause(1.0, hard=True)
 
-    scene bg ext_pier_day with fade2
+    scene bg ext_pier_sunset with fade2
 
     window show
 
@@ -4340,7 +4338,7 @@ label bkrr_day16_common:
     us "Тьфу… Ерунда какая-то.{w} Сопли мармеладные."
     mi "Читай вслух!"
 
-    $ bkrr_set_volume("sound3", 0.7)
+    $ bkrr_set_volume("sound3", 0.5)
     play sound3 music_list["memories"] fadein 5  # чтобы не циклилось
 
     window hide
