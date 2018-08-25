@@ -4505,6 +4505,7 @@ label bkrr_day16_common:
 
     mt "Ничего. До домиков идти долго. Успеете рассказать."
 
+    stop sound3 fadeout 2
     stop ambience fadeout 2
     window hide
     scene bg ext_square_sunset with fade2
