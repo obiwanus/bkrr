@@ -2363,9 +2363,6 @@ label bkrr_day16_common:
     window hide
 
     stop ambience fadeout 3
-    stop music fadeout 15
-    $ bkrr_set_volume('ambience', 1.0, 10.0)
-    $ bkrr_set_volume('music', 1.0, 10.0)
 
     # ВЕРШИНА ХОЛМА.
     # ПИКНИК, ПЕТТИНГ И ПЕРЕБОРЫ СТРУН
@@ -2406,11 +2403,11 @@ label bkrr_day16_common:
     me "Красота! Думаю, лучше места и не найти."
     "Мику изящно опустилась рядом, легла поперёк покрывала и положила голову мне на живот."
 
-    window hide
+    stop music fadeout 15
+    $ bkrr_set_volume('ambience', 1.0, 10.0)
+    $ bkrr_set_volume('music', 1.0, 10.0)
 
-    $ bkrr_set_volume('ambience', 0.4, 5.0)
-    $ bkrr_set_volume('sound_loop', 0.4, 5.0)
-    play music music_list["so_good_to_be_careless"] fadein 10
+    window hide
 
     $ renpy.pause(1.0, hard=True)
 
@@ -2466,11 +2463,6 @@ label bkrr_day16_common:
     "Я осторожно поднёс палец к её ладошке, и ярко-изумрудное насекомое неторопливо перебралось ко мне на руку."
     "Он сидел и явно думал, что же случилось. {w}Куда делась трава и земля, откуда взялось вот это всё, розовое и мягкое. {w}Совсем как я недавно смотрел на лагерь."
     "Внезапно я понял, что очень может быть, в этот самый момент меня вот так же кто-то изучает и рассматривает. {w}Эта мысль слегка пугала."
-
-    stop music fadeout 10
-    $ bkrr_set_volume('ambience', 1.0, 20.0)
-    $ bkrr_set_volume('sound_loop', 1.0, 20.0)
-
     "Мику с интересом смотрела на меня."
 
     show mi smile pioneer close at cleft with dissolve

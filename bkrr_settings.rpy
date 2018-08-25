@@ -963,7 +963,7 @@ init 2:
                 linear 8.0 xalign 1.0
             parallel:
                 pause 6.0
-                linear 2.0 alpha 0.0
+                linear 3.0 alpha 0.0
         contains:
             (MOD_IMAGES + "cg/d16_picnic3.jpg")
             truecenter
@@ -971,9 +971,9 @@ init 2:
             zoom 1.5
             pause 12.0
             parallel:
-                linear 1.5 alpha 1.0
+                linear 2.5 alpha 1.0
             parallel:
-                linear 15.0 zoom 1.0
+                ease 15.0 zoom 1.0
 
     # Прочие эффекты
 
