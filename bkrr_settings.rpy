@@ -1194,6 +1194,13 @@ init 1:
             ease 0.75 zoom 1.05
             ease 0.5 zoom 1.0
 
+    transform sit_down1_close:
+        parallel:
+            ease 1.0 ypos 0.05
+        parallel:
+            ease 0.75 zoom 1.05
+            ease 0.5 zoom 1.0
+
     transform get_up:
         parallel:
             ease 1.0 ypos 0.0

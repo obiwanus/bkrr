@@ -4154,7 +4154,7 @@ label bkrr_day18_common:
     window hide
     $ bkrr_set_volume("sound_loop", 0.7, 2)
     stop ambience fadeout 2
-    play sound sfx_open_door_1
+    play sound sfx_open_door_clubs
     scene bg int_clubs_male_day with dissolve
     play ambience ambience_int_cabin_day fadein 3
     window show
@@ -4226,7 +4226,7 @@ label bkrr_day18_common:
     "Шурик тем временем методично превращал приёмник на столе в кучу обломков, ругаясь под нос."
 
     stop ambience fadeout 2
-    play sound sfx_open_door_1
+    play sound sfx_open_door_clubs
     scene bg ext_clubs_day:
     show us normal pioneer at left
     show el normal pioneer at right
@@ -4253,7 +4253,7 @@ label bkrr_day18_common:
     stop sound_loop fadeout 2
     $ bkrr_set_volume("sound_loop", 0.5, 2)
     stop ambience fadeout 2
-    play sound sfx_open_door_1
+    play sound sfx_open_door_strong
     scene bg int_clubs_male_day with dissolve
     play ambience ambience_int_cabin_day fadein 3
     window show
@@ -4283,7 +4283,8 @@ label bkrr_day18_common:
 
     "Что делать дальше, я представлял себе смутно. Наверное, связать и поливать холодной водой? Черт его знает."
 
-    play sound [ bkrr_sfx_list["silence05"], bkrr_sfx_list["body_hit"], sfx_bodyfall_1, bkrr_sfx_list["broken_glass"] ]
+    play sound [ bkrr_sfx_list["silence05"], bkrr_sfx_list["body_hit"], sfx_bodyfall_1 ]
+    play sound2 [ bkrr_sfx_list["silence1"], bkrr_sfx_list["broken_glass"]]
 
     show us evsmile pioneer:
         xalign 2.3
@@ -4301,6 +4302,10 @@ label bkrr_day18_common:
     with hpunch
 
     "Мы одновременно бросились вперед. Из-за полулитра водки Шурик двигался медленно и неточно, так что никто не пострадал."
+
+    hide us
+    hide el
+    with None
 
     "Но он оказался куда сильнее, чем можно было подумать. Кибернетик вырвался из наших рук и бросился к роботу на столе. Сыроежкин отлетел в сторону и упал на пол."
 
@@ -4323,47 +4328,94 @@ label bkrr_day18_common:
     sh "Не говори так! Ты же знаешь, что я тебя не… Но я не бревно! Ну не могу я!"
     us "Рот закрой. Все я знаю. Лучше бы пластырь дал. Есть у тебя пластырь?"
     sh "Да… сейчас…"
+
+    play sound sfx_bodyfall_1
+    with vpunch
+
     "Он наклонился, чтобы залезть куда-то в ящик стола, а затем выдал череду булькающих звуков и упал ничком."
 
     show el serious pioneer at cright with dissolve
 
     el "Всё. Готов! Батарейка села. В тот раз тоже так было."
     me "Угу. Надо было просто подождать пять минут. Ульяна, ты живая?"
+
+    show el sad pioneer with dspr
+
     "Ульяна приподнялась на локте, потерла голову."
 
-    show us sad pioneer at cleft with easeinbottom
-
     us "Ох… Шишка будет. А так ничего страшного. Помоги встать, пожалуйста…"
+
+    show us sad pioneer close at cleft with easeinbottom
+
     "Я осторожно взял её под мышки, поднял и поставил на ноги. Ульяна прижалась ко мне, мелко дрожа. Я погладил Ульяну по спине, потом коснулся ранки."
     me "Ты как, рыжик? В глазах не двоится? Не тошнит?"
     us "Нет."
     "С того места, где лежал Шурик раздалось мычание. Мы посмотрели туда, но его тоже пока не тошнило."
+
+    show us normal pioneer close with dspr
+
     us "Не волнуйся, мячом и посильнее прилетало. Сотрясения нет."
-    me "Это потому, что сотрясаться нечему! Чуть по голове не получила! Ещё раз так меня испугаешь, я тебя сам удавлю, нервы целее будут! Сыроежка, у вас тут аптечка есть?"
+    me "Это потому, что сотрясаться нечему! Чуть по голове не получила!{w} Ещё раз так меня испугаешь, я тебя сам удавлю, нервы целее будут! Сыроежка, у вас тут аптечка есть?"
+
+    show el normal pioneer with dspr
+
     el "Да, как раз где это чудо лежит. Сейчас."
-    "Сергей осторожно переступил через лежащее на полу тело, достал коробочку из-под конфет и подал мне йод и рулончик лейкопластыря. Я усадил Ульяну на уцелевшую табуретку."
+
+    hide el with dissolve
+
+    "Сергей осторожно переступил через лежащее на полу тело, достал коробочку из-под конфет и подал мне йод и рулончик лейкопластыря."
+
+    show el normal pioneer at cright with dissolve
+    show us normal pioneer close:
+        sit_down1_close
+    with dspr
+
+    "Я усадил Ульяну на уцелевшую табуретку."
     me "Сейчас мы тебя мигом… "
+
+    show us sad pioneer close with dspr
+
     us "Только йодом не мажь! Не хватало мне еще коричневых пятен на лице. Так давай."
     me "Ага! Разбежалась."
     "На глаза мне попалась бутылка с остатками водки."
     me "Давай спиртом протру."
     us "Он жжется!"
     me "Уля, милая, не капризничай."
+
+    show us grin pioneer close with dspr
+
     us "Я тебе не милая!"
     "Она нагло улыбнулась."
     me "Сейчас попрошу Сыроежку тебя подержать."
+
+    show us smile pioneer close with dspr
+
     us "Не надо. У него руки грязные."
     "Электроник вытер руки о шорты и обиженно возразил:"
+
+    show el sad pioneer with dspr
+
     el "Чистые!"
-    "Ульяна отвела волосы с ранки и вздохнула. Я капнул водки на платок, протер ей ссадину, подул, чтобы не пекло и как мог аккуратно, наклеил пластырь. Тот пытался свернуться в трубочку и никак не хотел клеиться ровно."
+
+    show us shy pioneer close with dspr
+
+    "Ульяна отвела волосы с ранки и вздохнула.{w} Я капнул водки на платок, протер ей ссадину, подул, чтобы не пекло и как мог аккуратно, наклеил пластырь. Тот пытался свернуться в трубочку и никак не хотел клеиться ровно."
     "Ульяна посмотрела в небольшое зеркальце на стене."
     us "Сикось-накось, кось-на сикось, и повязка из портянок, что с утра в углу стояли… Ровнее не мог?"
     me "Извини."
+
+    show us sad pioneer close with dspr
+
     us "Это ты извини."
     "Она благодарно посмотрела на меня и вздохнула."
     us "Вечно со мной что-то случается, а тебе расхлебывать, да?"
     "Я погладил её по голове."
     me "Да ладно. Будем считать, что теперь я знаю, каково это – иметь шкодливую младшую сестру."
+
+    show us smile pioneer close with dspr
+
+    play sound sfx_open_door_clubs fadein 1
+
     us "Ладно… Назначаю тебя временно исполняющим обязанности старшего брата."
     "Я собрался ответить, когда от входа раздалось раздраженное:"
     mt "И что у вас тут за кавардак?"
