@@ -4167,7 +4167,7 @@ label bkrr_day18_common:
 
     # ПЬЯНЫЙ ДЕБОШ – В КЛУБЕ
     play sound bkrr_sfx_list["broken_glass3"]
-    with hpunch
+    with vpunch
 
     "Шурик стоял посреди клуба. Он сжимал в руке какую-то гнутую железку, время от времени молотя ей по столам и полкам."
 
