@@ -4157,8 +4157,8 @@ label bkrr_day18_common:
     play sound sfx_open_door_clubs
     scene bg int_clubs_male_day_wrecked
     show club_planer:
-        yalign 0.0
-        xalign 0.5
+        truecenter
+        pos (0.5, 0.05)
     with dissolve
     play ambience ambience_int_cabin_day fadein 3
     window show
@@ -4180,11 +4180,16 @@ label bkrr_day18_common:
     show club_planer:
         pause 0.1
         parallel:
-            linear 0.9 xalign -0.3
+            linear 1.0 xpos -0.3
         parallel:
-            ease 0.5 yalign 0.85
-            linear 0.05 yalign 0.86
-            ease 0.4 yalign 1.10
+            ease 0.5 ypos 0.85
+            pause 0.1
+            ease 0.4 ypos 1.10
+        parallel:
+            pause 0.4
+            linear 0.2 rotate -75
+    play sound3 sfx_bus_window_hit
+    pause 0.5
     play sound bkrr_sfx_list["broken_glass2"]
     with hpunch
 
@@ -4193,7 +4198,8 @@ label bkrr_day18_common:
     sh "И пра-а-авда… Что это я? Ты понимаешь? Все ты понимаешь. Ты вон за своей в лес побежал! А я… я не могу! Бежать некуда! Надо было…"
 
     hide sh with dissolve
-    play sound bkrr_sfx_list["broken_glass"] fadein 2
+    play sound bkrr_sfx_list["broken_glass"] fadeout 2
+    with vpunch
 
     "Он отвлекся на то, чтобы обрушить свою железку на ящик с инструментами. Отвертки и прочая мелочевка разлетелись по полу."
 
@@ -4214,6 +4220,8 @@ label bkrr_day18_common:
 
     hide sh with dissolve
 
+    play sound sfx_bus_window_hit
+    with hpunch
     "Я вздохнул и пнул ногой какую-то коробку на полу."
     me "Я тебя понимаю!"
 
@@ -4225,7 +4233,7 @@ label bkrr_day18_common:
     sh "А моя уехала. Понимаешь? Я её не увижу."
     me "Понимаю. Саш, слушай, я пульт заберу? А остальное ломай. Девчонки-то не виноваты. Им выступать завтра."
 
-    show sh smile pioneer with dissolve
+    show sh smile pioneer with dspr
 
     sh "Ладно. За-а-бирай. Они хорошие."
 
@@ -4243,7 +4251,7 @@ label bkrr_day18_common:
     show us normal pioneer at left
     show el normal pioneer at right
     with dissolve
-    $ bkrr_set_volume("sound_loop", 0.1, 1)
+    $ bkrr_set_volume("sound_loop", 0.1)
     play ambience ambience_camp_center_day fadein 3
 
     us "Ну что? Ну? Забрал?"
@@ -4282,7 +4290,7 @@ label bkrr_day18_common:
     window hide
     $ renpy.pause(0.5, hard=True)
     play sound bkrr_sfx_list["broken_glass"]
-    scene bg int_clubs_male_day with vpunch
+    with vpunch
     window show
 
     play music music_list["pile"] fadein 5
@@ -4305,7 +4313,7 @@ label bkrr_day18_common:
         xalign 2.0
         linear 0.5 xalign -1.3
     hide sh with dissolve
-    show bg int_clubs_male_day:
+    show bg int_clubs_male_day_wrecked:
         ease 0.1 zoom 1.02
         ease 0.3 zoom 1.0
     show red:
@@ -4328,7 +4336,7 @@ label bkrr_day18_common:
     $ bkrr_set_volume("sound2", 1.0)
     play sound bkrr_sfx_list["breaking_arm"]
     play sound2 sfx_bodyfall_1
-    show bg int_clubs_male_day with vpunch
+    with vpunch
 
     stop music fadeout 5
 
