@@ -4986,10 +4986,10 @@ label bkrr_day18_common:
     show dv sad pioneer far with dspr
 
     dv "Ну что?"
+    mt "Ничего!"
 
     show mt sad panama pioneer close with dspr
 
-    mt "Ничего!"
     "Ольга  махнула рукой."
     mt "Не обижай младших!"
 
@@ -4998,27 +4998,94 @@ label bkrr_day18_common:
     dv "Я для их пользы! Посмотрите, разве они обижаются?"
     "Пионеры хором ответили: «НЕТ!»"
 
-    # show kla
+    show mt normal panama pioneer close at left
+    show dv grin pioneer far at cright
+    with ease
+
+    show kla normal pioneer far at fright with easeinright
 
     kla "Давайте, я помогу? Мне все равно заняться нечем."
+
+    show mt sad panama pioneer close with dspr
+
     mt "Нет! Нельзя же… Вы же гости."
     "Алиса просияла и кивнула так энергично, что её заколки на хвостиках чуть не расстегнулись."
+
+    show dv smile pioneer far with dspr
+
     dv "Да! Можно-можно!"
+
+    hide dv
+    hide kla
+    with dissolve
+
+    show us grin pioneer far at cright with dissolve
+
     us "Оставайтесь, конечно! Трук, а ты с нами?"
+
+    show tr smile2 pioneer far at fright with dissolve
+
     tr "Да! Ульяна моя сумка носила? Носила. Моя помогай!"
-    mt "Ну, тогда…Мы с Антоном Ивановичем еще раз обсудим сценарий праздника. А Семён, Ульяна и Трук идут в мастерскую и наводят там порядок."
+
+    show mt smile panama pioneer close with dspr
+
+    mt "Ну, тогда…{w} Мы с Антоном Ивановичем еще раз обсудим сценарий праздника. А Семён, Ульяна и Трук идут в мастерскую и наводят там порядок."
+
+    show tr normal pioneer far
+    show us smile pioneer far
+    with dspr
+
     me "А ужин?"
-    mt "Не волнуйтесь, голодными не оставим! Закончите, и идите ужинать. И да, Сыроежкина не будет, он за Шуриком будет присматривать."
-    me "Изумительно. Там уборки куча, до темноты не управимся."
+
+    show mt grin panama pioneer close with dspr
+
+    mt "Не волнуйтесь, голодными не оставим! Закончите, и идите ужинать.{w} И да, Сыроежкина не будет, он за Шуриком будет присматривать."
+    me "Изумительно. Там уборки куча, до ночи не управимся."
+
+    show mt normal panama pioneer close with dspr
+
     mt "Что-то не так?"
     me "Ольга Дмитриевна, вы вообще слышали про такое слово, «справедливость» называется?"
+
+    show mt smile panama pioneer close with dspr
+
     mt "Да, что-то такое припоминаю. Но смутно. Меньше врать надо."
     me "Но…"
+
+    show mt normal panama pioneer close with dspr
+
     mt "Дискуссия закончена."
+
+    hide mt with dissolve
+
     th "Вот и делай после этого добрые дела."
+
+    show mi smile pioneer close at cleft with dissolve
+
     mi "Сеня, давай я помогу! Вместе быстрее закончим."
+
+    show mt smile panama pioneer:
+        fleft
+        xalign -1.0
+        rotate 10
+        ypos -0.1
+    with easeinleft
+
     mt "Нет-нет, ты мне будешь нужна. И потом, после ужина, у меня для тебя есть маленькое поручение."
+
+    hide mt
+    hide mi
+    with easeoutleft
+
     "Она увлекла её за собой, что-то рассказывая. Да что тут вообще происходит-то?"
+
+    window hide
+    scene bg ext_music_club_sunset_bkrr
+    show us grin pioneer at cleft
+    show tr normal pioneer at cright
+    with dissolve
+    window show
+
     us "Что, Сень? Работы накидали, любимую увели… Кажется сегодня не твой день. Ну, пойдем уберемся немножко. А эти пускай тяжести носят. Ты не понимаешь своей выгоды!"
     me "Я с Мику хотел побыть."
     us "Ой, намилуетесь ещё. Это мы с Шуриком в разные места разъедемся. Они с Сыроежкиным ведь не в райцентре живут."
