@@ -4008,10 +4008,11 @@ label bkrr_day18_common:
     "Из клуба донесся оглушительный лязг, как будто молотили железом по пустой кастрюле, и на пороге появился рыцарь в сияющих доспехах… "
 
     play sound2 sfx_open_door_1
-    show el vedro far with dissolve
+    show el_vedro far with dissolve
     show us surp2 with dspr
 
-    "Нет, показалось. Появился всего лишь пионер с ведром на голове.\nНа ведре виднелась интригующая перевернутая надпись «для …идоров», оставляющая богатое пространство для воображения."
+    "Нет, показалось. Появился всего лишь пионер с ведром на голове."
+    "На ведре виднелась интригующая перевернутая надпись «для …идоров», оставляющая богатое пространство для воображения."
     us "Мамочка… что это такое?"
     me "Кто-то допился и решил поиграть в рыцарей, я думаю."
     us "Помоги, вдруг он там задохнется…"
@@ -4021,42 +4022,40 @@ label bkrr_day18_common:
     "Пионер держался руками за ведро, пытаясь не то снять его, не то натянуть поглубже, его пошатывало и он почти упал с крыльца."
 
     window hide
-    hide el with dissolve
+    hide el_vedro with dissolve
 
     play sound bkrr_sfx_list["sem_falls_on_floor"]
     scene bg ext_clubs_day:
-    show el vedro close
+    show el_vedro close
     with vpunch
     window show
 
     "Я подхватил его под мышки, не давая упасть."
+    "Снимая ведро с его головы, я был уверен что это гоняющий чертей Шурик, но из-под оцинкованного металла показались на свет вьющиеся светлые волосы и голубые удивленные глаза."
 
-    hide el with dissolve
+    hide el_vedro
+    show el sad_fingal pioneer close
+    with dissolve
 
-    "Снимая ведро с его головы, я был уверен что это гоняющий чертей Шурик, но из-под оцинкованного металла показались на свет вьющиеся светлые волосы и голубые удивленные глаза. Это оказался Сыроежка."
+    "Это оказался Сыроежка."
 
     play sound_loop bkrr_sfx_list["club_debosh"] fadein 1.0
-    show el sad pioneer close with dissolve
-
-    show bkrr_todo "Фингал"
 
     el "А, Семён… "
     "Кибернетик явно намеревался рухнуть в обморок, так что я похлопал его по щекам, чтобы привести в сознание. Глаза Сергея немного сфокусировались, он сел на крыльцо и грустно потрогал синяк."
     el "Опять. Да сколько же можно?"
 
-    hide bkrr_todo
-
-    show el sad at cright with ease
+    show el sad_fingal at cright with ease
     show us sad pioneer close at left with dissolve
 
     us "Сережка? Что тут у нас?"
 
-    show el serious with dspr
+    show el serious_fingal with dspr
 
     el "Беда у нас. Ему пить нельзя. Совсем! А он в одно лицо четверть литра вылакал."
     me "И такой трезвый? Я думал, он с непривычки свалится. Без закуски ведь."
 
-    show el sad with dspr
+    show el sad_fingal with dspr
 
     el "Если бы… Он в буйство впадает. Ему как-то на даче один стаканчик вина домашнего плеснули, так он потом всю ночь чертей топором гонял. Забор – в щепки, все стёкла побил… "
     me "Вечер перестаёт быть томным…"
@@ -4076,7 +4075,7 @@ label bkrr_day18_common:
 
     "Она показала на окно, откуда доносились звон, стук и нечленораздельные выкрики."
 
-    show el serious with dspr
+    show el serious_fingal with dspr
 
     el "А он вместо этого принялся крушить всё, что под руку попадёт. Я зашел и попробовал его успокоить, так он мне глаз подбил и ведро на голову надел."
 
@@ -4088,12 +4087,12 @@ label bkrr_day18_common:
 
     scene bg ext_clubs_day:
     show us surp2 pioneer close at left
-    show el surprise pioneer close at cright
+    show el surprise_fingal pioneer close at cright
     with vpunch
 
     "Весело зазвенело разбиваемое стекло, и в окно вылетела модель катера."
 
-    show el sad
+    show el sad_fingal
     show us sad
     with dspr
 
@@ -4118,7 +4117,7 @@ label bkrr_day18_common:
 
     us "Нашел, чем хвастать! Ничего, Сашка тоже не умеет! Вы с Сережкой его быстро скрутите!"
 
-    show el upset with dspr
+    show el upset_fingal with dspr
 
     el "Чего? Когда я вызвался добровольцем?"
 
@@ -4131,7 +4130,7 @@ label bkrr_day18_common:
 
     scene bg ext_clubs_day:
     show us surp2 pioneer close at left
-    show el surprise pioneer close at cright
+    show el surprise_fingal pioneer close at cright
     with vpunch
 
     "В окно вылетела модель планера, а из клуба донеслись нечленораздельные вопли."
@@ -4142,7 +4141,7 @@ label bkrr_day18_common:
     us "Там наш пульт! Если сломает, то на концерте можно ставить крест."
     me "Думаешь, он его ещё не сломал?"
 
-    show el sad with dspr
+    show el sad_fingal with dspr
 
     el "Кусочки в окно пока не вылетали… Может, не успел?"
 
@@ -4172,7 +4171,7 @@ label bkrr_day18_common:
 
     "Шурик стоял посреди клуба. Он сжимал в руке какую-то гнутую железку, время от времени молотя ей по столам и полкам."
 
-    show sh laugh pioneer with dissolve
+    show sh laugh red_nose pioneer with dissolve
 
     sh "А? Сенька! Пришел?"
     me "Пришел, пришел. Ты пульт не поломал?"
@@ -4180,7 +4179,7 @@ label bkrr_day18_common:
 
     window hide
     hide sh with dissolve
-    show sh smile pioneer far at cright with dissolve
+    show sh smile red_nose pioneer far at cright with dissolve
     show club_planer:
         pause 0.1
         parallel:
@@ -4191,7 +4190,7 @@ label bkrr_day18_common:
             ease 0.4 ypos 1.10
         parallel:
             pause 0.4
-            linear 0.2 rotate -75
+            ease 0.2 rotate -85
     play sound3 sfx_bus_window_hit
     pause 0.5
     play sound bkrr_sfx_list["broken_glass2"]
@@ -4208,17 +4207,17 @@ label bkrr_day18_common:
 
     "Он отвлекся на то, чтобы обрушить свою железку на ящик с инструментами. Отвертки и прочая мелочевка разлетелись по полу."
 
-    show sh upset pioneer at cleft with dissolve
+    show sh upset red_nose pioneer at cleft with dissolve
 
     sh "Надо было хватать и не отпускать! И никого не слушать! А я сопли жевал! Сидел тут… как сыч! С паяльником!"
     me "Прекрати. Успокойся!"
 
-    show sh smile pioneer with dspr
+    show sh smile red_nose pioneer with dspr
 
     sh "Успоко-о-ойся? Я только разогреваюсь. Всё разнесу. На-ку-соч-ки!"
     me "Это не поможет."
 
-    show sh laugh pioneer with dspr
+    show sh laugh red_nose pioneer with dspr
 
     sh "Непра-а-авда… Мне уже легче! Хо-о-о-очешь тоже по-о-о-опро-о-обуй? В-о-оот там ломик, в углу?"
     me "Да нет."
@@ -4230,7 +4229,7 @@ label bkrr_day18_common:
     "Я вздохнул и пнул ногой какую-то коробку на полу."
     me "Я тебя понимаю!"
 
-    show sh upset pioneer with dissolve
+    show sh upset red_nose pioneer with dissolve
 
     "Шурик посмотрел на меня почти нормальными глазами, в которых стояли пьяные слезы."
     sh "Что-о-о-о ты можешь понимать? Ну что? Твоя девчонка во-о-от она…"
@@ -4238,7 +4237,7 @@ label bkrr_day18_common:
     sh "А моя уехала. Понимаешь? Я её не увижу."
     me "Понимаю. Саш, слушай, я пульт заберу? А остальное ломай. Девчонки-то не виноваты. Им выступать завтра."
 
-    show sh smile pioneer with dspr
+    show sh smile red_nose pioneer with dspr
 
     sh "Ладно. За-а-бирай. Они хорошие."
 
@@ -4255,7 +4254,8 @@ label bkrr_day18_common:
     play sound sfx_open_door_clubs
     scene bg ext_clubs_day:
     show us normal pioneer at left
-    show el normal pioneer at right
+    show el normal_fingal pioneer:
+        bkrr_sit_right
     with dissolve
     $ bkrr_set_volume("sound_loop", 0.1)
     play ambience ambience_camp_center_day fadein 3
@@ -4270,7 +4270,9 @@ label bkrr_day18_common:
     us "Сень, его нужно успокоить."
     me "Пошли! Сережка, давай с нами."
 
-    show el sad with dspr
+    show el sad_fingal:
+        get_up
+    with dspr
 
     "Сыроежкин вздохнул, потрогал синяк и встал."
     el "Пошли! Съездил, отдохнул, называется. Придется у Жени пудру просить."
@@ -4287,7 +4289,7 @@ label bkrr_day18_common:
 
     "Втроем мы вошли в клуб. Шурик перехватил железку на манер меча и промычал что-то вроде «Не подходите!»"
 
-    show sh rage pioneer far at cleft with dissolve
+    show sh rage red_nose pioneer far at cleft with dissolve
 
     sh "А? Чего вам всем от меня надо?"
     el  "Саш… давай не будем делать глупостей…"
@@ -4304,7 +4306,7 @@ label bkrr_day18_common:
 
     "Он прервался, сунул железку под мышку и двумя руками швырнул в окно коробку с мелкими радиодеталями. Стекло зазвенело и осыпалось вниз сотнями осколков."
 
-    show sh rage pioneer at cleft with dspr
+    show sh rage red_nose pioneer at cleft with dspr
 
     me "Ты слева, я справа. Хватаем за руки. Уля, за ноги, и кладем на пол!"
 
@@ -4316,7 +4318,7 @@ label bkrr_day18_common:
     show us evsmile pioneer:
         xalign 2.3
         linear 0.5 xalign -1.0
-    show el serious pioneer:
+    show el serious_fingal pioneer:
         xalign 2.0
         linear 0.5 xalign -1.3
     hide sh with dissolve
@@ -4361,12 +4363,12 @@ label bkrr_day18_common:
 
     "Он наклонился, чтобы залезть куда-то в ящик стола, а затем выдал череду булькающих звуков и упал ничком."
 
-    show el serious pioneer at cright with dissolve
+    show el serious_fingal pioneer at cright with dissolve
 
     el "Всё. Готов! Батарейка села. В тот раз тоже так было."
     me "Угу. Надо было просто подождать пять минут. Ульяна, ты живая?"
 
-    show el sad pioneer with dspr
+    show el sad_fingal pioneer with dspr
 
     "Ульяна приподнялась на локте, потерла голову."
 
@@ -4384,7 +4386,7 @@ label bkrr_day18_common:
     us "Не волнуйся, мячом и посильнее прилетало. Сотрясения нет."
     me "Это потому, что сотрясаться нечему! Чуть по голове не получила!{w} Ещё раз так меня испугаешь, я тебя сам удавлю, нервы целее будут! Сыроежка, у вас тут аптечка есть?"
 
-    show el normal pioneer with dspr
+    show el normal_fingal pioneer with dspr
 
     el "Да, как раз где это чудо лежит. Сейчас."
 
@@ -4392,7 +4394,7 @@ label bkrr_day18_common:
 
     "Сергей осторожно переступил через лежащее на полу тело, достал коробочку из-под конфет и подал мне йод и рулончик лейкопластыря."
 
-    show el normal pioneer at cright with dissolve
+    show el normal_fingal pioneer at cright with dissolve
     show us normal pioneer close:
         sit_down1_close
     with dspr
@@ -4419,7 +4421,7 @@ label bkrr_day18_common:
 
     us "Не надо. У него руки грязные."
 
-    show el sad pioneer with dspr
+    show el sad_fingal pioneer with dspr
 
     "Электроник вытер руки о шорты и обиженно возразил:"
     el "Чистые!"
@@ -4437,7 +4439,7 @@ label bkrr_day18_common:
     "Она благодарно посмотрела на меня и вздохнула."
     us "Вечно со мной что-то случается, а тебе расхлебывать, да?"
 
-    show el normal pioneer with dspr
+    show el normal_fingal pioneer with dspr
 
     "Я погладил её по голове."
     me "Да ладно. Будем считать, что теперь я знаю, каково это – иметь шкодливую младшую сестру."
@@ -4445,7 +4447,7 @@ label bkrr_day18_common:
     show us smile pioneer close with dspr
 
     play sound sfx_open_door_clubs fadein 1
-    show el surprise pioneer with dspr
+    show el surprise_fingal pioneer with dspr
 
     us "Ладно… Назначаю тебя временно исполняющим обязанности старшего брата."
     "Я собрался ответить, когда от входа раздалось раздраженное:"
@@ -4487,12 +4489,12 @@ label bkrr_day18_common:
     mt "Кибернетики! Наделают всякой дряни. То трансформатор сожгут, два дня при свечах сидим, то модель самолета в столовую влетит и взорвется, теперь робота-хулигана сделали. А с Шуриком что?"
     "Сыроежкин натянуто улыбнулся."
 
-    show el normal pioneer at fleft behind us with easeinleft
+    show el normal_fingal pioneer at fleft behind us with easeinleft
 
     el "Прилег отдохнуть! Устал, пока гонялся за роботом!"
     "Выражение лица Ольги Дмитриевны уже начало смягчаться, когда «отдыхающий» Шурик приподнял голову, оглядел нас мутными глазами и заявил:"
 
-    show el sad pioneer
+    show el sad_fingal pioneer
     show us sad pioneer close
     with dspr
 
@@ -4528,7 +4530,7 @@ label bkrr_day18_common:
 
     mt "Ну, чего встали? Живо, волоките его в дом. Только не по главной улице.{w} Сыроежкин, ты остаешься с соседом, присмотришь за ним. Понял?"
 
-    show el normal pioneer at fleft with dspr
+    show el normal_fingal pioneer at fleft with dspr
 
     el "Да, конечно."
     "Уверен, что ему хотелось провести вечер с Женей, а не с пьяным и буйным соседом. Но кому сейчас легко?"

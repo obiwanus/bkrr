@@ -1763,6 +1763,9 @@ init 2:
             "tr": {
                 'normal': 1, 'sad': 1, 'smile': 1, 'surp': 1, 'upset': 1, 'laugh': 1, 'normal2': 2, 'sad2': 2, 'smile2': 2, 'surp2': 2, 'upset2': 2, 'laugh2': 2,
             },
+            "el": {
+                'grin_fingal': 1, 'normal_fingal': 1, 'smile_fingal': 1, 'sad_fingal': 2, 'scared_fingal': 2, 'shocked_fingal': 2, 'surprise_fingal': 2, 'upset_fingal': 2, 'angry_fingal': 3, 'laugh_fingal': 3, 'serious_fingal': 3,
+            },
         }
 
         distance_to_position = {
@@ -1861,6 +1864,7 @@ init 2:
 
         make_sprites_for('sh', 'bathrobe', ['mod:bathrobe', 'es:<emotion>'])
         make_sprites_for('sh', 'shirt', ['mod:shirt', 'es:<emotion>'])
+        make_sprites_for('sh', 'red_nose pioneer', ['es:body', 'es:<emotion>', 'mod:red_nose'])
 
         make_sprites_with_custom_emotions(['shy_smile'], 'un', 'bkrr_dress', ['es:body', 'mod:dress', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['shy_smile'], 'un', 'paint sport', ['es:body', 'es:sport', 'mod:pn', 'es:<emotion>'])
@@ -1894,7 +1898,6 @@ init 2:
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'apron', ['es:body', 'mod:apron', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'dirt apron', ['es:body', 'mod:apron', 'mod:apron_dirt', 'es:<emotion>'])
-        # make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'shorts', ['mod:body_loo', 'mod:shorts', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'shorts_hair', ['mod:body_loo', 'mod:shorts', 'mod:hair', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'body_loo', ['mod:body_loo', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'body', ['es:body', 'es:<emotion>'])
@@ -1906,6 +1909,9 @@ init 2:
         make_sprites_for('mi', 'towel_only', ['mod:towel'], distances=['close'])
         make_sprites_for('mi', 'hair_only', ['mod:hair'], distances=['close'])
         make_sprites_for('mi', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['sad_smile'])
+
+        # Эл с фингалом
+        make_sprites_for('el', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'])
 
         # Новые персонажи
         make_sprites_for('ant', 'shirt', ['mod:body', 'mod:<emotion>'])
@@ -1959,9 +1965,9 @@ init 2:
 
     # Эл-ведроид
 
-    image el vedro = MOD_IMAGES + "sprites/normal/el/vedro_normal.png"
-    image el vedro close = MOD_IMAGES + "sprites/close/el/vedro_close.png"
-    image el vedro far = MOD_IMAGES + "sprites/far/el/vedro_far.png"
+    image el_vedro = MOD_IMAGES + "sprites/normal/el/vedro_normal.png"
+    image el_vedro close = MOD_IMAGES + "sprites/close/el/vedro_close.png"
+    image el_vedro far = MOD_IMAGES + "sprites/far/el/vedro_far.png"
 
     # Электроник в футболке
 
