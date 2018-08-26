@@ -638,6 +638,9 @@ init 2:
             truecenter
             zoom 1.3
 
+    image bg int_clubs_male_day_wrecked = MOD_IMAGES + "bg/int_clubs_male_day_wrecked.jpg"
+    image club_planer = MOD_IMAGES + "misc/planer.png"
+
     # Дождливые, пасмурные фоны
 
     image bg ext_music_club_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/ext_musclub_day.jpg")

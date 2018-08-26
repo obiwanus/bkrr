@@ -4155,7 +4155,11 @@ label bkrr_day18_common:
     $ bkrr_set_volume("sound_loop", 0.7, 2)
     stop ambience fadeout 2
     play sound sfx_open_door_clubs
-    scene bg int_clubs_male_day with dissolve
+    scene bg int_clubs_male_day_wrecked
+    show club_planer:
+        yalign 0.0
+        xalign 0.5
+    with dissolve
     play ambience ambience_int_cabin_day fadein 3
     window show
 
@@ -4172,16 +4176,24 @@ label bkrr_day18_common:
     sh "Пульт? Нет. Вон он. Сто-о-оит!"
 
     hide sh with dissolve
-    play sound bkrr_sfx_list["broken_glass"]
+    show sh smile pioneer far at cright with dissolve
+    show club_planer:
+        pause 0.1
+        parallel:
+            linear 0.9 xalign -0.3
+        parallel:
+            ease 0.5 yalign 0.85
+            linear 0.05 yalign 0.86
+            ease 0.4 yalign 1.10
+    play sound bkrr_sfx_list["broken_glass2"]
+    with hpunch
 
     "Глупо хихикнув, он широко замахнулся и наподдал по висящей на потолке модели планера. Та с жалобным хрустом разлетелась надвое и упала в груду битого стекла."
     me "Ты чего буянишь?"
-
-    show sh smile pioneer at right with dissolve
-
     sh "И пра-а-авда… Что это я? Ты понимаешь? Все ты понимаешь. Ты вон за своей в лес побежал! А я… я не могу! Бежать некуда! Надо было…"
 
     hide sh with dissolve
+    play sound bkrr_sfx_list["broken_glass"] fadein 2
 
     "Он отвлекся на то, чтобы обрушить свою железку на ящик с инструментами. Отвертки и прочая мелочевка разлетелись по полу."
 
@@ -4254,7 +4266,7 @@ label bkrr_day18_common:
     $ bkrr_set_volume("sound_loop", 0.5, 2)
     stop ambience fadeout 2
     play sound sfx_open_door_strong
-    scene bg int_clubs_male_day with dissolve
+    scene bg int_clubs_male_day_wrecked with dissolve
     play ambience ambience_int_cabin_day fadein 3
     window show
 
