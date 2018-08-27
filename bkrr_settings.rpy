@@ -543,6 +543,7 @@ init 2:
     image bg ext_stage_big_day_bkrr = MOD_IMAGES + "bg/ext_stage_big_day.jpg"
     image bg ext_playground_sunset_bkrr = MOD_IMAGES + "bg/ext_playground_sunset.jpg"
     image bg ext_old_building_day_bkrr = im.Scale(MOD_IMAGES + "bg/ext_old_building_day.jpg", config.screen_width, config.screen_height)
+    image bg ext_clubs_sunset_bkrr = im.MatrixColor(ES_IMAGES + "bg/ext_clubs_day.jpg", bkrr_tint["sunset"])
 
     image bg int_music_club_day = bkrr_fast_composite(ES_IMAGES + "bg/int_musclub_day.jpg", MOD_IMAGES + "misc/int_music_club_clock_day.png") # переобъявлен для удобства
 
