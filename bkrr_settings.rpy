@@ -595,6 +595,13 @@ init 2:
             (MOD_IMAGES + "misc/ext_beach_water_day_add.png")
             bkrr_water_atl
 
+    image bg ext_beach_water_sunset:
+        contains:
+            im.MatrixColor(MOD_IMAGES + "bg/ext_beach_water_day.jpg", bkrr_tint["sunset"])
+        contains:
+            im.MatrixColor(MOD_IMAGES + "misc/ext_beach_water_day_add.png", bkrr_tint["sunset"])
+            bkrr_water_atl
+
     image bg int_aidpost_sunset_bkrr = im.MatrixColor(ES_IMAGES + "bg/int_aidpost_day.jpg", bkrr_tint["sunset"] * im.matrix.contrast(1.25))
     image bg int_aidpost_night_lamplight_bkrr = MOD_IMAGES + "bg/int_aidpost_night_lamplight.png"
 
