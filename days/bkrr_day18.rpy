@@ -5764,85 +5764,359 @@ label bkrr_day18_common:
     "Я честно попытался помочь ей вспомнить, но жениха у меня никогда не было, жениха с сестрой – тем более, так что из этого ничего не вышло."
     me "Завтра спросим у Жени. Она точно знает все на свете."
 
-    #(короткий пропуск)
-    #!!!!!!!!!!
+    window hide
+    stop ambience fadeout 2
+    scene bg ext_path_sunset with fade2
+    play ambience ambience_forest_night fadein 1
+    $ bkrr_set_time("night")
+    scene bg ext_path_night with Dissolve(2.0)
+    stop ambience fadeout 2
+    scene bg ext_house_of_un_night_bkrr with fade2
+    play ambience ambience_camp_center_night fadein 2
+    window show
 
     "Мы выбрали самую длинную дорогу, да и по ней шли не торопясь, но всё равно пришли слишком быстро."
+
+    show mi upset pioneer with dissolve
+
     mi "Извини, волосы я просушу сама. Лена, наверное, уже отдыхает, не будем ей мешать."
     me "Жалко. Мне правда очень понравилось их расчесывать."
-    mi "Ничего. Я давно хочу их подстричь. Хочешь, потом отдам тебе? Сделаешь себе парик, и будешь расчесывать хоть каждый день."
+
+    show mi grin pioneer with dspr
+
+    mi "Ничего. Я давно хочу их подстричь.{w} Хочешь, потом отдам тебе? Сделаешь себе парик, и будешь расчесывать хоть каждый день."
     me "Но-но! Ты так не шути! Такую красоту нельзя стричь."
-    mi "Попробуешь их зимой в шапку убрать или высушить, и сразу поймёшь. Нет, не делай такое грустное лицо, я не могу на это смотреть. Раз они тебе так нравятся, я потерплю."
+
+    show mi smile pioneer with dspr
+
+    mi "Попробуешь их зимой в шапку убрать или высушить, и сразу поймёшь.{w} Нет, не делай такое грустное лицо, я не могу на это смотреть. Раз они тебе так нравятся, я потерплю."
     me "Спасибо, милая."
+
+    show mi normal pioneer with dspr
+
     mi "Пожалуйста! Наверное, доброй ночи?"
     me "Спокойной ночи!"
-    mi "Если все-таки пойдешь репетировать, то не сиди долго, и пальцы не перетруди. Хорошо?"
+
+    show mi upset pioneer with dspr
+
+    mi "Если все-таки пойдешь репетировать, то не сиди долго, и пальцы не перетруди."
+
+    show mi normal pioneer with dspr
+
+    mi "Хорошо?"
     me "Да я чуть-чуть. Просто, чтобы не волноваться."
 
-    # ВЕЧЕРНЯЯ БЕСЕДА С ВОЖАТОЙ
+    window hide
+    hide mi with dissolve
+    play sound sfx_open_door_1 fadein 2
+    $ renpy.pause(1.0, hard=True)
+    window show
 
-    "Расцеловав Мику на прощание, я пожелал им с Леной доброй ночи и отправился к себе. Сигнал к отбою прозвучал как раз, когда я подошел к нашему домику. Ольга уже сидела на кровати, с  мечтательным выражением на лице."
+    "Расцеловав Мику на прощание, я пожелал им с Леной доброй ночи и отправился к себе."
+
+    window hide
+    scene bg ext_house_of_mt_night:
+        truecenter
+        pause 0.5
+        ease 3.0 zoom 1.4
+    with fade2
+
+    # ВЕЧЕРНЯЯ БЕСЕДА С ВОЖАТОЙ
+    stop ambience fadeout 1
+    play sound sfx_open_door_2 fadein 2
+    scene bg int_house_of_mt_night with dissolve
+    play ambience ambience_int_cabin_night fadein 2
+    window show
+
+    "Сигнал к отбою прозвучал как раз, когда я подошел к нашему домику.{w} Ольга уже сидела на кровати, с мечтательным выражением на лице."
+
+    show mt smile nightdress with dissolve
+
     mt "Ага. Явился, не запылился. Как погуляли?"
     me "Отлично!"
     mt "А в клубе порядок навели?"
     me "Да! Согласно приказа: чистота, как в операционной."
-    mt "Молодец! Бери яблоко. А Ульяну ты зря отослал. Это же был воспитательный момент!"
-    me "Она выглядела такой несчастной, я не выдержал. Ничего, главное что дело сделали. А вы как?"
+
+    show mt grin nightdress with dspr
+
+    mt "Молодец! Бери яблоко.{w} А Ульяну ты зря отослал. Это же был воспитательный момент!"
+    me "Она выглядела такой несчастной, я не выдержал.{w} Ничего, главное что дело сделали. А вы как?"
+
+    show mt sad nightdress with dspr
+
     "Ольга вздохнула и покачала головой."
-    mt "Один день до концерта. Сам угадай, как я. Голова гудит, спать хочу, а завтра придется бегать, проверять все ли в порядке… Это у вас отдых, а у меня работа."
+    mt "Один день до концерта. Сам угадай, как я. Голова гудит, спать хочу, а завтра придется бегать, проверять все ли в порядке…{w} Это у вас отдых, а у меня работа."
     me "Я понимаю."
     mt "А если понимаешь, будь хорошим пионером, не бегай сегодня ночью туда-сюда, дай усталой вожатой поспать, ладно?"
     me "Я постараюсь!"
-    mi "А если ты плохо постараешься, знаешь, что я с тобой сделаю?"
-    mt "Отшлепаете?"
-    "я постарался изобразить в голосе надежду и ожидание."
-    mt "Вот уж не думала, что тебе такое нравится. Но не дождешься. Я тебя изолентой к кровати примотаю. Понял? И в туалет придется идти вместе с ней. С кроватью."
+
+    show mt smile nightdress with dspr
+
+    mt "А если ты плохо постараешься, знаешь, что я с тобой сделаю?"
+    me "Отшлепаете?"
+    "Я постарался изобразить в голосе надежду и ожидание."
+
+    show mt grin nightdress with dspr
+
+    mt "Вот уж не думала, что тебе такое нравится. Но не дождешься. Я тебя изолентой к кровати примотаю. Понял?{w} И в туалет придется идти вместе с ней. С кроватью."
     me "Злой вы человек, Ольга Дмитриевна."
+
+    show mt sad nightdress with dspr
+
     mt "Я не злая! Я спать хочу!"
     me "Тогда ложимся спать пораньше?"
+
+    show mt normal nightdress with dspr
+
     mt "Отличная мысль! Не забудь развесить полотенце, чтобы подсохло. Вы же на пляж ходили?"
     me "А вы откуда знаете?"
-    mt "А мы с Антоном… Ивановичем тоже гуляли. Смотрю, лежит наш пионер, да подруге массаж грудной клетки делает, развратник эдакий. Я Антона за руку ухватила и быстро увела."
+
+    show mt grin nightdress with dspr
+
+    mt "А мы с Антоном… Ивановичем тоже гуляли.{w} Смотрю, лежит наш пионер, да подруге массаж грудной клетки делает, развратник эдакий.{w} Я Антона за руку ухватила и быстро увела."
     me "Это у вас что, свидание было?"
-    mt "Много вопросов задаешь! Нет, просто гуляли. Вы его пионеров расхватали, ему и поговорить не с кем было. Какое там свидание."
+
+    show mt normal nightdress with dspr
+
+    mt "Много вопросов задаешь! Нет, просто гуляли.{w} Вы его пионеров расхватали, ему и поговорить не с кем было. Какое там свидание."
     me "Он вроде бы ничего. Приятный."
+
+    show mt smile nightdress with dspr
+
     mt "Семен… ты думаешь, я с тобой буду обсуждать мужиков?"
     "Вожатая насмешливо смотрела на меня."
     me "Не думаю. Я так, для поддержания разговора."
+
+    show mt normal nightdress with dspr
+
     mt "Ложись и спи!"
     me "Мне бы переодеться…"
     mt "Я к стенке отвернусь. На улицу уже не пойду."
-    "Стянув одежду, я забрался под одеяло, сменил сырые трусы на сухую пару и вздохнул. День выдался такой долгий. Если учесть, что проснулся я около пяти, немудрено, что глаза уже слипались."
+
+    window hide
+    hide mt with dissolve
+    $ renpy.pause(1.0, hard=True)
+    play sound sfx_click_1
+    scene bg int_house_of_mt_night2 with dspr
+    $ renpy.pause(1.0, hard=True)
+    window show
+
+    "Стянув одежду, я забрался под одеяло, сменил сырые трусы на сухую пару и вздохнул. День выдался такой долгий.{w} Если учесть, что проснулся я около пяти, немудрено, что глаза уже слипались."
+
+    window hide
+    stop ambience fadeout 2
+    play music music_list["sparkles"] fadein 7
+    scene black with fade3
 
     # СОН ПОШЁООООЛ!!!
     # ФОН – СЦЕНА, СПРАЙТЫ МИКУ, АЛИСЫ И УЛЬЯНЫ
+    $ bkrr_set_volume("sound", 0.3)
+    scene bg ext_stage_normal_night:
+        truecenter
+        parallel:
+            ease 3.0 zoom 1.05
+            ease 3.0 zoom 1.0
+            repeat
+    show prologue_dream:
+        alpha 0.5
+    with fade2
+
+    window show
+
+    show mt angry panama pioneer far:
+        alpha 0.6
+        truecenter
+        zoom 1.4
+        parallel:
+            ease 7.0 zoom 3.0
+        parallel:
+            ease 7.0 xalign 0.9
+        parallel:
+            ease 7.0 rotate 50
+        parallel:
+            linear 6.0 alpha 0.0
+
+    with dissolve
 
     mt "Семён! Я не ожидала от тебя такого!"
+
+    show us normal_dontlike pioneer far:
+        alpha 0.6
+        truecenter
+        zoom 1.4
+        parallel:
+            ease 5.0 zoom 3.0
+        parallel:
+            ease 5.0 xalign 0.1
+        parallel:
+            ease 5.0 rotate -40
+        parallel:
+            linear 4.0 alpha 0.0
+    with dissolve
+
     us "Сенька! Извращенец! Не брат ты мне, бассота лохматая!"
-    mi "Сенечка, милый, почему ты голый ? Мы же тебе пошили такой замечательный костюм!!!"
+
+    show mi smile pioneer far:
+        alpha 0.6
+        truecenter
+        zoom 1.4
+        parallel:
+            ease 7.0 zoom 3.0
+        parallel:
+            ease 7.0 xalign 0.9
+        parallel:
+            ease 7.0 rotate 50
+        parallel:
+            linear 6.0 alpha 0.0
+    with dissolve
+
+    mi "Сенечка, милый, почему ты голый? Мы же тебе пошили такой замечательный костюм!!!"
+
+    show dv angry pioneer2 far:
+        alpha 0.6
+        truecenter
+        zoom 1.4
+        parallel:
+            ease 5.0 zoom 3.0
+        parallel:
+            ease 5.0 xalign 0.1
+        parallel:
+            ease 5.0 rotate -40
+        parallel:
+            linear 4.0 alpha 0.0
+    with dissolve
+
     dv "Мало того, что ноты забыл, так еще и хоботом размахивает! Иди сюда, скотина! Гитара уже не нужна, я сломаю её об твою пустую голову!!!"
-    #Смена фона на автобус на стоянке, Ульяна и Женя – в БДСМ прикидах
+
+    play sound bkrr_sfx_list["guitar_hit"] fadein 3
+    window hide
+    scene black
+    show red:
+        alpha 0.3
+        ease 2.5 alpha 0.0
+    show bkrr_bang:
+        truecenter
+        alpha 0.7
+        zoom 1.1
+        linear 2.5 alpha 0.0 zoom 0.9
+    show prologue_dream:
+        alpha 0.5
+    with dissolve
+    play sound_loop sfx_head_heartbeat fadein 3
+    pause 1.0
+    scene bg ext_bus_night:
+        truecenter
+        parallel:
+            ease 3.0 zoom 1.05
+            ease 3.0 zoom 1.0
+            repeat
+    show prologue_dream:
+        alpha 0.5
+    with Dissolve(3.0)
+
+    window show
+
+    show us smile pioneer at center:
+        truecenter
+        alpha 0.7
+        ease 7.0 zoom 1.7 alpha 0.0 xpos 0.1 ypos 0.5
+    with dissolve
+
     us "Ольдмитривна, Ольдмитривна… а можно я его накажу? Больно!"
+
+    show mz normal pioneer at center:
+        truecenter
+        alpha 0.7
+        ease 7.0 zoom 1.7 alpha 0.0 xpos 0.9 ypos 0.5
+    with dissolve
+
     mz "Я как раз нашла томик Маркиза Де Сада, и хочу опробовать кое-что из прочитанного."
+
+    hide us
+    hide mz
+    with dissolve
+
+    show mt angry panama pioneer at center:
+        alpha 0.7
+    with dissolve
+
     mt "Нет! Мы сделаем хуже!"
-    #Смена фона на интерьер автобуса, тряска чтобы показать что его втолкнули.
+
+    window hide
+    scene bg int_bus_night:
+        truecenter
+        parallel:
+            ease 3.0 zoom 1.05
+            ease 3.0 zoom 1.0
+            repeat
+    show prologue_dream:
+        alpha 0.5
+    show mt rage panama pioneer far at center:
+        alpha 0.7
+    with flash
+    with vpunch
+    window show
+
     mt "Всё! Это была последняя капля! Убирайся в своё время, нудист несчастный!!!"
-    # (ОД выходит, пустой автобус, потом голос)
+
+    window hide
+    hide mt with dissolve
+    $ renpy.pause(1.0, hard=True)
+    window show
+
     mt "Он там! Заходи!"
-    # (Юля появляется)
+
+    show uv smile far at center:
+        alpha 0.7
+    with dissolve
+
     uv "Ой! Бубенчики! Мур-мяу! Игрушечка!"
-    # (мурлыканье)
+
+    play sound2 bkrr_sfx_list["cat_scream"]
+
     me "Нет…"
-    # (мяуканье)
+
+    stop sound_loop fadeout 3
+    play sound_loop2 bkrr_sfx_list["heartbeat"] fadein 3
+
+    hide uv with dissolve
+    show uv rage far at center:
+        alpha 0.7
+        truecenter
+        zoom 1.6
+    with dissolve
+
     me "Не-е-е-е-ет!!!"
-    #красная пелена, красные следы когтей, вопль
+
+    window hide
+
+    show uv rage far:
+        alpha 0.7
+        truecenter
+        zoom 1.6
+        linear 0.5 zoom 2.0 alpha 0.0
+    with None
+    pause 0.5
+    scene int_house_of_mt_night2
+    show red:
+        alpha 0.2
+        ease 4.5 alpha 0.0
+    show prologue_dream:
+        alpha 0.5
+        ease 6.0 alpha 0.0
+    with flash
 
     #СОН УШЁООООЛ
-
     #НОЧНАЯ ИГРА В МУЗКЛУБЕ И РАЗГОВОР С СЕМЕНОМ И ЮЛЕЙ
 
+    with vpunch
 
-    "Я заорал так, что разбудил сам себя. К счастью, Ольга так устала, что даже мой вопль не смог вырывать её из объятий Морфея. Ну и сон… Это все из-за концерта. Нервы, нервы. а лучшее средство от волнения у нас какое? Конечно, репетировать!"
+    $ bkrr_set_volume("sound", 1.0)
+    stop music fadeout 1
+    stop sound_loop2 fadeout 5
+
+    window show
+    "Я заорал так, что разбудил сам себя. К счастью, Ольга так устала, что даже мой вопль не смог вырывать её из объятий Морфея. Ну и сон… Это все из-за концерта. Нервы, нервы. А лучшее средство от волнения у нас какое? Конечно, репетировать!"
     "Убедившись, что Ольга спит, я натянул шорты и футболку, а затем, крадучись, вышел из домика."
     "Дорога до клуба прошла без приключений меня не били по голове, не похищали и даже дежурный вожатый не встретился и не наградил меня нарядом на картошку."
     "Я прикрыл двери, свет зажигать не стал, а включил настольную лампу и опустил её на пол, чтобы не привлекать внимания дежурных."
