@@ -230,7 +230,7 @@ init python:
         # специальные
         "dy":[u"Голос из динамика", "#B3B3B3"], # для 1.2
         "bus":[u"Автобус", "#68A01D"],
-        "t_pl":[u"Магнитофон", "#B3B3B3"]
+        "t_pl":[u"Магнитофон", "#B3B3B3"],
         "voice":[u"Голос", "#E1DD7D"],  # нейтральный голос
         "zal":[u"Зал", "#E1DD7D"],
     }
@@ -1972,8 +1972,8 @@ init 2:
         "persistent.sprite_time == 'night'", im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png", bkrr_tint["night"]),
         True, ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png")
 
-    image bkrr_pi normal dark = im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.45))
-    image bkrr_pi normal dark far = im.MatrixColor(ES_IMAGES + "sprites/far/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.45))
+    image bkrr_pi normal dark = im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.15))
+    image bkrr_pi normal dark far = im.MatrixColor(ES_IMAGES + "sprites/far/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.15))
 
     # Эл-ведроид
 
