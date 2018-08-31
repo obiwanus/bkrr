@@ -652,6 +652,7 @@ init 2:
     image bg int_clubs_male_day_wrecked = MOD_IMAGES + "bg/int_clubs_male_day_wrecked.jpg"
     image club_planer = MOD_IMAGES + "misc/planer.png"
     image bkrr_claws = MOD_IMAGES + "misc/claws.png"
+    image bkrr_uv_piano = MOD_IMAGES + "misc/uv_piano.png"
 
     # Дождливые, пасмурные фоны
 

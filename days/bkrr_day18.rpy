@@ -4903,14 +4903,14 @@ label bkrr_day18_common:
     show mt angry panama pioneer with dspr
 
     mt "Алиса!"
-
-    show mt normal panama pioneer with dspr
-
     "Бородач не обиделся."
 
     show ant smile shirt with dspr
 
     ant "Ну, где уж мне…"
+
+    show mt normal panama pioneer with dspr
+
     "То ли Алиса не хотела портить отношения с гостями, то ли тон вожатой на неё подействовал, но рыжая тихо проговорила:"
 
     show dv shy pioneer with dspr
@@ -4965,9 +4965,11 @@ label bkrr_day18_common:
 
     dv "Поняла! Ну, раз так, мы сами."
 
+    window hide
     hide dv with dissolve
     show mt sad panama pioneer close at cleft with ease
     show dv normal pioneer far at right with dissolve
+    window show
 
     dv "Эй, мелкие! А ну, сюда! Работка есть!"
     "Не успевшие отойти далеко младшие пионеры повернулись и прибежали назад, с восхищением глядя на Алису."
@@ -5014,11 +5016,12 @@ label bkrr_day18_common:
 
     dv "Да! Можно-можно!"
 
+    window hide
     hide dv
     hide kla
     with dissolve
-
     show us grin pioneer far at cright with dissolve
+    window show
 
     us "Оставайтесь, конечно! Трук, а ты с нами?"
 
@@ -5273,8 +5276,9 @@ label bkrr_day18_common:
     th "Вдруг, на самом деле она пятидесятилетняя дамочка, севшая в автобус где-нибудь в другом мире.{w} Хотя нет. Так искренне притворяться невозможно. Наверняка она та, кем выглядит.{w} Маленький рыжий сгусток веселья и оптимизма, щедро изливающий и то и другое на окружающих."
 
     window hide
+    $ bkrr_timeskip_short()
+    scene bg int_clubs_male_sunset with bkrr_timeskip_transition()
     $ bkrr_set_volume("sound", 0.6)
-    $ renpy.pause(1.0, hard=True)
     play sound sfx_dinner_horn_processed
     window show
 
@@ -5460,6 +5464,7 @@ label bkrr_day18_common:
     me "Я…"
 
     show mi serious pioneer close:
+        subpixel True
         truecenter
         pause 1.0
         ease 1.0 zoom 1.2
@@ -6140,7 +6145,7 @@ label bkrr_day18_common:
     "Уже в который раз передо мной стоял пионер, похожий как две капли воды на нынешнего молодого меня."
 
     hide bkrr_pi with dissolve
-    show bkrr_pi normal at cleft:
+    show bkrr_pi normal at center:
         pause 1.0
         sit_down
     with dissolve
@@ -6188,7 +6193,7 @@ label bkrr_day18_common:
     "Здравый смысл вежливо попрощался и сказал, что отказывается работать в таких условиях. Я изобразил гостеприимную улыбку."
     me "Привет, Юля! Рад тебя снова видеть."
 
-    show uv smile at cright with dissolve
+    show uv smile at fright with easeinright
 
     uv "Привет!"
     "Она по-детски улыбнулась мне."
@@ -6203,7 +6208,13 @@ label bkrr_day18_common:
     me "Так… Вы хотели о чем-то поговорить?"
     uv "Это не я, это он. Я так, за компанию!"
 
+    window hide
     hide uv with dissolve
+    show bkrr_uv_piano behind bkrr_pi:
+        truecenter
+        pos (0.78, 0.67)
+    with dissolve
+    window show
 
     "Юля легко вспрыгнула на крышку рояля и легла на живот, болтая босыми ногами в воздухе. Хвост ее свисал вниз и подрагивал.{w} На глаза ей попался карандаш и нотная тетрадь. Она открыла её и начала быстро что-то рисовать. Почти полное отсутствие освещения её не смущало."
     "Мой двойник почесал в затылке."
@@ -6225,29 +6236,23 @@ label bkrr_day18_common:
     "Я встал и включил чайник.{w} Безумное чаепитие, почти как у Кэррола. Если сейчас ещё зайдет Алиса, то будет всё по книге."
     me "Юля, тебе налить?"
     "Девочка на рояле по-кошачьи изогнулась."
-
-    show uv smile at center with dissolve
-
     uv "Нет, спасибо! Я чай не люблю. А вот конфеты – с удовольствием."
     "К счастью, в вазочке еще лежали несколько конфет, я протянул их Юле."
-
-    show uv laugh with dspr
 
     uv "М-м-м… мои любимые! В этот раз ваша повариха хорошо их спрятала, я боялась что так и не попробую."
 
     window hide
-    hide uv with dissolve
     $ bkrr_timeskip_short()
-    scene bg int_music_club_mattresses_night with bkrr_timeskip_transition()
-    play sound bkrr_sfx_list["pour_tea"] fadein 3
+    scene bg int_music_club_mattresses_night
+    show bkrr_uv_piano
+    show bkrr_pi normal at bkrr_sit_center
+    with bkrr_timeskip_transition()
+    play sound bkrr_sfx_list["pour_tea"] fadein 1
     window show
 
     "Я разлил чай по чашкам, а затем всё-таки рискнул спросить:"
     me "Раз уж ты сам предложил ответить…{w} Зачем ты меня в туннели утащил? К чему это всё?"
     "Он замахал на меня руками. Никогда не замечал у себя такого жеста…"
-
-    show bkrr_pi normal at bkrr_sit_left with dissolve
-
     pi "Так не пойдет. Давай сразу расставим точки над «ё». Это был не совсем я."
     me "…И корова не моя. Как можно быть «не совсем» кем-то? Это был ты или не ты?"
     pi "Здесь – можно. Я был им когда-то. Очень-очень давно, сразу после того, как встретил Юлю.{w} Но с тех пор для меня прошло столько времени, что правильнее будет считать нас двумя разными людьми. Как и нас с тобой, например."
@@ -6293,16 +6298,14 @@ label bkrr_day18_common:
         alpha 0.0
         ease 3.0 alpha 0.25
         ease 3.0 alpha 0.0
-    with bkrr_fade(2.0)
+    with bkrr_fade(1.0, "black")
     $ renpy.pause(1.5, hard=True)
     scene bg int_music_club_mattresses_night
-    show bkrr_pi normal at bkrr_sit_left
-    with bkrr_circleout_transition
+    show bkrr_pi normal at bkrr_sit_center
+    with bkrr_fade(1.0, "black")
     window show
 
     me "Но на пирсе, мы же уже были все вместе. Он говорил, что вы его в парусину замотали."
-
-    show uv normal at cright with dissolve
 
     uv "Да, это была его первая попытка. К счастью, вы были рядом очень недолго.{w} Я тогда удержала всё на себе, я умею. Но это больно и тяжело. И мы не могли уйти, пока ты стоял рядом. Ещё бы минутка, и… "
     pi "И его задумка удалась бы."
@@ -6314,18 +6317,13 @@ label bkrr_day18_common:
 
     pi "Да что ты там вообще замечал? Я помогал тебе в лесу, спас на пирсе, и ещё пару раз, о которых ты даже не знаешь."
 
-    show uv laugh with dspr
-
     "Юля засмеялась и добавила:"
     uv "И светлячков не забудь!"
     me "Чего? Каких светлячков?"
 
-    show uv smile with dspr
-
-    "Оказывается, когда я смущаюсь, то у меня очень глупое лицо. То-то Мику так улыбалась каждый раз."
-
     show bkrr_pi normal with dspr
 
+    "Оказывается, когда я смущаюсь, то у меня очень глупое лицо. То-то Мику так улыбалась каждый раз."
     pi "Ну… "
     "Мой двойник помялся немного, затем махнул рукой."
     pi "Мы в лесу наловили полную банку светлячков и выпустили, на полянке по пути от клуба, когда вы гуляли с Мику. Понравилось?"
@@ -6334,39 +6332,27 @@ label bkrr_day18_common:
     show bkrr_pi smile with dspr
 
     pi "Нет! Честно, нет!"
-
-    show uv laugh with dspr
-
     uv "Не волнуйся, мы не успели. Я его увела, а бинокль вернула обратно в Ульянкину комнату."
     me "Что? Какой еще бинокль?"
     pi "Неважно. Это долгая история."
     uv "Он хотел быть уверен, что у вас всё идёт как надо."
 
     with vpunch
-    show bkrr_pi normal
-    show uv normal
-    with dspr
+    show bkrr_pi normal with dspr
 
     pi "Юля!!!"
     me "Мне что, теперь везде оглядываться, и думать, не сидишь ли ты в кустах?"
     pi "Эй, делать мне нечего, кроме как тут сидеть. У меня свой лагерь есть, между прочим!"
 
-    show uv smile with dspr
-
     uv "Ты когда в него заходил последний раз? Сразу сбегаешь в какой-нибудь другой лагерь!{w} Вожатая нервничает, куда ты подевался, и вообще! Ищешь, ищешь… неизвестно что."
-
-    hide uv with dissolve
 
     "Она вздохнула, покачала головой и развернула очередную конфету.{w} Второй Семен посмотрел на неё с таким бесконечным теплом и обожанием, что захотелось рухнуть на месте от умиления."
     pi "Милая, прости. Ты же знаешь, что я все делаю для тебя.{w} И ведь мы нашли, то что искали."
 
-    # NOTE: убрал, ибо по спрайтам не подходило
-    # "Юля легко спрыгнула с рояля, мне показалось, что сейчас она приземлится на четвереньки, но она просто чуть присела. Двигалась она тоже плавно, по-кошачьи."
+    "Юля легко спрыгнула с рояля, мне показалось, что сейчас она приземлится на четвереньки, но она просто чуть присела.{w} Двигалась она тоже плавно, по-кошачьи."
     uv "Знаю. И за это я тебя очень люблю!"
 
-    show uv smile at center:
-        xalign 0.43
-    with dissolve
+    show uv smile at cleft behind bkrr_pi with dissolve
 
     "Она присела рядом и потерлась о его плечо.{w} Мне стало чуточку неловко. Семен повернулся ко мне и продолжил:"
     pi "Не волнуйся. Дело сделано, и больше мы не увидимся.{w} Завтра для меня не настанет. В ближайшее время, по крайней мере. Я и так засиделся."
@@ -6419,7 +6405,7 @@ label bkrr_day18_common:
     window hide
     hide bkrr_pi with dissolve
     $ renpy.pause(1.0)
-    show bkrr_pi smile at bkrr_sit_left with dissolve
+    show bkrr_pi smile at bkrr_sit_center with dissolve
     window show
 
     "Он взглянул на Юлю, которая продолжала рисовать, потом понизил голос, подмигнул."
@@ -6445,9 +6431,9 @@ label bkrr_day18_common:
     "Пионер очень серьезно ответил:"
     pi "Не ёрничай. Мы иногда здорово достаём друг друга, бывало, что не разговаривали по месяцу, но в целом уживаемся. Люблю я ее."
 
-    show uv smile at center:
+    show uv smile at left behind bkrr_pi:
         pause 1.0
-        ease 1.0 xalign 0.43
+        ease 1.0 xalign 0.35
     with dissolve
 
     "Юля снова отложила рисование, подошла к нам и ласково укусила его за ухо."
@@ -6497,7 +6483,7 @@ label bkrr_day18_common:
 
     "Второй Семён подстроил алискину гитару, выдал замысловатый пассаж."
 
-    show bkrr_pi normal at cleft with dissolve
+    show bkrr_pi normal at center with dissolve
 
     pi "Всё-всё, хватит! Да, я был очень легкомысленным, не убивать же меня теперь? С тех пор, как мы встретились, других женщин для меня не существует."
     uv "Я знаю! Ну, Семёны, вы играть-то будете? Время уходит.{w} А если нет, то пошли уже. Посмотри, Семён уже спать хочет, а ты его достаешь."
