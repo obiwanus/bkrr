@@ -651,6 +651,7 @@ init 2:
 
     image bg int_clubs_male_day_wrecked = MOD_IMAGES + "bg/int_clubs_male_day_wrecked.jpg"
     image club_planer = MOD_IMAGES + "misc/planer.png"
+    image bkrr_claws = MOD_IMAGES + "misc/claws.png"
 
     # Дождливые, пасмурные фоны
 
@@ -1868,6 +1869,7 @@ init 2:
         make_sprites_for('mz', 'zombie', ['mod:zomb'], emotions=['normal'], distances=['far'])
         make_sprites_for('mz', 'glasses bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>', 'es:glasses'])
         make_sprites_for('mz', 'glasses bkrr_dress', ['es:body', 'mod:dress', 'es:<emotion>', 'es:glasses'])
+        make_sprites_for('mz', 'bdsm', ['es:body', 'mod:bdsm', 'es:<emotion>'])  # не все эмоции доступны
 
         make_sprites_for('mt', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
         make_sprites_for('mt', 'nightdress', ['es:body', 'mod:nightdress', 'es:<emotion>'])
@@ -1889,6 +1891,7 @@ init 2:
         make_sprites_for('us', 'swim', ['es:body', 'es:swim', 'mod:<emotion>'], emotions=['normal_dontlike'])
         make_sprites_for('us', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['normal_dontlike'])
         make_sprites_for('us', 'sport', ['es:body', 'es:sport', 'mod:<emotion>'], emotions=['normal_dontlike'])
+        make_sprites_for('us', 'bdsm', ['es:body', 'mod:bdsm', 'es:<emotion>'])  # не все эмоции доступны
 
         make_sprites_with_custom_emotions(['sad'], 'cs', 'body', ['mod:body', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad'], 'cs', 'panties', ['mod:body', 'mod:panties', 'es:<emotion>'])

@@ -6016,7 +6016,7 @@ label bkrr_day18_common:
 
     window show
 
-    show us smile pioneer at center:
+    show us smile bdsm at center:
         truecenter
         alpha 0.7
         ease 7.0 zoom 1.7 alpha 0.0 xpos 0.1 ypos 0.5
@@ -6024,7 +6024,7 @@ label bkrr_day18_common:
 
     us "Ольдмитривна, Ольдмитривна… а можно я его накажу? Больно!"
 
-    show mz normal pioneer at center:
+    show mz normal bdsm at center:
         truecenter
         alpha 0.7
         ease 7.0 zoom 1.7 alpha 0.0 xpos 0.9 ypos 0.5
@@ -6072,6 +6072,7 @@ label bkrr_day18_common:
 
     uv "Ой! Бубенчики! Мур-мяу! Игрушечка!"
 
+    hide uv with dissolve
     play sound2 bkrr_sfx_list["cat_scream"]
 
     me "Нет…"
@@ -6079,7 +6080,6 @@ label bkrr_day18_common:
     stop sound_loop fadeout 3
     play sound_loop2 bkrr_sfx_list["heartbeat"] fadein 3
 
-    hide uv with dissolve
     show uv rage far at center:
         alpha 0.7
         truecenter
@@ -6094,15 +6094,22 @@ label bkrr_day18_common:
         alpha 0.7
         truecenter
         zoom 1.6
-        linear 0.5 zoom 2.0 alpha 0.0
+        linear 1.0 zoom 2.0 alpha 0.0
     with None
     pause 0.5
+    play sound sfx_scary_sting
     scene int_house_of_mt_night2
-    show red:
-        alpha 0.2
+    show black:
+        alpha 0.7
         ease 4.5 alpha 0.0
-    show prologue_dream:
+    show red:
         alpha 0.5
+        ease 4.5 alpha 0.0
+    show bkrr_claws:
+        truecenter
+        ease 2.5 alpha 0.0
+    show prologue_dream:
+        alpha 0.3
         ease 6.0 alpha 0.0
     with flash
 
@@ -6111,10 +6118,10 @@ label bkrr_day18_common:
 
     $ bkrr_set_volume("sound", 1.0)
     stop music fadeout 1
-    stop sound_loop2 fadeout 5
     play ambience ambience_int_cabin_night fadein 1
 
     window show
+    stop sound_loop2 fadeout 10
 
     "Я заорал так, что разбудил сам себя.{w} К счастью, Ольга так устала, что даже мой вопль не смог вырывать её из объятий Морфея."
     "Ну и сон… Это все из-за концерта. Нервы, нервы.{w} А лучшее средство от волнения у нас какое? Конечно, репетировать!"
