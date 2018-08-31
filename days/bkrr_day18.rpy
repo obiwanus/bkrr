@@ -5912,11 +5912,7 @@ label bkrr_day18_common:
     # ФОН – СЦЕНА, СПРАЙТЫ МИКУ, АЛИСЫ И УЛЬЯНЫ
     $ bkrr_set_volume("sound", 0.3)
     scene bg ext_stage_normal_night:
-        truecenter
-        parallel:
-            ease 3.0 zoom 1.05
-            ease 3.0 zoom 1.0
-            repeat
+        bkrr_dream_bg_throbbing
     show prologue_dream:
         alpha 0.5
     with fade2
@@ -5924,66 +5920,26 @@ label bkrr_day18_common:
     window show
 
     show mt angry panama pioneer far:
-        alpha 0.6
-        truecenter
-        zoom 1.4
-        parallel:
-            ease 7.0 zoom 3.0
-        parallel:
-            ease 7.0 xalign 0.9
-        parallel:
-            ease 7.0 rotate 50
-        parallel:
-            linear 6.0 alpha 0.0
+        bkrr_dream_sprite_rotate_clockwise
 
     with dissolve
 
     mt "Семён! Я не ожидала от тебя такого!"
 
     show us normal_dontlike pioneer far:
-        alpha 0.6
-        truecenter
-        zoom 1.4
-        parallel:
-            ease 5.0 zoom 3.0
-        parallel:
-            ease 5.0 xalign 0.1
-        parallel:
-            ease 5.0 rotate -40
-        parallel:
-            linear 4.0 alpha 0.0
+        bkrr_dream_sprite_rotate_counterclockwise
     with dissolve
 
     us "Сенька! Извращенец! Не брат ты мне, бассота лохматая!"
 
     show mi smile pioneer far:
-        alpha 0.6
-        truecenter
-        zoom 1.4
-        parallel:
-            ease 7.0 zoom 3.0
-        parallel:
-            ease 7.0 xalign 0.9
-        parallel:
-            ease 7.0 rotate 50
-        parallel:
-            linear 6.0 alpha 0.0
+        bkrr_dream_sprite_rotate_clockwise
     with dissolve
 
     mi "Сенечка, милый, почему ты голый? Мы же тебе пошили такой замечательный костюм!!!"
 
     show dv angry pioneer2 far:
-        alpha 0.6
-        truecenter
-        zoom 1.4
-        parallel:
-            ease 5.0 zoom 3.0
-        parallel:
-            ease 5.0 xalign 0.1
-        parallel:
-            ease 5.0 rotate -40
-        parallel:
-            linear 4.0 alpha 0.0
+        bkrr_dream_sprite_rotate_counterclockwise
     with dissolve
 
     dv "Мало того, что ноты забыл, так еще и хоботом размахивает! Иди сюда, скотина! Гитара уже не нужна, я сломаю её об твою пустую голову!!!"
@@ -6005,26 +5961,24 @@ label bkrr_day18_common:
     play sound_loop sfx_head_heartbeat fadein 3
     pause 1.0
     scene bg ext_bus_night:
-        truecenter
-        parallel:
-            ease 3.0 zoom 1.05
-            ease 3.0 zoom 1.0
-            repeat
+        bkrr_dream_bg_throbbing
     show prologue_dream:
         alpha 0.5
     with Dissolve(3.0)
 
-    window show
-
     show us smile bdsm at center:
+        subpixel True
         truecenter
         alpha 0.7
         ease 7.0 zoom 1.7 alpha 0.0 xpos 0.1 ypos 0.5
     with dissolve
 
+    window show
+
     us "Ольдмитривна, Ольдмитривна… а можно я его накажу? Больно!"
 
     show mz normal bdsm at center:
+        subpixel True
         truecenter
         alpha 0.7
         ease 7.0 zoom 1.7 alpha 0.0 xpos 0.9 ypos 0.5
@@ -6034,7 +5988,7 @@ label bkrr_day18_common:
 
     hide us
     hide mz
-    with dissolve
+    with dspr
 
     show mt angry panama pioneer at center:
         alpha 0.7
@@ -6044,16 +5998,12 @@ label bkrr_day18_common:
 
     window hide
     scene bg int_bus_night:
-        truecenter
-        parallel:
-            ease 3.0 zoom 1.05
-            ease 3.0 zoom 1.0
-            repeat
+        bkrr_dream_bg_throbbing
     show prologue_dream:
         alpha 0.5
     show mt rage panama pioneer far at center:
         alpha 0.7
-    with flash
+    with dissolve
     with vpunch
     window show
 
@@ -6094,7 +6044,7 @@ label bkrr_day18_common:
         alpha 0.7
         truecenter
         zoom 1.6
-        linear 1.0 zoom 2.0 alpha 0.0
+        linear 0.5 zoom 3.0 alpha 0.0
     with None
     pause 0.5
     play sound sfx_scary_sting
@@ -6111,12 +6061,12 @@ label bkrr_day18_common:
     show prologue_dream:
         alpha 0.3
         ease 6.0 alpha 0.0
-    with flash
+    with dspr
+    with vpunch
 
     #СОН УШЁООООЛ
     #НОЧНАЯ ИГРА В МУЗКЛУБЕ И РАЗГОВОР С СЕМЕНОМ И ЮЛЕЙ
 
-    $ bkrr_set_volume("sound", 1.0)
     stop music fadeout 1
     play ambience ambience_int_cabin_night fadein 1
 
@@ -6132,6 +6082,8 @@ label bkrr_day18_common:
     scene bg ext_house_of_mt_night_without_light with dissolve
     play ambience ambience_camp_center_night fadein 1
     window show
+
+    $ bkrr_set_volume("sound", 1.0)
 
     "Убедившись, что Ольга спит, я натянул шорты и футболку, а затем, крадучись, вышел из домика."
 

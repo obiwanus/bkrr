@@ -1368,6 +1368,43 @@ init 1:
             ease 0.11 ypos 0.501
             repeat
 
+    transform bkrr_dream_bg_throbbing:
+        subpixel True
+        truecenter
+        parallel:
+            ease 3.0 zoom 1.05
+            ease 3.0 zoom 1.0
+            repeat
+
+    transform bkrr_dream_sprite_rotate_clockwise:
+        subpixel True
+        alpha 0.6
+        truecenter
+        zoom 1.4
+        parallel:
+            ease 7.0 zoom 3.0
+        parallel:
+            ease 7.0 xalign 0.9
+        parallel:
+            ease 7.0 rotate 50
+        parallel:
+            linear 6.0 alpha 0.0
+
+    transform bkrr_dream_sprite_rotate_counterclockwise:
+        subpixel True
+        alpha 0.6
+        truecenter
+        zoom 1.4
+        parallel:
+            ease 5.0 zoom 3.0
+        parallel:
+            ease 5.0 xalign 0.1
+        parallel:
+            ease 5.0 rotate -40
+        parallel:
+            linear 4.0 alpha 0.0
+
+
     # Отсвет от пламени
 
     transform bkrr_glow_atl(imgf):
