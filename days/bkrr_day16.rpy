@@ -1716,7 +1716,7 @@ label bkrr_day16_common:
 
     window hide
 
-    scene bg int_music_club_mattresses_day with dissolve
+    scene bg int_music_club_mattresses_day with flash
 
     window show
 

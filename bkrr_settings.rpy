@@ -959,6 +959,7 @@ init 2:
             "white"
         contains:
             (MOD_IMAGES + "cg/d16_picnic1.jpg")
+            subpixel True
             alpha 0.0
             xalign 1.0
             parallel:
@@ -970,6 +971,7 @@ init 2:
                 linear 2.0 alpha 0.0
         contains:
             (MOD_IMAGES + "cg/d16_picnic2.jpg")
+            subpixel True
             alpha 0.0
             xalign 0.0
             pause 6.0
@@ -982,6 +984,7 @@ init 2:
                 linear 3.0 alpha 0.0
         contains:
             (MOD_IMAGES + "cg/d16_picnic3.jpg")
+            subpixel True
             truecenter
             alpha 0.0
             zoom 1.5

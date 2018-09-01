@@ -825,6 +825,7 @@ label bkrr_day17_common:
 
     # SCP CONTAINMENT BREACH!
     # play sound bkrr_sfx_list["jumpscare"]
+    window hide
     play sound sfx_suspence_bang
     play sound2 bkrr_sfx_list["heartbeat"]
     play music music_list["you_lost_me"] fadein 3.5
@@ -838,6 +839,7 @@ label bkrr_day17_common:
     scene bg ext_house_of_sl_day_zhenya at bkrr_shake_atl with vpunch
     play sound3 bkrr_sfx_list["sem_falls_on_floor"]
     scene bg ext_house_of_sl_day with dissolve
+    window show
 
     "Я заорал от неожиданности и отскочил на пару шагов назад, чуть не упав с лестницы."
 
