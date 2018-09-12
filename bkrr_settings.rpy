@@ -496,8 +496,13 @@ init 2:
 
     image bg int_music_club_mattresses_day = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_day.jpg", MOD_IMAGES + "misc/int_music_club_clock_day.png")
     image bg int_music_club_mattresses_sunset = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_sunset.jpg", MOD_IMAGES + "misc/int_music_club_clock_sunset.png")
-    image bg int_music_club_mattresses_night =bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_night.jpg", MOD_IMAGES + "misc/int_music_club_clock_night.png")
+    image bg int_music_club_mattresses_night = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_night.jpg", MOD_IMAGES + "misc/int_music_club_clock_night.png")
     image bg int_music_club_mattresses_dark_night = im.MatrixColor(bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_night.jpg", MOD_IMAGES + "misc/int_music_club_clock_night.png"), im.matrix.brightness(-0.15) * im.matrix.saturation(0.6))
+    image bg int_music_club_mattresses_night_yulia:
+        contains:
+            "bg int_music_club_mattresses_night"
+        contains:
+            "bkrr_uv_mattress"
 
     image bg int_cinema_empty = MOD_IMAGES + "bg/int_cinema_empty.png"
     image bg int_cinema_people = MOD_IMAGES + "bg/int_cinema_people.png"
@@ -653,6 +658,11 @@ init 2:
     image club_planer = MOD_IMAGES + "misc/planer.png"
     image bkrr_claws = MOD_IMAGES + "misc/claws.png"
     image bkrr_uv_piano = MOD_IMAGES + "misc/uv_piano.png"
+    image bkrr_uv_mattress:
+        contains:
+            "bkrr_uv_piano"
+            truecenter
+            pos (0.78, 0.67)
 
     # Дождливые, пасмурные фоны
 
@@ -1447,7 +1457,7 @@ init 1:
             pause zt
             linear t xpos 0.51 alpha 0.2 zoom (z + 0.05)
 
-    transform bkrr_vertigo_atl(imgn, z=1.1, zt=1.0, t=1.0):
+    transform bkrr_vertigo_atl(imgn, z=1.1, zt=1.0, t=1.0, first=39, second=11):
         contains:
             ImageReference(imgn)
             truecenter
@@ -1461,8 +1471,8 @@ init 1:
             parallel:
                 linear t alpha 0.3 zoom (z + 0.05)
             parallel:
-                linear 5.0 rotate -39
-                linear 10.0 rotate 39
+                linear 5.0 rotate -first
+                linear 10.0 rotate first
                 linear 5.0 rotate 0
                 repeat
         contains:
@@ -1473,8 +1483,8 @@ init 1:
             pause zt
             linear t alpha 0.2 zoom (z + 0.05)
             parallel:
-                linear 1.0 rotate 11
-                linear 2.0 rotate -11
+                linear 1.0 rotate second
+                linear 2.0 rotate -second
                 linear 1.0 rotate 0
                 repeat
             parallel:

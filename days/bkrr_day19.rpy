@@ -319,8 +319,8 @@ label bkrr_day19_common:
     dv "Ты что, такой голодный, что сырую картоху есть будешь?"
     me "Еще чего. У меня ведь тут целый гарем? Уля начистит, Мику поджарит… На сале.{w} А Лену, наверное, попрошу сделать массажик."
 
-    show dv grin bkrr_sport with dspr
-    with hpunch
+    show dv laugh bkrr_sport with dspr
+    with vpunch
 
     "Ответом был добродушный, но увесистый тычок в бок."
     dv "Эй, ты края-то не теряй! Это с каких пор мы твой гарем, а? Султан нашелся!{w} Лицо от счастья не треснет? Массажик ему. И вообще, а я что буду делать?"
@@ -1245,9 +1245,11 @@ label bkrr_day19_common:
     "Я осторожно потянул шнур. Сам он тоже хорошо нагрелся.{w} Не ударило бы током, получать искусственное дыхание рот-в-рот от Шурика я был морально не готов."
     "Свежевымытый кибернетик вышел из-под душа и теперь вытирал голову. И тоже не торопился одеваться."
 
+    stop sound_loop fadeout 1
     play sound sfx_knocking_door_outside
 
     "В очередной раз раздался стук в дверь."
+
 
     with vpunch
 
@@ -1724,7 +1726,8 @@ label bkrr_day19_common:
 
     show mi normal pioneer with dspr
 
-    th "Парик… Простынь…{w} Музклуб… поцелуй.{w} Это что, Лена была? Да ну, быть не может.""Или наоборот, может?{w} Я с интересом посмотрел на неё."
+    th "Парик… Простынь…{w} Музклуб… поцелуй.{w} Это что, Лена была? Да ну, быть не может."
+    th "Или наоборот, может?{w} Я с интересом посмотрел на неё."
     me "И как?"
     ## (Изображение маленькой мертвой девочки Садако на черном фоне?)
 
@@ -1777,7 +1780,7 @@ label bkrr_day19_common:
     us "Да вот же она! Налаживает отношения с иностранными гостями!"
     "И правда. По аллейке в нашу сторону шли Алиса, Трук и Клаус. Антона Ивановича видно нигде не было.{w} Алиса о чем-то оживленно говорила с Клаусом, а Трук просто семенил рядом с неизменной глуповатой улыбкой на лице."
 
-    show mt grin pioneer with dspr
+    show mt grin panama pioneer with dspr
 
     mt "Вот как это теперь называется… Ну-ну. Эх, молодежь!"
 
@@ -2106,7 +2109,7 @@ label bkrr_day19_common:
     window hide
     stop ambience fadeout 1
     play sound sfx_open_door_1
-    scene bg int_music_club_matresses_sunset with dissolve
+    scene bg int_music_club_mattresses_sunset with dissolve
     play ambience ambience_int_cabin_day fadein 1
     window show
 
@@ -2253,7 +2256,7 @@ label bkrr_day19_common:
 
     window hide
     $ bkrr_timeskip_short()
-    scene bg int_music_club_matresses_sunset with bkrr_timeskip_transition()
+    scene bg int_music_club_mattresses_sunset with bkrr_timeskip_transition()
     window show
 
     "Играть так играть. Все-таки за это время я неплохо наловчился.{w} Мику присела рядом, и время от времени подправляла мне руку или просто задавала такт похлопыванием по бедру."

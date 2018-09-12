@@ -6221,7 +6221,7 @@ label bkrr_day18_common:
     uv "Привет!"
     "Она по-детски улыбнулась мне."
     uv "Хорошо, что с тобой все в порядке. Ваш кот нашел дорогу назад?"
-    me "Да, вернулся вон, лежит."
+    me "Да, вернулся только что, вон, лежит."
 
     window hide
     $ renpy.pause(1.0, hard=True)
@@ -6412,9 +6412,7 @@ label bkrr_day18_common:
 
     window hide
     hide uv with dissolve
-    show bkrr_uv_piano behind bkrr_pi:
-        truecenter
-        pos (0.78, 0.67)
+    show bkrr_uv_mattress behind bkrr_pi
     with dissolve
     window show
 
@@ -6463,7 +6461,7 @@ label bkrr_day18_common:
     pi "Не ёрничай. Мы иногда здорово достаём друг друга, бывало, что не разговаривали по месяцу, но в целом уживаемся.{w} Люблю я ее."
 
     window hide
-    hide bkrr_uv_piano with dissolve
+    hide bkrr_uv_mattress with dissolve
     show uv smile at cleft behind bkrr_pi with dissolve
     window show
 
@@ -6497,9 +6495,12 @@ label bkrr_day18_common:
     uv "Ты только посмотри. И ведь даже не стесняется! Ты, кажется, не такой, откуда у него это все?{w} Постоянно вспоминает свои романы, во сне чужие имена бормочет. Его счастье, что я не ревнивая, а то бы точно исцарапала!"
     me "Сам поражаюсь… Мы точно одинаковые? Я за собой такого не замечал."
 
+    window hide
     hide uv with dissolve
+    show bkrr_uv_mattress behind bkrr_pi with dissolve
+    window show
 
-    "Второй Семён подстроил алискину гитару, выдал замысловатый пассаж."
+    "Второй Семён подстроил алисину гитару, выдал замысловатый пассаж."
 
     show bkrr_pi normal at center with dissolve
 
@@ -6507,6 +6508,9 @@ label bkrr_day18_common:
     uv "Я знаю! Ну, Семёны, вы играть-то будете? Время уходит.{w} А если нет, то пошли уже. Посмотри, Семён уже спать хочет, а ты его достаешь."
 
     "Я вежливо намекнул, что играть умею только на басу да и то – только определенные партии. И только по табам. И время позднее.{w} Но этот, второй был куда настырнее, чем я."
+
+    show bkrr_pi smile with dspr
+
     pi "А что делать? Кому сейчас легко? Ну, давай?"
     me "А что играть-то?"
 
@@ -6515,6 +6519,8 @@ label bkrr_day18_common:
     window hide
     $ bkrr_get_item("tabs")
     window show
+
+    show bkrr_pi normal with dspr
 
     pi "Вот. Похоже на то, что ты учишь к концерту, ничего сложного.{w} Обычный рок-н-ролльный кусочек, десять нот, дело на три минуты. Давай, давай, не ломайся!"
     "Юля развела руками."
@@ -6527,7 +6533,7 @@ label bkrr_day18_common:
 
     window hide
     $ bkrr_timeskip_short()
-    scene bg int_music_club_mattresses_night with bkrr_timeskip_transition()
+    scene bg int_music_club_mattresses_night_yulia with bkrr_timeskip_transition()
     window show
 
     "Мотив и правда оказался простеньким. Особенно, с учетом моих неизвестно откуда взявшихся талантов…{w} Словом, через пять минут я уже играл его так, словно репетировал весь день."
@@ -6544,6 +6550,7 @@ label bkrr_day18_common:
 
     "Не льсти себе. Чтобы стать таким, тебе потребуются многие тысячи циклов, а до того ты и близко не подберешься к моему уровню.{w} И вообще, хватит ныть, бери басуху, время уходит."
 
+    window hide
     hide bkrr_pi with dissolve
 
     # NOTE: Пропускаю эти песнопения. Совсем из меня не лезет.
@@ -6567,12 +6574,8 @@ label bkrr_day18_common:
     # # Rock'n'roll этой ночи, у-у-у-у-у!
     # # Я думал, будет хорошо, а вышло не очень.
 
-    window hide
     $ bkrr_timeskip()
-    scene bg int_music_club_mattresses_night
-    show bkrr_uv_piano:
-        truecenter
-        pos (0.78, 0.67)
+    scene bg int_music_club_mattresses_night_yulia
     show bkrr_pi smile at bkrr_sit_center
     with bkrr_circleout_transition
     window show
@@ -6618,17 +6621,15 @@ label bkrr_day18_common:
 
     hide bkrr_pi with dissolve
 
-    window hide
-    scene expression bkrr_vertigo_atl("bg int_music_club_mattresses_night", 1.1, 0.6, 0.6)
+    scene expression bkrr_vertigo_atl("bg int_music_club_mattresses_night_yulia", 1.1, 0.6, 0.6, -6, -2)
     show black:
         alpha 0.3
     with None
-    window show
 
-    "Тут он скривился, оперся на стенку и непроизвольно схватился за голову. Я тоже ощутил странное головокружение.{w} Хоть сейчас его боль не передавалась мне, и то хорошо."
+    "Тут он скривился, оперся на стенку и непроизвольно схватился за голову.{w} Я тоже ощутил странное головокружение.{w} Хоть сейчас его боль не передавалась мне, и то хорошо."
 
     window hide
-    scene bg int_music_club_mattresses_night:
+    scene bg int_music_club_mattresses_night_yulia:
         truecenter
         zoom 1.1
         linear 0.5 zoom 1.0
@@ -6653,9 +6654,9 @@ label bkrr_day18_common:
 
     window hide
     $ renpy.pause(1.0, hard=True)
-    window show
-
+    scene bg int_music_club_mattresses_night with dissolve
     show uv smile at center with dissolve
+    window show
 
     uv "Показушник! Мог бы и подождать лишнюю минуту."
     me "Да ладно, так даже интереснее. Ну, и что теперь?"
