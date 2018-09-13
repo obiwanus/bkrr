@@ -1811,23 +1811,26 @@ init 2:
             'mi': {
                 'cry': 1, 'dontlike': 1, 'laugh': 1, 'shocked': 1, 'scared': 1, 'shy': 1, 'surprise': 1, 'cry_smile': 2, 'grin': 2, 'happy': 2, 'sad': 2, 'sad_smile': 2, 'smile': 2, 'angry': 3, 'normal': 3, 'rage': 3, 'serious': 3, 'upset': 3,
             },
-            "ant": {
+            'ant': {
                 'normal': 1, 'serious': 1, 'smile': 1, 'surprise': 1,
             },
-            "kla": {
+            'kla': {
                 'laugh': 1, 'normal': 1, 'smile': 1, 'shy': 2, 'surprise': 2, 'shyleft': 2, 'shyright': 2, 'surpleft': 2, 'surpright': 2,
             },
-            "nt": {
+            'nt': {
                 'laugh': 1, 'normal': 1, 'sad': 1, 'smile': 1,
             },
-            "tol": {
+            'tol': {
                 'normal': 1, 'pain': 1, 'sad': 1, 'shy': 1, 'smile': 1,
             },
-            "tr": {
+            'tr': {
                 'normal': 1, 'sad': 1, 'smile': 1, 'surp': 1, 'upset': 1, 'laugh': 1, 'normal2': 2, 'sad2': 2, 'smile2': 2, 'surp2': 2, 'upset2': 2, 'laugh2': 2,
             },
-            "el": {
+            'el': {
                 'grin_fingal': 1, 'normal_fingal': 1, 'smile_fingal': 1, 'sad_fingal': 2, 'scared_fingal': 2, 'shocked_fingal': 2, 'surprise_fingal': 2, 'upset_fingal': 2, 'angry_fingal': 3, 'laugh_fingal': 3, 'serious_fingal': 3,
+            },
+            'bkrr_pi': {
+                'normal': 1, 'smile': 1,
             },
         }
 
@@ -1881,6 +1884,8 @@ init 2:
                 for distance in distances:
                     # Получаем название спрайта, например dv angry bkrr_sport far
                     full_sprite_name = '%s %s %s' % (character, emotion, sprite_name)
+                    if not sprite_name:
+                        full_sprite_name = '%s %s' % (character, emotion)  # Не у всех есть одежда
                     if distance != 'normal':
                         full_sprite_name += ' ' + distance
 
@@ -2025,6 +2030,9 @@ init 2:
         "persistent.sprite_time == 'sunset'", im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png", bkrr_tint["sunset"]),
         "persistent.sprite_time == 'night'", im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png", bkrr_tint["night"]),
         True, ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png")
+
+    image bkrr_pi normal sepia = im.Sepia(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png")
+    image bkrr_pi smile sepia = im.Sepia(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png")
 
     image bkrr_pi normal dark = im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.15))
     image bkrr_pi normal dark far = im.MatrixColor(ES_IMAGES + "sprites/far/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.15))
