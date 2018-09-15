@@ -549,9 +549,6 @@ init 2:
     image bg ext_storage_day_bkrr = MOD_IMAGES + "bg/ext_storage_day.png"
     image bg ext_storage_sunset_bkrr = MOD_IMAGES + "bg/ext_storage_sunset.jpg"
     image bg ext_storage_night_bkrr = MOD_IMAGES + "bg/ext_storage_night.jpg"
-    image bg ext_stage_big_day_bkrr = MOD_IMAGES + "bg/ext_stage_big_day.jpg"
-    image bg ext_stage_big_day_str_bkrr = MOD_IMAGES + "bg/ext_stage_big_day_str.jpg"
-    image bg ext_stage_big_day_const_bkrr = MOD_IMAGES + "bg/ext_stage_big_day_const.jpg"
     image bg ext_playground_sunset_bkrr = MOD_IMAGES + "bg/ext_playground_sunset.jpg"
     image bg ext_old_building_day_bkrr = im.Scale(MOD_IMAGES + "bg/ext_old_building_day.jpg", config.screen_width, config.screen_height)
     image bg ext_clubs_sunset_bkrr = im.MatrixColor(ES_IMAGES + "bg/ext_clubs_day.jpg", bkrr_tint["sunset"])
@@ -667,6 +664,15 @@ init 2:
             "bkrr_uv_piano"
             truecenter
             pos (0.78, 0.67)
+
+
+    # Концертные фоны
+
+    image bg ext_stage_big_day_bkrr = MOD_IMAGES + "bg/ext_stage_big_day.jpg"
+    image bg ext_stage_big_day_str_bkrr = MOD_IMAGES + "bg/ext_stage_big_day_str.jpg"
+    image bg ext_stage_big_day_const_bkrr = MOD_IMAGES + "bg/ext_stage_big_day_const.jpg"
+    image bg ext_stage_big_day_evening_empty = MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg"
+    image bg ext_stage_big_day_evening_full = bkrr_fast_composite(MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg", MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png")
 
     # Дождливые, пасмурные фоны
 
