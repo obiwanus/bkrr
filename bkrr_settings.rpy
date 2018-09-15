@@ -229,6 +229,7 @@ init python:
         "vz":[u"Возница", "#FFFFB8"],
         "electrician":[u"Электрик", "#FFFFB8"],
         # специальные
+        "us_outside":[u"Голос с улицы", "#FF3200"],
         "dy":[u"Голос из динамика", "#B3B3B3"], # для 1.2
         "bus":[u"Автобус", "#68A01D"],
         "t_pl":[u"Магнитофон", "#B3B3B3"],
@@ -275,7 +276,7 @@ init python:
         character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (bkrr_characters[first][1], bkrr_characters[first][0], colors[time_of_day], bkrr_characters[second][1], bkrr_characters[second][0])
         gl[first + "_" + second + "_" + time_of_day[0]] = Character(character, kind=adv, what_color=what_color, what_drop_shadow=drop_shadow, ctc="ctc_animation", ctc_position="fixed")
 
-    for i in (("me", "tol", "day"), ("sl", "mz", "sunset"), ("dv", "us", "day"), ("dv", "us", "sunset"), ("cs", "mi", "sunset"), ("me", "cs", "day"), ("me", "mi", "day")):
+    for i in (("me", "tol", "day"), ("sl", "mz", "sunset"), ("dv", "us", "day"), ("dv", "us", "sunset"), ("cs", "mi", "sunset"), ("me", "cs", "day"), ("me", "mi", "day"), ("dv", "mi", "day")):
         bkrr_double_char_define(i[0], i[1], i[2])
 
     # Переключение режима и смена имён
@@ -1969,6 +1970,7 @@ init 2:
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'pioneer_loo', ['mod:body_loo', 'es:pioneer', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'underwear', ['es:body', 'mod:underwear', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
+        make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'bkrr_sport_loo', ['mod:body_loo', 'mod:sport', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'apron', ['es:body', 'mod:apron', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'dirt apron', ['es:body', 'mod:apron', 'mod:apron_dirt', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'shorts_hair', ['mod:body_loo', 'mod:shorts', 'mod:hair', 'es:<emotion>'])
