@@ -4330,7 +4330,7 @@ label bkrr_day16_common:
     us "Тьфу… Ерунда какая-то.{w} Сопли мармеладные."
     mi "Читай вслух!"
 
-    $ bkrr_set_volume("sound3", 0.5)
+    $ bkrr_set_volume("sound3", 0.4)
     play sound3 music_list["memories"] fadein 5  # чтобы не циклилось
 
     window hide
