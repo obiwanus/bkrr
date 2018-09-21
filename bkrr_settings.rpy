@@ -673,7 +673,8 @@ init 2:
     image bg ext_stage_big_day_const_bkrr = MOD_IMAGES + "bg/ext_stage_big_day_const.jpg"
     image bg ext_stage_big_day_evening_empty = MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg"
     image bg ext_stage_big_day_evening_full = bkrr_fast_composite(MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg", MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png")
-    image bg ext_stage_big_day_evening_close = MOD_IMAGES + "bg/ext_stage_normal_night_tmp.jpg"
+    image bg ext_stage_big_day_evening_close = MOD_IMAGES + "bg/ext_stage_big_day_night_close.jpg"
+    image bg ext_backstage_big_day_night = MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg"
 
     # Дождливые, пасмурные фоны
 
