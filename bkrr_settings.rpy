@@ -698,6 +698,7 @@ init 2:
 
     image bg ext_liaz_night_closed = MOD_IMAGES + "bg/ext_liaz_night_closed.jpg"
     image bg ext_liaz_night_open = MOD_IMAGES + "bg/ext_liaz_night_open.jpg"
+    image bg int_liaz_night = MOD_IMAGES + "bg/int_liaz_night.jpg"
     image cg d19_bus_escape = MOD_IMAGES + "cg/d19_bus_escape.jpg"
     image cg d19_miku_bus_1 = MOD_IMAGES + "cg/d19_miku_bus_1.jpg"
     image cg d19_miku_bus_2 = MOD_IMAGES + "cg/d19_miku_bus_2.jpg"

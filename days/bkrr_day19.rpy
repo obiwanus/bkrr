@@ -2023,7 +2023,7 @@ label bkrr_day19_common:
     show mi normal pioneer at right
     show us smile sport at center
     with ease
-    show dv guilty pioneer2 with dissolve
+    show dv guilty pioneer2 at left with dissolve
 
     "Рыжая снова не отреагировала."
     us "Алё? Прием?{w} Алиса, вон Клаус идет!"
@@ -2051,14 +2051,14 @@ label bkrr_day19_common:
 
     me "Мику, милая, почему у меня такое чувство, что от меня что-то скрывают?{w} Ты такая разговорчивая… Волнуешься?"
 
-    show mi upset pioneer at center with dissolve
+    show mi upset pioneer at center with dspr
 
     mi "Ну, что ты…"
     "Она отвела взгляд."
     me "Да, врать ты точно не умеешь. Девчата, колитесь, что вы задумали?"
     "Алиса посмотрела на меня и зловеще пообещала:"
 
-    show dv sad pioneer2 at left with dissolve
+    show dv sad pioneer2 at left with dspr
 
     dv "Скоро узнаешь. Скоро!"
 
@@ -2459,11 +2459,11 @@ label bkrr_day19_common:
     window hide
     stop ambience fadeout 2
     $ bkrr_timeskip()
+    $ bkrr_set_time("day")
     scene bg int_music_club_mattresses_day
     show mi normal pioneer at center
     with bkrr_timeskip_transition()
     play ambience ambience_int_cabin_day fadein 2
-    $ bkrr_set_time("day")
     window show
 
     ## ПРИМЕРНО ЧАСОВ 10.00
@@ -2647,10 +2647,10 @@ label bkrr_day19_common:
     window show
 
     "Она сверкнула своей обычной улыбкой и выскользнула за двери."
+
+    show mt sad pioneer with dissolve
+
     "Ольга помолчала. Потом устало стянула панаму и поинтересовалась:"
-
-    show mt sad pioneer with dspr
-
     mt "Не хочешь пойти, встретить делегацию? Снова?"
     "Я посмотрел на солнце…{w} Конечно, интересно было бы посмотреть, кто там приедет. Но сама идея торчать на жаре и улыбаться гостям вызывала здоровое отвращение."
     me "Если честно, не очень."
@@ -3127,12 +3127,16 @@ label bkrr_day19_common:
 
     window hide
     show blink
-    $ renpy.pause(1.0)
+    $ renpy.pause(2.0)
     window show
 
     with vpunch
 
     "Сверху что-то клацнуло, кто-то чертыхнулся и в землю прямо у моих ног вонзилась увесистая отвертка.{w} Я сглотнул. Еще бы немного…"
+
+    hide blink
+    show unblink
+
     "Затем с небес раздался глас:"
 
     sh "Семён? Извини, я тебя не задел?"
@@ -3612,11 +3616,13 @@ label bkrr_day19_common:
 
     nvl show dissolve
 
-    "Казалось, совсем недавно я шёл искать таинственную вожатую, сидел здесь же, на краю старенького потемневшего от времени пирса… Напуганный, непонимающий…{w} Вырванный из своего времени, из привычного мирка."
+    "Казалось, совсем недавно я шёл искать таинственную вожатую, сидел здесь же, на краю старенького потемневшего от времени пирса…"
+    "Напуганный, непонимающий…{w} Вырванный из своего времени, из привычного мирка."
     "Я улыбнулся, покачал ногой лодку, томящуюся на привязи.{w} Наверное, стоило бы взять Мику и устроить романтическую прогулку по реке. Почему я не подумал об этом раньше?"
     "Но она наверняка потянула бы с собой подруг, они в два голоса выкрикивали бы советы, раскачивали лодку и вообще убивали бы всю романтику на корню."
 
     nvl hide dissolve
+    nvl clear
     scene bg ext_pier_day with dissolve
     nvl show dissolve
 
@@ -3828,14 +3834,20 @@ label bkrr_day19_common:
     "Она протянула Алисе белый прямоугольник."
     me "А что это?"
 
-    show dv laugh sport with dspr
+    show dv laugh swim with dspr
 
     dv "Волшебные таблетки для повышения музыкальной грамоты!{w} Только тебе не дам, ты столько все равно не съешь. Тебе ведро надо."
+
+    show dv smile swim with dspr
+
     me "Что, правда есть такие таблетки?"
 
     show un smile3 paint sport with dspr
 
     un "Она шутит. Обычный цитрамон.{w} У Алисы всегда головные боли, когда погода меняется, вот и сейчас… Да и нога наверное крутит, да?"
+
+    show dv normal swim with dspr
+
     "Алиса кивнула, потом смутилась."
 
     show dv shy swim with dspr
@@ -3888,11 +3900,11 @@ label bkrr_day19_common:
     mi "Ой! Кто здесь?"
     "Она наконец-то заметила постороннего пионера в своей постели и рассмеялась."
 
-    show mi laugh pioneer close with dspr
+    show mi laugh bkrr_sport_loo close with dspr
 
     mi "Сеня?"
 
-    show dv smile swim at left with dissolve
+    show dv smile swim at left behind mi with dissolve
 
     dv "А вот он, сам нашелся! Ворвался, дебош устроил, где говорит, Мику дели? Еле успокоили! Да, Лена?"
     "Лена кивнула… И я не был на сто процентов уверен, почему она отвернулась. От смущения или чтобы сдержать рвущийся наружу смех."
@@ -3922,7 +3934,7 @@ label bkrr_day19_common:
     mi "Вот-вот. На нём."
     "Лена улыбнулась и поправила рыжую:"
 
-    show un smile paint sport at fright with dissolve
+    show un smile paint sport at right with dissolve
 
     un "Это называется брандвахта. Дебаркадер это просто причал такой, чтобы на пароход пересаживаться, а брандвахта – плавучий дом.{w} Мы сегодня с Ольгой Дмитриевной и Антоном Ивановичем ходили на пристань, он нам рассказывал, как жил в таком доме."
 
@@ -4028,7 +4040,7 @@ label bkrr_day19_common:
 
     show dv smile pioneer2 with dspr
 
-    dv "Научись говорить «Нет»"
+    dv "Научись говорить «Нет»."
     "Лена достала фломастеры и покачала головой."
 
     show un normal paint sport with dspr
@@ -4281,7 +4293,7 @@ label bkrr_day19_common:
     window hide
     stop ambience fadeout 1
     $ bkrr_timeskip()
-    scene bg int_music_club_mattresses_sunset with bkrr_timeskip_transition()
+    scene bg ext_stage_big_day_evening_full with bkrr_timeskip_transition()
     $ bkrr_set_time("night")
     play ambience ambience_camp_center_night fadein 1
     $ bkrr_set_volume("sound_loop", 1.0)
@@ -4305,7 +4317,7 @@ label bkrr_day19_common:
     show mi upset pioneer close with dspr
 
     mi "М-м-м… Ты это прекращай!"
-    me "Целоваться?"
+    me "Что прекращай?"
 
     show mi normal pioneer close with dspr
 
@@ -4327,9 +4339,9 @@ label bkrr_day19_common:
 
     mt "Я не уверена, что на парусниках посреди палубы стояли ударные установки… Но мы её прикроем декорациями."
 
-    show dv smile pioneer:
+    show dv smile pioneer close:
         fleft
-        rotate 17
+        rotate 5
         ypos -0.1
     with easeinleft
 
@@ -4339,7 +4351,7 @@ label bkrr_day19_common:
 
     mt "Алиса!"
 
-    show dv laugh pioneer with dspr
+    show dv laugh pioneer close with dspr
 
     dv "Да шучу я! Шучу!"
 
@@ -4621,7 +4633,7 @@ label bkrr_day19_common:
     th "У всех на виду…"
     th "Перед всеми этими глазами, которые смотрят из темноты…"
     "Страх перед сценой, слегка задремавший, пока я смотрел на Мику, вгрызся в меня с новой силой, заставляя мои пальцы дрожать мелкой дрожью, ладони – потеть, а голову – кружиться…"
-    "Напряжение не отступало. Я смотрел на Мику, мечтательно улыбающуюся залу, на Ульяну, которая быстро выбивала знакомый ритм.
+    "Напряжение не отступало. Я смотрел на Мику, мечтательно улыбающуюся залу, на Ульяну, которая быстро выбивала знакомый ритм."
     "И не понимал, что же я здесь делаю. Я ведь гитару взял в руки три недели назад."
     "Мой взгляд упал на Алису… И Алиса смотрела на меня…"
     "Смотрела тяжелым взглядом, которым можно было убить мелкую форму жизни. Таракана, а может даже мышку."
