@@ -416,6 +416,23 @@ init python:
 
 init 2:
 
+    ##    Звуки    ##
+
+    $ bkrr_sfx_list = bkrr_form_files_list("mods/bkrr/sound/sfx/")
+    $ bkrr_ambience_list = bkrr_form_files_list("mods/bkrr/sound/ambience/")
+    $ bkrr_music_list = bkrr_form_files_list("mods/bkrr/sound/music/")
+
+    ##    Видео    ##
+
+    $ bkrr_video_list = {
+        "intro":"mods/bkrr/video/intro.webm",
+        "credits":"mods/bkrr/video/credits.webm",
+        "black_credits":"mods/bkrr/video/black_credits.webm",
+    }
+
+    $ bkrr_video_list["backdrop"] = {dn:("mods/bkrr/video/backdrop_day" + str(dn) + ".webm") for dn in range(4, 20)}
+    $ bkrr_video_list["backdrop"]["epilogue"] = "mods/bkrr/video/backdrop_epilogue.webm"
+
     ##    Логотип    ##
 
     # Обычный логотип
@@ -675,6 +692,17 @@ init 2:
     image bg ext_stage_big_day_evening_full = bkrr_fast_composite(MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg", MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png")
     image bg ext_stage_big_day_evening_close = MOD_IMAGES + "bg/ext_stage_big_day_night_close.jpg"
     image bg ext_backstage_big_day_night = MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg"
+
+
+    # Фейкоконцовка
+
+    image bg ext_liaz_night_closed = MOD_IMAGES + "bg/ext_liaz_night_closed.jpg"
+    image bg ext_liaz_night_open = MOD_IMAGES + "bg/ext_liaz_night_open.jpg"
+    image cg d19_bus_escape = MOD_IMAGES + "cg/d19_bus_escape.jpg"
+    image cg d19_miku_bus_1 = MOD_IMAGES + "cg/d19_miku_bus_1.jpg"
+    image cg d19_miku_bus_2 = MOD_IMAGES + "cg/d19_miku_bus_2.jpg"
+    image cg d19_miku_bus_3 = MOD_IMAGES + "cg/d19_miku_bus_3.jpg"
+
 
     # Дождливые, пасмурные фоны
 
@@ -1021,21 +1049,6 @@ init 2:
     image d17_knife_slice = MOD_IMAGES + "misc/d17_knife_slice.png"
     image d17_knife_slice2 = MOD_IMAGES + "misc/d17_knife_slice2.png"
 
-    ##    Звуки    ##
-
-    $ bkrr_sfx_list = bkrr_form_files_list("mods/bkrr/sound/sfx/")
-    $ bkrr_ambience_list = bkrr_form_files_list("mods/bkrr/sound/ambience/")
-    $ bkrr_music_list = bkrr_form_files_list("mods/bkrr/sound/music/")
-
-    ##    Видео    ##
-
-    $ bkrr_video_list = {
-        "intro":"mods/bkrr/video/intro.webm",
-        "credits":"mods/bkrr/video/credits.webm"
-    }
-
-    $ bkrr_video_list["backdrop"] = {dn:("mods/bkrr/video/backdrop_day" + str(dn) + ".webm") for dn in range(4, 20)}
-    $ bkrr_video_list["backdrop"]["epilogue"] = "mods/bkrr/video/backdrop_epilogue.webm"
 
 init 1:
 
