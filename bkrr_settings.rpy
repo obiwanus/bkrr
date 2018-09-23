@@ -2028,6 +2028,11 @@ init 2:
 
     ## Спрайты, которые не подходят для создания автоматически
 
+    # Демонические создания
+
+    image dv angel = MOD_IMAGES + "sprites/close/dv/dv_angel.png"
+    image us demon = MOD_IMAGES + "sprites/close/us/us_demon.png"
+
     # Дед Григорий
 
     image ded smile crossedarms = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_1.png")
