@@ -1480,12 +1480,12 @@ label bkrr_day19_common:
     me "Доброе утро!"
     un "Доброе. Как настроение?"
     me "Спасибо, лучше не бывает."
-    un "А мне вот немного грустно. Смена заканчивается. Скоро домой. А там…"
-    me "Что там?"
 
     show un normal pioneer with dspr
 
-    un "Там многое изменится. Посидишь со мной? Или торопишься?"
+    un "А мне вот немного грустно. Смена заканчивается. Скоро домой. А там…"
+    me "Что там?"
+    un "Там многое изменится.{w} Посидишь со мной? Или торопишься?"
     me "Конечно."
 
     show un smile pioneer with dspr
@@ -1578,7 +1578,7 @@ label bkrr_day19_common:
     un "Не будь так уверен."
 
     hide un with dissolve
-    play sound sfx_close_door_1
+    play sound sfx_close_door_1 fadein 3
 
     "Лена негромко рассмеялась, и прикрыла дверь.{w} Я видел её силуэт за оконным стеклом."
     "Минуту или две я просто стоял, любуясь спящей Мику.{w} Наконец, опустился на колени и провел пальцем по её щеке."
@@ -1633,10 +1633,16 @@ label bkrr_day19_common:
     show mi upset pioneer_loo with dspr
 
     mi "Это потому что гитару или шкаф с одеждой нельзя куда-нибудь засунуть и забыть, куда.{w} А резинки для волос можно. Жалко!"
+
+    window hide
+    hide mi with dissolve
+    $ renpy.pause(1.0, hard=True)
+    window show
+
     ## (шутка про утерянные трусы удалена)
     me "О! Нашел! Что мне будет в награду?"
 
-    show mi smile pioneer_loo with dspr
+    show mi smile pioneer_loo with dissolve
 
     mi "Поцелую!"
     me "Идёт."
@@ -1663,7 +1669,7 @@ label bkrr_day19_common:
 
     mi "Спасибо!"
 
-    play sound sfx_open_door_1
+    play sound sfx_open_door_1 fadein 3
 
     un "Ну, наконец-то."
     "Лена стояла в дверях и снисходительно наблюдала за нами.{w} Может, она и была младше Мику с Алисой, но вела себя куда более зрело, чем они."
@@ -1699,20 +1705,20 @@ label bkrr_day19_common:
 
     window hide
     stop ambience fadeout 1
-    show bg ext_house_of_un_day with dissolve
+    scene bg ext_house_of_un_day with dissolve
     play ambience ambience_camp_center_day fadein 1
     window show
 
     "Я подхватил пионерок под руки и мы отправились на завтрак."
 
     window hide
-    show bg ext_library_sunset_bkrr with fade2
+    scene bg ext_library_sunset_bkrr with fade2
     window show
 
     "Лагерь был украшен, начищен и приведен в полный порядок. На стенде висела свежая стенгазета.{w} На ней очень правдоподобно были нарисованы пионеры, видимо, изображающие разные культурные мероприятия."
 
     window hide
-    show bg ext_square_sunset
+    scene bg ext_square_sunset
     show mi upset pioneer at cright
     show un normal pioneer at cleft
     with bkrr_fade(1.0)
@@ -1775,7 +1781,7 @@ label bkrr_day19_common:
 
     show us normal sport with dspr
 
-    us "Не-не. Я сегодня тихая! Веду себя хорошо, порядок не нарушаю, Уля сегодня пионер-всем ребятам пример!"
+    us "Не-не. Я сегодня тихая! Веду себя хорошо, порядок не нарушаю, Уля сегодня пионер-всем-ребятам-пример!"
     me "Ульяна, а ты хорошо себя чувствуешь?"
     "Я постарался изобразить беспокойство."
     me "Ты, и не нарушаешь порядок? Может, перегрелась?"
@@ -1824,9 +1830,19 @@ label bkrr_day19_common:
     th "Парик… Простынь…{w} Музклуб… поцелуй.{w} Это что, Лена была? Да ну, быть не может."
     th "Или наоборот, может?{w} Я с интересом посмотрел на неё."
     me "И как?"
-    ## (Изображение маленькой мертвой девочки Садако на черном фоне?)
 
+    window hide
+    show cg d19_ghost_black:
+        truecenter
+        pause 0.5
+        linear 0.5 zoom 2.5 yalign 0.2
+    show mi normal pioneer
+    with dissolve
+    play sound sfx_scary_sting fadein 2
+    pause 0.5
+    hide cg with dissolve
     show us laugh sport with dspr
+    window show
 
     "Ульяна засмеялась."
     us "Ужас! Я слышу, скребутся в окно.{w} Гляжу, там привидяшка. И руками вот так делает «У-у-у-у!!!». Я как заору!"
@@ -1853,7 +1869,7 @@ label bkrr_day19_common:
     show un serious pioneer
     with dspr
 
-    us "Фу, гадость какая"
+    us "Фу, гадость какая."
     un "Да уж…"
 
     window hide
@@ -1905,7 +1921,7 @@ label bkrr_day19_common:
     show mi upset pioneer with dspr
 
     mi "Но у нас и шкафа никакого нет. Куда же мы их денем?"
-    me "Да никуда. Просто порепетируем все вместе. до самого обеда. Никуда не отлучаясь."
+    me "Да никуда. Просто порепетируем все вместе. До самого обеда. Никуда не отлучаясь."
 
     show mi normal pioneer with dspr
 
@@ -1948,8 +1964,8 @@ label bkrr_day19_common:
     mt "Лена, иди к Славе, там краски и все что нужно. А вас, музкружок, я попрошу остаться."
 
     hide un with easeoutright
-    show dv grin pioneer2 at left
-    show us smile sport at right
+    show dv grin pioneer2 at fleft
+    show us smile sport at fright
     with dissolve
 
     dv "Но мы торопимся!"
@@ -1963,7 +1979,7 @@ label bkrr_day19_common:
     show us sad sport with dspr
 
     "Ульяна так же притворно простонала:"
-    us "Живот прихватило! ой-ёй-ёй!!!"
+    us "Живот прихватило! Ой-ёй-ёй!!!"
 
     show mt sad pioneer with dspr
 
@@ -2010,20 +2026,20 @@ label bkrr_day19_common:
     us "Я тоже!"
     me "Ой-ой. Очень мне надо вас туда-сюда водить."
 
-    show mi smile pioneer at fright with easeinright
+    window hide
+    hide us with dissolve
+    show mi smile pioneer at fright with dissolve
+    window show
 
-    mi "Я присмотрю! Они же девочки, нехорошо, чтобы мальчик их в такое место провожал.{w} Вот если бы это была, например, тайга с медведями, тогда да, Семен бы стоял с ружьем, или с топором и разгонял бы волков и медведей, ну а здесь ведь пионерлагерь, здесь диких животных нет.{w} А вообще, Лена, рассказывала, что тут олень есть, а раз есть олень, значит, могут быть и волки…"
+    mi "Я присмотрю! Они же девочки, нехорошо, чтобы мальчик их в такое место провожал.{w} Вот если бы это была, например, тайга с медведями, тогда да, Семен бы стоял с ружьем, или с топором и разгонял бы волков и медведей, ну а здесь ведь пионерлагерь, здесь диких животных нет."
+    mi "А вообще, Лена, рассказывала, что тут олень есть, а раз есть олень, значит, могут быть и волки…"
     "Ольга явно перестала понимать, о чём речь и только кивнула."
 
     show mt sad pioneer with dspr
 
     mt "Я поняла. Мику, проводишь если что. Девочки, я вас очень прошу, не натворите ничего в последний день, ладно?"
-
-    show us smile sport with dspr
-
     us "Ладно!"
 
-    hide us
     hide mi
     hide dv
     with dissolve
@@ -2103,8 +2119,6 @@ label bkrr_day19_common:
     window hide
     scene bg ext_music_club_sunset_bkrr
     show mi normal pioneer at center
-    show dv normal pioneer2 at left
-    show us normal sport at right
     with fade2
     window show
 
@@ -2117,7 +2131,7 @@ label bkrr_day19_common:
     me "Да, врать ты точно не умеешь. Девчата, колитесь, что вы задумали?"
     "Алиса посмотрела на меня и зловеще пообещала:"
 
-    show dv sad pioneer2 at left with dspr
+    show dv sad pioneer2 at left with dissolve
 
     dv "Скоро узнаешь. Скоро!"
 
@@ -2129,7 +2143,7 @@ label bkrr_day19_common:
 
     dv "Клаус обещал заскочить за гитарой… Они в домике репетируют что-то.{w} А Трука, вроде бы, Антон Иванович уведет встречать гостей."
 
-    show us sad sport with dspr
+    show us sad sport at right with dissolve
 
     us "Жалко! С ним веселее.{w} Они там будут на линейке стоять, перед комиссией выпендриваться, а мы, значит, сидим в четырех стенах. Под надзором этого вот. Лохматого. По беспорядочным связям."
     me "Алиса, не ворчи. Зато после обеда как зажжем!"
@@ -2174,10 +2188,10 @@ label bkrr_day19_common:
     show dv grin pioneer2 with dspr
 
     "Алиса недоуменно посмотрела на девчонок."
-    dv "Ничего не понимаю Ты о чем вообще?"
+    dv "Ничего не понимаю. Ты о чём вообще?"
     "Мику улыбнулась."
 
-    show mi sad_smile pioneer at right with dissolve
+    show mi sad_smile pioneer at fright with dissolve
 
     mi "Сеня такой романтик…{w} А ведь правда, девочки. Сегодня мы последний раз войдем сюда, как одна команда.{w} Кончается смена, скоро мы уедем отсюда и наверное уже никогда не вернёмся. И останется только вспоминать, смотреть фотографии…"
 
@@ -2233,9 +2247,9 @@ label bkrr_day19_common:
     mi "Знаешь, в Японии как раз моются перед ванной… Сначала принимают душ, а только потом садятся в ванную.{w} Это потому что вода дорогая и ванну после каждого купания не выпускают, её берегут.{w} А когда все искупались – эту воду ещё заливают в стиральную машину и стирают в ней."
 
     show mi normal pioneer at center
-    show dv normal pioneer2 at right
+    show dv normal pioneer2 at fright
     with ease
-    show us upset sport at left with dissolve
+    show us upset sport at fleft with dissolve
 
     us "Ужас. Ну, хоть борщ потом из той воды не варите, и то ладно."
 
@@ -2288,12 +2302,10 @@ label bkrr_day19_common:
     "Вместо ответа она обняла меня и прижалась щекой к моей груди."
     "Все-таки здорово, когда есть кто-то, кому можно вот так сказать эти слова.{w} Ульяна рылась в тумбочке, Алиса возилась с гитарой и никто на нас не смотрел."
     "Не удержавшись, я положил руку ей на бедро, и…"
-
-    with vpunch
-
     "По клубу разнесся рев раненого слона."
 
     show dv angry pioneer2 far at fleft with dissolve
+    with vpunch
 
     dv "СЕМЕН!!! Я тебе руки оторву! Тебе кто разрешал её лапать?"
 
@@ -2302,7 +2314,7 @@ label bkrr_day19_common:
         subpixel True
         zoom 1.1
         ease 0.5 zoom 1.0
-    with dissolve
+    with None
 
     "Я быстро отдернул руки от Мику, и мы притворились, что репетируем."
     me "Алиса, ты чего?"
@@ -2310,7 +2322,7 @@ label bkrr_day19_common:
     me "Да не ори ты так. Я её люблю, никто не умрет, если мы разок обнимемся, что ты как мамаша?"
 
     show mi shy pioneer close with dspr
-    show us laugh2 sport at right with easeinbottom
+    show us laugh2 sport at fright behind mi with easeinbottom
 
     us "Ой… как мило! Он сказал громко и вслух. Ну все, теперь не отвертится!{w} Такой момент пропустили! Надо было записать, вон и микрофон рядом… Может еще раз повторите, а?"
 
@@ -2318,7 +2330,7 @@ label bkrr_day19_common:
 
     show dv normal pioneer2 far with dspr
 
-    dv "Да любите вы кого хотите, ты что несешь вообще? Ты зачем мою гитару лапал?"
+    dv "Да любите вы кого хотите, ты что несешь вообще?{w} {i}Ты зачем мою гитару лапал?{/i}"
     me "Гитару?"
     dv "Гитару, гитару! Я вчера струны отпустила, а сегодня опять натянуты. Ты зачем её трогал?"
     me "Да вот, понимаешь… Ну…"
@@ -2344,7 +2356,7 @@ label bkrr_day19_common:
     mi "Д-да…"
     "Кажется, Мику была под впечатлением от моего признания.{w} Все-таки шепотом и на ушко это одно, а вот так, на весь клуб – совсем другое."
 
-    show dv grin pioneer2 with dspr
+    show dv grin pioneer2 far with dspr
 
     "Алиса только отмахнулась."
     dv "Некогда пугаться, репетируем!"
@@ -2398,7 +2410,7 @@ label bkrr_day19_common:
 
     dv "Мне кажется — неплохо. Семён, наши усилия были не напрасны. Цени!"
     me "Я очень ценю! Спасибо за науку!"
-    "Воспользовавшись паузой я цапнул оставшееся от чаепития печенье и с аппетитом захрустел им."
+    "Воспользовавшись паузой, я цапнул оставшееся от чаепития печенье и с аппетитом захрустел им."
 
     show dv laugh pioneer2 far with dspr
 
@@ -2419,7 +2431,7 @@ label bkrr_day19_common:
     dv "Зачем-зачем. За шкафом!{w} Давай уже! Хочу убедиться, что ты не растерял с таким трудом вбитые в твою голову навыки.{w} Мику, бери вторую гитару."
     "Мику открыла нотную тетрадь и охнула."
 
-    show mi surprise pioneer with dissolve
+    show mi surprise pioneer far at center with dissolve
 
     mi "Ой! А кто тут рисовал? Ульяна, ты?"
 
@@ -2427,29 +2439,33 @@ label bkrr_day19_common:
 
     us "Что я, маленькая что ли?{w} Нет! Не отвечай. Ничего я не рисовала!"
 
-    show mi upset pioneer with dspr
+    show mi upset pioneer far with dspr
 
     mi "Ну а кто тогда?"
 
-    show us normal sport with dspr
+    window hide
+    hide dv
+    hide us
+    with dissolve
+    show us normal sport far at cright
+    show dv normal pioneer2 far at cleft
+    with dissolve
+    window show
 
     us "Может, Лена?"
-
-    show dv normal pioneer2 with dspr
-
     dv "Ленка рисует красиво, а тут каракули какие-то… Явно твоих рук дело.{w} Смотри: это точно Мику, волосы до земли… А это… Кто это? Сень, ты что ли?"
     "Я сглотнул."
     "Вчера Юля лежала там и что-то рисовала в тетради…"
 
-    show dv smile pioneer2 with dspr
+    show dv smile pioneer2 far with dspr
 
     dv "Смотри, смотри… Это они под дождём… Это – он на гитаре шпарит…{w} А это с топором, наверное когда вы с ним дрова рубили. Только фигня какая-то. Это же раньше было… Ребусы какие-то."
 
-    show us smile sport with dspr
+    show us smile sport far with dspr
 
     us "А это чего? Сенька, с кем это ты обжимаешься? Микуська, это вы где? И почему ты в панамке?"
 
-    show mi normal pioneer with dspr
+    show mi normal pioneer far with dspr
 
     mi "Не знаю… Сеня, а что это вообще за рисунки такие?"
 
@@ -2469,6 +2485,8 @@ label bkrr_day19_common:
         subpixel True
         zoom 1.3
         ease 10.0 zoom 1.0
+    show prologue_dream:
+        alpha 0.7
     with flash
     window show
     pi "Я взял топор, и…"
@@ -2477,7 +2495,7 @@ label bkrr_day19_common:
     scene bg int_music_club_mattresses_sunset
     show dv normal pioneer2 at left
     show mi normal pioneer at center
-    show us smile sport at fright
+    show us smile sport at right
     with bkrr_fade(2.0)
     window show
     ## (конец флэшбэка)
