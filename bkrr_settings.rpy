@@ -1960,6 +1960,7 @@ init 2:
         make_sprites_for('mt', 'torn', ['es:body', 'mod:torn', 'es:<emotion>'], distances=['normal'])
 
         make_sprites_for('sh', 'bathrobe', ['mod:bathrobe', 'es:<emotion>'])
+        make_sprites_for('sh', 'towel', ['mod:body', 'es:<emotion>'])
         make_sprites_for('sh', 'shirt', ['mod:shirt', 'es:<emotion>'])
         make_sprites_for('sh', 'red_nose pioneer', ['es:body', 'es:<emotion>', 'mod:red_nose'])
 
