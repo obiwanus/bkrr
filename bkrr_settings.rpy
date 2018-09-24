@@ -554,7 +554,7 @@ init 2:
     image bg ext_path3_day_bkrr = MOD_IMAGES + "bg/ext_path3_day.jpg"
 
     image bg ext_pier_day = MOD_IMAGES + "bg/ext_pier_day.jpg"
-    image bg ext_pier_sunset = im.MatrixColor(MOD_IMAGES + "bg/ext_pier_day.jpg", bkrr_tint["sunset"])
+    image bg ext_pier_sunset = MOD_IMAGES + "bg/ext_pier_sunset.jpg"
 
     # "Новые" фоны из модпака, из инета, дополненные, отредактированные и переобъявленные оригинальные и пр.
 
@@ -684,6 +684,10 @@ init 2:
             truecenter
             pos (0.78, 0.67)
 
+    image bg ext_dining_hall_away_sunset_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_away_sunset.jpg", MOD_IMAGES  + "misc/headlamps_missing_far.png")
+    image bg ext_dining_hall_near_sunset_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_near_sunset.jpg", MOD_IMAGES  + "misc/headlamps_missing_close.png")
+    image bg ext_dining_hall_away_day_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_away_day.jpg", MOD_IMAGES  + "misc/headlamps_missing_far.png")
+    image bg ext_dining_hall_near_day_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_near_day.jpg", MOD_IMAGES  + "misc/headlamps_missing_close.png")
 
     # Концертные фоны
 
