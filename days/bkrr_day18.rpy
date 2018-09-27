@@ -6102,7 +6102,7 @@ label bkrr_day18_common:
 
     window hide
     stop ambience fadeout 1
-    show bg int_music_club_mattresses_night:
+    show bg int_music_club_mattresses_night_closed_piano:
         yalign 1.0
         zoom 1.03
     with dissolve
@@ -6115,7 +6115,7 @@ label bkrr_day18_common:
 
     window hide
     $ bkrr_timeskip_short()
-    show bg int_music_club_mattresses_night:
+    show bg int_music_club_mattresses_night_closed_piano:
         yalign 1.0
         zoom 1.03
     with bkrr_timeskip_transition()
@@ -6149,7 +6149,7 @@ label bkrr_day18_common:
 
     "Увидев, кто вошел, я тут же забыл о музыке.{w} Вообще-то мне бы уже пора было привыкнуть к его появлениям."
 
-    show bg int_music_club_mattresses_night:
+    show bg int_music_club_mattresses_night_closed_piano:
         yalign 1.0
         zoom 1.03
         linear 0.2 zoom 1.0
@@ -6269,7 +6269,7 @@ label bkrr_day18_common:
 
     window hide
     $ bkrr_timeskip_short()
-    scene bg int_music_club_mattresses_night
+    scene bg int_music_club_mattresses_night_closed_piano
     show bkrr_uv_piano
     show bkrr_pi normal at bkrr_sit_center
     with bkrr_timeskip_transition()
@@ -6326,7 +6326,7 @@ label bkrr_day18_common:
         ease 3.0 alpha 0.0
     with bkrr_fade(1.0, "black")
     $ renpy.pause(1.5, hard=True)
-    scene bg int_music_club_mattresses_night
+    scene bg int_music_club_mattresses_night_closed_piano
     show bkrr_uv_piano
     show bkrr_pi normal at bkrr_sit_center
     with bkrr_fade(1.0, "black")
@@ -6654,7 +6654,7 @@ label bkrr_day18_common:
 
     window hide
     $ renpy.pause(1.0, hard=True)
-    scene bg int_music_club_mattresses_night with dissolve
+    scene bg int_music_club_mattresses_night_closed_piano with dissolve
     show uv smile at center with dissolve
     window show
 
@@ -6768,7 +6768,7 @@ label bkrr_day18_common:
     $ renpy.pause(1.0, hard=True)
     stop ambience fadeout 1
     play sound sfx_open_door_1 fadein 3
-    scene bg int_music_club_mattresses_night with dissolve
+    scene bg int_music_club_mattresses_night_closed_piano with dissolve
     play ambience ambience_int_cabin_night fadein 1
     window show
 

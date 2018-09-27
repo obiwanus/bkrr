@@ -684,6 +684,7 @@ init 2:
     image bg int_clubs_male_sunset_wrecked_new_glass = MOD_IMAGES + "bg/int_clubs_male_sunset_wrecked_new_glass.jpg"
     image club_planer = MOD_IMAGES + "misc/planer.png"
     image bkrr_claws = MOD_IMAGES + "misc/claws.png"
+    image bg int_music_club_mattresses_night_closed_piano = bkrr_fast_composite(ES_IMAGES + "bg/int_music_club_mattresses_night.jpg", MOD_IMAGES + "misc/int_music_club_mattresses_night_closed_piano.png")
     image bkrr_uv_piano = MOD_IMAGES + "misc/uv_piano.png"
     image bkrr_uv_mattress:
         contains:
