@@ -2008,7 +2008,7 @@ label bkrr_day17_common:
 
     "Рыжая отобрала у Трука рюкзак и взвалила его на спину."
 
-    show us calml sport at right with easeinbottom
+    show us calml backpack sport at right with easeinbottom
 
     us "Ох, ничего себе… Что ж ты там такое носишь? Надо было его на Сеньку нагрузить. Что у тебя?"
 
@@ -2016,7 +2016,7 @@ label bkrr_day17_common:
 
     tr "Вещи. Спасибо, что помогай!"
 
-    show us smile with dspr
+    show us smile backpack sport with dspr
 
     us "Меня Ульяна зовут!"
 
@@ -2024,11 +2024,11 @@ label bkrr_day17_common:
 
     tr "Чень Прятно! Трук!"
 
-    show us grin with dspr
+    show us grin backpack sport with dspr
 
     us "Друг! Какой хорошенький. Всегда хотела младшего братика!"
 
-    show us grin:
+    show us grin backpack sport:
         linear 0.3 pos (0.6, 0)
     with None
     show tr surp with dspr
@@ -2039,14 +2039,14 @@ label bkrr_day17_common:
 
     "Антон Иванович улыбнулся."
 
-    show us grin:
+    show us grin backpack sport:
         linear 0.5 pos (0.7, 0)
     with None
     show tr sad with dspr
 
     ant "Вообще-то ему четырнадцать."
 
-    show us normal with dspr
+    show us normal backpack sport with dspr
 
     us "Да?"
     "Ульяна недоверчиво посмотрела на вьетнамца."
@@ -2055,7 +2055,7 @@ label bkrr_day17_common:
 
     us "А чего он тогда такой маленький? Ну, ладно. Пойдём кушать! Настоящие советские продукты! Откормим тебя, будешь большой-пребольшой."
 
-    show us grin with dspr
+    show us grin backpack sport with dspr
 
     "Я ожидал, что азиат обидится, но он только стрелял по нам своими смышлёными узкими глазёнками и время от времени повторял за нами отдельные слова."
 
@@ -2064,7 +2064,7 @@ label bkrr_day17_common:
     tr "Кшать! Кшать!"
 
     hide tr with dissolve
-    show us normal sport:
+    show us normal backpack sport:
         ease 0.5 pos (0.6, 0)
 
     "Вожатая посмотрела на эту сцену с умилением."
@@ -2074,12 +2074,12 @@ label bkrr_day17_common:
     mt "Уля… может, тогда и возьмёшь над ним шефство?{w} Ну, покажешь что и где. А мы пока посмотрим, в какой из домиков им заселиться."
     mt "Только я тебя умоляю, без международных скандалов. Сможешь два дня не хулиганить?"
 
-    show us upset with dspr
+    show us upset backpack sport with dspr
 
     us "Два дня?"
     "Уля вздохнула."
 
-    show us normal with dspr
+    show us normal backpack sport with dspr
 
     us "Я попробую."
 
@@ -2227,13 +2227,13 @@ label bkrr_day17_common:
     sl "И будет у нас два рыжих гитариста. И рыжая барабанщица. Да, Уля?"
 
     hide sl with dissolve
-    show us grin sport at cleft with dissolve
+    show us grin backpack sport at cleft with dissolve
 
     us "И назовём группу «Зловещие морковки». Вот только, придётся Мику с Сенькой покрасить. Я в подсобке пакетик хны видела, как они уснут, так и займусь."
     "Немец попытался понять, шутит она, или нет, затем поддержал разговор."
     kla "У нас в семье все рыжие. Мама, папа, дедушки-бабушки."
 
-    show us smile with dspr
+    show us smile backpack sport with dspr
 
     us "У нас тоже. Только дедушка уже седой. А у Друга, наверное, все чернявые и маленькие?"
 
@@ -2243,7 +2243,7 @@ label bkrr_day17_common:
     "Вьетнамец кивнул."
     tr "Мяуленкий. И чеурний.{w} Все."
 
-    show us laugh2 sport:
+    show us laugh2 backpack sport:
         cleft
         ease 0.5 xpos 0.52
     with None

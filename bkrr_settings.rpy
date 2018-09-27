@@ -1993,6 +1993,7 @@ init 2:
         make_sprites_for('us', 'bdsm', ['es:body', 'mod:bdsm', 'es:<emotion>'])  # не все эмоции доступны
         make_sprites_for('us', 'night_shirt', ['mod:night_shirt', 'es:<emotion>'])
         make_sprites_for('us', 'night_shirt', ['mod:night_shirt', 'mod:<emotion>'], emotions=['yawn'])
+        make_sprites_for('us', 'backpack sport', ['es:body', 'es:sport', 'mod:backpack', 'es:<emotion>'], distances=['normal'])
 
         make_sprites_with_custom_emotions(['sad'], 'cs', 'body', ['mod:body', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad'], 'cs', 'panties', ['mod:body', 'mod:panties', 'es:<emotion>'])
