@@ -4784,7 +4784,7 @@ label bkrr_day18_common:
 
     window hide
     $ bkrr_timeskip_short()
-    scene bg ext_music_club_verandah_final_rehearsal with bkrr_timeskip_transition()
+    scene bg ext_music_club_verandah_final_rehearsal_shen with bkrr_timeskip_transition()
     play sound_loop ambience_medium_crowd_outdoors fadein 2
     window show
 
