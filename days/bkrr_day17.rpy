@@ -805,17 +805,14 @@ label bkrr_day17_common:
     scene bg ext_house_of_sl_day with fade2
     window show
 
-    "Если уже вваливаться с утра в гости к девушке, то лучше не с пустыми руками. Цветов добыть было негде, сладостей – тем более, но кое-что всё-таки придумалось. Я сделал крюк к домику Славяны и постучал в стекло на двери."
+    "Если уже вваливаться с утра в гости к девушке, то лучше не с пустыми руками.{w} Цветов добыть было негде, сладостей – тем более, но кое-что всё-таки придумалось. Я сделал крюк к домику Славяны и постучал в стекло на двери."
 
     play sound sfx_knocking_door_2
 
     me "Славя? Извини, что так рано! Можно?"
 
     scene bg ext_house_of_sl_day:
-        parallel:
-            ease 3 zoom 4.7
-        parallel:
-            ease 3 pos (-2.05, -1.55)
+        ease 2.0 zoom 4.7  pos (-2.05, -1.55)
 
     "Ответа не было, так что я прислонился лбом к стеклу и попытался понять, есть ли кто-то внутри. Лишь бы не подумали, что подглядываю."
 
@@ -861,7 +858,7 @@ label bkrr_day17_common:
 
     mz "Доброе утро! Чего орёшь? Я споткнулась, палец ушибла! Всё из-за тебя."
     me "Извини! Я от неожиданности. Можно к вам?"
-    "Это была Женя. Лицо её почему-то было густо перемазано чем-то вроде варенья. От неё исходил сильный запах ягод. Она посмотрела через плечо, прежде чем ответить."
+    "Это была Женя. Лицо её почему-то было густо перемазано чем-то вроде варенья. От неё исходил сильный запах ягод.{w} Она посмотрела через плечо, прежде чем ответить."
 
     hide mz with dissolve
 
@@ -1106,7 +1103,7 @@ label bkrr_day17_common:
 
     "Кажется, Мику поняла, что я думал. Во всяком случае, она подмигнула мне и шутливо покачала головой, глядя мне в глаза."
     mi "Я девушка приличная!"
-    "Вместо ответа я коснулся губами её плеча, потом шеи и только потом ответил:"
+    "Вместо ответа я коснулся губами её плеча, потом шеи, и только потом ответил:"
 
     show mi happy underwear loose close with dspr
 
@@ -1124,7 +1121,7 @@ label bkrr_day17_common:
         alpha 0.0
         linear 4.0 alpha 1.0
 
-    "Она улыбнулась, подалась вперёд и наши губы соприкоснулись. На несколько секунд окружающий мир перестал существовать, исчезло всё, кроме мягкого тепла её губ."
+    "Она улыбнулась, подалась вперёд и наши губы соприкоснулись.{w} На несколько секунд окружающий мир перестал существовать, исчезло всё, кроме мягкого тепла её губ."
 
     window hide
     $ renpy.pause(2.0, hard=True)
@@ -1484,7 +1481,6 @@ label bkrr_day17_common:
     # ПРОПУСК, У ВОРОТ
     window hide
     $ bkrr_timeskip()
-
     $ bkrr_set_time("day")
 
     scene bg ext_camp_entrance_day with dissolve
@@ -1774,7 +1770,7 @@ label bkrr_day17_common:
 
     show kla normal sport far with dspr
 
-    show tr smile2 with dspr
+    show tr smile2 cas far with dspr
 
     tr_unk "…… …!"
 
@@ -1782,7 +1778,7 @@ label bkrr_day17_common:
 
     "Азиат сперва чирикнул что-то не по-нашему, потом помотал головой улыбнулся."
 
-    show tr smile with dspr
+    show tr smile cas far with dspr
 
     tr_unk "ЗдравствУйте!"
 
@@ -1913,26 +1909,26 @@ label bkrr_day17_common:
 
     tr_unk "Трук!"
 
-    show ant normal with dspr
+    show ant normal shirt with dspr
 
     ant "Друг, друг. А зовут тебя как?"
     "Азиат покачал головой, и повторил:"
 
-    show tr smile2 with dspr
+    show tr smile2 cas with dspr
 
     tr_unk "Трук! Нгуен Ван Трук."
 
-    show ant smile with dspr
+    show ant smile shirt with dspr
 
     ant "А, ты в этом смысле.{w} И Нг… гн…{w} В общем, пионер Трук из Вьетнама."
     "Антон Иванович повернулся к нам и развёл руками."
 
     show tr normal2 cas with dspr
-    show ant normal with dspr
+    show ant normal shirt with dspr
 
     ant "Трук плохо говорит по-русски, но всё понимает."
 
-    show tr laugh with dspr
+    show tr laugh cas with dspr
 
     "Вьетнамец улыбнулся ещё шире и покивал."
     tr "Да!"
@@ -1956,20 +1952,20 @@ label bkrr_day17_common:
     mt "Значит, больше никого не будет?"
     "Странно, но Ольга не выглядела расстроенной."
 
-    show ant smile with dspr
+    show ant smile shirt with dspr
 
     ant "Будут! Непременно будут! Только в пятницу, автобусом приедут с утра. На концерт.{w} А пока что покажем иностранным гостям быт советских пионеров, так сказать, изнутри! Я сам не вожатый, так что поручаю их вашим заботам."
 
-    show mt surprise with dspr
+    show mt surprise panama pioneer with dspr
 
     mt "А кто вы тогда?"
 
-    show ant normal with dspr
+    show ant normal shirt with dspr
 
     ant "Я? Так, на подмене."
     mt "Поня-а-атно."
 
-    show mt normal with dspr
+    show mt normal panama pioneer with dspr
 
     "Ольга посмотрела на папку."
     mt "Простите, я с этой лошадью, отвлеклась и забыла приветственную речь прочитать. Но вы наверное проголодались?"
@@ -2020,7 +2016,7 @@ label bkrr_day17_common:
 
     us "Меня Ульяна зовут!"
 
-    show tr smile with dspr
+    show tr smile cas with dspr
 
     tr "Чень Прятно! Трук!"
 
@@ -2031,7 +2027,7 @@ label bkrr_day17_common:
     show us grin backpack sport:
         linear 0.3 pos (0.6, 0)
     with None
-    show tr surp with dspr
+    show tr surp cas with dspr
 
     "Ульяна провела ладонью по чёрным жёстким волосам. Азиат удивлённо посмотрел на неё, но промолчал."
 
@@ -2042,7 +2038,7 @@ label bkrr_day17_common:
     show us grin backpack sport:
         linear 0.5 pos (0.7, 0)
     with None
-    show tr sad with dspr
+    show tr sad cas with dspr
 
     ant "Вообще-то ему четырнадцать."
 
@@ -2059,7 +2055,7 @@ label bkrr_day17_common:
 
     "Я ожидал, что азиат обидится, но он только стрелял по нам своими смышлёными узкими глазёнками и время от времени повторял за нами отдельные слова."
 
-    show tr smile2 with dspr
+    show tr smile2 cas with dspr
 
     tr "Кшать! Кшать!"
 
@@ -2084,27 +2080,27 @@ label bkrr_day17_common:
     us "Я попробую."
 
     hide us with dissolve
-    show mt smile at cright with ease
+    show mt smile panama pioneer at cright with ease
 
     mt "Тогда берите их и ведите в столовую. А мы с Антоном Ивановичем…"
 
-    show ant smile with dspr
+    show ant smile shirt with dspr
 
     ant "Просто Антон, прошу вас. Мне двадцать пять всего, хотя я и бородат."
 
-    show mt grin with dspr
+    show mt grin panama pioneer with dspr
 
     mt "Хорошо. Мы с Антоном перекусим вместе с вожатыми. Когда поедите, Серёжа покажет гостям лагерь…"
 
-    show mt normal with dspr
+    show mt normal panama pioneer with dspr
 
     mt "А где Сыроежкин?"
 
-    show ant normal with dspr
+    show ant normal shirt with dspr
 
     "Сыроежка с Женей уже улизнули куда-то, оставив нас наедине с приезжими. Я подумал о Мику и вздохнул."
 
-    show mt sad with dspr
+    show mt sad panama pioneer with dspr
 
     mt "Жалко. Я думала, он будет экскурсоводом, у него хорошо получается. Ну, тогда – Семён, Ульяна, Славяна, поручаю всё вам!{w} Мы подготовим жильё, а вы проводите гостей на завтрак."
 
@@ -2128,7 +2124,7 @@ label bkrr_day17_common:
     kla "Уха? Это рыбный суп, да?"
     me "Ну, да."
 
-    show kla smile with dspr
+    show kla smile sport with dspr
 
     kla "Очень люблю. У нас рядом с фермой озеро, и мы часто едим рыбу."
     "Трук подумал немного и высказал своё мнение:"
@@ -2142,7 +2138,7 @@ label bkrr_day17_common:
     me "Тогда вам повезло! Мы сегодня наловили рыбы и повара обещали приготовить что-то очень-очень вкусное."
     "Клаус кивнул."
 
-    show kla normal with dspr
+    show kla normal sport with dspr
 
     kla "Мне вообще нравится русская кухня. Только эти мясные шарики в тесте. Пельмени.{w} Мы когда поломались, остановились в деревне, и хозяйка дома нас ими кормила."
     kla "Большая-большая миска, полная пельменей. И она очень обижалась если всё не съесть. Как вы их едите?"
@@ -2150,12 +2146,12 @@ label bkrr_day17_common:
     kla "Да, я русский язык изучаю дополнительно. Он красивый! Дома я даже в олимпиаде участвовал по русскому."
     "Он помолчал затем улыбнулся."
 
-    show kla smile with dspr
+    show kla smile sport with dspr
 
     kla "Правда, приз взять не смог."
     me "Здорово. А я немецкий попытался учить в своё время, но дальше «во из дер банхоф» не продвинулся."
 
-    show kla normal with dspr
+    show kla normal sport with dspr
 
     "Клаус понимающе улыбнулся."
     kla "У нас грамматика сложная. А мне наоборот, русский казался тяжёлым."
@@ -2215,12 +2211,12 @@ label bkrr_day17_common:
     me "Играю – это громко сказано. У нас в лагере есть группа, а я у них вроде как заменяю заболевшего басиста. Ну, вышло так."
     me "А Ульяна, которая твоего друга с котом путает – ударница.{w} Ещё есть Мику, она у нас главная в музкружке. Она с самого детства учится."
 
-    show kla smile with dspr
+    show kla smile sport with dspr
 
     kla "Оу. Понял. А я на гитаре. Но я не очень давно. Я… zwei… Два года."
     me "Тогда обязательно познакомим тебя с Алисой. Она тоже гитаристка. И тоже рыжая, "
 
-    show kla normal with dspr
+    show kla normal sport with dspr
     show sl smile2 pioneer at cleft with dissolve
 
     "Славяна улыбнулась."
@@ -2270,18 +2266,18 @@ label bkrr_day17_common:
     mi "Юрий Антонов?{w} Нет?"
     me "Тоже нет."
 
-    show mi smile with dspr
+    show mi smile pioneer close with dspr
 
     mi "Тогда Семён! Который променял меня на иностранных пионеров!"
     "Мику погладила меня по руке."
     mi "А я вышла подышать, надоело в комнате сидеть, а в клубе тоже шуметь нельзя, так что просто гуляю."
 
-    show mi surprise with dspr
+    show mi surprise pioneer close with dspr
 
     mi "Ой, а почему гостей так мало? Ну, неважно, главное что приехали. Сеня, а ты нас познакомишь?"
     me "Да не вопрос. Прости, что так пропал, но вожатая приставила меня к ним нянькой, так что веду их в столовую."
 
-    show mi normal with dspr
+    show mi normal pioneer close with dspr
 
     mi "Не страшно."
     mi "У меня всё равно были свои дела. Ничего, сейчас освободишься и пойдём репетировать, а то ведь до концерта осталось совсем недолго, а нам ещё нужно много чего сделать, так что нельзя терять времени."
@@ -2333,12 +2329,12 @@ label bkrr_day17_common:
     sl "А что может случиться?"
     me "Мику. Ульяна. Клаус. Музыканты-энтузиасты. В музклубе. Много инструментов. Смекаешь?"
 
-    show sl smile2 with dspr
+    show sl smile2 pioneer with dspr
 
     sl "Себя ты, значит, к энтузиастам не относишь?"
     me "Ну, я не такой фанат. А они, боюсь, сядут выяснять, кто лучше играет, и… до ужина мы их потеряем."
 
-    show sl laugh with dspr
+    show sl laugh pioneer with dspr
 
     sl "Я поняла, о чём ты. Значит, если не придёте через полчаса, мы сами всё съедим. Обожаю рыбку."
     "Она улыбнулась и пошла в сторону столовой."
@@ -2429,7 +2425,7 @@ label bkrr_day17_common:
     th "Поел бы без часов… Бегай теперь туда-сюда."
     me "Слушай, я дам тебе ключ, сходи сам, ладно? А то я с утра на ногах, немного подустал."
 
-    show kla normal with dspr
+    show kla normal sport with dspr
 
     kla "Да. Извините за беспокойство."
 
@@ -2484,8 +2480,8 @@ label bkrr_day17_common:
     with vpunch
 
     "Из клуба раздался крик «СТОЯТЬ!!!» и что-то зазвенело."
-    $ renpy.pause(0.5, hard=True)  # чтобы звон успел доиграть
-    play sound sfx_open_door_1
+    $ renpy.pause(0.5, hard=True)
+    play sound2 sfx_open_door_1
     scene bg ext_music_club_verandah_day_v9_ajar:
         truecenter
         zoom 3.0
@@ -2587,14 +2583,14 @@ label bkrr_day17_common:
     dv "А нечего лазить! На нём же не написано, что он иностранный пионер."
     dv "Улька всю ночь шумела и ворочалась, так я тут прилегла.{w} Просыпаюсь: а тут непонятно кто, цапнул мою гитару да ещё и играть на ней пытается."
 
-    show dv guilty with dspr
+    show dv guilty bkrr_sport with dspr
 
     dv "Ну, я встала, «кто такой?» – спрашиваю. А он глаза разул, начал не по-нашему что-то говорить. Я думала, шпион.{w} Спросонок не сообразила, что иностранцы уже приехали."
     th "Ещё бы. Увидев незнакомую полураздетую Алису я бы тоже разул глаза…"
 
     "Алиса развела руками и снова завелась:"
 
-    show dv angry with dspr
+    show dv angry bkrr_sport with dspr
 
     dv "А всё равно, нечего гитару без спроса лапать!"
 
@@ -2604,7 +2600,7 @@ label bkrr_day17_common:
 
     kla "Прости. Я гитарист.{w} Немного.{w} Хотел посмотреть."
 
-    show dv guilty with dspr
+    show dv guilty bkrr_sport with dspr
 
     "Ульяна заглянула в открытую дверь и заметила:"
 
@@ -2618,7 +2614,7 @@ label bkrr_day17_common:
 
     hide us with easeoutright
 
-    show dv angry with dspr
+    show dv angry bkrr_sport with dspr
 
     "Алиса возмутилась."
     dv "Дура!"
@@ -2628,7 +2624,7 @@ label bkrr_day17_common:
     "Клаус покраснел ещё гуще."
     kla "Нет. Гитару посмотреть."
 
-    show dv shy with dspr
+    show dv shy bkrr_sport with dspr
 
     "Алиса подозрительно оглядела гостя."
     dv "Ты? Гитарист?{w} Ну, посмотрим. Ладно, я тебя не зашибла?{w} Меня Алиса зовут."
@@ -2637,7 +2633,7 @@ label bkrr_day17_common:
 
     kla "Алиса? Семён мне говорил про тебя."
 
-    show dv guilty with dspr
+    show dv guilty bkrr_sport with dspr
 
     dv "Не верь! Я его нечаянно ушибла! Я на людей не кидаюсь!"
 
@@ -2646,15 +2642,15 @@ label bkrr_day17_common:
     dv "Без причины.{w} Так что если рассказывал, что я …{w} В общем не верь!"
     kla "Нет, он говорил, что ты играешь на гитаре."
 
-    show dv normal with dspr
+    show dv normal bkrr_sport with dspr
 
     dv "Ну, есть такое. Хочешь послушать?"
 
-    show kla normal with dspr
+    show kla normal sport with dspr
 
     kla "Конечно! Только сходим сначала поесть. Очень есть хочется!"
 
-    show dv smile with dspr
+    show dv smile bkrr_sport with dspr
 
     "Алиса улыбнулась и засуетилась."
 
@@ -2669,16 +2665,16 @@ label bkrr_day17_common:
     dv "А у нас ничего нет… Сень, у тебя всегда печенька есть. Дай, пожалуйста?"
     me "Если я буду всем печеньки раздавать, то у меня ведь не останется. Нет, ничего нет.{w} Не переживай, в столовой уже готова еда."
 
-    show kla shy with dspr
+    show kla shy sport with dspr
 
     kla "Футболку испачкал…"
 
-    show dv guilty with dspr
+    show dv guilty bkrr_sport with dspr
 
     dv "Прости."
     "Алиса потупилась."
 
-    show kla normal with dspr
+    show kla normal sport with dspr
 
     kla "Ничего! Сейчас. Извините, я тут переоденусь?"
 
@@ -2686,7 +2682,7 @@ label bkrr_day17_common:
 
     "Он раскрыл чемодан, вытащил из него три большие банки варенья и достал аккуратно сложенную белую рубашку.{w} Надев её, он стал почти неотличим от наших пионеров, только без привычного шеврона на рукаве."
 
-    show dv shy with dspr
+    show dv shy bkrr_sport with dspr
 
     "Алиса не отрываясь смотрела на его веснушчатую спину. Разумеется, Ульяна не оставила это без внимания."
 
@@ -2694,7 +2690,7 @@ label bkrr_day17_common:
 
     us "Алис, а на что это ты так смотришь? Как кошка на сметану."
 
-    show dv guilty with dspr
+    show dv guilty bkrr_sport with dspr
 
     dv "Ничего я не смотрю! Вы идите, я пока тут приберусь."
     "Она бросила быстрый взгляд в угол, где на самом видном месте валялся её купальник.{w} Интересно, меня она, значит, не стесняется."
@@ -2720,7 +2716,7 @@ label bkrr_day17_common:
     us "Это наши иностранные гости!"
     "Ульяна сказала это с таким важным видом, словно сама организовала их визит и лично привезла в лагерь."
 
-    show nt smile with dspr
+    show nt smile cook with dspr
 
     nt "Вот как? Ну, берите, угощайтесь!"
 
@@ -2731,7 +2727,7 @@ label bkrr_day17_common:
     nt "Отчего же нельзя? Берите, конечно! Саша с Сеней молодцы. Рыбку принесли отборную, уха вышла – объедение.{w} Жалко, не получится пожарить, слишком мало, всем не хватит. Мы сделали рыбных котлет."
     "Тётя Наташа помолчала, затем добродушно рассмеялась."
 
-    show nt laugh with dspr
+    show nt laugh cook with dspr
 
     nt "Но добытчика обделить не могли! Семён, забирай свою долю!"
 
@@ -2764,7 +2760,7 @@ label bkrr_day17_common:
 
     mi "Школу сначала закончи! Невеста. А то глянет он в твой табель, а там по поведению неуд."
 
-    show us smile with dspr
+    show us smile sport close with dspr
 
     us "Ага! Значит, вам с Сенькой можно планы строить, а простой барабанщице уже и помечтать нельзя?"
 
@@ -2774,11 +2770,11 @@ label bkrr_day17_common:
     "Трук пододвинул свою порцию рыбы Ульянке."
     tr "Ня!"
 
-    show us sad with dspr
+    show us sad sport close with dspr
 
     us "Ну, ты чего! Ешь, я пошутила."
 
-    show tr smile with dspr
+    show tr smile pioneer close with dspr
 
     tr "Ня! Я не хотел, а ты хотела. Кушай!"
     us "Друг, ну я не могу тебя объедать."
@@ -2786,7 +2782,7 @@ label bkrr_day17_common:
     tr "Улья надо бить сильняя! Ей мой сумка ещё до дом донести!"
 
     show us normal_dontlike sport close with dspr
-    show tr normal with dspr
+    show tr normal pioneer close with dspr
 
     "Ульяна со смесью удивления и возмущения посмотрела на вьетнамца. Тот снова дежурно улыбался."
 
@@ -2794,7 +2790,7 @@ label bkrr_day17_common:
 
     us "Какой хитрюга! Мы с ним сработаемся!"
 
-    show tr laugh with dspr
+    show tr laugh pioneer close with dspr
 
     tr "Да! Уля – друг! И Трук друг!"
 
@@ -2824,16 +2820,16 @@ label bkrr_day17_common:
     tr "Трук играет! Ня…"
     "Он прочирикал какое-то совсем незнакомое слово."
 
-    show mi upset with dspr
+    show mi upset pioneer with dspr
 
     mi "На чём?"
     "Он повторил. Мику попыталась разобрать название, но никто так ничего и не понял."
 
-    show mi normal with dspr
+    show mi normal pioneer with dspr
 
     mi "Всё равно не понимаю…"
 
-    show tr smile2 with dspr
+    show tr smile2 pioneer with dspr
 
     tr "Я показывать! Потом!"
 
@@ -2880,11 +2876,11 @@ label bkrr_day17_common:
     "Мику рассказывала интересно, но так многословно, что непривыкший к такому вьетнамец задремал, и теперь полулежал, прислонившись к стенке."
     "Заметив это, Мику слегка расстроилась."
 
-    show mi surprise with dspr
+    show mi surprise pioneer with dspr
 
     mi "Ой, я так много говорила, вы, наверное, устали слушать…"
 
-    show mi surprise at cleft with ease
+    show mi surprise pioneer at cleft with ease
     show kla normal pioneer at cright with dissolve
 
     kla "Нет-нет. Просто мы очень-очень рано выехали. По жаре, ещё и много поели. Вот его и раз-{w=0.1}мо-{w=0.1}ри-{w=0.1}ло."
@@ -2898,7 +2894,7 @@ label bkrr_day17_common:
 
     "Ульяна почесала спящего вьетнамца за ухом. Тот, не просыпаясь, попытался отмахнуться, потом перевернулся на другой бок и снова засопел."
 
-    show mi dontlike with dspr
+    show mi dontlike pioneer with dspr
 
     mi "Уля! Ну что ты делаешь? Это же тебе не кот! Это иностранный пионер."
 
@@ -2937,7 +2933,7 @@ label bkrr_day17_common:
 
     "Рыжие поняли всё по-своему. Они живо вскочили, Ульяна села за установку, а Алиса подхватила на колени гитару."
 
-    show us grin with dspr
+    show us grin sport far with dspr
 
     us "Да не вопрос! Что ж ты сразу не попросил. Сейчас сыграем!"
 
@@ -2952,8 +2948,8 @@ label bkrr_day17_common:
 
     kla "{i}Где у вас тут туалет?{/i}"
 
-    show us sad
-    show dv sad
+    show us sad sport far
+    show dv sad pioneer far
     with dspr
 
     "На разочарованные лица Алисы и Ульяны больно было смотреть."
@@ -2963,11 +2959,11 @@ label bkrr_day17_common:
     hide kla
     with dissolve
 
-    show us smile with dspr
+    show us smile sport far with dspr
 
     us "Я присмотрю!"
 
-    show us smile at cright with ease
+    show us smile sport far at cright with ease
 
     "Ульяна снова села возле Трука и почесала пальцем за ухом. Тот дёргал носом и, не открывая глаз, отмахивался."
 
@@ -2990,12 +2986,12 @@ label bkrr_day17_common:
     me "Все обедают."
     "Он улыбнулся и кивнул."
 
-    show kla smile with dspr
+    show kla smile pioneer with dspr
 
     kla "Это хорошо."
     me "Не любишь толпу?"
 
-    show kla normal with dspr
+    show kla normal pioneer with dspr
 
     kla "Не очень. Когда много людей, торжественные речи, все хотят поговорить, познакомиться. От этого устаёшь.{w} А здесь спокойно и тихо."
 
@@ -3047,7 +3043,7 @@ label bkrr_day17_common:
     kla "А туалетная бумага?"
     me "Не подвезли. Сами терпим."
 
-    show kla normal with dspr
+    show kla normal pioneer with dspr
 
     kla "Понятно… у нас тоже такое было. Когда дорогу к ферме размыло дождём. Неделю не могли проехать, только на лошадях."
 
@@ -3094,7 +3090,7 @@ label bkrr_day17_common:
     me "Антоша?"
     "Я с интересом посмотрел на вожатую."
 
-    show mt grin with dspr
+    show mt grin pioneer close with dspr
 
     mt "Антон Иванович! Так что не расслабляйтесь!"
 
@@ -3122,12 +3118,12 @@ label bkrr_day17_common:
     "Я осмотрелся по сторонам и поцеловал её, затем поинтересовался."
     me "И какие у тебя сегодня планы?"
 
-    show mi upset with dspr
+    show mi upset pioneer close with dspr
 
     mi "Пойду в домик, немножко отдохну. А потом к вожатой, и там наверное застряну до ужина. Вся эта подготовка, сценарий праздника."
     me "А что за сценарий то такой?"
 
-    show mi normal with dspr
+    show mi normal pioneer close with dspr
 
     mi "Секрет!"
     "Мику взяла меня за руку и наклонила голову на плечо. Я обнял её и вздохнул."
@@ -3136,7 +3132,7 @@ label bkrr_day17_common:
     me "Давай! Мы всё равно собирались сегодня сбежать всем музклубом и испечь картошки. Так что вечером даже лучше."
     "Мику понизила голос и выдохнула."
 
-    show mi smile with dspr
+    show mi smile pioneer close with dspr
 
     mi "Я имела в виду – только мы вдвоём."
     me "Я тоже!"
@@ -3154,34 +3150,34 @@ label bkrr_day17_common:
     me "Мне тоже не хочется отсюда уезжать."
     "Мику осмотрелась и улыбнулась мне."
 
-    show mi normal  with dspr
+    show mi normal pioneer close with dspr
 
     mi "Здесь очень красиво. Поэтому, да?"
     me "Нет, не поэтому."
 
-    show mi happy:
+    show mi happy pioneer close:
         truecenter
-        ease 0.75 zoom 1.25
+        ease 0.75 zoom 1.2
     with dspr
 
     "Мы были одни, так что я без стеснения привлёк её к себе и поцеловал."
     mi "Тогда почему?"
     me "Здесь есть ты."
 
-    show mi smile with dspr
+    show mi smile pioneer close with dspr
 
     mi "Я же никуда не денусь."
     "Мику улыбнулась и посмотрела мне в глаза."
     th "Хотел бы я сказать то же самое."
     me "Знаешь, мне недавно приснилось, как будто я проснулся в другом месте, и всё вот это – лагерь, ты, это было только сном.{w} Я очень испугался.{w} Так что смотри, не исчезай! Ты пообещала!"
 
-    show mi normal with dspr
+    show mi normal pioneer close with dspr
 
     mi "Не дождёшься! Я здесь, настоящая, и никуда не денусь.{w} Найду, и буду рядом, куда бы тебя не занесло. Как ты пришёл, когда я заблудилась в лесу."
     me "Обещаешь?"
     mi "Честное пионерское!"
 
-    show mi grin with dspr
+    show mi grin pioneer close with dspr
 
     "Мы засмеялись, глядя друг другу в глаза. На какое-то время мысли о скором конце смены были забыты."
 
@@ -3224,21 +3220,21 @@ label bkrr_day17_common:
     dv "Чего замолчал? Играй, давай!"
     me "Алиса?"
 
-    show dv smile with dspr
+    show dv smile pioneer with dspr
 
     dv "Да! А ты кого ожидал?"
     me "Мику…"
     dv "Ну простите пожалуйста, что не оправдала ожиданий! Ничего, басила, потерпишь."
     dv "Ты чем сидеть и вздыхать, лучше своди Мику после ужина на прогулку. Смотри, какая погодка! Я бы сама сходила, да никто не зовёт."
 
-    show dv normal with dspr
+    show dv normal pioneer with dspr
 
     "Она вздохнула и в несколько аккордов изобразила что-то очень печальное."
     me "А ты Клауса пригласи."
     dv "Я даже не знаю. Неудобно как-то… После того что было."
     me "Да поздно стесняться. После того, что было он, как честный человек, вообще на тебе жениться должен!{w} Такой шикарный вид…"
 
-    show dv angry with dspr
+    show dv angry pioneer with dspr
 
     dv "ДУРАК!"
 
@@ -3257,7 +3253,7 @@ label bkrr_day17_common:
     dv "Понравилось?"
     me "Хм… Если я отвечу честно, то мне будет стыдно перед Мику."
 
-    show dv smile with dspr
+    show dv smile pioneer with dspr
 
     dv "Эй, я ж тебя не прошу жениться, а просто спрашиваю. Мне нужно мужское мнение."
     me "Понравилось!"
@@ -3282,7 +3278,7 @@ label bkrr_day17_common:
     dv "Конечно, про это."
     "Она призадумалась, потом засмеялась."
 
-    show dv laugh with dspr
+    show dv laugh pioneer far with dspr
 
     dv "А ты… Ты о чём думал, рожа бесстыжая?"
 
@@ -3329,7 +3325,7 @@ label bkrr_day17_common:
     dv "Немного. Читала в журнале про старые гитары, так одна была точно такая же. Вот тебе и немецкий пионер, такую красоту в чемодане привёз."
     me "Вот и повод пообщаться. Попросишь его показать инстру…{w}кхм. Гитару. Слово за слово…"
 
-    show dv shy with dspr
+    show dv shy pioneer far with dspr
 
     window hide
     $ renpy.pause(1.0, hard=True)
@@ -3338,26 +3334,26 @@ label bkrr_day17_common:
 
     "Алиса слегка смутилась и сменила тему."
 
-    show dv smile with dspr
+    show dv smile pioneer far with dspr
 
     dv "Кстати, к нам Лена завтра придёт, чтобы нарисовать на барабане совёнка."
     me "Здорово! Интересно, Ульяна потом ругаться не будет? Вдруг, оно на звуке скажется."
     dv "Потерпит. И вообще, через несколько дней ей эти барабаны уже до лампочки будут."
     me "Не напоминай."
 
-    show dv normal with dspr
+    show dv normal pioneer far with dspr
 
     dv "Что такое?"
     me "Знаешь, как подумаю, что скоро закончится смена, и мы…"
     th "Можем больше не увидеться…"
     me "Будем реже видеться.{w} Cразу портится настроение."
 
-    show dv smile with dspr
+    show dv smile pioneer far with dspr
 
     dv "Ой, только ныть не надо. Захочешь – увидитесь.{w} Город маленький, его пешком за два часа пройти можно насквозь."
     me "Как он хоть называется?"
 
-    show dv grin with dspr
+    show dv grin pioneer far with dspr
 
     dv "Ой, как всё запущено. А вот не скажу! Сюрприз будет!"
     me "Никто не говорит. Ни какой год, ни как город называется…"
@@ -3365,12 +3361,12 @@ label bkrr_day17_common:
     "Я демонстративно проверил на ощупь."
     me "Мальчик, вроде!"
 
-    show dv laugh with dspr
+    show dv laugh pioneer far with dspr
 
     dv "Фу! Пошляк! Наверное, пойду к Мику, скажу, что ты ко мне приставал. Бросит она тебя, допрыгаешься!"
     me "Не надо. Я без неё уже никак."
 
-    show dv smile with dspr
+    show dv smile pioneer far with dspr
 
     dv "Да ладно?"
     me "Так и есть."
@@ -3379,40 +3375,40 @@ label bkrr_day17_common:
     dv "Не волнуйся. Тётя Алиса присмотрит, чтобы этого не произошло."
     me "Ну, раз ты обещаешь…"
 
-    show dv grin with dspr
+    show dv grin pioneer far with dspr
 
     dv "Обещаю. Но при одном условии! Вначале – хорошо отыграешь на концерте."
     me "И как по-твоему? У меня получается?"
     dv "По-моему, ничего. Но играть в знакомом месте – это одно, а перед толпой народу – совсем другое. Лично я думаю, ты справишься."
     me "А если…"
 
-    show dv smile with dspr
+    show dv smile pioneer far with dspr
 
     dv "Хватит жаловаться. Я знаю народное средство от ошибок!"
     me "Какое же?"
     dv "Репетировать до кровавых мозолей."
     me "Так у меня мозольки на пальцах уже наросли, больше не натираются."
 
-    show dv laugh with dspr
+    show dv laugh pioneer far with dspr
 
     dv "Не на руках."
     "Алиса подмигнула."
 
-    show dv smile with dspr
+    show dv smile pioneer far with dspr
 
     dv "На заднице."
     me "Угу. Шутим про задницу, а пошляк, значит, я.{w} Ладно, так и запомним. Ну, бери гитару, тогда, что ли."
     dv "Не дуйся, мне перед игрой надо завестись. Обычно с Ульянкой поругаемся, и потом играется легко.{w} А она этому мелкому показывает, где в лагере можно стырить конфеты."
     me "А ты чего не с ними?"
 
-    show dv sad with dspr
+    show dv sad pioneer far with dspr
 
     dv "Так он спит…"
     "Алиса замолчала."
 
     $ renpy.pause(0.5, hard=True)
 
-    show dv normal with dspr
+    show dv normal pioneer far with dspr
 
     dv "Не хочу. Жарко!"
     me "Ага-ага."
@@ -3427,12 +3423,10 @@ label bkrr_day17_common:
 
     window hide
     scene bg int_music_club_mattresses_sunset with Dissolve(2.0)
-    window show
-
     $ bkrr_set_time("sunset")
-
     $ bkrr_set_volume("sound", 0.2)
     play sound [ bkrr_sfx_list["silence1"], sfx_dinner_horn_processed ]
+    window show
 
     "До самого ужина так никто и не пришёл. Мику, наверное, всё ещё сидела с вожатыми, Ульяна занималась неизвестно чем, так что репетиция шла, как должна идти: скучно, правильно и продуктивно."
     "Услышав сигнал к ужину, Алиса встала и отложила гитару."
@@ -3443,12 +3437,12 @@ label bkrr_day17_common:
     me "Ты иди, я ещё забегу кое-куда."
     "Алиса поняла по-своему и покачала головой."
 
-    show dv normal with dspr
+    show dv normal pioneer with dspr
 
     dv "Ну-ну. Не мог раньше сходить? Опоздаешь ведь."
     me "Я сегодня герой-рыбак, может, оставят три корочки хлеба."
 
-    show dv grin with dspr
+    show dv grin pioneer with dspr
 
     dv "Ладно, я забью тебе порцию, будешь должен!"
     "Алиса подмигнула мне и вышла."
@@ -4029,7 +4023,7 @@ label bkrr_day17_common:
 
     "Но меня поразило не это. Рядом с вожатой стояла Мику с Пиратом на поводке. В рейтинге версий о происхождении лагеря, вариант «шизофрения» резко ушёл в отрыв."
 
-    show mi sad_smile with dspr
+    show mi sad_smile pioneer far with dspr
 
     mi "Вот он! Я же говорила, Пират его найдёт!"
 
@@ -4072,7 +4066,7 @@ label bkrr_day17_common:
 
     pi "Будем считать, что это было «спасибо.»"
 
-    show mt surprise with dspr
+    show mt surprise pioneer far with dspr
 
     mt "Что?"
     "Ольга с удивлением уставилась на меня."
@@ -4110,7 +4104,7 @@ label bkrr_day17_common:
     mt "Нужно было вожатых позвать!{w} А если бы Пират тебя не выследил?"
     me "Кот? Меня?"
 
-    show mi smile with dspr
+    show mi smile pioneer far with dspr
 
     mi "Кот! Тебя!"
 
@@ -4119,7 +4113,7 @@ label bkrr_day17_common:
     "Мику подхватила кота на руки и отцепила поводок."
     mi "Он тебя всегда находит, и мы решили попробовать. И он не подвёл! Ты моя умница!"
 
-    show mt normal at center with ease
+    show mt normal pioneer far at center with ease
 
     mt "Ладно, идём отсюда!"
     "Ольга осмотрелась по сторонам, не обратив ни малейшего внимания на стоящего в тени пионера."
@@ -4235,7 +4229,7 @@ label bkrr_day17_common:
 
     "Я попытался оттолкнуть её, но неугомонный близнец зашёл сбоку, и порезал мне ухо, забрызгав щёку вожатой."
 
-    show mt normal:
+    show mt normal pioneer close:
         ease 1.5 zoom 1.5
 
     "Ольга положила руки мне на плечи и тихо попросила:"
@@ -4488,7 +4482,7 @@ label bkrr_day17_common:
     me "Ольга Дмитриевна… пожалуйста, скажите, что происходит?"
     mt "Веришь или нет, но я сама рада бы узнать, что здесь происходит.{w} Раньше такого не случалось."
 
-    show mt smile with dspr
+    show mt smile pioneer close with dspr
 
     "Она улыбнулась посмотрела на Мику."
     mt "Ты бери нашу спящую красавицу и пошли отсюда. Только без лишних вопросов.{w} Обещаю, завтра сядем, и я отвечу на все вопросы, на которые смогу."
@@ -4504,7 +4498,7 @@ label bkrr_day17_common:
     mt "Наступит, не переживай. И даже послезавтра пока не отменяется.{w} До конца смены ты точно никуда не денешься. У тебя концерт! А там уже не моё дело."
     me "Правда?"
 
-    show mt normal with dspr
+    show mt normal torn with dspr
 
     mt "Я же просила, без вопросов!{w} Придём в лагерь, выпишу тебе справку, что ты здесь до конца смены, а конец смены – суббота, утро. С печатью администрации лагеря."
     me "Ну,если с печатью, тогда ладно. Поверю."
@@ -4513,14 +4507,14 @@ label bkrr_day17_common:
     mt "Лучше не надо. Если устанешь, отдашь её мне. Чем меньше времени мы здесь проведём, тем лучше. Это вредно."
     me "Радиация?"
 
-    show mt smile with dspr
+    show mt smile torn with dspr
 
     mt "Статей про Тримайл-айленд перечитал? Нет. У нас аварий не было."
     me "А Чернобыль?"
     mt "А что Чернобыль? Это в Украине где-то, да? Под Киевом, кажется. Не помню."
     me "Там… ничего не было?"
 
-    show mt sad with dspr
+    show mt sad torn with dspr
 
     mt "Ты точно бредишь. Придём – положу тебя в лазарет. Завтра новый фельдшер приедет, проведёт тебе осмотр. Связать тебя, что ли?"
     "Мику у меня на руках забормотала во сне и обняла меня за шею."
@@ -4528,7 +4522,7 @@ label bkrr_day17_common:
     # примерно соответствует «мама, мамочка…"
     me "Не надо связывать!"
 
-    show mt normal with dspr
+    show mt normal torn with dspr
 
     mt "Тихо, не шуми так. Разбудишь ребёнка!"
     "Вожатая показала мне кулак."
@@ -4581,7 +4575,7 @@ label bkrr_day17_common:
     me "Ай! Вы что тво… {w=0.3}рите."
     "Я схватился за ухо, но пореза там уже не было."
 
-    show mt normal with dspr
+    show mt normal torn with dspr
 
     mt "Как я и думала."
     me "Что за чертовщина?"
@@ -4601,13 +4595,13 @@ label bkrr_day17_common:
     mt "Вот так."
     "Ольга развела руками."
 
-    show mt normal with dspr
+    show mt normal torn with dspr
 
     mt "Только не пытайся экспериментировать.{w} Если порежешь себя ножом здесь, в лагере, то поедешь домой со швами, а меня больше вожатой не возьмут.{w} Вы и так смену чёрт знает во что превратили!"
     "Я без особой надежды поинтересовался:"
     me "И вы, конечно, ничего не объясните?"
 
-    show mt smile with dspr
+    show mt smile torn with dspr
 
     mt "Объясню! Происходит следующее: в лагере – иностранные гости, а по территории бегают вожатая в соблазнительно изорванной рубашке и окровавленный пионер с бессознательной пионеркой на плече.{w} Если нас увидят, то могут подумать, что мы неизвестно чем занимаемся."
     me "А разве не так? И вообще, я не об этом."
@@ -4640,29 +4634,29 @@ label bkrr_day17_common:
     mt "Потому, что отсюда мы пошли тебя искать. Лучше будет, если она и проснётся здесь."
     me "А… она будет помнить что-то?"
 
-    show mt sad with dspr
+    show mt sad torn with dspr
 
     mt "Кто её знает. Может, и будет. Эти игры с памятью…{w} Иногда без них никак, но я очень не люблю, когда приходится так делать."
     me "Можно, я посижу с ней?"
     mt "Конечно. Я сама хотела тебя попросить. И…"
     me "Вожатая помялась, потом продолжила:"
 
-    show mt normal with dspr
+    show mt normal torn with dspr
 
     mt "Лучше будет, если ты отвлечёшь её от попыток вспомнить, что случилось. Это не очень хорошо для психики, сам понимаешь."
     me "Отвлечь? Это я могу!"
 
-    show mt sad with dspr
+    show mt sad torn with dspr
 
     mt "Этого я и боюсь. Ты смотри, без глупостей. А то знаю я вас, молодые организмы.{w} Просто поговори с ней, успокой… Ну, поцелуй.{w} И ничего такого, сякого или эдакого!"
     me "Ага."
 
-    show mt grin with dspr
+    show mt grin torn with dspr
 
     mt "Видел бы сейчас ты своё лицо!"
     "Ольга погрозила мне пальцем."
 
-    show mt smile with dspr
+    show mt smile torn with dspr
 
     mt "Ладно, просто держи свои… гормоны в узде.{w} А то приглашу эту, ушастую, а она заставит тебя влюбиться в электрика."
     "Я представил себе, вечно прокуренного и немолодого электрика и ужаснулся."
@@ -4670,14 +4664,14 @@ label bkrr_day17_common:
     mt "Кто её знает. Наверное, сможет."
     me "Понял, не дурак! Дурак бы не понял. Я буду хорошо себя вести."
 
-    show mt normal with dspr
+    show mt normal torn with dspr
 
     mt "Тогда – до завтра."
     me "Как это «до завтра»? Мне тут что, ночевать?"
     mt "Ой, засиял-то как. Как хочешь. Просто я лягу спать, так что до утра всё равно тебя не увижу."
     me "А Лена не будет волноваться?"
 
-    show mt smile with dspr
+    show mt smile torn with dspr
 
     "Вожатая посмотрела на меня, улыбнулась и покачала головой."
     mt "Не будет, я её предупрежу. И эти твои кровавые лохмотья… Есть, во что переодеться?{w} Если что, сбегай в домик, я побуду здесь."
@@ -4701,13 +4695,13 @@ label bkrr_day17_common:
     "Кошки…"
     me "Ольга Дмитриевна, мы кота там оставили! Он же по лестнице не выберется!"
 
-    show mt normal with dspr
+    show mt normal torn with dspr
 
     "Вожатая покачала головой."
     mt "Не волнуйся, Юля за ним присмотрит."
     me "Точно?"
 
-    show mt smile with dspr
+    show mt smile torn with dspr
 
     mt "Точнее не бывает. Вернёт в лагерь, причём сытого и довольного.{w} Ну, я пошла. Не наделай глупостей, ладно? Для Мику это был только кошмар, пусть так и остаётся."
     me "Договорились!"
@@ -4746,41 +4740,41 @@ label bkrr_day17_common:
     mi "Сеня…"
     me "Привет! А кто тут у нас спит вместо репетиции?"
 
-    show mi surprise with dspr
+    show mi surprise pioneer close with dspr
 
     mi "Ты… я… спала?"
     me "Ага. Пришёл позвать тебя на прогулку, а так сладко спишь… У меня рука не поднялась будить тебя."
     mi "Лучше бы разбудил! Мне приснился такой страшный сон…"
     me "Какой, милая?"
 
-    show mi upset with dspr
+    show mi upset pioneer close with dspr
 
     mi "Будто ты пропал, и мы с вожатой ушли тебя искать. Ещё кота на поводок прицепили, представляешь?{w} А потом вообще ужасы какие-то пошли."
     th "Могу себе представить…"
     me "Прости, ты так улыбалась, я думал, сон хороший."
 
-    show mi smile with dspr
+    show mi smile pioneer close with dspr
 
     mi "Да, улыбалась. Мне снилось, как ты несёшь меня на руках… Это было так здорово! Только быстро закончилось."
     me "Намёк понял. Хочешь, я тебя наяву отнесу? В домик, например."
     "К моей радости, она отказалась."
 
-    show mi happy with dspr
+    show mi happy pioneer close with dspr
 
     mi "Не-е! Не хочу вылезать, я тут так хорошо согрелась. Иди лучше ты сюда! Ой…"
 
-    show mi surprise with dspr
+    show mi surprise pioneer close with dspr
 
     "Мику сообразила, что сказала."
     mi "Я такое говорю… Нет, ну то есть сказала правильно, но прозвучало так, как будто я хочу, чтобы ты…"
 
-    show mi shy with dspr
+    show mi shy pioneer close with dspr
 
     mi "Нет, я на самом деле хочу, но имела в виду не это…"
     "Я провёл пальцем по её щеке и покачал головой."
     me "Поздно! Приглашение уже получено! Только подвинься немножко."
 
-    show mi normal with dspr
+    show mi normal pioneer close with dspr
 
     mi "А если придёт кто…?"
 
@@ -4790,14 +4784,14 @@ label bkrr_day17_common:
     me "А я двери запер!"
     "Я расстегнул шорты и бросил их куда-то в район свалки одежды, где раньше отыскал футболку. Завтра мятые будут. Ну и чёрт с ними."
 
-    show mi smile with dspr
+    show mi smile pioneer close with dspr
 
     $ bkrr_set_volume("music", 0.6, 20.0)
 
     mi "И что дальше?"
     "Голос Мику слегка подрагивал, дыхание участилось, но она смотрела прямо мне в глаза…{w} И в них я видел, какой ответ она хочет услышать."
 
-    show mi happy:
+    show mi happy pioneer close:
         ease 2 zoom 1.3
 
     "Любые слова были бы лишними, поэтому я просто лёг рядом и поцеловал её. Ответ не хуже любого другого, который я мог бы дать."
@@ -4813,7 +4807,7 @@ label bkrr_day17_common:
     me "Нет. Я её видел, и сказал, что ты задремала прямо в клубе.{w} Она обрадовалась, сказала, что хоть раз выспится, раз уж ты не будешь во сне петь…{w} и строго-настрого велела тебя не раздевать перед сном. «А то знаю я вас, мальчишек»."
     mi "Так и сказала? Лена? Наша Лена?"
 
-    show mi normal with dspr
+    show mi normal pioneer close with dspr
 
     "Мику с сомнением посмотрела на меня. Врать, так врать…"
     me "Ага! И тут же покраснела и убежала."
