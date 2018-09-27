@@ -1835,7 +1835,7 @@ init 2:
                 'normal': 1, 'sad': 1, 'smile': 1, 'surprise': 1, 'angry': 2, 'rage': 2, 'grin': 3, 'laugh': 3,
             },
             'sh': {
-                'laugh': 1, 'scared': 1, 'smile': 1, 'upset': 1, 'cry': 2, 'normal_smile': 2, 'rage': 2, 'normal': 3, 'serious': 3, 'surprise': 3,
+                'laugh': 1, 'scared': 1, 'smile': 1, 'upset': 1, 'cry': 2, 'upset_nocry': 2, 'normal_smile': 2, 'rage': 2, 'normal': 3, 'serious': 3, 'surprise': 3,
             },
             'un': {
                 'angry': 1, 'evil_smile': 1, 'normal': 1, 'shy': 1, 'shy_smile': 1, 'smile': 1, 'smile2': 1, 'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2, 'angry2': 3, 'grin': 3, 'laugh': 3, 'rage': 3, 'serious': 3, 'smile3': 3,
@@ -1971,6 +1971,7 @@ init 2:
 
         make_sprites_for('sh', 'bathrobe', ['mod:bathrobe', 'es:<emotion>'])
         make_sprites_for('sh', 'towel', ['mod:body', 'es:<emotion>'])
+        make_sprites_for('sh', 'towel', ['mod:body', 'mod:<emotion>'], emotions=['upset_nocry'], distances=['normal'])
         make_sprites_for('sh', 'shirt', ['mod:shirt', 'es:<emotion>'])
         make_sprites_for('sh', 'red_nose pioneer', ['es:body', 'es:<emotion>', 'mod:red_nose'])
 
