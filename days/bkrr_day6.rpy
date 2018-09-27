@@ -3651,7 +3651,7 @@ label bkrr_day6_common:
 
     show dv smile pioneer2 at left with ease
 
-    show us smile sport at right with dissolve
+    show us yawn night_shirt at right with dissolve
 
     window show
 
@@ -3659,11 +3659,11 @@ label bkrr_day6_common:
     us "Тили-тили тесто… Алиска и Семён."
     "Пробурчала она."
 
-    show us sad sport at right with dspr
+    show us sad night_shirt at right with dspr
 
     us "Чего так поздно-то? Я уже думала, ты там в клубе и заснула. А ты ходишь тут. {w}Со всякими."
 
-    show us grin sport at right with dspr
+    show us grin night_shirt at right with dspr
 
     us "Не целовались хоть? А то знаю я вас… Он меня грязно домогался, имей в виду!"
 
@@ -3677,12 +3677,12 @@ label bkrr_day6_common:
     me "Чего? Обычно говорят «жениться»."
 
     show dv smile pioneer2 at left
-    show us smile sport at right
+    show us smile night_shirt at right
     with dspr
 
     dv "Ну раз ты предложил, я подумаю. Ульянка, ты свидетель!"
 
-    show us upset sport at right with dspr
+    show us yawn night_shirt at right with dspr
 
     us "Ну хватит уже, пошли спа-а-а-а-ать."
     "Ульяна заразительно зевнула."

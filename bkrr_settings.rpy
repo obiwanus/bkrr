@@ -1841,7 +1841,7 @@ init 2:
                 'angry': 1, 'evil_smile': 1, 'normal': 1, 'shy': 1, 'shy_smile': 1, 'smile': 1, 'smile2': 1, 'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2, 'angry2': 3, 'grin': 3, 'laugh': 3, 'rage': 3, 'serious': 3, 'smile3': 3,
             },
             'us': {
-                'grin': 1, 'laugh': 1, 'laugh2': 1, 'normal': 1, 'normal_dontlike': 1, 'sad': 1, 'smile': 1, 'angry': 2, 'calml': 2, 'dontlike': 2, 'fear': 2, 'upset': 2, 'cry': 3, 'cry2': 3, 'shy': 3, 'shy2': 3, 'surp1': 3, 'surp2': 3, 'surp3': 3,
+                'grin': 1, 'laugh': 1, 'laugh2': 1, 'normal': 1, 'normal_dontlike': 1, 'sad': 1, 'smile': 1, 'yawn': 1, 'angry': 2, 'calml': 2, 'dontlike': 2, 'fear': 2, 'upset': 2, 'cry': 3, 'cry2': 3, 'shy': 3, 'shy2': 3, 'surp1': 3, 'surp2': 3, 'surp3': 3,
             },
             'cs': {
                 'normal': 1, 'shy': 1, 'smile': 1, 'sad': 1,
@@ -1988,6 +1988,8 @@ init 2:
         make_sprites_for('us', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['normal_dontlike'])
         make_sprites_for('us', 'sport', ['es:body', 'es:sport', 'mod:<emotion>'], emotions=['normal_dontlike'])
         make_sprites_for('us', 'bdsm', ['es:body', 'mod:bdsm', 'es:<emotion>'])  # не все эмоции доступны
+        make_sprites_for('us', 'night_shirt', ['mod:night_shirt', 'es:<emotion>'])
+        make_sprites_for('us', 'night_shirt', ['mod:night_shirt', 'mod:<emotion>'], emotions=['yawn'])
 
         make_sprites_with_custom_emotions(['sad'], 'cs', 'body', ['mod:body', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad'], 'cs', 'panties', ['mod:body', 'mod:panties', 'es:<emotion>'])
