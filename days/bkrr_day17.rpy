@@ -1111,6 +1111,7 @@ label bkrr_day17_common:
 
     play sound bkrr_sfx_list["whiteout1"]
     show mi happy underwear loose close:
+        subpixel True
         truecenter
         parallel:
             linear 10.0 zoom 2.0
@@ -1263,13 +1264,13 @@ label bkrr_day17_common:
 
     show mi normal pioneer close:
         truecenter
-        ease 1.0 zoom 1.2
+        ease 1.0 zoom 1.1
     with dspr
 
     "Она осторожно надела шнурок мне на шею и спрятала медиатор под футболку. Когда её пальцы скользнули под воротник, по мне словно пропустили разряд тока."
 
     show mi normal pioneer close:
-        zoom 1.2
+        zoom 1.1
         ease 1.0 zoom 1.0
     with None
 
@@ -2412,7 +2413,7 @@ label bkrr_day17_common:
 
     stop ambience fadeout 2
     window hide
-    scene bg ext_houses_day with fade2
+    scene bg ext_musclub_day with fade2
     play ambience ambience_camp_center_day fadein 2
     stop music fadeout 10
     window show
@@ -2430,7 +2431,7 @@ label bkrr_day17_common:
     kla "Да. Извините за беспокойство."
 
     window hide
-    hide kla with easeoutleft
+    hide kla with dissolve
     window show
 
     "Он взял мой ключ и рысцой побежал к клубу. Ещё минута, и гость скрылся за дверью."
@@ -2566,8 +2567,10 @@ label bkrr_day17_common:
 
     "Алиса остановила журнал на замахе. {w} Потом сообразила, что одета не полностью, бросила журнал, прикрылась руками и взвизгнула:"
 
+    window hide
     scene bg int_music_club_mattresses_day with dissolve
     play ambience bkrr_ambience_list["indoors_day"] fadein 3
+    window show
 
     dv "НЕ ПЯЛЬСЯ!"
 
@@ -3628,13 +3631,13 @@ label bkrr_day17_common:
         ease 0.5 alpha 0.0
     with None
 
-    play sound [ bkrr_sfx_list["silence1"],  bkrr_sfx_list["body_hit"], bkrr_sfx_list["silence2"], bkrr_sfx_list["body_hit"], sfx_bodyfall_1 ]
-    play sound2 [ bkrr_sfx_list["silence1"],  bkrr_sfx_list["ear_buzz"] ]
+    play sound2 [ bkrr_sfx_list["silence1"],  bkrr_sfx_list["body_hit"], bkrr_sfx_list["silence2"], bkrr_sfx_list["body_hit"], sfx_bodyfall_1 ]
+    play sound3 [ bkrr_sfx_list["silence1"],  bkrr_sfx_list["ear_buzz"] ]
     stop ambience fadeout 1.5
 
     "Я подумал, что это Виола догоняет меня, но тут меня сильно ударили по голове.{p=1.5}От первого удара зазвенело в ушах, я попытался повернуться, но второй удар окончательно лишил меня сознания.{w=2.5}{nw}"
 
-    stop sound2 fadeout 1
+    stop sound3 fadeout 1
 
     scene black with dissolve
 
@@ -3696,7 +3699,8 @@ label bkrr_day17_common:
     me "Как меня ударили по голове… Хорошо ударили. Совсем как Алиса гитарой."
 
     show bkrr_pi normal:
-        ease 1.0 zoom 1.3
+        subpixel True
+        ease 1.0 zoom 1.2
 
     "Он подошёл поближе и подёргал верёвки у меня на руках. Я повернулся, чтобы ему было удобнее добраться до узлов."
 
@@ -3709,7 +3713,8 @@ label bkrr_day17_common:
     "Он снова подёргал верёвки, пробежался пальцами по узлам."
 
     show bkrr_pi smile:
-        zoom 1.3
+        subpixel True
+        zoom 1.2
         ease 1.0 zoom 1.0
 
     me "Как я сюда попал? Ты видел, кто меня вырубил?"
@@ -4011,10 +4016,14 @@ label bkrr_day17_common:
 
     window hide
     $ renpy.pause(4.0, hard=True)
-    hide black with dissolve
-    $ renpy.pause(0.5, hard=True)
+    play sound bkrr_sfx_list["whiteout2"] fadein 1
+    scene bg int_mine_halt:
+    show mt sad pioneer far at cright
+    show white:
+        alpha 0.9
+        ease 3.5 alpha 0.0
+    with Dissolve(1.0)
 
-    show mt sad pioneer far at cright with dissolve
     window show
 
     "Ещё пара минут, и я увидел взволнованную Ольгу. Она стояла в нескольких шагах, освещая меня фонарём."
@@ -4230,6 +4239,7 @@ label bkrr_day17_common:
     "Я попытался оттолкнуть её, но неугомонный близнец зашёл сбоку, и порезал мне ухо, забрызгав щёку вожатой."
 
     show mt normal pioneer close:
+        subpixel True
         ease 1.5 zoom 1.5
 
     "Ольга положила руки мне на плечи и тихо попросила:"
@@ -4501,7 +4511,7 @@ label bkrr_day17_common:
     show mt normal torn with dspr
 
     mt "Я же просила, без вопросов!{w} Придём в лагерь, выпишу тебе справку, что ты здесь до конца смены, а конец смены – суббота, утро. С печатью администрации лагеря."
-    me "Ну,если с печатью, тогда ладно. Поверю."
+    me "Ну, если с печатью, тогда ладно. Поверю."
     mt "Вот и договорились. Ты Мику-то донесёшь? Или помочь?"
     me "Попробую. Она лёгкая. Если что, сделаем привал."
     mt "Лучше не надо. Если устанешь, отдашь её мне. Чем меньше времени мы здесь проведём, тем лучше. Это вредно."
@@ -4792,7 +4802,8 @@ label bkrr_day17_common:
     "Голос Мику слегка подрагивал, дыхание участилось, но она смотрела прямо мне в глаза…{w} И в них я видел, какой ответ она хочет услышать."
 
     show mi happy pioneer close:
-        ease 2 zoom 1.3
+        subpixel True
+        ease 2 zoom 1.2
 
     "Любые слова были бы лишними, поэтому я просто лёг рядом и поцеловал её. Ответ не хуже любого другого, который я мог бы дать."
 

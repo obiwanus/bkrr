@@ -520,7 +520,7 @@ init 2:
     image bg int_music_club_mattresses_dark_night = im.MatrixColor(bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_night.jpg", MOD_IMAGES + "misc/int_music_club_clock_night.png"), im.matrix.brightness(-0.15) * im.matrix.saturation(0.6))
     image bg int_music_club_mattresses_night_yulia:
         contains:
-            "bg int_music_club_mattresses_night"
+            "bg int_music_club_mattresses_night_closed_piano"
         contains:
             "bkrr_uv_mattress"
 
@@ -685,7 +685,7 @@ init 2:
     image bg int_clubs_male_sunset_wrecked_new_glass = MOD_IMAGES + "bg/int_clubs_male_sunset_wrecked_new_glass.jpg"
     image club_planer = MOD_IMAGES + "misc/planer.png"
     image bkrr_claws = MOD_IMAGES + "misc/claws.png"
-    image bg int_music_club_mattresses_night_closed_piano = bkrr_fast_composite(ES_IMAGES + "bg/int_music_club_mattresses_night.jpg", MOD_IMAGES + "misc/int_music_club_mattresses_night_closed_piano.png")
+    image bg int_music_club_mattresses_night_closed_piano = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_night.jpg", MOD_IMAGES + "misc/int_music_club_mattresses_night_closed_piano.png")
     image bkrr_uv_piano = MOD_IMAGES + "misc/uv_piano.png"
     image bkrr_uv_mattress:
         contains:
@@ -1852,7 +1852,7 @@ init 2:
                 'angry': 1, 'evil_smile': 1, 'normal': 1, 'shy': 1, 'shy_smile': 1, 'smile': 1, 'smile2': 1, 'cry': 2, 'cry_smile': 2, 'sad': 2, 'scared': 2, 'shocked': 2, 'surprise': 2, 'angry2': 3, 'grin': 3, 'laugh': 3, 'rage': 3, 'serious': 3, 'smile3': 3,
             },
             'us': {
-                'grin': 1, 'laugh': 1, 'laugh2': 1, 'normal': 1, 'normal_dontlike': 1, 'sad': 1, 'smile': 1, 'yawn': 1, 'angry': 2, 'calml': 2, 'dontlike': 2, 'fear': 2, 'upset': 2, 'cry': 3, 'cry2': 3, 'shy': 3, 'shy2': 3, 'surp1': 3, 'surp2': 3, 'surp3': 3,
+                'grin': 1, 'laugh': 1, 'laugh2': 1, 'evsmile': 1, 'normal': 1, 'normal_dontlike': 1, 'sad': 1, 'smile': 1, 'yawn': 1, 'angry': 2, 'calml': 2, 'dontlike': 2, 'fear': 2, 'upset': 2, 'cry': 3, 'cry2': 3, 'shy': 3, 'shy2': 3, 'surp1': 3, 'surp2': 3, 'surp3': 3,
             },
             'cs': {
                 'normal': 1, 'shy': 1, 'smile': 1, 'sad': 1,
@@ -1995,9 +1995,9 @@ init 2:
 
         make_sprites_for('us', 'bra', ['es:body', 'mod:bra', 'es:<emotion>'])
         make_sprites_for('us', 'bkrr_dress', ['es:body', 'mod:dress', 'es:<emotion>'])
-        make_sprites_for('us', 'swim', ['es:body', 'es:swim', 'mod:<emotion>'], emotions=['normal_dontlike'])
-        make_sprites_for('us', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['normal_dontlike'])
-        make_sprites_for('us', 'sport', ['es:body', 'es:sport', 'mod:<emotion>'], emotions=['normal_dontlike'])
+        make_sprites_for('us', 'swim', ['es:body', 'es:swim', 'mod:<emotion>'], emotions=['normal_dontlike', 'evsmile'])
+        make_sprites_for('us', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['normal_dontlike', 'evsmile'])
+        make_sprites_for('us', 'sport', ['es:body', 'es:sport', 'mod:<emotion>'], emotions=['normal_dontlike', 'evsmile'])
         make_sprites_for('us', 'bdsm', ['es:body', 'mod:bdsm', 'es:<emotion>'])  # не все эмоции доступны
         make_sprites_for('us', 'night_shirt', ['mod:night_shirt', 'es:<emotion>'])
         make_sprites_for('us', 'night_shirt', ['mod:night_shirt', 'mod:<emotion>'], emotions=['yawn'])

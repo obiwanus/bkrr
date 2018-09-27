@@ -4850,9 +4850,9 @@ label bkrr_day19_common:
     "Глупо, ещё вчера я был на седьмом небе от счастья, а сегодня хочется только одного.{w} Сесть где-то под кустиком и никого не видеть."
 
     window hide
-    stop ambience fadeout 1
+    stop ambience fadeout 3
     scene bg ext_square_night with fade3
-    play ambience ambience_camp_center_night fadein 1
+    play ambience ambience_camp_center_night fadein 2
     window show
 
     "Утоптанная тропинка сменилась асфальтом площади, а я всё шел и шёл… Не понимая, куда иду."
@@ -4945,6 +4945,7 @@ label bkrr_day19_common:
     hide uv with dissolve
     play sound sfx_intro_bus_door_open
     play sound_loop sfx_bus_loop fadein 5
+    $ renpy.pause(3.5, hard=True)
     scene bg int_liaz_night_camp_closed with Dissolve(1.0)
     window show
 

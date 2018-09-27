@@ -127,8 +127,9 @@ label bkrr_day18_common:
     me "Это потому, что я тебя очень люблю!"
 
     show mi surprise sheet close:
+        subpixel True
         truecenter
-        ease 2 zoom 1.4
+        ease 2 zoom 1.2
 
     "Я укрыл смутившее её место и привлек Мику к себе."
 
@@ -374,6 +375,7 @@ label bkrr_day18_common:
     play music music_list["glimmering_coals"] fadein 3
 
     show dv shocked bkrr_sport:
+        subpixel True
         zoom 1.4
         linear 6.0 zoom 1.1
 
@@ -593,13 +595,14 @@ label bkrr_day18_common:
 
     mi "Мы видели! Ну, ничего. Ты её прости, её заносит иногда, ладно?"
 
-    show dv grin bkrr_sport with dspr
+    show dv laugh bkrr_sport with dspr
 
     dv "Убью и сразу прощу.{w} Мы это… Завтракать пойдем? Я сейчас слона съела бы! Двух!{w} Раз можно."
     mi "Рано еще. Ты на часы-то глянь."
-    "Алиса посмотрела на часы и недоверчиво хмыкнула."
 
     show dv smile bkrr_sport with dspr
+
+    "Алиса посмотрела на часы и недоверчиво хмыкнула."
 
     dv "Ладно. Я тогда хоть чаю попью.{w} Сень, ты погуляй, пожалуйста, нам посекретничать надо!"
 
@@ -611,7 +614,7 @@ label bkrr_day18_common:
     dv "Не тебя! Не переживай."
     me "Ну, тогда, увидимся на завтраке? Пойду, душ приму. С горя."
 
-    show dv grin bkrr_sport with dspr
+    show dv laugh bkrr_sport with dspr
 
     dv "Холодный! Чтобы ничего не хотелось!"
 
@@ -1823,11 +1826,12 @@ label bkrr_day18_common:
     mi "Вот неугомонная. Совсем его задёргает. Хотя, может, так и лучше?{w} Если бы мы подружились сразу, когда я приехала из Японии, всё было бы легче. Ульяна очень общительная."
     me "Да, мне тоже нравится, когда она рядом. Маленький ходячий сгусток хорошего настроения."
 
-    show pioneer close mi smile with dspr
+    show mi smile pioneer close with dspr
 
     mi "Так-так. Она тоже говорит о тебе с восторгом."
 
     show mi grin pioneer close:
+        subpixel True
         truecenter
         ease 1.0 zoom 1.2
     with dspr
@@ -1913,6 +1917,7 @@ label bkrr_day18_common:
     mi "Скажешь такое.{w} Нет, конечно. Знаешь…"
 
     show mi happy pioneer close:
+        subpixel True
         truecenter
         ease 1.0 zoom 1.3
     with dspr
@@ -1984,6 +1989,7 @@ label bkrr_day18_common:
     window hide
 
     scene bg ext_path_day_mi_d18:
+        subpixel True
         truecenter
         linear 3.0 zoom 1.2
     with dspr
@@ -1991,6 +1997,7 @@ label bkrr_day18_common:
     $ renpy.pause(1.0, hard=True)
 
     scene cg d18_no_squirrel_1:
+        subpixel True
         truecenter
         zoom 1.05
         ease 5.0 zoom 1.2
@@ -2019,6 +2026,7 @@ label bkrr_day18_common:
     window hide
 
     scene cg d18_no_squirrel_1:
+        subpixel True
         truecenter
         zoom 1.2
         linear 5.0 zoom 1.6
@@ -2291,7 +2299,7 @@ label bkrr_day18_common:
 
     "Он подошел к стоящему в уголке кофру и достал уже знакомый инструмент."
 
-    show pioneer mi smile with dspr
+    show mi smile pioneer with dspr
 
     "Мику оживилась."
     mi "Какая интересная. Алиса, Ульяна, смотрите! Такое редко увидишь!"
@@ -2455,7 +2463,7 @@ label bkrr_day18_common:
     play sound bkrr_sfx_list["slap1"]
     with hpunch
 
-    "Не успев договорить, она покинула свой табурет и бросилась на пол. По клубу разнеся рык раненного носорога. Метко брошенный шлепанец Алисы просвистел там, где была голова Ульяны и врезался в расчерченную нотными станами доску, выбив меловую пыль из надписи «Сенька+Микуська=Любовь»."
+    "Не успев договорить, она покинула свой табурет и бросилась на пол. По клубу разнеся рык раненого носорога. Метко брошенный шлепанец Алисы просвистел там, где была голова Ульяны и врезался в расчерченную нотными станами доску, выбив меловую пыль из надписи «Сенька+Микуська=Любовь»."
 
     th "Интересно, не замечал её раньше. Давно она здесь? И кто автор?"
     "Ульяна выглянула из-за установки."
@@ -2514,6 +2522,7 @@ label bkrr_day18_common:
         yalign 0.3
     with bkrr_fade(3.0)
     scene cg d18_klaus_play:
+        subpixel True
         zoom 1.8
         xalign 0.0
         yalign 0.3
@@ -3581,8 +3590,9 @@ label bkrr_day18_common:
     "Я почувствовал, что краснею. Сам не пойму, отчего."
 
     show mi smile pioneer close:
+        subpixel True
         truecenter
-        ease 1.0 zoom 1.2
+        ease 1.0 zoom 1.1
 
     "Мику прижалась ко мне и улыбнулась."
     mi "Знаешь, я никогда не забуду это лето!"
@@ -3694,21 +3704,13 @@ label bkrr_day18_common:
 
     me "Что-то я проголодался!"
 
-    show mi normal pioneer close:
-        truecenter
-        zoom 1.2
-    with dissolve
+    show mi normal pioneer close with dissolve
 
     mi "Наверное, кто-то потратил ночью слишком много сил? Надо покушать, и все восстановишь."
-
-    show mi normal pioneer close:
-        ease 1.0 zoom 1.3
-
     "Я наклонился к её уху и шепотом произнес:"
     me "Я имел в виду не только еду! Может, сегодня возьмем добавки?"
 
-    show mi shy pioneer close:
-        ease 1.0 zoom 1.2
+    show mi shy pioneer close with dspr
 
     "Она смутилась, порозовела и прошептала мне на ухо:"
     mi "Извини, мне теперь нельзя. Ну, ты понимаешь. Виола сказала, подождать день-два."
@@ -4171,7 +4173,7 @@ label bkrr_day18_common:
 
     "Шурик стоял посреди клуба. Он сжимал в руке какую-то гнутую железку, время от времени молотя ей по столам и полкам."
 
-    show sh laugh red_nose pioneer with dissolve
+    show sh upset red_nose pioneer with dissolve
 
     sh "А? Сенька! Пришел?"
     me "Пришел, пришел. Ты пульт не поломал?"
@@ -4199,6 +4201,9 @@ label bkrr_day18_common:
 
     "Глупо хихикнув, он широко замахнулся и наподдал по висящей на потолке модели планера. Та с жалобным хрустом разлетелась надвое и упала в груду битого стекла."
     me "Ты чего буянишь?"
+
+    show sh upset red_nose pioneer far at cright with dspr
+
     sh "И пра-а-авда… Что это я? Ты понимаешь? Все ты понимаешь. Ты вон за своей в лес побежал! А я… я не могу! Бежать некуда! Надо было…"
 
     hide sh with dissolve
@@ -4207,12 +4212,12 @@ label bkrr_day18_common:
 
     "Он отвлекся на то, чтобы обрушить свою железку на ящик с инструментами. Отвертки и прочая мелочевка разлетелись по полу."
 
-    show sh upset red_nose pioneer at cleft with dissolve
+    show sh cry red_nose pioneer at cleft with dissolve
 
     sh "Надо было хватать и не отпускать! И никого не слушать! А я сопли жевал! Сидел тут… как сыч! С паяльником!"
     me "Прекрати. Успокойся!"
 
-    show sh smile red_nose pioneer with dspr
+    show sh upset red_nose pioneer with dspr
 
     sh "Успоко-о-ойся? Я только разогреваюсь. Всё разнесу. На-ку-соч-ки!"
     me "Это не поможет."
@@ -5241,7 +5246,7 @@ label bkrr_day18_common:
 
     window hide
     stop ambience fadeout 2
-    scene bg int_clubs_male_sunset with fade2
+    scene bg int_clubs_male_sunset_wrecked with fade2
     play ambience ambience_int_cabin_evening fadein 2
     window show
 
@@ -5277,7 +5282,7 @@ label bkrr_day18_common:
 
     window hide
     $ bkrr_timeskip_short()
-    scene bg int_clubs_male_sunset with bkrr_timeskip_transition()
+    scene bg int_clubs_male_sunset_wrecked with bkrr_timeskip_transition()
     $ bkrr_set_volume("sound", 0.6)
     play sound sfx_dinner_horn_processed
     window show
@@ -5351,7 +5356,7 @@ label bkrr_day18_common:
 
     window hide
     $ bkrr_timeskip_short()
-    scene bg int_clubs_male_sunset with bkrr_timeskip_transition()
+    scene bg int_clubs_male_sunset_wrecked with bkrr_timeskip_transition()
     window show
 
 
@@ -5360,7 +5365,7 @@ label bkrr_day18_common:
     "Наконец, последняя отвертка была найдена и убрана, осколки звонко ссыпались в ведро. Кажется, все.{w} Нет, вон! Еще один.{w} Сейчас я его достану…"
 
     window hide
-    show bg int_clubs_male_sunset:
+    show bg int_clubs_male_sunset_wrecked:
         yalign 1.0
         ease 2.0 zoom 1.5
     pause 1.0
@@ -5399,7 +5404,7 @@ label bkrr_day18_common:
 
     window hide
     hide mi with dissolve
-    show bg int_clubs_male_sunset:
+    show bg int_clubs_male_sunset_wrecked:
         yalign 1.0
         zoom 1.5
         ease 1.0 zoom 1.0
@@ -5514,7 +5519,7 @@ label bkrr_day18_common:
 
     window hide
     $ bkrr_timeskip_short()
-    scene bg int_clubs_male_sunset with bkrr_timeskip_transition()
+    scene bg int_clubs_male_sunset_wrecked with bkrr_timeskip_transition()
     window show
 
     "Мику наклонилась и убрала тарелки в ящик стола."
@@ -6238,12 +6243,8 @@ label bkrr_day18_common:
 
     "Юля легко вспрыгнула на крышку рояля и легла на живот, болтая босыми ногами в воздухе. Хвост ее свисал вниз и подрагивал.{w} На глаза ей попался карандаш и нотная тетрадь. Она открыла её и начала быстро что-то рисовать. Почти полное отсутствие освещения её не смущало."
 
-    show bkrr_todo "Дайте нормальный рояль"
-
     "Мой двойник почесал в затылке."
     pi "Э…{w} Ну, я вообще-то ожидал, что ты забросаешь меня вопросами, и всё такое."
-
-    hide bkrr_todo
 
     "Разумеется, вопросы у меня были. Десятки. Вот только от Ольги я уже услышал кое-какие ответы и не был уверен, что хочу знать ещё больше."
     me "Я уже вожатую попробовал забросать, сам не рад."
@@ -6641,6 +6642,7 @@ label bkrr_day18_common:
     pi "Ого… началось. Мне пора.{w} Я и так протянул с возвращением, сколько мог. Боюсь, мы видимся последний раз.{w} Ну, бывай, Семён. Давай пять!"
 
     show bkrr_pi normal:
+        subpixel True
         truecenter
         parallel:
             ease 1.5 zoom 1.1
