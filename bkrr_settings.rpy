@@ -685,7 +685,7 @@ init 2:
             pos (0.78, 0.67)
 
     image bg ext_dining_hall_away_sunset_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_away_sunset.jpg", MOD_IMAGES  + "misc/headlamps_missing_far.png")
-    image bg ext_dining_hall_near_sunset_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_near_sunset.jpg", MOD_IMAGES  + "misc/headlamps_missing_close.png")
+    image bg ext_dining_hall_near_sunset_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_near_sunset.jpg", MOD_IMAGES  + "misc/headlamps_missing_close_sunset.png")
     image bg ext_dining_hall_away_day_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_away_day.jpg", MOD_IMAGES  + "misc/headlamps_missing_far.png")
     image bg ext_dining_hall_near_day_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_near_day.jpg", MOD_IMAGES  + "misc/headlamps_missing_close.png")
 
