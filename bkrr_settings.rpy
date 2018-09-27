@@ -689,7 +689,7 @@ init 2:
     image bg ext_dining_hall_away_day_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_away_day.jpg", MOD_IMAGES  + "misc/headlamps_missing_far.png")
     image bg ext_dining_hall_near_day_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_near_day.jpg", MOD_IMAGES  + "misc/headlamps_missing_close.png")
 
-    # Концертные фоны
+    # Концерт
 
     image bg ext_stage_big_day_bkrr = MOD_IMAGES + "bg/ext_stage_big_day.jpg"
     image bg ext_stage_big_day_str_bkrr = MOD_IMAGES + "bg/ext_stage_big_day_str.jpg"
@@ -699,6 +699,9 @@ init 2:
     image bg ext_stage_big_day_evening_close = MOD_IMAGES + "bg/ext_stage_big_day_night_close.jpg"
     image bg ext_backstage_big_day_night = MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg"
 
+    image cg d19_concert_miku_semen = MOD_IMAGES + "cg/d19_concert_miku_semen.jpg"
+    image cg d19_concert_ulyana = MOD_IMAGES + "cg/d19_concert_ulyana.jpg"
+    image cg d19_concert_alisa = MOD_IMAGES + "cg/d19_concert_alisa.jpg"
 
     # Фейкоконцовка
 
