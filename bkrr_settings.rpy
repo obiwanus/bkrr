@@ -868,7 +868,8 @@ init 2:
     image cg d15_mi_sleep = im.Scale(MOD_IMAGES + "cg/d15_mi_sleep.jpg", config.screen_width, config.screen_height)
     image cg d16_catmiku = MOD_IMAGES + "cg/d16_catmiku.jpg"
     image cg d16_boat_shed = MOD_IMAGES + "cg/d16_boat_shed.jpg"
-    image cg d16_cryptography = MOD_IMAGES + "cg/d16_cryptography.png"
+    image cg d16_cryptography = MOD_IMAGES + "cg/d16_cryptography.jpg"
+    image cg d16_cryptography2 = MOD_IMAGES + "cg/d16_cryptography2.jpg"
     image cg d16_gulls = MOD_IMAGES + "cg/d16_gulls.jpg"
     image cg d17_alisa_klaus = MOD_IMAGES + "cg/d17_alisa_klaus.jpg"
     image cg d17_alisa_klaus2 = bkrr_fast_composite(MOD_IMAGES + "cg/d17_alisa_klaus.jpg", MOD_IMAGES + "cg/d17_alisa_klaus2.png")

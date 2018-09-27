@@ -1805,12 +1805,7 @@ label bkrr_day16_common:
     "На этом торжественная часть внезапно закончилась, и они вернулись к своему занятию."
 
     window hide
-    scene cg d16_cryptography:
-        truecenter
-        yalign 0.1
-        xalign 0.57
-        zoom 2.0
-    with fade2
+    scene cg d16_cryptography2 with fade2
     play music music_list["timid_girl"] fadein 5
     window show
 
