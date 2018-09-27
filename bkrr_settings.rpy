@@ -629,6 +629,11 @@ init 2:
 
     image bg int_aidpost_sunset_bkrr = im.MatrixColor(ES_IMAGES + "bg/int_aidpost_day.jpg", bkrr_tint["sunset"] * im.matrix.contrast(1.25))
     image bg int_aidpost_night_lamplight_bkrr = MOD_IMAGES + "bg/int_aidpost_night_lamplight.png"
+    image bg int_aidpost_day_roses:
+        contains:
+            "bg int_aidpost_day"
+        contains:
+            (MOD_IMAGES + "misc/five_roses_aidpost.png")
 
     image bg semen_room_clean_bkrr = MOD_IMAGES + "bg/semen_room_clean.jpg"
 

@@ -298,7 +298,7 @@ label bkrr_day16_common:
 
     $ renpy.pause(1.0, hard=True)
 
-    scene bg int_aidpost_day with fade3
+    scene bg int_aidpost_day_roses with fade3
 
     play ambience ambience_medstation_inside_day fadein 3
 
@@ -1089,7 +1089,7 @@ label bkrr_day16_common:
 
     play sound sfx_medpunkt_door_open
 
-    scene bg int_aidpost_day with dissolve
+    scene bg int_aidpost_day_roses with dissolve
 
     play ambience ambience_medstation_inside_day fadein 3
 
