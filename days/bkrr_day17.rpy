@@ -2557,12 +2557,16 @@ label bkrr_day17_common:
 
     "Клаус поднял на нас глаза и попросил:"
 
+    show cg d17_alisa_klaus2 with dspr
+
     kla "Hilfe! *(помогите) "
     dv "Зовите вожатых!"
     mi "Алиса… слезь с него. Это наш гость!"
 
     stop sound_loop
     hide bkrr_bang
+    show cg d17_alisa_klaus
+    with dspr
 
     "Алиса остановила журнал на замахе. {w} Потом сообразила, что одета не полностью, бросила журнал, прикрылась руками и взвизгнула:"
 

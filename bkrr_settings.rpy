@@ -866,6 +866,7 @@ init 2:
     image cg d16_cryptography = MOD_IMAGES + "cg/d16_cryptography.png"
     image cg d16_gulls = MOD_IMAGES + "cg/d16_gulls.jpg"
     image cg d17_alisa_klaus = MOD_IMAGES + "cg/d17_alisa_klaus.jpg"
+    image cg d17_alisa_klaus2 = bkrr_fast_composite(MOD_IMAGES + "cg/d17_alisa_klaus.jpg", MOD_IMAGES + "cg/d17_alisa_klaus2.png")
     image cg d17_klaus_guitar = im.Scale(MOD_IMAGES + "cg/d17_klaus_guitar.jpg", config.screen_width, config.screen_height)
     image cg d17_tmp_sex:
         contains:
