@@ -4559,7 +4559,7 @@ label bkrr_day17_common:
     window hide
     $ bkrr_set_volume("sound", 0.1)
     play sound bkrr_sfx_list["trapdoor_open"]
-    $ renpy.pause(1.0, hard=True)
+    scene bg int_mine_exit_night_torch_open with Dissolve(1.0)
     window show
 
     "Вожатая выбралась наверх и протянула руки."
