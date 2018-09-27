@@ -708,6 +708,8 @@ init 2:
     image bg ext_liaz_night_closed = MOD_IMAGES + "bg/ext_liaz_night_closed.jpg"
     image bg ext_liaz_night_open = MOD_IMAGES + "bg/ext_liaz_night_open.jpg"
     image bg int_liaz_night = MOD_IMAGES + "bg/int_liaz_night.jpg"
+    image bg int_liaz_night_camp_open = MOD_IMAGES + "bg/int_liaz_night_camp_open.jpg"
+    image bg int_liaz_night_camp_closed = MOD_IMAGES + "bg/int_liaz_night_camp_closed.jpg"
     image cg d19_ghost_black = im.Scale(MOD_IMAGES + "cg/d19_ghost_black.png", config.screen_width, config.screen_height)
     image cg d19_bus_escape = MOD_IMAGES + "cg/d19_bus_escape.jpg"
     image cg d19_miku_bus_1 = MOD_IMAGES + "cg/d19_miku_bus_1.jpg"

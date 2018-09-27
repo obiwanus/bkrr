@@ -4903,7 +4903,7 @@ label bkrr_day19_common:
     window hide
     $ renpy.pause(2.0, hard=True)
     stop ambience fadeout 1
-    scene bg int_liaz_night with fade2
+    scene bg int_liaz_night_camp_open with fade2
     window show
 
     "Тяжело вздохнув, я встал и поднялся в салон.{w} На переднем сиденье сидела Юля и болтала ногами.{w} Мне было слишком паршиво, чтобы удивляться."
@@ -4941,9 +4941,12 @@ label bkrr_day19_common:
 
     uv "Все будет хорошо. Когда ты проснешься, это больше не будет тебя волновать.{w} Просто сон, который скоро забудется."
 
+    window hide
+    hide uv with dissolve
     play sound sfx_intro_bus_door_open
     play sound_loop sfx_bus_loop fadein 5
-    hide uv with dissolve
+    scene bg int_liaz_night_camp_closed with Dissolve(1.0)
+    window show
 
     "Двери со скрипом и шипением закрылись.{w} Двигатель издал несколько кашляющих звуков и мы тронулись с места.{w} То, что в кабине было пусто, никого не смущало."
 
@@ -4962,7 +4965,7 @@ label bkrr_day19_common:
     "Она удивленно посмотрела на автобус, а затем бросилась догонять его."
 
     window hide
-    scene bg int_liaz_night with dissolve
+    scene bg int_liaz_night_camp_closed with dissolve
     window show
 
     "Кажется, она что-то кричала, но вовнутрь не доносилось ни звука."
