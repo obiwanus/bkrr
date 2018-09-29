@@ -5070,18 +5070,13 @@ label bkrr_day19_common:
     "Еще несколько минут я вслушивался в урчание двигателя, а потом наступила тишина."
 
     window hide
-    stop sound_loop fadeout 5
-    stop music fadeout 10
-    scene expression bkrr_make_sepia_img("cg d19_bus_escape") with Dissolve(5.0)
+    stop sound_loop fadeout 3
+    stop music fadeout 7
+    $ renpy.pause(7.0, hard=True)
     $ bkrr_set_volume("sound", 1.0)
     $ bkrr_set_volume("sound_loop", 1.0)
-    $ renpy.pause(2.0, hard=True)
-    scene black with Dissolve(5.0)
-    $ _skipping = False
-    $ renpy.movie_cutscene(bkrr_video_list["black_credits"], delay = 55.0)
-    $ _skipping = True
+    $ renpy.movie_cutscene(bkrr_video_list["black_credits"], delay = 72.0)
     scene white
-    $ bkrr_set_volume("sound_loop2", 0.3)
     play sound bkrr_sfx_list["inhale"]
     play sound_loop bkrr_sfx_list["ear_buzz"] fadein 5
 
