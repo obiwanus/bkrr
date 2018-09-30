@@ -5109,6 +5109,8 @@ label bkrr_day19_common:
         linear 0.3 alpha 1.0
         ease 1.0 alpha 0.0
     with dissolve
+    $ bkrr_set_volume("sound3", 0.4)
+    play sound3 [ bkrr_sfx_list["silence14"], bkrr_sfx_list["silence1"], bkrr_sfx_list["applause3"] ]
     play music [ bkrr_music_list["rb_03"], bkrr_music_list["rb_12"] ] fadein 15
     stop ambience fadeout 5
     "Алиса всё еще угрожающе смотрела на меня. Она хмурилась, но в этот момент казалась мне самым дорогим человеком на свете.{w} После Мику, конечно."
@@ -5172,6 +5174,8 @@ label bkrr_day19_common:
 
     mi "{i}Песни, сделавшие нас людьми…{w=0.3}\nМы снова подарим их людям!{/i}"
     stop music fadeout 7
+    stop sound3 fadeout 3  # отключаем отложенные аплодисменты для промотки
+    $ bkrr_set_volume("sound3", 1.0, 1.0)
     play ambience ambience_camp_center_night fadein 4
     play sound_loop ambience_medium_crowd_outdoors fadein 2
 
