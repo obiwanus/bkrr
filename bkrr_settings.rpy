@@ -708,9 +708,27 @@ init 2:
     image bg ext_stage_big_day_evening_close = MOD_IMAGES + "bg/ext_stage_big_day_night_close.jpg"
     image bg ext_backstage_big_day_night = MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg"
 
-    image cg d19_concert_miku_semen = MOD_IMAGES + "cg/d19_concert_miku_semen.jpg"
-    image cg d19_concert_ulyana = MOD_IMAGES + "cg/d19_concert_ulyana.jpg"
-    image cg d19_concert_alisa = MOD_IMAGES + "cg/d19_concert_alisa.jpg"
+    image cg1 d19_concert_alisa:
+        contains:
+            "white"
+            truecenter
+            zoom 1.02
+        contains:
+            (MOD_IMAGES + "cg/d19_concert_alisa.jpg")
+    image cg2 d19_concert_ulyana:
+        contains:
+            "white"
+            truecenter
+            zoom 1.02
+        contains:
+            (MOD_IMAGES + "cg/d19_concert_ulyana.jpg")
+    image cg3 d19_concert_miku_semen:
+        contains:
+            "white"
+            truecenter
+            zoom 1.02
+        contains:
+            (MOD_IMAGES + "cg/d19_concert_miku_semen.jpg")
 
     # Фейкоконцовка
 

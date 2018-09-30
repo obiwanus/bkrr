@@ -5132,7 +5132,11 @@ label bkrr_day19_common:
 
     nvl hide dissolve
     $ bkrr_set_mode()
-    scene cg d19_concert_alisa with fade3
+    scene bg ext_stage_big_day_evening_full
+    show cg3 d19_concert_miku_semen
+    show cg2 d19_concert_ulyana
+    show cg1 d19_concert_alisa
+    with fade3
     window show
 
     "Алиса кивнула, гримаса на её лице сменилась обычной улыбкой, а через несколько тактов над притихшими зрителями разнёсся звонкий чистый голос Мику."
@@ -5143,7 +5147,13 @@ label bkrr_day19_common:
     "И пускай всё внимание доставалось Мику и Алисе, но сейчас я испытывал странное ощущение. Странное и очень приятное."
 
     window hide
-    scene cg d19_concert_ulyana with fade3
+    play sound bkrr_sfx_list["photo_shot"]
+    show cg1 d19_concert_alisa:
+        truecenter
+        subpixel True
+        ease 0.2 zoom 0.95
+        ease 1.5 pos (2.0, 2.0) rotate 90 alpha 0.0
+    with flash
     window show
 
     mi "{i}И лучшие песни начинали звучать,{w=0.3}\nДавай сохраним их надолго!{/i}"
@@ -5152,7 +5162,14 @@ label bkrr_day19_common:
     "И только теперь, провалившись в прошлое и выйдя на сцену перед несколькими десятками пионеров, я понял, что ошибался."
 
     window hide
-    scene cg d19_concert_miku_semen with fade3
+    hide cg1 with None
+    play sound bkrr_sfx_list["photo_shot"]
+    show cg2 d19_concert_ulyana:
+        truecenter
+        subpixel True
+        ease 0.2 zoom 0.95
+        ease 1.5 pos (-2.0, -2.0) rotate -90 alpha 0.0
+    with flash
     window show
 
     mi "{i}Нас приключения ждут впереди{w=0.3}\nПройдут года, но мы не забудем…{/i}"
@@ -5169,7 +5186,14 @@ label bkrr_day19_common:
     "Как же всё просто."
 
     window hide
-    scene bg ext_stage_big_day_evening_full with Dissolve(2.0)
+    hide cg2
+    play sound bkrr_sfx_list["photo_shot"]
+    show cg3 d19_concert_miku_semen:
+        truecenter
+        subpixel True
+        ease 0.2 zoom 0.95
+        ease 1.5 pos (-2.0, 2.0) rotate -120 alpha 0.0
+    with flash
     window show
 
     mi "{i}Песни, сделавшие нас людьми…{w=0.3}\nМы снова подарим их людям!{/i}"
