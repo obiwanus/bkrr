@@ -732,8 +732,8 @@ init 2:
 
     # Фейкоконцовка
 
-    image bg ext_liaz_night_closed = MOD_IMAGES + "bg/ext_liaz_night_closed.jpg"
     image bg ext_liaz_night_open = MOD_IMAGES + "bg/ext_liaz_night_open.jpg"
+    image bg ext_liaz_night_closed = bkrr_fast_composite(MOD_IMAGES + "bg/ext_liaz_night_open.jpg", MOD_IMAGES + "bg/ext_liaz_night_closed.png")
     image bg int_liaz_night = MOD_IMAGES + "bg/int_liaz_night.jpg"
     image bg int_liaz_night_camp_open = MOD_IMAGES + "bg/int_liaz_night_camp_open.jpg"
     image bg int_liaz_night_camp_closed = MOD_IMAGES + "bg/int_liaz_night_camp_closed.jpg"
