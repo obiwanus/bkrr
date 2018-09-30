@@ -2035,6 +2035,7 @@ init 2:
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'swim', ['es:body', 'mod:underwear', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'jacket', ['es:body', 'mod:underwear', 'mod:jacket', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'yukata', ['mod:yukata', 'es:<emotion>'])
+        make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'pirate', ['mod:pirate', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'pioneer_loo', ['mod:body_loo', 'es:pioneer', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'underwear', ['es:body', 'mod:underwear', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
