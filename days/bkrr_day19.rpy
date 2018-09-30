@@ -5081,32 +5081,36 @@ label bkrr_day19_common:
     play sound bkrr_sfx_list["inhale"]
     play sound_loop bkrr_sfx_list["ear_buzz"] fadein 5
 
-    window show    
+    window show
     "Я вздрогнул от яркой вспышки."
     window hide
     $ renpy.pause(3.0, hard=True)
     window show
     play sound sfx_concert_applause fadein 5
     "Собранный Шуриком самопальный прожектор качнулся и теперь бил мне прямо в лицо."
-    
+
     scene expression bkrr_awakening_atl("bg ext_stage_big_day_evening_full")
     show white:
         alpha 0.8
-        parallel:
-            ease 18.0 alpha 0.0
-        parallel:
-            pause 16.0  # всполох прожекторов в нужный момент
-            linear 0.3 alpha 1.0
-            ease 1.0 alpha 0.0
+        ease 8.0 alpha 0.0
     with bkrr_fade(1.0)
 
     play sound2 sfx_concert_applause fadein 5
     stop sound_loop fadeout 3
+    play ambience ambience_camp_center_night fadein 3
 
     "Прищурившись, я сделал шаг в сторону, пытаясь понять, что происходит…"
 
     "Я не в автобусе…{w} Я снова на сцене… Но…{w} Как? Почему?"
+    scene bg ext_stage_big_day_evening_full
+    show white:
+        alpha 0.0
+        pause 15.5  # всполох прожекторов в нужный момент
+        linear 0.3 alpha 1.0
+        ease 1.0 alpha 0.0
+    with dissolve
     play music [ bkrr_music_list["rb_03"], bkrr_music_list["rb_12"] ] fadein 15
+    stop ambience fadeout 5
     "Алиса всё еще угрожающе смотрела на меня. Она хмурилась, но в этот момент казалась мне самым дорогим человеком на свете.{w} После Мику, конечно."
     "И разбитые о стены автобуса кулаки были целёхоньки."
     "Черное отчаяние быстро улетучивалось, уступая место ни с чем не сравнимому облегчению.{w} Я понял, что глупо улыбаюсь рыжей гитаристке."
