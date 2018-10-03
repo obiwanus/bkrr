@@ -5359,8 +5359,8 @@ label bkrr_day19_common:
 
     window hide
     show bg ext_backstage_big_day_night
-    show dv smile pioneer at fright
-    show us smile pioneer at fleft
+    show dv smile pirate at fright
+    show us smile pirate at fleft
     show mi normal pirate close at center
     with None
     hide blink
@@ -5382,7 +5382,7 @@ label bkrr_day19_common:
     dv "А как по-твоему?"
     me "Вот это и есть ваш сюрприз?"
 
-    show dv smile pirate with dspr
+    show dv grin pirate with dspr
 
     dv "Он самый."
 
@@ -5393,7 +5393,7 @@ label bkrr_day19_common:
     dv "Иди сюда, сейчас мы из тебя будем криминальный элемент делать!"
     th "Откуда она знает эти слова?"
 
-    show us grin pioneer with dspr
+    show us grin pirate with dspr
 
     us "Не выйдет. Сильно у него лицо порядочное. На нем явно видны уроки скрипки, мамины борщи и коллекционирование гербариев.{w} Может, ему фингал поставить? По-быстрому… Давай, ты же умеешь."
 
@@ -5401,16 +5401,16 @@ label bkrr_day19_common:
 
     me_mi_d "Не надо!"
 
-    show dv grin pioneer with dspr
+    show dv grin pirate with dspr
 
     dv "Видишь? Отказываются. Усы что ли подрисовать… Ну не то, не то…{w} Ладно. Просто делай такое же лицо, как обычно когда играешь. Будешь туповатым пиратом."
     me "Чего-о-о-о?"
 
-    show us laugh pioneer with dspr
+    show us laugh pirate with dspr
 
     us "А ты не замечал? Ты когда увлекаешься, губы поджимаешь и складываешь трубочкой… Толик тоже так делал."
 
-    show us normal pioneer with dspr
+    show us normal pirate with dspr
 
     me "Неправда!"
 
@@ -5426,17 +5426,17 @@ label bkrr_day19_common:
 
     mi "Пошел второй проигрыш. Им играть осталось три минуты. Давайте, быстро, быстро!"
 
-    show dv smile pioneer with dspr
+    show dv smile pirate with dspr
 
     dv "Еще Ольга Дмитриевна будет минуты две рассказывать, какая хорошая штука – эта дружба народов."
     "Алиса мечтательно улыбнулась."
     dv "Хотя некоторые народы очень даже ничего. Симпатичные."
 
-    show us smile pioneer with dspr
+    show us smile pirate with dspr
 
     us "Алиска, вернись на землю. Замки висят?"
 
-    show dv normal pioneer with dspr
+    show dv normal pirate with dspr
 
     dv "Висят. Я когда поправляла колонку, заперла. Осталось этих выпустить, и готово."
     mi "Электричество?"
@@ -5453,7 +5453,7 @@ label bkrr_day19_common:
     hide dv
     hide mi
     with dissolve
-    show us grin pioneer close with dissolve
+    show us grin pirate close with dissolve
     window show
 
     us "Сенька, протяни руки… не то протянешь ноги!"
@@ -5477,9 +5477,9 @@ label bkrr_day19_common:
         zoom 1.2
         ease 1.0 zoom 1.0 yalign 0.0
     with None
-    show us sad pioneer close at center
+    show us sad pirate close at center
     show mi upset pirate at fleft
-    show dv smile pioneer at fright
+    show dv smile pirate at fright
     with dissolve
     window show
 
@@ -5490,16 +5490,16 @@ label bkrr_day19_common:
 
     mi "Тридцать секунд. По-моему, миленько…"
 
-    show us grin pioneer close with dspr
+    show us grin pirate close with dspr
 
     us "А, ну да. Нашла кого спрашивать. Алиска, как тебе?"
 
-    show dv grin pioneer with dspr
+    show dv grin pirate with dspr
 
     dv "Нормально! Кто его будет рассматривать, когда на сцене буду я!"
     "Она эффектно отставила зад и подбоченилась."
 
-    show us dontlike pioneer close with dspr
+    show us dontlike pirate close with dspr
 
     us "Ой, кто тут у нас зазвездился-то? А?"
 
@@ -5515,7 +5515,7 @@ label bkrr_day19_common:
 
     mi "Девочки, Семён… Пора!"
 
-    show us grin pioneer at right with dissolve
+    show us grin pirate at right with dissolve
 
     us "На абордаж! Кошки к борту! Пленных не брать!"
     th "Кошки… Юля ведь тоже где-то здесь. Интересно, где?"
@@ -5528,7 +5528,7 @@ label bkrr_day19_common:
     "Что сейчас произойдёт…"
     "И как перестать пялиться на едва прикрытый тесными кожаными брючками зад Алисы. Впрочем, с учётом морского сценария, на её корму."
 
-    show dv laugh pioneer far at right with dissolve
+    show dv laugh pirate far at right with dissolve
 
     "Алиса оглянулась и подмигнула мне."
     dv "Сейчас повеселимся!"
