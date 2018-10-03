@@ -5367,7 +5367,7 @@ label bkrr_day19_common:
     show unblink
     window show
 
-    "Я обалдел от неожиданности, увидев произошедшие перемены. Пионерская форма лежала на одеяле."
+    "Я обалдел от неожиданности, увидев произошедшие перемены.{w} Пионерская форма лежала на одеяле."
     "На девчонках же красовались другие костюмы. Они навевали мысли о южных морях, чайках, звоне абордажных сабель, попугае-матерщиннике на плече и ножки от стула вместо ноги."
 
     show mi smile pirate close with dspr
@@ -5462,8 +5462,9 @@ label bkrr_day19_common:
     hide us with dissolve
     scene bg ext_backstage_big_day_night:
         subpixel True
-        yalign 0.0
-        ease 2.0 zoom 1.2 yalign 0.0
+        truecenter
+        yalign 1.0
+        ease 1.0 zoom 1.2 yalign 1.0
     window show
 
     "Она быстро развязала мне галстук, расстегнула до пупа рубашку, напялила на меня черный жилет с кожаными вставками, подпоясала малиновой тряпкой, изображающей пояс. Вышел не столько пират, сколько оборванец."
@@ -5471,12 +5472,15 @@ label bkrr_day19_common:
     "Она встала на цыпочки и обвязала галстуком мою лохматую голову."
 
     window hide
+    $ bkrr_get_item("bandana")
     scene bg ext_backstage_big_day_night:
         subpixel True
-        yalign 0.0
+        truecenter
+        yalign 1.0
         zoom 1.2
-        ease 1.0 zoom 1.0 yalign 0.0
+        ease 1.0 zoom 1.0 yalign 1.0
     with None
+    $ renpy.pause(1.0, hard=True)
     show us sad pirate close at center
     show mi upset pirate at fleft
     show dv smile pirate at fright

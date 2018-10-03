@@ -375,7 +375,7 @@ init python:
 
     renpy.image("bkrr_ach_blank", im.Scale(MOD_IMAGES + "ui/achievements/blank.png", 450, 125))
 
-    bkrr_item_list = ("knife", "paint", "tape", "key", "food", "powder", "accumulator", "comb", "pills", "apple", "note", "shark_tooth", "matchbox", "love_letter", "tabs")
+    bkrr_item_list = ("knife", "paint", "tape", "key", "food", "powder", "accumulator", "comb", "pills", "apple", "note", "shark_tooth", "matchbox", "love_letter", "tabs", "bandana")
 
     for item in bkrr_item_list:
         renpy.image("bkrr_item_" + item, im.Scale(MOD_IMAGES + "ui/items/" + item + ".png", 450, 360))
