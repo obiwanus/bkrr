@@ -1986,6 +1986,7 @@ init 2:
 
         make_sprites_for('dv', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
         make_sprites_for('dv', 'swim', ['es:body', 'mod:swim', 'es:<emotion>'], emotions=('angry', 'guilty', 'rage', 'sad', 'shy'))
+        make_sprites_for('dv', 'pirate', ['mod:pibody', 'es:<emotion>'])
 
         make_sprites_for('mz', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
         make_sprites_for('mz', 'mask bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>', 'mod:mask'])

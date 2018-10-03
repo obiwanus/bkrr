@@ -5377,18 +5377,18 @@ label bkrr_day19_common:
 
     me "Девчата, а это… Чего?"
 
-    show dv laugh pioneer with dspr
+    show dv laugh pirate with dspr
 
     dv "А как по-твоему?"
     me "Вот это и есть ваш сюрприз?"
 
-    show dv smile pioneer with dspr
+    show dv smile pirate with dspr
 
     dv "Он самый."
 
     "Она поправила кожаную шляпу с корявым черепом, и вздохнула."
 
-    show dv normal pioneer with dspr
+    show dv normal pirate with dspr
 
     dv "Иди сюда, сейчас мы из тебя будем криминальный элемент делать!"
     th "Откуда она знает эти слова?"
