@@ -1902,9 +1902,9 @@ init 2:
         }
 
         distance_to_position = {
-            "far": (675, 1080),
+            "far": (630, 1080),
             "normal": (900, 1080),
-            "close": (1125, 1080)
+            "close": (1050, 1080)
         }
 
         def _sprite_for_all_times(full_sprite_name, composite_image):

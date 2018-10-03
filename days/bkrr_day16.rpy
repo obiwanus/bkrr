@@ -12,8 +12,11 @@ label bkrr_day16_common:
     play music music_list["sparkles"] fadein 5
 
     scene cg d16_catmiku:
+        subpixel True
+        truecenter
         yalign 0.85
-        ease 10.0 yalign 0.1
+        zoom 1.3
+        ease 10.0 yalign 0.1 zoom 1.0
     show prologue_dream:
         alpha 0.45
     with fade3
@@ -35,6 +38,7 @@ label bkrr_day16_common:
     th "Наверное, я ослышался. Или это их странные японские шалости?"
 
     scene cg d16_catmiku:
+        subpixel True
         truecenter
         yalign 0.1
         ease 6.0 zoom 1.4
