@@ -4673,7 +4673,7 @@ label bkrr_day19_common:
 
     show dv normal pioneer with dspr
 
-    dv "Сень…{w} Мы тебе конечно доверяем, но ты в одном домике с вожатой."
+    dv "Сень…{w} Мы тебе, конечно, доверяем, но ты в одном домике с вожатой."
     me "И что?"
     dv "Вдруг ты во сне разговариваешь. Нельзя было рисковать."
     me "Ну, сейчас-то уже можно?"
@@ -4713,8 +4713,10 @@ label bkrr_day19_common:
     "Мику поднялась на сцену и скрылась из виду."
 
     window hide
-    $ bkrr_set_volume("sound_loop", 0.5)
-    play sound_loop bkrr_music_list["en"] fadein 7
+    $ bkrr_set_volume("sound_loop", 1.0)
+    $ bkrr_set_volume("sound_loop2", 0.0)
+    play sound_loop bkrr_music_list["en_"] fadein 7
+    play sound_loop2 bkrr_music_list["en"] fadein 7
     $ bkrr_timeskip_short()
     scene bg ext_backstage_big_day_night with bkrr_timeskip_transition()
     play sound2 bkrr_sfx_list["applause2_"]
@@ -4729,7 +4731,7 @@ label bkrr_day19_common:
     $ bkrr_set_volume("sound_loop", 0.0, 0.3)
     play sound bkrr_sfx_list["plug1"]
     $ renpy.pause(0.5, hard=True)
-    $ bkrr_set_volume("sound_loop", 0.4, 1.5)
+    $ bkrr_set_volume("sound_loop", 1.0, 1.5)
 
     "Из всех динамиков одновременно раздался громкий щелчок, что-то зазвенело, потом вернулась музыка."
     sl_speaker "{i}Ой, Что же это?{/i}"
@@ -4744,12 +4746,11 @@ label bkrr_day19_common:
 
     play sound bkrr_sfx_list["applause3_"]
 
-    "Алиса с Ульянкой уже стояли возле двери."
-
     show us smile pioneer far at right
     show dv normal pioneer far at center
     with dissolve
 
+    "Алиса с Ульянкой уже стояли возле двери."
     us "Ну пошли-пошли-пошли!!! Нельзя заставлять публику ждать!"
 
     hide us
@@ -4761,7 +4762,8 @@ label bkrr_day19_common:
     "Отступать было некуда. Я шагнул в залитый светом дверной проём."
 
     window hide
-    $ bkrr_set_volume("sound_loop", 0.8, 3.0)
+    $ bkrr_set_volume("sound_loop", 0.0, 3.0)
+    $ bkrr_set_volume("sound_loop2", 1.0, 3.0)
     play sound bkrr_sfx_list["applause2"] fadein 6
     scene bg ext_stage_big_day_evening_full with fade2
     $ bkrr_set_mode(nvl)
@@ -4789,6 +4791,7 @@ label bkrr_day19_common:
     "Зеркальный шар под крышей сцены завертелся, рассыпая солнечных зайчиков по сцене и зрителям."
 
     stop sound_loop fadeout 10
+    stop sound_loop2 fadeout 10
     stop ambience fadeout 10
     play music music_list["drown"] fadein 10
 
@@ -4807,7 +4810,7 @@ label bkrr_day19_common:
     "Стараясь не поддаваться панике, я вцепился непослушными пальцами в гриф, и…{w} И всё острее понимал, что не знаю, что делать дальше.{w} Все уроки, всё что я успел разучить, всё ушло куда-то на задворки памяти.\n"
     "В голове билась и выла только одна мысль:{w} {b}Н{w=0.01}е{w=0.01} с{w=0.01}м{w=0.01}о{w=0.01}г{w=0.01}у{w=0.01}!{/b}"
 
-
+    $ bkrr_set_volume("sound_loop", 1.0)
     nvl hide dissolve
     show black with Dissolve(5.0)
     stop music fadeout 8
@@ -4841,6 +4844,7 @@ label bkrr_day19_common:
     show mi cry pioneer close with dspr
 
     mi "Но…"
+    "Всё это давило на меня. Позорный провал на сцене, комментарии рыжих, попытки Мику меня утешить… Нестерпимо хотелось побыть одному."
     me "Потом, всё потом."
 
     window hide
