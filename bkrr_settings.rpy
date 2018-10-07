@@ -2096,6 +2096,7 @@ init 2:
         make_sprites_for('ant', 'shirt', ['mod:body', 'mod:<emotion>'])
         make_sprites_for('kla', 'sport', ['mod:body', 'mod:sport', 'mod:<emotion>'])
         make_sprites_for('kla', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('kla', 'pioneer claw_marks', ['mod:body', 'mod:pioneer', 'mod:claw_marks', 'mod:<emotion>'], distances=['normal'])
         make_sprites_for('nt', 'cook', ['mod:cook', 'mod:<emotion>'])
         make_sprites_for('tol', 'pioneer', ['mod:pioneer', 'mod:<emotion>'])
         make_sprites_for('tr', 'pioneer', ['mod:pioneer', 'mod:<emotion>'])
