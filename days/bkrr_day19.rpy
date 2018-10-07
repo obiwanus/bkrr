@@ -5056,6 +5056,7 @@ label bkrr_day19_common:
     with Dissolve(2.0)
     window show
 
+    "Я протёр заплаканные глаза рукавом."
     uv "Успокоился?"
     me "Да. И что теперь?"
     uv "Ложись спать."
@@ -5118,6 +5119,7 @@ label bkrr_day19_common:
     $ bkrr_set_volume("sound3", 0.4)
     play sound3 [ bkrr_sfx_list["silence14"], bkrr_sfx_list["silence1"], bkrr_sfx_list["applause3"] ]
     play music [ bkrr_music_list["rb_06"], bkrr_music_list["rb_12"] ] fadein 1
+    play sound [ bkrr_sfx_list["silence05"], sfx_concert_applause ] fadein 13
     stop ambience fadeout 5
     "Алиса всё еще угрожающе смотрела на меня. Она хмурилась, но в этот момент казалась мне самым дорогим человеком на свете.{w} После Мику, конечно."
     "И разбитые о стены автобуса кулаки были целёхоньки."
@@ -5154,7 +5156,7 @@ label bkrr_day19_common:
 
     window hide
     play sound3 bkrr_sfx_list["photo_shot"]
-    show cg1 d19_concert_alisa:
+    show cg1 d19_concert_alisa_photo:
         truecenter
         subpixel True
         ease 0.5 zoom 0.9
@@ -5170,7 +5172,7 @@ label bkrr_day19_common:
     window hide
     hide cg1 with None
     play sound3 bkrr_sfx_list["photo_shot"]
-    show cg2 d19_concert_ulyana:
+    show cg2 d19_concert_ulyana_photo:
         truecenter
         subpixel True
         ease 0.5 zoom 0.9
@@ -5195,7 +5197,7 @@ label bkrr_day19_common:
     window hide
     hide cg2
     play sound3 bkrr_sfx_list["photo_shot"]
-    show cg3 d19_concert_miku_semen:
+    show cg3 d19_concert_miku_semen_photo:
         truecenter
         subpixel True
         ease 0.5 zoom 0.9

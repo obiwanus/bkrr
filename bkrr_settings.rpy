@@ -708,27 +708,32 @@ init 2:
     image bg ext_stage_big_day_evening_close = MOD_IMAGES + "bg/ext_stage_big_day_night_close.jpg"
     image bg ext_backstage_big_day_night = MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg"
 
-    image cg1 d19_concert_alisa:
+    image cg1 d19_concert_alisa = MOD_IMAGES + "cg/d19_concert_alisa.jpg"
+    image cg1 d19_concert_alisa_photo:
         contains:
             "white"
             truecenter
             zoom 1.02
         contains:
-            (MOD_IMAGES + "cg/d19_concert_alisa.jpg")
-    image cg2 d19_concert_ulyana:
+            im.Sepia(MOD_IMAGES + "cg/d19_concert_alisa.jpg")
+
+    image cg2 d19_concert_ulyana = MOD_IMAGES + "cg/d19_concert_ulyana.jpg"
+    image cg2 d19_concert_ulyana_photo:
         contains:
             "white"
             truecenter
             zoom 1.02
         contains:
-            (MOD_IMAGES + "cg/d19_concert_ulyana.jpg")
-    image cg3 d19_concert_miku_semen:
+            im.Sepia(MOD_IMAGES + "cg/d19_concert_ulyana.jpg")
+
+    image cg3 d19_concert_miku_semen = MOD_IMAGES + "cg/d19_concert_miku_semen.jpg"
+    image cg3 d19_concert_miku_semen_photo:
         contains:
             "white"
             truecenter
             zoom 1.02
         contains:
-            (MOD_IMAGES + "cg/d19_concert_miku_semen.jpg")
+            im.Sepia(MOD_IMAGES + "cg/d19_concert_miku_semen.jpg")
 
     # Фейкоконцовка
 
