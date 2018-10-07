@@ -2895,45 +2895,48 @@ label bkrr_day19_common:
     play ambience ambience_camp_center_day fadein 2
     window show
 
-    uv "Ой!"
+    uv_v "Ой!"
     me "Ых!"
     "Я потёр солнечное сплетение и сипло выдохнул, разглядывая белую панаму перед собой.{w} Сперва мне показалось, что это вожатая зачем-то уменьшилась вдвое, разогналась и с разбегу наподдала мне под дых. Но глаза, сверкнувшие на меня из-под панамы, отливали золотом, а не зеленью."
 
-    show uv smile close with dissolve
+    show uv pismile pioneer close with dissolve
 
     me "Юля?"
     uv "Да. Привет. Я тебя не сильно ушибла?"
     me "Нет, я от неожиданности. Чего это мы бегаем по лагерю и бодаемся?"
 
-    show uv guilty close with dspr
+    show uv piguilty pioneer close with dspr
 
     uv "Не «мы», а «я». Извини, так получилось."
-
-    hide uv with dissolve
-
     "Она огляделась по сторонам, словно ища кого-то."
     th "Неужели, снова… Нет. Они же обещали, что всё кончилось!"
     "Я протянул руку и поправил ей съехавший набок галстук."
     me "Вот. А почему ты так одета?"
 
-    show uv smile close with dissolve
+    show uv pismile pioneer close with dspr
 
     uv "Для маскировки. Я же обещала послушать ваш концерт, но моё платье слишком выделяется, и хвост не прикрывает.{w} Я пошла на склад и взяла себе одежду. Тебе нравится?"
     th "С хвостом или без, из лагеря или из леса… Девушки остаются девушками."
     me "Очень!"
+
+    show uv piupset pioneer close with dspr
+
     "Она потрогала край юбки и попыталась заглянуть себе за спину."
+
+    show uv pinormal pioneer close with dspr
+
     uv "Как вы такое только носите? Я даже на дерево сейчас забраться не смогла, когда убегала.{w} И нет разреза под хвост… Очень неудобно!"
     th "Да, идея пионерки с хвостом, прыгающей по деревьям, советским швеям в голову точно не приходила."
     me "На меня не смотри, я юбки не ношу.{w} Погоди-погоди. От кого ты убегала?"
     uv "Я услышала как в кустах кто-то играет на гитаре и поёт мужским голосом. Я подошла поздороваться.{w} А это оказался не ты, а какой-то незнакомый пионер. Он сначала стал меня разглядывать, а потом…"
 
-    show uv normal close with dspr
+    show uv piguilty pioneer close with dspr
 
     "Она замялась и покраснела."
     uv "Сделал очень некрасивую вещь. Я его шлепнула по руке, попыталась запрыгнуть на дерево, а когда не вышло, то просто убежала. Вот.{w} Наверное, я погуляю в лесу до начала концерта. Вы, люди, такие странные!"
     me "Понимаю… Тебя проводить до ворот?"
 
-    show uv smile close with dspr
+    show uv pismile pioneer close with dspr
 
     uv "Нет, не надо. Сегодня очень важный день."
     "Она поправила панамку и улыбнулась."
@@ -2942,7 +2945,7 @@ label bkrr_day19_common:
     uv "В общем, вам сейчас никак нельзя ссориться. Это очень важно."
     me "Да мы и не собирались…"
 
-    show uv normal close with dspr
+    show uv pinormal pioneer close with dspr
 
     uv "Это ты так думаешь."
 
@@ -2954,16 +2957,31 @@ label bkrr_day19_common:
     "Моя собеседница вздохнула."
     uv "Я не шучу. Но давай не будем о том, чего не случилось. Лучше – о том, что случится.{w} Как настроение перед кон…{w=0.5}{nw}"
 
-    show uv sad close with dspr
+    show uv pisad pioneer close with dspr
 
-    "Ой! Это снова он!"
-
-    hide uv with dissolve
-
+    uv "Ой! Это снова он!"
     "Мне показалось, что я слышу, как она шипит, но это, конечно, была игра воображения."
     "Я бросил быстрый взгляд на аллею. От клуба в нашу сторону шёл Клаус.{w} Немец выглядел озадаченным. Он осматривался по сторонам, заглядывал в кусты, словно ища что-то. Или кого-то. Может, медведя?"
     "Нет, наверняка он знает, что истории про медведей с балалайками, пьющих водку из самовара под ядерными реакторами – выдумка."
+
+    window hide
+    hide uv with dissolve
+    show uv pisad pioneer at cright with dissolve
+    window show
+
     uv "Я побежала!"
+
+    window hide
+    play sound bkrr_sfx_list["whiteout1"]
+    scene cg d19_uv_escape:
+        subpixel True
+        truecenter
+        linear 4.5 zoom 1.15 xalign 1.0
+        zoom 1.15
+        linear 70.0 zoom 2.0 xalign 1.0
+    with dissolve
+    window show
+
     "Юля рванулась в ту сторону, куда только что ушли Ольга, Антон и иностранная делегация."
     "Иностранцам её лучше не показывать, это точно. Хвостатые пионерки в порядочных лагерях не водятся."
     "Я уже видел, с какой быстротой Юля может двигаться, но всё же попытался схватить её за руку."
@@ -2973,15 +2991,27 @@ label bkrr_day19_common:
     "… Хвост."
     "Как мог мягко, я схватил её за хвост и потянул назад, стараясь не сделать больно.{w} Юля замерла, сжалась. А потом…"
 
-    show uv rage with dissolve
+    window hide
+    scene bg ext_house_of_mt_day
+    show uv pirage pioneer
+    with dissolve
+    window show
+    with vpunch
 
     uv "Ты!!! ТЫ!!!"
     "Она говорила человеческим языком, но в её голосе почему-то звучал пронзительный кошачий вой. Он был полон злобно-завывающих ноток и какой-то инстинкт подсказывал мне, что целость моей физиономии под большим вопросом."
-
-    hide uv with dissolve
-
     "Я огляделся по сторонам, но всё, что нашлось – это небольшой сарайчик, для инструмента. Даже не сарайчик, а большой ящик, стоящий вплотную к дому."
 
+    show uv pisad pioneer:
+        subpixel True
+        truecenter
+        ease 0.2 zoom 1.05
+        ease 0.2 zoom 1.05
+        parallel:
+            ease 0.5 zoom 1.15 alpha 0.0
+        parallel:
+            ease 1.0 offscreenright
+    $ renpy.pause(0.5, hard=True)
     play sound bkrr_sfx_list["doorfgs"]
     with vpunch
 
@@ -3094,49 +3124,48 @@ label bkrr_day19_common:
 
     "Убедившись, что он отошёл подальше, я открыл дверцу и выпустил взъерошенную и злую Юлю."
 
+    show uv pirage pioneer with dissolve
     play sound sfx_punch_medium
     with vpunch
 
     "Она тут же стукнула меня в плечо. Ну, хоть не исцарапала, как Клауса."
 
-    show uv sad with dissolve
-
     uv "Никогда! Никогда так не делай! Понял?"
     me "Прости, я забыл, что ты не любишь замкнутые помещения.{w} Тот… Второй… Ну, который вчера приходил, он же мне говорил. Не сердись пожалуйста."
     uv "Глупый! Я не про это!"
     "Она по-кошачьи фыркнула, её хвост подергивался влево-вправо."
+
+    show uv pisad pioneer with dspr
+
     uv "Я… Не трогай мой хвост. Это… Это очень личное.{w} Я только ему позволяю. В смысле – тебе, но тому, другому тебе."
     me "Извини. У меня никогда не было девушки с хвостом… Откуда мне знать такие тонкости. Больше не буду."
 
-    show uv normal with dspr
+    show uv piguilty pioneer with dspr
 
     "Она смущённо кивнула."
     uv "Хорошо… Я понимаю, что ты не знал. Но больше так не делай.{w} Вы, конечно, один человек… Но все-таки ты – не он."
     me "Всё-всё. Больше не буду. А наш кот нормально реагировал…"
 
-    show uv laugh with dspr
+    show uv pismile pioneer with dspr
 
     uv "Я не кошка!"
-    "Она засмеялась."
+    "Она улыбнулась."
     me "А кто?"
     uv "Я – это я! Понял?"
     me "Честно? Даже не пытаюсь. Здесь столько странного, всё понимать – голова лопнет."
-
-    show uv smile with dspr
-
     uv "Если бы с самого начала так смотрел на вещи… А то бегал тут, разнюхивал, записки себе писал…"
     me "Тебе легко говорить, для тебя это всё привычно."
     uv "Ничего подобного. Я сама здесь чувствую себя, как будто сижу в комнате, полной кресел-качалок… Никогда не знаешь, какая придавит тебе хвост.{w} Все эти чужие люди, их здесь быть не должно."
     me "В каком смысле?"
 
-    show uv normal with dspr
+    show uv pinormal pioneer with dspr
 
     "Юля упрямо помотала головой и повторила:"
     uv "Не должно! Чтобы я смогла стать настоящей, мы очень сильно повлияли на это место…{w} И теперь оно живёт само по себе. И ведёт себя неправильно."
     me "А раньше ты была какая? Игрушечная? Я не очень понял ваш рассказ…"
     "Юля небрежно чиркнула ногтем по листку сирени, отчего тот беззвучно распался на две половинки. Одна осталась на дереве, а вторая упала на ковер из сосновых иголок и травы."
 
-    show uv smile with dspr
+    show uv pismile pioneer with dspr
 
     uv "«Настоящее» это только слово. Мой любимый тоже долго пытался понять, как это работает и как устроено.{w} Для тебя «настоящее» это то, что ты можешь потрогать рукой, увидеть или укусить."
     me "Ну… да."
@@ -3151,12 +3180,12 @@ label bkrr_day19_common:
 
     "Она шаловливо улыбнулась, быстрым движением приподняла панаму и почесала себя за ухом, достала сосновую иголку и виновато пояснила:"
 
-    show uv guilty with dissolve
+    show uv piguilty pioneer with dissolve
 
     uv "Эти сосны… Не люблю их, они смолой пачкаются, потом не отмоешь.{w} И на ветке не посидишь, сильно колючая."
     me "Я вот подумал… Это вы вернетесь туда, откуда я… он… мы пришли. Да? А куда денусь я? Останусь здесь?"
 
-    show uv smile with dspr
+    show uv pismile pioneer with dspr
 
     uv "Глупый. много не только лагерей. Твоих миров тоже бесконечное множество… Хватит на всех!"
     "Она подумала. Затем добавила:"
@@ -3166,14 +3195,14 @@ label bkrr_day19_common:
     uv "Договорились!"
     "Она втянула запахи, доносящиеся со стороны столовой."
 
-    show uv laugh with dspr
+    show uv pilaugh pioneer with dspr
 
     uv "М-м-м… Рыбкой пахнет.{w} Знаешь, я передумала идти в лес. Пошли, посмотрим, что там вкусненького дают."
     me "А не боишься, что тебя поймают? Только-только от Клауса убегала."
     uv "Боюсь. Но я панаму снимать не буду. И к тому же там рыбка, а за рыбку я родину продам!"
     me "А где у тебя эта самая родина?"
 
-    show uv smile with dspr
+    show uv pismile pioneer with dspr
 
     uv "Опять дурацкие вопросы!"
     "Она улыбнулась, убрала хвост под юбку и теперь её было не отличить от обычной пионерки."
@@ -3186,7 +3215,7 @@ label bkrr_day19_common:
 
     window hide
     scene bg ext_square_day with fade2
-    show uv laugh with dissolve
+    show uv pilaugh pioneer with dissolve
     window show
 
     uv "Первое, что я сделаю, если мы выберемся отсюда – это попробую мороженое!{w} Ты… Он… Ну, ты понял. Очень много о нём рассказывал. Мы как-то пробовали приготовить его здесь из молока и сахара, но получился только сладкий лёд, совсем не то что я хотела.{w} Жалко, что его не делают со вкусом рыбки! Я бы попробовала."
@@ -3196,7 +3225,7 @@ label bkrr_day19_common:
     uv "Вот. А если тысяча миллионов?"
     me "Миллиард."
 
-    show uv smile with dspr
+    show uv pismile pioneer with dspr
 
     uv "Значит, это было один раз на миллиард.{w} Но мы играли в снежки, и он обещал что научит меня кататься на лыжах. Только я оденусь теплее, у меня в тот раз чуть хвост от холода не отвалился.{w} Здесь есть лыжные костюмы, но в том лагере их разобрали пионеры."
 
@@ -5056,7 +5085,7 @@ label bkrr_day19_common:
     with Dissolve(2.0)
     window show
 
-    "Я протёр заплаканные глаза рукавом."
+    "Я протёр заплаканные глаза ладонью."
     uv "Успокоился?"
     me "Да. И что теперь?"
     uv "Ложись спать."
@@ -5094,32 +5123,37 @@ label bkrr_day19_common:
     $ renpy.pause(3.0, hard=True)
     window show
     play sound sfx_concert_applause fadein 5
+    stop sound_loop fadeout 5
     "Собранный Шуриком самопальный прожектор качнулся и теперь бил мне прямо в лицо."
 
     scene expression bkrr_awakening_atl("bg ext_stage_big_day_evening_full")
     show white:
         alpha 0.8
         ease 8.0 alpha 0.0
-    with bkrr_fade(1.0)
+    with dissolve
 
     play sound2 sfx_concert_applause fadein 5
-    stop sound_loop fadeout 3
     play ambience ambience_camp_center_night fadein 3
 
     "Прищурившись, я сделал шаг в сторону, пытаясь понять, что происходит…"
 
     "Я не в автобусе…{w} Я снова на сцене… Но…{w} Как? Почему?"
     scene bg ext_stage_big_day_evening_full
-    show white:
+    show white as white2:
         alpha 0.0
-        pause 15.5  # всполох прожекторов в нужный момент
-        linear 0.3 alpha 1.0
-        ease 1.0 alpha 0.0
+        pause 1.0
+        linear 0.3 alpha 0.9
+        ease 0.6 alpha 0.0
+    # show white:
+    #     alpha 0.0
+    #     pause 15.5  # всполох прожекторов в нужный момент
+    #     linear 0.3 alpha 0.8
+    #     ease 1.0 alpha 0.0
     with dissolve
     $ bkrr_set_volume("sound3", 0.4)
     play sound3 [ bkrr_sfx_list["silence14"], bkrr_sfx_list["silence1"], bkrr_sfx_list["applause3"] ]
-    play music [ bkrr_music_list["rb_06"], bkrr_music_list["rb_12"] ] fadein 1
-    play sound [ bkrr_sfx_list["silence05"], sfx_concert_applause ] fadein 13
+    play music [ bkrr_music_list["rb_06"], bkrr_music_list["rb_12"] ]
+    play sound [ bkrr_sfx_list["silence05"], sfx_concert_applause ] fadein 15
     stop ambience fadeout 5
     "Алиса всё еще угрожающе смотрела на меня. Она хмурилась, но в этот момент казалась мне самым дорогим человеком на свете.{w} После Мику, конечно."
     "И разбитые о стены автобуса кулаки были целёхоньки."
@@ -5151,7 +5185,7 @@ label bkrr_day19_common:
 
     mi "{i}Ты помнишь, как наши мамы{w=0.3}\nВключали нам эти пластинки…{/i}"
 
-    "То ли сработал гипноз на пляже, то ли бесконечные повторения дали о себе знать, но пальцы, зажили отдельной жизнью, ложась на нужные лады раньше, чем я успевал подумать, куда жать."
+    "То ли сработал гипноз на пляже, то ли бесконечные повторения дали о себе знать, но пальцы зажили отдельной жизнью, ложась на нужные лады раньше, чем я успевал подумать, куда жать."
     "И пускай всё внимание доставалось Мику и Алисе, но сейчас я испытывал странное ощущение. Странное и очень приятное."
 
     window hide
@@ -5227,16 +5261,14 @@ label bkrr_day19_common:
     stop sound_loop fadeout 2
     $ bkrr_timeskip()
     scene bg ext_stage_big_day_evening_full with bkrr_circleout_transition
-    play music music_list["heather"] fadein 5
+    play music bkrr_music_list["eo"] fadein 5
     play ambience ambience_camp_center_night fadein 4
-    play sound_loop ambience_medium_crowd_outdoors fadein 2
     play sound bkrr_sfx_list["applause3"] fadein 3
 
     $ bkrr_set_mode(nvl)
     nvl show dissolve
 
-    "Следующая четверть часа пролетела как в тумане.{w} Одну за другой мы отыграли три положенные песни. Даже стало жалко, что всё прошло так быстро."
-    "Еще одна, последняя песня, и всё закончится, став лишь ярким воспоминанием."
+    "Следующая четверть часа пролетела как в тумане.{w} Одну за другой мы отыграли три положенные песни. Даже стало жалко, что всё прошло так быстро.{w} Еще одна, последняя песня, и всё закончится, став лишь ярким воспоминанием."
     "К моему удивлению, Мику отложила гитару и радостно объявила:\n"
     mi_speaker "{i}А теперь выступят наши гости из Германии…{/i}\n"
     "Почему-то я ожидал, что она скажет «ГДР».\n"
@@ -5256,6 +5288,11 @@ label bkrr_day19_common:
 
     us "Живо! Шевели поршнями!"
     me "Эй, куда ты меня…"
+
+    window hide
+    scene bg ext_backstage_big_day_night with dissolve
+    window show
+
     us "Куда-куда, я же тебе обещала голую Алису показать. Время пришло!"
     dv "Ах ты мелкая зараза!"
     us "Утю-тю, какие мы нежные. Шуток не понимаем."
@@ -5263,13 +5300,9 @@ label bkrr_day19_common:
     me "Так, девчата, угомонитесь! Что происходит?"
     us "Сейчас всё увидишь. Даже больше чем ожидал!"
 
-    window hide
-    scene bg ext_backstage_big_day_night
     show us normal pioneer at cleft
     show dv normal pioneer far at right
     with dissolve
-    stop music fadeout 5
-    window show
 
     "Мы спустились по задней лестнице."
 
@@ -5293,12 +5326,15 @@ label bkrr_day19_common:
     show dv angry pioneer far with dspr
 
     dv "Тихо!"
-
-    show dv normal pioneer far with dspr
-
     "Я не знал, зачем Алисе эта доска, но протянул руку чтобы помочь… Как раз вовремя."
 
-    hide dv with dissolve
+    window hide
+    show dv shocked pioneer far:
+        ease 0.2 ypos 0.1 zoom 1.05 rotate -1
+        ease 0.3 right ypos 0.0 zoom 1.0 rotate 0
+    $ renpy.pause(0.2, hard=True)
+    show dv surprise pioneer far with dspr
+    window show
 
     "Добротно забитые гвозди внезапно поддались и рыжая чуть не упала."
 
@@ -5306,6 +5342,9 @@ label bkrr_day19_common:
 
     "Ульяна тут же полезла в образовавшуюся щель и вытащила наружу какой-то сверток. Это было… одеяло?"
     us "Живо, живо, работаем!"
+
+    hide dv with dissolve
+
     "Девчонки раскатали одеяло на траве и быстро, по-армейски принялись раздеваться."
     "Нет, конечно я видел их в купальниках, да и вообще, мы как бы свои, но… Моему взгляду открылось слишком много загорелой девичьей кожи, чтобы сохранять спокойствие."
     th "Это что? Очередные шутки лагеря? Или…"
@@ -5325,7 +5364,7 @@ label bkrr_day19_common:
 
     us "Да шутит она, не парься. Она и сама не против, чтобы ты посмотрел…"
 
-    play sound sfx_face_slap
+    play sound sfx_face_slap fadein 0.5
     with vpunch
 
     "Сзади раздался звонкий шлепок."
@@ -5354,23 +5393,40 @@ label bkrr_day19_common:
 
     window hide
     show blink
+    stop music fadeout 3
     $ renpy.pause(2.0, hard=True)
+    $ bkrr_timeskip()
+    scene black
     window show
 
     mi "Открывай!"
 
     window hide
-    show bg ext_backstage_big_day_night
+    play sound bkrr_sfx_list["whiteout1"]
+    play music music_list["heather"] fadein 3
+    scene cg d19_pirate_dress:
+        subpixel True
+        zoom 1.4
+        xalign 0.0
+        yalign 0.75
+        parallel:
+            ease 3.0 xalign 1.0 yalign 0.3
+        xalign 1.0
+        parallel:
+            linear 1.0 xalign 0.5 yalign 0.5 zoom 1.0
+    with flash
+
+    $ renpy.pause(3.5, hard=True)
+
+    scene bg ext_backstage_big_day_night
     show dv smile pirate at fright
     show us smile pirate at fleft
     show mi normal pirate close at center
     with None
-    hide blink
-    show unblink
     window show
 
-    "Я обалдел от неожиданности, увидев произошедшие перемены.{w} Пионерская форма лежала на одеяле."
-    "На девчонках же красовались другие костюмы. Они навевали мысли о южных морях, чайках, звоне абордажных сабель, попугае-матерщиннике на плече и ножки от стула вместо ноги."
+    "Я обалдел от неожиданности, увидев произошедшие перемены."
+    "Пионерская форма лежала на одеяле, на девчонках же красовались другие костюмы.{w} Они навевали мысли о южных морях, чайках, звоне абордажных сабель, попугае-матерщиннике на плече и ножки от стула вместо ноги."
 
     show mi smile pirate close with dspr
 
@@ -5389,13 +5445,12 @@ label bkrr_day19_common:
     dv "Он самый."
 
     "Она поправила кожаную шляпу с корявым черепом, и вздохнула."
-
-    show dv normal pirate with dspr
-
     dv "Иди сюда, сейчас мы из тебя будем криминальный элемент делать!"
     th "Откуда она знает эти слова?"
 
-    show us grin pirate with dspr
+    show dv smile pirate
+    show us grin pirate
+    with dspr
 
     us "Не выйдет. Сильно у него лицо порядочное. На нем явно видны уроки скрипки, мамины борщи и коллекционирование гербариев.{w} Может, ему фингал поставить? По-быстрому… Давай, ты же умеешь."
 
@@ -5412,15 +5467,15 @@ label bkrr_day19_common:
 
     us "А ты не замечал? Ты когда увлекаешься, губы поджимаешь и складываешь трубочкой… Толик тоже так делал."
 
-    show us normal pirate with dspr
-
     me "Неправда!"
 
     show mi smile pirate close with dspr
 
     mi "Милый, прости… Правда.{w} Я тебе не говорила, чтобы ты не расстраивался и во время игры о посторонних вещах не думал… Но действительно складываешь."
 
-    show mi upset pirate close with dspr
+    show mi upset pirate close
+    show us normal pirate
+    with dspr
 
     "Она прислушалась."
 
@@ -5469,8 +5524,8 @@ label bkrr_day19_common:
         ease 1.0 zoom 1.2 yalign 1.0
     window show
 
-    "Она быстро развязала мне галстук, расстегнула до пупа рубашку, напялила на меня черный жилет с кожаными вставками, подпоясала малиновой тряпкой, изображающей пояс. Вышел не столько пират, сколько оборванец."
-    us "Галстук… галстук. О! Придумала!"
+    "Она быстро развязала мне галстук, расстегнула до пупа рубашку, напялила на меня черный жилет с кожаными вставками, подпоясала малиновой тряпкой, изображающей пояс.{w} Вышел не столько пират, сколько оборванец."
+    us "Галстук… галстук.{w} О! Придумала!"
     "Она встала на цыпочки и обвязала галстуком мою лохматую голову."
 
     window hide
@@ -5483,9 +5538,9 @@ label bkrr_day19_common:
         ease 1.0 zoom 1.0 yalign 1.0
     with None
     $ renpy.pause(1.0, hard=True)
-    show us sad pirate close at center
-    show mi upset pirate at fleft
+    show mi upset pirate at left
     show dv smile pirate at fright
+    show us sad pirate close at center
     with dissolve
     window show
 
@@ -5534,7 +5589,7 @@ label bkrr_day19_common:
     "Что сейчас произойдёт…"
     "И как перестать пялиться на едва прикрытый тесными кожаными брючками зад Алисы. Впрочем, с учётом морского сценария, на её корму."
 
-    show dv laugh pirate far at right with dissolve
+    show dv laugh pirate far at center with dissolve
 
     "Алиса оглянулась и подмигнула мне."
     dv "Сейчас повеселимся!"
@@ -5543,6 +5598,8 @@ label bkrr_day19_common:
 
     "Хорошо, что они не умеют читать мысли…"
     "Ведь не умеют?"
+
+    # !!!!!!!!!!!!!!!!!!!!!!!!
 
     "Музыка уже стихла, зал от души аплодировал гостям. Трук кивал слушателям, а Клаус… Я не видел его лица, но был уверен что он смущенно улыбается."
     "Славя и Ольга Дмитриевна снова вышли на сцену."

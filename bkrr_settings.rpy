@@ -735,6 +735,19 @@ init 2:
         contains:
             im.Sepia(MOD_IMAGES + "cg/d19_concert_miku_semen.jpg")
 
+    image cg d19_pirate_dress:
+        contains:
+            "bg ext_backstage_big_day_night"
+        contains:
+            "dv smile pirate"
+            fright
+        contains:
+            "us smile pirate"
+            fleft
+        contains:
+            "mi normal pirate close"
+            center
+
     # Фейкоконцовка
 
     image bg ext_liaz_night_open = MOD_IMAGES + "bg/ext_liaz_night_open.jpg"
@@ -929,6 +942,15 @@ init 2:
         contains:
             "mi surprise pioneer"
             right
+
+    image cg d19_uv_escape:
+        contains:
+            "bg ext_house_of_mt_day"
+        contains:
+            "uv pisad pioneer"
+            subpixel True
+            cright
+            ease 70.0 offscreenright
 
     # ЦГшные спрайты
 
@@ -1904,6 +1926,9 @@ init 2:
             'bkrr_pi': {
                 'normal': 1, 'smile': 1,
             },
+            'uv': {
+                'pidontlike': 1, 'pirage': 1, 'pisad': 1, 'pishocked': 1, 'pinormal': 2, 'pismile': 2, 'pigrin': 3, 'pilaugh': 3, 'pisurprise2': 3, 'piguilty': 4, 'pisurprise': 4, 'piupset': 4,
+            },
         }
 
         distance_to_position = {
@@ -2028,6 +2053,8 @@ init 2:
         make_sprites_for('us', 'backpack sport', ['es:body', 'es:sport', 'mod:backpack', 'es:<emotion>'], distances=['normal'])
         make_sprites_for('us', 'pirate', ['mod:pibody', 'es:<emotion>', 'mod:pibody2'])
         make_sprites_for('us', 'pirate', ['mod:pibody', 'mod:<emotion>', 'mod:pibody2'], emotions=['normal_dontlike', 'evsmile'])
+
+        make_sprites_for('uv', 'pioneer', ['mod:pibody', 'mod:<emotion>', 'mod:pan'])
 
         make_sprites_with_custom_emotions(['sad'], 'cs', 'body', ['mod:body', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad'], 'cs', 'panties', ['mod:body', 'mod:panties', 'es:<emotion>'])
