@@ -5117,7 +5117,7 @@ label bkrr_day19_common:
     with dissolve
     $ bkrr_set_volume("sound3", 0.4)
     play sound3 [ bkrr_sfx_list["silence14"], bkrr_sfx_list["silence1"], bkrr_sfx_list["applause3"] ]
-    play music [ bkrr_music_list["rb_03"], bkrr_music_list["rb_12"] ] fadein 15
+    play music [ bkrr_music_list["rb_06"], bkrr_music_list["rb_12"] ] fadein 1
     stop ambience fadeout 5
     "Алиса всё еще угрожающе смотрела на меня. Она хмурилась, но в этот момент казалась мне самым дорогим человеком на свете.{w} После Мику, конечно."
     "И разбитые о стены автобуса кулаки были целёхоньки."
