@@ -735,7 +735,7 @@ init 2:
         contains:
             im.Sepia(MOD_IMAGES + "cg/d19_concert_miku_semen.jpg")
 
-    image cg d19_pirate_dress:
+    image cg d19_pirate_dressup:
         contains:
             "bg ext_backstage_big_day_night"
         contains:
@@ -950,7 +950,7 @@ init 2:
             "uv pisad pioneer"
             subpixel True
             cright
-            ease 70.0 offscreenright
+            ease 50.0 offscreenright
 
     # ЦГшные спрайты
 

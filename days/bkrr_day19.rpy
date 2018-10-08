@@ -2964,10 +2964,7 @@ label bkrr_day19_common:
     "Я бросил быстрый взгляд на аллею. От клуба в нашу сторону шёл Клаус.{w} Немец выглядел озадаченным. Он осматривался по сторонам, заглядывал в кусты, словно ища что-то. Или кого-то. Может, медведя?"
     "Нет, наверняка он знает, что истории про медведей с балалайками, пьющих водку из самовара под ядерными реакторами – выдумка."
 
-    window hide
-    hide uv with dissolve
     show uv pisad pioneer at cright with dissolve
-    window show
 
     uv "Я побежала!"
 
@@ -5384,7 +5381,10 @@ label bkrr_day19_common:
 
     "Она быстро сбросила блузку и принялась вытаскивать ремень из юбки."
     us "Сень, ты бы и от неё отвернулся, а то слюной захлебнёшься…"
-    mi "Алиска, шлепни её еще раз!"
+
+    show mi normal underwear close with dspr
+
+    mi "Алиска, шлёпни её еще раз!"
     us "НЕ НАДО!!! Я молчу. Алиса, да что ты его тискаешь, давай, продевай уже."
 
     show mi smile underwear close with dspr
@@ -5404,7 +5404,7 @@ label bkrr_day19_common:
     window hide
     play sound bkrr_sfx_list["whiteout1"]
     play music music_list["heather"] fadein 3
-    scene cg d19_pirate_dress:
+    scene cg d19_pirate_dressup:
         subpixel True
         zoom 1.4
         xalign 0.0
@@ -5596,8 +5596,8 @@ label bkrr_day19_common:
 
     hide dv with dissolve
 
-    "Хорошо, что они не умеют читать мысли…"
-    "Ведь не умеют?"
+    th "Хорошо, что они не умеют читать мысли…"
+    th "Ведь не умеют?"
 
     # !!!!!!!!!!!!!!!!!!!!!!!!
 
