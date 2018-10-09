@@ -5234,10 +5234,10 @@ label bkrr_day19_common:
         ease 0.5 zoom 0.9
         ease 1.5 pos (-2.0, 2.0) rotate -120 alpha 0.0
     with flash
-    show bkrr_flying_notes with dissolve
+    show bkrr_flying_notes_white with dissolve
     $ renpy.pause(1.0, hard=True)  # чтобы случайно не проскипать
     pause
-    hide bkrr_flying_notes with dissolve
+    hide bkrr_flying_notes_white with dissolve
     window show
 
     stop music fadeout 7

@@ -1296,6 +1296,7 @@ init 1:
         size(1240, 1240)
 
     image bkrr_flying_notes = bkrr_create_anim(MOD_IMAGES + "misc/d5_flying_notes_", 3, 1.5, Dissolve(0.25, alpha=True))
+    image bkrr_flying_notes_white = bkrr_create_anim(MOD_IMAGES + "misc/d5_flying_notes_white_", 3, 1.5, Dissolve(0.25, alpha=True))
 
     image bkrr_bang = MOD_IMAGES + "misc/bang.png"
 
