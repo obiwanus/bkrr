@@ -748,6 +748,9 @@ init 2:
             "mi normal pirate close"
             center
 
+    image cg d19_slavya_captured = MOD_IMAGES + "cg/d19_slavya_captured.jpg"
+    image cg d19_pirates_on_stage = im.Scale(MOD_IMAGES + "cg/d19_pirates_on_stage.jpg", config.screen_width, config.screen_height)
+
     # Фейкоконцовка
 
     image bg ext_liaz_night_open = MOD_IMAGES + "bg/ext_liaz_night_open.jpg"
