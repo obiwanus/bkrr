@@ -750,6 +750,7 @@ init 2:
 
     image cg d19_slavya_captured = MOD_IMAGES + "cg/d19_slavya_captured.jpg"
     image cg d19_pirates_on_stage = im.Scale(MOD_IMAGES + "cg/d19_pirates_on_stage.jpg", config.screen_width, config.screen_height)
+    image cg2 d19_pirate_song = im.Scale(MOD_IMAGES + "cg/d19_pirate_song.jpg", config.screen_width, config.screen_height)
 
     # Фейкоконцовка
 
