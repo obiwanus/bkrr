@@ -6058,7 +6058,7 @@ label bkrr_day18_common:
     with None
     pause 0.5
     play sound sfx_scary_sting
-    scene int_house_of_mt_night2
+    scene bg int_house_of_mt_night2
     show black:
         alpha 0.7
         ease 4.5 alpha 0.0
