@@ -1968,6 +1968,12 @@ init 2:
             """
             renpy.image(full_sprite_name, im.Sepia(composite_image))
 
+        def _dark_sprite(full_sprite_name, composite_image):
+            """
+            Спрайт в темноте
+            """
+            renpy.image(full_sprite_name, im.MatrixColor(composite_image, im.matrix.brightness(-0.99)))
+
         # Генератор новых спрайтов для персонажей из оригинального БЛ
 
         def make_sprites_for(character, sprite_name, layers, emotions=None, distances=None, exclude=None, sprite_define_func=None):
@@ -2097,6 +2103,8 @@ init 2:
         make_sprites_for('mi', 'underwear loose', ['mod:body_loo', 'mod:underwear', 'es:<emotion>'], distances=['close'])
         make_sprites_for('mi', 'underwear loose hair', ['mod:body_loo', 'mod:underwear', 'mod:hair', 'es:<emotion>'], distances=['close'])
         make_sprites_for('mi', 'underwear loose towel hair', ['mod:body_loo', 'mod:underwear', 'mod:towel', 'mod:hair', 'es:<emotion>'], distances=['close'])
+        make_sprites_for('mi', 'panties', ['mod:body_loo', 'mod:panties', 'mod:hair', 'es:<emotion>'])
+        make_sprites_for('mi', 'panties dark', ['mod:body_loo', 'mod:panties', 'mod:hair', 'es:<emotion>'], sprite_define_func=_dark_sprite)
         make_sprites_for('mi', 'towel_only', ['mod:towel'], distances=['close'])
         make_sprites_for('mi', 'hair_only', ['mod:hair'], distances=['close'])
         make_sprites_for('mi', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['sad_smile'])
@@ -2128,7 +2136,7 @@ init 2:
     image dv angel = MOD_IMAGES + "sprites/close/dv/dv_angel.png"
     image us demon = MOD_IMAGES + "sprites/close/us/us_demon.png"
 
-    # Дед Григорий
+    # Дед из Саманты
 
     image ded smile crossedarms = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_1.png")
     image ded normal crossedarms = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_1.png", (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_normal.png")
