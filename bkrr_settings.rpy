@@ -1336,6 +1336,13 @@ init 1:
             ease 0.75 zoom 1.05
             ease 0.5 zoom 1.0
 
+    transform get_up_fast:
+        parallel:
+            ease 0.6 ypos 0.0
+        parallel:
+            ease 0.4 zoom 1.05
+            ease 0.25 zoom 1.0
+
     # Анимация стула, когда персонаж встаёт или садится
 
     transform chair_move_sd:
