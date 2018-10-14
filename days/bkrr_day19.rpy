@@ -4911,8 +4911,8 @@ label bkrr_day19_common:
     window hide
     $ bkrr_set_volume("sound", 0.3)
     $ bkrr_set_volume("sound_loop", 0.2)
-    scene bg ext_liaz_night_closed with Dissolve(2.0)
     play sound_loop sfx_bus_idle fadein 2
+    scene bg ext_liaz_night_closed with Dissolve(2.0)
     play music bkrr_music_list["honour"] fadein 2
     window show
 
@@ -5595,8 +5595,6 @@ label bkrr_day19_common:
 
     us "На абордаж! Кошки к борту! Пленных не брать!"
 
-    $ bkrr_set_volume("music", 0.0)
-
     th "Кошки… Юля ведь тоже где-то здесь. Интересно, где?"
 
     hide us
@@ -5621,7 +5619,7 @@ label bkrr_day19_common:
 
     window hide
     play sound3 bkrr_sfx_list["applause3"] fadein 2
-    play sound_loop bkrr_music_list["koibana_"] fadein 5
+    play music bkrr_music_list["koibana"] fadein 5
     scene bg ext_stage_big_day_evening_full with fade2
     window show
 
@@ -6459,7 +6457,7 @@ label bkrr_day19_common:
 
     show mi sad_smile yukata:
         fright
-        rotate -17
+        rotate -5
         ypos -0.1
     with dissolve
 
@@ -6535,7 +6533,7 @@ label bkrr_day19_common:
 
     window hide
     stop ambience fadeout 2
-    show bg ext_beach_night with fade3
+    scene bg ext_beach_night with fade3
     play ambience ambience_boat_station_night fadein 2
     window show
 
@@ -6600,7 +6598,7 @@ label bkrr_day19_common:
     "Промасленная бумага, в которую были завернут бутерброды, подошла для растопки.{w} Я сложил шалашик из веток, подложил траву и вдруг понял, что не хватает одной важной вещи."
     me "А спички есть?"
 
-    show dv grin pirate with ds[r]
+    show dv grin pirate with dspr
 
     dv "Не курю!"
 
@@ -6826,7 +6824,7 @@ label bkrr_day19_common:
     us "Ну пыхтел же кто-то!"
 
     show us sad pirate:
-        bkrr_sit_down
+        sit_down
 
     "Ульяна осторожно уселась обратно."
 
@@ -6938,14 +6936,14 @@ label bkrr_day19_common:
     "В одном городе ходили слухи про магазин, где хозяева-ёкаи… м-м-м… нечисть по-вашему, делали колобки из человеческого мяса.{w} И с каждым, кто их покупал, случалось несчастье."
     "Но одному смелому парню было плевать. Он поспорил с друзьями, пошёл и купил эти колобки."
     "Когда он вечером возвращался домой, он вдруг занервничал и оглянулся. Ему казалось, что кто-то идёт за ним.{w} Но позади никого не было."
-    "Тогда он заглянул в коробку с колобками и увидел, что один из колобков пропал.{e} По спине у парня пробежал холодок, но он сказал себе:\n"
+    "Тогда он заглянул в коробку с колобками и увидел, что один из колобков пропал.{w} По спине у парня пробежал холодок, но он сказал себе:\n"
 
     "{i}Наверное, их было меньше с самого начала.{/i}\n"
     "И всё же он не мог перестать об этом думать."
     "На следующем перекрёстке он снова открыл коробку и снова один колобок пропал."
     "Парень испугался и побежал домой.{w} Он запер все двери, а когда немного успокоился, то снова открыл коробку. На этот раз пропали ещё три колобка. Хотите верьте хотите нет, но он так испугался, что закричал."
 
-    "Он закрыл коробку и ме~дле~нно открыл её. И когда он заглянул внутрь – все колобки пропали. В коробке не было ни одного."
+    "Он закрыл коробку и медленно открыл её. И когда он заглянул внутрь – все колобки пропали. В коробке не было ни одного."
 
     nvl hide dissolve
     $ bkrr_set_mode()
@@ -6961,9 +6959,9 @@ label bkrr_day19_common:
     "Мику сделала драматическую паузу, но тут из темноты донеслось замогильное:"
 
     show mi normal yukata
-    show us surp1 pirate:
+    show us fear pirate:
         get_up_fast
-    show dv surprise pirate:
+    show dv scared pirate:
         get_up_fast
     with dspr
     with vpunch

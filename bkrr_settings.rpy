@@ -678,7 +678,7 @@ init 2:
         contains:
             "mi happy pioneer close"
             truecenter
-            zoom 1.3
+            zoom 1.0
 
     image bg int_clubs_male_day_wrecked = MOD_IMAGES + "bg/int_clubs_male_day_wrecked.jpg"
     image bg int_clubs_male_sunset_wrecked = MOD_IMAGES + "bg/int_clubs_male_sunset_wrecked.jpg"
@@ -1338,10 +1338,10 @@ init 1:
 
     transform get_up_fast:
         parallel:
-            ease 0.6 ypos 0.0
+            ease 0.3 ypos 0.0
         parallel:
-            ease 0.4 zoom 1.05
-            ease 0.25 zoom 1.0
+            ease 0.2 zoom 1.05
+            ease 0.07 zoom 1.0
 
     # Анимация стула, когда персонаж встаёт или садится
 

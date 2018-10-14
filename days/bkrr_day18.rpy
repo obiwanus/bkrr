@@ -1831,11 +1831,7 @@ label bkrr_day18_common:
 
     mi "Так-так. Она тоже говорит о тебе с восторгом."
 
-    show mi grin pioneer close:
-        subpixel True
-        truecenter
-        ease 1.0 zoom 1.2
-    with dspr
+    show mi grin pioneer close with dspr
 
     "Мику обняла меня."
     mi "Может, мне тебя приревновать?"
@@ -1892,9 +1888,7 @@ label bkrr_day18_common:
     stop ambience fadeout 0.5
 
     scene bg ext_path_day
-    show mi smile pioneer close:
-        truecenter
-        zoom 1.2
+    show mi smile pioneer close at center
     with fade2
 
     play ambience ambience_forest_day fadein 3
@@ -1917,11 +1911,7 @@ label bkrr_day18_common:
 
     mi "Скажешь такое.{w} Нет, конечно. Знаешь…"
 
-    show mi happy pioneer close:
-        subpixel True
-        truecenter
-        ease 1.0 zoom 1.3
-    with dspr
+    show mi happy pioneer close with dspr
 
     "Она прижалась ко мне."
     mi "Я сделала это с тем, кого люблю…{w} И я этого хотела.{w} Так что я ни о чем не жалею."
@@ -1962,10 +1952,7 @@ label bkrr_day18_common:
 
     "Мику аккуратно ущипнула меня за щеку, а затем поцеловала в то же место."
 
-    show mi normal pioneer close:
-        truecenter
-        zoom 1.3
-    with dissolve
+    show mi normal pioneer close with dissolve
 
     mi "Ну как? Теперь веришь?"
     me "Верю. Ты – не сон, ты настоящая."
@@ -1993,7 +1980,6 @@ label bkrr_day18_common:
         subpixel True
         truecenter
         linear 3.0 zoom 1.2
-    with dspr
 
     $ renpy.pause(1.0, hard=True)
 
@@ -2009,10 +1995,8 @@ label bkrr_day18_common:
     window show
 
     "Она привычным жестом отклонилась назад и ухватила меня за галстук. Я обнял её за талию и привлёк к себе."
-    # mi "Попробуем приманить белочку?"
 
     "Я постепенно опускал руки всё ниже и ниже границ дозволенного, пока не ощутил приятные крепкие округлости."
-    # me "Я подзабыл, как же мы это делали?"
     "Мику несколько раз попыталась убрать мои руки повыше, но безуспешно."
 
     scene cg d18_no_squirrel_2:
@@ -2707,7 +2691,7 @@ label bkrr_day18_common:
 
     kla "Извини."
 
-    show dv normal pioneer2 with dissolve
+    show dv normal pioneer2 with dspr
 
     dv "Проехали."
 
@@ -3623,7 +3607,7 @@ label bkrr_day18_common:
     me "А я тебя. Остальное приложится!"
 
     show mi surprise pioneer close:
-        ease 1.0 zoom 1.0
+        ease 0.2 zoom 1.0
 
     "Из-за окна донеслось деликатное покашливание."
     dv_v "Эй, голубки, я вас, конечно, тоже люблю, но тут вообще-то форточка открыта! Вы бы лучше порепетировали!"
@@ -5285,7 +5269,7 @@ label bkrr_day18_common:
     $ bkrr_timeskip_short()
     scene bg int_clubs_male_sunset_wrecked with bkrr_timeskip_transition()
     $ bkrr_set_volume("sound", 0.6)
-    play sound sfx_dinner_horn_processed
+    play sound sfx_dinner_horn_processed fadein 4
     window show
 
     "Работы оставалось еще порядком, когда раздался сигнал на ужин."
@@ -5468,14 +5452,10 @@ label bkrr_day18_common:
     "Мику улыбнулась мне, потом стала серьезной. Насколько это вообще возможно для неё."
     mi "У нас впереди много времени, чтобы познакомиться лучше.{w} Знаешь, я всё еще чувствую, что ты мне чего-то не говоришь… Чего-то важного. Глупо, да?"
     me "Я…"
-
-    show mi serious pioneer close:
-        subpixel True
-        truecenter
-        pause 1.0
-        ease 1.0 zoom 1.2
-
     "Может, как раз настал тот момент? Я открыл было рот, чтобы начать рассказ, но она прижала палец мне к губам."
+
+    show mi normal pioneer close with dspr
+
     mi "Подожди. Не перебивай. Если не говоришь, значит, на то есть причины.{w} Просто, не обманывай меня. Это все, что я прошу. Обещаешь?"
     "Она очень серьезно посмотрела на меня."
     me "Обещаю!"
