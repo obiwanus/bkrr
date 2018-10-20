@@ -2105,6 +2105,7 @@ init 2:
         make_sprites_for('mi', 'underwear loose towel hair', ['mod:body_loo', 'mod:underwear', 'mod:towel', 'mod:hair', 'es:<emotion>'], distances=['close'])
         make_sprites_for('mi', 'panties', ['mod:body_loo', 'mod:panties', 'mod:hair', 'es:<emotion>'])
         make_sprites_for('mi', 'panties dark', ['mod:body_loo', 'mod:panties', 'mod:hair', 'es:<emotion>'], sprite_define_func=_dark_sprite)
+        make_sprites_for('mi', 'panties yukata_hair dark', ['mod:panties_yukata_hair', 'es:<emotion>'], sprite_define_func=_dark_sprite)
         make_sprites_for('mi', 'towel_only', ['mod:towel'], distances=['close'])
         make_sprites_for('mi', 'hair_only', ['mod:hair'], distances=['close'])
         make_sprites_for('mi', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['sad_smile'])
