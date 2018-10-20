@@ -7333,6 +7333,9 @@ label bkrr_day19_common:
     show mi normal panties yukata_hair dark with Dissolve(1.0)
 
     "Вместо ответа Мику сделала что-то с юкатой, ещё секунда, и синяя ткань с мягким шорохом легла на пол."
+
+    show mi normal panties dark with dissolve
+
     "Мику несколькими быстрыми движениями распустила волосы и переступила через свою одежду, шагнув в пятно лунного света…"
 
     window hide
