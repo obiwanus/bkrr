@@ -517,6 +517,7 @@ init 2:
     image bg int_music_club_mattresses_day = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_day.jpg", MOD_IMAGES + "misc/int_music_club_clock_day.png")
     image bg int_music_club_mattresses_sunset = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_sunset.jpg", MOD_IMAGES + "misc/int_music_club_clock_sunset.png")
     image bg int_music_club_mattresses_night = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_night.jpg", MOD_IMAGES + "misc/int_music_club_clock_night.png")
+    image bg int_music_club_mattresses_night_lights_on = MOD_IMAGES + "bg/int_music_club_mattresses_night_lights_on.jpg"
     image bg int_music_club_mattresses_dark_night = im.MatrixColor(bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_night.jpg", MOD_IMAGES + "misc/int_music_club_clock_night.png"), im.matrix.brightness(-0.15) * im.matrix.saturation(0.6))
     image bg int_music_club_mattresses_night_yulia:
         contains:

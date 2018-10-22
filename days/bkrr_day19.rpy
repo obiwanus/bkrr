@@ -5936,7 +5936,9 @@ label bkrr_day19_common:
 
     dv "Слава КПСС…"
 
-    show mt rage pioneer with dspr
+    show mt rage pioneer
+    show mi upset pirate
+    with dspr
 
     mt "Двачевская, не умничай мне тут, иначе я начну зверствовать!"
 
@@ -5997,11 +5999,11 @@ label bkrr_day19_common:
 
     mi "Нехорошо вышло… Кажется, Ольга Дмитриевна действительно расстроилась."
 
-    show dv smile pirate at left with dissolve
+    show dv smile pirate at left behind mi with dissolve
 
     dv "Ну её. Зато концерт вышел настоящий. Живой."
 
-    show us smile pirate at fright with dissolve
+    show us smile pirate at right behind mi with dissolve
 
     us "Я так понимаю, что исключение из пионеров тоже будет настоящее и живое."
 
@@ -6039,14 +6041,20 @@ label bkrr_day19_common:
 
     window hide
     stop ambience fadeout 2
-    $ bkrr_timeskip_short()
-    scene bg int_music_club_mattresses_night with bkrr_timeskip_transition()
+    scene bg int_music_club_mattresses_night with fade2
     play ambience ambience_int_cabin_night fadein 2
+    $ bkrr_set_time("night")
     window show
 
-    "Ульяна залезла карман бриджей и извлекла четыре ярких пакетика."
+    "Когда мы зашли в клуб, Ульяна включила свет, порылась в кармане бриджей и извлекла четыре ярких пакетика."
 
+    window hide
+    play sound sfx_click_2
+    scene bg int_music_club_mattresses_night_lights_on with dspr
+    $ bkrr_set_time("sunset")
+    $ renpy.pause(1.0, hard=True)
     show us smile pirate with dissolve
+    window show
 
     us "Я тут у приезжей девчонки сменяла редкие олимпийские значки на растворимый шоколад.{w} Отметим удавшийся концерт?"
 
@@ -6062,7 +6070,7 @@ label bkrr_day19_common:
 
     dv "Хочу! Плохо, что печенье кончилось."
 
-    show mi smile pirate at right with dissolve
+    show mi smile pirate at right behind us with dissolve
 
     mi "Немножко осталось."
 
@@ -6101,9 +6109,7 @@ label bkrr_day19_common:
     dv "Поздно! Назад дороги нет, вход – рупь, выход – сто!"
 
     window hide
-    hide mi
-    hide us
-    with dissolve
+    hide mi with dissolve
     window show
 
     "Я прижал к себе Мику и покачал головой."
@@ -6117,7 +6123,9 @@ label bkrr_day19_common:
 
     dv "А мне теперь что с этим делать? Я думала, на дискотеке пригодится."
 
-    hide dv with dissolve
+    hide dv
+    hide us
+    with dissolve
 
     "Она вздохнула, взяла какой-то сверток, лежавший на матрасной горе и принялась крутить его в руках."
 
@@ -6171,7 +6179,7 @@ label bkrr_day19_common:
     window hide
     stop ambience fadeout 2
     $ bkrr_timeskip()
-    scene bg int_music_club_mattresses_night with bkrr_circleout_transition
+    scene bg int_music_club_mattresses_night_lights_on with bkrr_circleout_transition
     play ambience ambience_int_cabin_night fadein 2
     window show
 
@@ -6179,13 +6187,15 @@ label bkrr_day19_common:
     "Страх перед завтрашним отъездом постепенно отпускал меня."
     "Двойник говорил, что место реагирует на наши желания, Ольга тоже убеждала, что всё будет хорошо."
 
-    play sound [ sfx_knocking_door_outside, bkrr_sfx_list["silence1"], sfx_open_door_1 ] fadein 1
-
-    "В дверь постучали и в клубе появилась Ольга Дмитриевна с Антоном."
-
+    window hide
+    play sound [ sfx_knocking_door_outside, sfx_open_door_1 ] fadein 1
+    $ renpy.pause(2.0, hard=True)
     show ant normal shirt at cleft
     show mt normal pioneer at cright
     with dissolve
+    window show
+
+    "В дверь постучали и в клубе появилась Ольга Дмитриевна с Антоном."
 
     mt "Ну что, граждане дебоширы! У меня для вас две новости. Хорошая и плохая.{w} С какой начать?"
     mi "С хорошей!"
@@ -6215,7 +6225,7 @@ label bkrr_day19_common:
     show ant normal shirt at center
     show mt normal pioneer at right
     with ease
-    show dv smile pirate at left with dissolve
+    show dv smile pirate at fleft with dissolve
     window show
 
     dv "Это почему это?"
@@ -6239,8 +6249,11 @@ label bkrr_day19_common:
 
     window hide
     show ant normal shirt with dspr
-    hide dv with dissolve
-    show us smile pirate at left with dissolve
+    show us smile pirate close:
+        fleft
+        rotate 17
+        ypos -0.1
+    with easeinleft
     window show
 
     us "Какая неожиданность…{w} Ладно, не нужен орден, давайте медаль! Мы не гордые!"
@@ -6249,10 +6262,11 @@ label bkrr_day19_common:
 
     mt "Ульяна! Хоть бы поблагодарила."
 
-    show us grin pirate with dspr
+    show us grin pirate close with dspr
 
     us "Простите, гражданинначальник!"
 
+    hide us with easeoutleft
     show mt grin pioneer with dspr
 
     mt "Всё, теперь переодевайтесь и отправляйтесь на дискотеку. Держать под замком героев дня будет неприлично."
@@ -6267,11 +6281,11 @@ label bkrr_day19_common:
 
     "Она засмеялась, и они с Антоном скрылись за дверью."
 
-    show dv guilty pirate at center with dissolve
+    show dv guilty pirate at center behind mi with ease
 
     dv "Переодевайтесь… Легко ей говорить. А во что? Форму у меня как корова пожевала, не в спортивке же идти… И надеть нечего."
 
-    show us smile pirate with dspr
+    show us smile pirate at left with dissolve
 
     us "А я тебе говорила! Говорила! Возьми платье!{w} Нет, гитару она прихватила, которых здесь куча, а платье поленилась везти. «Я не танцую, дискотеки – отстой!»"
 
@@ -6324,7 +6338,7 @@ label bkrr_day19_common:
 
     window hide
     $ bkrr_timeskip_short()
-    scene bg int_music_club_mattresses_night with bkrr_timeskip_transition()
+    scene bg int_music_club_mattresses_night_lights_on with bkrr_timeskip_transition()
     window show
 
     "Мы остались вдвоём."
@@ -6350,9 +6364,18 @@ label bkrr_day19_common:
 
     mi "Так и будешь смотреть?"
     me "Конечно."
+
+    show mi laugh pirate with dspr
+
     mi "Нахал!"
 
+    window hide
     hide mi with dissolve
+    $ renpy.pause(1.0, hard=True)
+    play sound sfx_click_1
+    scene bg int_music_club_mattresses_night with dspr
+    $ bkrr_set_time("night")
+    window show
 
     "Она засмеялась, а потом быстро щелкнула выключателем, погасив свет."
     "Видимо, она решила, что так я её не увижу и неприличные мысли не посетят мою голову."
@@ -6374,7 +6397,7 @@ label bkrr_day19_common:
     show mi normal underwear close with dissolve
     window show
 
-    "Совместными усилиями мы освободили Мику из трикотажного плена, и теперь она стояла рядом, почти прижимаясь ко мне, а одежды на ней было мало.{w} Слишком мало, чтобы сохранять спокойствие…"
+    "Совместными усилиями мы освободили Мику из трикотажного плена, она собрала волосы и теперь стояла рядом, почти прижимаясь ко мне, а одежды на ней было мало.{w} Слишком мало, чтобы сохранять спокойствие…"
     "Или способность соображать, если уж на то пошло."
     "Я протянул руки и обнял её, превратив «почти» в «прижимаясь»."
 

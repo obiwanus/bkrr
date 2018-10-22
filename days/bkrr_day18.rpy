@@ -5898,8 +5898,6 @@ label bkrr_day18_common:
     play music music_list["sparkles"] fadein 9
     scene black with fade3
 
-    # СОН ПОШЁООООЛ!!!
-    # ФОН – СЦЕНА, СПРАЙТЫ МИКУ, АЛИСЫ И УЛЬЯНЫ
     $ bkrr_set_volume("sound", 0.3)
     scene bg ext_stage_normal_night:
         bkrr_dream_bg_throbbing
@@ -6053,9 +6051,6 @@ label bkrr_day18_common:
         ease 6.0 alpha 0.0
     with dspr
     with vpunch
-
-    #СОН УШЁООООЛ
-    #НОЧНАЯ ИГРА В МУЗКЛУБЕ И РАЗГОВОР С СемёнОМ И ЮЛЕЙ
 
     stop music fadeout 1
     play ambience ambience_int_cabin_night fadein 1
