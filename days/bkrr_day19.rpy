@@ -5330,6 +5330,7 @@ label bkrr_day19_common:
     show dv angry pioneer far with dspr
 
     dv "Тихо!"
+
     "Я не знал, зачем Алисе эта доска, но протянул руку чтобы помочь… Как раз вовремя."
 
     window hide
@@ -5338,7 +5339,9 @@ label bkrr_day19_common:
         ease 0.2 ypos 0.1 zoom 1.05 rotate -1
         ease 0.3 right ypos 0.0 zoom 1.0 rotate 0
     $ renpy.pause(0.2, hard=True)
-    show dv surprise pioneer far with dspr
+    show bg ext_backstage_big_day_night_noplank
+    show dv surprise pioneer far
+    with dspr
     window show
 
     "Добротно забитые гвозди внезапно поддались и рыжая чуть не упала."
@@ -5427,7 +5430,7 @@ label bkrr_day19_common:
 
     $ renpy.pause(3.5, hard=True)
 
-    scene bg ext_backstage_big_day_night
+    scene bg ext_backstage_big_day_night_noplank
     show dv smile pirate at fright
     show us smile pirate at fleft
     show mi normal pirate close at center
@@ -5526,7 +5529,7 @@ label bkrr_day19_common:
 
     window hide
     hide us with dissolve
-    scene bg ext_backstage_big_day_night:
+    scene bg ext_backstage_big_day_night_noplank:
         subpixel True
         truecenter
         yalign 1.0
@@ -5539,7 +5542,7 @@ label bkrr_day19_common:
 
     window hide
     $ bkrr_get_item("bandana")
-    scene bg ext_backstage_big_day_night:
+    scene bg ext_backstage_big_day_night_noplank:
         subpixel True
         truecenter
         yalign 1.0
@@ -5867,7 +5870,7 @@ label bkrr_day19_common:
     "Ольга Дмитриевна нашла шпингалет, который запирал дверцу на сцену, поднялась к нам и теперь говорила в микрофон что-то про сюрприз, яркое завершение концерта и явно старалась создать впечатление, что всё идет по плану."
 
     window hide
-    scene bg ext_backstage_big_day_night with dissolve
+    scene bg ext_backstage_big_day_night_noplank with dissolve
     stop sound_loop fadeout 3
     window show
 

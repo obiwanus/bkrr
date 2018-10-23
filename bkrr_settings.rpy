@@ -719,7 +719,8 @@ init 2:
     image bg ext_stage_big_day_evening_empty = MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg"
     image bg ext_stage_big_day_evening_full = bkrr_fast_composite(MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg", MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png")
     image bg ext_stage_big_day_evening_close = MOD_IMAGES + "bg/ext_stage_big_day_night_close.jpg"
-    image bg ext_backstage_big_day_night = MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg"
+    image bg ext_backstage_big_day_night = bkrr_fast_composite(MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg", MOD_IMAGES + "misc/backstage_plank.png")
+    image bg ext_backstage_big_day_night_noplank = MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg"
 
     image cg1 d19_concert_alisa = MOD_IMAGES + "cg/d19_concert_alisa.jpg"
     image cg1 d19_concert_alisa_photo:
