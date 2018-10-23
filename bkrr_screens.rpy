@@ -541,3 +541,10 @@ init 2:
             action Show("bkrr_gallery", transition=Fade(0.25, 0.0, 0.25, color="#000"))
             idle ImageReference(item)
             hover ImageReference(item)
+
+    screen bkrr_disable_keys():
+        key "mouseup_1" action NullAction()
+        key "K_RETURN" action NullAction()
+        key "K_SPACE" action NullAction()
+        key "K_KP_ENTER" action NullAction()
+        key "joy_dismiss" action NullAction()

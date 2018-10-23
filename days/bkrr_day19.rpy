@@ -5113,10 +5113,12 @@ label bkrr_day19_common:
     $ renpy.pause(8.0, hard=True)
     $ bkrr_set_volume("sound", 1.0)
     $ bkrr_set_volume("sound_loop", 1.0)
+    show screen bkrr_disable_keys()
     $ renpy.movie_cutscene(bkrr_video_list["black_credits"], delay = 72.0)
     scene white
     play sound bkrr_sfx_list["inhale"]
     play sound_loop bkrr_sfx_list["ear_buzz"] fadein 5
+    hide screen bkrr_disable_keys
 
     window show
     "Я вздрогнул от яркой вспышки."
