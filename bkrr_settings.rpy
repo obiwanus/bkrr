@@ -2674,6 +2674,9 @@ init 2:
     image cat musclub_2 = MOD_IMAGES + "misc/cat/cat_musclub_2.png"
     image cat washstand = MOD_IMAGES + "misc/cat/cat_washstand.png"
 
+    # Медальонус
+    image medallion_bkrr = MOD_IMAGES + "misc/medallion.png"
+
     # Стулья для столовой
 
     image chair = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(MOD_IMAGES + "misc/chair.png", bkrr_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(MOD_IMAGES + "misc/chair.png", bkrr_tint["night"]), True, MOD_IMAGES + "misc/chair.png")
