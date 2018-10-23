@@ -3990,6 +3990,7 @@ label bkrr_day18_common:
     us "Наверное, внутри."
 
     play sound bkrr_sfx_list["vedro"] fadein 3
+    play sound2 bkrr_sfx_list["hit_vedro"] fadein 3
     stop sound_loop fadeout 2
 
     "Из клуба донесся оглушительный лязг, как будто молотили железом по пустой кастрюле, и на пороге появился рыцарь в сияющих доспехах… "
@@ -4214,7 +4215,7 @@ label bkrr_day18_common:
 
     hide sh with dissolve
 
-    play sound sfx_bus_window_hit
+    play sound bkrr_sfx_list["hit_box"]
     with hpunch
     "Я вздохнул и пнул ногой какую-то коробку на полу."
     me "Я тебя понимаю!"
@@ -4303,7 +4304,7 @@ label bkrr_day18_common:
     "Что делать дальше, я представлял себе смутно. Наверное, связать и поливать холодной водой? Черт его знает."
 
     play sound [ bkrr_sfx_list["silence05"], bkrr_sfx_list["body_hit"], sfx_bodyfall_1 ]
-    play sound2 [ bkrr_sfx_list["silence1"], bkrr_sfx_list["broken_glass"]]
+    play sound2 [ bkrr_sfx_list["silence1"], bkrr_sfx_list["toolbox"]]
 
     show us evsmile pioneer:
         xalign 2.3
