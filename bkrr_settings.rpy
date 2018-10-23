@@ -1947,7 +1947,7 @@ init 2:
                 'normal': 1, 'sad': 1, 'smile': 1, 'surp': 1, 'upset': 1, 'laugh': 1, 'normal2': 2, 'sad2': 2, 'smile2': 2, 'surp2': 2, 'upset2': 2, 'laugh2': 2,
             },
             'el': {
-                'grin_fingal': 1, 'normal_fingal': 1, 'smile_fingal': 1, 'sad_fingal': 2, 'scared_fingal': 2, 'shocked_fingal': 2, 'surprise_fingal': 2, 'upset_fingal': 2, 'angry_fingal': 3, 'laugh_fingal': 3, 'serious_fingal': 3,
+                'sad_vedro': 2, 'grin_fingal': 1, 'normal_fingal': 1, 'smile_fingal': 1, 'sad_fingal': 2, 'scared_fingal': 2, 'shocked_fingal': 2, 'surprise_fingal': 2, 'upset_fingal': 2, 'angry_fingal': 3, 'laugh_fingal': 3, 'serious_fingal': 3,
             },
             'bkrr_pi': {
                 'normal': 1, 'smile': 1,
@@ -2128,6 +2128,9 @@ init 2:
         # Эл с фингалом
         make_sprites_for('el', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'])
 
+        # Эл-ведроид
+        make_sprites_for('el', 'vedro', ['mod:vedro'], emotions=['sad_vedro'])
+
         # Новые персонажи
         make_sprites_for('ant', 'shirt', ['mod:body', 'mod:<emotion>'])
         make_sprites_for('kla', 'sport', ['mod:body', 'mod:sport', 'mod:<emotion>'])
@@ -2187,12 +2190,6 @@ init 2:
 
     image bkrr_pi normal dark = im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.15))
     image bkrr_pi normal dark far = im.MatrixColor(ES_IMAGES + "sprites/far/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.15))
-
-    # Эл-ведроид
-
-    image el_vedro = MOD_IMAGES + "sprites/normal/el/vedro_normal.png"
-    image el_vedro close = MOD_IMAGES + "sprites/close/el/vedro_close.png"
-    image el_vedro far = MOD_IMAGES + "sprites/far/el/vedro_far.png"
 
     # Электроник в футболке
 

@@ -3989,13 +3989,13 @@ label bkrr_day18_common:
 
     us "Наверное, внутри."
 
-    play sound bkrr_sfx_list["kitchen_mayhem"]
+    play sound bkrr_sfx_list["vedro"] fadein 3
     stop sound_loop fadeout 2
 
     "Из клуба донесся оглушительный лязг, как будто молотили железом по пустой кастрюле, и на пороге появился рыцарь в сияющих доспехах… "
 
     play sound2 sfx_open_door_1
-    show el_vedro far with dissolve
+    show el sad_vedro vedro far with dissolve
     show us surp2 with dspr
 
     "Нет, показалось. Появился всего лишь пионер с ведром на голове."
@@ -4009,18 +4009,18 @@ label bkrr_day18_common:
     "Пионер держался руками за ведро, пытаясь не то снять его, не то натянуть поглубже, его пошатывало и он почти упал с крыльца."
 
     window hide
-    hide el_vedro with dissolve
+    hide el with dissolve
 
     play sound bkrr_sfx_list["sem_falls_on_floor"]
     scene bg ext_clubs_day:
-    show el_vedro close
+    show el sad_vedro vedro close as el1
     with vpunch
     window show
 
     "Я подхватил его под мышки, не давая упасть."
     "Снимая ведро с его головы, я был уверен что это гоняющий чертей Шурик, но из-под оцинкованного металла показались на свет вьющиеся светлые волосы и голубые удивленные глаза."
 
-    hide el_vedro
+    hide el1
     show el sad_fingal pioneer close
     with dissolve
 
