@@ -716,8 +716,34 @@ init 2:
     image bg ext_stage_big_day_bkrr = MOD_IMAGES + "bg/ext_stage_big_day.jpg"
     image bg ext_stage_big_day_str_bkrr = MOD_IMAGES + "bg/ext_stage_big_day_str.jpg"
     image bg ext_stage_big_day_const_bkrr = MOD_IMAGES + "bg/ext_stage_big_day_const.jpg"
-    image bg ext_stage_big_day_evening_empty = MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg"
-    image bg ext_stage_big_day_evening_full = bkrr_fast_composite(MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg", MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png")
+    image bg ext_stage_big_day_evening_empty = bkrr_fast_composite(
+        MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
+        MOD_IMAGES + "misc/d19_concert/mast_up.png",
+        MOD_IMAGES + "misc/d19_concert/flags_right.png",
+        MOD_IMAGES + "misc/d19_concert/flags_top.png",
+        MOD_IMAGES + "misc/d19_concert/monitors.png",
+        MOD_IMAGES + "misc/d19_concert/pioneer_flag.png"
+    )
+    image bg ext_stage_big_day_evening_full:
+        contains:
+            "bg ext_stage_big_day_evening_empty"
+        contains:
+            MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
+    image bg ext_stage_concert:
+        contains:
+            "bg ext_stage_big_day_evening_empty"
+        contains:
+            bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/ball_sparkles_", 5,  1., Dissolve(0.25, alpha=True))
+        contains:
+            bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_sparkles_", 4,  1.0, Dissolve(0.25, alpha=True))
+            alpha 0.5
+        contains:
+            bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 2,  3.75, Dissolve(2.0, alpha=True))
+        contains:
+            bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 2,  3.75, Dissolve(2.0, alpha=True))
+        contains:
+            MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
+
     image bg ext_stage_big_day_evening_close = MOD_IMAGES + "bg/ext_stage_big_day_night_close.jpg"
     image bg ext_backstage_big_day_night = bkrr_fast_composite(MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg", MOD_IMAGES + "misc/backstage_plank.png")
     image bg ext_backstage_big_day_night_noplank = MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg"

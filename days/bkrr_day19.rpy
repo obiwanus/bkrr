@@ -5129,7 +5129,8 @@ label bkrr_day19_common:
     stop sound_loop fadeout 5
     "Собранный Шуриком самопальный прожектор качнулся и теперь бил мне прямо в лицо."
 
-    scene expression bkrr_awakening_atl("bg ext_stage_big_day_evening_full")
+    # scene expression bkrr_awakening_atl("bg ext_stage_big_day_evening_full")
+    scene bg ext_stage_big_day_evening_full
     show white:
         alpha 0.8
         ease 8.0 alpha 0.0
@@ -5141,43 +5142,40 @@ label bkrr_day19_common:
     "Прищурившись, я сделал шаг в сторону, пытаясь понять, что происходит…"
 
     "Я не в автобусе…{w} Я снова на сцене… Но…{w} Как? Почему?"
-    scene bg ext_stage_big_day_evening_full
-    show white as white2:
-        alpha 0.0
-        pause 1.0
-        linear 0.3 alpha 0.9
-        ease 0.6 alpha 0.0
-    # show white:
-    #     alpha 0.0
-    #     pause 15.5  # всполох прожекторов в нужный момент
-    #     linear 0.3 alpha 0.8
-    #     ease 1.0 alpha 0.0
-    with dissolve
+
+    window hide
     $ bkrr_set_volume("sound3", 0.4)
     play sound3 [ bkrr_sfx_list["silence14"], bkrr_sfx_list["silence1"], bkrr_sfx_list["applause3"] ]
     play music [ bkrr_music_list["rb_06"], bkrr_music_list["rb_12"] ]
     play sound [ bkrr_sfx_list["silence05"], sfx_concert_applause ] fadein 15
     stop ambience fadeout 5
+    show white as white2:
+        alpha 0.0
+        pause 0.2
+        linear 0.3 alpha 0.9
+    with None
+    scene bg ext_stage_concert
+    # show white:
+    #     alpha 0.0
+    #     pause 15.5  # всполох прожекторов в нужный момент
+    #     linear 0.3 alpha 0.8
+    #     ease 1.0 alpha 0.0
+    with Dissolve(3.5)
+    window show
+
     "Алиса всё еще угрожающе смотрела на меня. Она хмурилась, но в этот момент казалась мне самым дорогим человеком на свете.{w} После Мику, конечно."
     "И разбитые о стены автобуса кулаки были целёхоньки."
     "Черное отчаяние быстро улетучивалось, уступая место ни с чем не сравнимому облегчению.{w} Я понял, что глупо улыбаюсь рыжей гитаристке."
     "Ничего не было.{w} Автобуса, голоса из темноты…{w} Слёз Мику."
     "Фантазия разыгралась. Стрессы, стрессы…{w} Просто нервы и богатое воображение."
-    "Я не провалил концерт."
-    "Я потряс головой. Проигрыш заканчивался. Еще секунда, и…!"
-
-    window hide
-    $ bkrr_set_mode(nvl)
-    nvl show dissolve
-
-    "Раньше, чем я успел сообразить что делаю, моя рука легла на толстые струны баса и подхватила ритм.\n"
+    "Я не провалил концерт!"
+    "Я потряс головой. Проигрыш заканчивался.{w} Раньше, чем я успел сообразить что делаю, моя рука легла на толстые струны баса и подхватила ритм.\n"
     "Все часы, проведенные в репетициях, едкие комментарии Алисы, заботливые наставления Мику, добродушные насмешки Ульяны…{w} Всё это дало результат.\n"
     "Нет, я ещё нервничал, боялся сбиться или отстать…\n"
     "Но извлекал из гитары нужные звуки.\n"
 
-    nvl hide dissolve
-    $ bkrr_set_mode()
-    scene bg ext_stage_big_day_evening_full
+    window hide
+    scene bg ext_stage_concert
     show cg3 d19_concert_miku_semen
     show cg2 d19_concert_ulyana
     show cg1 d19_concert_alisa
