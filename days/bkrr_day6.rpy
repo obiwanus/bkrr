@@ -438,7 +438,7 @@ label bkrr_day6_common:
 
     $ bkrr_timeskip_short()
 
-    scene bg int_dining_hall_people_day with bkrr_timeskip_transition()
+    scene bg int_dining_hall_people_day_bkrr with bkrr_timeskip_transition()
 
     play ambience ambience_dining_hall_full fadein 3
 
@@ -1187,7 +1187,7 @@ label bkrr_day6_common:
 
     stop ambience fadeout 1
 
-    scene bg int_dining_hall_people_day with fade
+    scene bg int_dining_hall_people_day_bkrr with fade
 
     play ambience ambience_dining_hall_full fadein 3
 
@@ -1230,7 +1230,7 @@ label bkrr_day6_common:
 
     $ bkrr_timeskip()
 
-    scene bg int_dining_hall_people_day with bkrr_circleout_transition
+    scene bg int_dining_hall_people_day_bkrr with bkrr_circleout_transition
 
     play ambience ambience_dining_hall_full fadein 3
 

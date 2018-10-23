@@ -25,7 +25,7 @@ label bkrr_day8_common:
     $ renpy.pause(1.5, hard=True)
 
     window show
-    
+
     "Погода с утра не баловала."
     "Снова началась жара, и хотя умывание холодной водой чуть-чуть разогнало сонливость, всё равно не хотелось никуда идти, только лечь и ещё поспать."
     "Слегка поборовшись с нежеланием выходить на солнце, я поспешил на завтрак, подгоняемый желанием увидеть Мику."
@@ -34,7 +34,7 @@ label bkrr_day8_common:
 
     stop ambience fadeout 3
 
-    scene bg int_dining_hall_people_day with fade3
+    scene bg int_dining_hall_people_day_bkrr with fade3
 
     play ambience ambience_dining_hall_full fadein 3
 
@@ -126,7 +126,7 @@ label bkrr_day8_common:
     "Еще секунда – и она, ловко огибая пионеров, пронеслась к выходу. Шурик ринулся вдогонку, но сразу понял, что это безнадёжно. Он махнул рукой и вернулся за столик."
     dv "Вот такое кино."
 
-    scene bg int_dining_hall_people_day
+    scene bg int_dining_hall_people_day_bkrr
     show dv normal pioneer at center
     with dissolve
 
@@ -671,7 +671,7 @@ label bkrr_day8_common:
     show mi smile pioneer close at center with ease
 
     window show
-    
+
     "Алиса подмигнула нам, потом принялась преувеличенно серьёзно крутить колки на гитаре."
 
     play music music_list["miku_song_flute"] fadein 3
@@ -1051,7 +1051,7 @@ label bkrr_day8_common:
     $ renpy.pause(1.0, hard=True)
 
     window show
-    
+
     "Я пересказал историю с доской, раненым Толиком и музыкальным рабством, закончив событиями сегодняшнего утра. {w}Особо подчеркнул, что взамен на усилитель Ульяна обязуется больше не подходить к кружку вообще и к Шурику в частности ближе, чем на пять метров. {w}Шурик просиял."
 
     show sh smile pioneer at center with dissolve
@@ -1272,7 +1272,7 @@ label bkrr_day8_common:
     play sound sfx_open_door_clubs_nextroom
 
     window show
-    
+
     "Сыроежкин не участвовал в нашем разговоре, а легкомысленно вертел в руках пистолет-паяльник, видимо, воображая его бластером. Шурик ушёл в маленькую кладовку, а затем мыльница вдруг заговорила его голосом."
 
     play sound sfx_radio_squelch_2
@@ -1374,7 +1374,7 @@ label bkrr_day8_common:
     sh "Я тоже, ты не подумай."
 
     show sh smile pioneer at center with dspr
-    
+
     "Тут он мечтательно улыбнулся, что-то вспоминая, видимо."
     th "Я-то догадываюсь, о чём он думает, но зачем его зря расстраивать? Интересно, к кому он тогда бегал? Полный лагерь симпатичных пионерок…"
     me "Я и не думал."
@@ -1402,10 +1402,10 @@ label bkrr_day8_common:
     window hide
 
     stop music fadeout 3
-    
+
     $ bkrr_timeskip()
 
-    scene bg int_dining_hall_people_day with bkrr_circleout_transition
+    scene bg int_dining_hall_people_day_bkrr with bkrr_circleout_transition
 
     play ambience ambience_dining_hall_full fadein 3
 
@@ -1428,7 +1428,7 @@ label bkrr_day8_common:
     $ bkrr_set_mode()
 
     window show
-    
+
     us "Сень, а Сень? Можешь доброе дело сделать?"
     me "Доброе, говоришь? А что надо-то? И где девчонки?"
 
@@ -1751,7 +1751,7 @@ label bkrr_day8_common:
     $ renpy.pause(1.0, hard=True)
 
     window show
-    
+
     "Мы ещё немного помолчали, на этот раз напряжения не было. Олень потыкался мордой в коробку, норовя урвать ещё что-нибудь вкусное."
     th "Ну уж нет, родной, свою порцию я тебе скормил, а чужую не дам, девчонки меня за такое расточительство заругают."
     "Лена улыбнулась."
@@ -2259,7 +2259,7 @@ label bkrr_day8_common:
 
     mi "А если увидят?"
     me "А что такого?"
-    mi "Шушукаться станут…" 
+    mi "Шушукаться станут…"
     me "Пускай завидуют. Я веду за руку самую красивую девушку в лагере."
     mi "Ой, ну скажешь тоже…"
     me "Скажу-скажу. И не раз."
@@ -2644,7 +2644,7 @@ label bkrr_day8_common:
 
     show us upset sport at center with dspr
 
-    "Она вздохнула." 
+    "Она вздохнула."
     us "Или плоская?"
     me "Тьфу на тебя. Непоседливая, я хотел сказать. Не сочиняй глупостей. И не парься насчёт размеров."
     th "Конечно, детская непосредственность и всё такое… но это вообще нормально такое с малознакомым парнем обсуждать?"

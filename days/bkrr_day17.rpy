@@ -798,7 +798,7 @@ label bkrr_day17_common:
     hide un with dissolve
 
     stop music fadeout 4
-    
+
     # В ГОСТЯХ У СЛАВИ И ЖЕНИ
 
     window hide
@@ -978,7 +978,7 @@ label bkrr_day17_common:
     "Попрощавшись с девчонками, я направился к тринадцатому домику.{w} Запоздало мелькнула мысль, что надо бы переодеться, но потом я решил, что сойдёт и так."
 
     # ПЕРЕБИРАЕМСЯ К МИКУ
-    
+
     window hide
     scene bg ext_house_of_un_day with fade2
 
@@ -1360,10 +1360,10 @@ label bkrr_day17_common:
     "Сама идея, что зуб, выбитый у несчастной голодной рыбы, может как-то влиять на технику игры, была абсурдной. {w}Примерно как… {w}идея о путешествии во времени и попадании в непонятный пионерлагерь."
 
     # ПРОПУСК, СТОЛОВАЯ
-    
+
     window hide
     $ bkrr_timeskip_short()
-    scene bg int_dining_hall_people_day with bkrr_timeskip_transition()
+    scene bg int_dining_hall_people_day_bkrr with bkrr_timeskip_transition()
     play ambience ambience_dining_hall_full fadein 3
     window show
 

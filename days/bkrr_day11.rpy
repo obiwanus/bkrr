@@ -1294,7 +1294,7 @@ label bkrr_day11_common:
 
     stop ambience fadeout 3
 
-    scene bg int_dining_hall_people_day_rainy_bkrr with fade3
+    scene bg int_dining_hall_people_day_bkrr_rainy_bkrr with fade3
 
     play ambience ambience_dining_hall_full fadein 3
 

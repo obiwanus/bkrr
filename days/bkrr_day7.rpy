@@ -210,7 +210,7 @@ label bkrr_day7_common:
 
     $ bkrr_timeskip()
 
-    scene bg int_dining_hall_people_day with bkrr_circleout_transition
+    scene bg int_dining_hall_people_day_bkrr with bkrr_circleout_transition
 
     play music music_list["two_glasses_of_melancholy"] fadein 3
 
@@ -442,7 +442,7 @@ label bkrr_day7_common:
 
     $ renpy.pause(1.0, hard=True)
 
-    scene bg int_dining_hall_people_day
+    scene bg int_dining_hall_people_day_bkrr
     show chair_c behind el
     show el serious pioneer at bkrr_sit_center
     with bkrr_fade(1.0)
@@ -1471,7 +1471,7 @@ label bkrr_day7_common:
 
     $ bkrr_timeskip()
 
-    scene bg int_dining_hall_people_day with bkrr_circleout_transition
+    scene bg int_dining_hall_people_day_bkrr with bkrr_circleout_transition
 
     play ambience ambience_dining_hall_full fadein 3
 

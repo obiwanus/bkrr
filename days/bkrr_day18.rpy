@@ -3839,7 +3839,7 @@ label bkrr_day18_common:
 
     window hide
     stop ambience fadeout 2
-    scene bg int_dining_hall_people_day with fade2
+    scene bg int_dining_hall_people_day_bkrr with fade2
     play ambience ambience_dining_hall_full fadein 3
     window show
 

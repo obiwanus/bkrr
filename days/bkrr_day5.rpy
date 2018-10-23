@@ -402,7 +402,7 @@ label bkrr_day5_common:
 
     stop ambience fadeout 0.5
 
-    scene bg int_dining_hall_people_day with dissolve
+    scene bg int_dining_hall_people_day_bkrr with dissolve
 
     play ambience ambience_dining_hall_full fadein 3
 

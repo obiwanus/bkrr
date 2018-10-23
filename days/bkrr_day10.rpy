@@ -1439,7 +1439,7 @@ label bkrr_day10_common:
 
     stop ambience fadeout 3
 
-    scene bg int_dining_hall_people_day
+    scene bg int_dining_hall_people_day_bkrr
     show mt smile pioneer at center
     with fade3
 
@@ -1480,7 +1480,7 @@ label bkrr_day10_common:
 
     window hide
 
-    scene bg int_dining_hall_people_day with dissolve
+    scene bg int_dining_hall_people_day_bkrr with dissolve
 
     $ renpy.pause(1.0, hard=True)
 

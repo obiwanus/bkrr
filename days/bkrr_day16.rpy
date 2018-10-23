@@ -2822,7 +2822,7 @@ label bkrr_day16_common:
 
     stop music fadeout 10
 
-    scene bg int_dining_hall_people_day with fade3
+    scene bg int_dining_hall_people_day_bkrr with fade3
 
     play ambience ambience_dining_hall_full fadein 3
 
