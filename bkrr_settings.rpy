@@ -733,10 +733,10 @@ init 2:
         contains:
             "bg ext_stage_big_day_evening_empty"
         contains:
-            bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/ball_sparkles_", 5,  1., Dissolve(0.25, alpha=True))
+            bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/ball_sparkles_", 5, 0.5, Dissolve(0.25, alpha=True))
         contains:
-            bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_sparkles_", 4,  1.0, Dissolve(0.25, alpha=True))
-            alpha 0.5
+            bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_sparkles_", 5,  1.5, Dissolve(1.0, alpha=True))
+            alpha 0.7
         contains:
             bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 2,  3.75, Dissolve(2.0, alpha=True))
         contains:
@@ -779,7 +779,7 @@ init 2:
         contains:
             "bg ext_backstage_big_day_night"
         contains:
-            "dv smile pirate"
+            "dv smile pirate_with_hat"
             fright
         contains:
             "us smile pirate"
