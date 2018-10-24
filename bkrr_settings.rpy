@@ -729,18 +729,38 @@ init 2:
             "bg ext_stage_big_day_evening_empty"
         contains:
             MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
+    image bkrr_concert_lights_no_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 3,  3.75, Dissolve(2.0, alpha=True))
+    image bkrr_concert_mist_no_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 3,  3.75, Dissolve(2.0, alpha=True))
+    image bkrr_concert_lights_with_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 4,  3.75, Dissolve(2.0, alpha=True))
+    image bkrr_concert_mist_with_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 4,  3.75, Dissolve(2.0, alpha=True))
+    image bkrr_ball_sparkles = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/ball_sparkles_", 5, 0.5, Dissolve(0.25, alpha=True))
+    image bkrr_concert_sparkles = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_sparkles_", 5,  1.5, Dissolve(1.0, alpha=True))
     image bg ext_stage_concert:
         contains:
             "bg ext_stage_big_day_evening_empty"
         contains:
-            bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/ball_sparkles_", 5, 0.5, Dissolve(0.25, alpha=True))
+            "bkrr_ball_sparkles"
         contains:
-            bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_sparkles_", 5,  1.5, Dissolve(1.0, alpha=True))
+            "bkrr_concert_sparkles"
             alpha 0.7
         contains:
-            bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 2,  3.75, Dissolve(2.0, alpha=True))
+            "bkrr_concert_mist_no_red"
         contains:
-            bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 2,  3.75, Dissolve(2.0, alpha=True))
+            "bkrr_concert_lights_no_red"
+        contains:
+            MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
+    image bg ext_stage_concert_pirates:
+        contains:
+            "bg ext_stage_big_day_evening_empty"
+        contains:
+            "bkrr_ball_sparkles"
+        contains:
+            "bkrr_concert_sparkles"
+            alpha 0.7
+        contains:
+            "bkrr_concert_mist_with_red"
+        contains:
+            "bkrr_concert_lights_with_red"
         contains:
             MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
 
