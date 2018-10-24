@@ -764,6 +764,24 @@ init 2:
         contains:
             MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
 
+    image bg ext_stage_big_day_evening_no_mast = bkrr_fast_composite(
+        MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
+        MOD_IMAGES + "misc/d19_concert/flags_right.png",
+        MOD_IMAGES + "misc/d19_concert/flags_top.png",
+        MOD_IMAGES + "misc/d19_concert/monitors.png",
+        MOD_IMAGES + "misc/d19_concert/pirate_flag.png",
+    )
+    image bkrr_mast_up = MOD_IMAGES + "misc/d19_concert/mast_up.png"
+    image bkrr_concert_people = MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
+    image bkrr_mast_down_dust = MOD_IMAGES + "misc/d19_concert/mist_1.png"
+    image bg ext_stage_big_day_evening_mast_down  = bkrr_fast_composite(
+        MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
+        MOD_IMAGES + "misc/d19_concert/mast_down.png",
+        MOD_IMAGES + "misc/d19_concert/flags_top_down.png",
+        MOD_IMAGES + "misc/d19_concert/monitors.png",
+        MOD_IMAGES + "misc/d19_concert/pirate_flag.png",
+    )
+
     image bg ext_stage_big_day_evening_close = MOD_IMAGES + "bg/ext_stage_big_day_night_close.jpg"
     image bg ext_backstage_big_day_night = bkrr_fast_composite(MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg", MOD_IMAGES + "misc/backstage_plank.png")
     image bg ext_backstage_big_day_night_noplank = MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg"

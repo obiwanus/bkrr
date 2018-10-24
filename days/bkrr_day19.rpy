@@ -5845,36 +5845,73 @@ label bkrr_day19_common:
     "С той только разницей, что веса ей не хватало и вместо того, чтобы опрокинуть колонку, она отлетала от неё сама. Не упала, и то хорошо. Мачта тоже поскрипывала, но держалась."
 
     window hide
-    stop music fadeout 5
+    stop music fadeout 7
     show cg d19_chibi_alisa:
         truecenter
         zoom 0.8
         ease 0.3 xalign 0.3
-        ease 0.3 alpha 0.0 xalign 2.0
+        parallel:
+            ease 0.7 xpos 2.0
+        parallel:
+            ease 0.7 alpha 0.0
     $ renpy.pause(1.0, hard=True)
-    hide cg with None
+    scene bg ext_stage_big_day_evening_no_mast
+    show bkrr_mast_up
+    show bkrr_concert_people
+    with Dissolve(2.0)
     window show
 
     "Пионеры не были готовы к такому поведению на сцене, а потому, когда последние ноты повисли в воздухе, вместо аплодисментов раздалось тихое перешептывание и гул голосов…"
     "Зал молчал, напряжение росло."
 
+    play sound bkrr_sfx_list["applweak"] fadein 5
+
     "И лишь потом раздались первые негромкие хлопки."
 
-    play sound bkrr_sfx_list["applweak"] fadein 3
-
-    "Было слишком темно, чтобы увидеть кто начал аплодировать, но мне почему-то показалось, что это было откуда-то с дальнего конца скамеек."
-
-    play sound2 bkrr_sfx_list["applause1"] fadein 2
-
-    "Может быть – оттуда, где сидела Лена."
-
-    play sound3 bkrr_sfx_list["applause4"] fadein 2
+    play sound3 bkrr_sfx_list["applause4"] fadein 3
 
     "К одинокой паре хлопающих ладоней добавилась еще одна, потом еще несколько и вскоре волна аплодисментов разошлась по залу."
-    "Понравилось ли им? Трудно сказать. Но аплодировали громко и долго."
-
+    "Понравилось ли им? Трудно сказать.{w} Но аплодировали громко и долго."
     "Алиса горделиво подбоченилась и явно купалась в лучах своей кратковременной славы.{w} Она стояла рядом с Мику и, чуть запыхавшись, махала залу рукой."
-    "Избитая ногами мачта решила, что момент подходящий.{w} Она заскрипела, качнулась в сторону зрительского зала, заставив передние ряды охнуть и пригнуться, но потом гирлянда из флажков потянула её назад."
+
+    window hide
+    $ renpy.pause(1.0, hard=True)
+    window show
+
+    "Избитая ногами мачта решила, что момент подходящий."
+
+    play sound bkrr_sfx_list["mast_skr"] fadein 1
+    play sound2 bkrr_sfx_list["oooo"] fadein 5
+    scene bg ext_stage_big_day_evening_no_mast:
+        subpixel True
+        truecenter
+        ease 1.0 zoom 1.8 rotate -20
+    show bkrr_mast_up:
+        subpixel True
+        truecenter
+        parallel:
+            ease 1.0 zoom 1.8
+        parallel:
+            ease 0.95 rotate -20
+    show bkrr_concert_people:
+        subpixel True
+        truecenter
+        ease 1.0 zoom 1.8 rotate -20
+    with None
+
+    "Она заскрипела, качнулась в сторону зрительского зала, заставив передние ряды охнуть и пригнуться, но потом гирлянда из флажков потянула её назад."
+
+    play sound bkrr_sfx_list["mast_boom"]
+    scene bg ext_stage_big_day_evening_mast_down
+    show bkrr_mast_down_dust:
+        ease 4.0 alpha 0.0
+    show bkrr_concert_people
+    show white:
+        alpha 0.0
+        linear 0.1 alpha 0.9
+        ease 1.0 alpha 0.0
+    with vpunch
+
     "Описав красивую дугу, она рухнула как раз позади Алисы. Та взвизгнула, подпрыгнув чуть ли не на метр, но тут же притворилась, что всё так и задумано."
     "Ольга Дмитриевна нашла шпингалет, который запирал дверцу на сцену, поднялась к нам и теперь говорила в микрофон что-то про сюрприз, яркое завершение концерта, и явно старалась создать впечатление, что всё идет по плану."
 
@@ -5987,7 +6024,12 @@ label bkrr_day19_common:
     mt "Всё, скройтесь с глаз моих в музклубе, я улажу дела и зайду, чтобы решить, что с вами дальше делать."
 
     window hide
-    scene bg ext_stage_big_day_evening_full with dissolve
+    play sound_loop2 ambience_medium_crowd_outdoors fadein 3
+    scene bg ext_stage_big_day_evening_mast_down
+    show bkrr_mast_down_dust:
+        ease 4.0 alpha 0.0
+    show bkrr_concert_people
+    with dissolve
     window show
 
     "Гуськом мы обогнули сцену и направились в музклуб."
@@ -6008,6 +6050,7 @@ label bkrr_day19_common:
     me "Да уж. Если она меня выгонит из дому, придётся идти ночевать в клуб."
 
     window hide
+    stop sound_loop2 fadeout 2
     scene bg ext_square_night with fade2
     show mi sad pirate close with dissolve
     window show
