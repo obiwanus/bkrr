@@ -722,11 +722,30 @@ init 2:
         MOD_IMAGES + "misc/d19_concert/flags_right.png",
         MOD_IMAGES + "misc/d19_concert/flags_top.png",
         MOD_IMAGES + "misc/d19_concert/monitors.png",
-        MOD_IMAGES + "misc/d19_concert/pioneer_flag.png"
     )
+    image bkrr_pioneer_flag = MOD_IMAGES + "misc/d19_concert/pioneer_flag.png"
+    image bkrr_pirate_flag = MOD_IMAGES + "misc/d19_concert/pirate_flag.png"
     image bg ext_stage_big_day_evening_full:
         contains:
             "bg ext_stage_big_day_evening_empty"
+        contains:
+            "bkrr_pioneer_flag"
+        contains:
+            MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
+    image bg ext_stage_raise_pirate_flag:
+        contains:
+            "bg ext_stage_big_day_evening_empty"
+        contains:
+            "bkrr_pioneer_flag"
+            truecenter
+            ease 0.7 ypos 0.65 alpha 0.0
+        contains:
+            "bkrr_pirate_flag"
+            alpha 0.0
+            truecenter
+            ypos 0.65
+            pause 0.7
+            ease 0.7 ypos 0.5 alpha 1.0
         contains:
             MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
     image bkrr_concert_lights_no_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 3,  3.75, Dissolve(2.0, alpha=True))
@@ -738,6 +757,8 @@ init 2:
     image bg ext_stage_concert:
         contains:
             "bg ext_stage_big_day_evening_empty"
+        contains:
+            MOD_IMAGES + "misc/d19_concert/pioneer_flag.png"
         contains:
             "bkrr_ball_sparkles"
         contains:
@@ -752,6 +773,8 @@ init 2:
     image bg ext_stage_concert_pirates:
         contains:
             "bg ext_stage_big_day_evening_empty"
+        contains:
+            MOD_IMAGES + "misc/d19_concert/pirate_flag.png"
         contains:
             "bkrr_ball_sparkles"
         contains:
@@ -769,7 +792,6 @@ init 2:
         MOD_IMAGES + "misc/d19_concert/flags_right.png",
         MOD_IMAGES + "misc/d19_concert/flags_top.png",
         MOD_IMAGES + "misc/d19_concert/monitors.png",
-        MOD_IMAGES + "misc/d19_concert/pirate_flag.png",
     )
     image bkrr_mast_up = MOD_IMAGES + "misc/d19_concert/mast_up.png"
     image bkrr_concert_people = MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
