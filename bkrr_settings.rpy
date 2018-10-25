@@ -276,7 +276,7 @@ init python:
         character = "{color=%s}%s{/color} {color=%s}|{/color} {color=%s}%s{/color}" % (bkrr_characters[first][1], bkrr_characters[first][0], colors[time_of_day], bkrr_characters[second][1], bkrr_characters[second][0])
         gl[first + "_" + second + "_" + time_of_day[0]] = Character(character, kind=adv, what_color=what_color, what_drop_shadow=drop_shadow, ctc="ctc_animation", ctc_position="fixed")
 
-    for i in (("me", "tol", "day"), ("sl", "mz", "sunset"), ("dv", "us", "day"), ("dv", "us", "sunset"), ("cs", "mi", "sunset"), ("me", "cs", "day"), ("me", "mi", "day"), ("dv", "mi", "day")):
+    for i in (("me", "tol", "day"), ("sl", "mz", "sunset"), ("dv", "us", "day"), ("dv", "us", "sunset"), ("cs", "mi", "sunset"), ("me", "cs", "day"), ("me", "mi", "day"), ("dv", "mi", "day"), ("mi", "dv", "day")):
         bkrr_double_char_define(i[0], i[1], i[2])
 
     # Переключение режима и смена имён
