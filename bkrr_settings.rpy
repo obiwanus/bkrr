@@ -577,18 +577,17 @@ init 2:
     image bg ext_music_club_sunset_bkrr = MOD_IMAGES + "bg/ext_music_club_sunset.png"
     image bg ext_music_club_night_bkrr = im.Scale(MOD_IMAGES + "bg/ext_music_club_night.png", config.screen_width, config.screen_height)
 
-    # Столовка с Коляном
     image bg int_dining_hall_people_day_bkrr:
         choice:
             ES_IMAGES + "bg/int_dining_hall_people_day.jpg"
         choice:
-            bkrr_fast_composite(ES_IMAGES + "bg/int_dining_hall_people_day.jpg", MOD_IMAGES + "misc/dining_hall_kolyan.png")
+            bkrr_fast_composite(ES_IMAGES + "bg/int_dining_hall_people_day.jpg", MOD_IMAGES + "misc/dining_hall_kakoyto_hren.png")
 
     image bg int_dining_hall_people_sunset_bkrr:
         choice:
             MOD_IMAGES + "bg/int_dining_hall_people_sunset.jpg"
         choice:
-            bkrr_fast_composite(MOD_IMAGES + "bg/int_dining_hall_people_sunset.jpg", MOD_IMAGES + "misc/dining_hall_kolyan_sunset.png")
+            bkrr_fast_composite(MOD_IMAGES + "bg/int_dining_hall_people_sunset.jpg", MOD_IMAGES + "misc/dining_hall_kakoyto_hren_sunset.png")
 
     image bg ext_square_night_party_glow:
         contains:
