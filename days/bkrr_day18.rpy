@@ -127,12 +127,7 @@ label bkrr_day18_common:
     mi "Ой… Ты опять?"
     me "Это потому, что я тебя очень люблю!"
 
-    show mi surprise sheet close:
-        subpixel True
-        truecenter
-        ease 2 zoom 1.2
-
-    "Я укрыл смутившее её место и привлек Мику к себе."
+    "Я укрыл смутившее её место и привлёк Мику к себе."
 
     show mi smile sheet close with dspr
 
@@ -215,14 +210,11 @@ label bkrr_day18_common:
     "Я заколебался, не зная, что ответить.{w} Сказать: «прости, милая, но через три дня я могу исчезнуть отсюда и оказаться в другом времени и месте» я не мог."
     "Кажется, Мику поняла мои колебания по-своему."
 
-    show mi normal pioneer_loo close with dspr
+    show mi shy pioneer_loo close with dspr
 
     mi "Ты не отвечай, если не уверен, я на тебя не давлю.{w} Это всё случилось так внезапно… Конечно, нам нужно подумать."
-
-    hide mi with dissolve
-
     "Она вздохнула и прижалась ко мне. Я провел пальцем по её щеке."
-    me "Кажется, кто-то решил, будто я получил что хотел, и теперь сбегу в кусты? Так вот, не дождётесь!"
+    me "Кажется, кто-то решил, будто я получил, что хотел, и теперь сбегу в кусты? Так вот, не дождётесь!"
 
     show mi normal pioneer_loo close with dissolve
 
@@ -635,10 +627,7 @@ label bkrr_day18_common:
     # УТРЕННИЕ ОТВЕТЫ У ВОЖАТОЙ
     window hide
     stop ambience fadeout 2
-    scene bg int_house_of_mt_sunset
-    show black:
-        alpha 0.2
-    with fade2
+    scene bg int_house_of_mt_sunset with fade2
     play ambience ambience_int_cabin_day fadein 3
     window show
 
@@ -1434,7 +1423,10 @@ label bkrr_day18_common:
 
     me "Хватит уже, на завтрак опоздаем. Я первый!"
 
+    window hide
     show us grin pioneer close at cright with dissolve
+    show us grin pioneer close at cleft with ease
+    window show
 
     us "Куда лезешь! Девочек вперед надо пропускать!"
     me "Ничего не знаю, я голодный!"
@@ -1443,7 +1435,6 @@ label bkrr_day18_common:
 
     "В шутку потолкавшись в двери, мы одновременно ввалились в столовую."
 
-    #В СТОЛОВОЙ
     window hide
     stop ambience fadeout 3
     scene bg int_dining_hall_people_sunset_bkrr with dissolve
@@ -1676,7 +1667,6 @@ label bkrr_day18_common:
 
     mi "Это они не ругаются. Вот если начнут вежливо-вежливо, через спасибо-пожалуйста, вот тогда жди беды. Я такое один раз видела, еле помирила потом."
 
-
     hide mi
     show dv laugh pioneer close at cleft
     show us laugh pioneer close at cright
@@ -1714,6 +1704,7 @@ label bkrr_day18_common:
     dv "А я… Ой, Славя! Погоди! Дело есть!"
 
     hide dv with easeoutright
+    play music music_list["get_to_know_me_better"] fadein 5
 
     "Резко сменив тему, она поспешила за идущей к выходу Славяной.{w} Та подождала Алису, и они вместе вышли на улицу."
     me "Алиса и Славя? Что у них могут быть за дела?"
@@ -1866,6 +1857,9 @@ label bkrr_day18_common:
     show mi normal pioneer close with dspr
 
     mi "Тогда на что?"
+
+    stop music fadeout 3
+
     me "На поцелуи, конечно."
 
     show mi surprise pioneer close with dspr
@@ -2343,23 +2337,25 @@ label bkrr_day18_common:
 
     dv "Нет, Микуля, у тебя слишком нежный голос для такой песни. Придется самой! Толика-то нет. Ну, поехали, что ли?"
 
+    window hide
     hide dv
     hide mi
     with dissolve
+    play music bkrr_music_list["rb_13"] fadein 3
+    $ renpy.pause(1.0, hard=True)
+    window show
+
+
+    "Девчонки принялись играть вступление, а я терпеливо ожидал, пока придет очередь долбить свои четыре ноты."
+
     window hide
     $ renpy.pause(1.0, hard=True)
     window show
 
-    play music music_list["that_s_our_madhouse"] fadein 5
-
-    show bkrr_todo "Рекорд обещал подумать над музлом"
-
-    "Девчонки принялись играть длиннющее вступление, а я терпеливо ожидал, пока придет очередь долбить свои четыре ноты."
+    "По законам жанра, мне бы полагалось напортачить от волнения, но в таком простом мотиве это было почти невозможно."
     "Алиса тем временем низким грудным голосом пела-рассказывала историю про проклятый фрегат и бессмертных пиратов."
     "Один раз услышав эту песню, она в неё просто влюбилась. Ничего особенного, конечно, но забавная.{w} Играть её на концерте нам не разрешили, но мы много раз репетировали её для себя."
     "Алиса разошлась и поставила ногу на усилитель, не переставая петь:"
-
-    hide bkrr_todo
 
     window hide
     scene cg d3_dv_guitar with bkrr_fade(1.0)
@@ -2373,13 +2369,15 @@ label bkrr_day18_common:
     "{i}Стреляет из обрезов{/i}"
     "{i}Толпа головорезов.\n{/i}"
     "{i}Они не трусят смерти, {/i}"
-    "{i}проворные, как черти{/i}"
+    "{i}проворные, как черти,{/i}"
     "{i}и, обкурившись планом, {/i}"
     "{i}гордятся капитаном!{/i}"
 
     nvl hide dissolve
 
-    $ renpy.pause(0.25, hard=True)
+    show bkrr_flying_notes with dissolve
+    pause
+    stop music fadeout 3
 
     $ bkrr_set_mode()
 
@@ -2387,14 +2385,14 @@ label bkrr_day18_common:
 
     window show
 
-    "По законам жанра, мне бы полагалось напортачить от волнения, но в таком простом мотиве это было почти невозможно."
     "Наконец, последние ноты были сыграны и Алиса горделиво посмотрела по сторонам."
-
-    stop music fadeout 5
 
     show dv grin pioneer2 at cright with dissolve
 
     dv "Ну, как?"
+
+    play music music_list["heather"] fadein 3
+
     "Мику вздохнула, всплеснула руками."
 
     show mi dontlike pioneer at left with dissolve
@@ -2466,6 +2464,7 @@ label bkrr_day18_common:
 
     dv "Помелом не болтай!"
 
+    stop music fadeout 5
     show kla shyright pioneer at cright with dissolve
     show dv smile pioneer2 with dspr
 
@@ -2583,9 +2582,10 @@ label bkrr_day18_common:
 
     kla "Думаю, это будет интересно."
 
-    hide dv with dissolve
-
+    window hide
     play music bkrr_music_list["six_string_samurai_duel"] fadein 2
+
+    hide dv with dissolve
 
     scene bg int_music_club_mattresses_day:
         bkrr_shiver_guitar_fight
@@ -2600,13 +2600,15 @@ label bkrr_day18_common:
             repeat
     show kla smile pioneer at cright
     with Dissolve(1.0)
+    window show
 
     "Алиса босой ногой включила ритм-бокс, тот громко щелкнул и выдал частую дробь. Вроде, мы не репетировали эту мелодию, откуда взялся этот ритм?"
     "Несколько секунд Клаус слушал ритм, наклонив голову, затем кивнул."
 
+    window hide
     hide kla with dissolve
-
     show kla d18_guitar1:
+        subpixel True
         xalign 0.1
         pause 0.5
         parallel:
@@ -2614,6 +2616,7 @@ label bkrr_day18_common:
             ease 2.0 xalign 0.1
             repeat
     with dissolve
+    window show
 
     "Немец прищёлкнул пальцами и подхватил свою гитару, почти скрывшись за её огромным корпусом."
     "Пальцы Клауса пробежались по струнам и инструмент отозвался короткими отрывистыми аккордами."
@@ -2626,25 +2629,25 @@ label bkrr_day18_common:
     "Даже без усилителя звук гитары словно заполнял собой помещение музклуба… И очень неплохо попадал в ритм ударных."
 
     window hide
-    $ renpy.pause(2.0, hard=True)
-    window show
+    $ renpy.pause(1.0, hard=True)
 
-    show dv d18_guitar1:
-        xalign 0.95
+    show dv2 d18_guitar1:
+        subpixel True
+        truecenter
+        xpos 0.56
         parallel:
-            ease 2.5 xalign 0.92
-            ease 2.5 xalign 0.95
+            ease 2.5 xpos 0.55
+            ease 2.5 xpos 0.56
             repeat
     with dissolve
+    window show
 
     "Алиса, опомнившись, вскочила на ноги и навстречу чеканным музыкальным фразам старенького немецкого инструмента понёслись размытые риффы её электрогитары. "
-    "Такие непохожие звуки двух гитар сплетались, бились друг о друга, словно споря  о том, кто из них лучше. "
+    "Такие непохожие звуки двух гитар сплетались, бились друг о друга, словно споря о том, кто из них лучше. "
 
-    show kla d18_guitar2 with dspr
-
-    # "Мы только смотрели, как они, сверля друг друга взглядами, играли вдвоём одну мелодию."
-
-    show dv d18_guitar2 with dspr
+    show kla d18_guitar2
+    show dv2 d18_guitar2
+    with dspr
 
     "Клаус подмигнул Алисе и выдал сложный пассаж.{w} Она скривилась, но все-таки догнала его, снова попав в ритм."
 
@@ -2699,8 +2702,11 @@ label bkrr_day18_common:
 
     kla "Что? Куда проехали?"
 
+    window hide
     hide dv with dissolve
     show mi normal pioneer at left with dissolve
+    play music music_list["your_bright_side"] fadein 5
+    window show
 
     mi "Она имеет в виду, что тема закрыта. Я тоже не сразу привыкла к этим русским выражениям."
 
@@ -2793,10 +2799,12 @@ label bkrr_day18_common:
 
     dv "Тогда бас в зубы, и репетируем."
 
+    window hide
     hide mi
     hide us
     with dissolve
     show dv smile pioneer2 at cleft with ease
+    window show
 
     dv "Клаус, ты ещё посидишь?"
 
@@ -2927,6 +2935,7 @@ label bkrr_day18_common:
     play sound sfx_open_door_1
     scene bg ext_music_club_verandah_day_v9 with dissolve
     play ambience ambience_camp_center_day fadein 3
+    stop music fadeout 7
     window show
 
     # ПУТЬ В ГЕЙКЛУБ КИБЕРНЕТИКОВ

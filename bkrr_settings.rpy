@@ -791,6 +791,7 @@ init 2:
         MOD_IMAGES + "misc/d19_concert/flags_right.png",
         MOD_IMAGES + "misc/d19_concert/flags_top.png",
         MOD_IMAGES + "misc/d19_concert/monitors.png",
+        MOD_IMAGES + "misc/d19_concert/pirate_flag.png",
     )
     image bkrr_mast_up = MOD_IMAGES + "misc/d19_concert/mast_up.png"
     image bkrr_concert_people = MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
@@ -1065,8 +1066,8 @@ init 2:
 
     # ЦГшные спрайты
 
-    image dv d18_guitar1 = MOD_IMAGES + "cg/d18_alisa_guitar1.png"
-    image dv d18_guitar2 = MOD_IMAGES + "cg/d18_alisa_guitar2.png"
+    image dv2 d18_guitar1 = MOD_IMAGES + "cg/d18_alisa_guitar1.png"
+    image dv2 d18_guitar2 = MOD_IMAGES + "cg/d18_alisa_guitar2.png"
     image kla d18_guitar1 = MOD_IMAGES + "cg/d18_klaus_guitar1.png"
     image kla d18_guitar2 = MOD_IMAGES + "cg/d18_klaus_guitar2.png"
 
@@ -1579,6 +1580,7 @@ init 1:
             repeat
 
     transform bkrr_shiver_guitar_fight:
+        subpixel True
         truecenter
         ease 0.25 zoom 1.005
         pause 1.2
