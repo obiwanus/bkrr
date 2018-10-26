@@ -1425,6 +1425,7 @@ init 1:
     # Анимации "встань" и "сядь" для спрайтов
 
     transform sit_down:
+        subpixel True
         parallel:
             ease 1.0 ypos 0.22
         parallel:
@@ -1432,6 +1433,7 @@ init 1:
             ease 0.5 zoom 1.0
 
     transform sit_down1:
+        subpixel True
         parallel:
             ease 1.0 ypos 0.15
         parallel:
@@ -1439,6 +1441,7 @@ init 1:
             ease 0.5 zoom 1.0
 
     transform sit_down1_close:
+        subpixel True
         parallel:
             ease 1.0 ypos 0.05
         parallel:
@@ -1446,6 +1449,7 @@ init 1:
             ease 0.5 zoom 1.0
 
     transform get_up:
+        subpixel True
         parallel:
             ease 1.0 ypos 0.0
         parallel:
@@ -1453,6 +1457,7 @@ init 1:
             ease 0.5 zoom 1.0
 
     transform get_up_fast:
+        subpixel True
         parallel:
             ease 0.3 ypos 0.0
         parallel:

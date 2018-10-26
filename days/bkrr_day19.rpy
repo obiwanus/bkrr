@@ -9,6 +9,7 @@ label bkrr_day19_common:
 
     $ bkrr_set_time("sunset")
     play ambience ambience_int_cabin_day fadein 2
+    play music music_list["tried_to_bring_it_back"] fadein 5
     scene expression bkrr_awakening_atl("bg int_house_of_mt_sunset")
     show unblink
     with None
@@ -53,15 +54,16 @@ label bkrr_day19_common:
 
     dv "Не смей, басило! Если ты только шевельнёшь своими шаловливыми ручками, я тебе врежу!"
     th "Врежет. Она такая."
-
-    hide us
-    hide dv
-    with dissolve
-
     me "Я не могу так. Прости."
     "Славя не обиделась."
 
+    window hide
     show sl smile swim with dspr
+    show dv angel:
+        ease 1.0 xpos -1.0 alpha 0.0
+    show us demon:
+        ease 1.0 xpos 2.0 alpha 0.0
+    window show
 
     sl "Да? Жаль.{w} Тогда я к Ольге пойду."
 
@@ -119,6 +121,7 @@ label bkrr_day19_common:
     "Кто-то явно не в духе. Славя повернулась к вожатой"
 
     show sl normal sport at cleft with ease
+    stop music fadeout 5
 
     sl "Доброе утро, Ольга Дмитриевна. Как ваша голова?"
 
