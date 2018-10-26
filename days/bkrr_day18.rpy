@@ -3028,7 +3028,7 @@ label bkrr_day18_common:
 
     $ bkrr_set_volume("ambience", 0.2, 2)
 
-    play music bkrr_music_list["black_stone"] fadein 7
+    play music bkrr_music_list["as_we_float"] fadein 7
 
     "Мы медленно шли к кружку кибернетиков. Уля не умела подолгу грустить, так что через пару минут уже забыла о том, что огорчена и оживленно болтала с нами обо всякой всячине."
 
@@ -4141,8 +4141,7 @@ label bkrr_day18_common:
     us "Сень, ну сделай что-нибудь!"
 
     play sound bkrr_sfx_list["broken_glass"]
-
-    scene bg ext_clubs_day:
+    scene bg ext_clubs_day_broken_window_1:
     show us surp2 pioneer close at left
     show el surprise_fingal pioneer close at cright
     with vpunch
@@ -4185,7 +4184,7 @@ label bkrr_day18_common:
 
     play sound bkrr_sfx_list["broken_glass"]
 
-    scene bg ext_clubs_day:
+    scene bg ext_clubs_day_broken_windows:
     show us surp2 pioneer close at left
     show el surprise_fingal pioneer close at cright
     with vpunch
@@ -4313,7 +4312,7 @@ label bkrr_day18_common:
     stop ambience fadeout 2
     play sound sfx_open_door_clubs
     stop music fadeout 3
-    scene bg ext_clubs_day:
+    scene bg ext_clubs_day_broken_windows:
     show us normal pioneer at left
     show el normal_fingal pioneer:
         bkrr_sit_right
@@ -5318,7 +5317,7 @@ label bkrr_day18_common:
     stop music fadeout 4
     stop ambience fadeout 2
     $ bkrr_timeskip()
-    scene bg ext_clubs_sunset_bkrr with bkrr_circleout_transition
+    scene bg ext_clubs_sunset_broken_windows with bkrr_circleout_transition
     play ambience ambience_camp_center_evening fadein 2
     play sound_loop bkrr_sfx_list["sweep1"] fadein 2
     $ renpy.pause(0.5)
@@ -5648,7 +5647,7 @@ label bkrr_day18_common:
     stop ambience fadeout 2
     stop music fadeout 5
     play sound sfx_open_door_clubs fadein 1
-    scene bg ext_clubs_sunset_bkrr with dissolve
+    scene bg ext_clubs_sunset_broken_windows with dissolve
     play ambience ambience_camp_center_evening fadein 2
     window show
 
