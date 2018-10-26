@@ -56,9 +56,11 @@ init python:
 
     # Функция для быстрого создания зацикленной анимации
 
-    def bkrr_create_anim(img, amount, pause=0.5, transition=None):
+    def bkrr_create_anim(img, amount, pause=0.5, transition=None, start_with=1):
         args = list()
-        for number in range(1, amount + 1):
+        numbers = range(1, amount + 1)
+        numbers = numbers[start_with:] + numbers[:start_with]  # rearrange
+        for number in numbers:
             args.append(im.Image(img + str(number) + ".png"))
             args.append(pause)
             args.append(transition)
@@ -750,10 +752,10 @@ init 2:
             ease 0.7 ypos 0.5 alpha 1.0
         contains:
             MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
-    image bkrr_concert_lights_no_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 3,  3.75, Dissolve(2.0, alpha=True))
-    image bkrr_concert_mist_no_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 3,  3.75, Dissolve(2.0, alpha=True))
-    image bkrr_concert_lights_with_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 4,  3.75, Dissolve(2.0, alpha=True))
-    image bkrr_concert_mist_with_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 4,  3.75, Dissolve(2.0, alpha=True))
+    image bkrr_concert_lights_no_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 6,  3.75, Dissolve(2.0, alpha=True))
+    image bkrr_concert_mist_no_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 6,  3.75, Dissolve(2.0, alpha=True))
+    image bkrr_concert_lights_with_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 7,  3.75, Dissolve(2.0, alpha=True), start_with=6)
+    image bkrr_concert_mist_with_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 7,  3.75, Dissolve(2.0, alpha=True), start_with=6)
     image bkrr_ball_sparkles = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/ball_sparkles_", 5, 0.5, Dissolve(0.25, alpha=True))
     image bkrr_concert_sparkles = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_sparkles_", 5,  1.5, Dissolve(1.0, alpha=True))
     image bg ext_stage_concert:
