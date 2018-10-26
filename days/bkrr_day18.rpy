@@ -4969,11 +4969,13 @@ label bkrr_day18_common:
 
     window hide
     stop music fadeout 5
+    $ bkrr_timeskip()
+    play music music_list["two_glasses_of_melancholy"] fadein 5
     scene bg ext_music_club_verandah_final_rehearsal
     show dv normal pioneer at fright
     show mt smile panama pioneer at center
     show ant normal shirt at left
-    with fade2
+    with bkrr_circleout_transition
     window show
 
     "Большинство пионеров разошлось, а вожатая и Антон Иванович с приезжими подошли к нам."
@@ -5313,10 +5315,14 @@ label bkrr_day18_common:
     "Мы засмеялись, Трук немного подумал, а затем присоединился к нам."
 
     window hide
+    stop music fadeout 4
     stop ambience fadeout 2
     $ bkrr_timeskip()
     scene bg ext_clubs_sunset_bkrr with bkrr_circleout_transition
     play ambience ambience_camp_center_evening fadein 2
+    play sound_loop bkrr_sfx_list["sweep1"] fadein 2
+    $ renpy.pause(0.5)
+    play sound_loop2 bkrr_sfx_list["sweep2"] fadein 2
     window show
 
     # УБОРКА В КЛУБЕ КИБЕРНЕТИКОВ
@@ -5326,8 +5332,10 @@ label bkrr_day18_common:
 
     window hide
     stop ambience fadeout 2
+    stop sound_loop2 fadeout 2
     scene bg int_clubs_male_sunset_wrecked with fade2
     play ambience ambience_int_cabin_evening fadein 2
+    play music music_list["smooth_machine"] fadein 3
     window show
 
     "Внутри царила еще большая разруха, но совместными усилиями мы постепенно вернули клубному помещению прежний вид.{w} Кое-какие модели планеров восстановлению уже не подлежали, но робот, спасенный Ульянкой, не пострадал."
@@ -5337,6 +5345,7 @@ label bkrr_day18_common:
         pause 2.0
         ease 1.0 offscreenleft
     with easeinbottom
+    stop sound_loop fadeout 2
 
     "Когда мы присели передохнуть, Трук ухватил один из самолетов и ушел с ним в угол, издавая жужжащие звуки. Видимо, подражал звуку двигателя.{w} Ульяна улыбнулась и покачала головой."
 
@@ -5364,7 +5373,7 @@ label bkrr_day18_common:
     $ bkrr_timeskip_short()
     scene bg int_clubs_male_sunset_wrecked with bkrr_timeskip_transition()
     $ bkrr_set_volume("sound", 0.6)
-    play sound sfx_dinner_horn_processed fadein 4
+    play sound sfx_dinner_horn_processed
     window show
 
     "Работы оставалось еще порядком, когда раздался сигнал на ужин."
@@ -5424,23 +5433,27 @@ label bkrr_day18_common:
     us "Идем уже!{w=0.5}{nw}"
 
     window hide
+    show us smile pioneer:
+        ease 1.0 xpos 1.0
+    show tr normal pioneer:
+        ease 1.0 xpos 0.9
+    with None
     hide us
     hide tr
     with dissolve
     play sound sfx_open_door_clubs fadein 1
     $ renpy.pause(2.0, hard=True)
+    play sound_loop bkrr_sfx_list["sweep1"] fadein 2
     window show
 
-    "Я проводил взглядом их спины и вернулся к венику и совку. Хотелось немного побыть одному.{w} Слишком много событий, слишком много впечатлений, слишком много всего. События вчерашней ночи с Мику, завтрашний концерт…{w} Черт, да о чем я думаю вообще? Какой концерт? Дел важнее нет, что ли?"
+    "Я проводил взглядом их спины и вернулся к венику и совку.{w} Хотелось немного побыть одному. Слишком много событий, слишком много впечатлений, слишком много всего. События вчерашней ночи с Мику, завтрашний концерт…{w} Черт, да о чем я думаю вообще? Какой концерт? Дел важнее нет, что ли?"
     "Получалось, что нет."
 
     window hide
     $ bkrr_timeskip_short()
     scene bg int_clubs_male_sunset_wrecked with bkrr_timeskip_transition()
+    stop sound_loop fadeout 3
     window show
-
-
-    # ПРИХОДИТ МИКУ И  ПРИНОСИТ УЖИН
 
     "Наконец, последняя отвертка была найдена и убрана, осколки звонко ссыпались в ведро. Кажется, все.{w} Нет, вон! Еще один.{w} Сейчас я его достану…"
 
@@ -5453,6 +5466,7 @@ label bkrr_day18_common:
 
     "Я встал на четвереньки, и полез под верстак.{w} Как только мои пальцы коснулись стекла, кто-то положил мне руки пониже спины и несильно сжал."
 
+    stop music fadeout 1
     play sound bkrr_sfx_list["bump"]
     with vpunch
 
@@ -5467,6 +5481,7 @@ label bkrr_day18_common:
 
     "Еще секунда, и Мику опустилась рядом со мной, встав на колени. Наши лица оказались совсем рядом, руки соприкоснулись…"
 
+    play music music_list["waltz_of_doubts"] fadein 5
     show mi happy pioneer close with dspr
 
     "И всё остальное уже не имело значения. Во всяком случае, сейчас."
@@ -5541,8 +5556,10 @@ label bkrr_day18_common:
     mi "Может, это она у меня научилась?"
     me "Может быть. Я ещё так много о тебе не знаю."
 
+    window hide
     hide mi with dissolve
     show mi serious pioneer close at center with dissolve
+    window show
 
     "Мику улыбнулась мне, потом стала серьезной. Насколько это вообще возможно для неё."
     mi "У нас впереди много времени, чтобы познакомиться лучше.{w} Знаешь, я всё еще чувствую, что ты мне чего-то не говоришь… Чего-то важного. Глупо, да?"
@@ -5629,6 +5646,7 @@ label bkrr_day18_common:
     window hide
     hide mi with dissolve
     stop ambience fadeout 2
+    stop music fadeout 5
     play sound sfx_open_door_clubs fadein 1
     scene bg ext_clubs_sunset_bkrr with dissolve
     play ambience ambience_camp_center_evening fadein 2
@@ -5646,6 +5664,7 @@ label bkrr_day18_common:
 
     window hide
     stop ambience fadeout 2
+    play music bkrr_music_list["for_bkrr_mp3"] fadein 5
     scene bg ext_beach_sunset with fade2
     play ambience ambience_lake_shore_evening fadein 2
     window show
