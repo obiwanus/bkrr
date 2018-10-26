@@ -5776,6 +5776,7 @@ label bkrr_day18_common:
     stop ambience fadeout 2
     stop music fadeout 5
     $ bkrr_timeskip()
+    $ bkrr_set_time("night")
     scene cg epilogue_mi_1 with bkrr_circleout_transition
     play ambience ambience_lake_shore_evening fadein 2
     window show
@@ -5791,7 +5792,7 @@ label bkrr_day18_common:
 
     window hide
     play music music_list["silhouette_in_sunset"] fadein 5
-    scene bg ext_beach_sunset with dissolve
+    scene bg ext_beach_night with dissolve
     window show
 
     "Она взяла меня за руку и положила себе на грудь. Я ощутил ладонью, биение её сердца… И ещё кое-что.{w} Чтобы замять неловкость, я заметил:"
@@ -5872,9 +5873,7 @@ label bkrr_day18_common:
     window hide
     stop ambience fadeout 2
     stop music fadeout 7
-    scene bg ext_path_sunset with fade2
     play ambience ambience_forest_night fadein 1
-    $ bkrr_set_time("night")
     scene bg ext_path_night with Dissolve(2.0)
     stop ambience fadeout 2
     scene bg ext_house_of_un_night_bkrr with fade2
