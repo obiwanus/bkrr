@@ -1042,6 +1042,14 @@ init 2:
             (MOD_IMAGES + "cg/d9_squirrel_1.png")
         contains:
             (MOD_IMAGES + "cg/d18_no_squirrel.png")
+    image cg d18_dv_guitar:
+        contains:
+            MOD_IMAGES + "cg/d18_dv_guitar_silhouette.jpg"
+        contains:
+            MOD_IMAGES + "cg/d18_dv_guitar.jpg"
+            alpha 0.0
+            pause 0.5
+            ease 0.5 alpha 1.0
     image cg d18_klaus_play:
         contains:
             "bg int_music_club_mattresses_day"

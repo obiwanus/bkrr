@@ -2172,8 +2172,6 @@ label bkrr_day18_common:
 
     "Мы поспешили в клуб. Конечно, мы припоздали, но всего на пару минут.{w} Я пропустил Мику вперёд."
 
-    # ВОЗВРАЩЕНИЕ В КЛУБ
-
     window hide
     stop ambience fadeout 2
     play sound sfx_open_door_1
@@ -2204,8 +2202,10 @@ label bkrr_day18_common:
 
     dv "Только рыжего парня мне на хватало! Чтобы все «пожарной командой» дразнились!"
 
+    window hide
     hide mi with dissolve
     show us grin pioneer at cright with dissolve
+    window show
 
     us "Ага-ага. А кто губки красить бросился?"
 
@@ -2213,11 +2213,13 @@ label bkrr_day18_common:
 
     dv "Тихо! Вы! Все! Играть давайте!"
 
+    window hide
     stop music fadeout 3
     play sound sfx_knocking_door_outside
 
     show dv surprise pioneer2 far with dspr
     $ renpy.pause(1.5, hard=True)
+    window show
 
     kla "Guten Morgen! Можно к вам?"
 
@@ -2228,9 +2230,11 @@ label bkrr_day18_common:
     us "Клаус! Привет, заходи! А где Друг?"
     "Ульяна помахала немцу рукой."
 
+    window hide
     hide dv with dissolve
     show us smile pioneer at left with ease
     show kla normal pioneer at cright with dissolve
+    window show
 
     kla "Трука девочка с косой  увела в библиотеку, а Антона Ивановича увели вожатые на какую-то «накрытую поляну», не знаю где это. Я пока один."
 
@@ -2238,8 +2242,10 @@ label bkrr_day18_common:
 
     us "Ну вот. Не будет чернявого. И к кому тогда Шурик будет меня ревновать?"
 
+    window hide
     hide kla with dissolve
     show mi normal pioneer at cright with dissolve
+    window show
 
     mi "А что, обязательно нужно, чтобы ревновал?"
 
@@ -2249,8 +2255,10 @@ label bkrr_day18_common:
     "Ульяна зажала себе рот и посмотрела на немца, но было поздно."
     us "Я привыкла, что здесь все свои… "
 
+    window hide
     hide mi with dissolve
     show kla smile pioneer at cright with dissolve
+    window show
 
     kla "Я почти ничего не слышал! И точно ничего не понял."
 
@@ -2258,15 +2266,19 @@ label bkrr_day18_common:
 
     kla "Если можно, я бы посидел у вас и послушал, как вы играете.{w} Семён много рассказывал о вашем клубе. Я не очень помешаю?"
 
+    window hide
     hide us with dissolve
     show dv smile pioneer2 far at left with dissolve
+    window show
 
     dv "Да нет, чем больше народу, тем веселее. Садись, конечно.{w} А Семёну не верь! Он наверное опять жаловался, что мы его насильно заманили и издеваемся, да?"
     kla "Нет. Он говорил, вы очень хорошие и веселые."
     me "Я такое говорил? Не помню.{w} Может, после удара бредил что-то в таком духе."
 
+    window hide
     hide dv with dissolve
     show mi normal pioneer at left with dissolve
+    window show
 
     mi "Клаус, а ты покажешь нам свою гитару?"
 
@@ -2288,8 +2300,10 @@ label bkrr_day18_common:
     us "Я в гитарах не очень. Какая-то она странная. Старая, наверное, да?"
     "Алиса, хотя и видела уже это чудо немецкого мебелестроения, но все равно восхищенно вздохнула."
 
+    window hide
     hide us with dissolve
     show dv grin pioneer2 at cright with dissolve
+    window show
 
     dv "Да что ты понимаешь. Она не старая, она классическая!"
 
@@ -2297,16 +2311,18 @@ label bkrr_day18_common:
 
     us "Ой, глазки-то как вспыхнули! Клаус, она теперь твоя!"
 
+    window hide
     show dv rage pioneer2 with dspr
     hide us with easeoutbottom
-
     with vpunch
+    window show
 
     dv "ДУРА! Щас врежу!"
 
+    window hide
     hide dv with dissolve
-
     show kla shy pioneer at cright with dissolve
+    window show
 
     kla "Простите… Не ссорьтесь, пожалуйста. Она того не стоит.{w} Просто старая гитара."
 
@@ -2318,8 +2334,10 @@ label bkrr_day18_common:
 
     kla "Какие вы… необычные."
 
+    window hide
     hide kla with dissolve
     show us grin pioneer at cright with dissolve
+    window show
 
     us "Что есть, то есть! Единственные и неповторимые."
 
@@ -2332,8 +2350,10 @@ label bkrr_day18_common:
 
     mi "Может, я?"
 
+    window hide
     hide us with dissolve
     show dv smile pioneer2 at cright with dissolve
+    window show
 
     dv "Нет, Микуля, у тебя слишком нежный голос для такой песни. Придется самой! Толика-то нет. Ну, поехали, что ли?"
 
@@ -2344,7 +2364,6 @@ label bkrr_day18_common:
     play music bkrr_music_list["rb_13"] fadein 3
     $ renpy.pause(1.0, hard=True)
     window show
-
 
     "Девчонки принялись играть вступление, а я терпеливо ожидал, пока придет очередь долбить свои четыре ноты."
 
@@ -2358,10 +2377,8 @@ label bkrr_day18_common:
     "Алиса разошлась и поставила ногу на усилитель, не переставая петь:"
 
     window hide
-    scene cg d3_dv_guitar with bkrr_fade(1.0)
-
+    scene cg d18_dv_guitar with flash
     $ bkrr_set_mode(nvl)
-
     nvl show dissolve
 
     "{i}Весёлый Роджер в небе, {/i}"
@@ -2374,7 +2391,6 @@ label bkrr_day18_common:
     "{i}гордятся капитаном!{/i}"
 
     nvl hide dissolve
-
     show bkrr_flying_notes with dissolve
     pause
     stop music fadeout 3
@@ -2472,9 +2488,11 @@ label bkrr_day18_common:
 
     dv "Помелом не болтай!"
 
+    window hide
     stop music fadeout 5
     show kla shyright pioneer at cright with dissolve
     show dv smile pioneer2 with dspr
+    window show
 
     "Алиса моментально напустила радушный вид и обернулась к покрасневшему Клаусу."
     dv "Может, сыграешь нам что-нибудь?"
@@ -4950,7 +4968,6 @@ label bkrr_day18_common:
     "Я улыбнулся этой мысли и снова залюбовался Мику.{w} Она настолько легко и естественно общалась с публикой, что это казалось чудом.{w} Наверное, именно эта её беззаботная общительность и очаровала меня, когда я впервые увидел её."
 
     window hide
-    stop sound_loop fadeout 2
     stop music fadeout 5
     scene bg ext_music_club_verandah_final_rehearsal
     show dv normal pioneer at fright
@@ -4959,7 +4976,7 @@ label bkrr_day18_common:
     with fade2
     window show
 
-    "Пионеры разошлись, а вожатая и Антон Иванович с приезжими подошли к нам."
+    "Большинство пионеров разошлось, а вожатая и Антон Иванович с приезжими подошли к нам."
 
     ant "Это было неплохо! Если продолжите играть…"
     "Алиса всё ещё была не в духе, так что огрызнулась:"
