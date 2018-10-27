@@ -704,6 +704,7 @@ label bkrr_day19_common:
 
     play sound sfx_open_door_1 fadein 1
     hide sl with dissolve
+    stop music fadeout 7
 
     "Славя вышла из домика.{w} Ольга посмотрела на рассол в банке."
 
@@ -735,17 +736,17 @@ label bkrr_day19_common:
     me "В полном!"
 
     show mt smile pioneer with dspr
-    stop music fadeout 5
 
     mt "Ну, вот и славно. Выходи, я запру."
 
     window hide
     stop ambience fadeout 2
-    scene bg ext_square_sunset with fade3
+    scene bg ext_square_sunset
+    show mt normal panama pioneer at cright
+    with fade3
     play ambience ambience_camp_center_day fadein 2
+    play music music_list["get_to_know_me_better"] fadein 5
     window show
-
-    ## ПРИМЕРНО ЧАСОВ 8.30
 
     "Я смотрел по сторонам.{w} Мелкие штрихи, вроде новых плакатов и свежепобеленных бордюров напоминали, что сегодня не простой день, а День Закрытия Смены."
 
@@ -753,7 +754,9 @@ label bkrr_day19_common:
 
     "Навстречу нам брёл Сыроежкин. Он был в состоянии «подняли, но забыли разбудить» и попытался пройти сквозь меня.{w} Я осторожно отвёл банку с рассолом в сторону и поймал Электроника за рукав."
 
-    show el surprise shirt with dspr
+    show el surprise shirt
+    show mt smile panama pioneer
+    with dspr
 
     mt "Тише, затопчешь! Доброе утро! Шурик еще спит?"
     el "О. Ольга Дмитриевна, Семён… Здравствуйте!{w} Нет, он как проснулся, так сразу убежал в клуб."
@@ -771,12 +774,15 @@ label bkrr_day19_common:
 
     el "Очень нужно! Я пойду!"
 
+    window hide
     hide el with easeoutleft
+    show mt smile panama pioneer at center with ease
+    window show
 
     "Мы проводили удаляющегося пионера взглядами."
     me "Такая рань, а все бегают. С чего бы это?"
 
-    show mt grin panama pioneer with dissolve
+    show mt grin panama pioneer with dspr
 
     mt "Кто-то готовится к празднику, а кто-то дрыхнет, как сурок."
     me "Вот давайте не будем. Я проснулся раньше вас!"
@@ -831,12 +837,13 @@ label bkrr_day19_common:
     show mt grin panama pioneer with dspr
 
     mt "Так никто не видит."
+    stop music fadeout 5
     "Вожатая изобразила что-то, отдалённо напоминающее танцевальное па, затем поправила галстук, и вернулась в образ."
 
     window hide
-    scene bg ext_clubs_sunset_bkrr
+    scene bg ext_clubs_sunset_broken_windows
     show mt normal panama pioneer
-    with dissolve
+    with fade2
     window show
 
     mt "Завтра провожу вас, и смогу хоть немного побыть собой. Этот маскарад утомляет.{w} Хорошо, что теперь есть с кем об этом поговорить."
@@ -854,6 +861,7 @@ label bkrr_day19_common:
     scene bg int_clubs_male_sunset_wrecked
     show sh serious shirt far at cright
     with dissolve
+    play music music_list["timid_girl"] fadein 7
     play ambience ambience_int_cabin_day fadein 1
     window show
 
@@ -881,7 +889,7 @@ label bkrr_day19_common:
 
     show sh upset shirt far with dspr
 
-    sh "м-м-м… Это всё?"
+    sh "М-м-м… Это всё?"
     mt "Почти. Очнувшись, ты стащил гитару из музклуба и пытался залезть с ней на дерево."
 
     show sh normal_smile shirt far with dspr
@@ -896,7 +904,7 @@ label bkrr_day19_common:
 
     show sh upset shirt far with dspr
 
-    sh "… И… Сделал?"
+    sh "… И… сделал?"
     th "Если бы сделал, то сейчас Алиса гонялась бы за ним с чем-нибудь тяжелым."
     mt "Нет. Ты увидел нас и попытался бежать. А потом, на руинах гаража…"
 
@@ -925,18 +933,20 @@ label bkrr_day19_common:
 
     mt "Пожалуйста. Так вот, Саш, я же не диктатор, я всё понимаю, тебе сейчас нелегко. Но очень тебя прошу, больше не делай ничего… Такого."
 
-    "Я отвлекся от их разговора. Обидно: мне снилась Мику, а я не помню!"
-
+    $ bkrr_set_volume("music", 0.2, 7.0)
     show white:
         alpha 0.0
         ease 8.0 alpha 1.0
 
+    "Я отвлекся от их разговора. Обидно: мне снилась Мику, а я не помню!"
     "Хотя, зачем мне сны, когда есть явь.{w} Наверное, эта явь уже проснулась и потирает заспанные глазки там, у себя в домике.{w} Скоро, совсем-совсем скоро мы вместе пойдем на завтрак, а затем репетировать.{w} До самого концерта. Целый день вместе."
 
     window hide
     $ renpy.pause(1.0, hard=True)
     window show
 
+    play sound bkrr_sfx_list["whiteout2"] fadein 1
+    $ bkrr_set_volume("music", 1.0, 1.0)
     hide white with dspr
 
     mt "…?"
@@ -979,6 +989,7 @@ label bkrr_day19_common:
     hide mt with dissolve
     $ renpy.pause(1.0, hard=True)
     play sound sfx_close_door_1
+    stop music fadeout 7
     window show
 
     "Вожатая похлопала меня по плечу и ушла."
@@ -1035,6 +1046,7 @@ label bkrr_day19_common:
 
     window hide
     $ bkrr_timeskip_short()
+    play music music_list["everyday_theme"] fadein 5
     scene bg int_clubs_male_sunset_wrecked with bkrr_timeskip_transition()
     window show
 
@@ -1333,6 +1345,7 @@ label bkrr_day19_common:
 
     stop sound_loop fadeout 1
     play sound sfx_close_water_sink
+    stop music fadeout 5
 
     "Свежевымытый кибернетик вышел из-под душа и теперь вытирал голову. И тоже не торопился одеваться."
 
