@@ -2163,11 +2163,11 @@ label bkrr_day19_common:
 
     dv "Сама знаешь, о чем. В клубе поговорим."
 
-    ## ПРИМЕРНО ЧАСОВ 9.30
     window hide
     scene bg ext_music_club_sunset_bkrr
     show mi normal pioneer at center
     with fade2
+    play music music_list["went_fishing_caught_a_girl"] fadein 5
     window show
 
     me "Мику, милая, почему у меня такое чувство, что от меня что-то скрывают?{w} Ты такая разговорчивая… Волнуешься?"
@@ -2350,11 +2350,17 @@ label bkrr_day19_common:
     "Вместо ответа она обняла меня и прижалась щекой к моей груди."
     "Все-таки здорово, когда есть кто-то, кому можно вот так сказать эти слова.{w} Ульяна рылась в тумбочке, Алиса возилась с гитарой и никто на нас не смотрел."
     "Не удержавшись, я положил руку ей на бедро, и…"
-    "По клубу разнесся рев раненого слона."
 
-    show dv angry pioneer2 far at fleft with dissolve
+    window hide
+    stop music fadeout 1
+    play sound bkrr_sfx_list["venil2"]
+    show dv angry pioneer2 far at fleft
+    show mi smile pioneer close
+    with dspr
     with vpunch
+    window show
 
+    "По клубу разнесся рев раненого слона."
     dv "Семён!!! Я тебе руки оторву! Тебе кто разрешал её лапать?"
 
     show mi smile pioneer close:
@@ -2369,8 +2375,10 @@ label bkrr_day19_common:
     dv "Это ты чего? Заняться больше нечем? Всю музыку разучил? Чего руки тянешь, куда не надо?"
     me "Да не ори ты так. Я её люблю, никто не умрет, если мы разок обнимемся, что ты как мамаша?"
 
+    window hide
     show mi shy pioneer close with dspr
     show us laugh2 sport at fright behind mi with easeinbottom
+    window show
 
     us "Ой… как мило! Он сказал громко и вслух. Ну все, теперь не отвертится!{w} Такой момент пропустили! Надо было записать, вон и микрофон рядом… Может еще раз повторите, а?"
 
@@ -2411,6 +2419,7 @@ label bkrr_day19_common:
 
     window hide
     $ bkrr_timeskip_short()
+    play music music_list["so_good_to_be_careless"] fadein 5
     scene bg int_music_club_mattresses_sunset with bkrr_timeskip_transition()
     window show
 
@@ -2520,9 +2529,9 @@ label bkrr_day19_common:
     "Стараясь сохранить спокойное лицо, я взглянул на рисунок."
     "Рисунок был небрежным, но фигурки явно что-то значили. Знать бы ещё что…{w} Больше всего они напоминали какие-то пиктограммы."
 
-    ## (флешбек)
     window hide
     play sound bkrr_sfx_list["whiteout1"]
+    $ bkrr_set_volume("music", 0.5, 0.5)
     scene expression bkrr_make_sepia_img("bg int_mine_coalface"):
         truecenter
         subpixel True
@@ -2540,13 +2549,13 @@ label bkrr_day19_common:
     pi "Я взял топор, и…"
     pi "Их было девятнадцать…"
     window hide
+    $ bkrr_set_volume("music", 1.0, 2.0)
     scene bg int_music_club_mattresses_sunset
     show dv normal pioneer2 at left
     show mi normal pioneer at center
     show us smile sport at right
     with bkrr_fade(2.0)
     window show
-    ## (конец флэшбэка)
 
     "Несколько секунд я пытался понять, что это все значит, почему линий две и почему одна идет подряд а вторая скачет туда-обратно как кузнечик.{w} Так ничего и не поняв, я сдался."
 
@@ -2567,12 +2576,8 @@ label bkrr_day19_common:
 
     window hide
     hide dv with dissolve
-    show mi sad_smile pioneer:
-        truecenter
-        subpixel True
-        pause 0.5
-        ease 1.0 zoom 1.1
-    with dspr
+    show mi sad_smile pioneer with dspr
+    stop music fadeout 5
     window show
 
     "Мику только улыбнулась и молча погладила меня по руке."
@@ -2589,9 +2594,8 @@ label bkrr_day19_common:
     show mi normal pioneer at center
     with bkrr_timeskip_transition()
     play ambience ambience_int_cabin_day fadein 2
+    play music music_list["everyday_theme"] fadein 5
     window show
-
-    ## ПРИМЕРНО ЧАСОВ 10.00
 
     mi "Всё, мы все молодцы! Хватит репетировать, а то руки устанут.{w} Теперь все отдыхайте, только осторожно, ладно? Руки не ломать, спину не срывать, не тонуть и не теряться, договорились?"
 
@@ -2650,17 +2654,13 @@ label bkrr_day19_common:
     "Я повернулся и увидел, как Мику опускает руку… Кажется, со сжатым кулачком."
     me "Хорошо, тогда разбегаемся переодеваться, я обедать не иду, так что встретимся после него."
 
+    window hide
     hide us
     hide dv
     with dissolve
-
-    window hide
-    $ bkrr_timeskip_short()
-    scene bg int_music_club_mattresses_day with bkrr_timeskip_transition()
+    play sound sfx_close_door_1 fadein 1
+    $ renpy.pause(2.0, hard=True)
     window show
-
-    ## ПРИМЕРНО ЧАСОВ 11.00
-
     play sound [ bkrr_sfx_list["silence1"], sfx_open_door_2 ]
 
     "Мы с Мику остались наедине, но стоило мне раскрыть рот, чтобы позвать её на прогулку по тенистым сосновым аллеям, где много зелени и мало любопытных глаз, как дверь снова заскрипела, жалуясь на тяжелую жизнь."
@@ -2718,8 +2718,6 @@ label bkrr_day19_common:
 
     mi "Я… Я сама их найду!{w} В конце концов, я старшая в клубе… или по клубу, и я должна следить за тем, чтобы его участники не терялись!{w} И я лучше знаю куда они могли пойти. А у вас дел много, не хватало ещё бегать по лагерю и искать Алису с Ульяной."
     "Мы удивлённо посмотрели на неё. Мику и ориентация на местности вообще плохо сочетались, а сейчас она была такой преувеличенно-убедительной, что не хватало только таблички: «Я вру!»."
-    ## (Алиса и Ульяна ушли в тайное место, довести до ума свои костюмы. Вероятно – уже упоминавшаяся «кройка и шитьё», Мику тоже хочет к ним присоединиться, окончательно подогнать костюмы, но не хочет раскрыть тайну поэтому ищет способ отделаться от вожатой)
-
     "Ольга посмотрела на честное лицо Мику, потом на подрагивающий от жары воздух и кивнула. Бродить по жаре ей явно не хотелось."
 
     show mt normal panama pioneer with dspr
@@ -2771,6 +2769,7 @@ label bkrr_day19_common:
     hide mi with dissolve
     play sound sfx_open_door_1
     $ renpy.pause(1.0, hard=True)
+    stop music fadeout 7
     window show
 
     "Она сверкнула своей обычной улыбкой и выскользнула за двери."
@@ -2830,6 +2829,7 @@ label bkrr_day19_common:
     play sound sfx_open_door_2
     scene bg ext_music_club_verandah_day_v9 with dissolve
     play ambience ambience_camp_center_day fadein 1
+    play music music_list["reflection_on_water"] fadein 5
     window show
 
     me "Так вас сегодня ночью не ждать? Вино, шашлыки…{w} Антон…"
@@ -2890,8 +2890,8 @@ label bkrr_day19_common:
 
     window hide
     stop ambience fadeout 1
-    $ bkrr_timeskip()
-    scene bg ext_houses_day with bkrr_circleout_transition
+    $ bkrr_timeskip_short()
+    scene bg ext_houses_day with bkrr_timeskip_transition()
     play ambience ambience_camp_center_day fadein 1
     window show
 
@@ -2899,10 +2899,10 @@ label bkrr_day19_common:
 
     "Утренние бутерброды, завтрак и два чаепития начисто убили желание идти в столовую.{w} К тому же, если туда поведут делегацию, то наверняка все будет до отвращения официально. Салфетки, сервировки, подливку хлебом не собирай, громко не чавкай и все такое прочее."
     "Я медленно шёл по аллее, ведущей к кружку наших юных техников и думал, как потратить неожиданно свалившееся свободное время.{w} За всеми этими репетициями, болезнями и хозработами у меня почти его почти не было."
-    "Я не очень представлял, что же с ним делать.{w} Для начала – надо бы найти девчонок. Мику могла бы и намекнуть, где их искать. Интересно, что же они занимаются?"
+    "Я не очень представлял, что же с ним делать.{w} Для начала – надо бы найти девчонок. Мику могла бы и намекнуть, где их искать. Интересно, чем же они занимаются?"
 
     window hide
-    scene bg ext_house_of_mt_day with dissolve
+    scene bg ext_house_of_mt_day with fade2
     window show
 
     "Обед девчонки, скорее всего, не пропустят, так что я нашел скамейку, надёжно скрытую от жары и посторонних глаз сиреневыми кустами, неподалеку от нашего домика."
@@ -2919,6 +2919,7 @@ label bkrr_day19_common:
         yalign 0.8
         ease 0.5 zoom 1.5
 
+    stop music fadeout 3
     play sound [ bkrr_sfx_list["silence2"], bkrr_sfx_list["body_hit"] ]
     play sound2 [ bkrr_sfx_list["silence2"],  bkrr_sfx_list["ear_buzz"] ]
 
@@ -2930,10 +2931,10 @@ label bkrr_day19_common:
     stop ambience fadeout 2.5
 
     "На какую-то долю секунды мне захотелось подойти, познакомиться с прибывшими… и даже показать им лагерь, но чья-то голова врезалась мне в грудь, выбив остатки воздуха…"
-    ## (а не пустить ли нам тут караоке-версию «Die Woodys»)
 
     window hide
     pause 1.0
+    play music music_list["just_think"] fadein 5
     play sound bkrr_sfx_list["whiteout2"]
     scene expression bkrr_awakening_atl("bg ext_house_of_mt_day")
     show unblink
@@ -3058,6 +3059,7 @@ label bkrr_day19_common:
             ease 1.0 offscreenright
     $ renpy.pause(0.5, hard=True)
     play sound bkrr_sfx_list["doorfgs"]
+    stop music fadeout 7
     with vpunch
 
     "Я мягко втолкнул её в этот ящик, закрыл дверь и подпёр её спиной."
@@ -3165,6 +3167,7 @@ label bkrr_day19_common:
     window hide
     hide kla with dissolve
     $ renpy.pause(1.0, hard=True)
+    play sound bkrr_sfx_list["saray_door1"] fadein 1
     window show
 
     "Убедившись, что он отошёл подальше, я открыл дверцу и выпустил взъерошенную и злую Юлю."
