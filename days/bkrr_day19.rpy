@@ -7158,8 +7158,8 @@ label bkrr_day19_common:
 
     "{i}Наверное, их было меньше с самого начала.{/i}\n"
     "И всё же он не мог перестать об этом думать."
-    "На следующем перекрёстке он снова открыл коробку и снова один колобок пропал."
-    "Парень испугался и побежал домой.{w} Он запер все двери, а когда немного успокоился, то снова открыл коробку. На этот раз пропали ещё три колобка. Хотите верьте хотите нет, но он так испугался, что закричал."
+    "На следующем перекрёстке он снова открыл коробку и снова один колобок пропал.\n"
+    "Парень испугался и побежал домой.{w} Он запер все двери, а когда немного успокоился, то снова открыл коробку. На этот раз пропали ещё три колобка. Хотите верьте хотите нет, но он так испугался, что закричал.\n"
 
     "Он закрыл коробку и медленно открыл её. И когда он заглянул внутрь – все колобки пропали. В коробке не было ни одного."
 
@@ -7281,6 +7281,7 @@ label bkrr_day19_common:
 
     window hide
     hide mi with dissolve
+    play music music_list["a_promise_from_distant_days_v2"] fadein 5
     show mi upset yukata close with dissolve
     window show
 
@@ -7341,10 +7342,11 @@ label bkrr_day19_common:
     "Официоза не хотелось."
     "Пионеры окружили большой костёр, поджаривая на палочках сосиски и куски хлеба, а в кучке прогоревших горячих угольев неподалёку уже томилась картошка."
 
-    window hide
-    $ bkrr_timeskip_short()
-    scene bg ext_polyana_night with bkrr_timeskip_transition()
-    window show
+    # TODO: цг с костром
+    # window hide
+    # $ bkrr_timeskip_short()
+    # scene bg ext_polyana_night with bkrr_timeskip_transition()
+    # window show
 
     "В неторопливых разговорах ни о чём, любовании искрами, летящими в темноту, и бесполезных попытках отогнать комаров прошло с полчаса."
     "Алиса дождалась, пока испечется очередная порция, нетерпеливо, обжигаясь, схватила горячую картофелину, очистила её и откусила кусочек. Распробовав, она скривилась и незаметно выбросила остаток в темноту."
@@ -7516,6 +7518,7 @@ label bkrr_day19_common:
 
     "Мику поняла мою заминку по-своему и погрустнела."
 
+    stop music fadeout 7
     show mi sad_smile yukata close with dspr
 
     mi "Я… Я не хотела на тебя давить. Извини.{w} Просто ты много для меня значишь. А сейчас у меня чувство, как будто что-то заканчивается…"
@@ -7535,6 +7538,8 @@ label bkrr_day19_common:
     mi "Что ты! Я им очень доверяю. Но только не в таком вопросе.{w} Ульяна просто ещё маленькая, а Алиса… По её подсказке ты поведёшь меня на концерт группы «Ржавые Гвозди», и мы выйдем оттуда, помятые и оглохшие."
     me "Хм… Ладно, тогда как же мне быть?"
 
+    play music bkrr_music_list["tranquility_dryante"] fadein 5
+
     show mi grin yukata close with dspr
 
     mi "Я сама тебе всё покажу!"
@@ -7552,10 +7557,11 @@ label bkrr_day19_common:
     me "Всё? Звучит заманчиво…"
 
     show mi normal panties yukata_hair dark with Dissolve(1.0)
+    play sound bkrr_sfx_list["yukata_fall"] fadein 2
 
     "Вместо ответа Мику сделала что-то с юкатой, ещё секунда, и синяя ткань с мягким шорохом легла на пол."
 
-    show mi normal panties dark with dissolve
+    show mi normal panties dark with Dissolve(1.0)
 
     "Мику несколькими быстрыми движениями распустила волосы и переступила через свою одежду, шагнув в пятно лунного света…"
 
@@ -7575,6 +7581,7 @@ label bkrr_day19_common:
 
     window hide
     hide mi with dissolve
+    play sound bkrr_sfx_list["fall_onto_bed"]
     show black:
         alpha 0.95
         ease 0.5 alpha 0.5
@@ -7596,7 +7603,11 @@ label bkrr_day19_common:
     $ bkrr_set_mode()
 
     scene black with Dissolve(10.0)
+    stop music fadeout 5
+    $ renpy.pause(5.0, hard=True)
 
     $ persistent.bkrr_check["epilogue"] = True
+
+    return
 
     jump bkrr_epilogue_start
