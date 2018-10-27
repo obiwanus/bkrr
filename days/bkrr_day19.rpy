@@ -3172,9 +3172,12 @@ label bkrr_day19_common:
 
     "Убедившись, что он отошёл подальше, я открыл дверцу и выпустил взъерошенную и злую Юлю."
 
+    window hide
     show uv pirage pioneer with dissolve
     play sound sfx_punch_medium
     with vpunch
+    play music music_list["goodbye_home_shores"] fadein 5
+    window show
 
     "Она тут же стукнула меня в плечо. Ну, хоть не исцарапала, как Клауса."
 
@@ -3273,12 +3276,14 @@ label bkrr_day19_common:
     uv "Вот. А если тысяча миллионов?"
     me "Миллиард."
 
+    stop music fadeout 7
     show uv pismile pioneer with dspr
 
     uv "Значит, это было один раз на миллиард.{w} Но мы играли в снежки, и он обещал что научит меня кататься на лыжах. Только я оденусь теплее, у меня в тот раз чуть хвост от холода не отвалился.{w} Здесь есть лыжные костюмы, но в том лагере их разобрали пионеры."
 
     window hide
     scene bg ext_dining_hall_away_day_no_headlamps with dissolve
+    play music music_list["glimmering_coals"] fadein 3
     window show
 
     "Мы вышли к столовой как раз вовремя, чтобы услышать истошные вопли электрика."
@@ -3290,13 +3295,17 @@ label bkrr_day19_common:
     # НЕ БОМБИТ У МЕНЯ!!!!!!
     "Наконец, он дал себя уговорить и теперь сидел возле ослепшей машины, время от времени засовывая руку в зияющие дыры на месте фар."
     me "Что это он так надрывается? Юля, это не ты у него что-то стя…{w} Юля?"
+
+
     "Но Юли уже не было. Она смешалась с пионерами и затерялась в толпе.{w} День стоял жаркий и светлых панамок, шляпок и бейсболок было слишком много, чтобы искать среди них ту единственную, под которой скрывались кошачьи ушки."
     th "Вот и пообщались. Перекрёстки какие-то, ключи… Как в дешёвой фантастике."
 
     window hide
+    stop music fadeout 5
     stop ambience fadeout 1
     $ bkrr_timeskip()
     scene bg ext_dining_hall_near_day_no_headlamps with bkrr_circleout_transition
+    play music music_list["reminiscences"] fadein 5
     play ambience ambience_camp_center_day fadein 1
     window show
 
@@ -3328,11 +3337,12 @@ label bkrr_day19_common:
     "Вокруг было тихо, спокойно, никто не бегал с горящими энтузиазмом глазами и не пытался привлечь меня к созидательному труду.{w} Самое место и время, чтобы закрыть глаза, расслабиться и морально подготовиться к вечернему выступлению."
 
     window hide
+    $ bkrr_set_volume("music", 0.2, 2.0)
     show blink
-    $ renpy.pause(3.0)
+    $ renpy.pause(4.0, hard=True)
     window show
-
     play sound bkrr_sfx_list["screwdriver_pierce"]
+    $ bkrr_set_volume("music", 1.0, 1.0)
     with vpunch
 
     "Сверху что-то клацнуло, кто-то чертыхнулся и в землю прямо у моих ног вонзилась увесистая отвертка."
@@ -3346,7 +3356,7 @@ label bkrr_day19_common:
     sh "Семён? Извини, я тебя не задел?"
     me "Нет, все нормально."
     sh "Отвертку подай, пожалуйста!"
-    "Кибернетик стоял на длинной лестнице, под самым сводом сцены и возился с узкой деревянной рамой. К ней, были прикручены подозрительно знакомые фонари… Круглые, с рефлекторами.{w} Стоило мыслоенно убрать цветные стёкла, добавить решетку радиатора… И стало ясно, кто довёл нашего электрика до истерики."
+    "Кибернетик стоял на длинной лестнице, под самым сводом сцены, и возился с узкой деревянной рамой. К ней, были прикручены подозрительно знакомые фонари… Круглые, с рефлекторами.{w} Стоило мысленно убрать цветные стёкла, добавить решетку радиатора… И стало ясно, кто довёл нашего электрика до истерики."
     "Я подал ему инструмент."
     me "Интересные у тебя светильники. А где ты их взял?"
     "Шурик уставился на фары, словно не видел их раньше."
@@ -3410,6 +3420,7 @@ label bkrr_day19_common:
     "Идея была не хуже других."
 
     window hide
+    stop music fadeout 7
     scene bg ext_music_club_verandah_day_v9_ajar with fade2
     window show
 
@@ -3420,6 +3431,7 @@ label bkrr_day19_common:
 
     window hide
     stop ambience fadeout 1
+    play sound sfx_door_squeak_light fadein 1
     scene bg int_music_club_mattresses_day with dissolve
     play ambience ambience_int_cabin_day fadein 1
     window show
@@ -3430,9 +3442,12 @@ label bkrr_day19_common:
     "От стены к стене был раскатан рулон парусины, а Лена, стоя на четвереньках, быстро водила по нему кистью, время от времени сверяясь с эскизом на тетрадном листе."
     "Парусина была расчерчена едва заметными квадратами такими же был расчерчен и маленький рисунок."
     me "Тебе помочь?"
+
+    show un surprise paint sport with easeinbottom
+
     "Лена вздрогнула, опрокинув банку с краской и посмотрела на меня. Она явно не ожидала моего появления и кажется слегка нервничала."
 
-    show un shy_smile paint sport with easeinbottom
+    show un cry_smile paint sport with dspr
 
     un "Нет. Не надо, спасибо."
     "Она взяла себя в руки и улыбалась уже не так напряженно."
@@ -3466,27 +3481,29 @@ label bkrr_day19_common:
     show un smile paint sport with dspr
 
     "Она помолчала, затем посмотрела на меня…"
-    "Если бы речь шла о ком-то другом, я бы сказал «игриво»"
+    "Если бы речь шла о ком-то другом, я бы сказал «игриво»."
     "Но ведь это же Лена. Тихая скромная умница… Или я что-то не понимаю."
     me "Красиво получается…"
 
     hide un with dissolve
 
-    "Я смутился и принялся рассматривать совёнка. Но куда больше меня волновал вопрос."
-    "Она? Или все-таки не она…"
-    "И если она то…"
-    "Как себя вести? Надо же как-то реагировать, раз уж я знаю. Или думаю что знаю."
-    "Хотя с другой стороны… Скоро, очень скоро всё изменится."
+    "Я смутился и принялся рассматривать рисунок. Но куда больше меня волновал вопрос:"
+    th "Она? Или все-таки не она…"
+    th "И если она то…"
+    th "Как себя вести? Надо же как-то реагировать, раз уж я знаю. Или думаю что знаю."
+    th "Хотя с другой стороны… Скоро, очень скоро всё изменится."
 
     "Лена поглядывала на меня, словно ожидая чего-то."
-
     "И я никогда бы не подумал, что буду так рад видеть маленького вьетнамца."
 
+    window hide
     play sound sfx_open_door_2
+    pause 0.5
+    play music bkrr_music_list["hide_and_seek"] fadein 5
+    show tr normal pioneer at cright with easeinright
+    window show
 
     "Он появился в дверях с какой-то непонятной конструкцией в руках.{w} Больше всего это походило на деревянную рамку, перетянутую нитками и кое-где оклеенную бумагой."
-
-    show tr normal pioneer at cright with dissolve
 
     tr "Привет! Улья-Ня сказала что ты здесь."
     me "Я?"
@@ -3595,6 +3612,7 @@ label bkrr_day19_common:
 
     hide tr with easeoutright
     play sound sfx_close_door_1
+    stop music fadeout 5
 
     "Он улыбнулся и выскочил."
 
@@ -3650,6 +3668,7 @@ label bkrr_day19_common:
     window hide
     $ renpy.pause(1.0, hard=True)
     stop ambience fadeout 1
+    play sound sfx_door_squeak_light fadein 1
     scene bg ext_music_club_verandah_day_v9_ajar with dissolve
     play ambience ambience_camp_center_day fadein 1
     window show
@@ -3666,6 +3685,7 @@ label bkrr_day19_common:
     window hide
     play sound sfx_close_door_1
     scene bg ext_music_club_verandah_day_v9 with dissolve
+    play music music_list["get_to_know_me_better"] fadein 5
     window show
 
     "Заложив руки в карманы, я постоял несколько минут, обдумывая случившееся.{w} Лена. Почему она ведет себя так по-разному?"
@@ -3682,7 +3702,9 @@ label bkrr_day19_common:
 
     window hide
     stop ambience fadeout 2
+    $ bkrr_set_volume("music", 0.5, 0.5)
     $ bkrr_timeskip()
+    $ bkrr_set_volume("music", 1.0, 1.0)
     scene bg ext_path2_day with bkrr_circleout_transition
     play ambience ambience_forest_day fadein 2
     window show
@@ -3797,6 +3819,7 @@ label bkrr_day19_common:
     me "Жду-не дождусь посмотреть."
 
     show tr smile pioneer with dspr
+    stop music fadeout 5
 
     tr "Скоро!"
 
@@ -3812,7 +3835,8 @@ label bkrr_day19_common:
     "Я прошелся вдоль берега, но так никого и не увидел. Ну где их носит?"
 
     window hide
-    scene bg ext_boathouse_day with dissolve
+    scene bg ext_boathouse_day with fade2
+    play music music_list["she_is_kind"] fadein 5
     window show
 
     "Пройдя по пляжу, я вышел к пристани. Там, где всё начиналось."
@@ -3823,7 +3847,6 @@ label bkrr_day19_common:
     window hide
     scene bg ext_pier_day with dissolve
     $ bkrr_set_mode(nvl)
-
     nvl show dissolve
 
     "Я пробежался по шаткому мостику, соединявшего плавучую пристань с досками причала, подставил лицо свежему ветру, пахнущему рекой и лесом. Здорово-то как…"
@@ -3836,16 +3859,17 @@ label bkrr_day19_common:
     "Вот он подбросил полотнище в воздух, оно поймало ветер и быстро взмыло в воздух, но не улетело, а зависло на высоте метров двадцати, удерживаемое тонким поводком из нитей."
     "Воздушный змей…{w} Так вот что он мастерил."
     "Я никогда не пускал змеев, но иногда, когда проезжал мимо городского парка, видел из окна автобуса, яркие пятна в синеве неба.{w} Мне страшно захотелось подойти к вьетнамцу и попросить у него разрешения подержать нить, на которой бился и вертелся треугольник с нарисованным драконом.\n"
+
+    stop music fadeout 5
+
     "Жалко, Мику не видит. Наверное ей бы понравилось.{w} По-моему, в Японии любят воздушные змеи? Или это в Китае…"
 
     nvl hide dissolve
-
     $ renpy.pause(0.25, hard=True)
-
     $ bkrr_set_mode()
-
+    $ renpy.pause(1.0, hard=True)
+    play music music_list["i_want_to_play"] fadein 3
     window show
-
     with hpunch
 
     us "Красиво, да?"
@@ -3932,12 +3956,15 @@ label bkrr_day19_common:
 
     "Смеясь, Ульяна «рыбкой» прыгнула через ограждение, бесшумно вошла в воду и понеслась к змею, который из воздушного стал водяным и медленно крутился на воде."
     "Наверняка труд Лены уже размок и расплылся.{w} Что делать. У дракона вышла недолгая, но яркая жизнь."
+
+    stop music fadeout 5
+
     "Я посмотрел на белый пенный след на воде, на стремительно удаляющуюся рыжую голову…"
     "Хватит бродить. Мику дома, одна, а я здесь торчу и любуюсь пейзажем.{w} Бросив прощальный взгляд на реку, я отвернулся и поспешил обратно в лагерь."
 
     window hide
     stop ambience fadeout 1
-    scene bg ext_house_of_un_day with fade2
+    scene bg ext_house_of_un_day with fade3
     play ambience ambience_camp_center_day fadein 1
     window show
 
@@ -3952,14 +3979,23 @@ label bkrr_day19_common:
     window hide
     stop ambience fadeout 1
     play sound sfx_open_door_1
-    scene bg int_house_of_un_day with dissolve
+    play sound2 bkrr_sfx_list["whiteout1"] fadein 1
+    play music music_list["take_me_beautifully"] fadein 1
+    scene bg int_house_of_un_day
+    show white:
+        alpha 1.0
+        ease 10.0 alpha 0.5
+    with flash
     play ambience ambience_int_cabin_day fadein 1
     window show
 
-    "Вошел, никак не ожидая увидеть такое."
-
+    "Вошёл, никак не ожидая увидеть такое."
     un "Вот… Ещё немного сюда… И сюда."
     "Алиса в купальнике сидела на кровати, Лена наклонилась к её обнаженному плечу и…"
+
+    play sound2 bkrr_sfx_list["whiteout2"] fadein 1
+    hide white with dissolve
+
     "Нет. Показалось. Всего лишь моё больное воображение.{w} Никаких поцелуев, никакой запретной любви.{w} Всего лишь художественная роспись плеча Алисы."
     "Лена неторопливо водила фломастером по коже и под её умелыми руками на коже рыжей возникал рисунок. Роза, скрещенные сабли…"
     "Алиса увидела меня первой и виновато улыбнулась, словно я застал её за чем-то стыдным."
