@@ -2164,6 +2164,7 @@ init 2:
         make_sprites_for('dv', 'swim', ['es:body', 'mod:swim', 'es:<emotion>'], emotions=('angry', 'guilty', 'rage', 'sad', 'shy'))
         make_sprites_for('dv', 'pirate_with_hat', ['mod:pibody', 'es:<emotion>'])
         make_sprites_for('dv', 'pirate', ['mod:pibody2', 'es:<emotion>'])
+        make_sprites_for('dv', 'pirate dress', ['mod:pidress', 'es:<emotion>'], emotions=['grin'], distances=['normal'])
 
         make_sprites_for('mz', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
         make_sprites_for('mz', 'mask bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>', 'mod:mask'])

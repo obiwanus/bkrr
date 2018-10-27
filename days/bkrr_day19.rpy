@@ -4676,7 +4676,7 @@ label bkrr_day19_common:
 
     $ bkrr_set_volume("music", 1.0, 1.0)
     $ bkrr_set_volume("sound_loop2", 0.0, 1.0)
-    scene bg ext_backstage_big_day_night with bkrr_blindstoleft_transition
+    scene bg ext_backstage_big_day_night with dissolve
     play sound bkrr_sfx_list["applause3_"]
 
     $ bkrr_set_mode(nvl)
@@ -6022,13 +6022,16 @@ label bkrr_day19_common:
         linear 0.1 alpha 0.9
         ease 1.0 alpha 0.0
     with vpunch
+    play sound2 bkrr_sfx_list["applause3"] fadein 2
 
     "Описав красивую дугу, она рухнула как раз позади Алисы. Та взвизгнула, подпрыгнув чуть ли не на метр, но тут же притворилась, что всё так и задумано."
+    "Зрители были в восторге. Этот концерт точно должен был запомниться им надолго."
     "Ольга Дмитриевна нашла шпингалет, который запирал дверцу на сцену, поднялась к нам и теперь говорила в микрофон что-то про сюрприз, яркое завершение концерта, и явно старалась создать впечатление, что всё идет по плану."
 
     window hide
-    scene bg ext_backstage_big_day_night_noplank with dissolve
+    scene bg ext_backstage_big_day_night_noplank with fade2
     stop sound_loop fadeout 3
+    play music music_list["afterword"] fadein 5
     window show
 
     "Мы отправились к выходу со сцены.{w} Хорошо ли, плохо ли но наш первый и единственный концерт подошел к концу."
@@ -6137,8 +6140,6 @@ label bkrr_day19_common:
     window hide
     play sound_loop2 ambience_medium_crowd_outdoors fadein 3
     scene bg ext_stage_big_day_evening_mast_down
-    show bkrr_mast_down_dust:
-        ease 4.0 alpha 0.0
     show bkrr_concert_people
     with dissolve
     window show
@@ -6163,6 +6164,7 @@ label bkrr_day19_common:
     window hide
     stop sound_loop2 fadeout 2
     scene bg ext_square_night with fade2
+    stop music fadeout 7
     show mi sad pirate close with dissolve
     window show
 
@@ -6213,6 +6215,7 @@ label bkrr_day19_common:
     scene bg int_music_club_mattresses_night with fade2
     play ambience ambience_int_cabin_night fadein 2
     $ bkrr_set_time("night")
+    play music music_list["dance_of_fireflies"] fadein 5
     window show
 
     "Когда мы зашли в клуб, Ульяна включила свет, порылась в кармане бриджей и извлекла четыре ярких пакетика."
@@ -6310,7 +6313,7 @@ label bkrr_day19_common:
 
     "Внутри обнаружилось симпатичное ярко-красное платье.{w} Алиса подошла к небольшому настенному зеркалу, расправила наряд и приложила, покрутилась так и эдак."
 
-    show dv grin pirate with dissolve
+    show dv grin pirate dress with dissolve
 
     dv "И правда — бомба!"
     me "Здорово… Нет, ну правда.{w} Вот уж не думал, что ты такое носишь. Всё форма да форма. Ты же говорила, что это для дураков, и…"
@@ -6343,6 +6346,9 @@ label bkrr_day19_common:
     show us smile pirate at cleft with dissolve
 
     us "Такая она вся порядочная, мне аж страшно. Кажется, картоха пропадёт. Эта новая и насквозь правильная Алиска точно не будет нарушать режим. Да?"
+
+    stop music fadeout 5
+
     dv "А вот фиг тебе! Ещё как будем!"
 
     window hide
