@@ -4000,7 +4000,7 @@ label bkrr_day19_common:
     "Лена неторопливо водила фломастером по коже и под её умелыми руками на коже рыжей возникал рисунок. Роза, скрещенные сабли…"
     "Алиса увидела меня первой и виновато улыбнулась, словно я застал её за чем-то стыдным."
 
-    show dv surprise swim at cright with dissolve
+    show dv surprise swim at cleft with dissolve
 
     dv "Семён?"
     me "Что, решила сделать татуировку?"
@@ -4017,7 +4017,7 @@ label bkrr_day19_common:
     me "Лен, вы решили конкурс боди-арта устроить?"
     "Лена посмотрела на меня, улыбнулась, и покачала головой."
 
-    show un smile paint sport at cleft with dissolve
+    show un smile paint sport at cright with dissolve
 
     un "Я – девушка приличная, я и слов-то таких не знаю.{w} Это… м-м-м… для концерта."
     dv "Тихо! Ни слова больше!"
@@ -4106,6 +4106,9 @@ label bkrr_day19_common:
 
     dv "Чё сказал, басила?"
     "Она попыталась придать голосу угрожающий тон, но засмеялась."
+
+    stop music fadeout 5
+
     dv "Ладно, валяйся. Я сегодня добрая."
 
     window hide
