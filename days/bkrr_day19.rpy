@@ -7281,7 +7281,7 @@ label bkrr_day19_common:
 
     window hide
     hide mi with dissolve
-    play music music_list["a_promise_from_distant_days_v2"] fadein 5
+    play music bkrr_music_list["tranquility_dryante"] fadein 5
     show mi upset yukata close with dissolve
     window show
 
@@ -7454,6 +7454,9 @@ label bkrr_day19_common:
     "Вся эта атмосфера большого семейного пикника, конечно, радовала, но мысли мои витали совсем не здесь."
     "Я думал о том, что вместо этой шумной пионерии мог бы любоваться звёздами с Мику, а может – ночное купание и даже…"
     "Словно отвечая на мои мысли, знакомый голос шепнул в ухо:"
+
+    stop music fadeout 5
+
     mi "Ты готов к побегу?"
     me "Конечно, готов."
     mi "Тогда пошли! Я попросила девочек, они нас прикроют."
@@ -7462,6 +7465,7 @@ label bkrr_day19_common:
     stop sound_loop fadeout 3
     stop sound_loop2 fadeout 3
     scene bg ext_path_night with fade2
+    play music music_list["a_promise_from_distant_days_v2"] fadein 5
     window show
 
     "Взявшись за руки, мы бочком-бочком отступили в темноту дорожки, ведущей к площади, и поспешили к клубу."
@@ -7518,7 +7522,6 @@ label bkrr_day19_common:
 
     "Мику поняла мою заминку по-своему и погрустнела."
 
-    stop music fadeout 7
     show mi sad_smile yukata close with dspr
 
     mi "Я… Я не хотела на тебя давить. Извини.{w} Просто ты много для меня значишь. А сейчас у меня чувство, как будто что-то заканчивается…"
@@ -7537,8 +7540,6 @@ label bkrr_day19_common:
     me "Ты им настолько не доверяешь?"
     mi "Что ты! Я им очень доверяю. Но только не в таком вопросе.{w} Ульяна просто ещё маленькая, а Алиса… По её подсказке ты поведёшь меня на концерт группы «Ржавые Гвозди», и мы выйдем оттуда, помятые и оглохшие."
     me "Хм… Ладно, тогда как же мне быть?"
-
-    play music bkrr_music_list["tranquility_dryante"] fadein 5
 
     show mi grin yukata close with dspr
 
@@ -7604,6 +7605,7 @@ label bkrr_day19_common:
 
     scene black with Dissolve(10.0)
     stop music fadeout 5
+    stop ambience fadeout 5
     $ renpy.pause(5.0, hard=True)
 
     $ persistent.bkrr_check["epilogue"] = True
