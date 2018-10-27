@@ -5776,8 +5776,7 @@ label bkrr_day18_common:
     stop ambience fadeout 2
     stop music fadeout 5
     $ bkrr_timeskip()
-    $ bkrr_set_time("night")
-    scene cg epilogue_mi_1 with bkrr_circleout_transition
+    scene cg d18_sunset_original_mi with bkrr_circleout_transition
     play ambience ambience_lake_shore_evening fadein 2
     window show
 
@@ -5792,7 +5791,7 @@ label bkrr_day18_common:
 
     window hide
     play music music_list["silhouette_in_sunset"] fadein 5
-    scene bg ext_beach_night with dissolve
+    scene bg ext_beach_sunset with dissolve
     window show
 
     "Она взяла меня за руку и положила себе на грудь. Я ощутил ладонью, биение её сердца… И ещё кое-что.{w} Чтобы замять неловкость, я заметил:"
@@ -5818,10 +5817,13 @@ label bkrr_day18_common:
     mi "Ждать недолго, потерпи ещё пару дней. Как приедем – сразу меня пригласишь."
 
     window hide
-    $ renpy.pause(1.0, hard=True)
+    stop ambience fadeout 2
+    scene bg ext_beach_night with Dissolve(2.0)
+    $ bkrr_set_time("night")
+    play ambience ambience_lake_shore_night fadein 2
     window show
 
-    "Полежав ещё немного, мы стали собираться. Мику, как и положено девушке, возилась куда дольше меня.{w} Я наклонился, взял в горсть немножко песка, пропустил между пальцами, и легкий ветерок, тут же подхватил песчаные струйки не давая им коснуться земли."
+    "Понаблюдав за тем, как солнце село за горизонт, мы стали собираться. Мику, как и положено девушке, возилась куда дольше меня.{w} Я наклонился, взял в горсть немножко песка, пропустил между пальцами, и легкий ветерок, тут же подхватил песчаные струйки не давая им коснуться земли."
     me "Всего пара дней. Как летит время…"
 
     show mi normal pioneer close with dissolve

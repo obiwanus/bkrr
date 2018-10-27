@@ -1067,6 +1067,7 @@ init 2:
         contains:
             "mi surprise pioneer"
             right
+    image cg d18_sunset_original_mi = MOD_IMAGES + "cg/d18_sunset_original_mi.jpg"
 
     image cg d19_uv_escape:
         contains:
