@@ -1363,8 +1363,11 @@ label bkrr_day19_common:
 
     sh "Ну… Чего тебе ещё? Молоток? Паяльник? Сварочный аппарат? Сколько бегать можно?"
 
+    window hide
+    play music music_list["eat_some_trouble"]
     show us surp1 sport at cleft with dissolve
     show sh scared towel with dspr
+    window show
 
     us "Мальчики, доброе утро! А я к… вам… зашла… вот…"
     "Ульяна стояла в дверях и восхищенно рассматривала Шурика."
@@ -1398,8 +1401,10 @@ label bkrr_day19_common:
 
     "Шурик спокойно оделся и вздохнул."
 
+    window hide
     show us shy sport at cleft with ease
     show sh serious shirt at cright behind us with dissolve
+    window show
 
     sh "Знаю. Ну не хочу я тебя обманывать."
 
@@ -1418,8 +1423,10 @@ label bkrr_day19_common:
     us "Можно, я еще забегу сегодня? Катушку стырю какую-нибудь, погоняешься за мной?{w} Потом маме с папой расскажу, что был один парень в лагере, который за мной бегал."
     sh "Приходи, конечно!"
 
+    window hide
     show sh serious shirt at center with ease
     show us laugh2 sport with dspr
+    window show
 
     "Шурик обнял её и погладил по голове. Почему-то меня кольнула ревность.{w} Видеть, что кто-то вот так же обнимает Ульяну и утешает её, было немножко, самую малость неприятно. Но Уля так счастливо улыбалась, закрыв глаза и прижавшись к его груди что я не мог не умилиться."
     "Они стояли так минут пять. Я высох, но покинуть убежище не мог.{w} Если они сядут болтать, то придется сорвать со стены плакат побольше и прикрыться им. Иначе завтрак тут просижу."
@@ -1450,6 +1457,7 @@ label bkrr_day19_common:
 
     us "Сашка — дурак!"
 
+    stop music fadeout 5
     hide us with dissolve
     play sound sfx_close_door_1
 
@@ -1492,6 +1500,7 @@ label bkrr_day19_common:
     play sound sfx_open_door_clubs
     scene bg ext_clubs_sunset_bkrr with dissolve
     play ambience ambience_camp_center_day fadein 1
+    play music music_list["she_is_kind"] fadein 5
     window show
 
     "Я сунул руки в карманы и отправился к домику Мику.{w} До завтрака оставалось всего ничего, так что она наверняка уже одета, причесана и ждет сигнала."
@@ -1666,7 +1675,6 @@ label bkrr_day19_common:
     $ renpy.pause(1.0, hard=True)
     window show
 
-    ## (шутка про утерянные трусы удалена)
     me "О! Нашел! Что мне будет в награду?"
 
     show mi smile pioneer_loo with dissolve
@@ -1674,7 +1682,8 @@ label bkrr_day19_common:
     mi "Поцелую!"
     me "Идёт."
 
-    play sound sfx_knocking_door_outside fadein 3
+    stop music fadeout 5
+    play sound sfx_knocking_door_outside fadein 1
 
     "В дверь деликатно постучали."
     un "Мальчики-девочки, сейчас сигнал на завтрак дадут. Вы как, идете завтракать?"
@@ -1696,13 +1705,15 @@ label bkrr_day19_common:
 
     mi "Спасибо!"
 
-    play sound sfx_open_door_1 fadein 3
+    play sound sfx_open_door_1 fadein 1
 
     un "Ну, наконец-то."
     "Лена стояла в дверях и снисходительно наблюдала за нами.{w} Может, она и была младше Мику с Алисой, но вела себя куда более зрело, чем они."
 
+    window hide
     show mi smile pioneer at cright with ease
     show un smile pioneer at cleft with dissolve
+    window show
 
     un "Ваше высочество проводит двух принцесс на завтрак?"
     me "Обязательно!"
@@ -1732,7 +1743,9 @@ label bkrr_day19_common:
 
     window hide
     stop ambience fadeout 1
+    play sound sfx_open_door_2 fadein 1
     scene bg ext_house_of_un_day with dissolve
+    play music bkrr_music_list["tee"] fadein 10
     play ambience ambience_camp_center_day fadein 1
     window show
 
@@ -1798,10 +1811,12 @@ label bkrr_day19_common:
     us "Сеня, я не поняла, ты у нас кто, басист или костюмер?"
     me "Эм… Не уверен."
 
+    window hide
     show un smile pioneer at left
     show mi normal pioneer at right
     with ease
     show us grin sport at center with easeinbottom
+    window show
 
     un "Всё, тишина кончилась!"
     "Ульяна помотала головой, отчего её хвостики смешно запрыгали, потом заявила:"
@@ -1821,7 +1836,7 @@ label bkrr_day19_common:
     show us grin sport with dspr
 
     us "Дурак!"
-    "Ульяна фыркнула"
+    "Ульяна фыркнула."
     us "Нас всех! Тебя, меня, Алису, Мику.{w} Вас с Микуськой надо непременно заснять. Будете потом внукам показывать."
 
     show mi shy pioneer with dspr
@@ -1859,15 +1874,16 @@ label bkrr_day19_common:
     me "И как?"
 
     window hide
+    $ bkrr_set_volume("music", 0.4, 0.5)
     show cg d19_ghost_black:
         truecenter
         pause 0.2
         linear 0.5 zoom 2.5 yalign 0.2
     show mi normal pioneer
     with dissolve
-    play sound sfx_scary_sting fadein 2
-    pause 0.2
+    play sound sfx_scary_sting
     hide cg with dissolve
+    $ bkrr_set_volume("music", 1.0, 1.5)
     show us laugh sport with dspr
     window show
 
@@ -1900,6 +1916,7 @@ label bkrr_day19_common:
     un "Да уж…"
 
     window hide
+    stop music fadeout 7
     scene bg ext_dining_hall_near_sunset_no_headlamps with dissolve
     window show
 
@@ -1924,11 +1941,12 @@ label bkrr_day19_common:
 
     window hide
     stop ambience fadeout 1
-    scene bg int_dining_hall_sunset
+    scene bg int_dining_hall_people_sunset_bkrr
     show mi normal pioneer at bkrr_sit_right
     show un normal pioneer at bkrr_sit_left
     with fade2
     play ambience ambience_dining_hall_full fadein 1
+    play music music_list["sweet_darkness"] fadein 5
     window show
 
     "На завтраке мы с Мику и Леной присели вместе. Алиса и Ульяна оккупировали соседний стол и теперь о чем-то шептались. Не о нас ли?{w} Нет, вряд ли."
@@ -1990,10 +2008,12 @@ label bkrr_day19_common:
 
     mt "Лена, иди к Славе, там краски и все что нужно. А вас, музкружок, я попрошу остаться."
 
+    window hide
     hide un with easeoutright
     show dv grin pioneer2 at fleft
     show us smile sport at fright
     with dissolve
+    window show
 
     dv "Но мы торопимся!"
     mt "Интересно, куда?"
@@ -2075,6 +2095,7 @@ label bkrr_day19_common:
 
     window hide
     stop ambience fadeout 1
+    stop music fadeout 5
     scene bg ext_square_sunset with fade2
     play ambience ambience_camp_center_day fadein 1
     window show

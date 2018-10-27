@@ -2123,7 +2123,7 @@ label bkrr_day16_common:
 
     play ambience ambience_camp_center_day fadein 3
     $ bkrr_set_volume('music', 0.8)
-    play music bkrr_music_list["tee"] fadein 15
+    play music bkrr_music_list["tee"] fadein 10
 
     window show
 
