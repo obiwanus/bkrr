@@ -4080,7 +4080,7 @@ label bkrr_day19_common:
 
     un "Она шутит. Обычный цитрамон.{w} У Алисы всегда головные боли, когда погода меняется, вот и сейчас… Да и нога наверное крутит, да?"
 
-    show dv normal swim with dspr
+    show dv sad swim with dspr
 
     "Алиса кивнула, потом смутилась."
 
@@ -4101,13 +4101,10 @@ label bkrr_day19_common:
     un "Я не против."
     dv "Я против! Ты мне еще на бедре акулу обещала. Он же глазеть будет!"
     me "А я к стенке отвернусь. Не очень-то и хотелось. Чего я там не видел?"
-
-    with vpunch
-
     dv "Чё сказал, басила?"
     "Она попыталась придать голосу угрожающий тон, но засмеялась."
 
-    stop music fadeout 5
+    stop music fadeout 3
 
     dv "Ладно, валяйся. Я сегодня добрая."
 
@@ -4118,6 +4115,9 @@ label bkrr_day19_common:
     window show
 
     "Дверь скрипнула и в домике нас стало четверо."
+
+    play music music_list["so_good_to_be_careless"] fadein 5
+
     "Мику вытирала лицо полотенцем, на её коже и волосах ещё кое-где виднелись капли воды."
 
     show mi smile bkrr_sport_loo with dissolve
@@ -4250,7 +4250,6 @@ label bkrr_day19_common:
     window show
 
     un "Да, забери его пожалуйста. Я хоть полчаса отдохну.{w} Тяжело быть единственным художником в лагере…"
-    ## (ульяна у дверей, не показываем)
 
     play sound sfx_open_door_1 fadein 1
 
@@ -4275,6 +4274,7 @@ label bkrr_day19_common:
     show mi normal bkrr_sport_loo
     with dspr
     hide tr with dissolve
+    stop music fadeout 5
     show dv laugh pioneer2 at fright with dissolve
     window show
 
@@ -4289,11 +4289,13 @@ label bkrr_day19_common:
     show un normal paint sport with dspr
 
     un "Я умею. Просто не хочу."
+
     "Я пропустил девочек наружу и прикрыл дверь."
 
     window hide
     $ bkrr_timeskip()
-    scene bg int_music_club_mattresses_day with dissolve
+    scene bg int_music_club_mattresses_day with bkrr_circleout_transition
+    play music music_list["get_to_know_me_better"] fadein 5
     window show
 
     ## ПРИМЕРНО ЧАСОВ 17.00
@@ -4305,7 +4307,7 @@ label bkrr_day19_common:
 
     mi "Алиса, ты так не шути. а то ведь я пойду искать, кем тебя заменять. Вот Клаус не откажется, мы с ним правда не репетировали, но он очень талантливый и вообще!{w} Так что если ты решила сойти с дистанции, то… то… То я не знаю, что с тобой сделаю!"
 
-    show dv laugh pioneer2 far at right with dissolve
+    show dv laugh pioneer2 far at right behind mi with dissolve
 
     dv "Вот только угрожать не надо!"
 
@@ -4497,16 +4499,18 @@ label bkrr_day19_common:
     mi "Ну, не выйдет сбежать, тут посидим вечером. Ага?"
 
     show us sad sport with dspr
+    stop music fadeout 5
 
     us "А картошка? Хочу картошку печь!"
     me "Что-нибудь придумаем!"
 
     window hide
     stop ambience fadeout 1
-    $ bkrr_timeskip_short()
+    $ bkrr_timeskip()
     scene bg int_music_club_mattresses_sunset with bkrr_timeskip_transition()
     $ bkrr_set_time("sunset")
     play ambience ambience_int_cabin_evening fadein 1
+    play music music_list["reflection_on_water"] fadein 5
     window show
 
     ## ПРИМЕРНО ЧАСОВ 20.00
@@ -4536,7 +4540,7 @@ label bkrr_day19_common:
     window hide
     stop ambience fadeout 1
     $ bkrr_timeskip()
-    scene bg ext_stage_big_day_evening_empty with bkrr_timeskip_transition()
+    scene bg ext_stage_big_day_evening_empty with bkrr_circleout_transition
     $ bkrr_set_time("night")
     play ambience ambience_camp_center_night fadein 1
     $ bkrr_set_volume("sound_loop", 1.0)
@@ -4553,7 +4557,7 @@ label bkrr_day19_common:
 
     show mi smile pioneer with dspr
 
-    mi "Я читала про капитана Блада перед отъездом, а здесь полный лодочный сарай всяких верёвок, парусов и всего такого. Вот я и написала сценарий на морскую тему.{w} Сегодня, пока мы репетировали, вожатые и электрик собрали декорации и расставили колонки."
+    mi "Я читала про капитана Блада перед отъездом, а здесь полный лодочный сарай всяких верёвок, парусов и всего такого. Вот я и написала сценарий на морскую тему.{w} Сегодня, пока мы репетировали, вожатые собрали декорации и расставили колонки."
     mi "Я сначала вообще хотела перенести всё на плавучий домик, там есть хорошая широкая площадка, но Ольга Дмитриевна побоялась, что кто-нибудь свалится в воду и утонет, или просто утопим что-нибудь из оборудования, и отказалась.{w} А по-моему зря, здорово было бы."
     me "Оно и к лучшему. Я и так слегка на нервах, если ещё и укачает, то в ноты точно не попаду."
 
@@ -4571,6 +4575,7 @@ label bkrr_day19_common:
     "Я поспешил за ней."
 
     window hide
+    stop music fadeout 7
     scene bg ext_stage_big_day_evening_close:
     show mt sad pioneer at center
     show ant normal shirt at left
@@ -4637,6 +4642,9 @@ label bkrr_day19_common:
 
     scene bg ext_stage_big_day_evening_full with fade3
     play sound bkrr_sfx_list["applause3"] fadein 2
+    $ bkrr_set_volume("music", 0.0)
+    play music bkrr_music_list["kb_"] fadein 5
+    play sound_loop2 bkrr_music_list["kb"] fadein 5
     $ renpy.pause(3.0, hard=True)
 
     $ bkrr_set_mode(nvl)
@@ -4666,6 +4674,8 @@ label bkrr_day19_common:
 
     window hide
 
+    $ bkrr_set_volume("music", 1.0, 1.0)
+    $ bkrr_set_volume("sound_loop2", 0.0, 1.0)
     scene bg ext_backstage_big_day_night with bkrr_blindstoleft_transition
     play sound bkrr_sfx_list["applause3_"]
 
@@ -4674,7 +4684,13 @@ label bkrr_day19_common:
     nvl show dissolve
 
     "Я мог сколько угодно убеждать себя и окружающих, что ничего страшного не происходит. Ну, подумаешь, встать на краю сцены и немного подёргать струны.{w} Да если напортачу, никто и не заметит. И вообще…\n"
-    "Ну Алиска, конечно, язвить будет до самого отъезда, Ульяна тоже…{w} Мику расстроится и будет грустная ходить.{w} Но Земля не остановится, и через пару часов все уже забудут."
+    "Ну Алиска, конечно, язвить будет до самого отъезда, Ульяна тоже…{w} Мику расстроится и будет грустная ходить.{w} Но Земля не остановится, и через пару часов все уже забудут.\n"
+
+    stop music fadeout 5
+    stop sound_loop2
+    $ bkrr_set_volume("sound_loop2", 1.0)
+    play sound_loop2 music_list["torture"] fadein 7
+
     "Тем не менее, в животе угнездился неприятный холодок, во рту пересохло, а нога мелко тряслась.{w} Слишком много зрителей. Ну почему их так много?\n"
 
     "Я вцепился в гриф «Урала» как утопающий в спасательный круг."
@@ -4689,13 +4705,14 @@ label bkrr_day19_common:
     "Если аудитория голая, то…"
     "Почему-то вместо толпы прекрасных обнаженных пионерок воображение нарисовало обвислые телеса немолодых проверяющих, прикрытые только часами, и волосатого, в синих наколках, электрика."
     "Ладно, идея неудачная.\n"
-    "Всё.{w} Будет.{w} Нор-маль…{w=0.5}{nw}"
+    "Всё.{w} Будет.{w} Нор-маль…"
     nvl hide dissolve
 
     play sound sfx_face_slap
     show bkrr_service "Ай!" at truecenter with vpunch
+    stop sound_loop2 fadeout 1
 
-    pause
+    pause 1.0
 
     $ bkrr_set_mode()
     hide bkrr_service with dissolve
@@ -4709,6 +4726,7 @@ label bkrr_day19_common:
     dv "Чуть не отшибла… Кто бы подумал, что у тебя там мышцы есть."
     me "И что ты творишь, хулиганьё? Зашибёшь басиста перед концертом, кто играть будет?"
 
+    play sound bkrr_sfx_list["applause3_"] fadein 1
     show dv grin pioneer with dspr
 
     dv "Это, Сенька, шоковая терапия!{w} А то стоишь тут, трясёшь коленкой, губу жуёшь и думаешь, что будет когда налажаешь."
@@ -4744,6 +4762,7 @@ label bkrr_day19_common:
     window hide
     hide mi with dissolve
     show mi serious pioneer close with dissolve
+    play music music_list["confession_oboe"] fadein 5
     window show
 
     "Она подошла поближе и положила руку мне на плечо."
@@ -4759,7 +4778,7 @@ label bkrr_day19_common:
 
     show us sad pioneer at fright
     show dv angry pioneer at fleft
-    with dissolve
+    with easeinbottom
 
     us "Щит? Откуда он знает про щит?"
     me "Лена сказала…"
@@ -4819,6 +4838,7 @@ label bkrr_day19_common:
 
     mi "Вот и молодец. Всё, я побежала подключать. Когда позову – поднимайтесь на сцену.{w} Алиса, как твоя нога?"
 
+    stop music fadeout 5
     show dv smile pioneer with dspr
 
     dv "Нормально. Иди уже."
@@ -4837,10 +4857,13 @@ label bkrr_day19_common:
     play sound2 bkrr_sfx_list["applause2_"]
     window show
 
-    # "Действие происходит за сценой. но мы слышим голос ведущих: Ольги и Слави"
-
     mt_speaker "{i}Наша одиссея по морям искусств заканчивается, и осталось…{w} А что у нас осталось, вам расскажет Мику!{/i}"
     "Чтобы заполнить пустоту и не дать зрителям заскучать, из динамиков полилась бодрая и энергичная музыка без слов."
+
+    window hide
+    $ renpy.pause(1.0, hard=True)
+    window show
+
     mi_speaker "{i}Одну секундочку…{/i}"
 
     $ bkrr_set_volume("sound_loop", 0.0, 0.3)
@@ -4908,7 +4931,7 @@ label bkrr_day19_common:
     stop sound_loop fadeout 10
     stop sound_loop2 fadeout 10
     stop ambience fadeout 10
-    play music music_list["drown"] fadein 10
+    play music music_list["torture"] fadein 10
 
     "Всё это не добавляло спокойствия.{w} Гитара тоже никак не хотела изображать из себя щит, а была тем, чем была: куском дерева со струнами, из которого мне сейчас предстоит извлекать звуки…\n"
 
