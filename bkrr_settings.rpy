@@ -2177,7 +2177,7 @@ init 2:
         make_sprites_for('mz', 'zombie', ['mod:zomb'], emotions=['normal'], distances=['far'])
         make_sprites_for('mz', 'glasses bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>', 'es:glasses'])
         make_sprites_for('mz', 'glasses bkrr_dress', ['es:body', 'mod:dress', 'es:<emotion>', 'es:glasses'])
-        make_sprites_for('mz', 'bdsm', ['es:body', 'mod:bdsm', 'es:<emotion>'])  # не все эмоции доступны
+        make_sprites_for('mz', 'bdsm', ['mod:bdsm', 'es:<emotion>'])  # не все эмоции доступны
 
         make_sprites_for('mt', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
         make_sprites_for('mt', 'nightdress', ['es:body', 'mod:nightdress', 'es:<emotion>'])
