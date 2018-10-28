@@ -7595,7 +7595,7 @@ label bkrr_day19_common:
 
     mi "Всё, что захочешь!"
 
-    play sound sfx_blanket_off_stand fadein 1.0
+    play sound sfx_blanket_off_stand fadein 2
     show black:
         alpha 0.95
     with dissolve
@@ -7604,7 +7604,7 @@ label bkrr_day19_common:
 
     window hide
     hide mi with dissolve
-    play sound bkrr_sfx_list["fall_onto_bed"]
+    play sound bkrr_sfx_list["fall_onto_bed"] fadein 2
     show black:
         alpha 0.95
         ease 0.5 alpha 0.5
