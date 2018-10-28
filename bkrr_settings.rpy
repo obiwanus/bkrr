@@ -1035,6 +1035,16 @@ init 2:
     image cg d17_alisa_klaus = MOD_IMAGES + "cg/d17_alisa_klaus.jpg"
     image cg d17_alisa_klaus2 = bkrr_fast_composite(MOD_IMAGES + "cg/d17_alisa_klaus.jpg", MOD_IMAGES + "cg/d17_alisa_klaus2.png")
     image cg d17_klaus_guitar = im.Scale(MOD_IMAGES + "cg/d17_klaus_guitar.jpg", config.screen_width, config.screen_height)
+    image cg d17_mt_mine:
+        contains:
+            "bg int_mine_halt"
+            truecenter
+            zoom 1.4
+        contains:
+            "black"
+            alpha 0.3
+        contains:
+            MOD_IMAGES + "cg/d17_mt_mine.png"
     image cg d17_tmp_sex:
         contains:
             im.Scale(MOD_IMAGES + "cg/d15_mi_sleep.jpg", config.screen_width, config.screen_height)

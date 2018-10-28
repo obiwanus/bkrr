@@ -4011,10 +4011,9 @@ label bkrr_day17_common:
     pi "Всё равно она придёт. Она не может не прийти. Если кто-то из её любимых пионеров в беде, она обязательно попытается его спасти."
 
     window hide
-    $ renpy.pause(4.0, hard=True)
+    $ renpy.pause(2.0, hard=True)
     play sound bkrr_sfx_list["whiteout2"] fadein 1
-    scene bg int_mine_halt:
-    show mt sad pioneer far at cright
+    scene cg d17_mt_mine
     show white:
         alpha 0.9
         ease 3.5 alpha 0.0
@@ -4024,18 +4023,14 @@ label bkrr_day17_common:
 
     "Ещё пара минут, и я увидел взволнованную Ольгу. Она стояла в нескольких шагах, освещая меня фонарём."
 
-    show mi upset pioneer far at center behind mt with dissolve
+    "Но меня поразило не это. Рядом с вожатой стояла Мику с Пиратом на поводке.{w} В рейтинге версий о происхождении лагеря, вариант «шизофрения» резко ушёл в отрыв."
 
-    "Но меня поразило не это. Рядом с вожатой стояла Мику с Пиратом на поводке. В рейтинге версий о происхождении лагеря, вариант «шизофрения» резко ушёл в отрыв."
-
-    show mi sad_smile pioneer far with dspr
+    scene bg int_mine_halt:
+    show mi sad_smile pioneer far at center
+    show mt sad pioneer far at cright
+    with flash
 
     mi "Вот он! Я же говорила, Пират его найдёт!"
-
-    show mi sad_smile pioneer far:
-        truecenter
-        linear 0.3 zoom 1.03
-        linear 0.2 zoom 1.0
 
     "Мику рванулась ко мне, но вожатая удержала её за руку."
 
@@ -4125,6 +4120,7 @@ label bkrr_day17_common:
     mt "Завтра же скажу, чтобы этот люк закрыли на замок. Каждую смену кого-нибудь достаём отсюда.{w} Семён, на что ты там смотришь? Пошли!"
 
     scene bg int_mine_halt_olga:
+        subpixel True
         truecenter
         zoom 1.01
         linear 14.0 zoom 1.4
@@ -4139,6 +4135,7 @@ label bkrr_day17_common:
 
     window hide
     scene bg int_mine_coalface_bkrrpi:
+        subpixel True
         truecenter
         zoom 1.1
         ease 1.0 zoom 1.0

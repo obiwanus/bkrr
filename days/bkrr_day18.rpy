@@ -6362,7 +6362,7 @@ label bkrr_day18_common:
     uv "М-м-м… мои любимые! В этот раз ваша повариха хорошо их спрятала, я боялась что так и не попробую."
 
     window hide
-    stop music fadeout 5
+    stop music fadeout 7
     $ bkrr_timeskip_short()
     scene bg int_music_club_mattresses_night_closed_piano
     show bkrr_uv_piano
