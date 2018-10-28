@@ -4190,6 +4190,7 @@ label bkrr_day17_common:
     $ bkrr_set_volume("sound_loop", 1.5)
     play sound_loop bkrr_sfx_list["heartbeat"]
     show bg int_mine_coalface:
+        subpixel True
         ease 2 zoom 1.02
         ease 2 zoom 1.0
         repeat
@@ -4204,7 +4205,7 @@ label bkrr_day17_common:
     "Не опасно, но больно… Очень больно."
 
     hide bkrr_pi with dissolve
-    show mt surprise pioneer close at cright with dissolve
+    show mt surprise pioneer blood close at cright with dissolve
 
     "Вожатая подбежала ко мне, по прежнему не замечая второго Семёна, который буквально дышал ей в ухо."
     mt "Что с тобой? Где ты так порезался?"
@@ -4224,14 +4225,16 @@ label bkrr_day17_common:
         ease 2 alpha 0
     play sound bkrr_sfx_list["knife_slice3"]
     show bg int_mine_coalface:
+        subpixel True
         ease 1 zoom 1.03
         ease 1 zoom 1.0
         repeat
+    show mt normal pioneer blood2 close
     with vpunch
 
     "Я попытался оттолкнуть её, но неугомонный близнец зашёл сбоку, и порезал мне ухо, забрызгав щёку вожатой."
 
-    show mt normal pioneer close:
+    show mt normal pioneer blood2 close:
         subpixel True
         ease 1.5 zoom 1.5
 
@@ -4249,6 +4252,7 @@ label bkrr_day17_common:
     play sound2 bkrr_sfx_list["ear_buzz"] fadein 3
 
     scene bg int_mine_coalface:
+        subpixel True
         truecenter
         parallel:
             ease 0.5 zoom 1.8
@@ -4285,7 +4289,7 @@ label bkrr_day17_common:
 
     "Ольга отпустила меня, повернулась к моему двойнику и тихо прошипела:"
 
-    show mt normal pioneer at cright with dissolve
+    show mt normal pioneer blood2 at cright with dissolve
 
     mt "Думал, я тебя не вижу?"
 
@@ -4392,9 +4396,9 @@ label bkrr_day17_common:
     show uv guilty at left with dissolve
 
     uv "Простите, я очень виновата. Мы… не ожидали такого."
-    "Ольга провела пальцем по щеке, посмотрела на капли моей крови."
+    "Ольга провела ладонью по щеке, посмотрела на капли моей крови."
 
-    show mt sad pioneer at cright with dissolve
+    show mt sad pioneer blood at cright with dissolve
 
     mt "Чтобы я ещё раз имела с тобой дело! Посмотри, что вы натворили."
 
@@ -4410,7 +4414,7 @@ label bkrr_day17_common:
     with dissolve
     show mi scared pioneer far at left with dissolve
 
-    "Переводила взгляд на кровь, текущую по моим рукам. На Ольгу, с грязью и кровью на лице.{w} На то, как странная девочка с хвостом и горящими в темноте глазами только что кричала и махала руками в пустоту, а теперь шла к ней."
+    "Переводила взгляд на кровь, текущую по моим рукам. На Ольгу, с грязью и кровью на рубашке.{w} На то, как странная девочка с хвостом и горящими в темноте глазами только что кричала и махала руками в пустоту, а теперь шла к ней."
     mi "Что… что… И почему… Кто ты… и…?"
 
     show mi scared pioneer far at fleft with ease
@@ -4464,7 +4468,7 @@ label bkrr_day17_common:
 
     "Вожатая деловито выправила подол рубашки, подобрала нож и стала резать ткань на полосы."
 
-    show mt normal pioneer close at bkrr_sit_center with dissolve
+    show mt normal pioneer blood close at bkrr_sit_center with dissolve
 
     mt "Обещает она. Давай сюда руки, я перевяжу. А то пока дойдём до лагеря, весь наружу вытечешь."
 
@@ -4479,13 +4483,13 @@ label bkrr_day17_common:
     me "Наверное. Значит… Он соврал?"
     "Вожатая зыркнула на меня исподлобья и не ответила."
 
-    show mt sad pioneer close at bkrr_sit_center with dissolve
+    show mt sad pioneer blood close at bkrr_sit_center with dissolve
 
     mt "Потом поговорим. Наклонись, я ухо посмотрю!{w} Как течёт! И ни кусочка пластыря.{w} Ладно, просто зажми и подержи пару минут, кровь остановится."
     me "Ольга Дмитриевна… пожалуйста, скажите, что происходит?"
     mt "Веришь или нет, но я сама рада бы узнать, что здесь происходит.{w} Раньше такого не случалось."
 
-    show mt smile pioneer close with dspr
+    show mt smile pioneer blood close with dspr
 
     "Она улыбнулась посмотрела на Мику."
     mt "Ты бери нашу спящую красавицу и пошли отсюда. Только без лишних разговоров.{w} Обещаю, завтра сядем, и я отвечу на все вопросы, на которые смогу."
@@ -4791,9 +4795,7 @@ label bkrr_day17_common:
     mi "И что дальше?"
     "Голос Мику слегка подрагивал, дыхание участилось, но она смотрела прямо мне в глаза…{w} И в них я видел, какой ответ она хочет услышать."
 
-    show mi happy pioneer close:
-        subpixel True
-        ease 2 zoom 1.2
+    show mi happy pioneer close with dspr
 
     "Любые слова были бы лишними, поэтому я просто лёг рядом и поцеловал её. Ответ не хуже любого другого, который я мог бы дать."
 
@@ -4861,11 +4863,12 @@ label bkrr_day17_common:
         yalign 0.7
     with bkrr_fade(10.0, "black")
     scene cg d17_tmp_sex:
+        subpixel True
         zoom 2.0
         xalign 1.0
         yalign 0.7
-        ease 17.0 xalign 0.2
-    $ renpy.pause(20.0)
+        ease 15.0 xalign 0.5
+    $ renpy.pause(15.0)
     scene black with fade2
     stop music fadeout 8
     $ renpy.pause(8.0)

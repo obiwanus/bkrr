@@ -2191,7 +2191,9 @@ init 2:
 
         make_sprites_for('mt', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
         make_sprites_for('mt', 'nightdress', ['es:body', 'mod:nightdress', 'es:<emotion>'])
-        make_sprites_for('mt', 'torn', ['es:body', 'mod:torn', 'es:<emotion>'], distances=['normal'])
+        make_sprites_for('mt', 'pioneer blood', ['es:body', 'es:pioneer', 'mod:blb', 'es:<emotion>'])
+        make_sprites_for('mt', 'pioneer blood2', ['es:body', 'es:pioneer', 'mod:blb', 'mod:blf', 'es:<emotion>'])
+        make_sprites_for('mt', 'torn', ['es:body', 'mod:torn', 'mod:blb', 'es:<emotion>'], distances=['normal'])
 
         make_sprites_for('sh', 'bathrobe', ['mod:bathrobe', 'es:<emotion>'])
         make_sprites_for('sh', 'towel', ['mod:body', 'es:<emotion>'])
