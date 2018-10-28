@@ -735,6 +735,8 @@ init 2:
         contains:
             "bkrr_pioneer_flag"
         contains:
+            MOD_IMAGES + "misc/d19_concert/concert_lights_white.png"
+        contains:
             MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
     image bg ext_stage_raise_pirate_flag:
         contains:
@@ -742,20 +744,23 @@ init 2:
         contains:
             "bkrr_pioneer_flag"
             truecenter
+            pause 1.0
             ease 0.7 ypos 0.65 alpha 0.0
         contains:
             "bkrr_pirate_flag"
             alpha 0.0
             truecenter
             ypos 0.65
-            pause 0.7
+            pause 1.7
             ease 0.7 ypos 0.5 alpha 1.0
         contains:
+            MOD_IMAGES + "misc/d19_concert/concert_lights_white.png"
+        contains:
             MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
-    image bkrr_concert_lights_no_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 6,  3.75, Dissolve(2.0, alpha=True))
-    image bkrr_concert_mist_no_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 6,  3.75, Dissolve(2.0, alpha=True))
-    image bkrr_concert_lights_with_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 7,  3.75, Dissolve(2.0, alpha=True), start_with=6)
-    image bkrr_concert_mist_with_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 7,  3.75, Dissolve(2.0, alpha=True), start_with=6)
+    image bkrr_concert_lights_no_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 5,  3.75, Dissolve(2.0, alpha=True))
+    image bkrr_concert_mist_no_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 5,  3.75, Dissolve(2.0, alpha=True))
+    image bkrr_concert_lights_with_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 6,  2.75, Dissolve(1.5, alpha=True), start_with=5)
+    image bkrr_concert_mist_with_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 6,  2.75, Dissolve(1.5, alpha=True), start_with=5)
     image bkrr_ball_sparkles = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/ball_sparkles_", 5, 0.5, Dissolve(0.25, alpha=True))
     image bkrr_concert_sparkles = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_sparkles_", 5,  1.5, Dissolve(1.0, alpha=True))
     image bg ext_stage_concert:
@@ -797,10 +802,11 @@ init 2:
         MOD_IMAGES + "misc/d19_concert/flags_top.png",
         MOD_IMAGES + "misc/d19_concert/monitors.png",
         MOD_IMAGES + "misc/d19_concert/pirate_flag.png",
+        MOD_IMAGES + "misc/d19_concert/concert_lights_white.png",
     )
     image bkrr_mast_up = MOD_IMAGES + "misc/d19_concert/mast_up.png"
     image bkrr_concert_people = MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
-    image bkrr_mast_down_dust = MOD_IMAGES + "misc/d19_concert/mist_1.png"
+    image bkrr_mast_down_dust = MOD_IMAGES + "misc/d19_concert/mist_white.png"
     image bg ext_stage_big_day_evening_mast_down  = bkrr_fast_composite(
         MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
         MOD_IMAGES + "misc/d19_concert/mast_down.png",

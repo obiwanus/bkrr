@@ -5816,7 +5816,13 @@ label bkrr_day19_common:
     dv_speaker "{i}И поэтому мы решили чуть-чуть изменить программу концерта!{w} Кто не хочет слушать настоящую музыку, тот может идти печь картошку и жечь пионерские костры…{/i}"
     dv_speaker "{i}А мы начинаем! Ульянка, давай!{/i}"
 
-    scene bg ext_stage_raise_pirate_flag with None
+    scene bg ext_stage_raise_pirate_flag:
+        subpixel True
+        truecenter
+        xalign 1.0
+        ease 1.5 xalign 1.0 zoom 1.4
+        pause 1.0
+        ease 1.0 zoom 1.0
     play sound3 bkrr_sfx_list["applause3"] fadein 3
 
     "Ещё одна верёвочка, и на мачту взлетело черное полотнище.{w} Кривоватый, но лихой Веселый Роджер подмигнул зрителям с флагштока, а свежий ветер так энергично развевал флаг, что казалось, будто мы действительно посреди океана."
@@ -5945,7 +5951,7 @@ label bkrr_day19_common:
 
     "Никто не рассчитывал, что нам удастся оккупировать сцену надолго, так что десять минут и еще пару песен спустя все закончилось."
 
-    play music music_list["that_s_our_madhouse"] fadein 5
+    play music music_list["that_s_our_madhouse"] fadein 2
     show cg d19_chibi_alisa:
         truecenter
         subpixel True
