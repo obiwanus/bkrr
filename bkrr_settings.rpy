@@ -722,9 +722,9 @@ init 2:
     image bg ext_stage_big_day_const_bkrr = MOD_IMAGES + "bg/ext_stage_big_day_const.jpg"
     image bg ext_stage_big_day_evening_empty = bkrr_fast_composite(
         MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
-        MOD_IMAGES + "misc/d19_concert/mast_up.png",
         MOD_IMAGES + "misc/d19_concert/flags_right.png",
         MOD_IMAGES + "misc/d19_concert/flags_top.png",
+        MOD_IMAGES + "misc/d19_concert/mast_up.png",
         MOD_IMAGES + "misc/d19_concert/monitors.png",
     )
     image bkrr_pioneer_flag = MOD_IMAGES + "misc/d19_concert/pioneer_flag.png"

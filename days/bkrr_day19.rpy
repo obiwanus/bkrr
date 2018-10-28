@@ -4517,29 +4517,31 @@ label bkrr_day19_common:
 
     "Стрелка часов неумолимо двигалась к восьми.{w} Мы поужинали в клубе, Ольга Дмитриевна явно не хотела чтобы Алиса и Ульяна выкинули что-нибудь в присутствии делегации."
 
-    show dv normal pioneer2 with dissolve
+    show dv normal pioneer with dissolve
 
     dv "Ты этих, импортных, хоть видел?"
 
-    show us smile sport at left behind dv with dissolve
+    show us smile pioneer at left behind dv with dissolve
 
     us "Я! Я видела! Мелкие такие."
 
-    show dv smile pioneer2 with dspr
+    show dv smile pioneer with dspr
 
     dv "Мда? Я детский сад не ожидала. Может, лучше все-таки сыграем про антошку и картошку?"
 
-    show mi surprise bkrr_sport at right with dissolve
+    show mi surprise pioneer at right with dissolve
 
     mi "Алиса, ну что ты такое придумала, нельзя в последний момент все взять и поменять."
 
-    show mi normal bkrr_sport with dspr
+    show mi normal pioneer with dspr
 
     mi "Так, я попросила мальчиков из младшего отряда перетащить ульянкину установку, а гитары несём сами. Никто ничего не забыл?"
 
     window hide
     stop ambience fadeout 1
+    $ bkrr_set_volume("music", 0.5, 0.5)
     $ bkrr_timeskip()
+    $ bkrr_set_volume("music", 1.0, 1.0)
     scene bg ext_stage_big_day_evening_empty with bkrr_circleout_transition
     $ bkrr_set_time("night")
     play ambience ambience_camp_center_night fadein 1
@@ -4686,10 +4688,8 @@ label bkrr_day19_common:
     "Я мог сколько угодно убеждать себя и окружающих, что ничего страшного не происходит. Ну, подумаешь, встать на краю сцены и немного подёргать струны.{w} Да если напортачу, никто и не заметит. И вообще…\n"
     "Ну Алиска, конечно, язвить будет до самого отъезда, Ульяна тоже…{w} Мику расстроится и будет грустная ходить.{w} Но Земля не остановится, и через пару часов все уже забудут.\n"
 
-    stop music fadeout 5
-    stop sound_loop2
-    $ bkrr_set_volume("sound_loop2", 1.0)
-    play sound_loop2 music_list["torture"] fadein 7
+    $ bkrr_set_volume("music", 0.0, 5.0)
+    play sound_loop3 music_list["torture"] fadein 7
 
     "Тем не менее, в животе угнездился неприятный холодок, во рту пересохло, а нога мелко тряслась.{w} Слишком много зрителей. Ну почему их так много?\n"
 
@@ -4710,7 +4710,8 @@ label bkrr_day19_common:
 
     play sound sfx_face_slap
     show bkrr_service "Ай!" at truecenter with vpunch
-    stop sound_loop2 fadeout 1
+    $ bkrr_set_volume("music", 1.0, 5.0)
+    stop sound_loop3 fadeout 3
 
     pause 1.0
 
@@ -4747,7 +4748,14 @@ label bkrr_day19_common:
 
     "Она засмеялась и отошла к Ульяне."
 
+    window hide
+    play sound bkrr_sfx_list["applause2_"] fadein 1
+    stop music fadeout 5
+    stop sound_loop2
+    $ bkrr_set_volume("sound_loop2", 1.0)
+    $ renpy.pause(1.0, hard=True)
     show mi smile pioneer at cright with dissolve
+    window show
 
     mi "Скоро начинаем. Все готовы?"
     "Девчонки бодро сообщили что да, готовы."
