@@ -6717,6 +6717,7 @@ label bkrr_day19_common:
     dv "Мужчина, вы определитесь, чего хотите."
 
     window hide
+    hide dv with dissolve
     $ bkrr_timeskip_short()
     scene bg ext_square_night_party_glow with bkrr_timeskip_transition()
     window show
@@ -6974,11 +6975,11 @@ label bkrr_day19_common:
     "Где-то там, в паре сотен метров, бурлила пионерская жизнь, кто-то танцевал, кто-то просто вздыхал, глядя на понравившуюся девочку…{w} Что творилось в головах иностранцев, я даже представить не мог."
     "Всё это было где-то там.{w} Конечно, музыка с танцплощадки всё равно долетала до нас, но если не обращать на неё внимание, то казалось, будто мы вчетвером выбрались куда-то в поход, и не нужно соблюдать режим, думать о дисциплине… И можно делать то, что захочется."
 
-    show dv grin pirate at bkrr_sit_left with dissolve
+    show dv grin pirate at bkrr_sit_right with dissolve
 
     dv "А ведь неплохо отыграли, а?"
 
-    show us grin pirate at bkrr_sit_right with dissolve
+    show us grin pirate at bkrr_sit_left with dissolve
 
     us "Теперь разговоров на полгода.{w} И при каждом рассказе зрителей будет всё больше, песни всё круче, а концерт всё длиннее. Почти как у рыбаков. Да, Алиска?"
 
@@ -7268,9 +7269,31 @@ label bkrr_day19_common:
 
     "Вожатая улыбнулась и растворилась в темноте, как будто и не было никого."
 
+    show mi smile yukata with dspr
+
+    mi "Кстати, девочки. Вы испугались, так что с вас завтра вода и мытьё окон."
+
+    show us sad pirate with dspr
+
+    us "Чего испугались? Сказки про колобки?"
+
+    show dv grin pirate with dspr
+
+    dv "Не было там ничего страшного!"
+
+    show mi dontlike yukata  with dspr
+
+    mi "Визжали? Визжали. Подскочили? Подскочили.{w} Всё, отговорки не принимаются. Договор был – «если испугаетесь»."
+
+    show us smile pirate with dspr
+
+    us "Ладно, ладно. Будет тебе вода."
+
     "Ульяна поддала невинного вида камешек."
 
-    show us grin pirate with dspr
+    show us grin pirate
+    show mi normal yukata
+    with dspr
 
     us "Всё, вот и попили пивка… В смысле – отпраздновали.{w} Сень, зальёшь костёр? Только из ведра, а то знаю я вас, парней."
     me "Ладно. Вы идите, мы с Мику вас догоним."
@@ -7380,31 +7403,12 @@ label bkrr_day19_common:
     dv "Сень, ну ты не понимаешь. Это же не для еды, это же традиция!"
     "Алиса посмотрела на звёзды, огляделась по сторонам."
 
-    show mi smile yukata close at right with dissolve
-
-    mi "Кстати, девочки. Вы испугались, так что с вас завтра вода и мытьё окон."
-
-    show us sad pirate at left with dissolve
-
-    us "Чего испугались? Сказки про колобки?"
-
-    show dv grin pirate with dspr
-
-    dv "Не было там ничего страшного!"
-
-    show mi dontlike yukata close with dspr
-
-    mi "Визжали? Визжали. Подскочили? Подскочили.{w} Всё, отговорки не принимаются. Договор был – «если испугаетесь»."
-
-    show us smile pirate with dspr
-
-    us "Ладно, ладно. Будет тебе вода."
-
-    show dv sad pirate
-    show mi normal yukata close
-    with dspr
+    show dv sad pirate with dspr
 
     dv "Кто бы мог подумать, что завтра едем обратно?{w} Вот уедем, и никаких следов от нашего концерта не останется. Только флажки да мусор под скамейками. И то до первой уборки. Я представляла себе всё как-то иначе…"
+
+    show mi smile yukata close at right with dissolve
+
     mi "Все останется вот здесь!"
     "Мику дотронулась кончиками пальцев до сердца."
 
@@ -7413,7 +7417,7 @@ label bkrr_day19_common:
     dv "Да…"
     me "И вообще! Почётная грамота это тебе что, хвост собачий? Приедешь – покажешь."
 
-    show us grin pirate with dspr
+    show us grin pirate at left with dissolve
 
     us "Мама ей не поверит. Скажет, сама сделала!"
 
@@ -7496,15 +7500,19 @@ label bkrr_day19_common:
     "С другой стороны, должен хоть кто-то из нас проявлять инициативу."
 
     window hide
+    stop ambience fadeout 2
     scene bg ext_music_club_verandah_night_v2 with dissolve
+    play ambience ambience_camp_center_night fadein 2
     window show
 
     "Я улыбнулся."
     "Кажется, сегодняшний вечер станет ещё лучше."
 
     window hide
+    stop ambience fadeout 1
     play sound sfx_door_squeak_light fadein 1
     scene bg int_music_club_mattresses_night with dissolve
+    play ambience ambience_int_cabin_night fadein 2
     show mi smile yukata close with dissolve
     window show
 
