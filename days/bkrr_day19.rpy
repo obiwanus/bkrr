@@ -5457,7 +5457,7 @@ label bkrr_day19_common:
     play sound bkrr_sfx_list["plank2"]
     show dv shocked pioneer far:
         ease 0.2 ypos 0.1 zoom 1.05 rotate -1
-        ease 0.3 right ypos 0.0 zoom 1.0 rotate 0
+        ease 0.3 ypos 0.0 zoom 1.0 rotate 0
     $ renpy.pause(0.2, hard=True)
     show bg ext_backstage_big_day_night_noplank
     show dv surprise pioneer far
