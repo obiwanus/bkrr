@@ -5299,7 +5299,7 @@ label bkrr_day19_common:
     show cg3 d19_concert_miku_semen
     show cg2 d19_concert_ulyana
     show cg1 d19_concert_alisa
-    with fade3
+    with dissolve
     window show
 
     "Алиса кивнула, гримаса на её лице сменилась обычной улыбкой, а через несколько тактов над притихшими зрителями разнёсся звонкий чистый голос Мику."

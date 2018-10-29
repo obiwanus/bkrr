@@ -819,14 +819,22 @@ init 2:
     image bg ext_backstage_big_day_night = bkrr_fast_composite(MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg", MOD_IMAGES + "misc/backstage_plank.png")
     image bg ext_backstage_big_day_night_noplank = MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg"
 
-    image cg1 d19_concert_alisa = MOD_IMAGES + "cg/d19_concert_alisa.jpg"
+    image cg1 d19_concert_alisa:
+        contains:
+            im.Scale(MOD_IMAGES + "cg/d19_concert_alisa.jpg", config.screen_width, config.screen_height)
+            subpixel True
+            truecenter
+            rotate -10
+            zoom 1.5
+            ease 1.0 zoom 1.0 rotate 0.0
+
     image cg1 d19_concert_alisa_photo:
         contains:
             "white"
             truecenter
             zoom 1.02
         contains:
-            im.Sepia(MOD_IMAGES + "cg/d19_concert_alisa.jpg")
+            im.Sepia(im.Scale(MOD_IMAGES + "cg/d19_concert_alisa.jpg", config.screen_width, config.screen_height))
 
     image cg2 d19_concert_ulyana = MOD_IMAGES + "cg/d19_concert_ulyana.jpg"
     image cg2 d19_concert_ulyana_photo:
