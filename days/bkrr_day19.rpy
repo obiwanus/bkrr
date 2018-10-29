@@ -5838,6 +5838,9 @@ label bkrr_day19_common:
     show white:
         alpha 0.0
         linear 0.1 alpha 0.9
+    show red:
+        alpha 0.0
+        linear 0.1 alpha 0.2
     with None
     scene bg ext_stage_concert_pirates
     show cg d19_pirates_on_stage:

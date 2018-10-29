@@ -49,7 +49,10 @@ init python:
         tc = {
             "red":(1.0, 0.35, 0.35),
             "green_yellow":(0.91, 1.0, 0.59),
-            "cyan":(0.0, 1.0, 0.8)
+            "yellow":(0.91, 1.0, 0.09),
+            "cyan":(0.0, 1.0, 0.8),
+            "purple":(0.87, 0.28, 0.74),
+            "orange":(0.94, 0.52, 0.32),
         }
         r, g, b = tc[color]
         return im.MatrixColor(imgf, im.matrix.tint(r, g, b))
@@ -868,7 +871,58 @@ init 2:
             center
 
     image cg d19_slavya_captured = MOD_IMAGES + "cg/d19_slavya_captured.jpg"
-    image cg d19_pirates_on_stage = im.Scale(MOD_IMAGES + "cg/d19_pirates_on_stage.jpg", config.screen_width, config.screen_height)
+
+    python:
+        def bkrr_imagelist_anim(img_list, pause=0.5, transition=None):
+            args = list()
+            for image in img_list:
+                args.append(image)
+                args.append(pause)
+                args.append(transition)
+            return anim.TransitionAnimation(*args)
+
+        def random_mist():
+            image = MOD_IMAGES + "misc/d19_pirates/mist/%s.png" % renpy.random.randint(1, 8)
+            return bkrr_imagelist_anim(
+                [
+                    bkrr_make_tint_img(image, "orange"),
+                    bkrr_make_tint_img(image, "red"),
+                    bkrr_make_tint_img(image, "green_yellow"),
+                    bkrr_make_tint_img(image, "purple"),
+                    bkrr_make_tint_img(image, "cyan"),
+                ],
+                3.75,
+                Dissolve(2.0, alpha=True),
+            )
+
+    # Оп-па ховнокот
+    image cg d19_pirates_on_stage:
+        contains:
+            MOD_IMAGES + "misc/d19_pirates/base.jpg"
+        contains:
+            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+        contains:
+            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+        contains:
+            MOD_IMAGES + "misc/d19_pirates/mast.png"
+        contains:
+            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+        contains:
+            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+        contains:
+            MOD_IMAGES + "misc/d19_pirates/pirates1.png"
+        contains:
+            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+        contains:
+            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+        contains:
+            MOD_IMAGES + "misc/d19_pirates/pirates2.png"
+        contains:
+            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+        contains:
+            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+
+
     image cg2 d19_pirate_song = im.Scale(MOD_IMAGES + "cg/d19_pirate_song.jpg", config.screen_width, config.screen_height)
     image cg d19_chibi_alisa:
         contains:
