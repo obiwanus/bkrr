@@ -101,11 +101,11 @@ label bkrr_epilogue:
 
 label bkrr_epilogue_common:
 
-    scene bg ext_house_of_un_day with fade3
+    $ bkrr_set_time("night")
 
-    $ bkrr_set_time()
+    scene bg ext_house_of_un_night_bkrr with fade3
 
-    play ambience ambience_camp_center_day fadein 3
+    play ambience ambience_camp_center_night fadein 3
 
     window show
 
@@ -114,7 +114,7 @@ label bkrr_epilogue_common:
 
     window hide
 
-    scene bg ext_house_of_mt_day with dissolve
+    scene bg ext_house_of_mt_night_without_light with dissolve
 
     window show
 
@@ -127,13 +127,13 @@ label bkrr_epilogue_common:
 
     stop ambience fadeout 0.5
 
-    play sound sfx_open_door_1
+    play sound sfx_door_squeak_light
 
-    scene bg int_house_of_mt_day with dissolve
+    scene bg int_house_of_mt_night2 with dissolve
 
     window show
 
-    play ambience ambience_int_cabin_day fadein 2.5
+    play ambience ambience_int_cabin_night fadein 2.5
 
     "Вожатая явно решила, что ночевать я не приду, поэтому на её кровати возвышалась гора одежды из шкафа и тумбочки, а соседка самым наглым образом спала на моём месте."
     th "Великолепно. И где мне прикажете спать? Идти обратно в клуб?"
@@ -146,7 +146,7 @@ label bkrr_epilogue_common:
 
     window hide
 
-    play sound sfx_blanket_off_stand
+    play sound sfx_blanket_off_stand fadein 1
 
     $ renpy.pause(1.5, hard=True)
 
@@ -164,14 +164,16 @@ label bkrr_epilogue_common:
 
     window hide
 
-    $ renpy.pause(1.0, hard=True)
-
+    $ bkrr_timeskip()
+    $ bkrr_set_time("day")
+    scene black
     window show
 
     "Кажется, мне снилось что-то приятное. {w}Во всяком случае, очень не хотелось открывать глаза, когда меня принялись трясти за плечо."
 
     play ambience ambience_int_cabin_day fadein 2.5
 
+    with vpunch
     mt "Эй, вставай!"
 
     scene bg int_house_of_mt_day
