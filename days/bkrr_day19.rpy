@@ -7476,8 +7476,6 @@ label bkrr_day19_common:
     "Я думал о том, что вместо этой шумной пионерии мог бы любоваться звёздами с Мику, а может – ночное купание и даже…"
     "Словно отвечая на мои мысли, знакомый голос шепнул в ухо:"
 
-    stop music fadeout 5
-
     mi "Ты готов к побегу?"
     me "Конечно, готов."
     mi "Тогда пошли! Я попросила девочек, они нас прикроют."
@@ -7486,13 +7484,13 @@ label bkrr_day19_common:
     stop sound_loop fadeout 3
     stop sound_loop2 fadeout 3
     scene bg ext_path_night with fade2
-    play music music_list["a_promise_from_distant_days_v2"] fadein 5
     window show
 
     "Взявшись за руки, мы бочком-бочком отступили в темноту дорожки, ведущей к площади, и поспешили к клубу."
     "Всю дорогу мы старались не шуметь… Но Мику то и дело принималась болтать о светлячках, совах, летучих мышах, созвездиях, телескопе, который есть у папы, и о том, как она хотела посмотреть в него на солнце, но мама вовремя её остановила."
 
     window hide
+    stop music fadeout 7
     scene bg ext_square_night with dissolve
     window show
 
@@ -7517,6 +7515,7 @@ label bkrr_day19_common:
     scene bg int_music_club_mattresses_night with dissolve
     play ambience ambience_int_cabin_night fadein 2
     show mi smile yukata close with dissolve
+    play music music_list["a_promise_from_distant_days_v2"] fadein 7
     window show
 
     mi "Вот… Мы пришли."
@@ -7635,6 +7634,4 @@ label bkrr_day19_common:
 
     $ persistent.bkrr_check["epilogue"] = True
 
-    return
-
-    jump bkrr_epilogue_start
+    jump bkrr_epilogue

@@ -886,7 +886,6 @@ init 2:
             return bkrr_imagelist_anim(
                 [
                     bkrr_make_tint_img(image, "orange"),
-                    bkrr_make_tint_img(image, "red"),
                     bkrr_make_tint_img(image, "green_yellow"),
                     bkrr_make_tint_img(image, "purple"),
                     bkrr_make_tint_img(image, "cyan"),
@@ -900,27 +899,27 @@ init 2:
         contains:
             MOD_IMAGES + "misc/d19_pirates/base.jpg"
         contains:
-            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
         contains:
-            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
         contains:
             MOD_IMAGES + "misc/d19_pirates/mast.png"
         contains:
-            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
         contains:
-            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
         contains:
             MOD_IMAGES + "misc/d19_pirates/pirates1.png"
         contains:
-            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
         contains:
-            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
         contains:
             MOD_IMAGES + "misc/d19_pirates/pirates2.png"
         contains:
-            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
         contains:
-            SnowBlossom(random_mist(), count=6, border=1900, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
 
 
     image cg2 d19_pirate_song = im.Scale(MOD_IMAGES + "cg/d19_pirate_song.jpg", config.screen_width, config.screen_height)
