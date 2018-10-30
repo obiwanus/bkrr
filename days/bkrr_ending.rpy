@@ -255,7 +255,7 @@ label bkrr_epilogue_common:
     show mt grin nightdress at center with dspr
 
     mt "Правда-правда. Но я сказала, что вы репетировали всю ночь, очень устали и легли спать пораньше."
-    "Она подмигнула мне.
+    "Она подмигнула мне."
     mt "В целом где-то так и было, да?"
 
     hide mt with dissolve
