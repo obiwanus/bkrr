@@ -240,6 +240,7 @@ init python:
         "t_pl":[u"Магнитофон", "#B3B3B3"],
         "voice":[u"Голос", "#E1DD7D"],  # нейтральный голос
         "zal":[u"Зал", "#E1DD7D"],
+        "ml":[u"Голос", "#E1DD7D"],
     }
 
     renpy.image("bkrr_radio_icon", im.FactorScale(MOD_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
@@ -292,6 +293,10 @@ init python:
 
     def bkrr_set_name(name, value):
         bkrr_characters[name][0] = value
+        bkrr_chars_define()
+
+    def bkrr_set_char_color(name, value):
+        bkrr_characters[name][1] = value
         bkrr_chars_define()
 
     # Настройка интерфейса и тонировки спрайтов
