@@ -2066,7 +2066,7 @@ label bkrr_epilogue_common:
     window hide
 
     stop ambience fadeout 3
-:
+
     scene bg semen_room_clean_bkrr with fade3
 
     play sound_loop sfx_street_traffic_outside fadein 5
