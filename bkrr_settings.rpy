@@ -943,6 +943,27 @@ init 2:
         contains:
             SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
 
+    image cg d19_alisa_miku_song:
+        contains:
+            MOD_IMAGES + "cg/d19_alisa_miku_song/bg.png"
+            subpixel True
+            truecenter
+            zoom 2.4
+            pos (0.4, 0.4)
+            ease 2.5 zoom 1.0 pos (0.5, 0.5)
+        contains:
+            MOD_IMAGES + "cg/d19_alisa_miku_song/singers.png"
+            subpixel True
+            truecenter
+            zoom 2.0
+            ease 2.5 zoom 1.0
+        contains:
+            MOD_IMAGES + "cg/d19_alisa_miku_song/mic.png"
+            subpixel True
+            truecenter
+            zoom 1.6
+            pos (0.6, 0.6)
+            ease 2.5 zoom 1.0 pos (0.5, 0.5)
 
     image cg2 d19_pirate_song = im.Scale(MOD_IMAGES + "cg/d19_pirate_song.jpg", config.screen_width, config.screen_height)
     image cg d19_chibi_alisa:
