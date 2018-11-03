@@ -699,7 +699,8 @@ init 2:
             "mt normal pioneer far"
             center
 
-    image bg int_mine_exit_night_torch_open = MOD_IMAGES + "bg/int_mine_exit_night_torch_open.jpg"
+    image bg int_mine_exit_night_torch_bkrr = MOD_IMAGES + "bg/int_mine_exit_night_torch.jpg"
+    image bg int_mine_exit_night_torch_open_bkrr = MOD_IMAGES + "bg/int_mine_exit_night_torch_open.jpg"
 
     image bg ext_path_day_mi_d18:
         contains:

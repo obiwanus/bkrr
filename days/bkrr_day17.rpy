@@ -4548,7 +4548,7 @@ label bkrr_day17_common:
     scene bg int_mine_room with fade2
     pause 0.5
     stop sound_loop fadeout 2
-    scene bg int_mine_exit_night_torch with fade2
+    scene bg int_mine_exit_night_torch_bkrr with fade2
     window show
 
     "Вожатая уверено вела нас по коридорам, пока над нами не показался зарешеченный проём, сквозь который было видно ночное небо.{w} Высота небольшая, метра два, но лестницы не было, только ряд скоб, вделанных в стену."
@@ -4561,7 +4561,7 @@ label bkrr_day17_common:
     window hide
     $ bkrr_set_volume("sound", 0.1)
     play sound bkrr_sfx_list["trapdoor_open"]
-    scene bg int_mine_exit_night_torch_open with Dissolve(1.0)
+    scene bg int_mine_exit_night_torch_open_bkrr with Dissolve(1.0)
     window show
 
     "Вожатая выбралась наверх и протянула руки."
