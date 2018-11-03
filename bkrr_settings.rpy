@@ -446,8 +446,6 @@ init 2:
     $ bkrr_video_list["backdrop"] = {dn:("mods/bkrr/video/backdrop_day" + str(dn) + ".webm") for dn in range(4, 20)}
     $ bkrr_video_list["backdrop"]["epilogue"] = "mods/bkrr/video/backdrop_epilogue.webm"
 
-    $ bkrr_ep_calendar = bkrr_form_files_list("mods/bkrr/images/misc/calendar/")
-
     ##    Логотип    ##
 
     # Обычный логотип

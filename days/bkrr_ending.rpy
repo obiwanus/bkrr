@@ -57,6 +57,40 @@ init:
             renpy.show("bkrr_calendar_sheet", what=LiveComposite((362, 445), (0, 0), bkrr_ui["img"]["day_no"], (0.2, 0.28), Text(day, style="bkrr_service2", kerning=2.5, size=72, color="#000" if weekday.weekday() < 5 else "#A00"), (0.47, 0.32), Text(year, style="bkrr_service2", kerning=3.0, size=28, color="#000"), (0.47, 0.42), Text(months[int(month[1])-1 if month.startswith("0") else int(month)-1], style="bkrr_service2", bold=False, kerning=1.2, size=24, color="#000"), (0.22, 0.62), Text(days[weekday.weekday()], style="bkrr_service2", bold=False, kerning=1.25, size=28, color="#000" if weekday.weekday() < 5 else "#A00")), tag=tag, at_list=[truecenter])
             renpy.with_statement(dspr)
 
+    # Календарь
+    image bkrr_calendar = MOD_IMAGES + "misc/calendar/calendar.png"
+    image bkrr_calendar_dec1 = MOD_IMAGES + "misc/calendar/december_1.png"
+    image bkrr_calendar_dec5 = MOD_IMAGES + "misc/calendar/december_5.png"
+    image bkrr_calendar_dec8 = MOD_IMAGES + "misc/calendar/december_8.png"
+    image bkrr_calendar_jan = MOD_IMAGES + "misc/calendar/january_12.png"
+    image bkrr_calendar_feb = MOD_IMAGES + "misc/calendar/february_24.png"
+    image bkrr_calendar_mar = MOD_IMAGES + "misc/calendar/march_3.png"
+    image bkrr_calendar_apr = MOD_IMAGES + "misc/calendar/april_13.png"
+    image bkrr_calendar_may = MOD_IMAGES + "misc/calendar/may_30.png"
+    image bkrr_calendar_jun = MOD_IMAGES + "misc/calendar/june_28.png"
+    image bkrr_calendar_jul = MOD_IMAGES + "misc/calendar/july_18.png"
+    image bkrr_calendar_aug = MOD_IMAGES + "misc/calendar/august_7.png"
+    image bkrr_calendar_sep = MOD_IMAGES + "misc/calendar/september_4.png"
+    image bkrr_calendar_oct = MOD_IMAGES + "misc/calendar/october_31.png"
+    image bkrr_calendar_nov = MOD_IMAGES + "misc/calendar/november_21.png"
+
+    transform cal_sheet_right:
+        truecenter
+        parallel:
+            ease 2.5 xpos 1.3 rotate -90
+        parallel:
+            linear 1.5 ypos 1.2
+        parallel:
+            ease 1.0 alpha 0.0
+    transform cal_sheet_left:
+        truecenter
+        parallel:
+            ease 2.5 xpos -0.3 rotate 90
+        parallel:
+            linear 1.5 ypos 1.2
+        parallel:
+            ease 1.0 alpha 0.0
+
 
 label bkrr_ep_sheets:
     python:
@@ -417,8 +451,6 @@ label bkrr_epilogue_common:
     me "Я думал, вы знаете всё и про всех."
     mt "Упаси боже. Но во сне ты не исчез, и остальные могут тебя видеть. Значит, ещё ничего не кончилось. Так что вот тебе подъёмные."
     "Она протянула мне фиолетовую бумажку с профилем Ленина."
-
-    #TODO + ПРЕДМЕТ
 
     show mt normal panama pioneer at center with dspr
 
@@ -1794,7 +1826,7 @@ label bkrr_epilogue_common:
 
     window hide
 
-    $ renpy.pause(5.0, hard=True)
+    $ renpy.pause(4.0, hard=True)
     $ bkrr_set_time("prologue")
     play sound bkrr_sfx_list["brake_hit"]
     $ renpy.pause(1.0, hard=True)
@@ -2013,9 +2045,97 @@ label bkrr_epilogue_common:
 
     stop sound_loop fadeout 3
 
-    scene anim prolog_1 with fade3
+    play music music_list["a_promise_from_distant_days"] fadein 7
 
-    play music music_list["a_promise_from_distant_days"] fadein 5
+    # ГОВНОКОД ВОРНИНГ
+    scene anim prolog_1 with Dissolve(2.0)
+
+    show bkrr_calendar:
+        truecenter
+    show bkrr_calendar_nov:
+        pause 7.5
+        cal_sheet_left
+    show bkrr_calendar_oct:
+        pause 7.0
+        cal_sheet_right
+    show bkrr_calendar_sep:
+        pause 6.5
+        cal_sheet_left
+    show bkrr_calendar_aug:
+        pause 6.0
+        cal_sheet_right
+    show bkrr_calendar_jul:
+        pause 5.5
+        cal_sheet_left
+    show bkrr_calendar_jun:
+        pause 5.0
+        cal_sheet_right
+    show bkrr_calendar_may:
+        pause 4.5
+        cal_sheet_left
+    show bkrr_calendar_apr:
+        pause 4.0
+        cal_sheet_right
+    show bkrr_calendar_mar:
+        pause 3.5
+        cal_sheet_left
+    show bkrr_calendar_feb:
+        pause 3.0
+        cal_sheet_right
+    show bkrr_calendar_jan:
+        pause 2.0
+        cal_sheet_left
+    show bkrr_calendar_dec8:
+        pause 1.0
+        cal_sheet_right
+    with Dissolve(1.0)
+
+    $ renpy.pause(6.5)
+
+    scene anim prolog_1
+    show bkrr_calendar:
+        truecenter
+    show bkrr_calendar_nov:
+        pause 2.8
+        cal_sheet_left
+    show bkrr_calendar_oct:
+        pause 2.6
+        cal_sheet_right
+    show bkrr_calendar_sep:
+        pause 2.4
+        cal_sheet_left
+    show bkrr_calendar_aug:
+        pause 2.2
+        cal_sheet_right
+    show bkrr_calendar_jul:
+        pause 2.0
+        cal_sheet_left
+    show bkrr_calendar_jun:
+        pause 1.75
+        cal_sheet_right
+    show bkrr_calendar_may:
+        pause 1.5
+        cal_sheet_left
+    show bkrr_calendar_apr:
+        pause 1.25
+        cal_sheet_right
+    show bkrr_calendar_mar:
+        pause 1.0
+        cal_sheet_left
+    show bkrr_calendar_feb:
+        pause 0.75
+        cal_sheet_right
+    show bkrr_calendar_jan:
+        pause 0.5
+        cal_sheet_left
+    show bkrr_calendar_dec8:
+        pause 0.25
+        cal_sheet_right
+    with dissolve
+
+    $ renpy.pause(2.5)
+
+    scene anim prolog_1 with Dissolve(2.0)
 
     $ bkrr_set_mode(nvl)
 
@@ -2043,8 +2163,6 @@ label bkrr_epilogue_common:
 
     nvl hide dissolve
 
-    stop music fadeout 5
-
     scene bg semen_room_window with fade3
 
     play ambience ambience_cold_wind_loop fadein 3
@@ -2062,6 +2180,7 @@ label bkrr_epilogue_common:
     window hide
 
     stop ambience fadeout 3
+    stop music fadeout 7
 
     scene bg semen_room_clean_bkrr with fade3
 
@@ -2187,14 +2306,13 @@ label bkrr_epilogue_common:
 
     play ambience sfx_bus_interior_moving fadein 3
     scene bg intro_xx with fade3
-    stop ambience fadeout 2
+    stop ambience fadeout 3
     $ renpy.pause(1.0, hard=True)
-    play ambience ambience_cold_wind_loop fadein 3
     scene bg ext_street_night
     show snow
     with fade2
-    stop ambience fadeout 2
     $ renpy.pause(1.0, hard=True)
+    play ambience ambience_catacombs_stones fadein 3
     scene bg int_school_night with fade2
 
     $ renpy.pause(1.0, hard=True)
@@ -2202,8 +2320,6 @@ label bkrr_epilogue_common:
     $ bkrr_set_mode(nvl)
 
     $ bkrr_set_time("prologue", "day")
-
-    play ambience ambience_catacombs_stones fadein 3
 
     nvl show dissolve
 
