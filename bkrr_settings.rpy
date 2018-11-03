@@ -446,6 +446,8 @@ init 2:
     $ bkrr_video_list["backdrop"] = {dn:("mods/bkrr/video/backdrop_day" + str(dn) + ".webm") for dn in range(4, 20)}
     $ bkrr_video_list["backdrop"]["epilogue"] = "mods/bkrr/video/backdrop_epilogue.webm"
 
+    $ bkrr_ep_calendar = bkrr_form_files_list("mods/bkrr/images/misc/calendar/")
+
     ##    Логотип    ##
 
     # Обычный логотип
@@ -666,6 +668,7 @@ init 2:
             (MOD_IMAGES + "misc/five_roses_aidpost.png")
 
     image bg semen_room_clean_bkrr = MOD_IMAGES + "bg/semen_room_clean.jpg"
+    image bg semen_room_half_clean_bkrr = MOD_IMAGES + "bg/semen_room_half_clean.jpg"
 
     image bg ext_infirmary_sunset:
         im.MatrixColor(im.Flip(ES_IMAGES + "bg/ext_path2_day.jpg", horizontal = True), bkrr_tint["sunset"] * im.matrix.contrast(1.25))

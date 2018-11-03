@@ -1793,22 +1793,26 @@ label bkrr_epilogue_common:
     "И дальше был только яркий свет."
 
     window hide
+
+    $ renpy.pause(5.0, hard=True)
+    $ bkrr_set_time("prologue")
+    play sound bkrr_sfx_list["brake_hit"]
+    $ renpy.pause(1.0, hard=True)
+    play sound2 bkrr_sfx_list["horn_tooting"]
+    play sound_loop bkrr_sfx_list["taxiloop"] fadein 4
+    play music music_list["lightness_radio_bus"] fadein 7
+
     scene bg ext_bus_stop_night
     show snow
-    with Dissolve(5.0)
-
-    $ bkrr_set_time("prologue")
-
-    $ bkrr_set_volume("music", 0.5)
-    play music music_list["lightness_radio_bus"] fadein 7
+    show white:
+        ease 5.0 alpha 0.0
+    with None
 
     window show
 
-    #TODO (звук автосигнала, тряска экрана, вспышка, диалог на фоне улицы, выход обозначим хлопком двери)
-
     dr "Вот же ж…"
     "Водитель добавил несколько непечатных слов."
-    dr "И как таким … только доверяют автобус вести, а? Нет, ты видел…"
+    dr "И как таким … только доверяют автобус вести, а?{w} Нет, ты видел…"
     dr "А, ну да. Проснулся? Мы приехали."
     me "Приехали? Куда приехали?"
     dr "Как это куда. В адрес. До дома-то дойдёшь?"
@@ -1818,8 +1822,8 @@ label bkrr_epilogue_common:
 
     window hide
 
-    stop music fadeout 5
-
+    play sound bkrr_sfx_list["cardoor"]
+    $ bkrr_set_volume("music", 0.3)
     with vpunch
 
     play ambience ambience_cold_wind_loop fadein 3
@@ -1836,10 +1840,14 @@ label bkrr_epilogue_common:
     "Я машинально уставился на свои руки. Маленьких твердых мозолей на пальцах больше не было.{w} Полученный в «Совёнке» загар сменился привычной бледностью, а едва заметный ожог от чайника исчез."
     "Коснувшись подбородка, я понял, что моя лёгкая небритость снова со мной…"
     th "Просто сон."
-    "Натирать лицо снегом я, конечно, не стал, просто поднялся к себе и осмотрелся."
+
+    stop music fadeout 5
+
+    "Натирать лицо снегом я, конечно, не стал, а просто побрёл к себе."
 
     window hide
 
+    stop sound_loop fadeout 1
     stop ambience fadeout 3
 
     scene bg black with Dissolve(3.0)
@@ -1849,6 +1857,8 @@ label bkrr_epilogue_common:
     $ renpy.pause(1.0, hard=True)
 
     scene bg semen_room with Dissolve(3.0)
+
+    $ bkrr_set_volume("music", 1.0, 1.0)
 
     play sound_loop sfx_street_traffic_outside fadein 5
 
@@ -1939,7 +1949,10 @@ label bkrr_epilogue_common:
 
     window show
 
-    "Когда очередной пакет с какими-то бутылками и древним дисковым телефоном загрохотал вниз по трубе, под ноги мне с писком метнулось что-то большое и чёрное."
+    "Когда очередной пакет с какими-то бутылками и старым хламом загрохотал вниз по трубе, под ноги мне с писком метнулось что-то большое и чёрное."
+
+    play sound bkrr_sfx_list["kitten"] fadein 1
+
     th "Крыса? Ну а что, место подходящее. Надо же, какая здоровая."
     "Но «крыса» сидела под ногами и не делала попыток скрыться, только тихо пищала."
     "Я присмотрелся."
@@ -1980,7 +1993,7 @@ label bkrr_epilogue_common:
 
     stop ambience fadeout 2
 
-    scene bg semen_room with fade2
+    scene bg semen_room_half_clean_bkrr with fade2
 
     play sound sfx_close_door_1
 
@@ -2032,9 +2045,7 @@ label bkrr_epilogue_common:
 
     stop music fadeout 5
 
-    scene bg ext_bus_stop_night
-    show snow
-    with fade3
+    scene bg semen_room_window with fade3
 
     play ambience ambience_cold_wind_loop fadein 3
 
