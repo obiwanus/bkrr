@@ -3326,7 +3326,7 @@ label bkrr_day18_common:
     "Я ускорил шаг. Очень хотелось скорее вернуться к Мику."
 
     window hide
-    scene bg ext_musclub_day with fade2
+    scene bg ext_music_club_day_bkrr with fade2
     window show
 
     "На дорожке, ведущей к клубу я увидел Лену. На ней была перепачканная красками футболка, а в руках – коробка, от которой остро пахло растворителем и лаком."
@@ -4680,7 +4680,7 @@ label bkrr_day18_common:
     me "Успокоила, нечего сказать."
 
     window hide
-    scene bg ext_music_club_day with fade2
+    scene bg ext_music_club_day_bkrr with fade2
     window show
 
     "Девчонки встретили нас на веранде клуба. Подготовка к концерту шла полным ходом.{w} Проявлялась она в поедании маленьких бубликов-сушек. Может, сил набираются?"

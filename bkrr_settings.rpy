@@ -528,6 +528,18 @@ init 2:
     image bg ext_music_club_verandah_night_v1 = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_night.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_night_posters.png", im.Alpha(MOD_IMAGES + "misc/ext_music_club_verandah_text1.png", 0.3), im.Alpha(MOD_IMAGES + "misc/ext_music_club_verandah_text2.png", 0.3)) # версия с плакатами, первой и второй надписями, используется в 9 дне, ночной вариант веранды v4
     image bg ext_music_club_verandah_night_v2 = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_night.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_night_posters.png", im.Alpha(MOD_IMAGES + "misc/ext_music_club_verandah_text1.png", 0.3), im.Alpha(MOD_IMAGES + "misc/ext_music_club_verandah_text2.png", 0.3), im.Alpha(MOD_IMAGES + "misc/ext_music_club_verandah_text3.png", 0.3), im.Alpha(MOD_IMAGES + "misc/ext_music_club_verandah_text4.png", 0.3)) # версия с плакатами, 1-4 надписями, используется в 12 дне, ночной вариант веранды v6
 
+    # Дальний клуб с объявлениями и без
+    image bg ext_music_club_day_bkrr:
+        contains:
+            "bg ext_musclub_day"
+        contains:
+            MOD_IMAGES + "misc/ext_music_club_day_with_notes.png"
+    image bg ext_music_club_day_empty_bkrr:
+        contains:
+            "bg ext_musclub_day"
+        contains:
+            MOD_IMAGES + "misc/ext_music_club_day_no_notes.png"
+
     image bg int_music_club_mattresses_day = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_day.jpg", MOD_IMAGES + "misc/int_music_club_clock_day.png")
     image bg int_music_club_mattresses_sunset = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_sunset.jpg", MOD_IMAGES + "misc/int_music_club_clock_sunset.png")
     image bg int_music_club_mattresses_night = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_night.jpg", MOD_IMAGES + "misc/int_music_club_clock_night.png")
@@ -590,7 +602,6 @@ init 2:
 
     image bg int_music_club_day = bkrr_fast_composite(ES_IMAGES + "bg/int_musclub_day.jpg", MOD_IMAGES + "misc/int_music_club_clock_day.png") # переобъявлен для удобства
 
-    image bg ext_music_club_day = ES_IMAGES + "bg/ext_musclub_day.jpg" # переобъявлен для удобства
     image bg ext_music_club_sunset_bkrr = MOD_IMAGES + "bg/ext_music_club_sunset.png"
     image bg ext_music_club_night_bkrr = im.Scale(MOD_IMAGES + "bg/ext_music_club_night.png", config.screen_width, config.screen_height)
 

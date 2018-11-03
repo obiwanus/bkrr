@@ -941,7 +941,7 @@ label bkrr_day4_common:
 
     stop ambience fadeout 3
 
-    scene bg ext_music_club_day with fade3
+    scene bg ext_music_club_day_empty_bkrr with fade3
 
     play ambience ambience_camp_center_day fadein 3
 
@@ -1106,7 +1106,7 @@ label bkrr_day4_common:
 
     stop music fadeout 3
 
-    scene bg ext_music_club_day with dissolve
+    scene bg ext_music_club_day_empty_bkrr with dissolve
 
     window show
 
@@ -1334,7 +1334,7 @@ label bkrr_day4_common:
 
     stop music fadeout 3
 
-    scene bg ext_music_club_day with fade
+    scene bg ext_music_club_day_empty_bkrr with fade
 
     window show
 

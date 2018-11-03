@@ -139,7 +139,7 @@ label bkrr_day13_common:
 
     stop ambience fadeout 3
 
-    scene bg ext_music_club_day with fade3
+    scene bg ext_music_club_day_bkrr with fade3
 
     play ambience ambience_camp_center_day fadein 3
 

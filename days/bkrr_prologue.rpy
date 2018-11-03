@@ -154,7 +154,7 @@ label bkrr_prologue:
     hide us
     with dissolve
 
-    scene expression bkrr_make_sepia_img("bg ext_music_club_day") with bkrr_blindstoleft_transition
+    scene expression bkrr_make_sepia_img("bg ext_music_club_day_bkrr") with bkrr_blindstoleft_transition
 
     window show
 
@@ -173,7 +173,7 @@ label bkrr_prologue:
 
     stop ambience fadeout 5
 
-    scene bg ext_music_club_day with Dissolve(5.0)
+    scene bg ext_music_club_day_bkrr with Dissolve(5.0)
 
     # $ bkrr_get_achievement("start")
     # ачивка для первого эпизода (если очень хочешь собрать все ачивки – раскомментируй строку выше)

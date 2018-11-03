@@ -635,7 +635,7 @@ label bkrr_addon_catday:
 
     window hide
 
-    scene bg ext_music_club_day with dissolve
+    scene bg ext_music_club_day_bkrr with dissolve
 
     window show
 
@@ -790,7 +790,7 @@ label bkrr_addon_catday:
 
     stop music fadeout 5
 
-    scene bg ext_music_club_day with dissolve
+    scene bg ext_music_club_day_bkrr with dissolve
 
     window show
 
@@ -2118,7 +2118,7 @@ label bkrr_addon_catday:
 
     stop ambience fadeout 3
 
-    scene bg ext_music_club_day at bkrr_moving_forward_far(5.0, 1.5) with fade3
+    scene bg ext_music_club_day_bkrr at bkrr_moving_forward_far(5.0, 1.5) with fade3
 
     play ambience ambience_camp_center_day fadein 3
 

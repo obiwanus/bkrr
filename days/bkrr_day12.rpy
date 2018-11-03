@@ -1933,7 +1933,7 @@ label bkrr_day12_common:
 
     stop ambience fadeout 3
 
-    scene bg ext_music_club_day with fade3
+    scene bg ext_music_club_day_bkrr with fade3
 
     play ambience ambience_camp_center_day fadein 3
 
@@ -1945,7 +1945,7 @@ label bkrr_day12_common:
 
     window hide
 
-    scene bg ext_music_club_day at bkrr_moving_forward_far(3.0, 1.5)
+    scene bg ext_music_club_day_bkrr at bkrr_moving_forward_far(3.0, 1.5)
 
     $ renpy.pause(2.5, hard=True)
 

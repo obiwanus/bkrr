@@ -2411,7 +2411,7 @@ label bkrr_day17_common:
 
     stop ambience fadeout 2
     window hide
-    scene bg ext_musclub_day with fade2
+    scene bg ext_music_club_day_bkrr with fade2
     play ambience ambience_camp_center_day fadein 2
     stop music fadeout 10
     window show

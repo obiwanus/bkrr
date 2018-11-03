@@ -578,7 +578,7 @@ label bkrr_day7_common:
 
     window hide
 
-    scene bg ext_music_club_day with dissolve
+    scene bg ext_music_club_day_bkrr with dissolve
 
     window show
 

@@ -2117,7 +2117,7 @@ label bkrr_day16_common:
 
     play sound sfx_open_door_2
 
-    scene bg ext_music_club_day with dissolve
+    scene bg ext_music_club_day_bkrr with dissolve
 
     $ bkrr_set_volume('ambience', 0.4, 15.0)
 

@@ -15,7 +15,7 @@ label bkrr:
 
     $ bkrr_new_chapter("Меню")
 
-    scene bg ext_music_club_day:
+    scene bg ext_music_club_day_bkrr:
         subpixel True
         truecenter
         zoom 1.2

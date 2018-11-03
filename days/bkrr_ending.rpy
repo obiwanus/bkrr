@@ -1025,7 +1025,7 @@ label bkrr_epilogue_common:
 
     window hide
 
-    scene bg ext_music_club_day:
+    scene bg ext_music_club_day_empty_bkrr:
         subpixel True
         truecenter
         zoom 1.25
