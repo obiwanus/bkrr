@@ -1652,6 +1652,22 @@ init 1:
         parallel:
             ease 0.25 zoom 1.0
 
+    transform bkrr_bus_shaking:
+        subpixel True
+        truecenter
+        zoom 1.03
+        parallel:
+            linear 0.2 xoffset -2
+            linear 0.3 xoffset 3
+            linear 0.2 xoffset -1
+            linear 0.3 xoffset 2
+            repeat
+        parallel:
+            linear 0.2 yoffset -1
+            linear 0.25 yoffset 2
+            linear 0.2 yoffset -1
+            repeat
+
     transform bkrr_shiver_atl:
         truecenter
         ease 0.25 zoom 1.1

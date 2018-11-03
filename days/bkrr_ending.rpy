@@ -57,21 +57,6 @@ init:
             renpy.show("bkrr_calendar_sheet", what=LiveComposite((362, 445), (0, 0), bkrr_ui["img"]["day_no"], (0.2, 0.28), Text(day, style="bkrr_service2", kerning=2.5, size=72, color="#000" if weekday.weekday() < 5 else "#A00"), (0.47, 0.32), Text(year, style="bkrr_service2", kerning=3.0, size=28, color="#000"), (0.47, 0.42), Text(months[int(month[1])-1 if month.startswith("0") else int(month)-1], style="bkrr_service2", bold=False, kerning=1.2, size=24, color="#000"), (0.22, 0.62), Text(days[weekday.weekday()], style="bkrr_service2", bold=False, kerning=1.25, size=28, color="#000" if weekday.weekday() < 5 else "#A00")), tag=tag, at_list=[truecenter])
             renpy.with_statement(dspr)
 
-    transform epilogue_bus_atl:
-        subpixel True
-        truecenter
-        zoom 1.03
-        parallel:
-            linear 0.2 xoffset -2
-            linear 0.3 xoffset 3
-            linear 0.2 xoffset -1
-            linear 0.3 xoffset 2
-            repeat
-        parallel:
-            linear 0.2 yoffset -1
-            linear 0.25 yoffset 2
-            linear 0.2 yoffset -1
-            repeat
 
 label bkrr_ep_sheets:
     python:
@@ -1331,7 +1316,7 @@ label bkrr_epilogue_common:
 
     $ renpy.pause(1.0, hard=True)
 
-    scene bg int_bus_people_day at epilogue_bus_atl with dissolve
+    scene bg int_bus_people_day at bkrr_bus_shaking with dissolve
 
     $ bkrr_set_mode(nvl)
 
@@ -1356,7 +1341,7 @@ label bkrr_epilogue_common:
 
     me "Не выспалась?"
 
-    scene cg bkrr_epilogue_2 at epilogue_bus_atl with dissolve
+    scene cg bkrr_epilogue_2 at bkrr_bus_shaking with dissolve
 
     "Она сладко зевнула."
     mi "Да… В смысле, нет. Не выспалась. И кто в этом виноват, ты не знаешь?"
@@ -1373,12 +1358,12 @@ label bkrr_epilogue_common:
 
     stop music fadeout 5
 
-    scene cg bkrr_epilogue_3 at epilogue_bus_atl with dissolve
+    scene cg bkrr_epilogue_3 at bkrr_bus_shaking with dissolve
 
     "Мику показала мне язык, положила голову мне на плечо и закрыла глаза."
     "Обсуждать с рыжими прошедший концерт мне совсем не хотелось, так что я устроился поудобнее и рассматривал то проносившиеся за окном поля, то посапывающую на моём плече любимую."
 
-    scene cg bkrr_epilogue_4 at epilogue_bus_atl with dissolve
+    scene cg bkrr_epilogue_4 at bkrr_bus_shaking with dissolve
 
     "Какая же она милая, когда спит. Многие девчонки жаловались на сухость кожи и нежеланный загар, но лицо Мику словно светилось изнутри."
     th "Как красиво падает свет…"
@@ -1392,7 +1377,7 @@ label bkrr_epilogue_common:
     "А сегодня сказка заканчивается. Нужно будет что-то есть, где-то жить… {w}Интересно, есть ли КГБ в этом прошлом?"
     "Когда Мику проснётся, мне нужно будет с ней очень серьёзно поговорить."
 
-    scene bg int_bus_people_day at epilogue_bus_atl with dissolve
+    scene bg int_bus_people_day at bkrr_bus_shaking with dissolve
 
     "В любом случае придётся рассказать, кто я, откуда взялся… {w}И что без её помощи мне ни за что не справиться."
     th "Вот только как начать? Что-то вроде «Мику, милая, любишь ли ты фантастику?»"
@@ -1411,7 +1396,7 @@ label bkrr_epilogue_common:
 
     window hide
 
-    scene cg bkrr_epilogue_4 at epilogue_bus_atl with Dissolve(3.0)
+    scene cg bkrr_epilogue_4 at bkrr_bus_shaking with Dissolve(3.0)
 
     window show
 
@@ -1419,7 +1404,7 @@ label bkrr_epilogue_common:
 
     window hide
 
-    scene cg bkrr_epilogue_5 at epilogue_bus_atl with Dissolve(1.0)
+    scene cg bkrr_epilogue_5 at bkrr_bus_shaking with Dissolve(1.0)
 
     play music music_list["orchid"] fadein 5
 
@@ -1438,32 +1423,32 @@ label bkrr_epilogue_common:
 
     window hide
 
-    scene bg int_bus_people_day at epilogue_bus_atl with dissolve
+    scene bg int_bus_people_day at bkrr_bus_shaking with dissolve
 
     window show
 
     "Мику услышала меня, улыбаясь, открыла глаза, посмотрела на меня, шевельнула губами, но я не услышал ни звука."
 
-    scene cg bkrr_epilogue_6 at epilogue_bus_atl with dissolve
+    scene cg bkrr_epilogue_6 at bkrr_bus_shaking with dissolve
 
     "Ещё несколько секунд – и она исчезла совсем."
     "Без следа. Только сорванный по пути к автобусу цветок мягко упал на сиденье."
     "Я вцепился в него, как в последнюю ниточку, которая связывала меня с реальностью."
 
-    scene cg bkrr_epilogue_8 at epilogue_bus_atl with dissolve
+    scene cg bkrr_epilogue_8 at bkrr_bus_shaking with dissolve
 
     me "{b}Мику!!!{/b}"
     "Кажется, я кричал."
     "И никто не отреагировал на мой вопль. Даже не обернулся. Словно так и должно быть: пионер с диким взглядом орёт на весь автобус."
     "Только Алиса на соседнем сиденье повернулась ко мне и лениво поинтересовалась:"
 
-    scene cg bkrr_epilogue_7 at epilogue_bus_atl with dissolve
+    scene cg bkrr_epilogue_7 at bkrr_bus_shaking with dissolve
 
     dv "Сенька, ну чего шумишь?"
 
     window hide
 
-    scene bg int_bus_people_day at epilogue_bus_atl
+    scene bg int_bus_people_day at bkrr_bus_shaking
     show dv normal bkrr_sport close at cright
     with dissolve
 
@@ -1506,7 +1491,7 @@ label bkrr_epilogue_common:
 
     $ renpy.pause(1.0, hard=True)
 
-    scene bg int_bus_people_day at epilogue_bus_atl with dissolve
+    scene bg int_bus_people_day at bkrr_bus_shaking with dissolve
 
     play music music_list["no_tresspassing"]
 
@@ -1525,7 +1510,7 @@ label bkrr_epilogue_common:
 
     $ renpy.pause(1.0, hard=True)
 
-    scene cg bkrr_epilogue_7 at epilogue_bus_atl with dissolve
+    scene cg bkrr_epilogue_7 at bkrr_bus_shaking with dissolve
 
     $ bkrr_set_mode()
 
@@ -1538,7 +1523,7 @@ label bkrr_epilogue_common:
     th "И Алиса с Ульяной. Почему они не замечают, что Мику нет? Это то самое «выборочное восприятие», как с двойником?"
     th "Или на самом деле это и не люди совсем, а кто-то с виду похожий на моих подруг. Фантомы? Декорация? Может, и не было никакой Алисы и Ульяны?"
 
-    scene cg bkrr_epilogue_8 at epilogue_bus_atl with dissolve
+    scene cg bkrr_epilogue_8 at bkrr_bus_shaking with dissolve
 
     th "Нет, хватит. Так можно и с катушек съехать."
     "Мы ведь вместе зашли в автобус."
@@ -1564,7 +1549,7 @@ label bkrr_epilogue_common:
     dv "Так и есть. Укачало. Ты воду не пей, а то стошнит. {w}На, мятные леденцы хорошо помогают."
     "Она протянула мне конфету и добродушно улыбнулась."
 
-    scene bg int_bus_people_day at epilogue_bus_atl with dissolve
+    scene bg int_bus_people_day at bkrr_bus_shaking with dissolve
 
     "Если это была не «моя» Алиса, то она чертовски хорошо ей притворялась."
     "Я послушно развернул леденец, взял его в рот и прикрыл глаза, пытаясь взять себя в руки."
@@ -1633,7 +1618,7 @@ label bkrr_epilogue_common:
 
     window hide
 
-    scene cg bkrr_epilogue_7 at epilogue_bus_atl with dissolve
+    scene cg bkrr_epilogue_7 at bkrr_bus_shaking with dissolve
 
     window show
 
@@ -1676,7 +1661,7 @@ label bkrr_epilogue_common:
     stop ambience fadeout 0.5
     play sound2 bkrr_sfx_list["whiteout1"]
 
-    scene bg int_bus_night at epilogue_bus_atl
+    scene bg int_bus_night at bkrr_bus_shaking
     show black
     with bkrr_fade(0.2)
 

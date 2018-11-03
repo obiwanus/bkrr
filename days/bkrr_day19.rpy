@@ -5157,7 +5157,7 @@ label bkrr_day19_common:
     uv "Слишком поздно.{w} Мы уже в пути."
 
     window hide
-    scene cg d19_miku_bus_2 with Dissolve(1.5)
+    scene cg d19_miku_bus_2 at bkrr_bus_shaking with Dissolve(1.5)
     window show
 
     $ bkrr_set_volume("sound_loop", 0.4, 3.0)
@@ -5165,14 +5165,15 @@ label bkrr_day19_common:
     "Автобус набирал ход.{w} Мику еще несколько секунд бежала следом, затем споткнулась, упала и осталась позади."
 
     window hide
-    scene cg d19_miku_bus_3 with Dissolve(1.5)
+    scene cg d19_miku_bus_3 at bkrr_bus_shaking with Dissolve(1.5)
     window show
 
     "Я уткнулся лбом в холодное стекло и смотрел, как она удаляется, пока её фигурка не скрылась за деревьями."
     me "{i}Пожалуйста…{/i}"
 
     window hide
-    scene expression bkrr_appdouble_atl("cg d19_miku_bus_3", 1.05, 0.3, 0.5)
+    scene expression bkrr_appdouble_atl("cg d19_miku_bus_3", 1.05, 0.3, 0.5):
+        bkrr_bus_shaking
     $ renpy.pause(1.0, hard=True)
     window show
 
@@ -5193,14 +5194,14 @@ label bkrr_day19_common:
     me "Уверен…"
 
     window hide
-    scene expression bkrr_appdouble_atl("bg int_liaz_night", 1.05, 0.0, 0.0) with fade3
+    scene expression bkrr_appdouble_atl("bg int_liaz_night", 1.05, 0.0, 0.0) at bkrr_bus_shaking with fade3
     window show
 
     "Я не заметил тот момент, когда лес вокруг автобуса сменился на проселочную дорогу. Это просто произошло."
     "Время шло, в салоне было очень темно, за окнами царила ночь, только тепло светились желтые глаза с вертикальными зрачками.{w} Юля сидела рядом, на этот раз она смотрела со смесью жалости и нежности."
 
     window hide
-    scene bg int_liaz_night:
+    scene bg int_liaz_night at bkrr_bus_shaking:
         zoom 1.05
     show uv smile close
     with Dissolve(2.0)
@@ -5221,7 +5222,7 @@ label bkrr_day19_common:
     uv "Вот и не спрашивай."
 
     window hide
-    scene cg d19_bus_escape with fade2
+    scene cg d19_bus_escape at bkrr_bus_shaking with fade2
     window show
 
     "Юля заботливо поправила мне плед и ушла в темноту."
@@ -5229,6 +5230,7 @@ label bkrr_day19_common:
 
     window hide
     stop sound_loop fadeout 2
+    scene cg d19_bus_escape with Dissolve(3.0)
     stop music fadeout 8
     $ renpy.pause(8.0, hard=True)
     $ bkrr_set_volume("sound", 1.0)
@@ -5236,6 +5238,7 @@ label bkrr_day19_common:
     show screen bkrr_disable_keys()
     $ renpy.movie_cutscene(bkrr_video_list["black_credits"], delay = 72.0)
     scene white
+    $ renpy.pause(3.0, hard=True)
     play sound bkrr_sfx_list["inhale"]
     play sound_loop bkrr_sfx_list["ear_buzz"] fadein 5
     hide screen bkrr_disable_keys
