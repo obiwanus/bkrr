@@ -183,10 +183,14 @@ label bkrr_epilogue_common:
     with vpunch
     mt "Эй, вставай!"
 
+    window hide
     scene bg int_house_of_mt_sunset
     show mt surprise nightdress at center
     show unblink
     with None
+    play music music_list["tried_to_bring_it_back"] fadein 10
+    $ renpy.pause(1.0, hard=True)
+    window show
 
     me "Оля… В смысле, Ольга Дмитриевна. Доброе утро…"
     "Я потряс головой и огляделся."
@@ -218,7 +222,6 @@ label bkrr_epilogue_common:
 
     "Маска строгой вожатой слетела, когда Ольга бросила полотенце мне на голову и похлопала по макушке."
 
-    play music music_list["tried_to_bring_it_back"] fadein 10
 
     mt "Конечно не будешь. Не успеешь! Ещё несколько часов, и я расцелую автобус на котором вы уедете."
     mt "Такой хлопотной смены у меня не было с…{w} хм. Вообще не было. Ни разу!"
@@ -733,7 +736,7 @@ label bkrr_epilogue_common:
 
     stop ambience fadeout 3
 
-    scene bg ext_music_club_verandah_day_v9_ajar:
+    scene bg ext_music_club_verandah_day_v1_ajar:
         subpixel True
         truecenter
         zoom 1.25
@@ -754,7 +757,7 @@ label bkrr_epilogue_common:
     window hide
     $ renpy.pause(1.0, hard=True)
     play sound sfx_close_door_1
-    scene bg ext_music_club_verandah_day_v9 with dissolve
+    scene bg ext_music_club_verandah_day_v1 with dissolve
     window show
 
     "Мы вышли из клуба, я аккуратно закрыл дверь и отошёл в сторону."
@@ -878,7 +881,7 @@ label bkrr_epilogue_common:
 
     mi "Поверить не могу… Но когда приедем, я посмотрю, как их на музыку положить. {w}Обещаю."
 
-    show dv angry bkrr_sport at cleft with dspr
+    show dv sad bkrr_sport at cleft with dspr
 
     dv "Только если кто засмеётся – я ему нос сломаю. {w}Понятно?"
     "Алиса смотрела на меня."
@@ -980,14 +983,14 @@ label bkrr_epilogue_common:
 
     play sound sfx_open_door_2
 
-    scene bg ext_music_club_verandah_day_v9_ajar with dissolve
+    scene bg ext_music_club_verandah_day_v1_ajar with dissolve
 
     play ambience ambience_camp_center_day fadein 3
 
     $ renpy.pause(0.5, hard=True)
 
     play sound sfx_close_door_1
-    scene bg ext_music_club_verandah_day_v9 with dissolve
+    scene bg ext_music_club_verandah_day_v1 with dissolve
 
     $ renpy.pause(1.0, hard=True)
 
@@ -2063,9 +2066,7 @@ label bkrr_epilogue_common:
     window hide
 
     stop ambience fadeout 3
-
-    jump bkrr_ep_sheets
-label back:
+:
     scene bg semen_room_clean_bkrr with fade3
 
     play sound_loop sfx_street_traffic_outside fadein 5
