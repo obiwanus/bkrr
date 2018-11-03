@@ -120,7 +120,7 @@ init python:
 
     # Графические элементы меню
 
-    bkrr_ui["img"] = {img:(MOD_IMAGES + "ui/menu/" + img + ".png") for img in ("achievements", "back", "base", "catday", "credits", "epilogue", "gallery", "main_menu", "plate", "prologue", "shadow", "steam", "tree_shadow", "vbar_full", "vbar_null", "vk")}
+    bkrr_ui["img"] = {img:(MOD_IMAGES + "ui/menu/" + img + ".png") for img in ("achievements", "back", "base", "catday", "credits", "epilogue", "gallery", "main_menu", "plate", "prologue", "shadow", "steam", "tree_shadow", "vbar_full", "vbar_null", "vk", "day_no")}
 
     for dn in range(4, 20):
         bkrr_ui["img"]["day"+str(dn)] = (MOD_IMAGES + "ui/menu/day" + str(dn) + ".png", random.randint(-15, 15))

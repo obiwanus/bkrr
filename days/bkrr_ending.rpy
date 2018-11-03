@@ -1696,13 +1696,14 @@ label bkrr_epilogue_common:
     show unblink
     with None
 
-    play music music_list["sunny_day"] fadein 10
     play sound_loop sfx_bus_interior_moving fadein 5
     stop sound_loop2 fadeout 5
 
     $ renpy.pause(2.5, hard=True)
 
     window show
+
+    play music music_list["sunny_day"] fadein 10
 
     "Шумная компания пионеров исчезла, исчезли и их сумки."
     "Салон был пуст. Ни людей, ни вещей…"
@@ -2063,10 +2064,9 @@ label bkrr_epilogue_common:
 
     stop ambience fadeout 3
 
+    jump bkrr_ep_sheets
+label back:
     scene bg semen_room_clean_bkrr with fade3
-
-    # jump bkrr_ep_sheets
-# label back:
 
     play sound_loop sfx_street_traffic_outside fadein 5
 
