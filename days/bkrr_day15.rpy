@@ -269,7 +269,7 @@ label bkrr_day15_common:
     scene black
 
     play ambience bkrr_ambience_list["indoors_day"] fadein 3
-    
+
     window show
 
     "Сидеть взаперти – скука смертная. Но зато можно наплевать на побудку и спать, сколько влезет."
@@ -357,7 +357,7 @@ label bkrr_day15_common:
 
     "Разумеется, это была Ульяна."
     "Она притащила с собой толстенную книгу. {w}Нет. Не книгу, а фотоальбом."
-    
+
     us "Я же обещала тебе показать фотки! А потом забыла."
 
     show us smile sport at cright with dspr
@@ -1759,7 +1759,7 @@ label bkrr_day15_common:
     us "В библиотеку, Семёныч! А потом – к Саше."
     me "Кстати… Я так понял, что вы вчера обо всём поговорили…"
     us "Вроде того."
-    me "Он был без ума от твоего платья? " 
+    me "Он был без ума от твоего платья? "
     us "Не то слово!"
     me "И как прошло признание? Уроки не прошли даром?"
 
@@ -2692,5 +2692,7 @@ label bkrr_day15_common:
     window hide
 
     $ persistent.bkrr_check[16] = True
+
+    $ renpy.movie_cutscene(bkrr_video_list["ep3end"])
 
     jump bkrr_day16_start

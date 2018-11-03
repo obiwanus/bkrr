@@ -3477,4 +3477,9 @@ label bkrr_day7_common:
 
     $ persistent.bkrr_check[8] = True
 
+    stop ambience fadeout 2
+    $ renpy.pause(2.0, hard=True)
+
+    $ renpy.movie_cutscene(bkrr_video_list["ep1end"])
+
     jump bkrr_day8_start

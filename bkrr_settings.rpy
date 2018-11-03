@@ -438,6 +438,9 @@ init 2:
         "intro":"mods/bkrr/video/intro.webm",
         "credits":"mods/bkrr/video/credits.webm",
         "black_credits":"mods/bkrr/video/black_credits.webm",
+        "ep1end":"mods/bkrr/video/ep1end.webm",
+        "ep2end":"mods/bkrr/video/ep2end.webm",
+        "ep3end":"mods/bkrr/video/ep3end.webm",
     }
 
     $ bkrr_video_list["backdrop"] = {dn:("mods/bkrr/video/backdrop_day" + str(dn) + ".webm") for dn in range(4, 20)}
