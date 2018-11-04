@@ -2047,7 +2047,7 @@ label bkrr_epilogue_common:
 
     play music music_list["a_promise_from_distant_days"] fadein 7
 
-    # ГОВНОКОД ВОРНИНГ
+    # GOVNOKOD ALERT
     scene anim prolog_1 with Dissolve(2.0)
 
     show bkrr_calendar:
@@ -2088,9 +2088,9 @@ label bkrr_epilogue_common:
     show bkrr_calendar_dec8:
         pause 1.0
         cal_sheet_right
-    with Dissolve(1.0)
+    with Dissolve(2.0)
 
-    $ renpy.pause(6.5)
+    $ renpy.pause(6.0)
 
     scene anim prolog_1
     show bkrr_calendar:
@@ -2128,12 +2128,52 @@ label bkrr_epilogue_common:
     show bkrr_calendar_jan:
         pause 0.5
         cal_sheet_left
+    with dissolve
+
+    $ renpy.pause(2.0)
+
+    scene anim prolog_1
+    show bkrr_calendar:
+        truecenter
+    show bkrr_calendar_nov:
+        pause 1.8
+        cal_sheet_left
+    show bkrr_calendar_oct:
+        pause 1.65
+        cal_sheet_right
+    show bkrr_calendar_sep:
+        pause 1.5
+        cal_sheet_left
+    show bkrr_calendar_aug:
+        pause 1.35
+        cal_sheet_right
+    show bkrr_calendar_jul:
+        pause 1.2
+        cal_sheet_left
+    show bkrr_calendar_jun:
+        pause 1.05
+        cal_sheet_right
+    show bkrr_calendar_may:
+        pause 0.9
+        cal_sheet_left
+    show bkrr_calendar_apr:
+        pause 0.75
+        cal_sheet_right
+    show bkrr_calendar_mar:
+        pause 0.6
+        cal_sheet_left
+    show bkrr_calendar_feb:
+        pause 0.45
+        cal_sheet_right
+    show bkrr_calendar_jan:
+        pause 0.3
+        cal_sheet_left
     show bkrr_calendar_dec8:
-        pause 0.25
+        pause 0.15
         cal_sheet_right
     with dissolve
 
-    $ renpy.pause(2.5)
+    $ renpy.pause(1.5)
 
     scene anim prolog_1 with Dissolve(2.0)
 
