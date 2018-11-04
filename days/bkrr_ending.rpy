@@ -601,7 +601,6 @@ label bkrr_epilogue_common:
     "Сколько всего случилось…"
 
     window hide
-    play sound bkrr_sfx_list["whiteout1"] fadein 1
     python:
 
         for cg in ["cg d6_sem_guitar", "cg d6_on_floor", "cg d12_noon_rest_1", "cg d7_mi_embrace"]:
@@ -2730,6 +2729,7 @@ label bkrr_credits:
     $ bkrr_set_volume("sound_loop2", 1.0)
 
     show cg final_image:
+        subpixel True
         yalign 1.0
         ease 7.0 yalign 0.2 xalign 0.5 zoom 0.6
     with fade3
