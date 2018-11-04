@@ -5290,10 +5290,10 @@ label bkrr_day19_common:
     play music [ bkrr_music_list["rb_06"], bkrr_music_list["rb_12"] ]
     play sound [ bkrr_sfx_list["silence05"], sfx_concert_applause ] fadein 15
     stop ambience fadeout 5
-    show white as white2:
+    show orange:
         alpha 0.0
-        pause 0.2
-        linear 0.3 alpha 0.9
+        pause 0.4
+        linear 0.1 alpha 0.8
     with None
     scene bg ext_stage_concert
     # show white:
@@ -5852,7 +5852,7 @@ label bkrr_day19_common:
     "Алиса посмотрела на нас и кивнула, подавая знак, что пора начинать."
 
     window hide
-    play music [ bkrr_music_list["rb_14"], bkrr_music_list["rb_07"] ]
+    play music [ bkrr_music_list["rb_14"] ]
     play sound2 [ bkrr_sfx_list['silence14'], bkrr_sfx_list["applause3"] ]
     play sound [ bkrr_sfx_list["silence1"], sfx_concert_applause ]
     $ renpy.pause(0.5, hard=True)
@@ -5943,7 +5943,7 @@ label bkrr_day19_common:
 
     window hide
     $ renpy.pause(1.0, hard=True)
-    # stop music fadeout 7
+    stop music fadeout 7
     play sound sfx_concert_applause fadein 1
     window show
 
@@ -5952,10 +5952,12 @@ label bkrr_day19_common:
 
     window hide
     scene cg d19_pirates_on_stage with dissolve
-    $ bkrr_set_mode(nvl)
-    nvl show dissolve
+    window show
 
     "Ольга сделала страшное лицо и жестами призывала нас заканчивать, но не ради одной этой песни все затевалось."
+
+    play music bkrr_music_list["rb_07"]
+
     "Алиса снова ударила по струнам, и я снова стал выводить знакомый ритм, не думая о том, что будет дальше.\n"
 
     "Удивительно, как много всего может случиться за короткие пять минут…"
@@ -5964,10 +5966,9 @@ label bkrr_day19_common:
     "Теперь я понимал, зачем они гоняли меня репетировать эти песни, которые точно не позволили бы сыграть на концерте."
     "Могли бы и сразу сказать.{w} На фоне тайны моего происхождения их смешные пионерские секреты казались такой мелочью, что не стоило и вспоминать."
 
-    nvl hide dissolve
-    $ bkrr_set_mode()
-    stop music fadeout 5
-    $ bkrr_timeskip()
+    window hide
+    stop music fadeout 7
+    $ bkrr_timeskip(sounded=False)
     play sound sfx_concert_applause fadein 7
     scene bg ext_stage_concert_pirates with bkrr_circleout_transition
     window show
