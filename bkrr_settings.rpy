@@ -1138,6 +1138,21 @@ init 2:
     image cg d16_cryptography = MOD_IMAGES + "cg/d16_cryptography.jpg"
     image cg d16_cryptography2 = MOD_IMAGES + "cg/d16_cryptography2.jpg"
     image cg d16_gulls = MOD_IMAGES + "cg/d16_gulls.jpg"
+
+    image cg d17_guests = MOD_IMAGES + "cg/d17_guests/aliens.png"
+    image d17_guests_ant_eyes eyes_1  = MOD_IMAGES + "cg/d17_guests/ant_eyes_1.png"
+    image d17_guests_ant_eyes eyes_2  = MOD_IMAGES + "cg/d17_guests/ant_eyes_2.png"
+    image d17_guests_ant_mouth mouth_1  = MOD_IMAGES + "cg/d17_guests/ant_mouth_1.png"
+    image d17_guests_ant_mouth mouth_2  = MOD_IMAGES + "cg/d17_guests/ant_mouth_2.png"
+    image d17_guests_ant_mouth mouth_3  = MOD_IMAGES + "cg/d17_guests/ant_mouth_3.png"
+    image d17_guests_ant_mouth mouth_4  = MOD_IMAGES + "cg/d17_guests/ant_mouth_4.png"
+    image d17_guests_kl_mouth mouth_1  = MOD_IMAGES + "cg/d17_guests/kl_mouth_1.png"
+    image d17_guests_kl_mouth mouth_2  = MOD_IMAGES + "cg/d17_guests/kl_mouth_2.png"
+    image d17_guests_tr_arm arm_1  = MOD_IMAGES + "cg/d17_guests/tr_arm_1.png"
+    image d17_guests_tr_arm arm_2  = MOD_IMAGES + "cg/d17_guests/tr_arm_2.png"
+    image d17_guests_tr_mouth mouth_1  = MOD_IMAGES + "cg/d17_guests/tr_mouth_1.png"
+    image d17_guests_tr_mouth mouth_2  = MOD_IMAGES + "cg/d17_guests/tr_mouth_2.png"
+
     image cg d17_alisa_klaus = MOD_IMAGES + "cg/d17_alisa_klaus.jpg"
     image cg d17_alisa_klaus2 = bkrr_fast_composite(MOD_IMAGES + "cg/d17_alisa_klaus.jpg", MOD_IMAGES + "cg/d17_alisa_klaus2.png")
     image cg d17_klaus_guitar = im.Scale(MOD_IMAGES + "cg/d17_klaus_guitar.jpg", config.screen_width, config.screen_height)

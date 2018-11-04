@@ -1890,45 +1890,56 @@ label bkrr_day17_common:
     "Бородач подвёл пионеров к нам."
 
     window hide
-    show ant normal shirt at left with dissolve
-    show kla normal sport at right with dissolve
-    show tr normal2 cas at center with dissolve
+    scene cg d17_guests
+    show d17_guests_ant_eyes eyes_1
+    show d17_guests_ant_mouth mouth_1
+    show d17_guests_kl_mouth mouth_1
+    show d17_guests_tr_arm arm_1
+    show d17_guests_tr_mouth mouth_1
+    with dissolve
     window show
 
     ant "Познакомьтесь с нашими гостями! Клаус Шульц из ГДР, и… "
 
-    show ant serious shirt with dspr
+    show d17_guests_ant_mouth mouth_2
+    show d17_guests_ant_eyes eyes_2
+    with dspr
 
     ant "Неудобно как вышло. Меня в последний момент дёрнули, списков не дали, и вообще. Как тебя зовут?"
 
-    show tr smile2 cas with dspr
+    show d17_guests_tr_mouth mouth_2 with dspr
 
     "Азиат улыбнулся, ткнул пальцем в грудь:"
 
-    show tr smile cas with dspr
+    show d17_guests_tr_arm arm_2 with dspr
 
     tr_unk "Трук!"
 
-    show ant normal shirt with dspr
+    show d17_guests_ant_mouth mouth_3
+    with dspr
 
     ant "Друг, друг. А зовут тебя как?"
     "Азиат покачал головой, и повторил:"
 
-    show tr smile2 cas with dspr
+    show d17_guests_tr_mouth mouth_2 with dspr
 
     tr_unk "Трук! Нгуен Ван Трук."
 
-    show ant smile shirt with dspr
+    show d17_guests_ant_eyes eyes_1
+    show d17_guests_ant_mouth mouth_1
+    show d17_guests_kl_mouth mouth_2
+    with dspr
 
     ant "А, ты в этом смысле.{w} И Нг… гн…{w} В общем, пионер Трук из Вьетнама."
+
+    show d17_guests_tr_arm arm_1
+    show d17_guests_tr_mouth mouth_1
+    with dspr
+
     "Антон Иванович повернулся к нам и развёл руками."
-
-    show tr normal2 cas with dspr
-    show ant normal shirt with dspr
-
     ant "Трук плохо говорит по-русски, но всё понимает."
 
-    show tr laugh cas with dspr
+    show d17_guests_tr_mouth mouth_2 with dspr
 
     "Вьетнамец улыбнулся ещё шире и покивал."
     tr "Да!"
