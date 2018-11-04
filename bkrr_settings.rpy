@@ -1561,6 +1561,29 @@ init 1:
     image bkrr_flying_notes_white = bkrr_create_anim(MOD_IMAGES + "misc/d5_flying_notes_white_", 3, 1.5, Dissolve(0.25, alpha=True))
 
     image bkrr_bang = MOD_IMAGES + "misc/bang.png"
+    image bkrr_bang_rotating:
+        contains:
+            "bkrr_bang"
+            truecenter
+            parallel:
+                alpha 1.0
+                zoom 0.4
+                linear 0.65 alpha 0.0 zoom 0.3
+                repeat
+            parallel:
+                pause 0.65
+                rotate 30
+                pause 0.65
+                rotate 80
+                pause 0.65
+                rotate 120
+                pause 0.65
+                rotate 10
+                pause 0.65
+                rotate 70
+                # pause 0.65
+                # rotate 170
+                repeat
 
     ## Эффекты
 

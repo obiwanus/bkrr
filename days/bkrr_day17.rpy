@@ -2454,8 +2454,10 @@ label bkrr_day17_common:
     me "Где?"
     mi "В клубе! В углу, где подушки лежат.{w} И если она проснётся и увидит постороннего мальчика…"
 
+    window hide
     hide mi with dissolve
     show us grin sport at cright with dissolve
+    window show
 
     us "Трук, а ты в цирке когда-нибудь бывал?"
 
@@ -2471,8 +2473,7 @@ label bkrr_day17_common:
 
     us "Вон туда смотри, сейчас сам увидишь."
 
-    # ОБРАТНО В КЛУБ
-
+    window hide
     scene bg ext_music_club_verandah_day_v9:
         truecenter
         ease 0.5 zoom 3.0 pos (0.35, 0.75)
@@ -2488,8 +2489,11 @@ label bkrr_day17_common:
         zoom 3.0
         pos (0.35, 0.75)
     with vpunch
+    window show
 
     "Из клуба раздался крик «СТОЯТЬ!!!» и что-то зазвенело."
+
+    window hide
     $ renpy.pause(0.5, hard=True)
     play sound2 sfx_open_door_1
     scene bg ext_music_club_verandah_day_v9_ajar:
@@ -2500,7 +2504,7 @@ label bkrr_day17_common:
         truecenter
         zoom 3.0
         pos (0.35, 0.75)
-    show kla surprise sport far behind ext_music_club_verandah_day_v9_blocker:
+    show kla shyleft sport far behind ext_music_club_verandah_day_v9_blocker:
         truecenter
         rotate 5
         ypos 0.5
@@ -2508,30 +2512,47 @@ label bkrr_day17_common:
         zoom 1.15
         ease 0.3 xpos 0.42 zoom 1.2
         pause 0.5
-        ease 0.2 xpos 0.3 zoom 1.15 alpha 0.0
+        ease 0.3 alpha 0.0
+    show kla surprise sport far behind kla as kla2:
+        truecenter
+        rotate 5
+        ypos 0.5
+        xpos 0.4
+        zoom 1.15
+        ease 0.3 xpos 0.42 zoom 1.2
+        pause 0.8
+        ease 0.1 xpos 0.44
+        ease 0.3 xpos 0.3 zoom 1.15 alpha 0.0
     show ext_music_club_verandah_day_v9_double:  # чтобы дверь сама закрылась
         truecenter
         zoom 3.0
         pos (0.35, 0.75)
         alpha 0.0
-        pause 1.0
+        pause 1.6
         ease 0.5 alpha 1.0
     with dissolve
-    play sound [bkrr_sfx_list["silence05"], sfx_close_door_1]
+    play sound [bkrr_sfx_list["silence05"], bkrr_sfx_list["silence05"], sfx_close_door_1]
+    $ renpy.pause(1.0, hard=True)
+    window show
+
     "В дверях показалась рыжая голова Клауса, но тут же исчезла."
+
+    window hide
     scene bg ext_music_club_verandah_day_v9:
         truecenter
         zoom 3.0
         pos (0.35, 0.75)
         ease 0.7 zoom 1.0 pos (0.5, 0.5)
     with None
+    $ renpy.pause(0.7, hard=True)
+    window show
 
     "Мы с Мику побежали назад, Ульяна с Труком пошли за нами. Кажется, назревал небольшой международный скандальчик."
 
+    window hide
     $ renpy.pause(0.5, hard=True)
     play sound sfx_open_door_1
 
-    window hide
     stop ambience fadeout 2
     scene cg d17_alisa_klaus:
         truecenter
@@ -2545,13 +2566,9 @@ label bkrr_day17_common:
 
     play sound_loop bkrr_sfx_list["paperslap"]
 
-    show bkrr_bang:
+    show bkrr_bang_rotating:
         truecenter
-        pos (0.4, 0.6)
-        alpha 1.0
-        zoom 0.4
-        linear 0.65 alpha 0.0 zoom 0.3
-        repeat
+        pos (0.38, 0.6)
     with None
 
     window show
