@@ -241,13 +241,12 @@ label bkrr_epilogue_common:
 
     "Маска строгой вожатой слетела, когда Ольга бросила полотенце мне на голову и похлопала по макушке."
 
-
     mt "Конечно не будешь. Не успеешь! Ещё несколько часов, и я расцелую автобус на котором вы уедете."
     mt "Такой хлопотной смены у меня не было с…{w} хм. Вообще не было. Ни разу!"
     mt "Ну, чего молчишь? Скажи что-нибудь!"
     me "Изви…"
 
-    scene bg int_house_of_mt_day
+    scene bg int_house_of_mt_sunset
     show mt normal nightdress at center
     with Dissolve(0.12)
 
@@ -594,6 +593,7 @@ label bkrr_epilogue_common:
     scene bg int_music_club_day with dissolve
 
     play ambience bkrr_ambience_list["indoors_day"] fadein 3
+    play music music_list["farewell_to_the_past_edit"] fadein 5
 
     window show
 
@@ -601,6 +601,18 @@ label bkrr_epilogue_common:
     "Сколько всего случилось…"
 
     #TODO м.б. короткие флэшбеки по типу как в первом дне: Мику с басухой-голая виола-алиса с книжкой-секс-двойник с гитарой.
+    window hide
+    play sound bkrr_sfx_list["whiteout1"] fadein 1
+    python:
+
+        for cg in ["cg d6_on_floor", "cg d6_sem_guitar", "cg d7_mi_embrace", "cg d12_noon_rest_1"]:
+            renpy.scene()
+            renpy.show("cg", [d4_mttalk_cgs_atl(renpy.random.choice([-7.5, 7.5]))], what=bkrr_make_sepia_img(cg))
+            renpy.with_statement(dissolve)
+            renpy.pause(0.15, hard=True)
+
+    scene bg int_music_club_day with dissolve
+    window show
 
     "Вчера, разбирая музыку, мы бросали вещи куда придётся, так что теперь предстояло распутать змеиный клубок кабелей, навести здесь подобие порядка, и…"
     me "А где матрасы?"
@@ -680,6 +692,7 @@ label bkrr_epilogue_common:
 
     $ renpy.pause(0.17, hard=True)
 
+    stop music fadeout 1
     play sound sfx_bus_window_hit
 
     with vpunch
