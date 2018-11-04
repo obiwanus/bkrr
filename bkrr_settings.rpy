@@ -893,6 +893,7 @@ init 2:
             center
 
     image cg d19_slavya_captured = MOD_IMAGES + "cg/d19_slavya_captured.jpg"
+    image cg final_image = MOD_IMAGES + "cg/final_image.jpg"
 
     python:
         def bkrr_imagelist_anim(img_list, pause=0.5, transition=None):
