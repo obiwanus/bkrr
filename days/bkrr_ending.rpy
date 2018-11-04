@@ -600,12 +600,11 @@ label bkrr_epilogue_common:
     "Я шагнул через порог и остановился."
     "Сколько всего случилось…"
 
-    #TODO м.б. короткие флэшбеки по типу как в первом дне: Мику с басухой-голая виола-алиса с книжкой-секс-двойник с гитарой.
     window hide
     play sound bkrr_sfx_list["whiteout1"] fadein 1
     python:
 
-        for cg in ["cg d6_on_floor", "cg d6_sem_guitar", "cg d7_mi_embrace", "cg d12_noon_rest_1"]:
+        for cg in ["cg d6_sem_guitar", "cg d6_on_floor", "cg d12_noon_rest_1", "cg d7_mi_embrace"]:
             renpy.scene()
             renpy.show("cg", [d4_mttalk_cgs_atl(renpy.random.choice([-7.5, 7.5]))], what=bkrr_make_sepia_img(cg))
             renpy.with_statement(dissolve)
