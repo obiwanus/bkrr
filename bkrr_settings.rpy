@@ -1157,12 +1157,11 @@ init 2:
         contains:
             Solid("#000")
             alpha 0.90
-    image cg d18_bed_1 = im.Scale(MOD_IMAGES + "cg/d18_bed.png", config.screen_width, config.screen_height)
-    image cg d18_bed_2:
-        contains:
-            im.Scale(MOD_IMAGES + "cg/d18_bed.png", config.screen_width, config.screen_height)
-        contains:
-            im.Scale(MOD_IMAGES + "cg/d18_bed_mi_open.png", config.screen_width, config.screen_height)
+    image cg d18_bed_middle = im.Scale(MOD_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height)
+    image cg d18_bed_sleep = bkrr_fast_composite(im.Scale(MOD_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height), im.Scale(MOD_IMAGES + "cg/d18_bed_mi_sleep.png", config.screen_width, config.screen_height))
+    image cg d18_bed_open = bkrr_fast_composite(im.Scale(MOD_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height), im.Scale(MOD_IMAGES + "cg/d18_bed_mi_open.png", config.screen_width, config.screen_height))
+    image cg d18_alisarape = MOD_IMAGES + "cg/d18_alisarape.jpg"
+    image cg d18_alisarape2 = bkrr_fast_composite(MOD_IMAGES + "cg/d18_alisarape.jpg", MOD_IMAGES + "cg/d18_alisarape_2.png")
     image cg d18_no_squirrel_1 = MOD_IMAGES + "cg/d9_squirrel_1.png"
     image cg d18_no_squirrel_2:
         contains:

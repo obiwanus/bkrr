@@ -207,7 +207,7 @@ label bkrr_epilogue_common:
     show mt surprise nightdress at center
     show unblink
     with None
-    play music music_list["tried_to_bring_it_back"] fadein 10
+    play music music_list["she_is_kind"] fadein 10
     $ renpy.pause(1.0, hard=True)
     window show
 

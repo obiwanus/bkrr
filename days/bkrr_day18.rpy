@@ -34,7 +34,8 @@ label bkrr_day18_common:
     "«Кроме наглой и довольной рожи, других признаков потери девственности у мужчин не наблюдается».{w} Когда я откинулся на подушку, моя рожа выглядела именно так."
 
     window hide
-    scene cg d18_bed_1:
+    scene cg d18_bed_sleep:
+        subpixel True
         truecenter
         pos (0.4, 0.4)
         zoom 1.4
@@ -47,13 +48,16 @@ label bkrr_day18_common:
     "Я снова посмотрел на лежащую рядом Мику и заметил, как подрагивают её веки. Негромко, чтобы не разбудить, если ошибся, я позвал её:"
     me "Мику? Ты же не спишь."
 
-    scene cg d18_bed_2 with dissolve
+    scene cg d18_bed_middle with dspr
 
     mi "Нет."
     "Она улыбнулась и приоткрыла глаза."
     mi "Не сплю. Я уже давно уже проснулась. Знаешь, ты такой смешной, когда спишь! Но милый."
     me "А чего так рано? Я ворочался?"
     mi "Не-а."
+
+    scene cg d18_bed_open with dissolve
+
     "Мику вздохнула и сладко потянулась."
     mi "Просто выспалась. Я ведь вчера рано легла."
     "Я ощутил мимолетную и запоздалую неловкость, когда понял, что мы не одеты. Совсем."
@@ -352,6 +356,7 @@ label bkrr_day18_common:
 
     stop music fadeout 3
 
+    play sound sfx_blanket_off_stand fadein 0.6
     scene bg int_music_club_mattresses_sunset:
         parallel:
             ease 1.0 zoom 1.2
@@ -360,6 +365,7 @@ label bkrr_day18_common:
     show red:
         alpha 0.15
         ease 7.0 alpha 0.0
+    with dspr
 
     "Я машинально послушался, соскочил с матрасов и подбежал к Алисе."
 
@@ -422,22 +428,25 @@ label bkrr_day18_common:
     mi "Алиса, успокойся!"
 
     window hide
-    show mi dontlike pioneer_loo at cleft with easeinleft
-
     play sound bkrr_sfx_list["sem_falls_on_floor"] fadein 1
-    scene bg int_music_club_mattresses_sunset
-    show mi dontlike pioneer_loo at cleft
-    show dv shocked bkrr_sport
-    with vpunch
-
-    hide dv with easeoutbottom
-    hide mi with dissolve
+    show cg d18_alisarape2:
+        subpixel True
+        truecenter
+        zoom 1.6
+        ease 1.5 zoom 1.0
+    with dissolve
     window show
 
     "Мику ухватила Алису за плечи, ловко подсекла ей ноги и очень осторожно уложила на пол, придерживая, чтобы не ушибить."
     dv "И ты с ним? Не трогай меня! Пустите! Мама! Спасите кто-нибудь!"
 
-    "Рыжая, прижатая к полу, билась в захвате, пытаясь вырваться. Мику вздохнула и зажала ей рот."
+    "Рыжая, прижатая к полу, билась в захвате, пытаясь вырваться."
+
+    window hide
+    show cg d18_alisarape with dissolve
+    window show
+
+    "Мику вздохнула и зажала ей рот."
     mi "Тс-с-с! Алисочка, ну не кричи. А то придет кто-нибудь, Сеню голого увидят. Скандал ведь будет! Подумают, что мы тут втроем глупостями занимаемся!"
     dv "М-м-мф-м-м!"
     "Алиса что-то промычала зажатым ртом, грозно сверкая глазами."
@@ -445,7 +454,10 @@ label bkrr_day18_common:
     me "А ну, не смотри!"
     "Я быстро натянул трусы и шорты."
 
+    window hide
     stop music fadeout 7
+    scene bg int_music_club_mattresses_sunset with dissolve
+    window show
 
     me "Алиса, успокойся! Никто никого не насилует."
     dv "Ты? Ты почему голый? Ах, ты, кобелина! Маньяк!"
