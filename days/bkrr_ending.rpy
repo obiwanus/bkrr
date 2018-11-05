@@ -58,7 +58,7 @@ init:
             truecenter
             zoom 1.25
             pause 5.0
-            ease 15.0 alpha 0.0
+            ease 25.0 alpha 0.0
 
     python:
         for i in range(9):
@@ -2366,13 +2366,13 @@ label bkrr_epilogue_common:
     "Быстро приведя себя в порядок, я повязал галстук и остался доволен результатом."
     "Удивительно полезный кусок материи. Без него – холостяцкая щетина. С ним – стильная небритость."
 
-    show sta normal inside at center with dissolve
+    show sta normal outside at center with dissolve
 
     me "Успеем."
 
     window hide
 
-    show sta surp inside at center with dspr
+    show sta surp outside at center with dspr
 
     $ renpy.pause(1.0, hard=True)
 
@@ -2574,7 +2574,7 @@ label bkrr_epilogue_common:
     "Я машинально глянул на её руки и облегчённо выдохнул. {w}Обручального кольца не было видно."
     "Конечно, это ещё ничего не значит, но…"
 
-    show sta normal outside at right with easeinright
+    show sta normal outside  at right with easeinright
 
     sta "Дядь Семён, я тут Ромку встретила с родителями. Они меня подвезут, ты доберешься домой один?"
 
