@@ -2742,14 +2742,14 @@ label bkrr_epilogue_common:
 
     mi "Ты…{w} ведь никуда больше не исчезнешь?"
     me "Никуда!"
-    "Она затихла и теперь молча обнимала меня, словно боясь, что я исчезну, стоит ей разжать руки."
+    "Она затихла и теперь молча обнимала меня, словно боясь, что я пропаду, стоит ей разжать руки."
 
     window hide
     scene stars:
         subpixel True
         truecenter
         ease 10.0 zoom 1.4 rotate 7.5
-        ease 100.0 zoom 1.8 rotate -30
+        ease 40.0 zoom 1.8 rotate -30
     with Dissolve(5.0)
     window show
 
