@@ -23,7 +23,7 @@ label bkrr_day18_common:
 
     "Открыв глаза, я не сразу понял, где нахожусь."
 
-    th "Высокий потолок, большие окна… Да, это наш музыкальный клуб. Как я ухитрился здесь уснуть?"
+    th "Высокий потолок, большие окна…{w} Да, это наш музыкальный клуб. Как я ухитрился здесь уснуть?"
 
     play music bkrr_music_list["eo"] fadein 20
 
@@ -229,12 +229,10 @@ label bkrr_day18_common:
 
     mi "Знаешь, я подумала… "
 
-    hide mi with dissolve
-
     "Узнать, что подумала моя любимая, я не успел. На дорожке, ведущей к клубу, показалась бегущая рыжая девочка…{w} А затем ещё одна. Рыжая, бегущая и, кажется, злая."
 
     play music music_list["awakening_power"] fadein 3
-    show mi scared pioneer_loo close with dissolve
+    show mi scared pioneer_loo close with dspr
 
     "Мику широко открыла глаза и схватила меня за руку."
     mi "Ой, они же сюда бегут! Сеня, прячься, быстро!"
@@ -246,9 +244,9 @@ label bkrr_day18_common:
 
     play sound sfx_blanket_off_stand fadein 0.6
     hide mi
-    show black:
-        alpha 0.9
-    with dissolve
+    show misc_d18_sheet:
+        alpha 0.7
+    with dspr
 
     "Я не придумал ничего лучше, чем спрятаться на стопке матрасов в углу, накрыться простынями и старательно притвориться кучкой постельного белья."
     "Мику подправила мою маскировку, схватила гитару, быстро села на матрасы и притворилась что репетирует."
@@ -259,19 +257,19 @@ label bkrr_day18_common:
     show red:
         alpha 0.0
         ease 5.0 alpha 0.3
-    show black:
-        alpha 0.9
+    show misc_d18_sheet:
+        alpha 0.7
     with hpunch
 
     "Едва она успела сесть, как в комнату ворвались два растрепанных рыжих вихря. Алиса размахивала зонтиком, норовя огреть подругу по голове, а Ульяна в меру сил парировала удары бадминтонной ракеткой."
     "Мику недоуменно переводила взгляд с одной подруги на другую. Наконец, Ульяне удалось спрятаться за роялем, откуда Алиса не могла её достать."
     "Метнувшись несколько раз влево-вправо, Алиса постаралась ткнуть Ульяну зонтиком через рояль. При этом она ни на секунду не переставала выкрикивать угрозы."
 
-    show dv angry bkrr_sport at cright behind black with dissolve
+    show dv angry bkrr_sport at cright behind misc_d18_sheet with dissolve
 
     dv "Я тебя урою! Улька, ты – труп, только я тебя поймаю! Вешайся сама!"
 
-    show us grin sport behind black:
+    show us grin sport behind misc_d18_sheet:
         fleft
         rotate 17
         ypos -0.1
@@ -286,17 +284,21 @@ label bkrr_day18_common:
     show us normal sport with dspr
     us "Ну не заводись ты так! Зато ты волноваться перестала!"
 
+    window hide
     hide us with easeoutleft
     show dv rage bkrr_sport at left with ease
+    window show
 
     dv "Не заводись? Я конечно перестала! После такого-то! Стой спокойно, дай я тебя зашибу!"
 
-    show us grin sport at right behind black with easeinbottom
+    show us grin sport at right behind misc_d18_sheet with easeinbottom
 
     us "Не поймаешь, не поймаешь!"
 
+    window hide
     hide us with easeoutbottom
     show dv rage bkrr_sport at right with ease
+    window show
 
     "Я улыбался, слушая происходящее в клубе. Мику отложила гитару и ласково поинтересовалась:"
 
@@ -307,7 +309,7 @@ label bkrr_day18_common:
 
     dv "Эта зараза! Эта рыжая гадина!{w} Я из-за нее голодом себя морила!{w} Бегала!{w} Пресс качала!"
 
-    show us grin sport behind black:
+    show us grin sport behind misc_d18_sheet:
         fleft
         rotate 17
         ypos -0.1
@@ -315,8 +317,10 @@ label bkrr_day18_common:
 
     us "Если ты дура, то кто тебе доктор? Ремень надо было надевать! Сама виновата!"
 
+    window hide
     hide us with easeoutleft
     show dv angry bkrr_sport at left with ease
+    window show
 
     "Мику подняла сбитый стул, и поинтересовалась, предусмотрительно не приближаясь к рыжим."
 
@@ -327,7 +331,7 @@ label bkrr_day18_common:
     dv "Да не будет ничего твоему роялю! Что случилось? Все мои трусы видели, вот что случилось! Я её грохну!"
     dv "Пускай без ударника останемся, но её рыжие патлы я повыдергаю! Надо мной же весь лагерь теперь смеяться будет!"
 
-    show us sad sport at right behind black with easeinbottom
+    show us sad sport at right behind misc_d18_sheet with easeinbottom
 
     us "А нечего про мои размеры шутить!"
 

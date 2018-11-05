@@ -1176,6 +1176,7 @@ init 2:
     image cg d18_bed_middle = im.Scale(MOD_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height)
     image cg d18_bed_sleep = bkrr_fast_composite(im.Scale(MOD_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height), im.Scale(MOD_IMAGES + "cg/d18_bed_mi_sleep.png", config.screen_width, config.screen_height))
     image cg d18_bed_open = bkrr_fast_composite(im.Scale(MOD_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height), im.Scale(MOD_IMAGES + "cg/d18_bed_mi_open.png", config.screen_width, config.screen_height))
+    image misc_d18_sheet = MOD_IMAGES + "misc/d18_sheet.jpg"
     image cg d18_alisarape = MOD_IMAGES + "cg/d18_alisarape.jpg"
     image cg d18_alisarape2 = bkrr_fast_composite(MOD_IMAGES + "cg/d18_alisarape.jpg", MOD_IMAGES + "cg/d18_alisarape_2.png")
     image cg d18_no_squirrel_1 = MOD_IMAGES + "cg/d9_squirrel_1.png"
