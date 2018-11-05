@@ -29,6 +29,21 @@ init:
     image bg int_school_night = MOD_IMAGES + "bg/int_school_night.jpg"
     image bg int_classroom_night = MOD_IMAGES + "bg/int_classroom_night.jpg"
 
+    # SnowBlossom(img, count=int, border=int, xspeed=tuple, yspeed=tuple, start=int, fast=bool, horizontal=bool)
+
+    image bkrr_snowflake_large = MOD_IMAGES + "effects/particles/snowflake_large.png"
+    image bkrr_snowflake_normal = MOD_IMAGES + "effects/particles/snowflake_medium.png"
+    image bkrr_snowflake_small = MOD_IMAGES + "effects/particles/snowflake_small.png"
+
+    image bkrr_ep_snow:
+        truecenter
+        contains:
+            SnowBlossom("bkrr_snowflake_normal", 75, 50, (-50, 50), (70, 170), fast=True)
+        contains:
+            SnowBlossom("bkrr_snowflake_small", 100, 50, (-25, 25), (30, 100), fast=True)
+        contains:
+            SnowBlossom("bkrr_snowflake_large", 25, 50, (-70, 70), (100, 200), fast=True)
+
     image cg ep_mi:
         contains:
             MOD_IMAGES + "cg/ep_mi_background.jpg"
@@ -2365,6 +2380,7 @@ label bkrr_epilogue_common:
     with fade2
     $ renpy.pause(1.0, hard=True)
     play ambience ambience_catacombs_stones fadein 3
+    play sound_loop ambience_medium_crowd_indoors_1 fadein 3
     scene bg int_school_night with fade2
 
     $ renpy.pause(1.0, hard=True)
@@ -2415,8 +2431,12 @@ label bkrr_epilogue_common:
     "Я достал телефон и принялся вспоминать номер службы такси."
     th "Как же она называлась? Сонет – не сонет, аккорд не аккорд… Что-то музыкальное."
 
+    window hide
+    $ renpy.pause(1.0, hard=True)
     $ bkrr_set_volume("music", 0.2)
+    stop sound_loop fadeout 15
     play music bkrr_music_list["sd"] fadein 10
+    window show
 
     th "А почему я подумал именно про музыку?"
     "Где-то на краю сознания я понял, что музыка действительно звучит в школьном коридоре. {w}Та самая, из моего сна. {w}Мику играла её для меня, в день когда мы…"
@@ -2625,12 +2645,18 @@ label bkrr_epilogue_common:
     me "Нет-нет, совсем наоборот."
 
     show mii smile outside close at cleft
-    show snow behind mii
     with dspr
 
     mi "Тогда хорошо."
-    "Она улыбнулась… той самой улыбкой…{w} Я думал, что уже разучился волноваться, как мальчишка, но сейчас воспоминания, казалось бы, надежно упрятанные в дальний уголок памяти, снова вырвались наружу."
 
+    show snow
+    show bkrr_ep_snow behind mii:
+        alpha 0.0
+        pause 2.0
+        ease 7.0 alpha 1.0
+
+    "Она улыбнулась… той самой улыбкой…"
+    "Я думал, что уже разучился волноваться, как мальчишка, но сейчас воспоминания, казалось бы, надежно упрятанные в дальний уголок памяти, снова вырвались наружу."
     "Словно и не было этих месяцев, полных одиночества, безуспешных поисков и попыток забыть обо всём, что было {b}там{/b}."
 
     mi "Ой, снег пошел… Надо же..? "
@@ -2665,10 +2691,10 @@ label bkrr_epilogue_common:
 
     window hide
     $ renpy.pause(1.0, hard=True)
-    show mii surp outside far at cleft with dissolve
+    show mii surp outside far at cleft behind snow with dissolve
     window show
 
-    "Вздрогнула и остановилась. Её сумка упала в снег, но хозяйка не обратила на это внимания."
+    "Вздрогнула и остановилась.{w} Её сумка упала в снег, но хозяйка не обратила на это внимания."
     "Я не знал, что сказать, поэтому просто повторил, уже нормальным голосом:"
     me "Мику? Это…{w} Ведь это ты?"
 
