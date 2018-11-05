@@ -1856,9 +1856,13 @@ label bkrr_epilogue_common:
     $ renpy.pause(4.0, hard=True)
     $ bkrr_set_time("prologue")
     play sound bkrr_sfx_list["brake_hit"]
+    $ bkrr_set_volume("sound3", 0.5)
+    $ bkrr_set_volume("sound_loop2", 0.2)
+    play sound3 bkrr_sfx_list["bus_leaving"] fadein 3
     $ renpy.pause(1.0, hard=True)
     play sound2 bkrr_sfx_list["horn_tooting"]
     play sound_loop bkrr_sfx_list["taxiloop"] fadein 4
+    play sound_loop2 bkrr_sfx_list["traffic_outside"] fadein 4
     play music music_list["lightness_radio_bus"] fadein 7
 
     scene bg ext_bus_stop_night
@@ -1890,9 +1894,14 @@ label bkrr_epilogue_common:
 
     window show
 
-    "Водитель назвал улицу и дом. Адрес был мой. В смысле – тот самый, откуда я уехал месяц назад. {w}Он участливо посмотрел на меня и показал на сугроб."
+    "Водитель назвал улицу и дом. Адрес был мой.{w} В смысле – тот самый, откуда я уехал месяц назад. {w}Он участливо посмотрел на меня и показал на сугроб."
     dr "Если совсем развезло, вон зачерпни снежка, лицо потри, сразу попустит. Всегда так делаю, лучше всякого кофе! Только жёлтый не бери!"
     "Он заржал над своей немудрёной шуткой, а я соображал, где нахожусь."
+
+    stop music fadeout 3
+    stop sound_loop fadeout 2
+    play sound bkrr_sfx_list["car_leaving"] fadein 3
+
     th "Ведь только что…"
     th "Это что, был сон?"
     th "Или…"
@@ -1906,7 +1915,7 @@ label bkrr_epilogue_common:
 
     window hide
 
-    stop sound_loop fadeout 1
+    stop sound_loop2 fadeout 3
     stop ambience fadeout 3
 
     scene bg black with Dissolve(3.0)
