@@ -154,7 +154,7 @@ label bkrr_prologue:
     hide us
     with dissolve
 
-    scene expression bkrr_make_sepia_img("bg ext_music_club_day_bkrr") with bkrr_blindstoleft_transition
+    scene expression bkrr_make_sepia_img("bg ext_musclub_day") with bkrr_blindstoleft_transition
 
     window show
 
