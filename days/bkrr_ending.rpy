@@ -1095,11 +1095,11 @@ label bkrr_epilogue_common:
     "И, конечно же, всё ещё собирала по углам домика разбросанные где и как попало расчёски, тапочки, мыльницу, будильник в форме котика и прочую девичью мелочёвку."
     "Лены в домике уже не было, как и её вещей. Наверное, она догадалась, что я приду, и тактично оставила нас с Мику вдвоём."
 
-    show mi normal bkrr_sport at cleft with dissolve
+    show mi normal civil far at cleft with dissolve
 
     mi "Ой… Ты уже? А я вот… Столько вещей, надо было, конечно, со вчера начать сборы, но этот концерт… {w}а потом вечером…"
 
-    show mi shy bkrr_sport at cleft with dspr
+    show mi shy civil far at cleft with dspr
 
     mi "Было… {w}Ну… Некогда."
     "Она густо покраснела и посмотрела на меня."
@@ -1107,7 +1107,7 @@ label bkrr_epilogue_common:
 
     window hide
 
-    show mi smile bkrr_sport at cleft with dspr
+    show mi smile civil far at cleft with dspr
 
     $ renpy.pause(1.0, hard=True)
 
@@ -1127,21 +1127,22 @@ label bkrr_epilogue_common:
 
     "Вдвоём мы быстро уложили вещи в сумку."
 
-    show mi serious bkrr_sport close at center with dissolve
+    show mi serious civil close at center with dissolve
 
     mi "Вот и всё… Как будто нас здесь и не было."
 
-    show mi sad_smile bkrr_sport close at center with dspr
+    show mi sad_smile civil close at center with dspr
 
     mi "Больше не будет нашей группы, не будет лагеря… Нет, ну он-то будет, только мы в него уже не вернёмся."
     mi "Я последний раз так себя чувствовала, когда мы уезжали из Японии. Только тогда я была маленькая, и мне было интересно, что там, за океаном. А сейчас…"
 
-    show mi upset bkrr_sport close at center with dspr
+    show mi upset civil close at center with dspr
 
     "Она вздохнула и продолжила:"
     mi "Ни за что бы не поверила, что можно так быстро привязаться к новому месту. Мне очень не хочется отсюда уезжать. И потом…"
 
-    show mi happy bkrr_sport close:
+    show mi happy civil close:
+        subpixel True
         center
         ease 2.5 zoom 1.2
     with dspr
@@ -1168,25 +1169,25 @@ label bkrr_epilogue_common:
 
     "На полпути к остановке Мику вдруг остановилась."
 
-    show mi upset bkrr_sport close at center with dissolve
+    show mi upset civil close at center with dissolve
 
     mi "Я совсем забыла…"
     me "Вернёмся? Время есть."
 
-    show mi upset bkrr_sport close at center with dspr
+    show mi upset civil close at center with dspr
 
     play music music_list["memories_piano_outdoors"] fadein 10
 
     mi "Нет, я не в том смысле. Я ничего не взяла на память."
 
-    show mi sad_smile bkrr_sport close at center with dspr
+    show mi sad_smile civil close at center with dspr
 
     mi "Трук увёз планер, Ульяна насобирала ракушек, Алиса – пластинку от Клауса, а я всё откладывала, думала, что времени ещё полно… {w}И вот никаких сувениров."
 
     "Я шутливо обнял её и обиженным тоном поинтересовался:"
     me "А я, значит, на роль сувенира не подхожу?"
 
-    show mi normal bkrr_sport close at center with dspr
+    show mi normal civil close at center with dspr
 
     mi "Ну, прекрати…"
     "Она улыбнулась и попыталась освободиться."
@@ -1200,24 +1201,24 @@ label bkrr_epilogue_common:
     me "Вот!"
     "Я осторожно сорвал яркий вьющийся цветок и протянул Мику."
 
-    show mi sad_smile bkrr_sport close at center with dissolve
+    show mi sad_smile civil close at center with dissolve
 
     mi "Но он же завянет…"
     me "Положишь его в книжку, он там высохнет, потом…"
     "Я напряг память, вспоминая, что там делают дальше."
     me "Потом зажмём его между двух стёкол, найдём красивую подставку и аккуратно подпишем: «Пионерлагерь «Совёнок», тысяча девятьсот м-м-м… Какой?"
 
-    show mi serious bkrr_sport close at center with dspr
+    show mi serious civil close at center with dspr
 
     mi "Ой, как всё запущено…"
     me "И ты туда же."
 
-    show mi laugh bkrr_sport close at center with dspr
+    show mi laugh civil close at center with dspr
 
     mi "Не скажу. Пусть это будет для тебя сюрпризом."
     me "Ладно…"
 
-    show mi normal bkrr_sport close at center with dspr
+    show mi normal civil close at center with dspr
 
     mi "Только книжки у меня нет."
     me "Не страшно. У меня тетрадь есть."
@@ -1227,14 +1228,14 @@ label bkrr_epilogue_common:
     "Я открыл общую тетрадь с табулатурами. Она уже слегка поистрепалась, последние три недели у неё была нелёгкая жизнь."
     "Надёжно устроив цветок между страниц, я положил тетрадь в сумку и прижал одеждой."
 
-    show mi smile bkrr_sport close at center with dissolve
+    show mi smile civil close at center with dissolve
 
     mi "Я не поняла, это кому сувенир? Мне или тебе?"
     me "Тебе."
     mi "Тогда отдавай."
     me "Потом, когда приедем."
 
-    show mi grin bkrr_sport close at center with dspr
+    show mi grin civil close at center with dspr
 
     mi "Вот ты какой жадный. Не ожидала."
 
@@ -1244,7 +1245,7 @@ label bkrr_epilogue_common:
     "Отряд не заметил потери бойца, вся изгородь была густо усеяна такими же цветами, и их хватило бы на десяток влюблённых пар."
     "Она устроила его в волосах."
 
-    show mi normal bkrr_sport close at center with dissolve
+    show mi normal civil close at center with dissolve
 
     mi "Нравится?"
     me "Красота! Только в автобус лучше в руках занеси. А то вдруг Ольга ругаться будет."
