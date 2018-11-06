@@ -2709,6 +2709,7 @@ label bkrr_epilogue_common:
     window hide
     $ renpy.pause(2.0, hard=True)
     show mii cry_smile outside far at cleft with dissolve
+    $ renpy.pause(1.0, hard=True)
     window show
 
     "Она не ответила."
