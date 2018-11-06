@@ -77,6 +77,7 @@ init:
     image bkrr_calendar_dec1 = MOD_IMAGES + "misc/calendar/december_1.png"
     image bkrr_calendar_dec5 = MOD_IMAGES + "misc/calendar/december_5.png"
     image bkrr_calendar_dec8 = MOD_IMAGES + "misc/calendar/december_8.png"
+    image bkrr_calendar_dec15 = MOD_IMAGES + "misc/calendar/december_15.png"
     image bkrr_calendar_jan = MOD_IMAGES + "misc/calendar/january_12.png"
     image bkrr_calendar_feb = MOD_IMAGES + "misc/calendar/february_24.png"
     image bkrr_calendar_mar = MOD_IMAGES + "misc/calendar/march_3.png"
@@ -2089,6 +2090,9 @@ label bkrr_epilogue_common:
 
     show bkrr_calendar:
         truecenter
+    show bkrr_calendar_dec8:
+        pause 8.0
+        cal_sheet_right
     show bkrr_calendar_nov:
         pause 7.5
         cal_sheet_left
@@ -2122,12 +2126,9 @@ label bkrr_epilogue_common:
     show bkrr_calendar_jan:
         pause 2.0
         cal_sheet_left
-    show bkrr_calendar_dec8:
-        pause 1.0
-        cal_sheet_right
     with Dissolve(2.0)
 
-    $ renpy.pause(6.0)
+    $ renpy.pause(7.0)
 
     scene anim prolog_1
     show bkrr_calendar:
@@ -2172,6 +2173,7 @@ label bkrr_epilogue_common:
     scene anim prolog_1
     show bkrr_calendar:
         truecenter
+    show bkrr_calendar_dec15
     show bkrr_calendar_nov:
         pause 1.8
         cal_sheet_left
