@@ -566,18 +566,19 @@ init 2:
     image bg int_old_building_room_day_bkrr_v1 = MOD_IMAGES + "bg/int_old_building_room_day.png"
     image bg int_old_building_room_day_bkrr_v2 = bkrr_fast_composite(MOD_IMAGES + "bg/int_old_building_room_day.png", MOD_IMAGES + "misc/int_old_building_room_mugs.png")
 
-    image bg int_infirmary_day = MOD_IMAGES + "bg/int_infirmary_day.png"
-    image bg int_infirmary_sunset = im.MatrixColor(MOD_IMAGES + "bg/int_infirmary_day.png", bkrr_tint["sunset"] * im.matrix.contrast(1.3))
-    image bg int_infirmary_night = MOD_IMAGES + "bg/int_infirmary_night.png"
+    image bg int_infirmary_day_empty = MOD_IMAGES + "bg/int_infirmary/day/bg.jpg"
+    image bg int_infirmary_sunset_empty = MOD_IMAGES + "bg/int_infirmary/sunset/bg.jpg"
+    image bg int_infirmary_night_empty = MOD_IMAGES + "bg/int_infirmary/night/bg.jpg"
 
-    image bg int_infirmary_day_guitar = MOD_IMAGES + "bg/int_infirmary_day_guitar.png"
-    image bg int_infirmary_sunset_guitar = im.MatrixColor(MOD_IMAGES + "bg/int_infirmary_day_guitar.png", bkrr_tint["sunset"] * im.matrix.contrast(1.3))
-    image bg int_infirmary_night_guitar = MOD_IMAGES + "bg/int_infirmary_night_guitar.png"
+    image bg int_infirmary_day = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/day/bg.jpg", MOD_IMAGES + "bg/int_infirmary/day/stuff.png")
+    image bg int_infirmary_sunset = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/sunset/bg.jpg", MOD_IMAGES + "bg/int_infirmary/sunset/stuff.png")
+    image bg int_infirmary_night = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/night/bg.jpg", MOD_IMAGES + "bg/int_infirmary/night/stuff.png")
 
-    image bg int_infirmary_night_v2 = MOD_IMAGES + "bg/int_infirmary_night_v2.png"
-    image bg int_infirmary_night_guitar_v2 = MOD_IMAGES + "bg/int_infirmary_night_guitar_v2.png"
-    image bg int_infirmary_night_v3 = MOD_IMAGES + "bg/int_infirmary_night_v3.png"
-    image bg int_infirmary_night_guitar_v3 = MOD_IMAGES + "bg/int_infirmary_night_guitar_v3.png"
+    image bg int_infirmary_day_guitar = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/day/bg.jpg", MOD_IMAGES + "bg/int_infirmary/day/guitar.png", MOD_IMAGES + "bg/int_infirmary/day/stuff.png")
+    image bg int_infirmary_sunset_guitar = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/sunset/bg.jpg", MOD_IMAGES + "bg/int_infirmary/sunset/guitar.png", MOD_IMAGES + "bg/int_infirmary/sunset/stuff.png")
+    image bg int_infirmary_night_guitar = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/night/bg.jpg", MOD_IMAGES + "bg/int_infirmary/night/guitar.png", MOD_IMAGES + "bg/int_infirmary/night/stuff.png")
+    image bg int_infirmary_night_v3 = MOD_IMAGES + "bg/int_infirmary/night_lights/bg.jpg"
+    image bg int_infirmary_night_guitar_v3 = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/night_lights/bg.jpg", MOD_IMAGES + "bg/int_infirmary/night_lights/guitar.png", MOD_IMAGES + "bg/int_infirmary/night_lights/stuff.png")
 
     image bg ext_path3_day_bkrr = MOD_IMAGES + "bg/ext_path3_day.jpg"
 

@@ -50,13 +50,13 @@ label bkrr_day14_common:
 
     play sound sfx_click_1
 
-    scene bg int_infirmary_night_v2 with dspr
+    scene bg int_infirmary_night_v3 with dspr
 
     $ renpy.pause(1.0, hard=True)
 
     window show
 
-    "Я зажёг лампу, дал глазам привыкнуть к свету и вышел из изолятора."
+    "Я зажёг свет, невольно прищурившись и прикрыв глаза рукой, и вышел из изолятора."
 
     window hide
 
@@ -466,7 +466,7 @@ label bkrr_day14_common:
 
     $ renpy.pause(1.0, hard=True)
 
-    scene bg int_infirmary_night_v2 with fade3
+    scene bg int_infirmary_night_v3 with fade3
 
     $ bkrr_set_time("night")
 

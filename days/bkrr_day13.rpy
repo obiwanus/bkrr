@@ -1841,7 +1841,7 @@ label bkrr_day13_common:
 
     window hide
 
-    scene bg int_infirmary_day with dissolve
+    scene bg int_infirmary_day_empty with dissolve
 
     window show
 
@@ -1919,7 +1919,7 @@ label bkrr_day13_common:
 
     play sound sfx_open_door_clubs_nextroom
 
-    scene bg int_infirmary_day with dissolve
+    scene bg int_infirmary_day_empty with dissolve
 
     play ambience bkrr_ambience_list["indoors_day"] fadein 3
 
@@ -2035,7 +2035,7 @@ label bkrr_day13_common:
 
     window hide
 
-    scene bg int_infirmary_sunset
+    scene bg int_infirmary_sunset_empty
     show unblink
     with None
 
