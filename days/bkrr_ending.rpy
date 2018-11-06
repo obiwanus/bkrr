@@ -622,7 +622,7 @@ label bkrr_epilogue_common:
             renpy.scene()
             renpy.show("cg", [d4_mttalk_cgs_atl(renpy.random.choice([-7.5, 7.5]))], what=bkrr_make_sepia_img(cg))
             renpy.with_statement(dissolve)
-            renpy.pause(0.15, hard=True)
+            renpy.pause(0.25, hard=True)
 
     scene bg int_music_club_day with dissolve
     window show
@@ -1508,7 +1508,7 @@ label bkrr_epilogue_common:
     window hide
 
     scene bg int_bus_people_day at bkrr_bus_shaking
-    show dv normal bkrr_sport close at cright
+    show dv normal civil close at cright
     with dissolve
 
     window show
@@ -1521,18 +1521,18 @@ label bkrr_epilogue_common:
     "Она зевнула и подвинула шторку, закрывая лицо спящей Ульяны от солнца."
     me "Да не мелки! Мику!"
 
-    show dv surprise bkrr_sport close at cright with dissolve
+    show dv surprise civil close at cright with dissolve
 
     dv "Что за Мику?"
     th "Сон. Точно сон. Осталось только проснуться…"
     th "Если это наяву, я сойду с ума. Тут же. Не сходя с места."
     me "Алиса, хватит шуток. Мы с Мику садились вдвоём в автобус. Она здесь была. А теперь… Вот."
 
-    show dv guilty bkrr_sport close at cright with dspr
+    show dv guilty civil close at cright with dspr
 
     dv "Сенька, тебе что, голову напекло? Мы втроём сели. {w}Ты, я, Ульяна."
 
-    show dv sad bkrr_sport close at cright with dspr
+    show dv sad civil close at cright with dspr
 
     dv "Что за кличка такая вообще? Ты себе кошку нашёл?"
 
@@ -1614,7 +1614,7 @@ label bkrr_epilogue_common:
     "Я послушно развернул леденец, взял его в рот и прикрыл глаза, пытаясь взять себя в руки."
     me "Алиса…"
 
-    show dv normal bkrr_sport close at cright with dissolve
+    show dv normal civil close at cright with dissolve
 
     dv "Больше не дам. У меня два – тебе и Ульяне."
     me "Нет. Я не за то."
@@ -1623,12 +1623,12 @@ label bkrr_epilogue_common:
     dv "Трое… С Толиком – четверо."
     me "А… имя Мику тебе ничего не говорит?"
 
-    show dv guilty bkrr_sport close at cright with dspr
+    show dv guilty civil close at cright with dspr
 
     dv "Да что за Мику такое?"
     me "Японка. Музыкантка. Ты её не помнишь?"
 
-    show dv smile bkrr_sport close at cright with dspr
+    show dv smile civil close at cright with dspr
 
     dv "Не было никаких японцев. Вьетнамец был, немец… Ну и эти, мелкие, черненькие."
     me "Нет. Она не из Японии, она здесь живёт. В нашем отряде такой нет?"
@@ -1639,18 +1639,18 @@ label bkrr_epilogue_common:
     us "Сенька, ты головой не бился? Ну сам подумай, откуда здесь взяться японке? Алиска, ты ему все-таки мозги отшибла!"
     me "Извините, мне что-то нехорошо."
 
-    show dv normal bkrr_sport close at cright with dspr
+    show dv normal civil close at cright with dspr
 
     dv "Ты отдыхай, мы тебя разбудим."
     me "Алиса, кто на второй гитаре играл?"
 
-    show dv laugh bkrr_sport close at cright with dspr
+    show dv laugh civil close at cright with dspr
 
     dv "Как это «кто». Слушай, тебе к врачу надо. Может, нам тебя связать?"
     "Я знал этот тон. Она шутила, как умела, но в голосе сквозило явное беспокойство."
     me "Нет. Наверное, что-то приснилось."
 
-    show dv normal bkrr_sport close at cright with dspr
+    show dv normal civil close at cright with dspr
 
     dv "Клаус играл. Ты на басу. Я на гитаре. Улька барабанила."
     dv "Что, комплимента захотел? {w}Ладно. Хорошо вышло, молодец!"
@@ -1658,7 +1658,7 @@ label bkrr_epilogue_common:
     dv "Нет, блин! С симфоническим оркестром! Сначала с Толей, потом с тобой. Еще вопросы?"
     me "И рядом со мной никого не было?"
 
-    show dv smile bkrr_sport close at cright with dspr
+    show dv smile civil close at cright with dspr
 
     dv "Нет, конечно! Кое-кто был."
     me "Кто?"
