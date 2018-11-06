@@ -882,7 +882,7 @@ init 2:
 
     image cg d19_pirate_dressup:
         contains:
-            "bg ext_backstage_big_day_night"
+            "bg ext_backstage_big_day_night_noplank"
         contains:
             "dv smile pirate_with_hat"
             fright

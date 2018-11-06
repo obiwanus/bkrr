@@ -2621,7 +2621,7 @@ label bkrr_day18_common:
     show kla smile pioneer at cright with dissolve
     window show
 
-    kla "Джва года."
+    kla "Два года."
     dv "Чего? Всего два года? Да быть не может."
 
     show kla normal pioneer with dspr
