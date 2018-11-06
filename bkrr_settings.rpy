@@ -603,7 +603,7 @@ init 2:
 
     image bg int_music_club_day = bkrr_fast_composite(ES_IMAGES + "bg/int_musclub_day.jpg", MOD_IMAGES + "misc/int_music_club_clock_day.png") # переобъявлен для удобства
 
-    image bg ext_music_club_sunset_bkrr = MOD_IMAGES + "bg/ext_music_club_sunset.png"
+    image bg ext_music_club_sunset_bkrr = MOD_IMAGES + "bg/ext_music_club_sunset.jpg"
     image bg ext_music_club_night_bkrr = im.Scale(MOD_IMAGES + "bg/ext_music_club_night.png", config.screen_width, config.screen_height)
 
     image bg int_dining_hall_people_day_bkrr:
