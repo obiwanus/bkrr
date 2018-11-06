@@ -2671,12 +2671,11 @@ label bkrr_epilogue_common:
     mi "Ой, снег пошел… Надо же..? "
     me "Здорово… Люблю снегопад."
 
+    mi "Там, откуда я приехала, снег редко идёт…{w} Только в феврале и то не каждый год."
+
     $ bkrr_set_volume("sound", 0.2, 5.0)
     play sound bkrr_sfx_list["bus_arriving"] fadein 1
     play sound_loop2 bkrr_sfx_list["bus_idle"] fadein 15
-
-    mi "Там, откуда я приехала, снег редко идёт…{w} Только в феврале и то не каждый год."
-
     show mii surp outside close at cleft with dspr
 
     mi "Как раз мой автобус. Спасибо, что проводили. Я побежала!"
