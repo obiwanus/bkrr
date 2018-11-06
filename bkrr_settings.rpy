@@ -226,7 +226,7 @@ init python:
         "tol":[u"Толик", "#B3B3B3"],
         "cat":[u"Пират", "#B6DAF1"],
         "ant":[u"Антон", "#F9D277"],
-        "kla":[u"Клаус", "#CC4D14"],
+        "kla":[u"Клаус", "#EE9900"],
         "tr":[u"Трук", "#CCC"],
         "kla_unk":[u"Рыжий пионер", "#CC4D14"],
         "tr_unk":[u"Маленький пионер", "#CCC"],
@@ -2486,8 +2486,8 @@ init 2:
     image bkrr_pi normal sepia = im.Sepia(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png")
     image bkrr_pi smile sepia = im.Sepia(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png")
 
-    image bkrr_pi normal dark = im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.15))
-    image bkrr_pi normal dark far = im.MatrixColor(ES_IMAGES + "sprites/far/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.15))
+    image bkrr_pi normal dark = im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.05))
+    image bkrr_pi normal dark far = im.MatrixColor(ES_IMAGES + "sprites/far/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.05))
 
     # Электроник в футболке
 
