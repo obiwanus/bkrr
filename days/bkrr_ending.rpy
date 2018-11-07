@@ -1701,7 +1701,7 @@ label bkrr_epilogue_common:
     show dv normal civil close at cright with dissolve
 
     dv "Больше не дам. У меня два – тебе и Ульяне."
-    me "Нет. Я не за то."
+    me "Нет. Я не об этом."
     dv "Чего тебе?"
     me "Сколько человек в музклубе?"
     dv "Трое… С Толиком – четверо."
