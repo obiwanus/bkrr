@@ -2860,12 +2860,4 @@ label bkrr_credits:
     $ bkrr_set_volume("sound_loop", 1.0)
     $ bkrr_set_volume("sound_loop2", 1.0)
 
-    show cg final_image:
-        subpixel True
-        yalign 1.0
-        ease 7.0 yalign 0.2 xalign 0.5 zoom 0.6
-    with fade3
-    pause 7.0
-    scene black with fade3
-
     jump bkrr
