@@ -6041,10 +6041,7 @@ label bkrr_day19_common:
     show bkrr_mast_up:
         subpixel True
         truecenter
-        parallel:
-            ease 1.0 zoom 1.8
-        parallel:
-            ease 0.95 rotate -20
+        ease 1.0 zoom 1.8 rotate -20
     show bkrr_concert_people:
         subpixel True
         truecenter
@@ -6053,6 +6050,33 @@ label bkrr_day19_common:
 
     "Она заскрипела, качнулась в сторону зрительского зала, заставив передние ряды охнуть и пригнуться, но потом гирлянда из флажков потянула её назад."
 
+    window hide
+    scene bg ext_stage_big_day_evening_no_mast_and_flags:
+        subpixel True
+        truecenter
+        zoom 1.8
+        rotate -20
+    show bkrr_concert_flags:
+        truecenter
+        zoom 1.8
+        rotate -20
+        ease 0.3 alpha 0.0
+    show bkrr_mast_up:
+        subpixel True
+        truecenter
+        zoom 1.8
+        rotate -20
+        parallel:
+            ease 0.4 rotate -100
+        parallel:
+            ease 0.4 pos (0.53, 1.25)
+    show bkrr_concert_people:
+        subpixel True
+        truecenter
+        zoom 1.8
+        rotate -20
+    with None
+    $ renpy.pause(0.2, hard=True)
     play sound bkrr_sfx_list["mast_boom"]
     scene bg ext_stage_big_day_evening_mast_down
     show bkrr_mast_down_dust:

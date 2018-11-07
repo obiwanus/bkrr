@@ -830,6 +830,18 @@ init 2:
         MOD_IMAGES + "misc/d19_concert/pirate_flag.png",
         MOD_IMAGES + "misc/d19_concert/concert_lights_white.png",
     )
+
+    image bg ext_stage_big_day_evening_no_mast_and_flags = bkrr_fast_composite(
+        MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
+        MOD_IMAGES + "misc/d19_concert/monitors.png",
+        MOD_IMAGES + "misc/d19_concert/pirate_flag.png",
+        MOD_IMAGES + "misc/d19_concert/concert_lights_white.png",
+    )
+    image bkrr_concert_flags:
+        contains:
+            MOD_IMAGES + "misc/d19_concert/flags_top.png"
+        contains:
+            MOD_IMAGES + "misc/d19_concert/flags_right.png"
     image bkrr_mast_up = MOD_IMAGES + "misc/d19_concert/mast_up.png"
     image bkrr_concert_people = MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
     image bkrr_mast_down_dust = MOD_IMAGES + "misc/d19_concert/mist_white.png"
@@ -839,6 +851,7 @@ init 2:
         MOD_IMAGES + "misc/d19_concert/flags_top_down.png",
         MOD_IMAGES + "misc/d19_concert/monitors.png",
         MOD_IMAGES + "misc/d19_concert/pirate_flag.png",
+        MOD_IMAGES + "misc/d19_concert/concert_lights_white.png",
     )
 
     image bg ext_stage_big_day_evening_close = MOD_IMAGES + "bg/ext_stage_big_day_night_close.jpg"
