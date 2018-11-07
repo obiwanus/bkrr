@@ -1438,7 +1438,7 @@ label bkrr_day13_common:
 
     window hide
 
-    show us normal_dontlike swim at cright with dspr
+    show us normal_dontlike_bkrr swim at cright with dspr
 
     $ renpy.pause(1.0, hard=True)
 
@@ -1458,7 +1458,7 @@ label bkrr_day13_common:
     me "Алиса…"
 
     show dv normal swim at cleft
-    show us normal_dontlike swim at cright
+    show us normal_dontlike_bkrr swim at cright
     with dissolve
 
     dv "Я вижу. Уля, успокойся!"

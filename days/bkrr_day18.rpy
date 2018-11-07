@@ -3476,7 +3476,7 @@ label bkrr_day18_common:
     show kla normal pioneer at cleft with dissolve
     window show
 
-    kla "Вчера вечером у Антона Ивановича, болела голова, и я искал аспирин. В медкабинете была только Лена, она дала мне таблетку и напоила чаем. Я, кстати, забыл «спасибо» сказать, так торопился."
+    kla "Вчера вечером у Антона Ивановича болела голова, и я искал аспирин. В медкабинете была только Лена, она дала мне таблетку и напоила чаем. Я, кстати, забыл «спасибо» сказать, так торопился."
 
     show un smile paint sport with dspr
 
@@ -5424,7 +5424,7 @@ label bkrr_day18_common:
     us "Еще чего! Пионеры своих не бросают!"
     me "Давай, давай. Иностранца голодом морить не положено.{w} Если не успею закончить, принесешь мне порцию сюда. У тебя уже опыт есть в кормлении басистов. Договорились?"
 
-    show us normal_dontlike pioneer with dspr
+    show us normal_dontlike_bkrr pioneer with dspr
 
     "Она притворилась сердитой, но в голубых глазах прыгали веселые искорки."
 
@@ -6063,7 +6063,7 @@ label bkrr_day18_common:
 
     mt "Семён! Я не ожидала от тебя такого!"
 
-    show us normal_dontlike pioneer far:
+    show us normal_dontlike_bkrr pioneer far:
         bkrr_dream_sprite_rotate_counterclockwise
     with dissolve
 
