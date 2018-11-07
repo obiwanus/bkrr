@@ -914,36 +914,86 @@ init 2:
                     bkrr_make_tint_img(image, "purple"),
                     bkrr_make_tint_img(image, "cyan"),
                 ],
-                3.75,
+                5.75,
                 Dissolve(2.0, alpha=True),
             )
+
+    transform mist_right(time, start_pos, fade_time=2.0):
+        yalign 1.0
+        xpos start_pos
+        alpha 0.0
+        block:
+            block:
+                parallel:
+                    ease fade_time alpha 1.0
+                parallel:
+                    linear (time * (1 - start_pos - 0.3)) xpos 0.7
+                parallel:
+                    pause ((time * (1 - start_pos - 0.3)) - fade_time)
+                    ease fade_time alpha 0.0
+            block:
+                xpos -0.3
+                parallel:
+                    ease fade_time alpha 1.0
+                parallel:
+                    linear (time * (start_pos + 0.3)) xpos start_pos
+            repeat
+
+    transform mist_left(time, start_pos, fade_time=2.0):
+        yalign 1.0
+        xpos start_pos
+        alpha 0.0
+        block:
+            block:
+                parallel:
+                    ease fade_time alpha 1.0
+                parallel:
+                    linear (time * (start_pos + 0.2)) xpos -0.2
+                parallel:
+                    pause ((time * (start_pos + 0.2)) - fade_time)
+                    ease fade_time alpha 0.0
+            block:
+                xpos 0.8
+                parallel:
+                    ease fade_time alpha 1.0
+                parallel:
+                    linear (time * (1 - start_pos - 0.2)) xpos start_pos
+            repeat
 
     # Оп-па ховнокот
     image cg d19_pirates_on_stage:
         contains:
             MOD_IMAGES + "misc/d19_pirates/base.jpg"
         contains:
-            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
-        contains:
-            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
-        contains:
             MOD_IMAGES + "misc/d19_pirates/mast.png"
         contains:
-            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            random_mist()
+            mist_right(70, 0.1)
         contains:
-            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            random_mist()
+            mist_right(70, 0.5)
+        contains:
+            random_mist()
+            mist_left(50, 0.2)
         contains:
             MOD_IMAGES + "misc/d19_pirates/pirates1.png"
         contains:
-            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            random_mist()
+            mist_right(60, 0.6)
         contains:
-            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            random_mist()
+            mist_left(40, 0.3)
         contains:
             MOD_IMAGES + "misc/d19_pirates/pirates2.png"
         contains:
-            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            random_mist()
+            mist_right(50, 0.0)
         contains:
-            SnowBlossom(random_mist(), count=6, border=1800, xspeed=(-70, 70), yspeed=(0, 3), start=1, fast=True, horizontal=True)
+            random_mist()
+            mist_right(50, 0.4)
+        contains:
+            random_mist()
+            mist_left(50, 0.6)
 
     image cg d19_alisa_miku_song:
         contains:
