@@ -22,6 +22,7 @@ init 3 python:
 
 init:
 
+    image bg int_bus_people_day_bkrr = MOD_IMAGES + "bg/int_bus_people_day.jpg"
     image bg ext_bus_stop_night = MOD_IMAGES + "bg/ext_bus_stop_night.jpg"
     image bg ext_street_night = MOD_IMAGES + "bg/ext_street_night.jpg"
     image bg int_entrance_day = bkrr_fast_livecomposite(MOD_IMAGES + "misc/int_entrance_day_outside.png", "snow", MOD_IMAGES + "bg/int_entrance_day.png")
@@ -1377,7 +1378,8 @@ label bkrr_epilogue_common:
 
     hide mt with dissolve
 
-    "Кто-то принялся перекладывать сумки вниз, кто-то отошел попрощаться с друзьями…{w} Мику помогала Алисе устроить гитару на багажной полке и теперь они привязывали инструмент милыми синими ленточками."
+    "Кто-то принялся перекладывать сумки вниз, девчонки окружили Ольгу, чтобы попрощаться, кто-то отошел к друзьям из других отрядов…"
+    "Мику помогала Алисе устроить гитару на багажной полке и теперь они привязывали инструмент милыми синими ленточками."
 
     show mt smile panama pioneer close with dissolve
 
@@ -1393,7 +1395,12 @@ label bkrr_epilogue_common:
     mt "Шурик! Куда ты тащишь радио? Оно же клубное!"
     mt "Что значит «ты привёз»? Я вижу инвентарный номер!"
     mt "Как это поставили по ошибке? {w}Кто? {w}Завхоз? {w}Точно? {w}Всё-всё, не надо инструкцию искать, я верю."
-    "Пират потёрся о мою ногу и вернулся к воротам."
+    "Под ногами вертелся Пират и тёрся об мою штанину.{w} Я наклонился и почесал его за ухом."
+    me "Ты уж присмотри за лагерем."
+
+    $ bkrr_play_random(bkrr_meow_list)
+
+    "Кот важно мяукнул, то ли соглашаясь, то ли требуя жрать."
 
     window hide
 
@@ -1423,7 +1430,7 @@ label bkrr_epilogue_common:
     stop ambience fadeout 0.5
     stop sound_loop fadeout 0.5
 
-    scene bg int_bus_people_day with dissolve
+    scene bg int_bus_people_day_bkrr with dissolve
 
     play ambience bkrr_ambience_list["indoors_day"] fadein 3
 
@@ -1452,7 +1459,7 @@ label bkrr_epilogue_common:
 
     $ renpy.pause(1.0, hard=True)
 
-    scene bg int_bus_people_day at bkrr_bus_shaking with dissolve
+    scene bg int_bus_people_day_bkrr at bkrr_bus_shaking with dissolve
 
     $ bkrr_set_mode(nvl)
 
@@ -1513,7 +1520,7 @@ label bkrr_epilogue_common:
     "А сегодня сказка заканчивается. Нужно будет что-то есть, где-то жить… {w}Интересно, есть ли КГБ в этом прошлом?"
     "Когда Мику проснётся, мне нужно будет с ней очень серьёзно поговорить."
 
-    scene bg int_bus_people_day at bkrr_bus_shaking with dissolve
+    scene bg int_bus_people_day_bkrr at bkrr_bus_shaking with dissolve
 
     "В любом случае придётся рассказать, кто я, откуда взялся… {w}И что без её помощи мне ни за что не справиться."
     th "Вот только как начать? Что-то вроде «Мику, милая, любишь ли ты фантастику?»"
@@ -1559,7 +1566,7 @@ label bkrr_epilogue_common:
 
     window hide
 
-    scene bg int_bus_people_day at bkrr_bus_shaking with dissolve
+    scene bg int_bus_people_day_bkrr at bkrr_bus_shaking with dissolve
 
     window show
 
@@ -1584,7 +1591,7 @@ label bkrr_epilogue_common:
 
     window hide
 
-    scene bg int_bus_people_day at bkrr_bus_shaking
+    scene bg int_bus_people_day_bkrr at bkrr_bus_shaking
     show dv normal civil close at cright
     with dissolve
 
@@ -1627,7 +1634,7 @@ label bkrr_epilogue_common:
 
     $ renpy.pause(1.0, hard=True)
 
-    scene bg int_bus_people_day at bkrr_bus_shaking with dissolve
+    scene bg int_bus_people_day_bkrr at bkrr_bus_shaking with dissolve
 
     play music music_list["no_tresspassing"]
 
@@ -1685,7 +1692,7 @@ label bkrr_epilogue_common:
     dv "Так и есть. Укачало. Ты воду не пей, а то стошнит. {w}На, мятные леденцы хорошо помогают."
     "Она протянула мне конфету и добродушно улыбнулась."
 
-    scene bg int_bus_people_day at bkrr_bus_shaking with dissolve
+    scene bg int_bus_people_day_bkrr at bkrr_bus_shaking with dissolve
 
     "Если это была не «моя» Алиса, то она чертовски хорошо ей притворялась."
     "Я послушно развернул леденец, взял его в рот и прикрыл глаза, пытаясь взять себя в руки."
