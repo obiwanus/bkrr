@@ -1508,7 +1508,7 @@ label bkrr_epilogue_common:
 
     scene cg bkrr_epilogue_4 at bkrr_bus_shaking with dissolve
 
-    "Какая же она милая, когда спит. Многие девчонки жаловались на сухость кожи и нежеланный загар, но лицо Мику словно светилось изнутри."
+    "Какая же она милая, когда спит.{w} Многие девчонки жаловались на сухость кожи и нежеланный загар, но лицо Мику словно светилось изнутри."
     th "Как красиво падает свет…"
     "Я поправил прядку волос, упавшую на её лицо."
     "Ещё какое-то время можно ехать и ни о чём не волноваться. Но дорога закончится, и что тогда?"
@@ -2500,17 +2500,17 @@ label bkrr_epilogue_common:
 
     "Племяшка ждала меня в коридоре."
 
-    show sta normal outside at cright with dissolve
+    show sta normal inside at cright with dissolve
 
     sta "Наконец-то. Долго вы сегодня!"
 
-    show sta sad outside at cright with dspr
+    show sta sad inside at cright with dspr
 
     sta "Слушай, а чего у тебя лицо такое… {w}Странное. {w}Что, меня ругали?"
 
     me "Нет, просто задумался.{w} Не волнуйся, про тебя не вспоминали, я записал всё, что нужно передать родителям."
 
-    show sta smile outside at cright with dspr
+    show sta smile inside at cright with dspr
 
     sta "Спасибо большое, ты меня просто спас! Хочешь, обратно на такси подъедем? Я плачу!"
     me "Да брось ты, хорош дядя, который будет лишать племянницу карманных денег."
@@ -2542,12 +2542,12 @@ label bkrr_epilogue_common:
     "Когда всё началось."
     "Несколько секунд во мне боролись желание найти невидимого пианиста и страх, что мелодия просто мне почудилась."
 
-    show sta normal outside at cleft with dissolve
+    show sta normal inside at cleft with dissolve
 
     me "Стася, посиди тут. Я сейчас."
     sta "Ладно…"
 
-    show sta surp outside at cleft with dspr
+    show sta surp inside at cleft with dspr
 
     sta "Ой, Ромка, ты тоже здесь?"
 
@@ -2657,18 +2657,18 @@ label bkrr_epilogue_common:
     "Я машинально глянул на её руки и облегчённо выдохнул. {w}Обручального кольца не было видно."
     "Конечно, это ещё ничего не значит, но…"
 
-    show sta normal outside  at right with easeinright
+    show sta normal inside  at right with easeinright
 
     sta "Дядь Семён, я тут Ромку встретила с родителями. Они меня подвезут, ты доберешься домой один?"
 
-    show sta surp outside at right with dspr
+    show sta surp inside at right with dspr
 
     sta "Здрасьте, Мария Николаевна!"
 
     $ bkrr_set_name("mi", "Мария")
 
     show mii smile inside far at cleft
-    show sta smile outside at right
+    show sta smile inside at right
     with dspr
 
     mi "Точно, как же я не догадалась. Вы с ней очень похожи."
@@ -2678,7 +2678,7 @@ label bkrr_epilogue_common:
     sta "Так я поеду с ними?"
     me "Давай! Родителям привет. Позвони, как приедешь, ладно?"
 
-    show sta normal outside at right with dspr
+    show sta normal inside at right with dspr
 
     sta "Хорошо!"
 
