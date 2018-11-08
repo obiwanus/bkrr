@@ -1243,6 +1243,7 @@ init 2:
     image misc_d18_sheet = MOD_IMAGES + "misc/d18_sheet.jpg"
     image cg d18_alisarape = MOD_IMAGES + "cg/d18_alisarape.jpg"
     image cg d18_alisarape2 = bkrr_fast_composite(MOD_IMAGES + "cg/d18_alisarape.jpg", MOD_IMAGES + "cg/d18_alisarape_2.png")
+    image cg d18_young_od = MOD_IMAGES + "cg/d18_young_od.png"
     image cg d18_no_squirrel_1 = MOD_IMAGES + "cg/d9_squirrel_1.png"
     image cg d18_no_squirrel_2:
         contains:
