@@ -1788,7 +1788,9 @@ label bkrr_day18_common:
     "Я подошел к вожатой, присел рядом."
     me "Я не помешаю?"
 
-    show mt normal pioneer close at bkrr_sit_center with dissolve
+    show chair_c
+    show mt normal pioneer close at bkrr_sit_center:
+    with dissolve
 
     mt "Если не будешь задавать глупых вопросов. У меня голова вот такая со всеми этими приготовлениями."
     "Ольга развела руки, показав, какая именно у неё голова."
@@ -1833,7 +1835,9 @@ label bkrr_day18_common:
     mt "Как обычно: присмотри за своими рыжими бандитками, большего не прошу."
     me "Я присмотрю!"
 
-    hide mt with dissolve
+    hide chair_c
+    hide mt
+    with dissolve
 
     "Вместо ответа, Ольга припала к стакану с компотом и жестом предложила мне идти."
 

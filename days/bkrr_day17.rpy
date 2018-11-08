@@ -1359,8 +1359,6 @@ label bkrr_day17_common:
     th "Чем чёрт не шутит, вдруг и правда поможет? Интересно, сработает, если играть пальцами, а он просто повисит на шее?"
     "Сама идея, что зуб, выбитый у несчастной голодной рыбы, может как-то влиять на технику игры, была абсурдной. {w}Примерно как… {w}идея о путешествии во времени и попадании в непонятный пионерлагерь."
 
-    # ПРОПУСК, СТОЛОВАЯ
-
     window hide
     $ bkrr_timeskip_short()
     scene bg int_dining_hall_people_day_bkrr with bkrr_timeskip_transition()
@@ -1370,7 +1368,12 @@ label bkrr_day17_common:
     "Увы, спокойно позавтракать с девчонками мне не дали."
     "Вожатая перехватила меня на входе в столовую и повела за дальний стол. Мику с Ульяной вопросительно посмотрели на меня, но я только развёл руками."
 
-    show mt angry pioneer at bkrr_sit_center with dissolve
+    show chair_c:
+        chair_move_sd
+    show mt angry pioneer:
+        center
+        sit_down
+    with dissolve
 
     mt "Еле поймала. Опять бродишь неизвестно где! Злостный нарушитель распорядка!"
     me "Я не виноват! Меня подставили!"
@@ -1436,7 +1439,9 @@ label bkrr_day17_common:
     me "Думаю, нет."
     mt "Вот то-то же. Ничего, четверых вполне хватит."
 
-    hide mt with dissolve
+    hide mt
+    hide chair_c
+    with dissolve
 
     window hide
     $ renpy.pause(2.0, hard=True)
