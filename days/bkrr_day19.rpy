@@ -1942,6 +1942,8 @@ label bkrr_day19_common:
     window hide
     stop ambience fadeout 1
     scene bg int_dining_hall_people_sunset_bkrr
+    show chair_r
+    show chair_l
     show mi normal pioneer at bkrr_sit_right
     show un normal pioneer at bkrr_sit_left
     with fade2
@@ -1990,6 +1992,8 @@ label bkrr_day19_common:
 
     "Вожатая снова вошла в роль. Ну и ладно."
 
+    hide chair_l
+    hide chair_r
     hide mi
     hide un
     with dissolve

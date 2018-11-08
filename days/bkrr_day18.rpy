@@ -1527,52 +1527,55 @@ label bkrr_day18_common:
     hide mi
     with dissolve
 
-    show mi smile pioneer close at cright
-    show dv grin pioneer close at left
-
+    show chair_r behind mi
+    show mi smile pioneer at bkrr_sit_right
+    show chair_l behind dv
+    show dv grin pioneer at bkrr_sit_left
     with dissolve
 
     "Я присел рядом."
     "На столе меня и Ульяну уже поджидали две порции гречневой каши с сардельками."
 
-    show dv smile pioneer close with dspr
+    show dv smile pioneer with dspr
 
     me "М-м-м… как же я проголодался. Спасибо, что на меня тоже взяли. Кто же это у нас такой заботливый?"
 
-    show mi normal pioneer close with dspr
+    show mi normal pioneer with dspr
 
     "Мику покачала головой."
     mi "Вообще-то это Алиса себе прихватила. Как узнала, что лишнего веса у неё нет, так и ест как не в себя."
 
-    show mi upset pioneer close with dspr
+    show mi upset pioneer with dspr
 
     mi "Я ещё подумала взять на тебя порцию, но побоялась, что остынет. Ты сходи, тебе дадут горячую."
     me "Не хочу вставать. Алиска, можно я одну тарелку у тебя возьму? Если не наешься, я тебе принесу потом."
 
-    show dv normal pioneer close with dspr
+    show dv normal pioneer with dspr
 
     "Алиса тяжело вздохнула, и попыталась возразить."
     dv "Нет. Мне нужны силы, мы сегодня будем много играть! А еще на пляж пойдем!"
 
-    show dv angry pioneer close with dspr
+    show dv angry pioneer with dspr
 
     dv "Куда… Поставь!!!"
     "Но я уже подвинул тарелку к себе."
 
-    show dv smile pioneer close with dspr
+    show dv smile pioneer with dspr
 
     dv "Вы посмотрите на эту наглую морду. Ладно, объедай несчастную подругу."
 
-    show mi normal pioneer close with dspr
+    show mi normal pioneer with dspr
 
     me "Ну не делай такое лицо. Я же сказал, что принесу, если тебе двух тарелок не хватит.{w} Хочешь, сардельку отдам? Я бутерброд с колбасой утром cъел, так что обойдусь."
 
-    show dv grin pioneer close with dspr
+    show dv grin pioneer with dspr
 
     dv "Вот как? Сам, значит, колбасу трескает, а мне утром – «На холодный чай без сахара и заварки, а больше ничего нет»?"
     me "Неправда! Заварка там была. И он был почти горячий. Ладно, раз не хочешь…"
     dv "Хочу! Хватит умничать, давай её сюда!"
 
+    hide chair_r
+    hide chair_l
     hide dv
     hide mi
     with dissolve
@@ -1580,66 +1583,74 @@ label bkrr_day18_common:
     "Следующие несколько секунд Алиса пыталась подцепить сардельку тупой вилкой, а Ульяна с Мику смеялись и давали ей советы."
     "Не в силах больше на это смотреть, Ульяна пришла ей на помощь, и, зажатая между двумя вилками, сарделька наконец сменила хозяина."
 
-    show dv smile pioneer close at cleft
-    show us smile pioneer close at cright
+    show chair_r behind us
+    show chair_l behind dv
+    show dv smile pioneer at bkrr_sit_left
+    show us smile pioneer at bkrr_sit_right1
     with dissolve
 
     dv "Спасибо, Ульянка."
     "Ульяна радостно занесла ложку над кашей, но Алиса изменилась в лице и вскрикнула:"
 
-    show dv shocked pioneer close with dspr
+    show dv shocked pioneer with dspr
 
     dv "Нет!!! СТОЙ!!!"
     "И тут же отобрала тарелку у Ульяны."
 
-    show us sad pioneer close with dspr
+    show us sad pioneer with dspr
 
     us "Алиса, ты чего, с дуба рухнула?"
     dv "Тихо!"
 
-    hide dv with dissolve
-
     "Алиса порылаcь вилкой в ульянкиной тарелке, вытащила из её каши несколько горошин черного перца и отложила их на салфетку."
 
-    show dv smile pioneer close at cleft with dissolve
+    show dv smile pioneer with dspr
 
     dv "Вот. Теперь лопай."
 
-    show us dontlike pioneer close with dspr
+    show us dontlike pioneer with dspr
 
     us "Это что такое? Перец? Ты совсем ошалела? Он же горький!"
     dv "Не ной, я же убрала!"
 
-    show us normal pioneer close with dspr
+    show us normal pioneer with dspr
 
     me "А если бы эту порцию я взял?"
 
-    show dv laugh pioneer close with dspr
+    show dv laugh pioneer with dspr
 
     dv "Да не беда, я во вторую тоже положила!"
     me "И когда ты собиралась мне сказать?"
     dv "А я не собиралась. Ты  сам порцию цапнул. И вообще, тебя тоже проучить надо, ты голый по клубу бегал и к Микуське приставал."
 
-    show us grin pioneer close with dspr
+    show us grin pioneer with dspr
 
     me "Эй… не было такого!"
 
-    show dv smile pioneer close with dspr
+    show dv smile pioneer with dspr
 
     dv "Было, было!"
     me "Мику, ну скажи ты им?"
 
-    hide us with dissolve
-    show mi smile pioneer close at cright with dissolve
+    window hide
+    hide chair_r
+    hide us
+    with dissolve
+    show chair_r
+    show mi smile pioneer at bkrr_sit_right
+    with dissolve
+    window show
 
     "Мику едва заметно улыбнулась и возразила:"
 
-    show mi laugh pioneer close with dspr
+    show mi laugh pioneer with dspr
 
     mi "Алиса очень заботится, чтобы ты не сделал что-нибудь эм… не-{w=0.05}по-{w=0.05}до-{w=0.05}ба-{w=0.05}ю-{w=0.05}ще-{w=0.05}е.{w} Спасибо ей! Я это очень ценю."
     me "Предательница!"
     dv "То-то же! Рано вам!"
 
+    hide chair_r
+    hide chair_l
     hide dv
     hide mi
     with dissolve
@@ -1647,50 +1658,60 @@ label bkrr_day18_common:
     "Я поковырялся в своей каше, извлек оттуда штук пять черных горошин."
     me "Ты не помнишь, сколько их было?"
 
-    show dv smile pioneer close at cleft with dissolve
+    show chair_l
+    show dv smile pioneer at bkrr_sit_left
+    with dissolve
 
     dv "Думаешь, я их считала?"
     me "Я на это надеялся. Ладно, если я покраснею и стану дышать огнем, то валите все вот на неё!"
     dv "Сеня, у басистов вообще жизнь тяжелая. Ты веселей ложкой работай, у нас ещё куча работы на сегодня!"
 
-    hide dv with dissolve
+    hide chair_l
+    hide dv
+    with dissolve
 
     "Я последовал её совету. Алиса с энтузиазмом поглощала кашу, довольно причмокивая. Кажется, она действительно изголодалась."
 
-    show us grin pioneer close at cright with dissolve
+    show chair_r
+    show us grin pioneer at bkrr_sit_right1
+    with dissolve
 
     us "Ой, как мечет-то, как мечет! Не лопнула бы."
 
-    show dv angry pioneer close at cleft with dissolve
+    show chair_l
+    show dv angry pioneer at bkrr_sit_left
+    with dissolve
 
     dv "Цыц! Я из-за тебя неделю нормально не ела! Если бы не концерт, убила бы!"
 
-    show us sad pioneer close with dissolve
+    show us sad pioneer with dspr
 
     us "Ну, прости меня. Я больше не буду."
     "Ульяна накрыла рукой руку Алисы и приняла очень виноватый вид.{w} Играла она или правда раскаивалась, но выглядело очень искренне."
 
-    show dv smile pioneer close with dspr
+    show dv smile pioneer with dspr
 
     dv "Ладно, не подлизывайся. Проехали!"
 
-    show us normal pioneer close with dspr
+    show us normal pioneer with dspr
 
     "Алиса сыто похлопала себя по животу."
 
-    show dv grin pioneer close with dspr
+    show dv grin pioneer with dspr
 
     dv "Ой, что-то я объелась. Наверное, прилягу на часок… До репетиции."
     th "А как же куча работы?"
 
-    show us grin pioneer close with dspr
+    show us grin pioneer with dspr
 
     us "Приляг, приляг. Чтоб жирок завязался."
 
-    show dv smile pioneer close with dspr
+    show dv smile pioneer with dspr
 
     dv "Еще одна шуточка, и ты у меня сама приляжешь!"
 
+    hide chair_l
+    hide chair_r
     hide dv
     hide us
     with dissolve
@@ -1698,13 +1719,18 @@ label bkrr_day18_common:
     "Я улыбнулся Мику."
     me "Обожаю, наблюдать, когда они ругаются."
 
-    show mi grin pioneer close at cright with dissolve
+    show chair_c
+    show mi grin pioneer at bkrr_sit_center
+    with dissolve
 
     mi "Это они не ругаются. Вот если начнут вежливо-вежливо, через спасибо-пожалуйста, вот тогда жди беды. Я такое один раз видела, еле помирила потом."
 
     hide mi
-    show dv laugh pioneer close at cleft
-    show us laugh pioneer close at cright
+    hide chair_c
+    show chair_l
+    show chair_r
+    show dv laugh pioneer at bkrr_sit_left
+    show us laugh pioneer at bkrr_sit_right1
     with dissolve
 
     dv_us_d "Да не ссорились мы!"
@@ -1712,13 +1738,15 @@ label bkrr_day18_common:
     "Они посмотрели друг на дружку и расхохотались. Вожатая посмотрела в нашу сторону и сделала замечание:"
     mt "Второй столик, прекратите шуметь! А то на кухне картошка нечищеная, крикунов ждёт!"
 
-    show dv smile pioneer close
-    show us smile pioneer close
+    show dv smile pioneer
+    show us smile pioneer
     with dspr
 
     "Ольга поймала мой взгляд и подмигнула."
     dv_us_d "Молчим!"
 
+    hide chair_l
+    hide chair_r
     hide dv
     hide us
     with dissolve
