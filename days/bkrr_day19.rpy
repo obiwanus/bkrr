@@ -5957,8 +5957,8 @@ label bkrr_day19_common:
     "Ольга сделала страшное лицо и жестами призывала нас заканчивать, но не ради одной этой песни все затевалось."
 
     window hide
-    scene cg d19_pirates_on_stage with dissolve
     play music bkrr_music_list["rb_07"]
+    scene cg d19_pirates_on_stage with dissolve
     window show
 
     "Алиса снова ударила по струнам, и я снова стал выводить знакомый ритм, не думая о том, что будет дальше.\n"
@@ -6038,15 +6038,15 @@ label bkrr_day19_common:
     scene bg ext_stage_big_day_evening_no_mast:
         subpixel True
         truecenter
-        ease 1.0 zoom 1.8 rotate -20
+        ease 0.5 zoom 1.8 rotate -20
     show bkrr_mast_up:
         subpixel True
         truecenter
-        ease 1.0 zoom 1.8 rotate -20
+        ease 0.5 zoom 1.8 rotate -20
     show bkrr_concert_people:
         subpixel True
         truecenter
-        ease 1.0 zoom 1.8 rotate -20
+        ease 0.5 zoom 1.8 rotate -20
     with None
 
     "Она заскрипела, качнулась в сторону зрительского зала, заставив передние ряды охнуть и пригнуться, но потом гирлянда из флажков потянула её назад."
