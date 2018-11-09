@@ -9,7 +9,7 @@ label bkrr_day14_start:
 
 label bkrr_day14_common:
 
-    scene expression bkrr_offset_defocusing("bg int_infirmary_night")
+    scene expression bkrr_offset_defocusing("bg int_infirmary_night_empty")
     show unblink
     with None
 
@@ -25,7 +25,7 @@ label bkrr_day14_common:
 
     window hide
 
-    scene bg int_infirmary_night with Dissolve(2.5)
+    scene bg int_infirmary_night_empty with Dissolve(2.5)
 
     $ renpy.pause(1.0, hard=True)
 
@@ -483,7 +483,7 @@ label bkrr_day14_common:
 
     play sound sfx_click_1
 
-    scene bg int_infirmary_night with dspr
+    scene bg int_infirmary_night_empty with dspr
 
     $ renpy.pause(1.0, hard=True)
 
@@ -503,7 +503,7 @@ label bkrr_day14_common:
 
     play sound sfx_dinner_horn_processed
 
-    scene expression bkrr_awakening_atl("bg int_infirmary_day")
+    scene expression bkrr_awakening_atl("bg int_infirmary_day_empty ")
     show unblink
     with None
 
@@ -539,7 +539,7 @@ label bkrr_day14_common:
 
     $ renpy.pause(2.0, hard=True)
 
-    scene bg int_infirmary_day
+    scene bg int_infirmary_day_empty
     show unblink
     with None
 
@@ -667,9 +667,9 @@ label bkrr_day14_common:
 
     window hide
 
-    $ bkrr_timeskip_short()
+    $ bkrr_timeskip()
 
-    scene bg int_infirmary_day with bkrr_timeskip_transition()
+    scene bg int_infirmary_day with bkrr_circleout_transition
 
     window show
 
@@ -840,9 +840,13 @@ label bkrr_day14_common:
     hide un with dissolve
 
     me "Доброе утро! Уля, что за намёки?"
-    "Лена едва слышно поздоровалась и отошла к столу, уткнувшись в книгу. {w}Алиса с каменным лицом зыркнула на неё, потом поставила поднос на тумбочку у моей кровати, посмотрела на мою спину, вздохнула."
+    "Лена едва слышно поздоровалась и отошла к столу, уткнувшись в книгу. {w}Алиса с каменным лицом зыркнула на неё, потом поставила поднос на стол у моей кровати, посмотрела на мою спину, вздохнула."
 
     window hide
+
+    scene bg int_infirmary_day_food
+    show us grin pioneer close at right
+    with dissolve
 
     show us grin pioneer close at cleft with ease
 
@@ -1136,7 +1140,7 @@ label bkrr_day14_common:
 
     stop music fadeout 5
 
-    scene bg int_infirmary_day with dissolve
+    scene bg int_infirmary_day_food with dissolve
 
     play ambience bkrr_ambience_list["indoors_day"] fadein 3
 
@@ -1285,6 +1289,9 @@ label bkrr_day14_common:
     window show
 
     "Из-за температуры есть не слишком хотелось, но, чтобы не обижать девочек, я поглотил всё, что принесли. На компот уже сил не хватило, пришлось оставить на потом."
+
+    scene bg int_infirmary_day with dissolve
+
     "Ульяна собрала посуду, показала кулак на предложение отнести самому и выскочила из комнаты. Лена проводила её взглядом."
 
     show un smile pioneer at center with dissolve
@@ -1355,18 +1362,21 @@ label bkrr_day14_common:
 
     window hide
 
-    show mi smile pioneer close at center with dspr
+    hide mi with dissolve
+    show mi smile pioneer close at center with dissolve
 
     $ renpy.pause(0.2, hard=True)
 
+    scene bg int_infirmary_day_guitar
     show mi surprise pioneer close:
         center
+        pause 0.5
         ease 1.0 zoom 1.2
     with dspr
 
     window show
 
-    "Я ринулся навстречу, взял её за руку, второй рукой отобрал гитару и прислонил к стене, затем подхватил Мику на руки и закружил. {w}Она обняла меня за шею, сбивчиво приговаривая, чтобы я прекратил."
+    "Я ринулся навстречу, взял её за руку, второй рукой отобрал гитару и прислонил к тумбочке, затем подхватил Мику на руки и закружил. {w}Она обняла меня за шею, сбивчиво приговаривая, чтобы я прекратил."
     mi "Ай!!! Поставь, ну что ты делаешь… нельзя же… ты ведь больной!"
     me "Можно! И нужно! Я очень по тебе соскучился!"
 
@@ -1498,7 +1508,7 @@ label bkrr_day14_common:
     mi "Ты о чём?"
     me "Да так. Вспомнил, как за тобой в старый лагерь бегал и что было потом. Когда мы с тобой обнимались под шум дождя, только ты и я…"
 
-    scene bg int_infirmary_day
+    scene bg int_infirmary_day_guitar
     show mi shy pioneer close at bkrr_sit_center1
     show unblink
     with None
@@ -1867,7 +1877,12 @@ label bkrr_day14_common:
     "Ульяна недоверчиво посмотрела на гитару, потом на табулатуры на столе. Она не спешила отдавать мне еду."
     me "Не мучь товарища! Давай обед! Басиста нужно кормить, а то он зачахнет и не сможет струны прижимать!"
 
+    window hide
+    scene bg int_infirmary_day_guitar_food
+    show us surp1 sport at center
+    with dissolve
     show us smile sport far at center with dspr
+    window show
 
     "Ульяна осторожно, чтобы не опрокинуть, отодвинулась вместе с подносом, а затем и вовсе поставила его на стол."
     us "Не-не-не. Сыграй сначала!"
@@ -1915,7 +1930,7 @@ label bkrr_day14_common:
 
     $ renpy.pause(1.0, hard=True)
 
-    scene bg int_infirmary_day with dissolve
+    scene bg int_infirmary_day_food with dissolve
 
     window show
 
@@ -2061,7 +2076,7 @@ label bkrr_day14_common:
     me "Извини, не хотел тебя грузить."
     us "Да шучу я! Ну, до вечера!"
 
-    hide us with dissolve
+    scene bg int_infirmary_day_guitar with dissolve
 
     "Ульяна собрала тарелки и вприпрыжку выбежала из изолятора, опасно балансируя подносом на одной руке."
 
@@ -2356,7 +2371,9 @@ label bkrr_day14_common:
 
     play music music_list["silhouette_in_sunset"] fadein 5
 
-    show mi normal bkrr_dress close at center with dissolve
+    scene bg int_infirmary_sunset_guitar_food
+    show mi normal bkrr_dress close at center
+    with dissolve
 
     $ renpy.pause(1.0, hard=True)
 
@@ -2511,13 +2528,13 @@ label bkrr_day14_common:
 
     window hide
 
-    scene bg int_infirmary_sunset with dissolve
+    scene bg int_infirmary_sunset_food with dissolve
 
     $ renpy.pause(1.0)
 
     stop ambience fadeout 5
 
-    scene bg int_infirmary_night with Dissolve(5.0)
+    scene bg int_infirmary_night_food with Dissolve(5.0)
 
     $ bkrr_set_time("night")
 

@@ -281,7 +281,7 @@ label bkrr_day15_common:
 
     play sound2 sfx_steps_clubs_nextroom fadein 5
 
-    scene expression bkrr_offset_defocusing("bg int_infirmary_day_guitar")
+    scene expression bkrr_offset_defocusing("bg int_infirmary_day_guitar_food")
     show unblink
     with None
 
@@ -302,7 +302,7 @@ label bkrr_day15_common:
 
     play music music_list["eat_some_trouble"]
 
-    scene bg int_infirmary_day_guitar with vpunch
+    scene bg int_infirmary_day_guitar_food with vpunch
 
     window show
 
@@ -714,7 +714,7 @@ label bkrr_day15_common:
 
     $ renpy.pause(1.25, hard=True)
 
-    hide mi with dissolve
+    scene bg int_infirmary_day_guitar with dissolve
 
     window show
 
@@ -1369,6 +1369,7 @@ label bkrr_day15_common:
 
     me "Привет, девчата. Да, не топчите, пожалуйста, мы только уборку закончили. А где Мику?"
 
+    scene bg int_infirmary_day_guitar_food
     show dv normal pioneer at cleft
     show us calml pioneer at cright
     with dissolve
@@ -1584,7 +1585,7 @@ label bkrr_day15_common:
 
     $ renpy.pause(1.0, hard=True)
 
-    scene bg int_infirmary_day with dissolve
+    scene bg int_infirmary_day_food with dissolve
 
     window show
 

@@ -1993,7 +1993,7 @@ label bkrr_day13_common:
 
     play sound sfx_close_door_clubs_nextroom
 
-    scene bg int_infirmary_day with dissolve
+    scene bg int_infirmary_day_empty with dissolve
 
     play ambience bkrr_ambience_list["indoors_day"] fadein 3
 
@@ -2398,7 +2398,7 @@ label bkrr_day13_common:
 
     $ renpy.pause(1.0, hard=True)
 
-    scene bg int_infirmary_sunset with dissolve
+    scene bg int_infirmary_sunset_empty_food with dissolve
 
     play ambience bkrr_ambience_list["indoors_evening"] fadein 3
 
@@ -2446,7 +2446,7 @@ label bkrr_day13_common:
 
     $ bkrr_timeskip()
 
-    scene bg int_infirmary_sunset with bkrr_circleout_transition
+    scene bg int_infirmary_sunset_empty_food with bkrr_circleout_transition
 
     play ambience bkrr_ambience_list["indoors_evening"] fadein 3
 
@@ -2546,7 +2546,7 @@ label bkrr_day13_common:
     with dissolve
 
     $ renpy.pause(1.0, hard=True)
-
+    scene bg int_infirmary_sunset_empty with dissolve
     window show
 
     "Обняв меня на прощание, она пожелала спокойной ночи и ушла. Я дотронулся до того места, где её щека коснулась моей, и улыбнулся. Очень захотелось спать."
@@ -2561,7 +2561,7 @@ label bkrr_day13_common:
 
     $ renpy.pause(3.0, hard=True)
 
-    scene bg int_infirmary_night
+    scene bg int_infirmary_night_empty
     show unblink
     with None
 
