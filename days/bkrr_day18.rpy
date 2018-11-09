@@ -877,7 +877,7 @@ label bkrr_day18_common:
 
     window hide
     play sound bkrr_sfx_list["whiteout2"] fadein 1
-    scene int_house_of_mt_sunset
+    scene bg int_house_of_mt_sunset
     show mt smile nightdress close
     with bkrr_fade(1.0)
     window show
