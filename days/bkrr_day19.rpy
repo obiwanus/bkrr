@@ -259,8 +259,7 @@ label bkrr_day19_common:
 
     "Мимо, прошелся Пират с рыбьей головой в зубах, мимоходом потерся о мои ноги, и скрылся за дверью.{w} Санитария, говорите? Ну-ну."
 
-    play sound sfx_open_water_sink fadein 5
-    play sound_loop sfx_water_sink_stream fadein 1
+    play sound bkrr_sfx_list["botol1"] fadein 5
 
     "Напор воды был небольшим, потому я прислонился к стене и вспоминал события последних дней. Сколько всего случилось…"
 
@@ -269,11 +268,6 @@ label bkrr_day19_common:
     window show
 
     "Кстати, совсем забыл! Шурик же наверняка мается похмельем, а аспирин надежно заперт в медпункте."
-
-    stop sound_loop fadeout 2
-    play sound sfx_close_water_sink
-    pause 0.5
-
     me "Тетя Наташа?"
     nt "Да-да?"
     me "Тут это… вы, только, не удивляйтесь. Есть у вас рассол?"
