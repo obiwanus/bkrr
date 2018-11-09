@@ -249,11 +249,13 @@ label bkrr_day18_common:
     th "Легко сказать…"
     "Я рванулся так, что небрежно повязанная простыня свалилась на пол. Всё-таки наш клуб – не очень удачное место для того, чтобы спрятать голого пионера. Совершенно никаких условий."
 
+    window hide
     play sound sfx_blanket_off_stand fadein 0.6
-    hide mi
+    scene bg int_music_club_mattresses_sunset
     show misc_d18_sheet:
         alpha 0.5
-    with dspr
+    with flash
+    window show
 
     "Я не придумал ничего лучше, чем спрятаться на стопке матрасов в углу, накрыться простынями и старательно притвориться кучкой постельного белья."
     "Мику подправила мою маскировку, схватила гитару, быстро села на матрасы и притворилась что репетирует."
@@ -759,8 +761,6 @@ label bkrr_day18_common:
 
     mt "Тоже. Только давно.{w} И тоже поначалу была в шоке. Я сразу поняла, что творится что-то странное.{w} У меня, извини за подробность, грудь чуть ли не вдвое уменьшилась, это трудно не заметить."
 
-    # ЦГ СЮДА
-
     mt "Я к водительскому зеркалу, а оттуда смотрит молодая девчонка, лет пятнадцати.{w} Я задрала футболку, а шва на животе нет, шрамы пропали, ну и еще по мелочи. Как новая стала."
 
     show mt smile nightdress close with dspr
@@ -863,17 +863,25 @@ label bkrr_day18_common:
 
     mt "Да вот так и стала. Проводили отъезжающих, поужинали, легла спать.{w} Просыпаюсь, и чувствую: что-то мне тяжело. Рукой хвать, а у меня вот тут подросло размера на два."
     mt "Всё, думаю. Назад вернулась. Долго не хотела открывать глаза, боялась, что увижу свою комнату.{w} Наконец, набралась храбрости и открыла. Смотрю – я всё ещё здесь."
+
+    window hide
+    play sound bkrr_sfx_list["whiteout1"] fadein 1
+    scene cg d18_young_od with flash
+    window show
+
     mt "Побежала к зеркалу, оттуда на меня смотрит молодая девушка. Совсем не та, что вчера спать ложилась. Лет двадцати."
-
-    hide mt with dissolve
-
     "Ольга машинально провела рукой по местам, чудесным образом дважды сменившим свой размер.{w} Маслом кашу не испортишь, так что я добавил:"
     me "И красавица, к тому же. Кстати, я и сейчас больше двадцати не дал бы."
-
-    show mt smile nightdress close with dissolve
-
     mt "Спасибо! Я побежала к Андрею, а тот смеется. Кто не работает, тот не ест, говорит, так что поработаешь вожатой."
     mt "Велел приготовиться и через три дня принимать отряд.{w} Главное, говорит, веди себя, как положено вести вожатой, ничего сложного тут нет. Я и постаралась."
+
+    window hide
+    play sound bkrr_sfx_list["whiteout2"] fadein 1
+    scene int_house_of_mt_sunset
+    show mt smile nightdress close
+    with bkrr_fade(1.0)
+    window show
+
     mt "Вот ты, как человек со стороны, скажи, похоже выходит? Пионеры верят."
     me "Даже слишком. Как-то сильно переигрываете, извините."
 
@@ -1527,52 +1535,55 @@ label bkrr_day18_common:
     hide mi
     with dissolve
 
-    show mi smile pioneer close at cright
-    show dv grin pioneer close at left
-
+    show chair_r behind mi
+    show mi smile pioneer at bkrr_sit_right
+    show chair_l behind dv
+    show dv grin pioneer at bkrr_sit_left
     with dissolve
 
     "Я присел рядом."
     "На столе меня и Ульяну уже поджидали две порции гречневой каши с сардельками."
 
-    show dv smile pioneer close with dspr
+    show dv smile pioneer with dspr
 
     me "М-м-м… как же я проголодался. Спасибо, что на меня тоже взяли. Кто же это у нас такой заботливый?"
 
-    show mi normal pioneer close with dspr
+    show mi normal pioneer with dspr
 
     "Мику покачала головой."
     mi "Вообще-то это Алиса себе прихватила. Как узнала, что лишнего веса у неё нет, так и ест как не в себя."
 
-    show mi upset pioneer close with dspr
+    show mi upset pioneer with dspr
 
     mi "Я ещё подумала взять на тебя порцию, но побоялась, что остынет. Ты сходи, тебе дадут горячую."
     me "Не хочу вставать. Алиска, можно я одну тарелку у тебя возьму? Если не наешься, я тебе принесу потом."
 
-    show dv normal pioneer close with dspr
+    show dv normal pioneer with dspr
 
     "Алиса тяжело вздохнула, и попыталась возразить."
     dv "Нет. Мне нужны силы, мы сегодня будем много играть! А еще на пляж пойдем!"
 
-    show dv angry pioneer close with dspr
+    show dv angry pioneer with dspr
 
     dv "Куда… Поставь!!!"
     "Но я уже подвинул тарелку к себе."
 
-    show dv smile pioneer close with dspr
+    show dv smile pioneer with dspr
 
     dv "Вы посмотрите на эту наглую морду. Ладно, объедай несчастную подругу."
 
-    show mi normal pioneer close with dspr
+    show mi normal pioneer with dspr
 
     me "Ну не делай такое лицо. Я же сказал, что принесу, если тебе двух тарелок не хватит.{w} Хочешь, сардельку отдам? Я бутерброд с колбасой утром cъел, так что обойдусь."
 
-    show dv grin pioneer close with dspr
+    show dv grin pioneer with dspr
 
     dv "Вот как? Сам, значит, колбасу трескает, а мне утром – «На холодный чай без сахара и заварки, а больше ничего нет»?"
     me "Неправда! Заварка там была. И он был почти горячий. Ладно, раз не хочешь…"
     dv "Хочу! Хватит умничать, давай её сюда!"
 
+    hide chair_r
+    hide chair_l
     hide dv
     hide mi
     with dissolve
@@ -1580,66 +1591,74 @@ label bkrr_day18_common:
     "Следующие несколько секунд Алиса пыталась подцепить сардельку тупой вилкой, а Ульяна с Мику смеялись и давали ей советы."
     "Не в силах больше на это смотреть, Ульяна пришла ей на помощь, и, зажатая между двумя вилками, сарделька наконец сменила хозяина."
 
-    show dv smile pioneer close at cleft
-    show us smile pioneer close at cright
+    show chair_r behind us
+    show chair_l behind dv
+    show dv smile pioneer at bkrr_sit_left
+    show us smile pioneer at bkrr_sit_right1
     with dissolve
 
     dv "Спасибо, Ульянка."
     "Ульяна радостно занесла ложку над кашей, но Алиса изменилась в лице и вскрикнула:"
 
-    show dv shocked pioneer close with dspr
+    show dv shocked pioneer with dspr
 
     dv "Нет!!! СТОЙ!!!"
     "И тут же отобрала тарелку у Ульяны."
 
-    show us sad pioneer close with dspr
+    show us sad pioneer with dspr
 
     us "Алиса, ты чего, с дуба рухнула?"
     dv "Тихо!"
 
-    hide dv with dissolve
-
     "Алиса порылаcь вилкой в ульянкиной тарелке, вытащила из её каши несколько горошин черного перца и отложила их на салфетку."
 
-    show dv smile pioneer close at cleft with dissolve
+    show dv smile pioneer with dspr
 
     dv "Вот. Теперь лопай."
 
-    show us dontlike pioneer close with dspr
+    show us dontlike pioneer with dspr
 
     us "Это что такое? Перец? Ты совсем ошалела? Он же горький!"
     dv "Не ной, я же убрала!"
 
-    show us normal pioneer close with dspr
+    show us normal pioneer with dspr
 
     me "А если бы эту порцию я взял?"
 
-    show dv laugh pioneer close with dspr
+    show dv laugh pioneer with dspr
 
     dv "Да не беда, я во вторую тоже положила!"
     me "И когда ты собиралась мне сказать?"
     dv "А я не собиралась. Ты  сам порцию цапнул. И вообще, тебя тоже проучить надо, ты голый по клубу бегал и к Микуське приставал."
 
-    show us grin pioneer close with dspr
+    show us grin pioneer with dspr
 
     me "Эй… не было такого!"
 
-    show dv smile pioneer close with dspr
+    show dv smile pioneer with dspr
 
     dv "Было, было!"
     me "Мику, ну скажи ты им?"
 
-    hide us with dissolve
-    show mi smile pioneer close at cright with dissolve
+    window hide
+    hide chair_r
+    hide us
+    with dissolve
+    show chair_r
+    show mi smile pioneer at bkrr_sit_right
+    with dissolve
+    window show
 
     "Мику едва заметно улыбнулась и возразила:"
 
-    show mi laugh pioneer close with dspr
+    show mi laugh pioneer with dspr
 
     mi "Алиса очень заботится, чтобы ты не сделал что-нибудь эм… не-{w=0.05}по-{w=0.05}до-{w=0.05}ба-{w=0.05}ю-{w=0.05}ще-{w=0.05}е.{w} Спасибо ей! Я это очень ценю."
     me "Предательница!"
     dv "То-то же! Рано вам!"
 
+    hide chair_r
+    hide chair_l
     hide dv
     hide mi
     with dissolve
@@ -1647,50 +1666,60 @@ label bkrr_day18_common:
     "Я поковырялся в своей каше, извлек оттуда штук пять черных горошин."
     me "Ты не помнишь, сколько их было?"
 
-    show dv smile pioneer close at cleft with dissolve
+    show chair_l
+    show dv smile pioneer at bkrr_sit_left
+    with dissolve
 
     dv "Думаешь, я их считала?"
     me "Я на это надеялся. Ладно, если я покраснею и стану дышать огнем, то валите все вот на неё!"
     dv "Сеня, у басистов вообще жизнь тяжелая. Ты веселей ложкой работай, у нас ещё куча работы на сегодня!"
 
-    hide dv with dissolve
+    hide chair_l
+    hide dv
+    with dissolve
 
     "Я последовал её совету. Алиса с энтузиазмом поглощала кашу, довольно причмокивая. Кажется, она действительно изголодалась."
 
-    show us grin pioneer close at cright with dissolve
+    show chair_r
+    show us grin pioneer at bkrr_sit_right1
+    with dissolve
 
     us "Ой, как мечет-то, как мечет! Не лопнула бы."
 
-    show dv angry pioneer close at cleft with dissolve
+    show chair_l
+    show dv angry pioneer at bkrr_sit_left
+    with dissolve
 
     dv "Цыц! Я из-за тебя неделю нормально не ела! Если бы не концерт, убила бы!"
 
-    show us sad pioneer close with dissolve
+    show us sad pioneer with dspr
 
     us "Ну, прости меня. Я больше не буду."
     "Ульяна накрыла рукой руку Алисы и приняла очень виноватый вид.{w} Играла она или правда раскаивалась, но выглядело очень искренне."
 
-    show dv smile pioneer close with dspr
+    show dv smile pioneer with dspr
 
     dv "Ладно, не подлизывайся. Проехали!"
 
-    show us normal pioneer close with dspr
+    show us normal pioneer with dspr
 
     "Алиса сыто похлопала себя по животу."
 
-    show dv grin pioneer close with dspr
+    show dv grin pioneer with dspr
 
     dv "Ой, что-то я объелась. Наверное, прилягу на часок… До репетиции."
     th "А как же куча работы?"
 
-    show us grin pioneer close with dspr
+    show us grin pioneer with dspr
 
     us "Приляг, приляг. Чтоб жирок завязался."
 
-    show dv smile pioneer close with dspr
+    show dv smile pioneer with dspr
 
     dv "Еще одна шуточка, и ты у меня сама приляжешь!"
 
+    hide chair_l
+    hide chair_r
     hide dv
     hide us
     with dissolve
@@ -1698,13 +1727,18 @@ label bkrr_day18_common:
     "Я улыбнулся Мику."
     me "Обожаю, наблюдать, когда они ругаются."
 
-    show mi grin pioneer close at cright with dissolve
+    show chair_c
+    show mi grin pioneer at bkrr_sit_center
+    with dissolve
 
     mi "Это они не ругаются. Вот если начнут вежливо-вежливо, через спасибо-пожалуйста, вот тогда жди беды. Я такое один раз видела, еле помирила потом."
 
     hide mi
-    show dv laugh pioneer close at cleft
-    show us laugh pioneer close at cright
+    hide chair_c
+    show chair_l
+    show chair_r
+    show dv laugh pioneer at bkrr_sit_left
+    show us laugh pioneer at bkrr_sit_right1
     with dissolve
 
     dv_us_d "Да не ссорились мы!"
@@ -1712,13 +1746,15 @@ label bkrr_day18_common:
     "Они посмотрели друг на дружку и расхохотались. Вожатая посмотрела в нашу сторону и сделала замечание:"
     mt "Второй столик, прекратите шуметь! А то на кухне картошка нечищеная, крикунов ждёт!"
 
-    show dv smile pioneer close
-    show us smile pioneer close
+    show dv smile pioneer
+    show us smile pioneer
     with dspr
 
     "Ольга поймала мой взгляд и подмигнула."
     dv_us_d "Молчим!"
 
+    hide chair_l
+    hide chair_r
     hide dv
     hide us
     with dissolve
@@ -4939,7 +4975,6 @@ label bkrr_day18_common:
     $ renpy.pause(0.25, hard=True)
     $ bkrr_set_mode()
     play sound bkrr_sfx_list["applause3"] fadein 2
-    stop music fadeout 5
     window show
 
     "Когда музыка стихла, раздались аплодисменты. Конечно, ни цветов ни нижнего белья на сцену-веранду не прилетело, но слушателям явно понравилось.{w} Я коснулся медиатора на груди и улыбнулся. Кажется, работает. Или это результат постоянных занятий?{w} Во всяком случае, начало положено. И неплохое начало."
@@ -4953,10 +4988,9 @@ label bkrr_day18_common:
 
     window hide
     $ bkrr_set_mode(nvl)
-    play music bkrr_music_list["rb_03"] fadein 5
     nvl show dissolve
 
-    "Гитара Клауса уже была подключена и стояла в стойке. Он достал инструмент, быстро опустил штангу микрофона, присел на ступеньки и устроил гитару на коленях.{w} Когда он заиграл, я понял, что это не что-то там, а «wind of change».{w} Почему-то я думал, что эта песня была написана где-то в девяностых. На кассетах её точно не было…\n"
+    "Гитара Клауса уже была подключена и стояла в стойке. Он достал инструмент, быстро опустил штангу микрофона, присел на ступеньки и устроил гитару на коленях.{w} Когда он заиграл, я понял, что это не что-то там, а «Wind of Change».{w} Почему-то я думал, что эта песня была написана где-то в девяностых. На кассетах её точно не было…\n"
     "Алиса отошла в сторону, и смотрела на немца с непонятным выражением на лице.{w} Снова, как в кружке, к гитаре добавились ударные, а затем и Мику присоединилась с второй партией. Я бы очень хотел включиться в игру, но, как и тогда в клубе, понимал, что здесь мне нечего ловить.\n"
     "Я ожидал, что Клаус сейчас запоет, но он только покачивал головой в такт музыке и молча играл.{w} Даже без слов мелодия была очень приятной. {w}От нечего делать, я разглядывал лица стоящих пионеров. На них была сложная гамма чувств, но, кажется, всем очень нравилось.\n"
 
@@ -4964,6 +4998,7 @@ label bkrr_day18_common:
     $ renpy.pause(0.25, hard=True)
     $ bkrr_set_mode()
     play sound sfx_concert_applause fadein 2
+    stop music fadeout 5
     window show
 
     "Когда музыка затихла, аплодисменты были куда громче, чем в первый раз. Алиса только что зубами не скрипнула, но смолчала."
@@ -4976,6 +5011,9 @@ label bkrr_day18_common:
 
     "Отыграв, Клаус вернул гитару в стойку, а сам вернулся к зрителям."
     "Мику снова вышла вперёд, подождала, пока пионеры угомонятся, и бодро заявила в микрофон:\n"
+
+    play music bkrr_music_list["promise_silent_hill_cover"] fadein 10
+
     mi_speaker "{i}Здорово, правда? Следующая мелодия тоже без слов, но думаю, они и не потребуются! Я не знаю её названия и не знаю автора.{w} Но хочу, чтобы вы тоже услышали её. А называется она «Обещание».{/i}\n"
     "Я улыбнулся. Все-таки есть какая-то ирония в том, что мы будем исполнять.{w} Я никогда не уставал слушать эту мелодию. Долго не мог узнать, кто же автор, пока не выяснилось, что это музыка к игре, где герой попадает в странное место, заселенное странными существами.{w} Конечно, этот лагерь – не Сайлент Хилл, вместо монстров населен миловидными пионерками, но параллели все-таки прослеживались.\n"
     "Я настолько увлекся размышлениями, что чуть не пропустил начало своей партии.{w} Секундная паника, когда вдруг показалось, что я все забыл, тут же сменилась уверенностью. Алиса прожгла меня негодующим взглядом, но промолчала. Я улыбался.{w} Когда-то я пытался разучить эту песню на гитаре, но дальше первых тактов не ушел. Сейчас я все-таки сыграю её. Пусть и не так, как планировал.{w} Это воодушевляло. Смешное достижение, конечно, но всё-таки.\n"

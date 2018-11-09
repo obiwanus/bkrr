@@ -2592,7 +2592,7 @@ label bkrr_day17_common:
     mi "Алиса… слезь с него. Это наш гость!"
 
     stop sound_loop
-    hide bkrr_bang
+    hide bkrr_bang_rotating
     show cg d17_alisa_klaus
     with dspr
 
@@ -2783,46 +2783,56 @@ label bkrr_day17_common:
     "Клаус тут же пододвинул жареную рыбу и принялся её уплетать. Трук смотрел на тарелку, но не ел."
     "Ульяна довольно потёрла живот."
 
-    show us grin sport close at left with dissolve
+    show chair_l
+    show us grin sport at bkrr_sit_left
+    with dissolve
 
     us "Ещё одна причина бегать за Шуриком. Вот выйду за него, буду каждый день рыбку кушать! Я её люблю! Знаешь, как?"
     "Мику погладила её по голове."
 
-    show mi smile pioneer close at right with dissolve
+    show chair_r
+    show mi smile pioneer at bkrr_sit_right
+    with dissolve
 
     mi "Школу сначала закончи, невеста! А то глянет он в твой табель, а там по поведению «неуд»."
 
-    show us smile sport close with dspr
+    show us smile sport with dspr
 
     us "Ага! Значит, вам с Сенькой можно планы строить, а простой барабанщице уже и помечтать нельзя?"
 
-    hide mi with dissolve
-    show tr normal pioneer close at right with dissolve
+    window hide
+    hide chair_r
+    hide mi
+    with dissolve
+    show chair_r
+    show tr normal pioneer at bkrr_sit_right
+    with dissolve
+    window show
 
     "Трук пододвинул свою порцию рыбы Ульянке."
     tr "Ня!"
 
-    show us sad sport close with dspr
+    show us sad sport with dspr
 
     us "Ну, ты чего! Ешь, я пошутила."
 
-    show tr smile pioneer close with dspr
+    show tr smile pioneer with dspr
 
     tr "Ня! Я не хотел, а ты хотела. Кушай!"
     us "Друг, я не могу тебя объедать."
     "Клаус улыбнулся."
     tr "Улья надо бить сильняя! Ей мой сумка ещё до дом донести!"
 
-    show us normal_dontlike_bkrr sport close with dspr
-    show tr normal pioneer close with dspr
+    show us normal_dontlike_bkrr sport with dspr
+    show tr normal pioneer with dspr
 
     "Ульяна со смесью удивления и возмущения посмотрела на вьетнамца. Тот снова дежурно улыбался."
 
-    show us smile with dspr
+    show us smile sport with dspr
 
     us "Какой хитрюга! Мы с ним сработаемся!"
 
-    show tr laugh pioneer close with dspr
+    show tr laugh pioneer with dspr
 
     tr "Да! Уля – друг! И Трук друг!"
 
