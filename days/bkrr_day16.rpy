@@ -411,7 +411,7 @@ label bkrr_day16_common:
 
     $ bkrr_timeskip_short()
 
-    scene bg int_infirmary_day_guitar_food with bkrr_timeskip_transition()
+    scene bg int_infirmary_day_guitar with bkrr_timeskip_transition()
 
     play ambience bkrr_ambience_list["indoors_day"] fadein 3
 
