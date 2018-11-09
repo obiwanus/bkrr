@@ -61,6 +61,9 @@ init:
             pause 5.0
             ease 25.0 alpha 0.0
 
+    image bkrr_ep_ending_bg = MOD_IMAGES + "cg/epilogue_ending_bg.jpg"
+    image bkrr_ep_ending = MOD_IMAGES + "cg/epilogue_ending.png"
+
     python:
         for i in range(9):
             renpy.image("cg bkrr_epilogue_{0}".format(i + 1), MOD_IMAGES + "cg/epilogue_inbus_{0}.jpg".format(i))
@@ -2796,14 +2799,17 @@ label bkrr_epilogue_common:
     window show
 
     "Она не ответила."
-
-    window hide
-    $ renpy.pause(1.0, hard=True)
-    window show
-
     "Не знаю, кто из нас сделал первый шаг…"
 
+    window hide
     hide mii with dissolve
+    scene bkrr_ep_ending_bg:
+        yalign 1.0
+    show bkrr_ep_snow
+    show bkrr_ep_ending
+    show snow
+    with Dissolve(1.5)
+    window show
 
     "Но секунду спустя Мику… Мария…{w} Кем бы она ни была, уже прижималась ко мне и, всхлипывая, шептала, как боялась ошибиться, как не могла понять – я ли это, и как ей было страшно, вдруг я её не узнаю…"
 
@@ -2828,12 +2834,30 @@ label bkrr_epilogue_common:
     "Она затихла и теперь молча обнимала меня, словно боясь, что я пропаду, стоит ей разжать руки."
 
     window hide
+    scene bkrr_ep_ending_bg:
+        subpixel True
+        yalign 1.0
+        pause 1.0
+        ease 10.0 yalign 0.0
+    show bkrr_ep_snow:
+        pause 1.0
+        ease 5.0 alpha 0.0
+    show bkrr_ep_ending:
+        subpixel True
+        pause 1.0
+        ease 4.0 ypos 1.0
+    show snow:
+        pause 1.0
+        ease 5.0 alpha 0.0
+    with Dissolve(1.0)
+
+    $ renpy.pause(10.0, hard=True)
     scene stars:
         subpixel True
         truecenter
-        ease 10.0 zoom 1.4 rotate 7.5
+        ease 15.0 zoom 1.4 rotate 7.5
         ease 40.0 zoom 1.8 rotate -30
-    with Dissolve(5.0)
+    with None
     window show
 
     "Снег пошел сильнее, как будто хотел скрыть нас от нескромных глаз и дать возможность побыть вдвоём."
