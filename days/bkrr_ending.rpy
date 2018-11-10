@@ -39,39 +39,39 @@ init:
 
     image bkrr_epilogue_skylight:
         contains:
-            SnowBlossom(bkrr_skylight(1, 1), 5, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(1, 1), 5, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(1, 2), 5, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(1, 2), 5, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(1, 3), 5, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(1, 3), 5, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(1, 4), 5, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(1, 4), 5, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(2, 1), 6, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(2, 1), 6, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(2, 2), 6, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(2, 2), 6, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(2, 3), 6, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(2, 3), 6, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(2, 4), 6, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(2, 4), 6, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(3, 1), 8, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(3, 1), 8, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(3, 2), 8, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(3, 2), 8, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(3, 3), 8, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(3, 3), 8, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(3, 4), 8, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(3, 4), 8, 50, (15, 30), (-50, -300), fast=True)
 
     image bkrr_epilogue_skylight_behind:
         contains:
-            SnowBlossom(bkrr_skylight(3, 1), 3, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(3, 1), 3, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(3, 2), 3, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(3, 2), 3, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(3, 3), 3, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(3, 3), 3, 50, (15, 30), (-50, -300), fast=True)
         contains:
-            SnowBlossom(bkrr_skylight(3, 4), 3, 50, (15, 30), (-50, -300))
+            SnowBlossom(bkrr_skylight(3, 4), 3, 50, (15, 30), (-50, -300), fast=True)
 
     transform bkrr_snow_movement(time, start_pos, x_deviation=0.05, fade_time=1.0):
         truecenter
