@@ -12,6 +12,7 @@ init 3 python:
 
     make_sprites_for('mii', 'inside', ['mod:inside', 'mod:<emotion>'])
     make_sprites_for('mii', 'outside', ['mod:outside', 'mod:<emotion>'])
+    make_sprites_for('mii', 'outside snow', ['mod:outside', 'mod:snow', 'mod:<emotion>'])
 
     emotion_to_pose["sta"] = {
         'dontlike': 1, 'normal': 1, 'sad': 1, 'scared': 1, 'smile': 1, 'surp': 1,
@@ -44,6 +45,93 @@ init:
             SnowBlossom("bkrr_snowflake_small", 100, 50, (-25, 25), (30, 100), fast=True)
         contains:
             SnowBlossom("bkrr_snowflake_large", 25, 50, (-70, 70), (100, 200), fast=True)
+
+    transform bkrr_snow_movement(time, start_pos, x_deviation=0.05, fade_time=1.0):
+        truecenter
+        ypos -0.1 + 1.5 * start_pos  # стартовая позиция в процентах
+        xpos 0.5 - x_deviation + 2 * x_deviation * start_pos  # стартовая девиация
+        alpha 0.0
+        block:
+            block:
+                parallel:
+                    linear fade_time alpha 1.0
+                parallel:
+                    linear (time * (1 - start_pos)) ypos 1.1 xpos (0.5 + x_deviation)
+                parallel:
+                    pause ((time * (1 - start_pos)) - fade_time)
+                    linear fade_time alpha 0.0
+            block:
+                ypos -0.15
+                xpos 0.5 - x_deviation
+                alpha 0.0
+                parallel:
+                    linear 0.2 alpha 1.0
+                parallel:
+                    linear (time * start_pos) ypos (-0.1 + 1.3 * start_pos) xpos (0.5 - x_deviation + 2 * x_deviation * start_pos)
+            repeat
+
+    image mii_snow_close = im.Composite((1050, 1080), (0, 0), MOD_IMAGES + "sprites/close/mii/mii_1_snow.png")
+
+    image bkrr_snow_layer0_img = MOD_IMAGES + "effects/snow/0.png"
+    image bkrr_snow_layer1_img = MOD_IMAGES + "effects/snow/1.png"
+    image bkrr_snow_layer2_img = MOD_IMAGES + "effects/snow/2.png"
+    image bkrr_snow_layer3_img = MOD_IMAGES + "effects/snow/3.png"
+
+    image bkrr_snow_layer0_anim:
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(8.0, 0.0, -0.03)
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(8.0, 0.25, -0.03)
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(8.0, 0.5, -0.03)
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(8, 0.75, -0.03)
+
+    image bkrr_snow_layer1_anim:
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(10, 0.0, 0.05)
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(10, 0.25, 0.05)
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(10, 0.5, 0.05)
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(10, 0.75, 0.05)
+
+    image bkrr_snow_layer2_anim:
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(15, 0.0, -0.05)
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(15, 0.25, -0.05)
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(15, 0.5, -0.05)
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(15, 0.75, -0.05)
+
+    image bkrr_snow_layer3_anim:
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(20, 0.0, 0.03)
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(20, 0.25, 0.03)
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(20, 0.5, 0.03)
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(20, 0.75, 0.03)
 
     image cg ep_mi:
         contains:
@@ -1847,15 +1935,15 @@ label bkrr_epilogue_common:
     "А я-то надеялся, что чудеса закончились…"
     "Как наивно."
     "И я был не один. Рядом стоял… {w}А может, и сидел кто-то ещё."
-
     ml "Я боялась, что не успею. Но, кажется, ещё не поздно."
     me "Кто ты? И где Мику? И… Все остальные."
     ml "Едут по домам, в город. И понятия не имеют, что вы с Мику были в одном автобусе с ними."
     me "А Мику? Она исчезла… Куда… Где она? Она просто исчезла…"
-
     "Я замолчал, пытаясь привести мысли в порядок."
 
     stop music fadeout 10
+
+    $ bkrr_set_char_color("ml", "#DDCE8C")
 
     ml "Во-первых, не волнуйся. С ней всё в порядке, и она там, где должна быть. Дома. У себя дома."
     me "Она была… Не отсюда?"
@@ -1866,13 +1954,15 @@ label bkrr_epilogue_common:
     me "Можно её вернуть?"
     "Моя собеседница молча посмотрела в окно, затем покачала головой."
 
-    $ bkrr_set_char_color("ml", "#669ED3")
     play music music_list["into_the_unknown"] fadein 10
 
     ml "Ничего не выйдет. Это дорога в один конец. Тот, второй, смог вернуться… но у него была эта его кошка, нам такой вариант не пойдёт."
     me "Ты знаешь про них?"
     ml "Ты не единственный, кого они использовали… И по чьим головам прошлись."
     me "О чём ты?"
+
+    $ bkrr_set_char_color("ml", "#D9C099")
+
     ml "Он рассказал тебе жалостливую историю про то, как не может жить без Юли, но ей нет места в вашем мире, да?"
     me "Всё так и было."
     ml "Они хорошо умеют дёргать за ниточки. Знают, что сказать, чтобы ты сам захотел сделать то, что им нужно. Особенно, если ты маленькая и глупая девчонка."
@@ -1883,11 +1973,17 @@ label bkrr_epilogue_common:
     me "А… Что поможет?"
     ml "Для начала можешь минутку помолчать. Мне нужно…"
     "Она вздохнула."
+
+    $ bkrr_set_char_color("ml", "#D5B6A2")
+
     ml "Вспомнить. И подумать. Тогда я сделала всё на эмоциях, у меня получилось почти случайно, и прошло столько лет…"
     me "Что вспомнить? О чём ты вообще?"
     ml "Вспомнить, как это было."
     ml "Мику сюда уже не вернётся. Тем более, что этого «сюда» на самом деле нет."
     me "Как нет? Где мы тогда?"
+
+    $ bkrr_set_char_color("ml", "#D0A4B4")
+
     ml "Нигде. И в то же время – везде. Если хочешь, можешь назвать это «суперпозиция»."
     ml "Но скоро мы окажемся… Где-то. Пока не уверена, где."
     me "Восхитительно…"
@@ -1896,6 +1992,9 @@ label bkrr_epilogue_common:
     "Она подвинулась ближе."
     ml "Хуже может быть всегда. И это как раз наш случай."
     me "Что вообще происходит?"
+
+    $ bkrr_set_char_color("ml", "#CC96C1")
+
     ml "Эти двое решили не рисковать."
     ml "Тебя здесь быть не должно. Любое твоё действие, даже взятое со стола яблоко может вызвать непредсказуемые изменения… Как круги на воде."
     ml "Поэтому источник возмущений быстро убрали подальше. А источник – ты."
@@ -1905,12 +2004,18 @@ label bkrr_epilogue_common:
     me "Ничего себе… И что будет дальше?"
     ml "Став реальной здесь, эта кошка сможет выбраться в другой мир и остаться в нём. Так себе план, но другого у нас… У них не было."
     me "Мику… Сделала лагерь реальным?"
+
+    $ bkrr_set_char_color("ml", "#C784D3")
+
     "Моя собеседница негромко хмыкнула."
     ml "Нет. Она потрясающий музыкант и хорошо поёт, но такие вещи ей не под силу."
     me "Тогда зачем всё это?"
     ml "Чтобы эта глупая девчонка захотела сделать то, что сделала.{w} Она уже создала тихий мирок, где её желания исполнились, и повторять это ещё раз просто не стала бы."
     me "А для меня, значит, стала бы?"
     ml "Для вас двоих она пошла бы на всё. Чувство вины – страшная сила. Не спрашивай, почему."
+
+    $ bkrr_set_char_color("ml", "#C170E6")
+
     me "Не буду. {w}И как? У них получилось?"
     ml "Наверное. Не знаю.{w} Я уже давно не видела снов про лагерь до сегодняшнего дня, так что… Наверное, я им больше не нужна."
     "Она помолчала."
@@ -1924,7 +2029,7 @@ label bkrr_epilogue_common:
     ml "Меня."
     "Она подалась вперёд и быстро коснулась губами моей щеки, обдав её легким ароматом."
     ml "На удачу."
-    "Земляника. Снова земляника…"
+    "Земляника. {w}Снова земляника…"
     "Я почувствовал, что теряю сознание…"
 
     window hide
@@ -2711,7 +2816,9 @@ label bkrr_epilogue_common:
 
     stop music fadeout 5
 
-    scene bg ext_street_night with fade3
+    scene bg ext_street_night
+    show snow
+    with fade3
 
     $ bkrr_set_time("prologue")
     $ bkrr_set_volume("sound", 0.5)
@@ -2743,19 +2850,38 @@ label bkrr_epilogue_common:
     with dspr
 
     mi "Тогда хорошо."
-
-    show snow
-    show bkrr_ep_snow behind mii:
-        alpha 0.0
-        pause 2.0
-        ease 7.0 alpha 1.0
-
     "Она улыбнулась… той самой улыбкой…"
     "Я думал, что уже разучился волноваться, как мальчишка, но сейчас воспоминания, казалось бы, надежно упрятанные в дальний уголок памяти, снова вырвались наружу."
+
+    show bkrr_snow_layer3_anim behind mii:
+        alpha 0.0
+        ease 4.0 alpha 1.0
+    show bkrr_snow_layer2_anim behind mii:
+        alpha 0.0
+        ease 7.0 alpha 1.0
+    show bkrr_snow_layer1_anim behind mii:
+        alpha 0.0
+        ease 8.0 alpha 1.0
+    show bkrr_snow_layer0_anim:
+        alpha 0.0
+        ease 9.0 alpha 1.0
+    show snow:
+        ease 6.0 alpha 0.0
+    show mii_snow_close at cleft:
+        alpha 0.0
+        pause 2.0
+        ease 20.0 alpha 0.8
+
     "Словно и не было этих месяцев, полных одиночества, безуспешных поисков и попыток забыть обо всём, что было {b}там{/b}."
 
+    show mii surp outside close with dspr
+
     mi "Ой, снег пошел… Надо же..? "
+    hide snow
+
     me "Здорово… Люблю снегопад."
+
+    show mii smile outside close with dspr
 
     mi "Там, откуда я приехала, снег редко идёт…{w} Только в феврале и то не каждый год."
 
@@ -2769,7 +2895,9 @@ label bkrr_epilogue_common:
     window hide
     show mii smile outside close at cleft with dspr
     $ renpy.pause(0.5, hard=True)
-    hide mii with dissolve
+    hide mii
+    hide mii_snow_close
+    with dissolve
     window show
 
     "Она улыбнулась, и поспешила к остановке."
@@ -2785,7 +2913,7 @@ label bkrr_epilogue_common:
 
     window hide
     $ renpy.pause(1.0, hard=True)
-    show mii surp outside far at cleft behind snow with dissolve
+    show mii surp outside snow far at cleft behind bkrr_snow_layer1_anim with dissolve
     window show
 
     "Вздрогнула и остановилась.{w} Её сумка упала в снег, но хозяйка не обратила на это внимания."
@@ -2794,7 +2922,7 @@ label bkrr_epilogue_common:
 
     window hide
     $ renpy.pause(2.0, hard=True)
-    show mii cry_smile outside far at cleft with dissolve
+    show mii cry_smile outside snow far at cleft with dissolve
     $ renpy.pause(1.0, hard=True)
     window show
 
@@ -2805,10 +2933,12 @@ label bkrr_epilogue_common:
     hide mii with dissolve
     scene bkrr_ep_ending_bg:
         yalign 1.0
-    show bkrr_ep_snow
+    show bkrr_snow_layer3_anim
     show bkrr_ep_ending
-    show snow
-    with Dissolve(1.5)
+    show bkrr_snow_layer2_anim
+    show bkrr_snow_layer1_anim
+    show bkrr_snow_layer0_anim
+    with Dissolve(2.0)
     window show
 
     "Но секунду спустя Мику… Мария…{w} Кем бы она ни была, уже прижималась ко мне и, всхлипывая, шептала, как боялась ошибиться, как не могла понять – я ли это, и как ей было страшно, вдруг я её не узнаю…"
@@ -2839,16 +2969,22 @@ label bkrr_epilogue_common:
         yalign 1.0
         pause 1.0
         ease 10.0 yalign 0.0
-    show bkrr_ep_snow:
+    show bkrr_snow_layer3_anim:
         pause 1.0
-        ease 5.0 alpha 0.0
+        ease 7.0 alpha 0.0
     show bkrr_ep_ending:
         subpixel True
         pause 1.0
-        ease 4.0 ypos 1.0
-    show snow:
+        ease 6.0 ypos 1.0
+    show bkrr_snow_layer2_anim:
         pause 1.0
-        ease 5.0 alpha 0.0
+        ease 7.0 alpha 0.0
+    show bkrr_snow_layer1_anim:
+        pause 1.0
+        ease 7.0 alpha 0.0
+    show bkrr_snow_layer0_anim:
+        pause 1.0
+        ease 7.0 alpha 0.0
     with Dissolve(1.0)
 
     $ renpy.pause(10.0, hard=True)
