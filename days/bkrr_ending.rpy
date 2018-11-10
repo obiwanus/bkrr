@@ -33,18 +33,45 @@ init:
 
     # SnowBlossom(img, count=int, border=int, xspeed=tuple, yspeed=tuple, start=int, fast=bool, horizontal=bool)
 
-    image bkrr_snowflake_large = MOD_IMAGES + "effects/particles/snowflake_large.png"
-    image bkrr_snowflake_normal = MOD_IMAGES + "effects/particles/snowflake_medium.png"
-    image bkrr_snowflake_small = MOD_IMAGES + "effects/particles/snowflake_small.png"
+    python:
+        def bkrr_skylight(size, color):
+            return MOD_IMAGES + "effects/particles/svet/skylight%s%s.png" % (color, size)
 
-    image bkrr_ep_snow:
-        truecenter
+    image bkrr_epilogue_skylight:
         contains:
-            SnowBlossom("bkrr_snowflake_normal", 75, 50, (-50, 50), (70, 170), fast=True)
+            SnowBlossom(bkrr_skylight(1, 1), 5, 50, (15, 30), (-50, -300))
         contains:
-            SnowBlossom("bkrr_snowflake_small", 100, 50, (-25, 25), (30, 100), fast=True)
+            SnowBlossom(bkrr_skylight(1, 2), 5, 50, (15, 30), (-50, -300))
         contains:
-            SnowBlossom("bkrr_snowflake_large", 25, 50, (-70, 70), (100, 200), fast=True)
+            SnowBlossom(bkrr_skylight(1, 3), 5, 50, (15, 30), (-50, -300))
+        contains:
+            SnowBlossom(bkrr_skylight(1, 4), 5, 50, (15, 30), (-50, -300))
+        contains:
+            SnowBlossom(bkrr_skylight(2, 1), 6, 50, (15, 30), (-50, -300))
+        contains:
+            SnowBlossom(bkrr_skylight(2, 2), 6, 50, (15, 30), (-50, -300))
+        contains:
+            SnowBlossom(bkrr_skylight(2, 3), 6, 50, (15, 30), (-50, -300))
+        contains:
+            SnowBlossom(bkrr_skylight(2, 4), 6, 50, (15, 30), (-50, -300))
+        contains:
+            SnowBlossom(bkrr_skylight(3, 1), 8, 50, (15, 30), (-50, -300))
+        contains:
+            SnowBlossom(bkrr_skylight(3, 2), 8, 50, (15, 30), (-50, -300))
+        contains:
+            SnowBlossom(bkrr_skylight(3, 3), 8, 50, (15, 30), (-50, -300))
+        contains:
+            SnowBlossom(bkrr_skylight(3, 4), 8, 50, (15, 30), (-50, -300))
+
+    image bkrr_epilogue_skylight_behind:
+        contains:
+            SnowBlossom(bkrr_skylight(3, 1), 3, 50, (15, 30), (-50, -300))
+        contains:
+            SnowBlossom(bkrr_skylight(3, 2), 3, 50, (15, 30), (-50, -300))
+        contains:
+            SnowBlossom(bkrr_skylight(3, 3), 3, 50, (15, 30), (-50, -300))
+        contains:
+            SnowBlossom(bkrr_skylight(3, 4), 3, 50, (15, 30), (-50, -300))
 
     transform bkrr_snow_movement(time, start_pos, x_deviation=0.05, fade_time=1.0):
         truecenter
@@ -256,17 +283,19 @@ init:
         contains:
             MOD_IMAGES + "cg/ep_mi_background.jpg"
         contains:
+            "bkrr_epilogue_skylight_behind"
+            truecenter
+            alpha 0.7
+        contains:
             MOD_IMAGES + "cg/ep_mi.png"
             subpixel True
             truecenter
             zoom 1.3
             ease 15.0 zoom 1.0
         contains:
-            "bkrr_eff_skylight"
+            "bkrr_epilogue_skylight"
             truecenter
-            zoom 1.25
-            pause 5.0
-            ease 25.0 alpha 0.0
+            alpha 0.7
 
     image bkrr_ep_ending_bg = MOD_IMAGES + "cg/epilogue_ending_bg.jpg"
     image bkrr_ep_ending = MOD_IMAGES + "cg/epilogue_ending.png"
