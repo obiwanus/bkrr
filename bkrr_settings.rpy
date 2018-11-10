@@ -933,7 +933,7 @@ init 2:
             return anim.TransitionAnimation(*args)
 
         def random_mist():
-            image = MOD_IMAGES + "misc/d19_pirates/mist/%s.png" % renpy.random.randint(1, 8)
+            image = MOD_IMAGES + "misc/d19_pirates/mist/%s.png" % renpy.random.randint(1, 6)
             return bkrr_imagelist_anim(
                 [
                     bkrr_make_tint_img(image, "orange"),
