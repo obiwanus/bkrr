@@ -133,6 +133,62 @@ init:
             "bkrr_snow_layer3_img"
             bkrr_snow_movement(20, 0.75, 0.03)
 
+    image bkrr_snow_layer0_anim_quick:
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(3, 0.0, -0.03)
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(3, 0.25, -0.03)
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(3, 0.5, -0.03)
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(3, 0.75, -0.03)
+
+    image bkrr_snow_layer1_anim_quick:
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(4, 0.0, 0.05)
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(4, 0.25, 0.05)
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(4, 0.5, 0.05)
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(4, 0.75, 0.05)
+
+    image bkrr_snow_layer2_anim_quick:
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(5, 0.0, -0.05)
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(5, 0.25, -0.05)
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(5, 0.5, -0.05)
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(5, 0.75, -0.05)
+
+    image bkrr_snow_layer3_anim_quick:
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(5, 0.0, 0.03)
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(5, 0.25, 0.03)
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(5, 0.5, 0.03)
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(5, 0.75, 0.03)
+
     image cg ep_mi:
         contains:
             MOD_IMAGES + "cg/ep_mi_background.jpg"
@@ -2967,27 +3023,21 @@ label bkrr_epilogue_common:
     scene bkrr_ep_ending_bg:
         subpixel True
         yalign 1.0
-        pause 1.0
         ease 10.0 yalign 0.0
-    show bkrr_snow_layer3_anim:
-        pause 1.0
+    show bkrr_snow_layer3_anim_quick:
         ease 7.0 alpha 0.0
     show bkrr_ep_ending:
         subpixel True
-        pause 1.0
         ease 6.0 ypos 1.0
-    show bkrr_snow_layer2_anim:
-        pause 1.0
+    show bkrr_snow_layer2_anim_quick:
         ease 7.0 alpha 0.0
-    show bkrr_snow_layer1_anim:
-        pause 1.0
+    show bkrr_snow_layer1_anim_quick:
         ease 7.0 alpha 0.0
-    show bkrr_snow_layer0_anim:
-        pause 1.0
+    show bkrr_snow_layer0_anim_quick:
         ease 7.0 alpha 0.0
-    with Dissolve(1.0)
+    with dissolve
 
-    $ renpy.pause(10.0, hard=True)
+    $ renpy.pause(10.5, hard=True)
     scene stars:
         subpixel True
         truecenter
