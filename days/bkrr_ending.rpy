@@ -189,6 +189,69 @@ init:
             "bkrr_snow_layer3_img"
             bkrr_snow_movement(5, 0.75, 0.03)
 
+    image bkrr_traffic_light:
+        contains:
+            MOD_IMAGES + "misc/traffic_light/sml_green.png"
+            alpha 0.0
+            pause 25.5
+            ease 0.5 alpha 1.0
+            pause 11.5
+            ease 0.5 alpha 0.0
+            pause 2.0
+            repeat
+        contains:
+            MOD_IMAGES + "misc/traffic_light/sml_red.png"
+            alpha 1.0
+            pause 25.5
+            ease 0.5 alpha 0.0
+            pause 11.5
+            ease 0.5 alpha 1.0
+            pause 1.0
+            repeat
+        contains:
+            MOD_IMAGES + "misc/traffic_light/big_red.png"
+            alpha 0.0
+            pause 24.5
+            ease 0.5 alpha 1.0
+            pause 14.5
+            ease 0.5 alpha 0.0
+            repeat
+        contains:
+            MOD_IMAGES + "misc/traffic_light/big_yellow.png"
+            alpha 0.0
+            pause 25.0
+            pause 12.0
+            ease 0.5 alpha 1.0
+            pause 2.0
+            ease 0.5 alpha 0.0
+            repeat
+        contains:
+            MOD_IMAGES + "misc/traffic_light/big_green.png"
+            alpha 1.0
+            pause 20.0
+            ease 0.2 alpha 0.0
+            pause 0.3
+            ease 0.2 alpha 1.0
+            pause 0.3
+            ease 0.2 alpha 0.0
+            pause 0.3
+            ease 0.2 alpha 1.0
+            pause 0.3
+            ease 0.2 alpha 0.0
+            pause 0.3
+            ease 0.2 alpha 1.0
+            pause 0.3
+            ease 0.2 alpha 0.0
+            pause 0.3
+            ease 0.2 alpha 1.0
+            pause 0.3
+            pause 0.5
+            ease 0.5 alpha 0.0
+            pause 14.5
+            ease 0.5 alpha 1.0
+            repeat
+
+
     image cg ep_mi:
         contains:
             MOD_IMAGES + "cg/ep_mi_background.jpg"
@@ -2873,6 +2936,7 @@ label bkrr_epilogue_common:
     stop music fadeout 5
 
     scene bg ext_street_night
+    show bkrr_traffic_light
     show snow
     with fade3
 
