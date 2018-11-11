@@ -73,28 +73,24 @@ init:
         contains:
             SnowBlossom(bkrr_skylight(3, 4), 3, 50, (15, 30), (-50, -300), fast=True)
 
-    transform bkrr_snow_movement(time, start_pos, x_deviation=0.05, fade_time=1.0):
+    transform bkrr_snow_movement(time, start_pos, x_deviation=0.05, pause_time=0.0, fade_time=1.0):
         truecenter
-        ypos -0.1 + 1.5 * start_pos  # стартовая позиция в процентах
+        ypos -0.25 + 1.5 * start_pos  # стартовая позиция в процентах
         xpos 0.5 - x_deviation + 2 * x_deviation * start_pos  # стартовая девиация
-        alpha 0.0
+        pause pause_time
         block:
             block:
-                parallel:
-                    linear fade_time alpha 1.0
+                alpha 1.0
                 parallel:
                     linear (time * (1 - start_pos)) ypos 1.1 xpos (0.5 + x_deviation)
                 parallel:
                     pause ((time * (1 - start_pos)) - fade_time)
                     linear fade_time alpha 0.0
             block:
-                ypos -0.15
+                ypos -0.25
                 xpos 0.5 - x_deviation
-                alpha 0.0
-                parallel:
-                    linear 0.2 alpha 1.0
-                parallel:
-                    linear (time * start_pos) ypos (-0.1 + 1.3 * start_pos) xpos (0.5 - x_deviation + 2 * x_deviation * start_pos)
+                alpha 1.0
+                linear (time * start_pos) ypos (-0.25 + 1.5 * start_pos) xpos (0.5 - x_deviation + 2 * x_deviation * start_pos)
             repeat
 
     image mii_snow_close = im.Composite((1050, 1080), (0, 0), MOD_IMAGES + "sprites/close/mii/mii_1_snow.png")
@@ -107,58 +103,58 @@ init:
     image bkrr_snow_layer0_anim:
         contains:
             "bkrr_snow_layer0_img"
-            bkrr_snow_movement(8.0, 0.0, -0.03)
+            bkrr_snow_movement(8, 0.0, -0.05)
         contains:
             "bkrr_snow_layer0_img"
-            bkrr_snow_movement(8.0, 0.25, -0.03)
+            bkrr_snow_movement(8, 0.25, -0.05)
         contains:
             "bkrr_snow_layer0_img"
-            bkrr_snow_movement(8.0, 0.5, -0.03)
+            bkrr_snow_movement(8, 0.5, -0.05)
         contains:
             "bkrr_snow_layer0_img"
-            bkrr_snow_movement(8, 0.75, -0.03)
+            bkrr_snow_movement(8, 0.75, -0.05)
 
     image bkrr_snow_layer1_anim:
         contains:
             "bkrr_snow_layer1_img"
-            bkrr_snow_movement(10, 0.0, 0.05)
+            bkrr_snow_movement(10, 0.0, 0.05, pause_time=0.5)
         contains:
             "bkrr_snow_layer1_img"
-            bkrr_snow_movement(10, 0.25, 0.05)
+            bkrr_snow_movement(10, 0.25, 0.05, pause_time=0.5)
         contains:
             "bkrr_snow_layer1_img"
-            bkrr_snow_movement(10, 0.5, 0.05)
+            bkrr_snow_movement(10, 0.5, 0.05, pause_time=0.5)
         contains:
             "bkrr_snow_layer1_img"
-            bkrr_snow_movement(10, 0.75, 0.05)
+            bkrr_snow_movement(10, 0.75, 0.05, pause_time=0.5)
 
     image bkrr_snow_layer2_anim:
         contains:
             "bkrr_snow_layer2_img"
-            bkrr_snow_movement(15, 0.0, -0.05)
+            bkrr_snow_movement(15, 0.0, -0.05, pause_time=1.0)
         contains:
             "bkrr_snow_layer2_img"
-            bkrr_snow_movement(15, 0.25, -0.05)
+            bkrr_snow_movement(15, 0.25, -0.05, pause_time=1.0)
         contains:
             "bkrr_snow_layer2_img"
-            bkrr_snow_movement(15, 0.5, -0.05)
+            bkrr_snow_movement(15, 0.5, -0.05, pause_time=1.0)
         contains:
             "bkrr_snow_layer2_img"
-            bkrr_snow_movement(15, 0.75, -0.05)
+            bkrr_snow_movement(15, 0.75, -0.05, pause_time=1.0)
 
     image bkrr_snow_layer3_anim:
         contains:
             "bkrr_snow_layer3_img"
-            bkrr_snow_movement(20, 0.0, 0.03)
+            bkrr_snow_movement(20, 0.0, 0.07)
         contains:
             "bkrr_snow_layer3_img"
-            bkrr_snow_movement(20, 0.25, 0.03)
+            bkrr_snow_movement(20, 0.25, 0.07)
         contains:
             "bkrr_snow_layer3_img"
-            bkrr_snow_movement(20, 0.5, 0.03)
+            bkrr_snow_movement(20, 0.5, 0.07)
         contains:
             "bkrr_snow_layer3_img"
-            bkrr_snow_movement(20, 0.75, 0.03)
+            bkrr_snow_movement(20, 0.75, 0.07)
 
     image bkrr_snow_layer0_anim_quick:
         contains:
