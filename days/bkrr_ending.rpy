@@ -218,36 +218,56 @@ init:
 
     image bkrr_traffic_light:
         contains:
+            MOD_IMAGES + "misc/traffic_light/back_green.png"
+            alpha 1.0
+            pause 14.5
+            ease 0.5 alpha 0.0
+            pause 10.0
+            pause 22.0
+            ease 0.5 alpha 1.0
+            pause 3.0
+            repeat
+        contains:
+            MOD_IMAGES + "misc/traffic_light/back_red.png"
+            alpha 0.0
+            pause 14.5
+            ease 0.5 alpha 1.0
+            pause 10.0
+            pause 22.0
+            ease 0.5 alpha 0.0
+            pause 3.0
+            repeat
+        contains:
             MOD_IMAGES + "misc/traffic_light/sml_green.png"
             alpha 0.0
             pause 25.5
             ease 0.5 alpha 1.0
-            pause 11.5
+            pause 19.0
             ease 0.5 alpha 0.0
-            pause 2.0
+            pause 5.0
             repeat
         contains:
             MOD_IMAGES + "misc/traffic_light/sml_red.png"
             alpha 1.0
             pause 25.5
             ease 0.5 alpha 0.0
-            pause 11.5
+            pause 19.0
             ease 0.5 alpha 1.0
-            pause 1.0
+            pause 5.0
             repeat
         contains:
             MOD_IMAGES + "misc/traffic_light/big_red.png"
             alpha 0.0
-            pause 24.5
+            pause 24.0
             ease 0.5 alpha 1.0
-            pause 14.5
+            pause 25.0
             ease 0.5 alpha 0.0
             repeat
         contains:
             MOD_IMAGES + "misc/traffic_light/big_yellow.png"
             alpha 0.0
             pause 25.0
-            pause 12.0
+            pause 22.0
             ease 0.5 alpha 1.0
             pause 2.0
             ease 0.5 alpha 0.0
@@ -272,9 +292,8 @@ init:
             pause 0.3
             ease 0.2 alpha 1.0
             pause 0.3
-            pause 0.5
             ease 0.5 alpha 0.0
-            pause 14.5
+            pause 25.0
             ease 0.5 alpha 1.0
             repeat
 
