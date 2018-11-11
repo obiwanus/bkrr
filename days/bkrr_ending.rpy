@@ -94,6 +94,14 @@ init:
             repeat
 
     image mii_snow_close = im.Composite((1050, 1080), (0, 0), MOD_IMAGES + "sprites/close/mii/mii_1_snow.png")
+    image epilogue_falling_star = MOD_IMAGES + "misc/epilogue_falling_star.png"
+    image epilogue_falling_star_star:
+        MOD_IMAGES + "misc/epilogue_falling_star_star.png"
+        subpixel True
+        truecenter
+        ease 10.0 rotate 120.0
+    image epilogue_falling_star_tail1 = MOD_IMAGES + "misc/epilogue_falling_star_tail1.png"
+    image epilogue_falling_star_tail2 = MOD_IMAGES + "misc/epilogue_falling_star_tail2.png"
 
     image bkrr_snow_layer0_img = MOD_IMAGES + "effects/snow/0.png"
     image bkrr_snow_layer1_img = MOD_IMAGES + "effects/snow/1.png"
@@ -3123,6 +3131,7 @@ label bkrr_epilogue_common:
     mi "Ты…{w} ведь никуда больше не исчезнешь?"
     me "Никуда!"
     "Она затихла и теперь молча обнимала меня, словно боясь, что я пропаду, стоит ей разжать руки."
+    "Снег пошел сильнее, как будто хотел скрыть нас от нескромных глаз и дать возможность побыть вдвоём."
 
     window hide
     scene bkrr_ep_ending_bg:
@@ -3133,7 +3142,7 @@ label bkrr_epilogue_common:
         ease 7.0 alpha 0.0
     show bkrr_ep_ending:
         subpixel True
-        ease 6.0 ypos 1.0
+        ease 5.5 ypos 1.0
     show bkrr_snow_layer2_anim_quick:
         ease 7.0 alpha 0.0
     show bkrr_snow_layer1_anim_quick:
@@ -3149,14 +3158,24 @@ label bkrr_epilogue_common:
         ease 15.0 zoom 1.4 rotate 7.5
         ease 40.0 zoom 1.8 rotate -30
     with None
-    window show
+    show epilogue_falling_star_tail2:
+        truecenter
+        pos (0.4, 0.6)
+        ease 2.5 alpha 0.0
+    show epilogue_falling_star_tail1:
+        truecenter
+        pos (0.4, 0.6)
+        ease 1.5 alpha 0.0
+    show epilogue_falling_star_star:
+        truecenter
+        pos (0.38, 0.615)
+        ease 7.0 alpha 0.0
+    with bkrr_star_falling_transition
 
-    "Снег пошел сильнее, как будто хотел скрыть нас от нескромных глаз и дать возможность побыть вдвоём."
     "Что-то заканчивалось…"
     "Что-то начиналось."
 
     window hide
-
     scene black with Dissolve(10)
 
     stop music fadeout 10
