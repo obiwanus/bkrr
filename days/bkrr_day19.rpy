@@ -2963,12 +2963,9 @@ label bkrr_day19_common:
     th "С хвостом или без, из лагеря или из леса… Девушки остаются девушками."
     me "Очень!"
 
-    show uv piupset pioneer close with dspr
-
-    "Она потрогала край юбки и попыталась заглянуть себе за спину."
-
     show uv pinormal pioneer close with dspr
 
+    "Она потрогала край юбки и попыталась заглянуть себе за спину."
     uv "Как вы такое только носите? Я даже на дерево сейчас забраться не смогла, когда убегала.{w} И нет разреза для хвоста… Очень неудобно!"
     th "Да, идея пионерки с хвостом, прыгающей по деревьям, советским швеям в голову точно не приходила."
     me "На меня не смотри, я юбки не ношу.{w} Погоди-погоди. От кого ты убегала?"
@@ -3280,7 +3277,13 @@ label bkrr_day19_common:
     uv "Значит, это было один раз на миллиард.{w} Но мы играли в снежки, и он обещал что научит меня кататься на лыжах. Только я оденусь теплее, у меня в тот раз чуть хвост от холода не отвалился.{w} Здесь есть лыжные костюмы, но в том лагере их разобрали пионеры."
 
     window hide
-    scene bg ext_dining_hall_away_day_no_headlamps with dissolve
+    scene bg ext_dining_hall_away_day_no_headlamps:
+        subpixel True
+        pause 1.5
+        xalign 1.0
+        yalign 0.7
+        ease 0.5 zoom 1.5
+    with dissolve
     play music music_list["glimmering_coals"] fadein 3
     window show
 
@@ -3293,9 +3296,16 @@ label bkrr_day19_common:
     # НЕ БОМБИТ У МЕНЯ!!!!!!
     # Не, тут не это, а утюб.сом/lyFkVIgFlhw
     "Наконец, он дал себя уговорить и теперь сидел возле ослепшей машины, время от времени засовывая руку в зияющие дыры на месте фар."
+
+    scene bg ext_dining_hall_away_day_no_headlamps:
+        subpixel True
+        xalign 1.0
+        yalign 0.7
+        zoom 1.5
+        ease 1.0 zoom 1.0
+    with None
+
     me "Что это он так надрывается? Юля, это не ты у него что-то стя…{w} Юля?"
-
-
     "Но Юли уже не было. Она смешалась с пионерами и затерялась в толпе.{w} День стоял жаркий, и светлых панамок, шляпок и бейсболок было слишком много, чтобы искать среди них ту единственную, под которой скрывались кошачьи ушки."
     th "Вот и пообщались. Перекрёстки какие-то, ключи… Как в дешёвой фантастике."
 
@@ -4523,8 +4533,7 @@ label bkrr_day19_common:
 
     window hide
     stop ambience fadeout 1
-    $ bkrr_timeskip()
-    scene bg int_music_club_mattresses_sunset with bkrr_timeskip_transition()
+    scene bg int_music_club_mattresses_sunset with fade3
     $ bkrr_set_time("sunset")
     play ambience ambience_int_cabin_evening fadein 1
     play music music_list["reflection_on_water"] fadein 5
@@ -4980,7 +4989,7 @@ label bkrr_day19_common:
     play sound_loop sfx_head_heartbeat fadein 10
     $ renpy.pause(2.0, hard=True)
     $ bkrr_set_mode()
-    $ bkrr_timeskip()
+    $ bkrr_timeskip(sounded=False)
     scene bg ext_backstage_big_day_night
     show dv guilty pioneer at fleft
     show mi sad pioneer close at center
@@ -5188,9 +5197,10 @@ label bkrr_day19_common:
     me "{i}Пожалуйста…{/i}"
 
     window hide
-    scene expression bkrr_appdouble_atl("cg d19_miku_bus_3", 1.05, 0.3, 0.5):
+    scene expression bkrr_appdouble_atl("cg d19_miku_bus_3", 1.05, 1.5, 3.5):
         bkrr_bus_shaking
     $ renpy.pause(1.0, hard=True)
+    stop sound_loop fadeout 7
     window show
 
     "Перед глазами всё поплыло и затуманилось."
@@ -5245,7 +5255,6 @@ label bkrr_day19_common:
     "Ещё несколько минут я вслушивался в урчание двигателя, а потом наступила тишина."
 
     window hide
-    stop sound_loop fadeout 2
     scene cg d19_bus_escape with Dissolve(3.0)
     stop music fadeout 8
     $ renpy.pause(8.0, hard=True)
@@ -5378,7 +5387,10 @@ label bkrr_day19_common:
         ease 0.5 zoom 0.9
         ease 1.5 pos (-2.0, 2.0) rotate -120 alpha 0.0
     with flash
-    show bkrr_flying_notes_white with dissolve
+    show bkrr_flying_notes_white:
+        xalign 0.9
+        zoom 0.7
+    with dissolve
     $ renpy.pause(1.0, hard=True)  # чтобы случайно не проскипать
     pause
     hide bkrr_flying_notes_white with dissolve
@@ -5527,7 +5539,9 @@ label bkrr_day19_common:
     mi "Ой, попадёт нам, когда всё закончится.{w} Ну-ка, подержи…"
 
     window hide
-    show mi upset underwear close with Dissolve(1.0)
+    hide mi with dissolve
+    $ renpy.pause(1.0, hard=True)
+    show mi upset underwear close with dissolve
     window show
 
     "Она быстро сбросила блузку и принялась вытаскивать ремень из юбки."
@@ -5691,8 +5705,8 @@ label bkrr_day19_common:
         ease 1.0 zoom 1.0 yalign 1.0
     with None
     $ renpy.pause(1.0, hard=True)
-    show mi upset pirate at fleft
-    show dv smile pirate_with_hat at fright
+    show mi upset pirate far at left
+    show dv smile pirate_with_hat far at right
     show us sad pirate close at center
     with dissolve
     window show
@@ -5700,7 +5714,7 @@ label bkrr_day19_common:
     us "Ну даже не знаю. Микуся, что скажешь?"
     "Мику продолжала отсчитывать секунды, ориентируясь на музыку, но прервалась и улыбнулась мне."
 
-    show mi smile pirate with dspr
+    show mi smile pirate far with dspr
 
     mi "Тридцать секунд. По-моему, миленько…"
 
@@ -5708,7 +5722,7 @@ label bkrr_day19_common:
 
     us "А, ну да. Нашла кого спрашивать. Алиска, как тебе?"
 
-    show dv grin pirate_with_hat with dspr
+    show dv grin pirate_with_hat far with dspr
 
     dv "Нормально! Кто его будет рассматривать, когда на сцене буду я!"
     "Она эффектно отставила зад и подбоченилась."
@@ -5722,7 +5736,7 @@ label bkrr_day19_common:
     hide us
     hide dv
     with dissolve
-    show mi smile pirate at cleft with ease
+    show mi smile pirate far at cleft with ease
     window show
 
     "Я торопливо отвёл взгляд на Мику и не видел лица Ульяны, когда она довольно добавила:"
@@ -5731,7 +5745,7 @@ label bkrr_day19_common:
     stop music fadeout 5
     play sound bkrr_sfx_list["applause3_"] fadein 1
 
-    show mi normal pirate with dspr
+    show mi normal pirate far with dspr
 
     mi "Девочки, Семён… Пора!"
 
@@ -6287,7 +6301,7 @@ label bkrr_day19_common:
     scene bg int_music_club_mattresses_night_lights_on with dspr
     $ bkrr_set_time("sunset")
     $ renpy.pause(1.0, hard=True)
-    show us smile pirate with dissolve
+    show us smile pirate far with dissolve
     window show
 
     us "Я тут у приезжей девчонки сменяла редкие олимпийские значки на растворимый шоколад.{w} Отметим удавшийся концерт?"
@@ -6296,7 +6310,7 @@ label bkrr_day19_common:
 
     dv "Маленькая фарцовщица… А как же облик советского пионера?"
 
-    show us grin pirate with dspr
+    show us grin pirate far with dspr
 
     us "Если не хочешь, можешь не пить."
 
@@ -6304,7 +6318,7 @@ label bkrr_day19_common:
 
     dv "Хочу! Плохо, что печенье кончилось."
 
-    show mi smile pirate at right behind us with dissolve
+    show mi smile pirate at right with dissolve
 
     mi "Немножко осталось."
 
@@ -6316,7 +6330,7 @@ label bkrr_day19_common:
 
     mi "Мало ли что я говорила.{w} Ты когда нервничаешь – жуёшь все подряд. Так бы схомячила всухомятку и ничего не осталось бы на вечер. Вот сейчас с шоколадом и попьём."
 
-    show us smile pirate with dspr
+    show us smile pirate far with dspr
 
     us "Во-во… За него четыре очень редких значка уплочено! С печеньками вкуснее!"
 
@@ -6328,12 +6342,12 @@ label bkrr_day19_common:
 
     dv "Я тоже. Думала, она только фотографирует. Уль, ты почему от нас скрывала, Штирлиц с хвостиками?"
 
-    show us normal pirate with dspr
+    show us normal pirate far with dspr
 
     us "А я и не собираю."
     "Она помолчала, затем добавила:"
 
-    show us grin pirate with dspr
+    show us grin pirate far with dspr
 
     us "Женя собирает. Она альбом у кибернетиков оставила.{w} Когда заметит пропажу – визга будет… Надеюсь, гости успеют уехать."
     me "Ужас. С кем я связался. Кражи, бандитизм и антисоциальное поведение, вплоть до международных скандалов."
@@ -6428,8 +6442,8 @@ label bkrr_day19_common:
     window hide
     play sound [ sfx_knocking_door_outside, sfx_open_door_1 ] fadein 1
     $ renpy.pause(2.0, hard=True)
-    show ant normal shirt at cleft
-    show mt normal pioneer at cright
+    show ant normal shirt far at cleft
+    show mt normal pioneer far at cright
     with dissolve
     window show
 
@@ -6439,7 +6453,7 @@ label bkrr_day19_common:
     mi "С хорошей!"
     dv "С плохой!"
 
-    show mt angry pioneer with dspr
+    show mt angry pioneer far with dspr
 
     mt "Значит так! Первая новость: у вас не будет возможности распевать такие песни в «Артеке»."
     mi "Ну вот… А мы так старались. А какая хорошая?"
@@ -6447,32 +6461,32 @@ label bkrr_day19_common:
     "Он жестом фокусника извлёк из-за спины пачку ярких листов."
 
     window hide
-    show ant smile shirt with dspr
+    show ant smile shirt far with dspr
     $ bkrr_get_item("gram")
-    show mt normal pioneer with dspr
+    show mt normal pioneer far with dspr
     window show
 
     mt "Плохая – вот она.{w} Наказывать вас не будут."
     ant "Решением областной комиссии из управления культуры, ваш хм… вокально-инструментальный ансамбль награждается почётными грамотами за значительный вклад…"
 
-    show ant normal shirt with dspr
+    show ant normal shirt far with dspr
 
     ant "Дальше следует несколько строк бюрократического словоблудия… В общем, всем всё очень понравилось.{w} Имейте в виду, с вас причитается!"
 
     window hide
-    show ant normal shirt at center
-    show mt normal pioneer at right
+    show ant normal shirt far at center
+    show mt normal pioneer far at right
     with ease
     show dv smile pirate at fleft with dissolve
     window show
 
     dv "Это почему это?"
 
-    show ant smile shirt with dspr
+    show ant smile shirt far with dspr
 
     ant "Потому что я единственный, кто умеет печатать на машинке и при этом достаточно трезв, чтобы попадать по нужным буквам. Поэтому, пока все наслаждались летом, барашком и вином, я заполнял ваши грамоты.{w} Остальные уже выпали в осадок и непригодны к употреблению."
 
-    show mt sad pioneer with dspr
+    show mt sad pioneer far with dspr
 
     mt "Антон, ну не при детях же!"
     ant "Так вот, все были в восторге и жалели, что не привезли остальных иностранных гостей, чтобы показать, насколько прогрессивная и современная музыкальная культура у наших пионеров.{w} Конечно, шашлык и вино тоже сыграли свою роль, но им действительно понравилось."
@@ -6481,12 +6495,12 @@ label bkrr_day19_common:
 
     dv "Но выступать в «Артек» мы не поедем. Правильно?"
 
-    show ant serious shirt with dspr
+    show ant serious shirt far with dspr
 
     ant "Алиса, я проявил чудеса дипломатии, но я не смогу убедить этих старых…{w} Кхм. Заслуженных деятелей культуры, что песня про мёртвого пирата, занимающегося грабежами, подходит для пионерского фестиваля."
 
     window hide
-    show ant normal shirt with dspr
+    show ant normal shirt far with dspr
     show us smile pirate close:
         fleft
         rotate 17
@@ -6496,7 +6510,7 @@ label bkrr_day19_common:
 
     us "Какая неожиданность…{w} Ладно, не нужен орден, давайте медаль! Мы не гордые!"
 
-    show mt angry pioneer with dspr
+    show mt angry pioneer far with dspr
 
     mt "Ульяна! Хоть бы поблагодарила."
 
@@ -6505,7 +6519,7 @@ label bkrr_day19_common:
     us "Простите, гражданинначальник!"
 
     hide us with easeoutleft
-    show mt grin pioneer with dspr
+    show mt grin pioneer far with dspr
 
     mt "Всё, теперь переодевайтесь и отправляйтесь на дискотеку. Держать под замком героев дня будет неприлично."
 
@@ -6523,7 +6537,7 @@ label bkrr_day19_common:
 
     dv "Переодевайтесь… Легко ей говорить. А во что? Форму у меня как корова пожевала, не в спортивке же идти… И надеть нечего."
 
-    show us smile pirate at left with dissolve
+    show us smile pirate at right with dissolve
 
     us "А я тебе говорила? Говорила! Возьми платье!{w} Нет, гитару она прихватила, которых здесь куча, а платье поленилась везти. \"Я не танцую, дискотеки – отстой!\""
 
@@ -6531,7 +6545,7 @@ label bkrr_day19_common:
 
     dv "Так, кто у нас сильно много разговаривает?"
 
-    show mi smile pirate close at right with dissolve
+    show mi smile pirate far at fleft with dissolve
 
     mi "Алиса, так вот же платье лежит."
 
@@ -6539,28 +6553,28 @@ label bkrr_day19_common:
 
     "Алиса ещё раз взяла подарок Слави, полюбовалась на отражение, а затем решительно отложила наряд."
 
-    show dv sad pirate at center behind mi with dissolve
+    show dv sad pirate far at center behind mi with dissolve
 
     dv "Нет. Сначала я Славку связала, а потом в её платье танцевать?{w} Это же свинство какое-то. Я так не могу."
 
-    show mi normal pirate close with dspr
+    show mi normal pirate far with dspr
 
     mi "Алиса, а почему бы тебе не пойти как есть?"
     dv "Чего?"
 
-    show mi upset pirate close with dspr
+    show mi upset pirate far with dspr
 
     mi "Ну, платьев там будет много, тем более оно тебе не совсем под размер, а пиратов там всего ничего, я думаю, ты произведёшь там этот… м-м-м…"
 
-    show mi normal pirate close with dspr
+    show mi normal pirate far with dspr
 
     mi "Фурор произведёшь."
 
-    show dv shy pirate with dspr
+    show dv shy pirate far with dspr
 
     "Алиса смутилась, посмотрела на штанины разной длины, подёргала ремни, оплетающие её загорелое плечо и вопросительно посмотрела…"
 
-    show dv sad pirate with dspr
+    show dv sad pirate far with dspr
 
     "Почему-то на меня."
     me "По-моему, отличная идея."
@@ -6570,11 +6584,11 @@ label bkrr_day19_common:
 
     us "Не глупее чем обычно."
 
-    show dv laugh pirate with dspr
+    show dv laugh pirate far with dspr
     stop music fadeout 7
 
     dv "Зараза такая!{w} Ладно… Пошли, я умоюсь, а то вспотела, пока играла."
-
+    # Шевелись, плотва!
 
     window hide
     $ bkrr_timeskip_short()
@@ -7558,7 +7572,8 @@ label bkrr_day19_common:
     scene bg int_music_club_mattresses_night with dissolve
     play ambience ambience_int_cabin_night fadein 2
     show mi smile yukata close with dissolve
-    play music music_list["a_promise_from_distant_days_v2"] fadein 7
+    # play music music_list["a_promise_from_distant_days_v2"] fadein 7
+    play music bkrr_music_list["yume_akari"] fadein 7
     window show
 
     mi "Вот… Мы пришли."
