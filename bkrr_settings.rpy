@@ -18,8 +18,8 @@ init python:
 
     # Возможные пути к графическим ресурсам для совместимости с обеими версиями
 
-    ES_IMAGES = "images/" if config.version == "1.2" else "images/1080/"
-    MOD_IMAGES = "mods/bkrr/images/"
+    BKRR_ES_IMAGES = "images/" if config.version == "1.2" else "images/1080/"
+    BKRR_IMAGES = "mods/bkrr/images/"
 
     # Функция, составляющая словарь ссылок на файлы в определённой директории
 
@@ -120,10 +120,10 @@ init python:
 
     # Графические элементы меню
 
-    bkrr_ui["img"] = {img:(MOD_IMAGES + "ui/menu/" + img + ".png") for img in ("achievements", "back", "base", "catday", "credits", "epilogue", "gallery", "main_menu", "plate", "prologue", "shadow", "steam", "tree_shadow", "vbar_full", "vbar_null", "vk", "day_no")}
+    bkrr_ui["img"] = {img:(BKRR_IMAGES + "ui/menu/" + img + ".png") for img in ("achievements", "back", "base", "catday", "credits", "epilogue", "gallery", "main_menu", "plate", "prologue", "shadow", "steam", "tree_shadow", "vbar_full", "vbar_null", "vk", "day_no")}
 
     for dn in range(4, 20):
-        bkrr_ui["img"]["day"+str(dn)] = (MOD_IMAGES + "ui/menu/day" + str(dn) + ".png", random.randint(-15, 15))
+        bkrr_ui["img"]["day"+str(dn)] = (BKRR_IMAGES + "ui/menu/day" + str(dn) + ".png", random.randint(-15, 15))
 
     # Звуковые элементы меню
 
@@ -143,28 +143,28 @@ init python:
     # Графические элементы галереи
 
     for img in ("bg", "button_1", "button_2", "cg", "noise_1", "noise_2", "noise_3", "noise_4", "not_opened_%s_1", "not_opened_%s_2", "not_opened_%s_3", "thumbnail_idle", "thumbnail_hover"):
-        bkrr_ui["img"][img] = MOD_IMAGES + "ui/gallery/" + img + ".png"
+        bkrr_ui["img"][img] = BKRR_IMAGES + "ui/gallery/" + img + ".png"
 
     # Список ресурсов галереи
 
     bkrr_gallery_grid = {
         "bg":(
             (["ext_music_club_verandah_day_v1", False], ["ext_music_club_verandah_day_v7", False], ["ext_music_club_verandah_night_v2", False], ["int_music_club_mattresses_day", False], ["int_music_club_mattresses_sunset", False], ["int_music_club_mattresses_night", False]),
-            (["int_cinema_people", False], ["int_shed_bkrr_v1", False], ["int_old_building_room_day_rainy_bkrr", MOD_IMAGES + "bg/int_old_building_room_day_rainy.jpg"], ["int_old_building_room_night_bkrr_v1", bkrr_fast_composite(MOD_IMAGES + "bg/int_old_building_room_night_rainy.jpg", MOD_IMAGES + "misc/int_old_building_room_mugs_fire.png", MOD_IMAGES + "misc/int_old_building_room_fire1.png", MOD_IMAGES + "misc/int_old_building_room_steam1.png")], ["int_old_building_room_day_bkrr_v2", False], ["ext_path3_day_bkrr", False]),
-            (["semen_room_clean_bkrr", False], ["ext_beach_water_day", MOD_IMAGES + "bg/ext_beach_water_day.jpg"], ["int_infirmary_day", False], ["int_infirmary_sunset", False], ["int_infirmary_night", False], ["int_infirmary_day_guitar", False]),
+            (["int_cinema_people", False], ["int_shed_bkrr_v1", False], ["int_old_building_room_day_rainy_bkrr", BKRR_IMAGES + "bg/int_old_building_room_day_rainy.jpg"], ["int_old_building_room_night_bkrr_v1", bkrr_fast_composite(BKRR_IMAGES + "bg/int_old_building_room_night_rainy.jpg", BKRR_IMAGES + "misc/int_old_building_room_mugs_fire.png", BKRR_IMAGES + "misc/int_old_building_room_fire1.png", BKRR_IMAGES + "misc/int_old_building_room_steam1.png")], ["int_old_building_room_day_bkrr_v2", False], ["ext_path3_day_bkrr", False]),
+            (["semen_room_clean_bkrr", False], ["ext_beach_water_day", BKRR_IMAGES + "bg/ext_beach_water_day.jpg"], ["int_infirmary_day", False], ["int_infirmary_sunset", False], ["int_infirmary_night", False], ["int_infirmary_day_guitar", False]),
             (["int_infirmary_sunset_guitar", False], ["int_infirmary_night_guitar", False], ["int_infirmary_night_v2", False], ["int_infirmary_night_guitar_v2", False], ["int_infirmary_night_v3", False], ["int_infirmary_night_guitar_v3", False])
         ),
         "cg":(
             (["d5_cat_in_ventilation", False], ["d5_ghost", False], ["d6_sl_ass", False], ["d6_on_floor", False], ["d6_dv_guitar", False], ["d6_sem_guitar", False]),
-            (["d7_mi_embrace", False], ["d7_mi_dance", False], ["d7_mi_walking", False], ["d8_deer", im.Crop(MOD_IMAGES + "cg/d8_deer.jpg", 0, 180, 1920, 1080)], ["d8_chibi", False], ["d8_fstar_main", False]),
-            (["d9_walking", bkrr_fast_composite(ES_IMAGES + "bg/ext_houses_day.jpg", MOD_IMAGES + "cg/d9_walking.png")], ["d9_wounded_dv_1", False], ["d9_wounded_dv_2", False], ["d9_squirrel_1", False], ["d9_squirrel_2", False], ["d9_kiss", False]),
-            (["d10_ghost", False], ["d11_shirt_1", im.Crop(MOD_IMAGES + "cg/d11_shirt.jpg", 0, 180, 1920, 1080)], ["d11_forest", im.Crop(MOD_IMAGES + "cg/d11_forest.jpg", 0, 0, 1920, 1080)], ["d11_forest_view_with_shadow", False], ["d11_forest_view_with_pi", False], ["d11_mi_sleep_1", MOD_IMAGES + "cg/d11_mi_sleep_1.png"]),
-            (["d11_mi_sleep_2", MOD_IMAGES + "cg/d11_mi_sleep_2.png"], ["d11_mi_sleep_3", im.Composite((config.screen_width, config.screen_height), (0, 0), MOD_IMAGES + "cg/d11_mi_sleep_1.png", (1250, 375), im.Crop(MOD_IMAGES + "cg/d11_mi_sleep_2.png", 1250, 375, 100, 100))], ["d11_night_guest", False], ["d12_mi_hair_sl", False], ["d12_mi_hair_sem", False], ["d12_mi_hair_sem_bite", False]),
+            (["d7_mi_embrace", False], ["d7_mi_dance", False], ["d7_mi_walking", False], ["d8_deer", im.Crop(BKRR_IMAGES + "cg/d8_deer.jpg", 0, 180, 1920, 1080)], ["d8_chibi", False], ["d8_fstar_main", False]),
+            (["d9_walking", bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_houses_day.jpg", BKRR_IMAGES + "cg/d9_walking.png")], ["d9_wounded_dv_1", False], ["d9_wounded_dv_2", False], ["d9_squirrel_1", False], ["d9_squirrel_2", False], ["d9_kiss", False]),
+            (["d10_ghost", False], ["d11_shirt_1", im.Crop(BKRR_IMAGES + "cg/d11_shirt.jpg", 0, 180, 1920, 1080)], ["d11_forest", im.Crop(BKRR_IMAGES + "cg/d11_forest.jpg", 0, 0, 1920, 1080)], ["d11_forest_view_with_shadow", False], ["d11_forest_view_with_pi", False], ["d11_mi_sleep_1", BKRR_IMAGES + "cg/d11_mi_sleep_1.png"]),
+            (["d11_mi_sleep_2", BKRR_IMAGES + "cg/d11_mi_sleep_2.png"], ["d11_mi_sleep_3", im.Composite((config.screen_width, config.screen_height), (0, 0), BKRR_IMAGES + "cg/d11_mi_sleep_1.png", (1250, 375), im.Crop(BKRR_IMAGES + "cg/d11_mi_sleep_2.png", 1250, 375, 100, 100))], ["d11_night_guest", False], ["d12_mi_hair_sl", False], ["d12_mi_hair_sem", False], ["d12_mi_hair_sem_bite", False]),
             (["d12_mi_bath_1", False], ["d12_mi_bath_2", False], ["d12_noon_rest_1", False], ["d12_noon_rest_2", False], ["d12_noon_rest_3", False], ["d12_noon_rest_4", False]),
-            (["d12_noon_rest_5", False], ["d12_us_kiss_2", False], ["d12_us_kiss_3", False], ["d12_us_kiss_4", False], ["d12_us_kiss_5", False], ["d12_us_kiss_6", MOD_IMAGES + "cg/d12_us_kiss_6.png"]),
+            (["d12_noon_rest_5", False], ["d12_us_kiss_2", False], ["d12_us_kiss_3", False], ["d12_us_kiss_4", False], ["d12_us_kiss_5", False], ["d12_us_kiss_6", BKRR_IMAGES + "cg/d12_us_kiss_6.png"]),
             (["d13_beach", False], ["d14_un_sleep", False], ["d14_us_fall", False], ["d14_un_cry", False], ["d14_dv_spy", False], ["d14_dv_window_1", False]),
             (["d14_dv_window_2", False], ["d14_mi_confession_1", False], ["d14_mi_confession_2", False], ["d14_mi_confession_3", False], ["d14_mi_confession_4", False], ["d14_rocket_1", False]),
-            (["d14_rocket_2", MOD_IMAGES + "cg/d14_rocket_2.png"], ["d15_mi_sleep", False], ["d16_cryptography", False], ["d16_gulls", False], ["catday_warp_cat", False])
+            (["d14_rocket_2", BKRR_IMAGES + "cg/d14_rocket_2.png"], ["d15_mi_sleep", False], ["d16_cryptography", False], ["d16_gulls", False], ["catday_warp_cat", False])
         )
     }
 
@@ -243,8 +243,8 @@ init python:
         "ml":[u"Голос", "#E1DD7D"],
     }
 
-    renpy.image("bkrr_radio_icon", im.FactorScale(MOD_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
-    renpy.image("bkrr_speaker_icon", im.FactorScale(MOD_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))
+    renpy.image("bkrr_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
+    renpy.image("bkrr_speaker_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/speaker_icon.png", 0.051))
 
     def bkrr_chars_define(kind=adv):
         gl = globals()
@@ -379,16 +379,16 @@ init python:
         persistent.bkrr_ach = dict()
 
     for ach in bkrr_ach_list:
-        renpy.image("bkrr_ach_" + ach[0], im.Scale(MOD_IMAGES + "ui/achievements/" + ach[0] + ".png", 450, 125))
+        renpy.image("bkrr_ach_" + ach[0], im.Scale(BKRR_IMAGES + "ui/achievements/" + ach[0] + ".png", 450, 125))
         if ach[0] not in persistent.bkrr_ach:
             persistent.bkrr_ach[ach[0]] = False
 
-    renpy.image("bkrr_ach_blank", im.Scale(MOD_IMAGES + "ui/achievements/blank.png", 450, 125))
+    renpy.image("bkrr_ach_blank", im.Scale(BKRR_IMAGES + "ui/achievements/blank.png", 450, 125))
 
     bkrr_item_list = ("knife", "paint", "tape", "key", "food", "powder", "accumulator", "comb", "pills", "apple", "note", "shark_tooth", "matchbox", "love_letter", "tabs", "bandana", "gram")
 
     for item in bkrr_item_list:
-        renpy.image("bkrr_item_" + item, im.Scale(MOD_IMAGES + "ui/items/" + item + ".png", 450, 360))
+        renpy.image("bkrr_item_" + item, im.Scale(BKRR_IMAGES + "ui/items/" + item + ".png", 450, 360))
 
     # Вывод ачивментов и предметов
 
@@ -450,11 +450,11 @@ init 2:
 
     # Обычный логотип
 
-    image bkrr_logo = im.Image(MOD_IMAGES + "ui/logo.png", xalign=0.5, yalign=0.5)
+    image bkrr_logo = im.Image(BKRR_IMAGES + "ui/logo.png", xalign=0.5, yalign=0.5)
 
     # Логотип для таймскипа и его ATL
 
-    $ bkrr_timeskip_logo_normal = im.FactorScale(MOD_IMAGES + "ui/logo.png", 0.5)
+    $ bkrr_timeskip_logo_normal = im.FactorScale(BKRR_IMAGES + "ui/logo.png", 0.5)
     $ bkrr_timeskip_logo_desaturated = im.MatrixColor(bkrr_timeskip_logo_normal, im.matrix.saturation(0.5))
     $ bkrr_timeskip_logo_flash = im.MatrixColor(bkrr_timeskip_logo_normal, im.matrix.brightness(0.25))
 
@@ -509,141 +509,141 @@ init 2:
 
     # Новые фоны
 
-    image bg ext_music_club_verandah_day_v1 = MOD_IMAGES + "bg/ext_music_club_verandah_day.jpg" # версия без плакатов, используется в прологе и 4-6 днях
-    image bg ext_music_club_verandah_day_v2 = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_day.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_day_posters.png") # версия с плакатами, используется в 7 дне
-    image bg ext_music_club_verandah_day_v3 = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_day.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_day_posters.png", MOD_IMAGES + "misc/ext_music_club_verandah_text1.png") # версия с плакатами и первой надписью, используется в 8 дне
-    image bg ext_music_club_verandah_day_v4 = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_day.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_day_posters.png", MOD_IMAGES + "misc/ext_music_club_verandah_text1.png", MOD_IMAGES + "misc/ext_music_club_verandah_text2.png") # версия с плакатами, первой и второй надписями, используется в 9 дне
-    image bg ext_music_club_verandah_day_v5 = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_day.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_day_posters.png", MOD_IMAGES + "misc/ext_music_club_verandah_text1.png", MOD_IMAGES + "misc/ext_music_club_verandah_text2.png", MOD_IMAGES + "misc/ext_music_club_verandah_text3.png") # версия с плакатами, 1-3 надписями, используется в 10 и 11 дне (см. пасмурную версию)
-    image bg ext_music_club_verandah_day_v6 = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_day.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_day_posters.png", MOD_IMAGES + "misc/ext_music_club_verandah_text1.png", MOD_IMAGES + "misc/ext_music_club_verandah_text2.png", MOD_IMAGES + "misc/ext_music_club_verandah_text3.png", MOD_IMAGES + "misc/ext_music_club_verandah_text4.png") # версия с плакатами, 1-4 надписями, используется в 12 дне
-    image bg ext_music_club_verandah_day_v7 = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_day.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_day_posters.png", MOD_IMAGES + "misc/ext_music_club_verandah_text1.png", MOD_IMAGES + "misc/ext_music_club_verandah_text2.png", MOD_IMAGES + "misc/ext_music_club_verandah_text3.png", MOD_IMAGES + "misc/ext_music_club_verandah_text4.png", MOD_IMAGES + "misc/ext_music_club_verandah_text5.png") # версия с плакатами, 1-5 надписями, используется в 13 дне
-    image bg ext_music_club_verandah_day_v8 = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_day.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_day_posters.png", MOD_IMAGES + "misc/ext_music_club_verandah_text1.png", MOD_IMAGES + "misc/ext_music_club_verandah_text2.png", MOD_IMAGES + "misc/ext_music_club_verandah_text3.png", MOD_IMAGES + "misc/ext_music_club_verandah_text4.png", MOD_IMAGES + "misc/ext_music_club_verandah_text5.png", MOD_IMAGES + "misc/ext_music_club_verandah_text6.png") # версия с плакатами, 1-6 надписями, используется в 14 дне
-    image bg ext_music_club_verandah_day_v9 = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_day.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_day_posters.png", MOD_IMAGES + "misc/ext_music_club_verandah_text1.png", MOD_IMAGES + "misc/ext_music_club_verandah_text2.png", MOD_IMAGES + "misc/ext_music_club_verandah_text3.png", MOD_IMAGES + "misc/ext_music_club_verandah_text4.png", MOD_IMAGES + "misc/ext_music_club_verandah_text5.png", MOD_IMAGES + "misc/ext_music_club_verandah_text6.png", MOD_IMAGES + "misc/ext_music_club_verandah_text7.png") # версия с плакатами, 1-7 надписями, используется в 15 дне
-    image bg ext_music_club_verandah_day_v9_ajar = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_day.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_day_posters.png", MOD_IMAGES + "misc/ext_music_club_verandah_text1.png", MOD_IMAGES + "misc/ext_music_club_verandah_text2.png", MOD_IMAGES + "misc/ext_music_club_verandah_text3.png", MOD_IMAGES + "misc/ext_music_club_verandah_text4.png", MOD_IMAGES + "misc/ext_music_club_verandah_text5.png", MOD_IMAGES + "misc/ext_music_club_verandah_text6.png", MOD_IMAGES + "misc/ext_music_club_verandah_text7.png", MOD_IMAGES + "misc/ext_music_club_verandah_day_ajar.png")
-    image bg ext_music_club_verandah_day_v1_ajar = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_day.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_day_ajar.png")
-    image ext_music_club_verandah_day_v9_blocker = MOD_IMAGES + "misc/ext_music_club_verandah_day_blocker.png"
-    image ext_music_club_verandah_day_v9_double = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_day.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_day_posters.png", MOD_IMAGES + "misc/ext_music_club_verandah_text1.png", MOD_IMAGES + "misc/ext_music_club_verandah_text2.png", MOD_IMAGES + "misc/ext_music_club_verandah_text3.png", MOD_IMAGES + "misc/ext_music_club_verandah_text4.png", MOD_IMAGES + "misc/ext_music_club_verandah_text5.png", MOD_IMAGES + "misc/ext_music_club_verandah_text6.png", MOD_IMAGES + "misc/ext_music_club_verandah_text7.png") # версия с плакатами, 1-7 надписями, используется в 15 дне
-    image bg ext_music_club_verandah_final_rehearsal = MOD_IMAGES + "bg/ext_music_club_verandah_final_rehearsal.jpg"
-    image bg ext_music_club_verandah_final_rehearsal_shen = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_final_rehearsal.jpg", MOD_IMAGES + "misc/rehearsal_shen_mz_book.png")
+    image bg ext_music_club_verandah_day_v1 = BKRR_IMAGES + "bg/ext_music_club_verandah_day.jpg" # версия без плакатов, используется в прологе и 4-6 днях
+    image bg ext_music_club_verandah_day_v2 = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_day.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_day_posters.png") # версия с плакатами, используется в 7 дне
+    image bg ext_music_club_verandah_day_v3 = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_day.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_day_posters.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text1.png") # версия с плакатами и первой надписью, используется в 8 дне
+    image bg ext_music_club_verandah_day_v4 = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_day.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_day_posters.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text1.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text2.png") # версия с плакатами, первой и второй надписями, используется в 9 дне
+    image bg ext_music_club_verandah_day_v5 = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_day.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_day_posters.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text1.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text2.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text3.png") # версия с плакатами, 1-3 надписями, используется в 10 и 11 дне (см. пасмурную версию)
+    image bg ext_music_club_verandah_day_v6 = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_day.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_day_posters.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text1.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text2.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text3.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text4.png") # версия с плакатами, 1-4 надписями, используется в 12 дне
+    image bg ext_music_club_verandah_day_v7 = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_day.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_day_posters.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text1.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text2.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text3.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text4.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text5.png") # версия с плакатами, 1-5 надписями, используется в 13 дне
+    image bg ext_music_club_verandah_day_v8 = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_day.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_day_posters.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text1.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text2.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text3.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text4.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text5.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text6.png") # версия с плакатами, 1-6 надписями, используется в 14 дне
+    image bg ext_music_club_verandah_day_v9 = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_day.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_day_posters.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text1.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text2.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text3.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text4.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text5.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text6.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text7.png") # версия с плакатами, 1-7 надписями, используется в 15 дне
+    image bg ext_music_club_verandah_day_v9_ajar = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_day.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_day_posters.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text1.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text2.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text3.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text4.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text5.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text6.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text7.png", BKRR_IMAGES + "misc/ext_music_club_verandah_day_ajar.png")
+    image bg ext_music_club_verandah_day_v1_ajar = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_day.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_day_ajar.png")
+    image ext_music_club_verandah_day_v9_blocker = BKRR_IMAGES + "misc/ext_music_club_verandah_day_blocker.png"
+    image ext_music_club_verandah_day_v9_double = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_day.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_day_posters.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text1.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text2.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text3.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text4.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text5.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text6.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text7.png") # версия с плакатами, 1-7 надписями, используется в 15 дне
+    image bg ext_music_club_verandah_final_rehearsal = BKRR_IMAGES + "bg/ext_music_club_verandah_final_rehearsal.jpg"
+    image bg ext_music_club_verandah_final_rehearsal_shen = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_final_rehearsal.jpg", BKRR_IMAGES + "misc/rehearsal_shen_mz_book.png")
 
-    image bg ext_music_club_verandah_night_v1 = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_night.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_night_posters.png", im.Alpha(MOD_IMAGES + "misc/ext_music_club_verandah_text1.png", 0.3), im.Alpha(MOD_IMAGES + "misc/ext_music_club_verandah_text2.png", 0.3)) # версия с плакатами, первой и второй надписями, используется в 9 дне, ночной вариант веранды v4
-    image bg ext_music_club_verandah_night_v2 = bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_night.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_night_posters.png", im.Alpha(MOD_IMAGES + "misc/ext_music_club_verandah_text1.png", 0.3), im.Alpha(MOD_IMAGES + "misc/ext_music_club_verandah_text2.png", 0.3), im.Alpha(MOD_IMAGES + "misc/ext_music_club_verandah_text3.png", 0.3), im.Alpha(MOD_IMAGES + "misc/ext_music_club_verandah_text4.png", 0.3)) # версия с плакатами, 1-4 надписями, используется в 12 дне, ночной вариант веранды v6
+    image bg ext_music_club_verandah_night_v1 = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_night.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_night_posters.png", im.Alpha(BKRR_IMAGES + "misc/ext_music_club_verandah_text1.png", 0.3), im.Alpha(BKRR_IMAGES + "misc/ext_music_club_verandah_text2.png", 0.3)) # версия с плакатами, первой и второй надписями, используется в 9 дне, ночной вариант веранды v4
+    image bg ext_music_club_verandah_night_v2 = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_night.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_night_posters.png", im.Alpha(BKRR_IMAGES + "misc/ext_music_club_verandah_text1.png", 0.3), im.Alpha(BKRR_IMAGES + "misc/ext_music_club_verandah_text2.png", 0.3), im.Alpha(BKRR_IMAGES + "misc/ext_music_club_verandah_text3.png", 0.3), im.Alpha(BKRR_IMAGES + "misc/ext_music_club_verandah_text4.png", 0.3)) # версия с плакатами, 1-4 надписями, используется в 12 дне, ночной вариант веранды v6
 
     # Дальний клуб с объявлениями и без
     image bg ext_music_club_day_bkrr:
         contains:
             "bg ext_musclub_day"
         contains:
-            MOD_IMAGES + "misc/ext_music_club_day_with_notes.png"
+            BKRR_IMAGES + "misc/ext_music_club_day_with_notes.png"
     image bg ext_music_club_day_empty_bkrr:
         contains:
             "bg ext_musclub_day"
         contains:
-            MOD_IMAGES + "misc/ext_music_club_day_no_notes.png"
+            BKRR_IMAGES + "misc/ext_music_club_day_no_notes.png"
 
-    image bg int_music_club_mattresses_day = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_day.jpg", MOD_IMAGES + "misc/int_music_club_clock_day.png")
-    image bg int_music_club_mattresses_sunset = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_sunset.jpg", MOD_IMAGES + "misc/int_music_club_clock_sunset.png")
-    image bg int_music_club_mattresses_night = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_night.jpg", MOD_IMAGES + "misc/int_music_club_clock_night.png")
-    image bg int_music_club_mattresses_night_lights_on = MOD_IMAGES + "bg/int_music_club_mattresses_night_lights_on.jpg"
-    image bg int_music_club_mattresses_dark_night = im.MatrixColor(bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_night.jpg", MOD_IMAGES + "misc/int_music_club_clock_night.png"), im.matrix.brightness(-0.15) * im.matrix.saturation(0.6))
+    image bg int_music_club_mattresses_day = bkrr_fast_composite(BKRR_IMAGES + "bg/int_music_club_mattresses_day.jpg", BKRR_IMAGES + "misc/int_music_club_clock_day.png")
+    image bg int_music_club_mattresses_sunset = bkrr_fast_composite(BKRR_IMAGES + "bg/int_music_club_mattresses_sunset.jpg", BKRR_IMAGES + "misc/int_music_club_clock_sunset.png")
+    image bg int_music_club_mattresses_night = bkrr_fast_composite(BKRR_IMAGES + "bg/int_music_club_mattresses_night.jpg", BKRR_IMAGES + "misc/int_music_club_clock_night.png")
+    image bg int_music_club_mattresses_night_lights_on = BKRR_IMAGES + "bg/int_music_club_mattresses_night_lights_on.jpg"
+    image bg int_music_club_mattresses_dark_night = im.MatrixColor(bkrr_fast_composite(BKRR_IMAGES + "bg/int_music_club_mattresses_night.jpg", BKRR_IMAGES + "misc/int_music_club_clock_night.png"), im.matrix.brightness(-0.15) * im.matrix.saturation(0.6))
     image bg int_music_club_mattresses_night_yulia:
         contains:
             "bg int_music_club_mattresses_night_closed_piano"
         contains:
             "bkrr_uv_mattress"
 
-    image bg int_cinema_empty = MOD_IMAGES + "bg/int_cinema_empty.png"
-    image bg int_cinema_people = MOD_IMAGES + "bg/int_cinema_people.png"
-    image bg int_cinema_movie = MOD_IMAGES + "bg/int_cinema_movie.png"
+    image bg int_cinema_empty = BKRR_IMAGES + "bg/int_cinema_empty.png"
+    image bg int_cinema_people = BKRR_IMAGES + "bg/int_cinema_people.png"
+    image bg int_cinema_movie = BKRR_IMAGES + "bg/int_cinema_movie.png"
 
-    image bg int_shed_bkrr_v1 = bkrr_fast_composite(MOD_IMAGES + "bg/int_shed.jpg", MOD_IMAGES + "misc/int_shed_plank1.png")
-    image bg int_shed_bkrr_v2 = bkrr_fast_composite(MOD_IMAGES + "bg/int_shed.jpg", MOD_IMAGES + "misc/int_shed_plank2.png")
+    image bg int_shed_bkrr_v1 = bkrr_fast_composite(BKRR_IMAGES + "bg/int_shed.jpg", BKRR_IMAGES + "misc/int_shed_plank1.png")
+    image bg int_shed_bkrr_v2 = bkrr_fast_composite(BKRR_IMAGES + "bg/int_shed.jpg", BKRR_IMAGES + "misc/int_shed_plank2.png")
 
-    image bg int_old_building_room_day_rainy_bkrr = bkrr_fast_livecomposite(MOD_IMAGES + "bg/int_old_building_room_day_rainy.jpg", bkrr_create_anim(MOD_IMAGES + "misc/int_old_building_room_rain", 3, 0.15, Dissolve(0.15, alpha=True)))
+    image bg int_old_building_room_day_rainy_bkrr = bkrr_fast_livecomposite(BKRR_IMAGES + "bg/int_old_building_room_day_rainy.jpg", bkrr_create_anim(BKRR_IMAGES + "misc/int_old_building_room_rain", 3, 0.15, Dissolve(0.15, alpha=True)))
 
-    image bg int_old_building_room_night_bkrr_v1 = bkrr_fast_livecomposite(MOD_IMAGES + "bg/int_old_building_room_night_rainy.jpg", MOD_IMAGES + "misc/int_old_building_room_mugs_fire.png", bkrr_glow_atl(MOD_IMAGES + "misc/int_old_building_room_flash1.png"), bkrr_glow_atl(MOD_IMAGES + "misc/int_old_building_room_flash2.png"), bkrr_glow_atl(MOD_IMAGES + "misc/int_old_building_room_flash3.png"), bkrr_create_anim(MOD_IMAGES + "misc/int_old_building_room_fire", 3, 0.5, Dissolve(0.5, alpha=True)), bkrr_create_anim(MOD_IMAGES + "misc/int_old_building_room_steam", 3, 0.3, Dissolve(0.3, alpha=True)))
-    image bg int_old_building_room_night_bkrr_v2 = bkrr_fast_livecomposite(MOD_IMAGES + "bg/int_old_building_room_night_rainy.jpg", bkrr_glow_atl(MOD_IMAGES + "misc/int_old_building_room_flash1.png"), bkrr_glow_atl(MOD_IMAGES + "misc/int_old_building_room_flash2.png"), bkrr_glow_atl(MOD_IMAGES + "misc/int_old_building_room_flash3.png"), bkrr_create_anim(MOD_IMAGES + "misc/int_old_building_room_fire", 3, 0.5, Dissolve(0.5, alpha=True)))
+    image bg int_old_building_room_night_bkrr_v1 = bkrr_fast_livecomposite(BKRR_IMAGES + "bg/int_old_building_room_night_rainy.jpg", BKRR_IMAGES + "misc/int_old_building_room_mugs_fire.png", bkrr_glow_atl(BKRR_IMAGES + "misc/int_old_building_room_flash1.png"), bkrr_glow_atl(BKRR_IMAGES + "misc/int_old_building_room_flash2.png"), bkrr_glow_atl(BKRR_IMAGES + "misc/int_old_building_room_flash3.png"), bkrr_create_anim(BKRR_IMAGES + "misc/int_old_building_room_fire", 3, 0.5, Dissolve(0.5, alpha=True)), bkrr_create_anim(BKRR_IMAGES + "misc/int_old_building_room_steam", 3, 0.3, Dissolve(0.3, alpha=True)))
+    image bg int_old_building_room_night_bkrr_v2 = bkrr_fast_livecomposite(BKRR_IMAGES + "bg/int_old_building_room_night_rainy.jpg", bkrr_glow_atl(BKRR_IMAGES + "misc/int_old_building_room_flash1.png"), bkrr_glow_atl(BKRR_IMAGES + "misc/int_old_building_room_flash2.png"), bkrr_glow_atl(BKRR_IMAGES + "misc/int_old_building_room_flash3.png"), bkrr_create_anim(BKRR_IMAGES + "misc/int_old_building_room_fire", 3, 0.5, Dissolve(0.5, alpha=True)))
 
-    image bg int_old_building_room_day_bkrr_v1 = MOD_IMAGES + "bg/int_old_building_room_day.png"
-    image bg int_old_building_room_day_bkrr_v2 = bkrr_fast_composite(MOD_IMAGES + "bg/int_old_building_room_day.png", MOD_IMAGES + "misc/int_old_building_room_mugs.png")
+    image bg int_old_building_room_day_bkrr_v1 = BKRR_IMAGES + "bg/int_old_building_room_day.png"
+    image bg int_old_building_room_day_bkrr_v2 = bkrr_fast_composite(BKRR_IMAGES + "bg/int_old_building_room_day.png", BKRR_IMAGES + "misc/int_old_building_room_mugs.png")
 
-    image bg int_infirmary_day_empty = MOD_IMAGES + "bg/int_infirmary/day/bg.jpg"
-    image bg int_infirmary_sunset_empty = MOD_IMAGES + "bg/int_infirmary/sunset/bg.jpg"
-    image bg int_infirmary_night_empty = MOD_IMAGES + "bg/int_infirmary/night/bg.jpg"
+    image bg int_infirmary_day_empty = BKRR_IMAGES + "bg/int_infirmary/day/bg.jpg"
+    image bg int_infirmary_sunset_empty = BKRR_IMAGES + "bg/int_infirmary/sunset/bg.jpg"
+    image bg int_infirmary_night_empty = BKRR_IMAGES + "bg/int_infirmary/night/bg.jpg"
 
-    image bg int_infirmary_day_empty_food = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/day/bg.jpg", MOD_IMAGES + "bg/int_infirmary/day/food.png")
-    image bg int_infirmary_sunset_empty_food = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/sunset/bg.jpg", MOD_IMAGES + "bg/int_infirmary/sunset/food.png")
-    image bg int_infirmary_night_empty_food = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/night/bg.jpg", MOD_IMAGES + "bg/int_infirmary/night/food.png")
+    image bg int_infirmary_day_empty_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/day/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/day/food.png")
+    image bg int_infirmary_sunset_empty_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/sunset/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/sunset/food.png")
+    image bg int_infirmary_night_empty_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night/food.png")
 
-    image bg int_infirmary_day = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/day/bg.jpg", MOD_IMAGES + "bg/int_infirmary/day/stuff.png")
-    image bg int_infirmary_sunset = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/sunset/bg.jpg", MOD_IMAGES + "bg/int_infirmary/sunset/stuff.png")
-    image bg int_infirmary_night = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/night/bg.jpg", MOD_IMAGES + "bg/int_infirmary/night/stuff.png")
+    image bg int_infirmary_day = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/day/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/day/stuff.png")
+    image bg int_infirmary_sunset = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/sunset/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/sunset/stuff.png")
+    image bg int_infirmary_night = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night/stuff.png")
 
-    image bg int_infirmary_day_guitar = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/day/bg.jpg", MOD_IMAGES + "bg/int_infirmary/day/guitar.png", MOD_IMAGES + "bg/int_infirmary/day/stuff.png")
-    image bg int_infirmary_sunset_guitar = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/sunset/bg.jpg", MOD_IMAGES + "bg/int_infirmary/sunset/guitar.png", MOD_IMAGES + "bg/int_infirmary/sunset/stuff.png")
-    image bg int_infirmary_night_guitar = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/night/bg.jpg", MOD_IMAGES + "bg/int_infirmary/night/guitar.png", MOD_IMAGES + "bg/int_infirmary/night/stuff.png")
-    image bg int_infirmary_night_v3 = MOD_IMAGES + "bg/int_infirmary/night_lights/bg.jpg"
-    image bg int_infirmary_night_guitar_v3 = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/night_lights/bg.jpg", MOD_IMAGES + "bg/int_infirmary/night_lights/guitar.png", MOD_IMAGES + "bg/int_infirmary/night_lights/stuff.png")
+    image bg int_infirmary_day_guitar = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/day/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/day/guitar.png", BKRR_IMAGES + "bg/int_infirmary/day/stuff.png")
+    image bg int_infirmary_sunset_guitar = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/sunset/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/sunset/guitar.png", BKRR_IMAGES + "bg/int_infirmary/sunset/stuff.png")
+    image bg int_infirmary_night_guitar = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night/guitar.png", BKRR_IMAGES + "bg/int_infirmary/night/stuff.png")
+    image bg int_infirmary_night_v3 = BKRR_IMAGES + "bg/int_infirmary/night_lights/bg.jpg"
+    image bg int_infirmary_night_guitar_v3 = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night_lights/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night_lights/guitar.png", BKRR_IMAGES + "bg/int_infirmary/night_lights/stuff.png")
 
-    image bg int_infirmary_day_food = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/day/bg.jpg", MOD_IMAGES + "bg/int_infirmary/day/food.png", MOD_IMAGES + "bg/int_infirmary/day/stuff.png")
-    image bg int_infirmary_sunset_food = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/sunset/bg.jpg", MOD_IMAGES + "bg/int_infirmary/sunset/food.png", MOD_IMAGES + "bg/int_infirmary/sunset/stuff.png")
-    image bg int_infirmary_night_food = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/night/bg.jpg", MOD_IMAGES + "bg/int_infirmary/night/food.png", MOD_IMAGES + "bg/int_infirmary/night/stuff.png")
-    image bg int_infirmary_night_food_v3 = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/night_lights/bg.jpg", MOD_IMAGES + "bg/int_infirmary/night_lights/food.png", MOD_IMAGES + "bg/int_infirmary/night_lights/stuff.png")
+    image bg int_infirmary_day_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/day/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/day/food.png", BKRR_IMAGES + "bg/int_infirmary/day/stuff.png")
+    image bg int_infirmary_sunset_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/sunset/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/sunset/food.png", BKRR_IMAGES + "bg/int_infirmary/sunset/stuff.png")
+    image bg int_infirmary_night_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night/food.png", BKRR_IMAGES + "bg/int_infirmary/night/stuff.png")
+    image bg int_infirmary_night_food_v3 = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night_lights/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night_lights/food.png", BKRR_IMAGES + "bg/int_infirmary/night_lights/stuff.png")
 
-    image bg int_infirmary_day_guitar_food = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/day/bg.jpg", MOD_IMAGES + "bg/int_infirmary/day/guitar.png", MOD_IMAGES + "bg/int_infirmary/day/food.png", MOD_IMAGES + "bg/int_infirmary/day/stuff.png")
-    image bg int_infirmary_sunset_guitar_food = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/sunset/bg.jpg", MOD_IMAGES + "bg/int_infirmary/sunset/guitar.png", MOD_IMAGES + "bg/int_infirmary/sunset/food.png", MOD_IMAGES + "bg/int_infirmary/sunset/stuff.png")
-    image bg int_infirmary_night_guitar_food = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/night/bg.jpg", MOD_IMAGES + "bg/int_infirmary/night/guitar.png", MOD_IMAGES + "bg/int_infirmary/night/food.png", MOD_IMAGES + "bg/int_infirmary/night/stuff.png")
-    image bg int_infirmary_night_guitar_food_v3 = bkrr_fast_composite(MOD_IMAGES + "bg/int_infirmary/night_lights/bg.jpg", MOD_IMAGES + "bg/int_infirmary/night_lights/guitar.png", MOD_IMAGES + "bg/int_infirmary/night_lights/food.png", MOD_IMAGES + "bg/int_infirmary/night_lights/stuff.png")
+    image bg int_infirmary_day_guitar_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/day/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/day/guitar.png", BKRR_IMAGES + "bg/int_infirmary/day/food.png", BKRR_IMAGES + "bg/int_infirmary/day/stuff.png")
+    image bg int_infirmary_sunset_guitar_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/sunset/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/sunset/guitar.png", BKRR_IMAGES + "bg/int_infirmary/sunset/food.png", BKRR_IMAGES + "bg/int_infirmary/sunset/stuff.png")
+    image bg int_infirmary_night_guitar_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night/guitar.png", BKRR_IMAGES + "bg/int_infirmary/night/food.png", BKRR_IMAGES + "bg/int_infirmary/night/stuff.png")
+    image bg int_infirmary_night_guitar_food_v3 = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night_lights/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night_lights/guitar.png", BKRR_IMAGES + "bg/int_infirmary/night_lights/food.png", BKRR_IMAGES + "bg/int_infirmary/night_lights/stuff.png")
 
-    image bg ext_path3_day_bkrr = MOD_IMAGES + "bg/ext_path3_day.jpg"
+    image bg ext_path3_day_bkrr = BKRR_IMAGES + "bg/ext_path3_day.jpg"
 
-    image bg ext_pier_day = MOD_IMAGES + "bg/ext_pier_day.jpg"
-    image bg ext_pier_sunset = MOD_IMAGES + "bg/ext_pier_sunset.jpg"
+    image bg ext_pier_day = BKRR_IMAGES + "bg/ext_pier_day.jpg"
+    image bg ext_pier_sunset = BKRR_IMAGES + "bg/ext_pier_sunset.jpg"
 
     # "Новые" фоны из модпака, из инета, дополненные, отредактированные и переобъявленные оригинальные и пр.
 
-    image bg ext_houses_night_bkrr = MOD_IMAGES + "bg/ext_houses_night.jpg"
-    image bg ext_aidpost_sunset_bkrr = MOD_IMAGES + "bg/ext_aidpost_sunset.jpg"
-    image bg ext_boathouse_sunset_bkrr = MOD_IMAGES + "bg/ext_boathouse_sunset.jpg"
-    image bg ext_library_sunset_bkrr = MOD_IMAGES + "bg/ext_library_sunset.jpg"
-    image bg ext_storage_day_bkrr = MOD_IMAGES + "bg/ext_storage_day.png"
-    image bg ext_storage_sunset_bkrr = MOD_IMAGES + "bg/ext_storage_sunset.jpg"
-    image bg ext_storage_night_bkrr = MOD_IMAGES + "bg/ext_storage_night.jpg"
-    image bg ext_playground_sunset_bkrr = MOD_IMAGES + "bg/ext_playground_sunset.jpg"
-    image bg ext_old_building_day_bkrr = im.Scale(MOD_IMAGES + "bg/ext_old_building_day.jpg", config.screen_width, config.screen_height)
-    image bg ext_clubs_sunset_bkrr = MOD_IMAGES + "bg/ext_clubs_sunset.jpg"
-    image bg ext_clubs_day_broken_window_1 = bkrr_fast_composite(ES_IMAGES + "bg/ext_clubs_day.jpg", MOD_IMAGES + "misc/windows_clubs_day_broken_1.png")
-    image bg ext_clubs_day_broken_windows = bkrr_fast_composite(ES_IMAGES + "bg/ext_clubs_day.jpg", MOD_IMAGES + "misc/windows_clubs_day_broken_1.png", MOD_IMAGES + "misc/windows_clubs_day_broken_2.png")
-    image bg ext_clubs_sunset_broken_windows = bkrr_fast_composite(MOD_IMAGES + "bg/ext_clubs_sunset.jpg", MOD_IMAGES + "misc/windows_clubs_sunset_broken.png")
+    image bg ext_houses_night_bkrr = BKRR_IMAGES + "bg/ext_houses_night.jpg"
+    image bg ext_aidpost_sunset_bkrr = BKRR_IMAGES + "bg/ext_aidpost_sunset.jpg"
+    image bg ext_boathouse_sunset_bkrr = BKRR_IMAGES + "bg/ext_boathouse_sunset.jpg"
+    image bg ext_library_sunset_bkrr = BKRR_IMAGES + "bg/ext_library_sunset.jpg"
+    image bg ext_storage_day_bkrr = BKRR_IMAGES + "bg/ext_storage_day.png"
+    image bg ext_storage_sunset_bkrr = BKRR_IMAGES + "bg/ext_storage_sunset.jpg"
+    image bg ext_storage_night_bkrr = BKRR_IMAGES + "bg/ext_storage_night.jpg"
+    image bg ext_playground_sunset_bkrr = BKRR_IMAGES + "bg/ext_playground_sunset.jpg"
+    image bg ext_old_building_day_bkrr = im.Scale(BKRR_IMAGES + "bg/ext_old_building_day.jpg", config.screen_width, config.screen_height)
+    image bg ext_clubs_sunset_bkrr = BKRR_IMAGES + "bg/ext_clubs_sunset.jpg"
+    image bg ext_clubs_day_broken_window_1 = bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_clubs_day.jpg", BKRR_IMAGES + "misc/windows_clubs_day_broken_1.png")
+    image bg ext_clubs_day_broken_windows = bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_clubs_day.jpg", BKRR_IMAGES + "misc/windows_clubs_day_broken_1.png", BKRR_IMAGES + "misc/windows_clubs_day_broken_2.png")
+    image bg ext_clubs_sunset_broken_windows = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_clubs_sunset.jpg", BKRR_IMAGES + "misc/windows_clubs_sunset_broken.png")
 
-    image bg int_music_club_day = bkrr_fast_composite(ES_IMAGES + "bg/int_musclub_day.jpg", MOD_IMAGES + "misc/int_music_club_clock_day.png") # переобъявлен для удобства
+    image bg int_music_club_day = bkrr_fast_composite(BKRR_ES_IMAGES + "bg/int_musclub_day.jpg", BKRR_IMAGES + "misc/int_music_club_clock_day.png") # переобъявлен для удобства
 
-    image bg ext_music_club_sunset_bkrr = MOD_IMAGES + "bg/ext_music_club_sunset.jpg"
-    image bg ext_music_club_night_bkrr = im.Scale(MOD_IMAGES + "bg/ext_music_club_night.png", config.screen_width, config.screen_height)
+    image bg ext_music_club_sunset_bkrr = BKRR_IMAGES + "bg/ext_music_club_sunset.jpg"
+    image bg ext_music_club_night_bkrr = im.Scale(BKRR_IMAGES + "bg/ext_music_club_night.png", config.screen_width, config.screen_height)
 
     image bg int_dining_hall_people_day_bkrr:
         choice:
-            ES_IMAGES + "bg/int_dining_hall_people_day.jpg"
+            BKRR_ES_IMAGES + "bg/int_dining_hall_people_day.jpg"
         choice:
-            bkrr_fast_composite(ES_IMAGES + "bg/int_dining_hall_people_day.jpg", MOD_IMAGES + "misc/dining_hall_kakoyto_hren.png")
+            bkrr_fast_composite(BKRR_ES_IMAGES + "bg/int_dining_hall_people_day.jpg", BKRR_IMAGES + "misc/dining_hall_kakoyto_hren.png")
 
     image bg int_dining_hall_people_sunset_bkrr:
         choice:
-            MOD_IMAGES + "bg/int_dining_hall_people_sunset.jpg"
+            BKRR_IMAGES + "bg/int_dining_hall_people_sunset.jpg"
         choice:
-            bkrr_fast_composite(MOD_IMAGES + "bg/int_dining_hall_people_sunset.jpg", MOD_IMAGES + "misc/dining_hall_kakoyto_hren_sunset.png")
+            bkrr_fast_composite(BKRR_IMAGES + "bg/int_dining_hall_people_sunset.jpg", BKRR_IMAGES + "misc/dining_hall_kakoyto_hren_sunset.png")
 
     image bg ext_square_night_party_glow:
         contains:
             "bg ext_square_night_party"
         contains:
-            (MOD_IMAGES + "misc/ext_square_night_party_glow_blue.png")
+            (BKRR_IMAGES + "misc/ext_square_night_party_glow_blue.png")
             alpha 0.5
             block:
                 ease 1.25 alpha 0.25
                 ease 1.25 alpha 0.5
                 repeat
         contains:
-            (MOD_IMAGES + "misc/ext_square_night_party_glow_magenta.png")
+            (BKRR_IMAGES + "misc/ext_square_night_party_glow_magenta.png")
             alpha 0.5
             pause 0.5
             block:
@@ -655,55 +655,55 @@ init 2:
         contains:
             "bg ext_house_of_sl_day"
         contains:
-            im.Scale(MOD_IMAGES + "misc/d17_zhenya_window.png", config.screen_width, config.screen_height)
+            im.Scale(BKRR_IMAGES + "misc/d17_zhenya_window.png", config.screen_width, config.screen_height)
 
-    image bg ext_house_of_un_night_bkrr = MOD_IMAGES + "bg/ext_house_of_un_night.jpg"
+    image bg ext_house_of_un_night_bkrr = BKRR_IMAGES + "bg/ext_house_of_un_night.jpg"
 
-    image bg ext_forest_day_rainy_bkrr = MOD_IMAGES + "bg/ext_forest_day_rainy.jpg"
-    image bg ext_forest2_day_rainy_bkrr = MOD_IMAGES + "bg/ext_forest2_day_rainy.jpg"
+    image bg ext_forest_day_rainy_bkrr = BKRR_IMAGES + "bg/ext_forest_day_rainy.jpg"
+    image bg ext_forest2_day_rainy_bkrr = BKRR_IMAGES + "bg/ext_forest2_day_rainy.jpg"
 
-    image bg ext_old_building_day_rainy = MOD_IMAGES + "bg/ext_old_building_day_rainy.jpg"
-    image bg ext_old_building_day_rainy_with_mi = MOD_IMAGES + "bg/ext_old_building_day_rainy_with_mi.jpg"
+    image bg ext_old_building_day_rainy = BKRR_IMAGES + "bg/ext_old_building_day_rainy.jpg"
+    image bg ext_old_building_day_rainy_with_mi = BKRR_IMAGES + "bg/ext_old_building_day_rainy_with_mi.jpg"
 
-    image bg ext_bathhouse_day_bkrr = MOD_IMAGES + "bg/ext_bathhouse_day.png"
-    image bg ext_bathhouse_sunset_bkrr = im.MatrixColor(MOD_IMAGES + "bg/ext_bathhouse_day.png", bkrr_tint["sunset"] * im.matrix.contrast(1.25))
-    image bg int_bathhouse_bkrr = MOD_IMAGES + "bg/int_bathhouse.jpg"
+    image bg ext_bathhouse_day_bkrr = BKRR_IMAGES + "bg/ext_bathhouse_day.png"
+    image bg ext_bathhouse_sunset_bkrr = im.MatrixColor(BKRR_IMAGES + "bg/ext_bathhouse_day.png", bkrr_tint["sunset"] * im.matrix.contrast(1.25))
+    image bg int_bathhouse_bkrr = BKRR_IMAGES + "bg/int_bathhouse.jpg"
 
     image bg ext_beach_water_day:
         contains:
-            (MOD_IMAGES + "bg/ext_beach_water_day.jpg")
+            (BKRR_IMAGES + "bg/ext_beach_water_day.jpg")
         contains:
-            (MOD_IMAGES + "misc/ext_beach_water_day_add.png")
+            (BKRR_IMAGES + "misc/ext_beach_water_day_add.png")
             bkrr_water_atl
 
     image bg ext_beach_water_sunset:
         contains:
-            (MOD_IMAGES + "bg/ext_beach_water_sunset.jpg")
+            (BKRR_IMAGES + "bg/ext_beach_water_sunset.jpg")
         contains:
-            (MOD_IMAGES + "misc/ext_beach_water_sunset_add.png")
+            (BKRR_IMAGES + "misc/ext_beach_water_sunset_add.png")
             bkrr_water_atl
 
-    image bg int_aidpost_sunset_bkrr = im.MatrixColor(ES_IMAGES + "bg/int_aidpost_day.jpg", bkrr_tint["sunset"] * im.matrix.contrast(1.25))
-    image bg int_aidpost_night_lamplight_bkrr = MOD_IMAGES + "bg/int_aidpost_night_lamplight.png"
+    image bg int_aidpost_sunset_bkrr = im.MatrixColor(BKRR_ES_IMAGES + "bg/int_aidpost_day.jpg", bkrr_tint["sunset"] * im.matrix.contrast(1.25))
+    image bg int_aidpost_night_lamplight_bkrr = BKRR_IMAGES + "bg/int_aidpost_night_lamplight.png"
     image bg int_aidpost_day_roses:
         contains:
             "bg int_aidpost_day"
         contains:
-            (MOD_IMAGES + "misc/five_roses_aidpost.png")
+            (BKRR_IMAGES + "misc/five_roses_aidpost.png")
 
-    image bg semen_room_clean_bkrr = MOD_IMAGES + "bg/semen_room_clean.jpg"
-    image bg semen_room_half_clean_bkrr = MOD_IMAGES + "bg/semen_room_half_clean.jpg"
+    image bg semen_room_clean_bkrr = BKRR_IMAGES + "bg/semen_room_clean.jpg"
+    image bg semen_room_half_clean_bkrr = BKRR_IMAGES + "bg/semen_room_half_clean.jpg"
 
     image bg ext_infirmary_sunset:
-        im.MatrixColor(im.Flip(ES_IMAGES + "bg/ext_path2_day.jpg", horizontal = True), bkrr_tint["sunset"] * im.matrix.contrast(1.25))
+        im.MatrixColor(im.Flip(BKRR_ES_IMAGES + "bg/ext_path2_day.jpg", horizontal = True), bkrr_tint["sunset"] * im.matrix.contrast(1.25))
         align(0.82, 0.7)
         zoom 1.17
 
-    image bg ext_no_bus_horse = bkrr_fast_composite(ES_IMAGES + "bg/ext_no_bus.jpg", MOD_IMAGES + "misc/ext_no_bus_horse.png")
+    image bg ext_no_bus_horse = bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_no_bus.jpg", BKRR_IMAGES + "misc/ext_no_bus_horse.png")
 
-    image bg ext_meadow_day = MOD_IMAGES + "bg/ext_meadow_day.jpg"
+    image bg ext_meadow_day = BKRR_IMAGES + "bg/ext_meadow_day.jpg"
 
-    image bg ext_camp_car = im.Scale(MOD_IMAGES + "bg/ext_camp_car.png", config.screen_width, config.screen_height)
+    image bg ext_camp_car = im.Scale(BKRR_IMAGES + "bg/ext_camp_car.png", config.screen_width, config.screen_height)
 
     image bg ext_houses_sunset_viola:
         contains:
@@ -726,8 +726,8 @@ init 2:
             "mt normal pioneer far"
             center
 
-    image bg int_mine_exit_night_torch_bkrr = MOD_IMAGES + "bg/int_mine_exit_night_torch.jpg"
-    image bg int_mine_exit_night_torch_open_bkrr = MOD_IMAGES + "bg/int_mine_exit_night_torch_open.jpg"
+    image bg int_mine_exit_night_torch_bkrr = BKRR_IMAGES + "bg/int_mine_exit_night_torch.jpg"
+    image bg int_mine_exit_night_torch_open_bkrr = BKRR_IMAGES + "bg/int_mine_exit_night_torch_open.jpg"
 
     image bg ext_path_day_mi_d18:
         contains:
@@ -737,47 +737,47 @@ init 2:
             truecenter
             zoom 1.0
 
-    image bg int_clubs_male_day_wrecked = MOD_IMAGES + "bg/int_clubs_male_day_wrecked.jpg"
-    image bg int_clubs_male_sunset_wrecked = MOD_IMAGES + "bg/int_clubs_male_sunset_wrecked.jpg"
-    image bg int_clubs_male_sunset_wrecked_new_glass = MOD_IMAGES + "bg/int_clubs_male_sunset_wrecked_new_glass.jpg"
-    image club_planer = MOD_IMAGES + "misc/planer.png"
-    image bkrr_claws = MOD_IMAGES + "misc/claws.png"
-    image bg int_music_club_mattresses_night_closed_piano = bkrr_fast_composite(MOD_IMAGES + "bg/int_music_club_mattresses_night.jpg", MOD_IMAGES + "misc/int_music_club_mattresses_night_closed_piano.png")
-    image bkrr_uv_piano = MOD_IMAGES + "misc/uv_piano.png"
+    image bg int_clubs_male_day_wrecked = BKRR_IMAGES + "bg/int_clubs_male_day_wrecked.jpg"
+    image bg int_clubs_male_sunset_wrecked = BKRR_IMAGES + "bg/int_clubs_male_sunset_wrecked.jpg"
+    image bg int_clubs_male_sunset_wrecked_new_glass = BKRR_IMAGES + "bg/int_clubs_male_sunset_wrecked_new_glass.jpg"
+    image club_planer = BKRR_IMAGES + "misc/planer.png"
+    image bkrr_claws = BKRR_IMAGES + "misc/claws.png"
+    image bg int_music_club_mattresses_night_closed_piano = bkrr_fast_composite(BKRR_IMAGES + "bg/int_music_club_mattresses_night.jpg", BKRR_IMAGES + "misc/int_music_club_mattresses_night_closed_piano.png")
+    image bkrr_uv_piano = BKRR_IMAGES + "misc/uv_piano.png"
     image bkrr_uv_mattress:
         contains:
             "bkrr_uv_piano"
             truecenter
             pos (0.78, 0.67)
 
-    image bg ext_dining_hall_away_sunset_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_away_sunset.jpg", MOD_IMAGES  + "misc/headlamps_missing_far.png")
-    image bg ext_dining_hall_near_sunset_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_near_sunset.jpg", MOD_IMAGES  + "misc/headlamps_missing_close_sunset.png")
-    image bg ext_dining_hall_away_day_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_away_day.jpg", MOD_IMAGES  + "misc/headlamps_missing_far.png")
-    image bg ext_dining_hall_near_day_no_headlamps = bkrr_fast_composite(ES_IMAGES + "bg/ext_dining_hall_near_day.jpg", MOD_IMAGES  + "misc/headlamps_missing_close.png")
+    image bg ext_dining_hall_away_sunset_no_headlamps = bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_dining_hall_away_sunset.jpg", BKRR_IMAGES  + "misc/headlamps_missing_far.png")
+    image bg ext_dining_hall_near_sunset_no_headlamps = bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_dining_hall_near_sunset.jpg", BKRR_IMAGES  + "misc/headlamps_missing_close_sunset.png")
+    image bg ext_dining_hall_away_day_no_headlamps = bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_dining_hall_away_day.jpg", BKRR_IMAGES  + "misc/headlamps_missing_far.png")
+    image bg ext_dining_hall_near_day_no_headlamps = bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_dining_hall_near_day.jpg", BKRR_IMAGES  + "misc/headlamps_missing_close.png")
 
     # Концерт
 
-    image bg ext_stage_big_day_bkrr = MOD_IMAGES + "bg/ext_stage_big_day.jpg"
-    image bg ext_stage_big_day_str_bkrr = MOD_IMAGES + "bg/ext_stage_big_day_str.jpg"
-    image bg ext_stage_big_day_const_bkrr = MOD_IMAGES + "bg/ext_stage_big_day_const.jpg"
+    image bg ext_stage_big_day_bkrr = BKRR_IMAGES + "bg/ext_stage_big_day.jpg"
+    image bg ext_stage_big_day_str_bkrr = BKRR_IMAGES + "bg/ext_stage_big_day_str.jpg"
+    image bg ext_stage_big_day_const_bkrr = BKRR_IMAGES + "bg/ext_stage_big_day_const.jpg"
     image bg ext_stage_big_day_evening_empty = bkrr_fast_composite(
-        MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
-        MOD_IMAGES + "misc/d19_concert/flags_right.png",
-        MOD_IMAGES + "misc/d19_concert/flags_top.png",
-        MOD_IMAGES + "misc/d19_concert/mast_up.png",
-        MOD_IMAGES + "misc/d19_concert/monitors.png",
+        BKRR_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
+        BKRR_IMAGES + "misc/d19_concert/flags_right.png",
+        BKRR_IMAGES + "misc/d19_concert/flags_top.png",
+        BKRR_IMAGES + "misc/d19_concert/mast_up.png",
+        BKRR_IMAGES + "misc/d19_concert/monitors.png",
     )
-    image bkrr_pioneer_flag = MOD_IMAGES + "misc/d19_concert/pioneer_flag.png"
-    image bkrr_pirate_flag = MOD_IMAGES + "misc/d19_concert/pirate_flag.png"
+    image bkrr_pioneer_flag = BKRR_IMAGES + "misc/d19_concert/pioneer_flag.png"
+    image bkrr_pirate_flag = BKRR_IMAGES + "misc/d19_concert/pirate_flag.png"
     image bg ext_stage_big_day_evening_full:
         contains:
             "bg ext_stage_big_day_evening_empty"
         contains:
             "bkrr_pioneer_flag"
         contains:
-            MOD_IMAGES + "misc/d19_concert/concert_lights_white.png"
+            BKRR_IMAGES + "misc/d19_concert/concert_lights_white.png"
         contains:
-            MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
+            BKRR_IMAGES + "misc/ext_stage_big_day_evening_people.png"
     image bg ext_stage_raise_pirate_flag:
         contains:
             "bg ext_stage_big_day_evening_empty"
@@ -794,20 +794,20 @@ init 2:
             pause 1.7
             ease 0.7 ypos 0.5 alpha 1.0
         contains:
-            MOD_IMAGES + "misc/d19_concert/concert_lights_white.png"
+            BKRR_IMAGES + "misc/d19_concert/concert_lights_white.png"
         contains:
-            MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
-    image bkrr_concert_lights_no_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 5,  3.75, Dissolve(2.0, alpha=True))
-    image bkrr_concert_mist_no_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 5,  3.75, Dissolve(2.0, alpha=True))
-    image bkrr_concert_lights_with_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_lights_", 6,  2.75, Dissolve(1.5, alpha=True), start_with=5)
-    image bkrr_concert_mist_with_red = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/mist_", 6,  2.75, Dissolve(1.5, alpha=True), start_with=5)
-    image bkrr_ball_sparkles = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/ball_sparkles_", 5, 0.5, Dissolve(0.25, alpha=True))
-    image bkrr_concert_sparkles = bkrr_create_anim(MOD_IMAGES + "misc/d19_concert/concert_sparkles_", 5,  1.5, Dissolve(1.0, alpha=True))
+            BKRR_IMAGES + "misc/ext_stage_big_day_evening_people.png"
+    image bkrr_concert_lights_no_red = bkrr_create_anim(BKRR_IMAGES + "misc/d19_concert/concert_lights_", 5,  3.75, Dissolve(2.0, alpha=True))
+    image bkrr_concert_mist_no_red = bkrr_create_anim(BKRR_IMAGES + "misc/d19_concert/mist_", 5,  3.75, Dissolve(2.0, alpha=True))
+    image bkrr_concert_lights_with_red = bkrr_create_anim(BKRR_IMAGES + "misc/d19_concert/concert_lights_", 6,  2.75, Dissolve(1.5, alpha=True), start_with=5)
+    image bkrr_concert_mist_with_red = bkrr_create_anim(BKRR_IMAGES + "misc/d19_concert/mist_", 6,  2.75, Dissolve(1.5, alpha=True), start_with=5)
+    image bkrr_ball_sparkles = bkrr_create_anim(BKRR_IMAGES + "misc/d19_concert/ball_sparkles_", 5, 0.5, Dissolve(0.25, alpha=True))
+    image bkrr_concert_sparkles = bkrr_create_anim(BKRR_IMAGES + "misc/d19_concert/concert_sparkles_", 5,  1.5, Dissolve(1.0, alpha=True))
     image bg ext_stage_concert:
         contains:
             "bg ext_stage_big_day_evening_empty"
         contains:
-            MOD_IMAGES + "misc/d19_concert/pioneer_flag.png"
+            BKRR_IMAGES + "misc/d19_concert/pioneer_flag.png"
         contains:
             "bkrr_ball_sparkles"
         contains:
@@ -818,12 +818,12 @@ init 2:
         contains:
             "bkrr_concert_lights_no_red"
         contains:
-            MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
+            BKRR_IMAGES + "misc/ext_stage_big_day_evening_people.png"
     image bg ext_stage_concert_pirates:
         contains:
             "bg ext_stage_big_day_evening_empty"
         contains:
-            MOD_IMAGES + "misc/d19_concert/pirate_flag.png"
+            BKRR_IMAGES + "misc/d19_concert/pirate_flag.png"
         contains:
             "bkrr_ball_sparkles"
         contains:
@@ -834,47 +834,47 @@ init 2:
         contains:
             "bkrr_concert_lights_with_red"
         contains:
-            MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
+            BKRR_IMAGES + "misc/ext_stage_big_day_evening_people.png"
 
     image bg ext_stage_big_day_evening_no_mast = bkrr_fast_composite(
-        MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
-        MOD_IMAGES + "misc/d19_concert/flags_right.png",
-        MOD_IMAGES + "misc/d19_concert/flags_top.png",
-        MOD_IMAGES + "misc/d19_concert/monitors.png",
-        MOD_IMAGES + "misc/d19_concert/pirate_flag.png",
-        MOD_IMAGES + "misc/d19_concert/concert_lights_white.png",
+        BKRR_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
+        BKRR_IMAGES + "misc/d19_concert/flags_right.png",
+        BKRR_IMAGES + "misc/d19_concert/flags_top.png",
+        BKRR_IMAGES + "misc/d19_concert/monitors.png",
+        BKRR_IMAGES + "misc/d19_concert/pirate_flag.png",
+        BKRR_IMAGES + "misc/d19_concert/concert_lights_white.png",
     )
 
     image bg ext_stage_big_day_evening_no_mast_and_flags = bkrr_fast_composite(
-        MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
-        MOD_IMAGES + "misc/d19_concert/monitors.png",
-        MOD_IMAGES + "misc/d19_concert/pirate_flag.png",
-        MOD_IMAGES + "misc/d19_concert/concert_lights_white.png",
+        BKRR_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
+        BKRR_IMAGES + "misc/d19_concert/monitors.png",
+        BKRR_IMAGES + "misc/d19_concert/pirate_flag.png",
+        BKRR_IMAGES + "misc/d19_concert/concert_lights_white.png",
     )
     image bkrr_concert_flags:
         contains:
-            MOD_IMAGES + "misc/d19_concert/flags_top.png"
+            BKRR_IMAGES + "misc/d19_concert/flags_top.png"
         contains:
-            MOD_IMAGES + "misc/d19_concert/flags_right.png"
-    image bkrr_mast_up = MOD_IMAGES + "misc/d19_concert/mast_up.png"
-    image bkrr_concert_people = MOD_IMAGES + "misc/ext_stage_big_day_evening_people.png"
-    image bkrr_mast_down_dust = MOD_IMAGES + "misc/d19_concert/mist_white.png"
+            BKRR_IMAGES + "misc/d19_concert/flags_right.png"
+    image bkrr_mast_up = BKRR_IMAGES + "misc/d19_concert/mast_up.png"
+    image bkrr_concert_people = BKRR_IMAGES + "misc/ext_stage_big_day_evening_people.png"
+    image bkrr_mast_down_dust = BKRR_IMAGES + "misc/d19_concert/mist_white.png"
     image bg ext_stage_big_day_evening_mast_down  = bkrr_fast_composite(
-        MOD_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
-        MOD_IMAGES + "misc/d19_concert/mast_down.png",
-        MOD_IMAGES + "misc/d19_concert/flags_top_down.png",
-        MOD_IMAGES + "misc/d19_concert/monitors.png",
-        MOD_IMAGES + "misc/d19_concert/pirate_flag.png",
-        MOD_IMAGES + "misc/d19_concert/concert_lights_white.png",
+        BKRR_IMAGES + "bg/ext_stage_big_day_evening_empty.jpg",
+        BKRR_IMAGES + "misc/d19_concert/mast_down.png",
+        BKRR_IMAGES + "misc/d19_concert/flags_top_down.png",
+        BKRR_IMAGES + "misc/d19_concert/monitors.png",
+        BKRR_IMAGES + "misc/d19_concert/pirate_flag.png",
+        BKRR_IMAGES + "misc/d19_concert/concert_lights_white.png",
     )
 
-    image bg ext_stage_big_day_evening_close = MOD_IMAGES + "bg/ext_stage_big_day_night_close.jpg"
-    image bg ext_backstage_big_day_night = bkrr_fast_composite(MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg", MOD_IMAGES + "misc/backstage_plank.png")
-    image bg ext_backstage_big_day_night_noplank = MOD_IMAGES + "bg/ext_backstage_big_day_night.jpg"
+    image bg ext_stage_big_day_evening_close = BKRR_IMAGES + "bg/ext_stage_big_day_night_close.jpg"
+    image bg ext_backstage_big_day_night = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_backstage_big_day_night.jpg", BKRR_IMAGES + "misc/backstage_plank.png")
+    image bg ext_backstage_big_day_night_noplank = BKRR_IMAGES + "bg/ext_backstage_big_day_night.jpg"
 
     image cg1 d19_concert_alisa:
         contains:
-            im.Scale(MOD_IMAGES + "cg/d19_concert_alisa.jpg", config.screen_width, config.screen_height)
+            im.Scale(BKRR_IMAGES + "cg/d19_concert_alisa.jpg", config.screen_width, config.screen_height)
             subpixel True
             truecenter
             rotate -10
@@ -887,25 +887,25 @@ init 2:
             truecenter
             zoom 1.02
         contains:
-            im.Sepia(im.Scale(MOD_IMAGES + "cg/d19_concert_alisa.jpg", config.screen_width, config.screen_height))
+            im.Sepia(im.Scale(BKRR_IMAGES + "cg/d19_concert_alisa.jpg", config.screen_width, config.screen_height))
 
-    image cg2 d19_concert_ulyana = MOD_IMAGES + "cg/d19_concert_ulyana.jpg"
+    image cg2 d19_concert_ulyana = BKRR_IMAGES + "cg/d19_concert_ulyana.jpg"
     image cg2 d19_concert_ulyana_photo:
         contains:
             "white"
             truecenter
             zoom 1.02
         contains:
-            im.Sepia(MOD_IMAGES + "cg/d19_concert_ulyana.jpg")
+            im.Sepia(BKRR_IMAGES + "cg/d19_concert_ulyana.jpg")
 
-    image cg3 d19_concert_miku_semen = MOD_IMAGES + "cg/d19_concert_miku_semen.jpg"
+    image cg3 d19_concert_miku_semen = BKRR_IMAGES + "cg/d19_concert_miku_semen.jpg"
     image cg3 d19_concert_miku_semen_photo:
         contains:
             "white"
             truecenter
             zoom 1.02
         contains:
-            im.Sepia(MOD_IMAGES + "cg/d19_concert_miku_semen.jpg")
+            im.Sepia(BKRR_IMAGES + "cg/d19_concert_miku_semen.jpg")
 
     image cg d19_pirate_dressup:
         contains:
@@ -920,8 +920,8 @@ init 2:
             "mi normal pirate close"
             center
 
-    image cg d19_slavya_captured = MOD_IMAGES + "cg/d19_slavya_captured.jpg"
-    image cg final_image = MOD_IMAGES + "cg/final_image.jpg"
+    image cg d19_slavya_captured = BKRR_IMAGES + "cg/d19_slavya_captured.jpg"
+    image cg final_image = BKRR_IMAGES + "cg/final_image.jpg"
 
     python:
         def bkrr_imagelist_anim(img_list, pause=0.5, transition=None):
@@ -933,7 +933,7 @@ init 2:
             return anim.TransitionAnimation(*args)
 
         def random_mist():
-            image = MOD_IMAGES + "misc/d19_pirates/mist/%s.png" % renpy.random.randint(1, 6)
+            image = BKRR_IMAGES + "misc/d19_pirates/mist/%s.png" % renpy.random.randint(1, 6)
             return bkrr_imagelist_anim(
                 [
                     bkrr_make_tint_img(image, "orange"),
@@ -990,9 +990,9 @@ init 2:
     # Оп-па ховнокот
     image cg d19_pirates_on_stage:
         contains:
-            MOD_IMAGES + "misc/d19_pirates/base.jpg"
+            BKRR_IMAGES + "misc/d19_pirates/base.jpg"
         contains:
-            MOD_IMAGES + "misc/d19_pirates/mast.png"
+            BKRR_IMAGES + "misc/d19_pirates/mast.png"
         contains:
             random_mist()
             mist_right(70, 0.1)
@@ -1003,7 +1003,7 @@ init 2:
             random_mist()
             mist_left(50, 0.2)
         contains:
-            MOD_IMAGES + "misc/d19_pirates/pirates1.png"
+            BKRR_IMAGES + "misc/d19_pirates/pirates1.png"
         contains:
             random_mist()
             mist_right(60, 0.6)
@@ -1011,7 +1011,7 @@ init 2:
             random_mist()
             mist_left(40, 0.3)
         contains:
-            MOD_IMAGES + "misc/d19_pirates/pirates2.png"
+            BKRR_IMAGES + "misc/d19_pirates/pirates2.png"
         contains:
             random_mist()
             mist_right(50, 0.0)
@@ -1024,27 +1024,27 @@ init 2:
 
     image cg d19_alisa_miku_song:
         contains:
-            MOD_IMAGES + "cg/d19_alisa_miku_song/bg.png"
+            BKRR_IMAGES + "cg/d19_alisa_miku_song/bg.png"
             subpixel True
             truecenter
             zoom 2.4
             pos (0.4, 0.4)
             ease 2.5 zoom 1.0 pos (0.5, 0.5)
         contains:
-            MOD_IMAGES + "cg/d19_alisa_miku_song/singers.png"
+            BKRR_IMAGES + "cg/d19_alisa_miku_song/singers.png"
             subpixel True
             truecenter
             zoom 2.0
             ease 2.5 zoom 1.0
         contains:
-            MOD_IMAGES + "cg/d19_alisa_miku_song/mic.png"
+            BKRR_IMAGES + "cg/d19_alisa_miku_song/mic.png"
             subpixel True
             truecenter
             zoom 1.6
             pos (0.6, 0.6)
             ease 2.5 zoom 1.0 pos (0.5, 0.5)
 
-    image cg2 d19_pirate_song = im.Scale(MOD_IMAGES + "cg/d19_pirate_song.jpg", config.screen_width, config.screen_height)
+    image cg2 d19_pirate_song = im.Scale(BKRR_IMAGES + "cg/d19_pirate_song.jpg", config.screen_width, config.screen_height)
     image cg d19_chibi_alisa:
         contains:
             "white"
@@ -1052,78 +1052,78 @@ init 2:
             truecenter
             zoom 1.02
         contains:
-            MOD_IMAGES + "cg/d19_chibi_alisa.jpg"
+            BKRR_IMAGES + "cg/d19_chibi_alisa.jpg"
 
     # Фейкоконцовка
 
-    image bg ext_liaz_night_open = MOD_IMAGES + "bg/ext_liaz_night_open.jpg"
-    image bg ext_liaz_night_closed = bkrr_fast_composite(MOD_IMAGES + "bg/ext_liaz_night_open.jpg", MOD_IMAGES + "bg/ext_liaz_night_closed.png")
-    image bg int_liaz_night = MOD_IMAGES + "bg/int_liaz_night.jpg"
-    image bg int_liaz_night_camp_open = MOD_IMAGES + "bg/int_liaz_night_camp_open.jpg"
-    image bg int_liaz_night_camp_closed = MOD_IMAGES + "bg/int_liaz_night_camp_closed.jpg"
-    image cg d19_ghost_black = im.Scale(MOD_IMAGES + "cg/d19_ghost_black.png", config.screen_width, config.screen_height)
-    image cg d19_truk_and_zmey = MOD_IMAGES + "cg/d19_truk_and_zmey.jpg"
-    image cg d19_truk_and_zmey_close = MOD_IMAGES + "cg/d19_truk_and_zmey_close.jpg"
-    image cg d19_bus_escape = MOD_IMAGES + "cg/d19_bus_escape.jpg"
-    image cg d19_miku_bus_1 = MOD_IMAGES + "cg/d19_miku_bus_1.jpg"
-    image cg d19_miku_bus_2 = MOD_IMAGES + "cg/d19_miku_bus_2.jpg"
-    image cg d19_miku_bus_3 = MOD_IMAGES + "cg/d19_miku_bus_3.jpg"
+    image bg ext_liaz_night_open = BKRR_IMAGES + "bg/ext_liaz_night_open.jpg"
+    image bg ext_liaz_night_closed = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_liaz_night_open.jpg", BKRR_IMAGES + "bg/ext_liaz_night_closed.png")
+    image bg int_liaz_night = BKRR_IMAGES + "bg/int_liaz_night.jpg"
+    image bg int_liaz_night_camp_open = BKRR_IMAGES + "bg/int_liaz_night_camp_open.jpg"
+    image bg int_liaz_night_camp_closed = BKRR_IMAGES + "bg/int_liaz_night_camp_closed.jpg"
+    image cg d19_ghost_black = im.Scale(BKRR_IMAGES + "cg/d19_ghost_black.png", config.screen_width, config.screen_height)
+    image cg d19_truk_and_zmey = BKRR_IMAGES + "cg/d19_truk_and_zmey.jpg"
+    image cg d19_truk_and_zmey_close = BKRR_IMAGES + "cg/d19_truk_and_zmey_close.jpg"
+    image cg d19_bus_escape = BKRR_IMAGES + "cg/d19_bus_escape.jpg"
+    image cg d19_miku_bus_1 = BKRR_IMAGES + "cg/d19_miku_bus_1.jpg"
+    image cg d19_miku_bus_2 = BKRR_IMAGES + "cg/d19_miku_bus_2.jpg"
+    image cg d19_miku_bus_3 = BKRR_IMAGES + "cg/d19_miku_bus_3.jpg"
 
 
     # Дождливые, пасмурные фоны
 
-    image bg ext_music_club_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/ext_musclub_day.jpg")
-    image bg ext_music_club_verandah_day_rainy_bkrr = bkrr_make_rainy_img(bkrr_fast_composite(MOD_IMAGES + "bg/ext_music_club_verandah_day.jpg", MOD_IMAGES + "misc/ext_music_club_verandah_day_posters.png", MOD_IMAGES + "misc/ext_music_club_verandah_text1.png", MOD_IMAGES + "misc/ext_music_club_verandah_text2.png", MOD_IMAGES + "misc/ext_music_club_verandah_text3.png")) # пасмурная версия с плакатами, 1-3 надписями, используется в 11 дне
+    image bg ext_music_club_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/ext_musclub_day.jpg")
+    image bg ext_music_club_verandah_day_rainy_bkrr = bkrr_make_rainy_img(bkrr_fast_composite(BKRR_IMAGES + "bg/ext_music_club_verandah_day.jpg", BKRR_IMAGES + "misc/ext_music_club_verandah_day_posters.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text1.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text2.png", BKRR_IMAGES + "misc/ext_music_club_verandah_text3.png")) # пасмурная версия с плакатами, 1-3 надписями, используется в 11 дне
 
-    image bg ext_storage_day_rainy_bkrr = bkrr_make_rainy_img(MOD_IMAGES + "bg/ext_storage_day.png")
-    image bg ext_square_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/ext_square_day.jpg")
-    image bg ext_house_of_un_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/ext_house_of_un_day.jpg")
-    image bg ext_dining_hall_near_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/ext_dining_hall_near_day.jpg")
-    image bg ext_beach_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/ext_beach_day.jpg")
-    image bg ext_boathouse_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/ext_boathouse_day.jpg")
-    image bg ext_path_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/ext_path_day.jpg")
-    image bg ext_path2_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/ext_path2_day.jpg")
-    image bg ext_house_of_mt_night_without_light_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/ext_house_of_mt_night_without_light.jpg")
+    image bg ext_storage_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_IMAGES + "bg/ext_storage_day.png")
+    image bg ext_square_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/ext_square_day.jpg")
+    image bg ext_house_of_un_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/ext_house_of_un_day.jpg")
+    image bg ext_dining_hall_near_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/ext_dining_hall_near_day.jpg")
+    image bg ext_beach_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/ext_beach_day.jpg")
+    image bg ext_boathouse_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/ext_boathouse_day.jpg")
+    image bg ext_path_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/ext_path_day.jpg")
+    image bg ext_path2_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/ext_path2_day.jpg")
+    image bg ext_house_of_mt_night_without_light_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/ext_house_of_mt_night_without_light.jpg")
 
-    image bg int_house_of_un_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/int_house_of_un_day.jpg")
-    image bg int_dining_hall_people_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/int_dining_hall_people_day.jpg")
-    image bg int_dining_hall_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/int_dining_hall_day.jpg")
-    image bg int_clubs_male_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/int_clubs_male_day.jpg")
-    image bg int_house_of_mt_day_rainy_bkrr = bkrr_make_rainy_img(ES_IMAGES + "bg/int_house_of_mt_day.jpg")
-    image bg int_old_building_day_rainy_bkrr = MOD_IMAGES + "bg/int_old_building_day_rainy.jpg"
+    image bg int_house_of_un_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/int_house_of_un_day.jpg")
+    image bg int_dining_hall_people_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/int_dining_hall_people_day.jpg")
+    image bg int_dining_hall_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/int_dining_hall_day.jpg")
+    image bg int_clubs_male_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/int_clubs_male_day.jpg")
+    image bg int_house_of_mt_day_rainy_bkrr = bkrr_make_rainy_img(BKRR_ES_IMAGES + "bg/int_house_of_mt_day.jpg")
+    image bg int_old_building_day_rainy_bkrr = BKRR_IMAGES + "bg/int_old_building_day_rainy.jpg"
 
     ##    CG    ##
 
     # Позаимствованные CG
 
-    image cg d5_potato_1 = MOD_IMAGES + "cg/d5_potato_1.jpg"
-    image cg d5_potato_2 = MOD_IMAGES + "cg/d5_potato_2.jpg"
-    image cg d7_mirror = MOD_IMAGES + "cg/d7_mirror.jpg"
+    image cg d5_potato_1 = BKRR_IMAGES + "cg/d5_potato_1.jpg"
+    image cg d5_potato_2 = BKRR_IMAGES + "cg/d5_potato_2.jpg"
+    image cg d7_mirror = BKRR_IMAGES + "cg/d7_mirror.jpg"
 
     # Ориджинал и почти ориджинал CG
 
-    image cg d5_cat_in_ventilation = im.Scale(MOD_IMAGES + "cg/d5_cat_in_ventilation.png", config.screen_width, config.screen_height)
-    image cg d5_ghost = im.Scale(MOD_IMAGES + "cg/d5_ghost.png", config.screen_width, config.screen_height)
-    image cg d6_sl_ass = MOD_IMAGES + "cg/d6_sl_ass.png"
-    image cg d6_on_floor = MOD_IMAGES + "cg/d6_on_floor.png"
-    image cg d6_sem_guitar = MOD_IMAGES + "cg/d6_sem_guitar.png"
-    image cg d6_dv_guitar = MOD_IMAGES + "cg/d6_dv_guitar.png"
-    image cg d7_mi_embrace = MOD_IMAGES + "cg/d7_mi_embrace.png"
-    image cg d7_mi_dance = MOD_IMAGES + "cg/d7_mi_dance.png"
-    image cg d7_mi_walking = MOD_IMAGES + "cg/d7_mi_walking.png"
+    image cg d5_cat_in_ventilation = im.Scale(BKRR_IMAGES + "cg/d5_cat_in_ventilation.png", config.screen_width, config.screen_height)
+    image cg d5_ghost = im.Scale(BKRR_IMAGES + "cg/d5_ghost.png", config.screen_width, config.screen_height)
+    image cg d6_sl_ass = BKRR_IMAGES + "cg/d6_sl_ass.png"
+    image cg d6_on_floor = BKRR_IMAGES + "cg/d6_on_floor.png"
+    image cg d6_sem_guitar = BKRR_IMAGES + "cg/d6_sem_guitar.png"
+    image cg d6_dv_guitar = BKRR_IMAGES + "cg/d6_dv_guitar.png"
+    image cg d7_mi_embrace = BKRR_IMAGES + "cg/d7_mi_embrace.png"
+    image cg d7_mi_dance = BKRR_IMAGES + "cg/d7_mi_dance.png"
+    image cg d7_mi_walking = BKRR_IMAGES + "cg/d7_mi_walking.png"
     image cg d8_deer:
-        (MOD_IMAGES + "cg/d8_deer.jpg")
+        (BKRR_IMAGES + "cg/d8_deer.jpg")
         yanchor 0.0
         ypos -120
-    image cg d8_chibi = MOD_IMAGES + "cg/d8_chibi.png"
+    image cg d8_chibi = BKRR_IMAGES + "cg/d8_chibi.png"
     image cg d8_fstar:
-        (MOD_IMAGES + "cg/d8_fstar.jpg")
+        (BKRR_IMAGES + "cg/d8_fstar.jpg")
         subpixel True
         topleft
         ease 5.0 xalign 1.0
-    image cg d8_fstar_lone = bkrr_fast_composite(im.Crop(MOD_IMAGES + "cg/d8_fstar.jpg", 635, 0, 1920, 1080), MOD_IMAGES + "misc/d8_fstar_sem.png")
-    image cg d8_fstar_mt = bkrr_fast_composite(im.Crop(MOD_IMAGES + "cg/d8_fstar.jpg", 635, 0, 1920, 1080), MOD_IMAGES + "misc/d8_fstar_sem.png", MOD_IMAGES + "misc/d8_fstar_mt.png")
-    image cg d8_fstar_main = bkrr_fast_composite(im.Crop(MOD_IMAGES + "cg/d8_fstar.jpg", 635, 0, 1920, 1080), MOD_IMAGES + "misc/d8_fstar_star.png", MOD_IMAGES + "misc/d8_fstar_sem.png", MOD_IMAGES + "misc/d8_fstar_mt.png")
+    image cg d8_fstar_lone = bkrr_fast_composite(im.Crop(BKRR_IMAGES + "cg/d8_fstar.jpg", 635, 0, 1920, 1080), BKRR_IMAGES + "misc/d8_fstar_sem.png")
+    image cg d8_fstar_mt = bkrr_fast_composite(im.Crop(BKRR_IMAGES + "cg/d8_fstar.jpg", 635, 0, 1920, 1080), BKRR_IMAGES + "misc/d8_fstar_sem.png", BKRR_IMAGES + "misc/d8_fstar_mt.png")
+    image cg d8_fstar_main = bkrr_fast_composite(im.Crop(BKRR_IMAGES + "cg/d8_fstar.jpg", 635, 0, 1920, 1080), BKRR_IMAGES + "misc/d8_fstar_star.png", BKRR_IMAGES + "misc/d8_fstar_sem.png", BKRR_IMAGES + "misc/d8_fstar_mt.png")
     image cg d9_walking:
         contains:
             "bg ext_houses_day"
@@ -1132,109 +1132,109 @@ init 2:
             zoom 1.5
             rotate -17
         contains:
-            (MOD_IMAGES + "cg/d9_walking.png")
+            (BKRR_IMAGES + "cg/d9_walking.png")
             subpixel True
             xalign 0.57
             yalign 1.0
             zoom 0.93
-    image cg d9_wounded_dv = MOD_IMAGES + "cg/d9_wounded_dv.png"
-    image cg d9_squirrel_1 = im.MatrixColor(MOD_IMAGES + "cg/d9_squirrel_1.png", bkrr_tint["sunset"])
-    image cg d9_squirrel_2 = im.MatrixColor(MOD_IMAGES + "cg/d9_squirrel_2.png", bkrr_tint["sunset"])
-    image cg d9_kiss = MOD_IMAGES + "cg/d9_kiss.png"
-    image cg d10_ghost = MOD_IMAGES + "cg/d10_ghost.jpg"
-    image cg d10_ghost_view = MOD_IMAGES + "cg/d10_ghost_view.jpg"
-    image cg d11_shirt_1 = bkrr_make_rainy_img(MOD_IMAGES + "cg/d11_shirt.jpg")
+    image cg d9_wounded_dv = BKRR_IMAGES + "cg/d9_wounded_dv.png"
+    image cg d9_squirrel_1 = im.MatrixColor(BKRR_IMAGES + "cg/d9_squirrel_1.png", bkrr_tint["sunset"])
+    image cg d9_squirrel_2 = im.MatrixColor(BKRR_IMAGES + "cg/d9_squirrel_2.png", bkrr_tint["sunset"])
+    image cg d9_kiss = BKRR_IMAGES + "cg/d9_kiss.png"
+    image cg d10_ghost = BKRR_IMAGES + "cg/d10_ghost.jpg"
+    image cg d10_ghost_view = BKRR_IMAGES + "cg/d10_ghost_view.jpg"
+    image cg d11_shirt_1 = bkrr_make_rainy_img(BKRR_IMAGES + "cg/d11_shirt.jpg")
     image cg d11_shirt_2:
         contains:
-            bkrr_make_rainy_img(MOD_IMAGES + "cg/d11_shirt.jpg")
+            bkrr_make_rainy_img(BKRR_IMAGES + "cg/d11_shirt.jpg")
             yalign 1.0
         contains:
-            bkrr_make_rainy_img(MOD_IMAGES + "misc/d11_shirt_shirt.png")
-    image cg d11_forest = bkrr_make_rainy_img(MOD_IMAGES + "cg/d11_forest.jpg")
-    image cg d11_forest_view = bkrr_make_rainy_img(MOD_IMAGES + "cg/d11_forest_view.jpg")
-    image cg d11_forest_view_with_shadow = bkrr_make_rainy_img(bkrr_fast_composite(im.Crop(MOD_IMAGES + "cg/d11_forest_view.jpg", 1769, 0, 1920, 1080), im.Alpha(MOD_IMAGES + "misc/d11_forest_view_shadow.png", 0.8)))
-    image cg d11_forest_view_with_pi = bkrr_make_rainy_img(bkrr_fast_composite(im.Crop(MOD_IMAGES + "cg/d11_forest_view.jpg", 1769, 0, 1920, 1080), MOD_IMAGES + "misc/d11_forest_view_pi.png"))
-    image cg d11_mi_sleep_1 = bkrr_fast_livecomposite(MOD_IMAGES + "cg/d11_mi_sleep_1.png", bkrr_glow_atl(MOD_IMAGES + "misc/d11_mi_sleep_flash.png"))
-    image cg d11_mi_sleep_2 = bkrr_fast_livecomposite(MOD_IMAGES + "cg/d11_mi_sleep_2.png", bkrr_glow_atl(MOD_IMAGES + "misc/d11_mi_sleep_flash.png"))
-    image cg d11_mi_sleep_3 = LiveComposite((config.screen_width, config.screen_height), (0, 0), MOD_IMAGES + "cg/d11_mi_sleep_1.png", (1250, 375), im.Crop(MOD_IMAGES + "cg/d11_mi_sleep_2.png", 1250, 375, 100, 100), (0, 0), bkrr_glow_atl(MOD_IMAGES + "misc/d11_mi_sleep_flash.png"))
-    image cg d11_night_guest = MOD_IMAGES + "cg/d11_night_guest.jpg"
-    image cg d12_mi_hair_sl = MOD_IMAGES + "cg/d12_mi_hair_sl.png"
-    image cg d12_mi_hair_sem = MOD_IMAGES + "cg/d12_mi_hair_sem.png"
-    image cg d12_mi_hair_sem_bite = MOD_IMAGES + "cg/d12_mi_hair_sem_bite.png"
-    image cg d12_mi_bath_1 = bkrr_fast_composite(MOD_IMAGES + "cg/d12_mi_bath_1.png", MOD_IMAGES + "misc/d12_mi_bath_steam.png")
-    image cg d12_mi_bath_2 = bkrr_fast_composite(MOD_IMAGES + "cg/d12_mi_bath_2.png", MOD_IMAGES + "misc/d12_mi_bath_steam.png")
-    image cg d12_noon_rest_1 = MOD_IMAGES + "cg/d12_noon_rest_1.jpg"
-    image cg d12_noon_rest_2 = MOD_IMAGES + "cg/d12_noon_rest_2.jpg"
-    image cg d12_noon_rest_3 = MOD_IMAGES + "cg/d12_noon_rest_3.jpg"
-    image cg d12_noon_rest_4 = MOD_IMAGES + "cg/d12_noon_rest_4.jpg"
-    image cg d12_noon_rest_5 = MOD_IMAGES + "cg/d12_noon_rest_5.jpg"
+            bkrr_make_rainy_img(BKRR_IMAGES + "misc/d11_shirt_shirt.png")
+    image cg d11_forest = bkrr_make_rainy_img(BKRR_IMAGES + "cg/d11_forest.jpg")
+    image cg d11_forest_view = bkrr_make_rainy_img(BKRR_IMAGES + "cg/d11_forest_view.jpg")
+    image cg d11_forest_view_with_shadow = bkrr_make_rainy_img(bkrr_fast_composite(im.Crop(BKRR_IMAGES + "cg/d11_forest_view.jpg", 1769, 0, 1920, 1080), im.Alpha(BKRR_IMAGES + "misc/d11_forest_view_shadow.png", 0.8)))
+    image cg d11_forest_view_with_pi = bkrr_make_rainy_img(bkrr_fast_composite(im.Crop(BKRR_IMAGES + "cg/d11_forest_view.jpg", 1769, 0, 1920, 1080), BKRR_IMAGES + "misc/d11_forest_view_pi.png"))
+    image cg d11_mi_sleep_1 = bkrr_fast_livecomposite(BKRR_IMAGES + "cg/d11_mi_sleep_1.png", bkrr_glow_atl(BKRR_IMAGES + "misc/d11_mi_sleep_flash.png"))
+    image cg d11_mi_sleep_2 = bkrr_fast_livecomposite(BKRR_IMAGES + "cg/d11_mi_sleep_2.png", bkrr_glow_atl(BKRR_IMAGES + "misc/d11_mi_sleep_flash.png"))
+    image cg d11_mi_sleep_3 = LiveComposite((config.screen_width, config.screen_height), (0, 0), BKRR_IMAGES + "cg/d11_mi_sleep_1.png", (1250, 375), im.Crop(BKRR_IMAGES + "cg/d11_mi_sleep_2.png", 1250, 375, 100, 100), (0, 0), bkrr_glow_atl(BKRR_IMAGES + "misc/d11_mi_sleep_flash.png"))
+    image cg d11_night_guest = BKRR_IMAGES + "cg/d11_night_guest.jpg"
+    image cg d12_mi_hair_sl = BKRR_IMAGES + "cg/d12_mi_hair_sl.png"
+    image cg d12_mi_hair_sem = BKRR_IMAGES + "cg/d12_mi_hair_sem.png"
+    image cg d12_mi_hair_sem_bite = BKRR_IMAGES + "cg/d12_mi_hair_sem_bite.png"
+    image cg d12_mi_bath_1 = bkrr_fast_composite(BKRR_IMAGES + "cg/d12_mi_bath_1.png", BKRR_IMAGES + "misc/d12_mi_bath_steam.png")
+    image cg d12_mi_bath_2 = bkrr_fast_composite(BKRR_IMAGES + "cg/d12_mi_bath_2.png", BKRR_IMAGES + "misc/d12_mi_bath_steam.png")
+    image cg d12_noon_rest_1 = BKRR_IMAGES + "cg/d12_noon_rest_1.jpg"
+    image cg d12_noon_rest_2 = BKRR_IMAGES + "cg/d12_noon_rest_2.jpg"
+    image cg d12_noon_rest_3 = BKRR_IMAGES + "cg/d12_noon_rest_3.jpg"
+    image cg d12_noon_rest_4 = BKRR_IMAGES + "cg/d12_noon_rest_4.jpg"
+    image cg d12_noon_rest_5 = BKRR_IMAGES + "cg/d12_noon_rest_5.jpg"
     image cg d12_us_kiss_1:
         contains:
-            (MOD_IMAGES + "misc/d12_us_kiss_bg.png")
+            (BKRR_IMAGES + "misc/d12_us_kiss_bg.png")
         contains:
-            (MOD_IMAGES + "cg/d12_us_kiss_1.png")
+            (BKRR_IMAGES + "cg/d12_us_kiss_1.png")
             center
             zoom 1.0
             ease 1.5 zoom 1.3
             linear 0.5 alpha 0.0
-    image cg d12_us_kiss_2 = MOD_IMAGES + "cg/d12_us_kiss_2.png"
-    image cg d12_us_kiss_3 = MOD_IMAGES + "cg/d12_us_kiss_3.png"
-    image cg d12_us_kiss_4 = MOD_IMAGES + "cg/d12_us_kiss_4.png"
-    image cg d12_us_kiss_5 = MOD_IMAGES + "cg/d12_us_kiss_5.png"
+    image cg d12_us_kiss_2 = BKRR_IMAGES + "cg/d12_us_kiss_2.png"
+    image cg d12_us_kiss_3 = BKRR_IMAGES + "cg/d12_us_kiss_3.png"
+    image cg d12_us_kiss_4 = BKRR_IMAGES + "cg/d12_us_kiss_4.png"
+    image cg d12_us_kiss_5 = BKRR_IMAGES + "cg/d12_us_kiss_5.png"
     image cg d12_us_kiss_6:
         contains:
-            (MOD_IMAGES + "cg/d12_us_kiss_6.png")
+            (BKRR_IMAGES + "cg/d12_us_kiss_6.png")
         contains:
-            (MOD_IMAGES + "misc/d12_us_kiss_blush.png")
+            (BKRR_IMAGES + "misc/d12_us_kiss_blush.png")
             alpha 0.0
             ease 3.5 alpha 1.0
     image cg d12_fireflies:
         contains:
-            (MOD_IMAGES + "cg/d8_fstar.jpg")
+            (BKRR_IMAGES + "cg/d8_fstar.jpg")
             align(0.5, 1.0)
             zoom 1.15
-    image cg d13_beach = MOD_IMAGES + "cg/d13_beach.png"
-    image cg d14_un_sleep = MOD_IMAGES + "cg/d14_un_sleep.png"
-    image cg d14_us_fall = MOD_IMAGES + "cg/d14_us_fall.jpg"
-    image cg d14_un_cry = MOD_IMAGES + "cg/d14_un_cry.png"
-    image cg d14_dv_spy = MOD_IMAGES + "cg/d14_dv_spy.png"
-    image cg d14_dv_window_1 = MOD_IMAGES + "cg/d14_dv_window_1.jpg"
-    image cg d14_dv_window_2 = MOD_IMAGES + "cg/d14_dv_window_2.jpg"
-    image cg d14_mi_confession_1 = MOD_IMAGES + "cg/d14_mi_confession_1.png"
-    image cg d14_mi_confession_2 = MOD_IMAGES + "cg/d14_mi_confession_2.png"
-    image cg d14_mi_confession_3 = MOD_IMAGES + "cg/d14_mi_confession_3.png"
-    image cg d14_mi_confession_4 = MOD_IMAGES + "cg/d14_mi_confession_4.png"
-    image cg d14_rocket_1 = MOD_IMAGES + "cg/d14_rocket_1.png"
+    image cg d13_beach = BKRR_IMAGES + "cg/d13_beach.png"
+    image cg d14_un_sleep = BKRR_IMAGES + "cg/d14_un_sleep.png"
+    image cg d14_us_fall = BKRR_IMAGES + "cg/d14_us_fall.jpg"
+    image cg d14_un_cry = BKRR_IMAGES + "cg/d14_un_cry.png"
+    image cg d14_dv_spy = BKRR_IMAGES + "cg/d14_dv_spy.png"
+    image cg d14_dv_window_1 = BKRR_IMAGES + "cg/d14_dv_window_1.jpg"
+    image cg d14_dv_window_2 = BKRR_IMAGES + "cg/d14_dv_window_2.jpg"
+    image cg d14_mi_confession_1 = BKRR_IMAGES + "cg/d14_mi_confession_1.png"
+    image cg d14_mi_confession_2 = BKRR_IMAGES + "cg/d14_mi_confession_2.png"
+    image cg d14_mi_confession_3 = BKRR_IMAGES + "cg/d14_mi_confession_3.png"
+    image cg d14_mi_confession_4 = BKRR_IMAGES + "cg/d14_mi_confession_4.png"
+    image cg d14_rocket_1 = BKRR_IMAGES + "cg/d14_rocket_1.png"
     image cg d14_rocket_2:
         contains:
-            (MOD_IMAGES + "cg/d14_rocket_1.png")
+            (BKRR_IMAGES + "cg/d14_rocket_1.png")
         contains:
-            (MOD_IMAGES + "cg/d14_rocket_2.png")
+            (BKRR_IMAGES + "cg/d14_rocket_2.png")
             ease 15.0 alpha 0.0
-    image cg d15_mi_sleep = im.Scale(MOD_IMAGES + "cg/d15_mi_sleep.jpg", config.screen_width, config.screen_height)
-    image cg d16_catmiku = MOD_IMAGES + "cg/d16_catmiku.jpg"
-    image cg d16_boat_shed = MOD_IMAGES + "cg/d16_boat_shed.jpg"
-    image cg d16_cryptography = MOD_IMAGES + "cg/d16_cryptography.jpg"
-    image cg d16_cryptography2 = MOD_IMAGES + "cg/d16_cryptography2.jpg"
-    image cg d16_gulls = MOD_IMAGES + "cg/d16_gulls.jpg"
+    image cg d15_mi_sleep = im.Scale(BKRR_IMAGES + "cg/d15_mi_sleep.jpg", config.screen_width, config.screen_height)
+    image cg d16_catmiku = BKRR_IMAGES + "cg/d16_catmiku.jpg"
+    image cg d16_boat_shed = BKRR_IMAGES + "cg/d16_boat_shed.jpg"
+    image cg d16_cryptography = BKRR_IMAGES + "cg/d16_cryptography.jpg"
+    image cg d16_cryptography2 = BKRR_IMAGES + "cg/d16_cryptography2.jpg"
+    image cg d16_gulls = BKRR_IMAGES + "cg/d16_gulls.jpg"
 
-    image cg d17_guests = MOD_IMAGES + "cg/d17_guests/aliens.png"
-    image d17_guests_ant_eyes eyes_1  = MOD_IMAGES + "cg/d17_guests/ant_eyes_1.png"
-    image d17_guests_ant_eyes eyes_2  = MOD_IMAGES + "cg/d17_guests/ant_eyes_2.png"
-    image d17_guests_ant_mouth mouth_1  = MOD_IMAGES + "cg/d17_guests/ant_mouth_1.png"
-    image d17_guests_ant_mouth mouth_2  = MOD_IMAGES + "cg/d17_guests/ant_mouth_2.png"
-    image d17_guests_ant_mouth mouth_3  = MOD_IMAGES + "cg/d17_guests/ant_mouth_3.png"
-    image d17_guests_ant_mouth mouth_4  = MOD_IMAGES + "cg/d17_guests/ant_mouth_4.png"
-    image d17_guests_kl_mouth mouth_1  = MOD_IMAGES + "cg/d17_guests/kl_mouth_1.png"
-    image d17_guests_kl_mouth mouth_2  = MOD_IMAGES + "cg/d17_guests/kl_mouth_2.png"
-    image d17_guests_tr_arm arm_1  = MOD_IMAGES + "cg/d17_guests/tr_arm_1.png"
-    image d17_guests_tr_arm arm_2  = MOD_IMAGES + "cg/d17_guests/tr_arm_2.png"
-    image d17_guests_tr_mouth mouth_1  = MOD_IMAGES + "cg/d17_guests/tr_mouth_1.png"
-    image d17_guests_tr_mouth mouth_2  = MOD_IMAGES + "cg/d17_guests/tr_mouth_2.png"
+    image cg d17_guests = BKRR_IMAGES + "cg/d17_guests/aliens.png"
+    image d17_guests_ant_eyes eyes_1  = BKRR_IMAGES + "cg/d17_guests/ant_eyes_1.png"
+    image d17_guests_ant_eyes eyes_2  = BKRR_IMAGES + "cg/d17_guests/ant_eyes_2.png"
+    image d17_guests_ant_mouth mouth_1  = BKRR_IMAGES + "cg/d17_guests/ant_mouth_1.png"
+    image d17_guests_ant_mouth mouth_2  = BKRR_IMAGES + "cg/d17_guests/ant_mouth_2.png"
+    image d17_guests_ant_mouth mouth_3  = BKRR_IMAGES + "cg/d17_guests/ant_mouth_3.png"
+    image d17_guests_ant_mouth mouth_4  = BKRR_IMAGES + "cg/d17_guests/ant_mouth_4.png"
+    image d17_guests_kl_mouth mouth_1  = BKRR_IMAGES + "cg/d17_guests/kl_mouth_1.png"
+    image d17_guests_kl_mouth mouth_2  = BKRR_IMAGES + "cg/d17_guests/kl_mouth_2.png"
+    image d17_guests_tr_arm arm_1  = BKRR_IMAGES + "cg/d17_guests/tr_arm_1.png"
+    image d17_guests_tr_arm arm_2  = BKRR_IMAGES + "cg/d17_guests/tr_arm_2.png"
+    image d17_guests_tr_mouth mouth_1  = BKRR_IMAGES + "cg/d17_guests/tr_mouth_1.png"
+    image d17_guests_tr_mouth mouth_2  = BKRR_IMAGES + "cg/d17_guests/tr_mouth_2.png"
 
-    image cg d17_alisa_klaus = MOD_IMAGES + "cg/d17_alisa_klaus.jpg"
-    image cg d17_alisa_klaus2 = bkrr_fast_composite(MOD_IMAGES + "cg/d17_alisa_klaus.jpg", MOD_IMAGES + "cg/d17_alisa_klaus2.png")
-    image cg d17_klaus_guitar = im.Scale(MOD_IMAGES + "cg/d17_klaus_guitar.jpg", config.screen_width, config.screen_height)
+    image cg d17_alisa_klaus = BKRR_IMAGES + "cg/d17_alisa_klaus.jpg"
+    image cg d17_alisa_klaus2 = bkrr_fast_composite(BKRR_IMAGES + "cg/d17_alisa_klaus.jpg", BKRR_IMAGES + "cg/d17_alisa_klaus2.png")
+    image cg d17_klaus_guitar = im.Scale(BKRR_IMAGES + "cg/d17_klaus_guitar.jpg", config.screen_width, config.screen_height)
     image cg d17_mt_mine:
         contains:
             "bg int_mine_halt"
@@ -1244,31 +1244,31 @@ init 2:
             "black"
             alpha 0.3
         contains:
-            MOD_IMAGES + "cg/d17_mt_mine.png"
+            BKRR_IMAGES + "cg/d17_mt_mine.png"
     image cg d17_tmp_sex:
         contains:
-            im.Scale(MOD_IMAGES + "cg/d15_mi_sleep.jpg", config.screen_width, config.screen_height)
+            im.Scale(BKRR_IMAGES + "cg/d15_mi_sleep.jpg", config.screen_width, config.screen_height)
         contains:
             Solid("#000")
             alpha 0.90
-    image cg d18_bed_middle = im.Scale(MOD_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height)
-    image cg d18_bed_sleep = bkrr_fast_composite(im.Scale(MOD_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height), im.Scale(MOD_IMAGES + "cg/d18_bed_mi_sleep.png", config.screen_width, config.screen_height))
-    image cg d18_bed_open = bkrr_fast_composite(im.Scale(MOD_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height), im.Scale(MOD_IMAGES + "cg/d18_bed_mi_open.png", config.screen_width, config.screen_height))
-    image misc_d18_sheet = MOD_IMAGES + "misc/d18_sheet.jpg"
-    image cg d18_alisarape = MOD_IMAGES + "cg/d18_alisarape.jpg"
-    image cg d18_alisarape2 = bkrr_fast_composite(MOD_IMAGES + "cg/d18_alisarape.jpg", MOD_IMAGES + "cg/d18_alisarape_2.png")
-    image cg d18_young_od = MOD_IMAGES + "cg/d18_young_od.png"
-    image cg d18_no_squirrel_1 = MOD_IMAGES + "cg/d9_squirrel_1.png"
+    image cg d18_bed_middle = im.Scale(BKRR_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height)
+    image cg d18_bed_sleep = bkrr_fast_composite(im.Scale(BKRR_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height), im.Scale(BKRR_IMAGES + "cg/d18_bed_mi_sleep.png", config.screen_width, config.screen_height))
+    image cg d18_bed_open = bkrr_fast_composite(im.Scale(BKRR_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height), im.Scale(BKRR_IMAGES + "cg/d18_bed_mi_open.png", config.screen_width, config.screen_height))
+    image misc_d18_sheet = BKRR_IMAGES + "misc/d18_sheet.jpg"
+    image cg d18_alisarape = BKRR_IMAGES + "cg/d18_alisarape.jpg"
+    image cg d18_alisarape2 = bkrr_fast_composite(BKRR_IMAGES + "cg/d18_alisarape.jpg", BKRR_IMAGES + "cg/d18_alisarape_2.png")
+    image cg d18_young_od = BKRR_IMAGES + "cg/d18_young_od.png"
+    image cg d18_no_squirrel_1 = BKRR_IMAGES + "cg/d9_squirrel_1.png"
     image cg d18_no_squirrel_2:
         contains:
-            (MOD_IMAGES + "cg/d9_squirrel_1.png")
+            (BKRR_IMAGES + "cg/d9_squirrel_1.png")
         contains:
-            (MOD_IMAGES + "cg/d18_no_squirrel.png")
+            (BKRR_IMAGES + "cg/d18_no_squirrel.png")
     image cg d18_dv_guitar:
         contains:
-            MOD_IMAGES + "cg/d18_dv_guitar_silhouette.jpg"
+            BKRR_IMAGES + "cg/d18_dv_guitar_silhouette.jpg"
         contains:
-            MOD_IMAGES + "cg/d18_dv_guitar.jpg"
+            BKRR_IMAGES + "cg/d18_dv_guitar.jpg"
             alpha 0.0
             pause 0.5
             ease 0.5 alpha 1.0
@@ -1284,7 +1284,7 @@ init 2:
         contains:
             "mi surprise pioneer"
             right
-    image cg d18_sunset_original_mi = MOD_IMAGES + "cg/d18_sunset_original_mi.jpg"
+    image cg d18_sunset_original_mi = BKRR_IMAGES + "cg/d18_sunset_original_mi.jpg"
 
     image cg d19_uv_escape:
         contains:
@@ -1297,10 +1297,10 @@ init 2:
 
     # ЦГшные спрайты
 
-    image dv2 d18_guitar1 = MOD_IMAGES + "cg/d18_alisa_guitar1.png"
-    image dv2 d18_guitar2 = MOD_IMAGES + "cg/d18_alisa_guitar2.png"
-    image kla d18_guitar1 = MOD_IMAGES + "cg/d18_klaus_guitar1.png"
-    image kla d18_guitar2 = MOD_IMAGES + "cg/d18_klaus_guitar2.png"
+    image dv2 d18_guitar1 = BKRR_IMAGES + "cg/d18_alisa_guitar1.png"
+    image dv2 d18_guitar2 = BKRR_IMAGES + "cg/d18_alisa_guitar2.png"
+    image kla d18_guitar1 = BKRR_IMAGES + "cg/d18_klaus_guitar1.png"
+    image kla d18_guitar2 = BKRR_IMAGES + "cg/d18_klaus_guitar2.png"
 
     # Комбинированные сюжетные вставки, анимированные и статичные (тоже идут под тегом cg)
 
@@ -1308,17 +1308,17 @@ init 2:
         contains:
             "bg ext_clubs_day"
         contains:
-            (MOD_IMAGES + "bg/ext_clubs_day_blur.jpg")
+            (BKRR_IMAGES + "bg/ext_clubs_day_blur.jpg")
             alpha 0.0
             linear 3.5 alpha 1.0
         contains:
-            (MOD_IMAGES + "misc/d6_dv_hit.png")
+            (BKRR_IMAGES + "misc/d6_dv_hit.png")
             pos(0.75, 0.5)
             anchor(0.5, 0.5)
             linear 3.4 pos(0.5, 0.5)
             linear 0.1 zoom 1.33
         contains:
-            im.Scale(MOD_IMAGES + "misc/d6_dv_hit_text.png", 585, 155)
+            im.Scale(BKRR_IMAGES + "misc/d6_dv_hit_text.png", 585, 155)
             pos(0.5, 0.9)
             anchor(0.5, 0.5)
             alpha 0.0
@@ -1335,7 +1335,7 @@ init 2:
         contains:
             "bg int_dining_hall_people_day"
         contains:
-            (MOD_IMAGES + "misc/d8_theft_sh.png")
+            (BKRR_IMAGES + "misc/d8_theft_sh.png")
             topleft
             alpha 0.0
             pause 2.0
@@ -1346,7 +1346,7 @@ init 2:
             parallel:
                 ease 2.5 xpos 0.12
         contains:
-            (MOD_IMAGES + "misc/d8_theft_us.png")
+            (BKRR_IMAGES + "misc/d8_theft_us.png")
             topleft
             alpha 0.0
             parallel:
@@ -1363,17 +1363,17 @@ init 2:
             "mi normal body_loo close"
             center
         contains:
-            im.Composite((1050, 1080), (0, 0), MOD_IMAGES + "sprites/close/mi/mi_3_shorts.png") # н-да
+            im.Composite((1050, 1080), (0, 0), BKRR_IMAGES + "sprites/close/mi/mi_3_shorts.png") # н-да
             center
             subpixel True
             ease 3.0 xpos 0.506 ypos 0.017
 
     image cg d12_fight:
         contains:
-            bkrr_make_tint_img(MOD_IMAGES + "bg/int_music_club_mattresses_sunset.jpg", "red")
+            bkrr_make_tint_img(BKRR_IMAGES + "bg/int_music_club_mattresses_sunset.jpg", "red")
             bkrr_shiver_atl
         contains:
-            bkrr_make_tint_img(MOD_IMAGES + "misc/int_music_club_clock_sunset.png", "red")
+            bkrr_make_tint_img(BKRR_IMAGES + "misc/int_music_club_clock_sunset.png", "red")
             bkrr_shiver_atl
         contains:
             "dv rage pioneer2"
@@ -1396,7 +1396,7 @@ init 2:
             fright
             ease 5.0 xpos 0.75
         contains:
-            (MOD_IMAGES + "misc/d12_fight_breach.png")
+            (BKRR_IMAGES + "misc/d12_fight_breach.png")
 
     image cg d14_mi_surprise:
         truecenter
@@ -1420,7 +1420,7 @@ init 2:
         contains:
             "white"
         contains:
-            (MOD_IMAGES + "cg/d16_picnic1.jpg")
+            (BKRR_IMAGES + "cg/d16_picnic1.jpg")
             subpixel True
             alpha 0.0
             xalign 1.0
@@ -1432,7 +1432,7 @@ init 2:
                 pause 6.0
                 linear 2.0 alpha 0.0
         contains:
-            (MOD_IMAGES + "cg/d16_picnic2.jpg")
+            (BKRR_IMAGES + "cg/d16_picnic2.jpg")
             subpixel True
             alpha 0.0
             xalign 0.0
@@ -1445,7 +1445,7 @@ init 2:
                 pause 6.0
                 linear 3.0 alpha 0.0
         contains:
-            (MOD_IMAGES + "cg/d16_picnic3.jpg")
+            (BKRR_IMAGES + "cg/d16_picnic3.jpg")
             subpixel True
             truecenter
             alpha 0.0
@@ -1458,8 +1458,8 @@ init 2:
 
     # Прочие эффекты
 
-    image d17_knife_slice = MOD_IMAGES + "misc/d17_knife_slice.png"
-    image d17_knife_slice2 = MOD_IMAGES + "misc/d17_knife_slice2.png"
+    image d17_knife_slice = BKRR_IMAGES + "misc/d17_knife_slice.png"
+    image d17_knife_slice2 = BKRR_IMAGES + "misc/d17_knife_slice2.png"
 
 
 init 1:
@@ -1634,14 +1634,14 @@ init 1:
     ## Специальные изображения
 
     image bkrr_lyrics_screen:
-        Frame(ES_IMAGES + "gui/choice/" + persistent.timeofday + "/choice_box.png", 50, 50)
+        Frame(BKRR_ES_IMAGES + "gui/choice/" + persistent.timeofday + "/choice_box.png", 50, 50)
         truecenter
         size(1240, 1240)
 
-    image bkrr_flying_notes = bkrr_create_anim(MOD_IMAGES + "misc/d5_flying_notes_", 3, 1.5, Dissolve(0.25, alpha=True))
-    image bkrr_flying_notes_white = bkrr_create_anim(MOD_IMAGES + "misc/d5_flying_notes_white_", 3, 1.5, Dissolve(0.25, alpha=True))
+    image bkrr_flying_notes = bkrr_create_anim(BKRR_IMAGES + "misc/d5_flying_notes_", 3, 1.5, Dissolve(0.25, alpha=True))
+    image bkrr_flying_notes_white = bkrr_create_anim(BKRR_IMAGES + "misc/d5_flying_notes_white_", 3, 1.5, Dissolve(0.25, alpha=True))
 
-    image bkrr_bang = MOD_IMAGES + "misc/bang.png"
+    image bkrr_bang = BKRR_IMAGES + "misc/bang.png"
     image bkrr_bang_rotating:
         contains:
             "bkrr_bang"
@@ -1983,11 +1983,11 @@ init 1:
 
     # Горящая спичка
 
-    image bkrr_match_glow = bkrr_glow_atl(MOD_IMAGES + "effects/match_glow.png")
+    image bkrr_match_glow = bkrr_glow_atl(BKRR_IMAGES + "effects/match_glow.png")
 
     # Эффект ледяной воды
 
-    image coldwater_shock = MOD_IMAGES + "misc/d5_coldwater_shock.png"
+    image coldwater_shock = BKRR_IMAGES + "misc/d5_coldwater_shock.png"
 
     # Эффект для моментов пробуждения
 
@@ -2093,37 +2093,37 @@ init 1:
     image bkrr_d9_cinema:
         xalign 0.517
         yalign 0.436
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame1.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame1.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame2.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame2.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame3.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame3.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame4.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame4.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame5.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame5.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame6.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame6.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame7.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame7.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame8.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame8.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame9.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame9.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame10.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame10.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame11.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame11.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame12.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame12.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame13.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame13.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame14.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame14.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame15.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame15.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
-        im.Scale(MOD_IMAGES + "misc/d9_cinema/frame16.jpg", 366, 222) with Dissolve(3.5)
+        im.Scale(BKRR_IMAGES + "misc/d9_cinema/frame16.jpg", 366, 222) with Dissolve(3.5)
         pause 3.5
         repeat
 
@@ -2144,9 +2144,9 @@ init 1:
     # Небольшая шпаргалка на будущее:
     # SnowBlossom(img, count=int, border=int, xspeed=tuple, yspeed=tuple, start=int, fast=bool, horizontal=bool)
 
-    image bkrr_raindrop_particle_large = MOD_IMAGES + "effects/particles/raindrop_large.png"
-    image bkrr_raindrop_particle_normal = MOD_IMAGES + "effects/particles/raindrop_normal.png"
-    image bkrr_raindrop_particle_small = MOD_IMAGES + "effects/particles/raindrop_small.png"
+    image bkrr_raindrop_particle_large = BKRR_IMAGES + "effects/particles/raindrop_large.png"
+    image bkrr_raindrop_particle_normal = BKRR_IMAGES + "effects/particles/raindrop_normal.png"
+    image bkrr_raindrop_particle_small = BKRR_IMAGES + "effects/particles/raindrop_small.png"
 
     image bkrr_eff_light_rain:
         truecenter
@@ -2209,53 +2209,53 @@ init 1:
 
     image bkrr_eff_snow:
         contains:
-            SnowBlossom(im.Alpha(im.FactorScale(ES_IMAGES + "anim/snow.png", 0.75), 0.75), 50, 50, (15, 30), (25, 125))
+            SnowBlossom(im.Alpha(im.FactorScale(BKRR_ES_IMAGES + "anim/snow.png", 0.75), 0.75), 50, 50, (15, 30), (25, 125))
         contains:
-            SnowBlossom(im.Alpha(im.FactorScale(ES_IMAGES + "anim/snow.png", 0.5), 0.50), 75, 50, (15, 30), (25, 100))
+            SnowBlossom(im.Alpha(im.FactorScale(BKRR_ES_IMAGES + "anim/snow.png", 0.5), 0.50), 75, 50, (15, 30), (25, 100))
         contains:
-            SnowBlossom(im.Alpha(im.FactorScale(ES_IMAGES + "anim/snow.png", 0.25), 0.25), 100, 50, (15, 30), (25, 75))
+            SnowBlossom(im.Alpha(im.FactorScale(BKRR_ES_IMAGES + "anim/snow.png", 0.25), 0.25), 100, 50, (15, 30), (25, 75))
         contains:
-            SnowBlossom(im.Alpha(im.FactorScale(ES_IMAGES + "anim/snow.png", 0.25), 0.15), 200, 50, (15, 30), (25, 50))
+            SnowBlossom(im.Alpha(im.FactorScale(BKRR_ES_IMAGES + "anim/snow.png", 0.25), 0.15), 200, 50, (15, 30), (25, 50))
         contains:
-            SnowBlossom(im.Alpha(im.FactorScale(ES_IMAGES + "anim/snow.png", 0.2), 0.1), 200, 50, (15, 30), (25, 50))
+            SnowBlossom(im.Alpha(im.FactorScale(BKRR_ES_IMAGES + "anim/snow.png", 0.2), 0.1), 200, 50, (15, 30), (25, 50))
 
     image bkrr_eff_skylight:
         contains:
-            SnowBlossom(MOD_IMAGES + "effects/particles/skylight1.png", 5, 50, (15, 30), (-50, -300))
+            SnowBlossom(BKRR_IMAGES + "effects/particles/skylight1.png", 5, 50, (15, 30), (-50, -300))
         contains:
-            SnowBlossom(MOD_IMAGES + "effects/particles/skylight2.png", 10, 50, (15, 30), (-50, -300))
+            SnowBlossom(BKRR_IMAGES + "effects/particles/skylight2.png", 10, 50, (15, 30), (-50, -300))
         contains:
-            SnowBlossom(MOD_IMAGES + "effects/particles/skylight3.png", 15, 50, (15, 30), (-50, -300))
+            SnowBlossom(BKRR_IMAGES + "effects/particles/skylight3.png", 15, 50, (15, 30), (-50, -300))
         contains:
-            SnowBlossom(MOD_IMAGES + "effects/particles/skylight4.png", 20, 50, (15, 30), (-50, -300))
+            SnowBlossom(BKRR_IMAGES + "effects/particles/skylight4.png", 20, 50, (15, 30), (-50, -300))
 
     image bkrr_eff_fireflies:
         contains:
-            SnowBlossom(bkrr_make_tint_img(im.FactorScale(MOD_IMAGES + "effects/particles/firefly.png", 0.9), "green_yellow"), 5, 40, (-50, 50), (-40, -200))
+            SnowBlossom(bkrr_make_tint_img(im.FactorScale(BKRR_IMAGES + "effects/particles/firefly.png", 0.9), "green_yellow"), 5, 40, (-50, 50), (-40, -200))
         contains:
-            SnowBlossom(bkrr_make_tint_img(im.FactorScale(MOD_IMAGES + "effects/particles/firefly.png", 0.8), "green_yellow"), 10, 40, (-50, 50), (-40, -200))
+            SnowBlossom(bkrr_make_tint_img(im.FactorScale(BKRR_IMAGES + "effects/particles/firefly.png", 0.8), "green_yellow"), 10, 40, (-50, 50), (-40, -200))
         contains:
-            SnowBlossom(bkrr_make_tint_img(im.FactorScale(MOD_IMAGES + "effects/particles/firefly.png", 0.7), "green_yellow"), 15, 40, (-50, 50), (-40, -200))
+            SnowBlossom(bkrr_make_tint_img(im.FactorScale(BKRR_IMAGES + "effects/particles/firefly.png", 0.7), "green_yellow"), 15, 40, (-50, 50), (-40, -200))
         contains:
-            SnowBlossom(bkrr_make_tint_img(im.FactorScale(MOD_IMAGES + "effects/particles/firefly.png", 0.6), "green_yellow"), 20, 40, (-50, 50), (-40, -200))
+            SnowBlossom(bkrr_make_tint_img(im.FactorScale(BKRR_IMAGES + "effects/particles/firefly.png", 0.6), "green_yellow"), 20, 40, (-50, 50), (-40, -200))
 
-    image bkrr_eff_yoba = SnowBlossom(MOD_IMAGES + "effects/particles/yoba.png", 25, 50, (15, 30), (-50, -300))
+    image bkrr_eff_yoba = SnowBlossom(BKRR_IMAGES + "effects/particles/yoba.png", 25, 50, (15, 30), (-50, -300))
 
     ## Переходы
 
     python:
 
-        bkrr_circlein_transition = ImageDissolve(MOD_IMAGES + "transitions/circle.png", 0.5, ramplen=5, reverse = True, alpha=True)
-        bkrr_circleout_transition = ImageDissolve(MOD_IMAGES + "transitions/circle.png", 0.5, ramplen=5, reverse = False, alpha=True)
-        bkrr_star_falling_transition = ImageDissolve(MOD_IMAGES + "transitions/star_falling.png", 0.5, ramplen=5, reverse = False, alpha=True)
+        bkrr_circlein_transition = ImageDissolve(BKRR_IMAGES + "transitions/circle.png", 0.5, ramplen=5, reverse = True, alpha=True)
+        bkrr_circleout_transition = ImageDissolve(BKRR_IMAGES + "transitions/circle.png", 0.5, ramplen=5, reverse = False, alpha=True)
+        bkrr_star_falling_transition = ImageDissolve(BKRR_IMAGES + "transitions/star_falling.png", 0.5, ramplen=5, reverse = False, alpha=True)
 
-        bkrr_blindstoleft_transition = ImageDissolve(MOD_IMAGES + "transitions/blinds_h.png", 1.0, ramplen=25, reverse = False, alpha=True)
-        bkrr_blindstoright_transition = ImageDissolve(MOD_IMAGES + "transitions/blinds_h.png", 1.0, ramplen=25, reverse = True, alpha=True)
-        bkrr_blindstotop_transition = ImageDissolve(MOD_IMAGES + "transitions/blinds_v.png", 1.0, ramplen=25, reverse = False, alpha=True)
-        bkrr_blindstobottom_transition = ImageDissolve(MOD_IMAGES + "transitions/blinds_v.png", 1.0, ramplen=25, reverse = True, alpha=True)
+        bkrr_blindstoleft_transition = ImageDissolve(BKRR_IMAGES + "transitions/blinds_h.png", 1.0, ramplen=25, reverse = False, alpha=True)
+        bkrr_blindstoright_transition = ImageDissolve(BKRR_IMAGES + "transitions/blinds_h.png", 1.0, ramplen=25, reverse = True, alpha=True)
+        bkrr_blindstotop_transition = ImageDissolve(BKRR_IMAGES + "transitions/blinds_v.png", 1.0, ramplen=25, reverse = False, alpha=True)
+        bkrr_blindstobottom_transition = ImageDissolve(BKRR_IMAGES + "transitions/blinds_v.png", 1.0, ramplen=25, reverse = True, alpha=True)
 
         def bkrr_timeskip_transition(t=1.0):
-            return ImageDissolve(MOD_IMAGES + "transitions/timeskip.png", t, ramplen=0, reverse=False, alpha=True)
+            return ImageDissolve(BKRR_IMAGES + "transitions/timeskip.png", t, ramplen=0, reverse=False, alpha=True)
 
         def bkrr_fade(time=1.0, color="white"):
             ft = time * 0.5
@@ -2393,7 +2393,7 @@ init 2:
                     image_parts = [distance_to_position[distance]]
                     for layer in layers:
                         source, file_name = layer.split(':')
-                        base_path = MOD_IMAGES if source == 'mod' else ES_IMAGES
+                        base_path = BKRR_IMAGES if source == 'mod' else BKRR_ES_IMAGES
                         image_path = base_path + "sprites/%s/%s/%s_%s_%s.png" % (
                             distance, character, character, pose, file_name if file_name != '<emotion>' else emotion,
                         )
@@ -2494,6 +2494,7 @@ init 2:
         make_sprites_for('mi', 'underwear loose hair', ['mod:body_loo', 'mod:underwear', 'mod:hair', 'es:<emotion>'], distances=['close'])
         make_sprites_for('mi', 'underwear loose towel hair', ['mod:body_loo', 'mod:underwear', 'mod:towel', 'mod:hair', 'es:<emotion>'], distances=['close'])
         make_sprites_for('mi', 'panties', ['mod:body_loo', 'mod:panties', 'mod:hair', 'es:<emotion>'])
+        make_sprites_for('mi', 'panties naked', ['mod:body_loo', 'mod:panties', 'mod:hair_for_naked', 'es:<emotion>'], distances=['close'])
         make_sprites_for('mi', 'panties dark', ['mod:body_loo', 'mod:panties', 'mod:hair', 'es:<emotion>'], sprite_define_func=_dark_sprite)
         make_sprites_for('mi', 'panties yukata_hair dark', ['mod:panties_yukata_hair', 'es:<emotion>'], sprite_define_func=_dark_sprite)
         make_sprites_for('mi', 'towel_only', ['mod:towel'], distances=['close'])
@@ -2529,478 +2530,478 @@ init 2:
 
     # Демонические создания
 
-    image dv angel = MOD_IMAGES + "sprites/close/dv/dv_angel.png"
-    image us demon = MOD_IMAGES + "sprites/close/us/us_demon.png"
+    image dv angel = BKRR_IMAGES + "sprites/close/dv/dv_angel.png"
+    image us demon = BKRR_IMAGES + "sprites/close/us/us_demon.png"
 
     # Дед из Саманты
 
-    image ded smile crossedarms = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_1.png")
-    image ded normal crossedarms = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_1.png", (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_normal.png")
-    image ded sad crossedarms = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_1.png", (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_sad.png")
-    image ded wink crossedarms = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_1.png", (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_wink.png")
+    image ded smile crossedarms = im.Composite(None, (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_1.png")
+    image ded normal crossedarms = im.Composite(None, (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_1.png", (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_normal.png")
+    image ded sad crossedarms = im.Composite(None, (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_1.png", (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_sad.png")
+    image ded wink crossedarms = im.Composite(None, (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_1.png", (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_wink.png")
 
-    image ded smile thumbsup = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_2.png")
-    image ded normal thumbsup = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_2.png", (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_normal.png")
-    image ded sad thumbsup = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_2.png", (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_sad.png")
-    image ded wink thumbsup = im.Composite(None, (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_2.png", (0, 0), MOD_IMAGES + "sprites/normal/ded/ded_wink.png")
+    image ded smile thumbsup = im.Composite(None, (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_2.png")
+    image ded normal thumbsup = im.Composite(None, (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_2.png", (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_normal.png")
+    image ded sad thumbsup = im.Composite(None, (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_2.png", (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_sad.png")
+    image ded wink thumbsup = im.Composite(None, (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_2.png", (0, 0), BKRR_IMAGES + "sprites/normal/ded/ded_wink.png")
 
     # Мику в юкате (силуэт)
 
-    image mi yukata dark = im.MatrixColor(MOD_IMAGES + "sprites/normal/mi/mi_3_yukata.png", im.matrix.brightness(-0.99))
-    image mi yukata dark close = im.MatrixColor(MOD_IMAGES + "sprites/close/mi/mi_3_yukata.png", im.matrix.brightness(-0.99))
-    image mi yukata dark far = im.MatrixColor(MOD_IMAGES + "sprites/far/mi/mi_3_yukata.png", im.matrix.brightness(-0.99))
+    image mi yukata dark = im.MatrixColor(BKRR_IMAGES + "sprites/normal/mi/mi_3_yukata.png", im.matrix.brightness(-0.99))
+    image mi yukata dark close = im.MatrixColor(BKRR_IMAGES + "sprites/close/mi/mi_3_yukata.png", im.matrix.brightness(-0.99))
+    image mi yukata dark far = im.MatrixColor(BKRR_IMAGES + "sprites/far/mi/mi_3_yukata.png", im.matrix.brightness(-0.99))
 
     # Пионер, переобъявление для 1.1
 
     image bkrr_pi normal = ConditionSwitch(
-        "persistent.sprite_time == 'sunset'", im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png", bkrr_tint["sunset"]),
-        "persistent.sprite_time == 'night'", im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png", bkrr_tint["night"]),
-        True, ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png")
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(BKRR_ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png", bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(BKRR_ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png", bkrr_tint["night"]),
+        True, BKRR_ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png")
 
     image bkrr_pi smile = ConditionSwitch(
-        "persistent.sprite_time == 'sunset'", im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png", bkrr_tint["sunset"]),
-        "persistent.sprite_time == 'night'", im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png", bkrr_tint["night"]),
-        True, ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png")
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(BKRR_ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png", bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(BKRR_ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png", bkrr_tint["night"]),
+        True, BKRR_ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png")
 
-    image bkrr_pi normal sepia = im.Sepia(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png")
-    image bkrr_pi smile sepia = im.Sepia(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png")
+    image bkrr_pi normal sepia = im.Sepia(BKRR_ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png")
+    image bkrr_pi smile sepia = im.Sepia(BKRR_ES_IMAGES + "sprites/normal/pi/pi_1_pioneer_smile.png")
 
-    image bkrr_pi normal dark = im.MatrixColor(ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.05))
-    image bkrr_pi normal dark far = im.MatrixColor(ES_IMAGES + "sprites/far/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.05))
+    image bkrr_pi normal dark = im.MatrixColor(BKRR_ES_IMAGES + "sprites/normal/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.05))
+    image bkrr_pi normal dark far = im.MatrixColor(BKRR_ES_IMAGES + "sprites/far/pi/pi_1_pioneer.png", bkrr_tint["night"] * im.matrix.brightness(-0.05))
 
     # Электроник в футболке
 
     image el angry shirt:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_angry.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_angry.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_angry.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_angry.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_angry.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_angry.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_angry.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_angry.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_angry.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_angry.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_angry.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_angry.png"))
 
     image el fingal shirt:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_fingal.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_fingal.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_fingal.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_fingal.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_fingal.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_fingal.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_fingal.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_fingal.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_fingal.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_fingal.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_fingal.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_fingal.png"))
 
     image el grin shirt:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_grin.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_grin.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_grin.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_grin.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_grin.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_grin.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_grin.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_grin.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_grin.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_grin.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_grin.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_grin.png"))
 
     image el laugh shirt:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_laugh.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_laugh.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_laugh.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_laugh.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_laugh.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_laugh.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_laugh.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_laugh.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_laugh.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_laugh.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_laugh.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_laugh.png"))
 
     image el normal shirt:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_normal.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_normal.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_normal.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_normal.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_normal.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_normal.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_normal.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_normal.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_normal.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_normal.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_normal.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_normal.png"))
 
     image el sad shirt:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_sad.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_sad.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_sad.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_sad.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_sad.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_sad.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_sad.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_sad.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_sad.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_sad.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_sad.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_sad.png"))
 
     image el scared shirt:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_scared.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_scared.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_scared.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_scared.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_scared.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_scared.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_scared.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_scared.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_scared.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_scared.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_scared.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_scared.png"))
 
     image el serious shirt:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_serious.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_serious.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_serious.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_serious.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_serious.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_serious.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_serious.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_serious.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_3_serious.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_serious.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_serious.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_3_serious.png"))
 
     image el shocked shirt:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_shocked.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_shocked.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_shocked.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_shocked.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_shocked.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_shocked.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_shocked.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_shocked.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_shocked.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_shocked.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_shocked.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_shocked.png"))
 
     image el smile shirt:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_smile.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_smile.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_smile.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_smile.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_smile.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_smile.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_smile.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_smile.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_1_smile.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_smile.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_smile.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_1_smile.png"))
 
     image el surprise shirt:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_surprise.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_surprise.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_surprise.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_surprise.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_surprise.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_surprise.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_surprise.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_surprise.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_surprise.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_surprise.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_surprise.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_surprise.png"))
 
     image el upset shirt:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_upset.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_upset.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_upset.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_upset.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_upset.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_upset.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_upset.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_upset.png"), bkrr_tint["night"]),
-                True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/normal/el/el_2_upset.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_upset.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_upset.png"), bkrr_tint["night"]),
+                True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/normal/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/el/el_2_upset.png"))
 
     image el angry shirt close:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_angry.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_angry.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_angry.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_angry.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_angry.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_angry.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_angry.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_angry.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_angry.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_angry.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_angry.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_angry.png"))
 
     image el fingal shirt close:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_fingal.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_fingal.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_fingal.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_fingal.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_fingal.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_fingal.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_fingal.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_fingal.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_fingal.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_fingal.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_fingal.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_fingal.png"))
 
     image el grin shirt close:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_grin.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_grin.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_grin.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_grin.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_grin.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_grin.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_grin.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_grin.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_grin.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_grin.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_grin.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_grin.png"))
 
     image el laugh shirt close:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_laugh.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_laugh.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_laugh.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_laugh.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_laugh.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_laugh.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_laugh.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_laugh.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_laugh.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_laugh.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_laugh.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_laugh.png"))
 
     image el normal shirt close:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_normal.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_normal.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_normal.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_normal.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_normal.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_normal.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_normal.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_normal.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_normal.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_normal.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_normal.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_normal.png"))
 
     image el sad shirt close:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_sad.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_sad.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_sad.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_sad.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_sad.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_sad.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_sad.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_sad.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_sad.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_sad.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_sad.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_sad.png"))
 
     image el scared shirt close:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_scared.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_scared.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_scared.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_scared.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_scared.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_scared.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_scared.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_scared.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_scared.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_scared.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_scared.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_scared.png"))
 
     image el serious shirt close:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_serious.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_serious.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_serious.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_serious.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_serious.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_serious.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_serious.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_serious.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_3_serious.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_serious.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_serious.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_3_serious.png"))
 
     image el shocked shirt close:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_shocked.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_shocked.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_shocked.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_shocked.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_shocked.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_shocked.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_shocked.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_shocked.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_shocked.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_shocked.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_shocked.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_shocked.png"))
 
     image el smile shirt close:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_smile.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_smile.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_smile.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_smile.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_smile.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_smile.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_smile.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_smile.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_1_smile.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_smile.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_smile.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_1_smile.png"))
 
     image el surprise shirt close:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_surprise.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_surprise.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_surprise.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_surprise.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_surprise.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_surprise.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_surprise.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_surprise.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_surprise.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_surprise.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_surprise.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_surprise.png"))
 
     image el upset shirt close:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_upset.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_upset.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_upset.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_upset.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_upset.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_upset.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_upset.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_upset.png"), bkrr_tint["night"]),
-                True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/close/el/el_2_upset.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_upset.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_upset.png"), bkrr_tint["night"]),
+                True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/close/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/el/el_2_upset.png"))
 
     image el angry shirt far:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_angry.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_angry.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_angry.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_angry.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_angry.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_angry.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_angry.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_angry.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_angry.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_angry.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_angry.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_angry.png"))
 
     image el fingal shirt far:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_fingal.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_fingal.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_fingal.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_fingal.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_fingal.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_fingal.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_fingal.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_fingal.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_fingal.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_fingal.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_fingal.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_fingal.png"))
 
     image el grin shirt far:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_grin.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_grin.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_grin.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_grin.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_grin.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_grin.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_grin.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_grin.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_grin.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_grin.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_grin.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_grin.png"))
 
     image el laugh shirt far:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_laugh.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_laugh.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_laugh.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_laugh.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_laugh.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_laugh.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_laugh.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_laugh.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_laugh.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_laugh.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_laugh.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_laugh.png"))
 
     image el normal shirt far:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_normal.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_normal.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_normal.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_normal.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_normal.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_normal.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_normal.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_normal.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_normal.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_normal.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_normal.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_normal.png"))
 
     image el sad shirt far:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_sad.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_sad.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_sad.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_sad.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_sad.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_sad.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_sad.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_sad.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_sad.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_sad.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_sad.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_sad.png"))
 
     image el scared shirt far:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_scared.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_scared.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_scared.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_scared.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_scared.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_scared.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_scared.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_scared.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_scared.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_scared.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_scared.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_scared.png"))
 
     image el serious shirt far:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_serious.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_serious.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_serious.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_serious.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_serious.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_serious.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_serious.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_serious.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_3_serious.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_serious.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_serious.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_3_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_3_serious.png"))
 
     image el shocked shirt far:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_shocked.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_shocked.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_shocked.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_shocked.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_shocked.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_shocked.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_shocked.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_shocked.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_shocked.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_shocked.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_shocked.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_shocked.png"))
 
     image el smile shirt far:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_smile.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_smile.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_smile.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_smile.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_smile.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_smile.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_smile.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_smile.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_1_smile.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_smile.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_smile.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_1_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_1_smile.png"))
 
     image el surprise shirt far:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_surprise.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_surprise.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_surprise.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_surprise.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_surprise.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_surprise.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_surprise.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_surprise.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_surprise.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_surprise.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_surprise.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_surprise.png"))
 
     image el upset shirt far:
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_upset.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_upset.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_upset.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_upset.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_upset.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_alive.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_upset.png"))
         choice:
             ConditionSwitch(
-                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_upset.png"), bkrr_tint["sunset"]),
-                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_upset.png"), bkrr_tint["night"]),
-                True, im.Composite((630, 1080), (0, 0), ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), MOD_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), ES_IMAGES + "sprites/far/el/el_2_upset.png"))
+                "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_upset.png"), bkrr_tint["sunset"]),
+                "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_upset.png"), bkrr_tint["night"]),
+                True, im.Composite((630, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_body.png", (0, 0), BKRR_IMAGES + "sprites/far/el/el_2_shirt_dead.png", (0, 0), BKRR_ES_IMAGES + "sprites/far/el/el_2_upset.png"))
 
 
     ## Спрайты для единичного использования
@@ -3008,28 +3009,28 @@ init 2:
     # Алиса с закрытыми глазами
 
     image dv closed_eyes pioneer2 close = ConditionSwitch(
-        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/dv/dv_3_body.png", (0, 0), ES_IMAGES + "sprites/close/dv/dv_3_pioneer2.png", (0, 0), MOD_IMAGES + "sprites/close/dv/dv_3_closed_eyes.png"), bkrr_tint["sunset"]),
-        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/dv/dv_3_body.png", (0, 0), ES_IMAGES + "sprites/close/dv/dv_3_pioneer2.png", (0, 0), MOD_IMAGES + "sprites/close/dv/dv_3_closed_eyes.png"), bkrr_tint["night"]),
-        True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/dv/dv_3_body.png", (0, 0), ES_IMAGES + "sprites/close/dv/dv_3_pioneer2.png", (0, 0), MOD_IMAGES + "sprites/close/dv/dv_3_closed_eyes.png"))
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/dv/dv_3_body.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/dv/dv_3_pioneer2.png", (0, 0), BKRR_IMAGES + "sprites/close/dv/dv_3_closed_eyes.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/dv/dv_3_body.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/dv/dv_3_pioneer2.png", (0, 0), BKRR_IMAGES + "sprites/close/dv/dv_3_closed_eyes.png"), bkrr_tint["night"]),
+        True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/dv/dv_3_body.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/dv/dv_3_pioneer2.png", (0, 0), BKRR_IMAGES + "sprites/close/dv/dv_3_closed_eyes.png"))
 
     # Злая улыбка Слави
 
     image sl evsmile swim = ConditionSwitch(
-        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/sl/sl_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/sl/sl_2_swim.png", (0, 0), MOD_IMAGES + "sprites/normal/sl/sl_2_evsmile.png"), bkrr_tint["sunset"]),
-        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/sl/sl_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/sl/sl_2_swim.png", (0, 0), MOD_IMAGES + "sprites/normal/sl/sl_2_evsmile.png"), bkrr_tint["night"]),
-        True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/sl/sl_2_body.png", (0, 0), ES_IMAGES + "sprites/normal/sl/sl_2_swim.png", (0, 0), MOD_IMAGES + "sprites/normal/sl/sl_2_evsmile.png"))
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/sl/sl_2_body.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/sl/sl_2_swim.png", (0, 0), BKRR_IMAGES + "sprites/normal/sl/sl_2_evsmile.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/sl/sl_2_body.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/sl/sl_2_swim.png", (0, 0), BKRR_IMAGES + "sprites/normal/sl/sl_2_evsmile.png"), bkrr_tint["night"]),
+        True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/sl/sl_2_body.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/sl/sl_2_swim.png", (0, 0), BKRR_IMAGES + "sprites/normal/sl/sl_2_evsmile.png"))
 
     # Злая улыбка Ульянки
 
     image us evsmile pioneer = ConditionSwitch(
-        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/us/us_1_body.png", (0, 0), ES_IMAGES + "sprites/normal/us/us_1_pioneer.png", (0, 0), MOD_IMAGES + "sprites/normal/us/us_1_evsmile.png"), bkrr_tint["sunset"]),
-        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/us/us_1_body.png", (0, 0), ES_IMAGES + "sprites/normal/us/us_1_pioneer.png", (0, 0), MOD_IMAGES + "sprites/normal/us/us_1_evsmile.png"), bkrr_tint["night"]),
-        True, im.Composite((900, 1080), (0, 0), ES_IMAGES + "sprites/normal/us/us_1_body.png", (0, 0), ES_IMAGES + "sprites/normal/us/us_1_pioneer.png", (0, 0), MOD_IMAGES + "sprites/normal/us/us_1_evsmile.png"))
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/us/us_1_body.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/us/us_1_pioneer.png", (0, 0), BKRR_IMAGES + "sprites/normal/us/us_1_evsmile.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/us/us_1_body.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/us/us_1_pioneer.png", (0, 0), BKRR_IMAGES + "sprites/normal/us/us_1_evsmile.png"), bkrr_tint["night"]),
+        True, im.Composite((900, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/normal/us/us_1_body.png", (0, 0), BKRR_ES_IMAGES + "sprites/normal/us/us_1_pioneer.png", (0, 0), BKRR_IMAGES + "sprites/normal/us/us_1_evsmile.png"))
 
     # Славя купается в озере
 
     image sl d9_swim:
-        im.MatrixColor(MOD_IMAGES + "misc/d9_sl_swim.png", bkrr_tint["sunset"])
+        im.MatrixColor(BKRR_IMAGES + "misc/d9_sl_swim.png", bkrr_tint["sunset"])
         pos(0.85, 0.6)
         anchor(0.5, 0.5)
         zoom 0.59
@@ -3037,25 +3038,25 @@ init 2:
     # Безразличный взгляд Мику
 
     image mi apathy pioneer close = ConditionSwitch(
-        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_pioneer.png", (0, 0), MOD_IMAGES + "sprites/close/mi/mi_3_apathy.png"), bkrr_tint["sunset"]),
-        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_pioneer.png", (0, 0), MOD_IMAGES + "sprites/close/mi/mi_3_apathy.png"), bkrr_tint["night"]),
-        True, im.Composite((1050, 1080), (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_body.png", (0, 0), ES_IMAGES + "sprites/close/mi/mi_3_pioneer.png", (0, 0), MOD_IMAGES + "sprites/close/mi/mi_3_apathy.png"))
+        "persistent.sprite_time == 'sunset'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/mi/mi_3_body.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/mi/mi_3_pioneer.png", (0, 0), BKRR_IMAGES + "sprites/close/mi/mi_3_apathy.png"), bkrr_tint["sunset"]),
+        "persistent.sprite_time == 'night'", im.MatrixColor(im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/mi/mi_3_body.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/mi/mi_3_pioneer.png", (0, 0), BKRR_IMAGES + "sprites/close/mi/mi_3_apathy.png"), bkrr_tint["night"]),
+        True, im.Composite((1050, 1080), (0, 0), BKRR_ES_IMAGES + "sprites/close/mi/mi_3_body.png", (0, 0), BKRR_ES_IMAGES + "sprites/close/mi/mi_3_pioneer.png", (0, 0), BKRR_IMAGES + "sprites/close/mi/mi_3_apathy.png"))
 
     ## Разное
 
     # Кошак Пират
 
-    image cat full = MOD_IMAGES + "misc/cat/cat.png"
-    image cat musclub_1 = MOD_IMAGES + "misc/cat/cat_musclub_1.png"
-    image cat musclub_2 = MOD_IMAGES + "misc/cat/cat_musclub_2.png"
-    image cat washstand = MOD_IMAGES + "misc/cat/cat_washstand.png"
+    image cat full = BKRR_IMAGES + "misc/cat/cat.png"
+    image cat musclub_1 = BKRR_IMAGES + "misc/cat/cat_musclub_1.png"
+    image cat musclub_2 = BKRR_IMAGES + "misc/cat/cat_musclub_2.png"
+    image cat washstand = BKRR_IMAGES + "misc/cat/cat_washstand.png"
 
     # Медальонус
-    image medallion_bkrr = MOD_IMAGES + "misc/medallion.png"
+    image medallion_bkrr = BKRR_IMAGES + "misc/medallion.png"
 
     # Стулья для столовой
 
-    image chair = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(MOD_IMAGES + "misc/chair.png", bkrr_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(MOD_IMAGES + "misc/chair.png", bkrr_tint["night"]), True, MOD_IMAGES + "misc/chair.png")
+    image chair = ConditionSwitch("persistent.sprite_time == 'sunset'", im.MatrixColor(BKRR_IMAGES + "misc/chair.png", bkrr_tint["sunset"]), "persistent.sprite_time == 'night'", im.MatrixColor(BKRR_IMAGES + "misc/chair.png", bkrr_tint["night"]), True, BKRR_IMAGES + "misc/chair.png")
 
     image chair_l:
         "chair"
@@ -3078,9 +3079,9 @@ init 2:
 
     # CG
 
-    image cg catday_uvao_bus = im.Scale(MOD_IMAGES + "cg/catday_uvao_bus.jpg", config.screen_width, 2918)
-    image cg catday_dv_argue = im.MatrixColor(ES_IMAGES + "cg/d5_dv_argue.jpg", im.matrix.brightness(0.15) * im.matrix.contrast(1.2))
-    image cg catday_warp_cat = MOD_IMAGES + "cg/catday_warp_cat.jpg"
+    image cg catday_uvao_bus = im.Scale(BKRR_IMAGES + "cg/catday_uvao_bus.jpg", config.screen_width, 2918)
+    image cg catday_dv_argue = im.MatrixColor(BKRR_ES_IMAGES + "cg/d5_dv_argue.jpg", im.matrix.brightness(0.15) * im.matrix.contrast(1.2))
+    image cg catday_warp_cat = BKRR_IMAGES + "cg/catday_warp_cat.jpg"
 
     # Звуки
 

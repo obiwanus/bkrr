@@ -23,19 +23,19 @@ init 3 python:
 
 init:
 
-    image bg int_bus_people_day_bkrr = MOD_IMAGES + "bg/int_bus_people_day.jpg"
-    image bg ext_bus_stop_night = MOD_IMAGES + "bg/ext_bus_stop_night.jpg"
-    image bg ext_street_night = MOD_IMAGES + "bg/ext_street_night.jpg"
-    image bg int_entrance_day = bkrr_fast_livecomposite(MOD_IMAGES + "misc/int_entrance_day_outside.png", "snow", MOD_IMAGES + "bg/int_entrance_day.png")
-    image bg int_entrance_day_with_cat = bkrr_fast_livecomposite(MOD_IMAGES + "misc/int_entrance_day_outside.png", "snow", MOD_IMAGES + "bg/int_entrance_day.png", MOD_IMAGES + "misc/int_entrance_day_cat.png")
-    image bg int_school_night = MOD_IMAGES + "bg/int_school_night.jpg"
-    image bg int_classroom_night = MOD_IMAGES + "bg/int_classroom_night.jpg"
+    image bg int_bus_people_day_bkrr = BKRR_IMAGES + "bg/int_bus_people_day.jpg"
+    image bg ext_bus_stop_night = BKRR_IMAGES + "bg/ext_bus_stop_night.jpg"
+    image bg ext_street_night = BKRR_IMAGES + "bg/ext_street_night.jpg"
+    image bg int_entrance_day = bkrr_fast_livecomposite(BKRR_IMAGES + "misc/int_entrance_day_outside.png", "snow", BKRR_IMAGES + "bg/int_entrance_day.png")
+    image bg int_entrance_day_with_cat = bkrr_fast_livecomposite(BKRR_IMAGES + "misc/int_entrance_day_outside.png", "snow", BKRR_IMAGES + "bg/int_entrance_day.png", BKRR_IMAGES + "misc/int_entrance_day_cat.png")
+    image bg int_school_night = BKRR_IMAGES + "bg/int_school_night.jpg"
+    image bg int_classroom_night = BKRR_IMAGES + "bg/int_classroom_night.jpg"
 
     # SnowBlossom(img, count=int, border=int, xspeed=tuple, yspeed=tuple, start=int, fast=bool, horizontal=bool)
 
     python:
         def bkrr_skylight(size, color):
-            return MOD_IMAGES + "effects/particles/svet/skylight%s%s.png" % (color, size)
+            return BKRR_IMAGES + "effects/particles/svet/skylight%s%s.png" % (color, size)
 
     image bkrr_epilogue_skylight:
         contains:
@@ -93,20 +93,20 @@ init:
                 linear (time * start_pos) ypos (-0.25 + 1.5 * start_pos) xpos (0.5 - x_deviation + 2 * x_deviation * start_pos)
             repeat
 
-    image mii_snow_close = im.Composite((1050, 1080), (0, 0), MOD_IMAGES + "sprites/close/mii/mii_1_snow.png")
-    image epilogue_falling_star = MOD_IMAGES + "misc/epilogue_falling_star.png"
+    image mii_snow_close = im.Composite((1050, 1080), (0, 0), BKRR_IMAGES + "sprites/close/mii/mii_1_snow.png")
+    image epilogue_falling_star = BKRR_IMAGES + "misc/epilogue_falling_star.png"
     image epilogue_falling_star_star:
-        MOD_IMAGES + "misc/epilogue_falling_star_star.png"
+        BKRR_IMAGES + "misc/epilogue_falling_star_star.png"
         subpixel True
         truecenter
         ease 10.0 rotate 120.0
-    image epilogue_falling_star_tail1 = MOD_IMAGES + "misc/epilogue_falling_star_tail1.png"
-    image epilogue_falling_star_tail2 = MOD_IMAGES + "misc/epilogue_falling_star_tail2.png"
+    image epilogue_falling_star_tail1 = BKRR_IMAGES + "misc/epilogue_falling_star_tail1.png"
+    image epilogue_falling_star_tail2 = BKRR_IMAGES + "misc/epilogue_falling_star_tail2.png"
 
-    image bkrr_snow_layer0_img = MOD_IMAGES + "effects/snow/0.png"
-    image bkrr_snow_layer1_img = MOD_IMAGES + "effects/snow/1.png"
-    image bkrr_snow_layer2_img = MOD_IMAGES + "effects/snow/2.png"
-    image bkrr_snow_layer3_img = MOD_IMAGES + "effects/snow/3.png"
+    image bkrr_snow_layer0_img = BKRR_IMAGES + "effects/snow/0.png"
+    image bkrr_snow_layer1_img = BKRR_IMAGES + "effects/snow/1.png"
+    image bkrr_snow_layer2_img = BKRR_IMAGES + "effects/snow/2.png"
+    image bkrr_snow_layer3_img = BKRR_IMAGES + "effects/snow/3.png"
 
     image bkrr_snow_layer0_anim:
         contains:
@@ -222,7 +222,7 @@ init:
 
     image bkrr_traffic_light:
         contains:
-            MOD_IMAGES + "misc/traffic_light/back_green.png"
+            BKRR_IMAGES + "misc/traffic_light/back_green.png"
             alpha 1.0
             pause 14.5
             ease 0.5 alpha 0.0
@@ -232,7 +232,7 @@ init:
             pause 3.0
             repeat
         contains:
-            MOD_IMAGES + "misc/traffic_light/back_red.png"
+            BKRR_IMAGES + "misc/traffic_light/back_red.png"
             alpha 0.0
             pause 14.5
             ease 0.5 alpha 1.0
@@ -242,7 +242,7 @@ init:
             pause 3.0
             repeat
         contains:
-            MOD_IMAGES + "misc/traffic_light/sml_green.png"
+            BKRR_IMAGES + "misc/traffic_light/sml_green.png"
             alpha 0.0
             pause 25.5
             ease 0.5 alpha 1.0
@@ -251,7 +251,7 @@ init:
             pause 5.0
             repeat
         contains:
-            MOD_IMAGES + "misc/traffic_light/sml_red.png"
+            BKRR_IMAGES + "misc/traffic_light/sml_red.png"
             alpha 1.0
             pause 25.5
             ease 0.5 alpha 0.0
@@ -260,7 +260,7 @@ init:
             pause 5.0
             repeat
         contains:
-            MOD_IMAGES + "misc/traffic_light/big_red.png"
+            BKRR_IMAGES + "misc/traffic_light/big_red.png"
             alpha 0.0
             pause 24.0
             ease 0.5 alpha 1.0
@@ -268,7 +268,7 @@ init:
             ease 0.5 alpha 0.0
             repeat
         contains:
-            MOD_IMAGES + "misc/traffic_light/big_yellow.png"
+            BKRR_IMAGES + "misc/traffic_light/big_yellow.png"
             alpha 0.0
             pause 25.0
             pause 22.0
@@ -277,7 +277,7 @@ init:
             ease 0.5 alpha 0.0
             repeat
         contains:
-            MOD_IMAGES + "misc/traffic_light/big_green.png"
+            BKRR_IMAGES + "misc/traffic_light/big_green.png"
             alpha 1.0
             pause 20.0
             ease 0.2 alpha 0.0
@@ -304,13 +304,13 @@ init:
 
     image cg ep_mi:
         contains:
-            MOD_IMAGES + "cg/ep_mi_background.jpg"
+            BKRR_IMAGES + "cg/ep_mi_background.jpg"
         contains:
             "bkrr_epilogue_skylight_behind"
             truecenter
             alpha 0.7
         contains:
-            MOD_IMAGES + "cg/ep_mi.png"
+            BKRR_IMAGES + "cg/ep_mi.png"
             subpixel True
             truecenter
             zoom 1.3
@@ -320,12 +320,12 @@ init:
             truecenter
             alpha 0.7
 
-    image bkrr_ep_ending_bg = MOD_IMAGES + "cg/epilogue_ending_bg.jpg"
-    image bkrr_ep_ending = MOD_IMAGES + "cg/epilogue_ending.png"
+    image bkrr_ep_ending_bg = BKRR_IMAGES + "cg/epilogue_ending_bg.jpg"
+    image bkrr_ep_ending = BKRR_IMAGES + "cg/epilogue_ending.png"
 
     python:
         for i in range(9):
-            renpy.image("cg bkrr_epilogue_{0}".format(i + 1), MOD_IMAGES + "cg/epilogue_inbus_{0}.jpg".format(i))
+            renpy.image("cg bkrr_epilogue_{0}".format(i + 1), BKRR_IMAGES + "cg/epilogue_inbus_{0}.jpg".format(i))
 
         def bkrr_calendar_sheets(day, month, year, tag):
             from datetime import datetime
@@ -336,22 +336,22 @@ init:
             renpy.with_statement(dspr)
 
     # Календарь
-    image bkrr_calendar = MOD_IMAGES + "misc/calendar/calendar.png"
-    image bkrr_calendar_dec1 = MOD_IMAGES + "misc/calendar/december_1.png"
-    image bkrr_calendar_dec5 = MOD_IMAGES + "misc/calendar/december_5.png"
-    image bkrr_calendar_dec8 = MOD_IMAGES + "misc/calendar/december_8.png"
-    image bkrr_calendar_dec15 = MOD_IMAGES + "misc/calendar/december_15.png"
-    image bkrr_calendar_jan = MOD_IMAGES + "misc/calendar/january_12.png"
-    image bkrr_calendar_feb = MOD_IMAGES + "misc/calendar/february_24.png"
-    image bkrr_calendar_mar = MOD_IMAGES + "misc/calendar/march_3.png"
-    image bkrr_calendar_apr = MOD_IMAGES + "misc/calendar/april_13.png"
-    image bkrr_calendar_may = MOD_IMAGES + "misc/calendar/may_30.png"
-    image bkrr_calendar_jun = MOD_IMAGES + "misc/calendar/june_28.png"
-    image bkrr_calendar_jul = MOD_IMAGES + "misc/calendar/july_18.png"
-    image bkrr_calendar_aug = MOD_IMAGES + "misc/calendar/august_7.png"
-    image bkrr_calendar_sep = MOD_IMAGES + "misc/calendar/september_4.png"
-    image bkrr_calendar_oct = MOD_IMAGES + "misc/calendar/october_31.png"
-    image bkrr_calendar_nov = MOD_IMAGES + "misc/calendar/november_21.png"
+    image bkrr_calendar = BKRR_IMAGES + "misc/calendar/calendar.png"
+    image bkrr_calendar_dec1 = BKRR_IMAGES + "misc/calendar/december_1.png"
+    image bkrr_calendar_dec5 = BKRR_IMAGES + "misc/calendar/december_5.png"
+    image bkrr_calendar_dec8 = BKRR_IMAGES + "misc/calendar/december_8.png"
+    image bkrr_calendar_dec15 = BKRR_IMAGES + "misc/calendar/december_15.png"
+    image bkrr_calendar_jan = BKRR_IMAGES + "misc/calendar/january_12.png"
+    image bkrr_calendar_feb = BKRR_IMAGES + "misc/calendar/february_24.png"
+    image bkrr_calendar_mar = BKRR_IMAGES + "misc/calendar/march_3.png"
+    image bkrr_calendar_apr = BKRR_IMAGES + "misc/calendar/april_13.png"
+    image bkrr_calendar_may = BKRR_IMAGES + "misc/calendar/may_30.png"
+    image bkrr_calendar_jun = BKRR_IMAGES + "misc/calendar/june_28.png"
+    image bkrr_calendar_jul = BKRR_IMAGES + "misc/calendar/july_18.png"
+    image bkrr_calendar_aug = BKRR_IMAGES + "misc/calendar/august_7.png"
+    image bkrr_calendar_sep = BKRR_IMAGES + "misc/calendar/september_4.png"
+    image bkrr_calendar_oct = BKRR_IMAGES + "misc/calendar/october_31.png"
+    image bkrr_calendar_nov = BKRR_IMAGES + "misc/calendar/november_21.png"
 
     transform cal_sheet_right:
         truecenter

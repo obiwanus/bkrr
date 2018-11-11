@@ -7629,18 +7629,26 @@ label bkrr_day19_common:
     "Я посмотрел на вышитых котиков, затем на Мику, всё еще скрытую тенью."
     me "Всё? Звучит заманчиво…"
 
-    show mi normal panties yukata_hair dark with Dissolve(1.0)
+    window hide
+    hide mi with dissolve
+    $ renpy.pause(0.5, hard=True)
+    show mi normal panties yukata_hair dark at cleft with dissolve
     play sound bkrr_sfx_list["yukata_fall"] fadein 2
+    window show
 
     "Вместо ответа Мику сделала что-то с юкатой, ещё секунда, и синяя ткань с мягким шорохом легла на пол."
 
-    show mi normal panties dark with Dissolve(1.0)
+    window hide
+    hide mi with dissolve
+    $ renpy.pause(1.0, hard=True)
+    show mi normal panties dark at cleft with dissolve
+    window show
 
     "Мику несколькими быстрыми движениями распустила волосы и переступила через свою одежду, шагнув в пятно лунного света…"
 
     window hide
     hide mi with dissolve
-    show mi normal panties at center with dissolve
+    show mi normal panties naked close at center with dissolve
     window show
 
     mi "Всё, что захочешь!"
