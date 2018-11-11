@@ -7417,7 +7417,7 @@ label bkrr_day19_common:
 
     window hide
     stop ambience fadeout 2
-    scene bg ext_polyana_night with fade3
+    scene cg d19_final_campfire with fade3
     play ambience ambience_forest_night fadein 2
     play sound_loop sfx_forest_fireplace fadein 3
     play sound_loop2 ambience_medium_crowd_outdoors fadein 3
@@ -7430,11 +7430,9 @@ label bkrr_day19_common:
     "Официоза не хотелось."
     "Пионеры окружили большой костёр, поджаривая на палочках сосиски и куски хлеба, а в кучке прогоревших горячих угольев неподалёку уже томилась картошка."
 
-    # TODO: цг с костром
-    # window hide
-    # $ bkrr_timeskip_short()
-    # scene bg ext_polyana_night with bkrr_timeskip_transition()
-    # window show
+    window hide
+    scene bg ext_polyana_night with fade3
+    window show
 
     "В неторопливых разговорах ни о чём, любовании искрами, летящими в темноту, и бесполезных попытках отогнать комаров прошло с полчаса."
     "Алиса дождалась, пока испечется очередная порция, нетерпеливо, обжигаясь, схватила горячую картофелину, очистила её и откусила кусочек. Распробовав, она скривилась и незаметно выбросила остаток в темноту."

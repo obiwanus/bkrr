@@ -921,6 +921,7 @@ init 2:
             center
 
     image cg d19_slavya_captured = BKRR_IMAGES + "cg/d19_slavya_captured.jpg"
+    image cg d19_final_campfire = BKRR_IMAGES + "cg/d19_final_campfire.jpg"
     image cg final_image = BKRR_IMAGES + "cg/final_image.jpg"
 
     python:
