@@ -1212,7 +1212,7 @@ init 2:
         contains:
             (BKRR_IMAGES + "cg/d14_rocket_2.png")
             ease 15.0 alpha 0.0
-    image cg d15_mi_sleep = im.Scale(BKRR_IMAGES + "cg/d15_mi_sleep.jpg", config.screen_width, config.screen_height)
+    image cg d15_mi_sleep = BKRR_IMAGES + "cg/d15_mi_sleep.jpg"
     image cg d16_catmiku = BKRR_IMAGES + "cg/d16_catmiku.jpg"
     image cg d16_boat_shed = BKRR_IMAGES + "cg/d16_boat_shed.jpg"
     image cg d16_cryptography = BKRR_IMAGES + "cg/d16_cryptography.jpg"
