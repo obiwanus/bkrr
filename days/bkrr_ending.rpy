@@ -3155,22 +3155,28 @@ label bkrr_epilogue_common:
     scene stars:
         subpixel True
         truecenter
+        pause 0.5
         ease 15.0 zoom 1.4 rotate 7.5
         ease 40.0 zoom 1.8 rotate -30
-    with None
+    with dissolve
+
+    $ renpy.pause(1.0, hard=True)
+
     show epilogue_falling_star_tail2:
         truecenter
         pos (0.4, 0.6)
-        ease 2.5 alpha 0.0
+        ease 4.5 alpha 0.0
     show epilogue_falling_star_tail1:
         truecenter
         pos (0.4, 0.6)
-        ease 1.5 alpha 0.0
+        ease 2.5 alpha 0.0
     show epilogue_falling_star_star:
         truecenter
         pos (0.38, 0.615)
         ease 7.0 alpha 0.0
     with bkrr_star_falling_transition
+
+    window show
 
     "Что-то заканчивалось…"
     "Что-то начиналось."
