@@ -7417,7 +7417,7 @@ label bkrr_day19_common:
 
     window hide
     stop ambience fadeout 2
-    scene bg ext_polyana_night with fade3
+    scene cg d19_final_campfire with fade3
     play ambience ambience_forest_night fadein 2
     play sound_loop sfx_forest_fireplace fadein 3
     play sound_loop2 ambience_medium_crowd_outdoors fadein 3
@@ -7430,11 +7430,9 @@ label bkrr_day19_common:
     "Официоза не хотелось."
     "Пионеры окружили большой костёр, поджаривая на палочках сосиски и куски хлеба, а в кучке прогоревших горячих угольев неподалёку уже томилась картошка."
 
-    # TODO: цг с костром
-    # window hide
-    # $ bkrr_timeskip_short()
-    # scene bg ext_polyana_night with bkrr_timeskip_transition()
-    # window show
+    window hide
+    scene bg ext_polyana_night with fade3
+    window show
 
     "В неторопливых разговорах ни о чём, любовании искрами, летящими в темноту, и бесполезных попытках отогнать комаров прошло с полчаса."
     "Алиса дождалась, пока испечётся очередная порция, нетерпеливо, обжигаясь, схватила горячую картофелину, очистила её и откусила кусочек. Распробовав, она скривилась и незаметно выбросила остаток в темноту."
@@ -7629,18 +7627,26 @@ label bkrr_day19_common:
     "Я посмотрел на вышитых котиков, затем на Мику, всё ещё скрытую тенью."
     me "Всё? Звучит заманчиво…"
 
-    show mi normal panties yukata_hair dark with Dissolve(1.0)
+    window hide
+    hide mi with dissolve
+    $ renpy.pause(1.0, hard=True)
+    show mi normal panties yukata_hair dark at cleft with dissolve
     play sound bkrr_sfx_list["yukata_fall"] fadein 2
+    window show
 
     "Вместо ответа Мику сделала что-то с юкатой, ещё секунда, и синяя ткань с мягким шорохом легла на пол."
 
-    show mi normal panties dark with Dissolve(1.0)
+    window hide
+    hide mi with dissolve
+    $ renpy.pause(1.0, hard=True)
+    show mi normal panties dark at cleft with dissolve
+    window show
 
     "Мику несколькими быстрыми движениями распустила волосы и переступила через свою одежду, шагнув в пятно лунного света…"
 
     window hide
     hide mi with dissolve
-    show mi normal panties at center with dissolve
+    show mi normal panties naked close at center with dissolve
     window show
 
     mi "Всё, что захочешь!"
