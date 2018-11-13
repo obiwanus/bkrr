@@ -28,8 +28,25 @@ init:
     image bg ext_street_night = BKRR_IMAGES + "bg/ext_street_night.jpg"
     image bg int_entrance_day = bkrr_fast_livecomposite(BKRR_IMAGES + "misc/int_entrance_day_outside.png", "snow", BKRR_IMAGES + "bg/int_entrance_day.png")
     image bg int_entrance_day_with_cat = bkrr_fast_livecomposite(BKRR_IMAGES + "misc/int_entrance_day_outside.png", "snow", BKRR_IMAGES + "bg/int_entrance_day.png", BKRR_IMAGES + "misc/int_entrance_day_cat.png")
-    image bg int_school_night = BKRR_IMAGES + "bg/int_school_night.jpg"
-    image bg int_classroom_night = BKRR_IMAGES + "bg/int_classroom_night.jpg"
+    image bg int_school_night:
+        contains:
+            BKRR_IMAGES + "bg/int_school_ext.jpg"
+        contains:
+            "snow"
+            zoom 0.7
+            alpha 0.4
+        contains:
+            BKRR_IMAGES + "bg/int_school_night.png"
+
+    image bg int_classroom_night:
+        contains:
+            BKRR_IMAGES + "bg/int_classroom_ext.jpg"
+        contains:
+            "snow"
+            zoom 0.7
+            alpha 0.4
+        contains:
+            BKRR_IMAGES + "bg/int_classroom_night.png"
 
     # SnowBlossom(img, count=int, border=int, xspeed=tuple, yspeed=tuple, start=int, fast=bool, horizontal=bool)
 
