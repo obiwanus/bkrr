@@ -755,6 +755,9 @@ init 2:
     image bg ext_dining_hall_away_day_no_headlamps = bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_dining_hall_away_day.jpg", BKRR_IMAGES  + "misc/headlamps_missing_far.png")
     image bg ext_dining_hall_near_day_no_headlamps = bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_dining_hall_near_day.jpg", BKRR_IMAGES  + "misc/headlamps_missing_close.png")
 
+    image bg ext_beach_night_fire_bkrr = BKRR_IMAGES + "bg/ext_beach_night_fire.jpg"
+    image bg ext_beach_night_fire_done_bkrr = BKRR_IMAGES + "bg/ext_beach_night_fire_done.jpg"
+
     # Концерт
 
     image bg ext_stage_big_day_bkrr = BKRR_IMAGES + "bg/ext_stage_big_day.jpg"

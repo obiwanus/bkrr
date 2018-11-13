@@ -6936,7 +6936,7 @@ label bkrr_day19_common:
 
     window hide
     $ bkrr_timeskip_short()
-    scene bg ext_beach_night with bkrr_timeskip_transition()
+    scene bg ext_beach_night_fire_bkrr with bkrr_timeskip_transition()
     play sound_loop sfx_forest_fireplace fadein 2
     window show
 
@@ -7419,8 +7419,11 @@ label bkrr_day19_common:
     "Она выскользнула из моих рук и сделала несколько шагов по дорожке."
     mi "Догоняй!"
 
+    window hide
     stop sound_loop fadeout 3
     play sound bkrr_sfx_list["psshh"] fadein 1
+    scene bg ext_beach_night_fire_done_bkrr with Dissolve(1.0)
+    window show
 
     "Я аккуратно залил костёр водой из ведра и проверил, чтобы ни один уголёк не светился в темноте.{w} Было бы некрасиво сжечь этот лагерь после всего, что он мне дал."
     mi "Ну, где ты там?"
