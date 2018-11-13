@@ -372,7 +372,8 @@ init python:
         ("bath", u"С лёгким паром!"),
         ("cold", u"Живо в изолятор!"),
         ("bass2", u"Наш басист – молодец!"),
-        ("exactly_what_you_think", u"Именно то, что вы подумали"),
+        ("bass3", u"Басист 80 лвл."),
+        ("exactly_what_you_think", u"Не бу дет. Твёрдо и чётко."),
     )
 
     if not persistent.bkrr_ach:
