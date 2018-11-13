@@ -4900,17 +4900,22 @@ label bkrr_day17_common:
     # - Но если фантазия хорошая и остальное дорисует, то можно.
     #   © Кот Сиргей
 
-    scene cg d17_tmp_sex:
-        zoom 2.0
+    scene cg d17_sex:
         xalign 1.0
         yalign 0.7
-    with bkrr_fade(10.0, "black")
-    scene cg d17_tmp_sex:
+        zoom 2.0
+    show black:
+        alpha 1.0
+    with bkrr_fade(15.0, "black")
+    scene cg d17_sex:
         subpixel True
         zoom 2.0
         xalign 1.0
         yalign 0.7
-        ease 15.0 xalign 0.5
+        ease 15.0 xalign 0.4 zoom 1.0
+    show black:
+        alpha 1.0
+        ease 15.0 alpha 0.85
     $ renpy.pause(15.0)
     scene black with fade2
     stop music fadeout 8

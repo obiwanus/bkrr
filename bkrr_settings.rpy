@@ -1249,12 +1249,7 @@ init 2:
             alpha 0.3
         contains:
             BKRR_IMAGES + "cg/d17_mt_mine.png"
-    image cg d17_tmp_sex:
-        contains:
-            im.Scale(BKRR_IMAGES + "cg/d15_mi_sleep.jpg", config.screen_width, config.screen_height)
-        contains:
-            Solid("#000")
-            alpha 0.90
+    image cg d17_sex = BKRR_IMAGES + "cg/d17_sex.jpg"
     image cg d18_bed_middle = im.Scale(BKRR_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height)
     image cg d18_bed_sleep = bkrr_fast_composite(im.Scale(BKRR_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height), im.Scale(BKRR_IMAGES + "cg/d18_bed_mi_sleep.png", config.screen_width, config.screen_height))
     image cg d18_bed_open = bkrr_fast_composite(im.Scale(BKRR_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height), im.Scale(BKRR_IMAGES + "cg/d18_bed_mi_open.png", config.screen_width, config.screen_height))
