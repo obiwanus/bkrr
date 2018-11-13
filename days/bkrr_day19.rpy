@@ -119,13 +119,17 @@ label bkrr_day19_common:
     me "Рискованно. Будильники у нас долго не живут."
     sl "А я свой и не дала. Зато обещала утром зайти и разбудить."
     mt "Вот и будила бы! Ну и утро…{w} Один орёт, как потерпевший, вторая болтает… Ох…"
+
+    window hide
+    show sl normal sport at cleft with ease
+    show mt sad nightdress at cright with dissolve
+    window show
+
     "Кто-то явно не в духе. Славя повернулась к вожатой."
 
-    show sl normal sport at cleft with ease
+    show sl smile2 sport at cleft with dspr
 
     sl "Доброе утро, Ольга Дмитриевна. Как ваша голова?"
-
-    show mt sad nightdress at cright with dissolve
 
     mt "Всё равно болит. Легла поздно, ещё и бегают тут. Всякие. Спать не дают."
 
@@ -1237,12 +1241,13 @@ label bkrr_day19_common:
 
     "Он полез в шкафчик, протянул мне требуемое."
     sh "Только шторку задёрни, а то зальёшь тут все."
-
-    play sound bkrr_sfx_list["curt1"]
-
     "Я сбросил одежду и с опаской вошёл под деревянную раму. Сорок литров воды над головой не добавляли уверенности.{w} Вроде бы конструкция пока что не собиралась разваливаться, по крайней мере, не сразу."
 
-    play sound_loop sfx_water_sink_stream
+    window hide
+    play sound bkrr_sfx_list["curt1"]
+    $ renpy.pause(1.5, hard=True)
+    play sound_loop sfx_water_sink_stream fadein 2
+    window show
 
     "Я потянул кусок полиэтилена, служащий шторкой, повернул кран и с удовольствием встал под тёплые, почти горячие струи воды.{w} Я не мылся в горячем душе с того дня, как мы пришли из старого лагеря."
     sh "Воду сильно не расходуй! Я тоже хочу ополоснуться."
@@ -2160,7 +2165,7 @@ label bkrr_day19_common:
     dv "Сама знаешь, о чём. В клубе поговорим."
 
     window hide
-    scene bg ext_music_club_sunset_bkrr
+    scene bg ext_music_club_day_bkrr
     show mi normal pioneer at center
     with fade2
     play music music_list["went_fishing_caught_a_girl"] fadein 5
