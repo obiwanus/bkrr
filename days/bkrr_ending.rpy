@@ -386,6 +386,22 @@ init:
             linear 1.5 ypos 1.2
         parallel:
             ease 1.0 alpha 0.0
+    transform cal_sheet_cright:
+        truecenter
+        parallel:
+            ease 2.5 xpos 0.9 rotate -90
+        parallel:
+            linear 1.5 ypos 1.2
+        parallel:
+            ease 1.0 alpha 0.0
+    transform cal_sheet_cleft:
+        truecenter
+        parallel:
+            ease 2.5 xpos 0.1 rotate 90
+        parallel:
+            linear 1.5 ypos 1.2
+        parallel:
+            ease 1.0 alpha 0.0
 
 
 label bkrr_ep_sheets:
@@ -1151,7 +1167,7 @@ label bkrr_epilogue_common:
     me "В моём городе есть такая примета: когда парочка встречается, они пишут свои имена на замке, вешают его куда-нибудь, на мост или на забор, а ключ выбрасывают в воду."
 
     show dv laugh bkrr_sport at cleft
-    show mi sad_smile bkrr_sport at cright
+    show mi upset bkrr_sport at cright
     show us smile sport at center
     with dissolve
 
@@ -1161,7 +1177,7 @@ label bkrr_epilogue_common:
 
     us "К тому, что мы – его гарем, очевидно же."
 
-    show mi upset bkrr_sport at cright with dspr
+    show mi sad_smile bkrr_sport at cright with dspr
 
     mi "Сеня… я пока не готова к такому. Тебе что, мало меня?"
     "Она старательно изображала обиду, но её глаза светились теплом и… {w}любовью?"
@@ -2111,7 +2127,7 @@ label bkrr_epilogue_common:
     show unblink
     with None
 
-    play sound_loop sfx_bus_interior_moving fadein 5
+    play sound_loop sfx_bus_interior_moving fadein 2.5
     stop sound_loop2 fadeout 5
 
     $ renpy.pause(2.5, hard=True)
@@ -2145,10 +2161,11 @@ label bkrr_epilogue_common:
     "Раз – когда ехал сюда. {w}Это она уговаривала меня не волноваться."
     "И второй – во сне. Это была она. {w}Она говорила с той парочкой в квартире, так похожей на мою, но не моей…"
     me "Можно её вернуть?"
-    "Моя собеседница молча посмотрела в окно, затем покачала головой."
 
+    stop sound_loop fadeout 15
     play music music_list["into_the_unknown"] fadein 10
 
+    "Моя собеседница молча посмотрела в окно, затем покачала головой."
     ml "Ничего не выйдет. Это дорога в один конец. Тот, второй, смог вернуться… но у него была эта его кошка, нам такой вариант не пойдёт."
     me "Ты знаешь про них?"
     ml "Ты не единственный, кого они использовали… И по чьим головам прошлись."
@@ -2224,7 +2241,6 @@ label bkrr_epilogue_common:
 
     window hide
     stop music fadeout 7
-    stop sound_loop fadeout 7
     scene white with Dissolve(2.0)
     $ renpy.pause(1.0, hard=True)
     window show
@@ -2264,6 +2280,8 @@ label bkrr_epilogue_common:
     dr "Давай, просыпайся. Вон твой дом."
 
     window hide
+
+    $ renpy.pause(1.0, hard=True)
 
     play sound bkrr_sfx_list["cardoor"]
     $ bkrr_set_volume("music", 0.3)
@@ -2373,13 +2391,9 @@ label bkrr_epilogue_common:
 
     window hide
 
-    stop music fadeout 15
-
-    stop sound_loop fadeout 5
+    stop music fadeout 10
 
     scene bg int_entrance_day with fade3
-
-    play ambience ambience_catacombs_stones fadein 5
 
     window show
 
@@ -2407,13 +2421,14 @@ label bkrr_epilogue_common:
     "Это оказался маленький чёрный котёнок в белых носочках. {w}Опять подбросили."
     "Каждый месяц в подъезде появлялись подкидыши, а потом куда-то исчезали. Никогда не задумывался, куда."
 
+    play music bkrr_music_list["i_am_a_cat"] fadein 5
     scene bg int_entrance_day_with_cat with dissolve
 
     "Запах мусорника ел глаза не хуже иприта, но я задержал дыхание, нагнулся и взял котёнка в руку."
 
     play sound bkrr_sfx_list["meow6"]
 
-    "Он почти поместился в ладони. Почувствовав тепло, он обхватил лапками мою руку и снова тихо запищал, словно прося не оставлять его здесь, на холодной и тёмной лестнице."
+    "Почувствовав тепло, он обхватил лапками мою руку и снова тихо запищал, словно прося не оставлять его здесь, на холодной и тёмной лестнице."
     "Раньше я просто отнёс бы его вниз. {w}Самое большее – вынес бы что-то съедобное."
     "Но сейчас…"
     "Он смотрел на меня с какой-то обречённой готовностью."
@@ -2423,6 +2438,7 @@ label bkrr_epilogue_common:
 
     window hide
 
+    stop music fadeout 7
     scene bg int_entrance_day with dissolve
 
     window show
@@ -2439,12 +2455,11 @@ label bkrr_epilogue_common:
 
     window hide
 
-    stop ambience fadeout 2
+    stop sound_loop fadeout 2
 
     scene bg semen_room_half_clean_bkrr with fade2
 
     play sound sfx_close_door_1
-
     play sound_loop sfx_street_traffic_outside fadein 5
 
     window show
@@ -2557,10 +2572,10 @@ label bkrr_epilogue_common:
         cal_sheet_left
     show bkrr_calendar_oct:
         pause 1.65
-        cal_sheet_right
+        cal_sheet_cright
     show bkrr_calendar_sep:
         pause 1.5
-        cal_sheet_left
+        cal_sheet_cleft
     show bkrr_calendar_aug:
         pause 1.35
         cal_sheet_right
@@ -2581,10 +2596,10 @@ label bkrr_epilogue_common:
         cal_sheet_left
     show bkrr_calendar_feb:
         pause 0.45
-        cal_sheet_right
+        cal_sheet_cright
     show bkrr_calendar_jan:
         pause 0.3
-        cal_sheet_left
+        cal_sheet_cleft
     show bkrr_calendar_dec8:
         pause 0.15
         cal_sheet_right
@@ -2655,13 +2670,21 @@ label bkrr_epilogue_common:
     "Наверное, пришла пора прекращать мечтать о несбыточном, спускаться на землю и думать о будущем."
     "Кот – это, конечно, хорошо, но всё чаще я ловил себя на том, что хочется, чтобы кто-то ещё встречал меня дома и радовался моему приходу."
     "Именно такие мысли одолевали меня, когда я читал газету в тихий зимний день."
+
+    play sound_loop2 bkrr_sfx_list["purr_loop"] fadein 5
+
     "Отпуск зимой – не весело, но всё-таки отдых."
     "Выросший до неприличных размеров Пират уютно урчал у меня на коленях, согревая их. На столе исходила паром чашка отличного чая, и впереди оставалось целых четыре дня полной свободы."
     "По радио в очередной раз звучала реклама вечера джаза в клубе неподалёку.{w} А что? Не худший способ провести вечер. Если, конечно, я заставлю себя выйти из тёплой квартиры на мороз."
 
     play sound sfx_door_bell
+    stop sound_loop2 fadeout 1
 
-    "Идиллию прервал звонок в дверь. Я согнал кота с рук и пошёл открывать."
+    "Идиллию прервал звонок в дверь."
+
+    play sound2 bkrr_sfx_list["meow1"] fadein 3
+
+    "Я согнал кота с рук и пошёл открывать."
 
     window hide
 
@@ -2673,15 +2696,7 @@ label bkrr_epilogue_common:
 
     $ renpy.pause(1.5)
 
-    stop ambience fadeout 0.5
-
-    $ bkrr_set_time("prologue", "day")
-
-    scene bg int_entrance_day
-    show sta surp outside at center
-    with dissolve
-
-    play ambience ambience_catacombs_stones fadein 3
+    show sta surp outside at center with dissolve
 
     play music bkrr_music_list["hide_and_seek"] fadein 5
 
@@ -2691,48 +2706,40 @@ label bkrr_epilogue_common:
     "На пороге стояла моя племянница. Сводная сестра и её муж частенько просили меня посидеть с ней."
     "Я не отказывался, она чем-то напоминала мне Ульяну, хотя разрушений от неё было куда меньше."
 
-    show sta smile outside at center with dspr
+    window hide
+    scene bg semen_room_clean_bkrr
+    show sta smile inside at cright
+    with fade2
+    window show
 
     sta "Дядя Семён, а какие у тебя планы на вечер?"
-
-    window hide
-
-    window hide
-
-    stop ambience fadeout 2
-
-    scene bg semen_room_clean_bkrr with fade2
-
-    $ bkrr_set_time("prologue")
-
-    play sound_loop sfx_street_traffic_outside fadein 5
 
     window show
 
     me "Самое лучшее в отпуске – это никаких планов.{w} А что ты хотела? Опять на каток?"
     "Племяшка села на диван и, болтая ногами, начала рассказывать."
 
-    show sta normal inside at center with dspr
+    show sta normal inside at cright with dspr
 
     sta "Не-е-е! Тут такое дело. Папа с мамой заняты, они на сутках, а кому-то надо на родительское собрание сходить. {w}Можешь выручить?"
     me "Ага. Заняты, говоришь? И это никак не связано с тем, что кто-то написал баллончиком «Оксана – дура» на стене школы, да? Да и в табеле у тебя не фонтан. Куда только родители смотрят? Может, им звякнуть? Приставку отберут на недельку, интернета лишат…"
 
-    show sta sad inside at center with dspr
+    show sta sad inside at cright with dspr
 
     "Племяшка пожала плечами и фыркнула."
 
-    show sta dontlike inside at center with dspr
+    show sta dontlike inside at cright with dspr
 
     sta "Дядя Семён, ты сейчас нудишь, прямо как моя бабушка. Я думала, что на тебя можно положиться, а ты вот какой."
     me "Ладно, прикрою тебя перед родителями. Для чего ещё существуют дяди. Когда оно?"
 
-    show sta surp inside at center with dspr
+    show sta surp inside at cright with dspr
 
     sta "Через час."
     "Я глянул в зеркало. Моя пятидневная небритость уже заслужила право называться щетиной, но в целом можно показаться на люди…"
     me "Ты бы ещё позже сказала. Чего тянула до последнего?"
 
-    show sta normal inside at center with dspr
+    show sta normal inside at cright with dspr
 
     sta "Да я это… пешком пройтись решила. Но мы же успеем?"
 
@@ -2747,13 +2754,13 @@ label bkrr_epilogue_common:
     "Быстро приведя себя в порядок, я повязал галстук и остался доволен результатом."
     "Удивительно полезный кусок материи. Без него – холостяцкая щетина. С ним – стильная небритость."
 
-    show sta normal outside at center with dissolve
+    show sta normal outside at cright with dissolve
 
     me "Успеем."
 
     window hide
 
-    show sta surp outside at center with dspr
+    show sta surp outside at cright with dspr
 
     $ renpy.pause(1.0, hard=True)
 
@@ -2766,10 +2773,10 @@ label bkrr_epilogue_common:
     stop ambience fadeout 3
     $ renpy.pause(1.0, hard=True)
     scene bg ext_street_night
+    show bkrr_traffic_light
     show snow
     with fade2
     $ renpy.pause(1.0, hard=True)
-    play ambience ambience_catacombs_stones fadein 3
     play sound_loop ambience_medium_crowd_indoors_1 fadein 3
     scene bg int_school_night with fade2
 
@@ -2880,8 +2887,6 @@ label bkrr_epilogue_common:
     me "Извините, можно?"
 
     window hide
-
-    stop ambience fadeout 3
 
     play sound2 bkrr_sfx_list["whiteout2"]
 
@@ -3207,13 +3212,16 @@ label bkrr_epilogue_common:
     scene black with Dissolve(10)
 
     stop music fadeout 10
-    $ renpy.pause(10)
+    $ renpy.pause(12, hard=True)
 
     $ persistent.bkrr_check["credits4"] = True
 
     jump bkrr_credits
 
 label bkrr_credits:
+
+    stop ambience fadeout 3
+    stop sound_loop fadeout 3
 
     $ renpy.movie_cutscene(bkrr_video_list["credits"], delay=193.0)
 
