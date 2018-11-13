@@ -2319,7 +2319,7 @@ init 2:
                 'normal': 1, 'pain': 1, 'sad': 1, 'shy': 1, 'smile': 1,
             },
             'tr': {
-                'normal': 1, 'sad': 1, 'smile': 1, 'surp': 1, 'upset': 1, 'laugh': 1, 'normal2': 2, 'sad2': 2, 'smile2': 2, 'surp2': 2, 'upset2': 2, 'laugh2': 2,
+                'normal': 1, 'sad': 1, 'smile': 1, 'surp': 1, 'upset': 1, 'laugh': 1, 'bagel': 1, 'normal2': 2, 'sad2': 2, 'smile2': 2, 'surp2': 2, 'upset2': 2, 'laugh2': 2,
             },
             'el': {
                 'sad_vedro': 2, 'grin_fingal': 1, 'normal_fingal': 1, 'smile_fingal': 1, 'sad_fingal': 2, 'scared_fingal': 2, 'shocked_fingal': 2, 'surprise_fingal': 2, 'upset_fingal': 2, 'angry_fingal': 3, 'laugh_fingal': 3, 'serious_fingal': 3,
