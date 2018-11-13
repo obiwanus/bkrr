@@ -5587,7 +5587,7 @@ label bkrr_day19_common:
 
     scene bg ext_backstage_big_day_night_noplank
     show dv smile pirate_with_hat at fright
-    show us smile pirate at fleft
+    show us smile pirate patch at fleft
     show mi normal pirate close at center
     with None
     window show
@@ -5616,7 +5616,7 @@ label bkrr_day19_common:
     th "Откуда она знает эти слова?"
 
     show dv smile pirate_with_hat
-    show us grin pirate
+    show us grin pirate patch
     with dspr
 
     us "Не выйдет. Сильно у него лицо порядочное. На нем явно видны уроки скрипки, мамины борщи и коллекционирование гербариев.{w} Может, ему фингал поставить? По-быстрому… Давай, ты же умеешь."
@@ -5630,7 +5630,7 @@ label bkrr_day19_common:
     dv "Видишь? Отказываются. Усы что ли подрисовать… Ну не то, не то…{w} Ладно. Просто делай такое же лицо, как обычно когда играешь. Будешь туповатым пиратом."
     me "Чего-о-о-о?"
 
-    show us laugh pirate with dspr
+    show us laugh pirate patch with dspr
 
     us "А ты не замечал? Ты когда увлекаешься, губы поджимаешь и складываешь трубочкой… Толик тоже так делал."
 
@@ -5641,7 +5641,7 @@ label bkrr_day19_common:
     mi "Милый, прости… Правда.{w} Я тебе не говорила, чтобы ты не расстраивался и во время игры о посторонних вещах не думал… Но действительно складываешь."
 
     show mi upset pirate close
-    show us normal pirate
+    show us normal pirate patch
     with dspr
 
     "Она прислушалась."
@@ -5656,7 +5656,7 @@ label bkrr_day19_common:
     "Алиса мечтательно улыбнулась."
     dv "Хотя некоторые народы очень даже ничего. Симпатичные."
 
-    show us smile pirate with dspr
+    show us smile pirate patch with dspr
 
     us "Алиска, вернись на землю. Замки висят?"
 
@@ -5677,7 +5677,7 @@ label bkrr_day19_common:
     hide dv
     hide mi
     with dissolve
-    show us grin pirate close with dissolve
+    show us grin pirate patch close with dissolve
     window show
 
     us "Сенька, протяни руки… не то протянешь ноги!"
@@ -5707,7 +5707,7 @@ label bkrr_day19_common:
     $ renpy.pause(1.0, hard=True)
     show mi upset pirate far at left
     show dv smile pirate_with_hat far at right
-    show us sad pirate close at center
+    show us sad pirate patch close at center
     with dissolve
     window show
 
@@ -5718,7 +5718,7 @@ label bkrr_day19_common:
 
     mi "Тридцать секунд. По-моему, миленько…"
 
-    show us grin pirate close with dspr
+    show us grin pirate patch close with dspr
 
     us "А, ну да. Нашла кого спрашивать. Алиска, как тебе?"
 
@@ -5727,7 +5727,7 @@ label bkrr_day19_common:
     dv "Нормально! Кто его будет рассматривать, когда на сцене буду я!"
     "Она эффектно отставила зад и подбоченилась."
 
-    show us dontlike pirate close with dspr
+    show us dontlike pirate patch close with dspr
 
     us "Ой, кто тут у нас зазвездился-то? А?"
     "Она подтянула кожаные бриджи. Те плотно обрисовали стройные но уже отлично сформировавшиеся бёдра."
@@ -5749,7 +5749,7 @@ label bkrr_day19_common:
 
     mi "Девочки, Семён… Пора!"
 
-    show us grin pirate at right with dissolve
+    show us grin pirate patch at right with dissolve
 
     us "На абордаж! Кошки к борту! Пленных не брать!"
 
@@ -6142,14 +6142,14 @@ label bkrr_day19_common:
 
     mi "Знаешь, когда мне что-то интересно, я уверена что это интересно всем, а ведь у тебя могут быть другие интересы, просто если ты решишь продолжать, то я буду рада, ведь мы сможем вместе репетировать и… и вообще…"
 
-    show us grin pirate at right with easeinbottom
+    show us grin pirate patch at right with easeinbottom
 
     us "Если он откажется, я ему нос откушу!"
     mi "Нельзя! Мы же не панк-рок играть собираемся, где музыкант без носа будет хорошо выглядеть, да, Алиса?{w} Алиса?…"
 
     window hide
     show mi normal pirate
-    show us sad pirate
+    show us sad pirate patch
     with dspr
     play sound sfx_open_door_strong fadein 1
     $ renpy.pause(1.0, hard=True)
@@ -6166,7 +6166,7 @@ label bkrr_day19_common:
 
     window hide
     show dv grin pirate_with_hat at fleft
-    show us normal pirate at fright
+    show us normal pirate patch at fright
     show mi normal pirate at cright
     with ease
     show mt angry pioneer at cleft with dissolve
@@ -6194,7 +6194,7 @@ label bkrr_day19_common:
     mt "Это вам не Генду взрывать, это скандал районного масштаба. Да ещё и перед иностранными гостями.{w} Плакала моя категория, плакала премия за месяц, уволят к чёртовой бабушке."
     "Ульяна шмыгнула носом и протянула:"
 
-    show us sad pirate with dspr
+    show us sad pirate patch with dspr
 
     us "Извините пожалуйста. Мы хотели, чтобы праздник…{w} Ну… Повеселее сделать."
     mt "Ухохочешься просто."
@@ -6225,7 +6225,7 @@ label bkrr_day19_common:
     sl "Эй… А я?"
     "Ульяна обернулась и посмотрела на ступеньки, ведущие на сцену."
 
-    show us normal pirate at cleft with dissolve
+    show us normal pirate patch at cleft with dissolve
 
     us "Славку-то кто от столба отвяжет?{w} Я морские узлы понавязала… «Рыбацкий шкот» называется. Или «штык»… Он обычному пионеру не по зубам."
     "Алиса неуверенно предположила:"
@@ -6250,7 +6250,7 @@ label bkrr_day19_common:
 
     dv "Ну её. Зато концерт вышел настоящий. Живой."
 
-    show us smile pirate at right behind mi with dissolve
+    show us smile pirate patch at right behind mi with dissolve
 
     us "Я так понимаю, что исключение из пионеров тоже будет настоящее и живое."
 
@@ -6263,7 +6263,7 @@ label bkrr_day19_common:
 
     dv "Наверное, что они дружно встанут начнут размахивать руками в такт. И подпевать."
 
-    show us grin pirate with dspr
+    show us grin pirate patch with dspr
 
     us "Надо было подождать, пока вожатые и гости поужинают!{w} Потом они и под «Айрон Мейден» подпевали бы. После водочки-то и шашлыка."
 
@@ -6282,7 +6282,7 @@ label bkrr_day19_common:
 
     mi "Интересно, что теперь будет? Как Ольга Дмитриевна будет выкручиваться?"
 
-    show us smile pirate with dspr
+    show us smile pirate patch with dspr
 
     us "Не наша забота. Наша забота – пойти под домашний арест в музклубе!"
 

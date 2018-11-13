@@ -2462,8 +2462,10 @@ init 2:
         make_sprites_for('us', 'night_shirt', ['mod:night_shirt', 'es:<emotion>'])
         make_sprites_for('us', 'night_shirt', ['mod:night_shirt', 'mod:<emotion>'], emotions=['yawn'])
         make_sprites_for('us', 'backpack sport', ['es:body', 'es:sport', 'mod:backpack', 'es:<emotion>'], distances=['normal'])
-        make_sprites_for('us', 'pirate', ['mod:pibody', 'es:<emotion>', 'mod:pibody2'])
-        make_sprites_for('us', 'pirate', ['mod:pibody', 'mod:<emotion>', 'mod:pibody2'], emotions=['normal_dontlike_bkrr', 'evsmile'])
+        make_sprites_for('us', 'pirate patch', ['mod:pibody', 'es:<emotion>', 'mod:pibody2'])
+        make_sprites_for('us', 'pirate patch', ['mod:pibody', 'mod:<emotion>', 'mod:pibody2'], emotions=['normal_dontlike_bkrr', 'evsmile'])
+        make_sprites_for('us', 'pirate', ['mod:pibody', 'es:<emotion>', 'mod:pibody3'])
+        make_sprites_for('us', 'pirate', ['mod:pibody', 'mod:<emotion>', 'mod:pibody3'], emotions=['normal_dontlike_bkrr', 'evsmile'])
 
         make_sprites_for('uv', 'pioneer', ['mod:pibody', 'mod:<emotion>', 'mod:pan'])
 
