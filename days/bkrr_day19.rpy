@@ -4027,17 +4027,17 @@ label bkrr_day19_common:
     "Лена неторопливо водила фломастером по коже и под её умелыми руками на коже рыжей возникал рисунок. Две скрещённые розы."
     "Алиса увидела меня первой и виновато улыбнулась, словно я застал её за чем-то стыдным."
 
-    show dv surprise swim at cleft with dissolve
+    show dv surprise swim rose at cleft with dissolve
 
     dv "Семён?"
     me "Что, решила сделать татуировку?"
 
-    show dv sad swim with dspr
+    show dv sad swim rose with dspr
 
     dv "Тьфу на тебя. Я в юридический поступать хочу, туда с татуировками не берут."
     me "Тогда что это?"
 
-    show dv shy swim with dspr
+    show dv shy swim rose with dspr
 
     dv "Это… Захотелось! Вот."
     "Всё-таки, Алиса совершенно не умеет врать."
@@ -4050,7 +4050,7 @@ label bkrr_day19_common:
     dv "Тихо! Ни слова больше!"
     me "Тайны, секреты… Вот возьму, и обижусь."
 
-    show dv normal swim with dspr
+    show dv normal swim rose with dspr
 
     dv "Всё, всё. Не надо драмы. Ты вообще чего хотел?"
 
@@ -4060,7 +4060,7 @@ label bkrr_day19_common:
     dv "Бывало!"
     un "Не дружи с ними. Они тебе врали в глаза."
 
-    show dv angry swim with dspr
+    show dv angry swim rose with dspr
 
     dv "Чего-о-о-о?"
 
@@ -4068,12 +4068,12 @@ label bkrr_day19_common:
 
     un "Ну что Семён может делать в домике своей девушки?"
 
-    show dv smile swim with dspr
+    show dv smile swim rose with dspr
 
     dv "И правда… что это я. Только её здесь нет."
     me "Да я уже как-то и сам заметил. А где она?"
 
-    show dv normal swim with dspr
+    show dv normal swim rose with dspr
 
     dv "Я даже не знаю… Тебе волноваться вредно. Да, Лен? Жара, давление поднимется…"
 
@@ -4082,7 +4082,7 @@ label bkrr_day19_common:
     un "Да… Пожалуй лучше ему не говорить."
     me "{b}Где!{w=0.5} Моя!{w=0.5} Мику?{/b}"
 
-    show dv smile swim with dspr
+    show dv smile swim rose with dspr
 
     dv "Да успокойся ты так. В душе она. Сейчас придёт.{w} Не шуми, и так голова болит."
     un "Все так же плохо переносишь жару?"
@@ -4095,11 +4095,11 @@ label bkrr_day19_common:
     "Она протянула Алисе белый прямоугольник."
     me "А что это?"
 
-    show dv laugh swim with dspr
+    show dv laugh swim rose with dspr
 
     dv "Волшебные таблетки для повышения музыкального мастерства!{w} Только тебе не дам, ты столько всё равно не съешь. Тебе ведро надо."
 
-    show dv smile swim with dspr
+    show dv smile swim rose with dspr
 
     me "Что, правда есть такие таблетки?"
 
@@ -4107,11 +4107,11 @@ label bkrr_day19_common:
 
     un "Она шутит. Обычный «Цитрамон».{w} У Алисы всегда головные боли, когда погода меняется, вот и сейчас… Да и нога наверное крутит, да?"
 
-    show dv sad swim with dspr
+    show dv sad swim rose with dspr
 
     "Алиса кивнула, потом смутилась."
 
-    show dv shy swim with dspr
+    show dv shy swim rose with dspr
 
     dv "Лена, ну давай не будем ему мои болячки перечислять, ладно?"
 
@@ -4203,12 +4203,12 @@ label bkrr_day19_common:
     un "Это называется «брандвахта». Дебаркадер это просто причал такой, чтобы на пароход пересаживаться, а брандвахта – плавучий дом.{w} Мы сегодня с Ольгой Дмитриевной и Антоном Ивановичем ходили на пристань, он нам рассказывал, как жил в таком доме."
 
     hide un with dissolve
-    show dv guilty swim with dspr
+    show dv guilty swim rose with dspr
 
     "Алиса посмотрела на неё, хотела что-то сказать… И смолчала."
     "Только согласно кивнула."
 
-    show dv normal swim with dspr
+    show dv normal swim rose with dspr
 
     dv "Ладно, как скажешь."
     "Я ожидал какой-нибудь колкости про старичков с бородами или ещё чего-то в этом же духе, но Алиса сдержалась."
@@ -4221,13 +4221,13 @@ label bkrr_day19_common:
 
     mi "Раз мы поделали свои дела, я предлагаю собраться в клубе и в последний раз прогнать все мелодии.{w} Кто за? Кто против? Где Ульяна?"
 
-    show dv smile swim with dspr
+    show dv smile swim rose with dspr
 
     dv "Не знаю, она вроде на пристани осталась, хотела искупаться."
     me "Последний раз когда я её видел, она двигалась вниз по течению с бешеной скоростью. Наверное, решила сбежать вплавь."
     us_outside "И ничего я не сбежала! Он врёт!"
 
-    show dv sad swim with dspr
+    show dv sad swim rose with dspr
 
     "Алиса зыркнула на меня, потом на Мику и зловещим голосом предложила мне отвернуться, чтобы она могла одеться."
     me "Но я ведь видел тебя в купальнике…"
