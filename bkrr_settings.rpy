@@ -699,7 +699,7 @@ init 2:
         align(0.82, 0.7)
         zoom 1.17
 
-    image bg ext_no_bus_horse = bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_no_bus.jpg", BKRR_IMAGES + "misc/ext_no_bus_horse.png")
+    image bg ext_no_bus_horse = BKRR_IMAGES + "bg/ext_no_bus_horse.jpg"
 
     image bg ext_meadow_day = BKRR_IMAGES + "bg/ext_meadow_day.jpg"
 
