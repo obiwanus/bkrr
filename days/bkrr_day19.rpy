@@ -5945,6 +5945,7 @@ label bkrr_day19_common:
     "Короткий замах…"
 
     window hide
+    $ renpy.pause(1.0, hard=True)
     play sound bkrr_sfx_list["axe"]
     show black:
         alpha 0.0
@@ -6021,7 +6022,7 @@ label bkrr_day19_common:
     "Раз уж выпал шанс сыграть перед залом, она решила показать всё, что может."
     "Рыжая трясла волосами, рвала струны медиатором, бегала пальцами по грифу с невероятной скоростью, а под конец выдала такое сложное и быстрое соло, что я только рот открыл."
     "Попутно она носилась по сцене, пинала усилители, мачту и концертные колонки, подпрыгивала и вообще вела себя, как Марти МакФлай на школьных танцах."
-    "С той только разницей, что веса ей не хватало и вместо того, чтобы опрокинуть колонку, она отлетала от неё сама. Не упала, и то хорошо. Мачта тоже поскрипывала, но держалась."
+    "С той только разницей, что веса ей не хватало, и вместо того, чтобы опрокинуть колонку, она отлетала от неё сама. Не упала, и то хорошо. Мачта тоже поскрипывала, но держалась."
 
     window hide
     stop music fadeout 7
@@ -6116,12 +6117,14 @@ label bkrr_day19_common:
         ease 1.0 alpha 0.0
     with vpunch
     play sound2 bkrr_sfx_list["applause3"] fadein 2
+    play sound3 bkrr_sfx_list["applause4"] fadein 5
 
     "Описав красивую дугу, она рухнула как раз позади Алисы. Та взвизгнула, подпрыгнув чуть ли не на метр, но тут же притворилась, что всё так и задумано."
     "Зрители были в восторге. Этот концерт точно должен был запомниться им надолго."
     "Ольга Дмитриевна нашла шпингалет, который запирал дверцу на сцену, поднялась к нам и теперь говорила в микрофон что-то про сюрприз, яркое завершение концерта, явно стараясь создать впечатление, что всё идёт по плану."
 
     window hide
+    stop sound3 fadeout 5
     scene bg ext_backstage_big_day_night_noplank with fade2
     stop sound_loop fadeout 3
     play music music_list["raindrops"] fadein 5
@@ -6316,7 +6319,7 @@ label bkrr_day19_common:
     window hide
     play sound sfx_click_2
     scene bg int_music_club_mattresses_night_lights_on with dspr
-    $ bkrr_set_time("sunset")
+    $ bkrr_set_time("sunset", "day")
     $ renpy.pause(1.0, hard=True)
     show us smile pirate far with dissolve
     window show
@@ -7424,11 +7427,12 @@ label bkrr_day19_common:
     show mi normal yukata close with dissolve
 
     mi "Нас ждут. Костёр, картошка печёная, прощальная речь… Ты что, хочешь это всё пропустить, только чтобы побыть со мной?"
-    me "Конечно! Ты мне гораздо важнее костра. Насчёт картошки не уверен, она вкусненькая…{w} Ай!"
-    "Мику шутя ткнула меня в живот."
+    me "Конечно! Ты мне гораздо важнее костра.{w} Насчёт картошки не уверен, она вкусненькая…"
 
     show mi smile yukata close with dspr
 
+    me "Ай!"
+    "Мику шутя ткнула меня в живот."
     mi "Пойдём. Ночь длинная, мы всё успеем!."
 
     hide mi with dissolve
@@ -7437,6 +7441,7 @@ label bkrr_day19_common:
     mi "Догоняй!"
 
     window hide
+    $ renpy.pause(1.0, hard=True)
     stop sound_loop fadeout 3
     play sound bkrr_sfx_list["psshh"] fadein 1
     scene bg ext_beach_night_fire_done_bkrr with Dissolve(1.0)

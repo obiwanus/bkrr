@@ -241,6 +241,9 @@ init python:
         "voice":[u"Голос", "#E1DD7D"],  # нейтральный голос
         "zal":[u"Зал", "#E1DD7D"],
         "ml":[u"Голос", "#E1DD7D"],
+        # эпилог
+        "dr": [u"Водитель", "#B3B3B3"],
+        "sta": [u"Стася", "#AAF"],
     }
 
     renpy.image("bkrr_radio_icon", im.FactorScale(BKRR_IMAGES + "ui/dialogue_box/radio_icon.png", 0.051))
@@ -2302,6 +2305,9 @@ init 2:
             'mi': {
                 'cry': 1, 'dontlike': 1, 'laugh': 1, 'shocked': 1, 'scared': 1, 'shy': 1, 'surprise': 1, 'cry_smile': 2, 'grin': 2, 'happy': 2, 'sad': 2, 'sad_smile': 2, 'smile': 2, 'angry': 3, 'normal': 3, 'rage': 3, 'serious': 3, 'upset': 3,
             },
+            'mii': {
+                'laugh': 1, 'normal': 1, 'smile': 1, 'surp': 1, 'cry_smile': 1,
+            },
             'ant': {
                 'normal': 1, 'serious': 1, 'smile': 1, 'surprise': 1,
             },
@@ -2326,6 +2332,9 @@ init 2:
             'uv': {
                 'pidontlike': 1, 'pirage': 1, 'pisad': 1, 'pishocked': 1, 'pinormal': 2, 'pismile': 2, 'pigrin': 3, 'pilaugh': 3, 'pisurprise2': 3, 'piguilty': 4, 'pisurprise': 4, 'piupset': 4,
             },
+            'sta': {
+                'dontlike': 1, 'normal': 1, 'sad': 1, 'scared': 1, 'smile': 1, 'surp': 1,
+            },
         }
 
         distance_to_position = {
@@ -2345,6 +2354,15 @@ init 2:
                     "persistent.sprite_time == 'night'", im.MatrixColor(composite_image, bkrr_tint["night"]),
                     True, composite_image,
                 )
+            )
+
+        def _miku_epilogue_sprite(full_sprite_name, composite_image):
+            """
+            Более естественная Мика на эпилог
+            """
+            renpy.image(
+                full_sprite_name,
+                im.MatrixColor(composite_image, im.matrix.tint(0.73, 0.88, 0.95))
             )
 
         def _sepia_sprite(full_sprite_name, composite_image):
@@ -2506,6 +2524,13 @@ init 2:
         make_sprites_for('mi', 'civil', ['mod:civil', 'es:<emotion>'])
         make_sprites_for('mi', 'civil', ['mod:civil', 'mod:<emotion>'], emotions=['sad_smile'])
         make_sprites_for('mi', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['sad_smile'])
+
+        make_sprites_for('mii', 'inside', ['mod:inside', 'mod:<emotion>'])
+        make_sprites_for('mii', 'outside', ['mod:outside', 'mod:<emotion>'], sprite_define_func=_miku_epilogue_sprite)
+        make_sprites_for('mii', 'outside snow', ['mod:outside', 'mod:snow', 'mod:<emotion>'], sprite_define_func=_miku_epilogue_sprite)
+
+        make_sprites_for('sta', 'inside', ['mod:inside', 'mod:<emotion>'])
+        make_sprites_for('sta', 'outside', ['mod:outside', 'mod:<emotion>'])
 
         # Эл с фингалом
         make_sprites_for('el', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'])
@@ -3076,6 +3101,404 @@ init 2:
         "chair"
         right
         yalign 0.0
+
+    ## Эпилог
+
+    image bg int_bus_people_day_bkrr = BKRR_IMAGES + "bg/int_bus_people_day.jpg"
+    image bg ext_bus_stop_night = BKRR_IMAGES + "bg/ext_bus_stop_night.jpg"
+    image bg ext_street_night = BKRR_IMAGES + "bg/ext_street_night.jpg"
+    image bg int_entrance_day:
+        contains:
+            BKRR_IMAGES + "misc/int_entrance_day_outside.png"
+        contains:
+            "snow"
+            zoom 0.6
+        contains:
+             BKRR_IMAGES + "bg/int_entrance_day.png"
+    image bg int_entrance_day_with_cat:
+        contains:
+            BKRR_IMAGES + "misc/int_entrance_day_outside.png"
+        contains:
+            "snow"
+            zoom 0.6
+        contains:
+             BKRR_IMAGES + "bg/int_entrance_day.png"
+        contains:
+            BKRR_IMAGES + "misc/int_entrance_day_cat.png"
+    image bg int_school_night:
+        contains:
+            BKRR_IMAGES + "bg/int_school_ext.jpg"
+        contains:
+            "snow"
+            zoom 0.7
+            alpha 0.4
+        contains:
+            BKRR_IMAGES + "bg/int_school_night.png"
+
+    image bg int_classroom_night:
+        contains:
+            BKRR_IMAGES + "bg/int_classroom_ext.jpg"
+        contains:
+            "snow"
+            zoom 0.7
+            alpha 0.4
+        contains:
+            BKRR_IMAGES + "bg/int_classroom_night.png"
+
+    # SnowBlossom(img, count=int, border=int, xspeed=tuple, yspeed=tuple, start=int, fast=bool, horizontal=bool)
+
+    python:
+        def bkrr_skylight(size, color):
+            return BKRR_IMAGES + "effects/particles/svet/skylight%s%s.png" % (color, size)
+
+    image bkrr_epilogue_skylight:
+        contains:
+            SnowBlossom(bkrr_skylight(1, 1), 5, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(1, 2), 5, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(1, 3), 5, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(1, 4), 5, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(2, 1), 6, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(2, 2), 6, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(2, 3), 6, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(2, 4), 6, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(3, 1), 8, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(3, 2), 8, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(3, 3), 8, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(3, 4), 8, 50, (15, 30), (-50, -300), fast=True)
+
+    image bkrr_epilogue_skylight_behind:
+        contains:
+            SnowBlossom(bkrr_skylight(3, 1), 3, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(3, 2), 3, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(3, 3), 3, 50, (15, 30), (-50, -300), fast=True)
+        contains:
+            SnowBlossom(bkrr_skylight(3, 4), 3, 50, (15, 30), (-50, -300), fast=True)
+
+    transform bkrr_snow_movement(time, start_pos, x_deviation=0.05, pause_time=0.0, fade_time=1.0):
+        truecenter
+        ypos -0.25 + 1.5 * start_pos  # стартовая позиция в процентах
+        xpos 0.5 - x_deviation + 2 * x_deviation * start_pos  # стартовая девиация
+        pause pause_time
+        block:
+            block:
+                alpha 1.0
+                parallel:
+                    linear (time * (1 - start_pos)) ypos 1.1 xpos (0.5 + x_deviation)
+                parallel:
+                    pause ((time * (1 - start_pos)) - fade_time)
+                    linear fade_time alpha 0.0
+            block:
+                ypos -0.25
+                xpos 0.5 - x_deviation
+                alpha 1.0
+                linear (time * start_pos) ypos (-0.25 + 1.5 * start_pos) xpos (0.5 - x_deviation + 2 * x_deviation * start_pos)
+            repeat
+
+    image mii_snow_close = im.Composite((1050, 1080), (0, 0), BKRR_IMAGES + "sprites/close/mii/mii_1_snow.png")
+    image epilogue_falling_star = BKRR_IMAGES + "misc/epilogue_falling_star.png"
+    image epilogue_falling_star_star:
+        BKRR_IMAGES + "misc/epilogue_falling_star_star.png"
+        subpixel True
+        truecenter
+        ease 10.0 rotate 120.0
+    image epilogue_falling_star_tail1 = BKRR_IMAGES + "misc/epilogue_falling_star_tail1.png"
+    image epilogue_falling_star_tail2 = BKRR_IMAGES + "misc/epilogue_falling_star_tail2.png"
+
+    image bkrr_snow_layer0_img = BKRR_IMAGES + "effects/snow/0.png"
+    image bkrr_snow_layer1_img = BKRR_IMAGES + "effects/snow/1.png"
+    image bkrr_snow_layer2_img = BKRR_IMAGES + "effects/snow/2.png"
+    image bkrr_snow_layer3_img = BKRR_IMAGES + "effects/snow/3.png"
+
+    image bkrr_snow_layer0_anim:
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(8, 0.0, -0.05)
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(8, 0.25, -0.05)
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(8, 0.5, -0.05)
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(8, 0.75, -0.05)
+
+    image bkrr_snow_layer1_anim:
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(10, 0.0, 0.05, pause_time=0.5)
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(10, 0.25, 0.05, pause_time=0.5)
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(10, 0.5, 0.05, pause_time=0.5)
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(10, 0.75, 0.05, pause_time=0.5)
+
+    image bkrr_snow_layer2_anim:
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(15, 0.0, -0.05, pause_time=1.0)
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(15, 0.25, -0.05, pause_time=1.0)
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(15, 0.5, -0.05, pause_time=1.0)
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(15, 0.75, -0.05, pause_time=1.0)
+
+    image bkrr_snow_layer3_anim:
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(20, 0.0, 0.07)
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(20, 0.25, 0.07)
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(20, 0.5, 0.07)
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(20, 0.75, 0.07)
+
+    image bkrr_snow_layer0_anim_quick:
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(3, 0.0, -0.03)
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(3, 0.25, -0.03)
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(3, 0.5, -0.03)
+        contains:
+            "bkrr_snow_layer0_img"
+            bkrr_snow_movement(3, 0.75, -0.03)
+
+    image bkrr_snow_layer1_anim_quick:
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(4, 0.0, 0.05)
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(4, 0.25, 0.05)
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(4, 0.5, 0.05)
+        contains:
+            "bkrr_snow_layer1_img"
+            bkrr_snow_movement(4, 0.75, 0.05)
+
+    image bkrr_snow_layer2_anim_quick:
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(5, 0.0, -0.05)
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(5, 0.25, -0.05)
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(5, 0.5, -0.05)
+        contains:
+            "bkrr_snow_layer2_img"
+            bkrr_snow_movement(5, 0.75, -0.05)
+
+    image bkrr_snow_layer3_anim_quick:
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(5, 0.0, 0.03)
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(5, 0.25, 0.03)
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(5, 0.5, 0.03)
+        contains:
+            "bkrr_snow_layer3_img"
+            bkrr_snow_movement(5, 0.75, 0.03)
+
+    image bkrr_traffic_light:
+        contains:
+            BKRR_IMAGES + "misc/traffic_light/back_green.png"
+            alpha 1.0
+            pause 14.5
+            ease 0.5 alpha 0.0
+            pause 10.0
+            pause 22.0
+            ease 0.5 alpha 1.0
+            pause 3.0
+            repeat
+        contains:
+            BKRR_IMAGES + "misc/traffic_light/back_red.png"
+            alpha 0.0
+            pause 14.5
+            ease 0.5 alpha 1.0
+            pause 10.0
+            pause 22.0
+            ease 0.5 alpha 0.0
+            pause 3.0
+            repeat
+        contains:
+            BKRR_IMAGES + "misc/traffic_light/sml_green.png"
+            alpha 0.0
+            pause 25.5
+            ease 0.5 alpha 1.0
+            pause 19.0
+            ease 0.5 alpha 0.0
+            pause 5.0
+            repeat
+        contains:
+            BKRR_IMAGES + "misc/traffic_light/sml_red.png"
+            alpha 1.0
+            pause 25.5
+            ease 0.5 alpha 0.0
+            pause 19.0
+            ease 0.5 alpha 1.0
+            pause 5.0
+            repeat
+        contains:
+            BKRR_IMAGES + "misc/traffic_light/big_red.png"
+            alpha 0.0
+            pause 24.0
+            ease 0.5 alpha 1.0
+            pause 25.0
+            ease 0.5 alpha 0.0
+            repeat
+        contains:
+            BKRR_IMAGES + "misc/traffic_light/big_yellow.png"
+            alpha 0.0
+            pause 25.0
+            pause 22.0
+            ease 0.5 alpha 1.0
+            pause 2.0
+            ease 0.5 alpha 0.0
+            repeat
+        contains:
+            BKRR_IMAGES + "misc/traffic_light/big_green.png"
+            alpha 1.0
+            pause 20.0
+            ease 0.2 alpha 0.0
+            pause 0.3
+            ease 0.2 alpha 1.0
+            pause 0.3
+            ease 0.2 alpha 0.0
+            pause 0.3
+            ease 0.2 alpha 1.0
+            pause 0.3
+            ease 0.2 alpha 0.0
+            pause 0.3
+            ease 0.2 alpha 1.0
+            pause 0.3
+            ease 0.2 alpha 0.0
+            pause 0.3
+            ease 0.2 alpha 1.0
+            pause 0.3
+            ease 0.5 alpha 0.0
+            pause 25.0
+            ease 0.5 alpha 1.0
+            repeat
+
+
+    image cg ep_mi:
+        contains:
+            BKRR_IMAGES + "cg/ep_mi_background.jpg"
+        contains:
+            "bkrr_epilogue_skylight_behind"
+            truecenter
+            alpha 0.7
+        contains:
+            BKRR_IMAGES + "cg/ep_mi.png"
+            subpixel True
+            truecenter
+            zoom 1.3
+            ease 15.0 zoom 1.0
+        contains:
+            "bkrr_epilogue_skylight"
+            truecenter
+            alpha 0.7
+
+    image bkrr_ep_ending_bg = BKRR_IMAGES + "cg/epilogue_ending_bg.jpg"
+    image bkrr_ep_ending = BKRR_IMAGES + "cg/epilogue_ending.png"
+
+    python:
+        for i in range(9):
+            renpy.image("cg bkrr_epilogue_{0}".format(i + 1), BKRR_IMAGES + "cg/epilogue_inbus_{0}.jpg".format(i))
+
+        def bkrr_calendar_sheets(day, month, year, tag):
+            from datetime import datetime
+            weekday = datetime.strptime("{0}/{1}/{2}".format(day, month, year), "%d/%m/%Y")
+            months = [u"Январь", u"Февраль", u"Март", u"Апрель", u"Май", u"Июнь", u"Июль", u"Август", u"Сентябрь", u"Октябрь", u"Ноябрь", u"Декабрь"]
+            days = [u"Понедельник", u"Вторник", u"Среда", u"Четверг", u"Пятница", u"Суббота", u"Воскресенье"]
+            renpy.show("bkrr_calendar_sheet", what=LiveComposite((362, 445), (0, 0), bkrr_ui["img"]["day_no"], (0.2, 0.28), Text(day, style="bkrr_service2", kerning=2.5, size=72, color="#000" if weekday.weekday() < 5 else "#A00"), (0.47, 0.32), Text(year, style="bkrr_service2", kerning=3.0, size=28, color="#000"), (0.47, 0.42), Text(months[int(month[1])-1 if month.startswith("0") else int(month)-1], style="bkrr_service2", bold=False, kerning=1.2, size=24, color="#000"), (0.22, 0.62), Text(days[weekday.weekday()], style="bkrr_service2", bold=False, kerning=1.25, size=28, color="#000" if weekday.weekday() < 5 else "#A00")), tag=tag, at_list=[truecenter])
+            renpy.with_statement(dspr)
+
+    # Календарь
+    image bkrr_calendar = BKRR_IMAGES + "misc/calendar/calendar.png"
+    image bkrr_calendar_dec1 = BKRR_IMAGES + "misc/calendar/december_1.png"
+    image bkrr_calendar_dec5 = BKRR_IMAGES + "misc/calendar/december_5.png"
+    image bkrr_calendar_dec8 = BKRR_IMAGES + "misc/calendar/december_8.png"
+    image bkrr_calendar_dec15 = BKRR_IMAGES + "misc/calendar/december_15.png"
+    image bkrr_calendar_jan = BKRR_IMAGES + "misc/calendar/january_12.png"
+    image bkrr_calendar_feb = BKRR_IMAGES + "misc/calendar/february_24.png"
+    image bkrr_calendar_mar = BKRR_IMAGES + "misc/calendar/march_3.png"
+    image bkrr_calendar_apr = BKRR_IMAGES + "misc/calendar/april_13.png"
+    image bkrr_calendar_may = BKRR_IMAGES + "misc/calendar/may_30.png"
+    image bkrr_calendar_jun = BKRR_IMAGES + "misc/calendar/june_28.png"
+    image bkrr_calendar_jul = BKRR_IMAGES + "misc/calendar/july_18.png"
+    image bkrr_calendar_aug = BKRR_IMAGES + "misc/calendar/august_7.png"
+    image bkrr_calendar_sep = BKRR_IMAGES + "misc/calendar/september_4.png"
+    image bkrr_calendar_oct = BKRR_IMAGES + "misc/calendar/october_31.png"
+    image bkrr_calendar_nov = BKRR_IMAGES + "misc/calendar/november_21.png"
+
+    transform cal_sheet_right:
+        truecenter
+        parallel:
+            ease 2.5 xpos 1.3 rotate -90
+        parallel:
+            linear 1.5 ypos 1.2
+        parallel:
+            ease 1.0 alpha 0.0
+    transform cal_sheet_left:
+        truecenter
+        parallel:
+            ease 2.5 xpos -0.3 rotate 90
+        parallel:
+            linear 1.5 ypos 1.2
+        parallel:
+            ease 1.0 alpha 0.0
+    transform cal_sheet_cright:
+        truecenter
+        parallel:
+            ease 2.5 xpos 0.9 rotate -90
+        parallel:
+            linear 1.5 ypos 1.2
+        parallel:
+            ease 1.0 alpha 0.0
+    transform cal_sheet_cleft:
+        truecenter
+        parallel:
+            ease 2.5 xpos 0.1 rotate 90
+        parallel:
+            linear 1.5 ypos 1.2
+        parallel:
+            ease 1.0 alpha 0.0
 
     ##    Бонусные эпизоды. Параметры и ресурсы    ##
 
