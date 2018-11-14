@@ -918,7 +918,7 @@ init 2:
             "dv smile pirate_with_hat"
             fright
         contains:
-            "us smile pirate"
+            "us smile pirate patch"
             fleft
         contains:
             "mi normal pirate close"
