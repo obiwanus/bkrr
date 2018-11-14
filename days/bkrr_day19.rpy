@@ -287,6 +287,7 @@ label bkrr_day19_common:
     window hide
     hide nt with dissolve
     $ renpy.pause(1.0, hard=True)
+    $ bkrr_get_item("healing_potion")
     window show
 
     "Она протянула мне литровую банку мутноватой жидкости с плавающими в ней кусочками укропа и ещё какими-то штуками."

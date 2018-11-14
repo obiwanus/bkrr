@@ -767,6 +767,11 @@ label bkrr_day16_common:
     show sl smile dress at cright with dspr
 
     sl "Конечно."
+
+    window hide
+    $ bkrr_get_item("roses")
+    window show
+
     "Славя выбрала мне три самых красивых цветка, все на длинных стеблях."
 
     show sl tender dress at cright with dspr
