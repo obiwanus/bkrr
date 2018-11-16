@@ -2246,7 +2246,7 @@ init 1:
 
         bkrr_circlein_transition = ImageDissolve(BKRR_IMAGES + "transitions/circle.png", 0.5, ramplen=5, reverse = True, alpha=True)
         bkrr_circleout_transition = ImageDissolve(BKRR_IMAGES + "transitions/circle.png", 0.5, ramplen=5, reverse = False, alpha=True)
-        bkrr_star_falling_transition = ImageDissolve(BKRR_IMAGES + "transitions/star_falling.png", 0.5, ramplen=5, reverse = False, alpha=True)
+        bkrr_star_falling_transition = ImageDissolve(BKRR_IMAGES + "transitions/star_falling.png", 1.0, ramplen=5, reverse = False, alpha=True)
 
         bkrr_blindstoleft_transition = ImageDissolve(BKRR_IMAGES + "transitions/blinds_h.png", 1.0, ramplen=25, reverse = False, alpha=True)
         bkrr_blindstoright_transition = ImageDissolve(BKRR_IMAGES + "transitions/blinds_h.png", 1.0, ramplen=25, reverse = True, alpha=True)

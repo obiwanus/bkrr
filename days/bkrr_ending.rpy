@@ -2601,9 +2601,11 @@ label bkrr_epilogue_common:
     $ bkrr_set_volume("sound", 0.5)
     $ bkrr_set_volume("sound_loop", 0.1)
     $ bkrr_set_volume("sound_loop2", 0.3)
+    $ bkrr_set_volume("sound_loop3", 0.2)
 
     play ambience ambience_cold_wind_loop fadein 3
     play sound_loop bkrr_sfx_list["traffic_outside"] fadein 3
+    play sound_loop3 bkrr_sfx_list["snegostup"] fadein 3
     # Прелоад новой эмоции
     show mii cry_smile outside far:
         alpha 0.0
@@ -2636,6 +2638,7 @@ label bkrr_epilogue_common:
     "Она улыбнулась… той самой улыбкой…"
     "Я думал, что уже разучился волноваться, как мальчишка, но сейчас воспоминания, казалось бы надёжно упрятанные в дальний уголок памяти, снова вырвались наружу."
 
+    stop sound_loop3 fadeout 10
     show bkrr_snow_layer3_anim behind mii:
         alpha 0.0
         ease 4.0 alpha 1.0
@@ -2779,15 +2782,15 @@ label bkrr_epilogue_common:
     show epilogue_falling_star_tail2:
         truecenter
         pos (0.4, 0.6)
-        ease 4.5 alpha 0.0
+        ease 5.5 alpha 0.0
     show epilogue_falling_star_tail1:
         truecenter
         pos (0.4, 0.6)
-        ease 2.5 alpha 0.0
+        ease 3.5 alpha 0.0
     show epilogue_falling_star_star:
         truecenter
         pos (0.38, 0.615)
-        ease 7.0 alpha 0.0
+        ease 8.0 alpha 0.0
     with bkrr_star_falling_transition
 
     window show
