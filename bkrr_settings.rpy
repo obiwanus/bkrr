@@ -583,20 +583,20 @@ init 2:
     image bg int_infirmary_night = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night/stuff.png")
 
     image bg int_infirmary_day_guitar = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/day/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/day/guitar.png", BKRR_IMAGES + "bg/int_infirmary/day/stuff.png")
-    image bg int_infirmary_sunset_guitar = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/sunset/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/sunset/guitar.png", BKRR_IMAGES + "bg/int_infirmary/sunset/stuff.png")
-    image bg int_infirmary_night_guitar = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night/guitar.png", BKRR_IMAGES + "bg/int_infirmary/night/stuff.png")
+    image bg int_infirmary_sunset_guitar = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/sunset/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/sunset/stuff.png", BKRR_IMAGES + "bg/int_infirmary/sunset/guitar.png")
+    image bg int_infirmary_night_guitar = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night/stuff.png", BKRR_IMAGES + "bg/int_infirmary/night/guitar.png")
     image bg int_infirmary_night_v3 = BKRR_IMAGES + "bg/int_infirmary/night_lights/bg.jpg"
-    image bg int_infirmary_night_guitar_v3 = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night_lights/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night_lights/guitar.png", BKRR_IMAGES + "bg/int_infirmary/night_lights/stuff.png")
+    image bg int_infirmary_night_guitar_v3 = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night_lights/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night_lights/stuff.png", BKRR_IMAGES + "bg/int_infirmary/night_lights/guitar.png")
 
     image bg int_infirmary_day_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/day/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/day/food.png", BKRR_IMAGES + "bg/int_infirmary/day/stuff.png")
     image bg int_infirmary_sunset_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/sunset/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/sunset/food.png", BKRR_IMAGES + "bg/int_infirmary/sunset/stuff.png")
     image bg int_infirmary_night_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night/food.png", BKRR_IMAGES + "bg/int_infirmary/night/stuff.png")
     image bg int_infirmary_night_food_v3 = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night_lights/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night_lights/food.png", BKRR_IMAGES + "bg/int_infirmary/night_lights/stuff.png")
 
-    image bg int_infirmary_day_guitar_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/day/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/day/guitar.png", BKRR_IMAGES + "bg/int_infirmary/day/food.png", BKRR_IMAGES + "bg/int_infirmary/day/stuff.png")
-    image bg int_infirmary_sunset_guitar_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/sunset/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/sunset/guitar.png", BKRR_IMAGES + "bg/int_infirmary/sunset/food.png", BKRR_IMAGES + "bg/int_infirmary/sunset/stuff.png")
-    image bg int_infirmary_night_guitar_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night/guitar.png", BKRR_IMAGES + "bg/int_infirmary/night/food.png", BKRR_IMAGES + "bg/int_infirmary/night/stuff.png")
-    image bg int_infirmary_night_guitar_food_v3 = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night_lights/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night_lights/guitar.png", BKRR_IMAGES + "bg/int_infirmary/night_lights/food.png", BKRR_IMAGES + "bg/int_infirmary/night_lights/stuff.png")
+    image bg int_infirmary_day_guitar_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/day/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/day/food.png", BKRR_IMAGES + "bg/int_infirmary/day/stuff.png", BKRR_IMAGES + "bg/int_infirmary/day/guitar.png",)
+    image bg int_infirmary_sunset_guitar_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/sunset/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/sunset/food.png", BKRR_IMAGES + "bg/int_infirmary/sunset/stuff.png", BKRR_IMAGES + "bg/int_infirmary/sunset/guitar.png")
+    image bg int_infirmary_night_guitar_food = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night/food.png", BKRR_IMAGES + "bg/int_infirmary/night/stuff.png", BKRR_IMAGES + "bg/int_infirmary/night/guitar.png")
+    image bg int_infirmary_night_guitar_food_v3 = bkrr_fast_composite(BKRR_IMAGES + "bg/int_infirmary/night_lights/bg.jpg", BKRR_IMAGES + "bg/int_infirmary/night_lights/food.png", BKRR_IMAGES + "bg/int_infirmary/night_lights/stuff.png", BKRR_IMAGES + "bg/int_infirmary/night_lights/guitar.png")
 
     image bg ext_path3_day_bkrr = BKRR_IMAGES + "bg/ext_path3_day.jpg"
 
@@ -929,7 +929,6 @@ init 2:
 
     image cg d19_slavya_captured = BKRR_IMAGES + "cg/d19_slavya_captured.jpg"
     image cg d19_final_campfire = BKRR_IMAGES + "cg/d19_final_campfire.jpg"
-    image cg final_image = BKRR_IMAGES + "cg/final_image.jpg"
 
     python:
         def bkrr_imagelist_anim(img_list, pause=0.5, transition=None):
@@ -1287,6 +1286,7 @@ init 2:
         contains:
             "mi surprise pioneer"
             right
+    image cg d18_ulyana_molotok = BKRR_IMAGES + "cg/d18_ulyana_molotok.png"
     image cg d18_sunset_original_mi = BKRR_IMAGES + "cg/d18_sunset_original_mi.jpg"
 
     image cg d19_uv_escape:
@@ -3104,6 +3104,7 @@ init 2:
 
     ## Эпилог
 
+    image bg int_house_of_un_day_no_lena = BKRR_IMAGES + "bg/int_house_of_un_day_no_lena.jpg"
     image bg int_bus_people_day_bkrr = BKRR_IMAGES + "bg/int_bus_people_day.jpg"
     image bg ext_bus_stop_night = BKRR_IMAGES + "bg/ext_bus_stop_night.jpg"
     image bg ext_street_night = BKRR_IMAGES + "bg/ext_street_night.jpg"

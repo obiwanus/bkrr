@@ -964,7 +964,7 @@ label bkrr_epilogue_common:
 
     play sound sfx_open_door_1
 
-    scene bg int_house_of_un_day with dissolve
+    scene bg int_house_of_un_day_no_lena with dissolve
 
     play ambience ambience_int_cabin_day fadein 3
 
