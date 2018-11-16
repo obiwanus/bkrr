@@ -18,8 +18,9 @@ init python:
 
     # Возможные пути к графическим ресурсам для совместимости с обеими версиями
 
+    BKRR_ROOT_DIR = "mods/bkrr/"  # для стима будет просто "bkrr/"
     BKRR_ES_IMAGES = "images/" if config.version == "1.2" else "images/1080/"
-    BKRR_IMAGES = "mods/bkrr/images/"
+    BKRR_IMAGES = BKRR_ROOT_DIR + "images/"
 
     # Функция, составляющая словарь ссылок на файлы в определённой директории
 
@@ -128,9 +129,9 @@ init python:
     # Звуковые элементы меню
 
     bkrr_ui["sound"] = {
-        "paper":"mods/bkrr/sound/ui/paper.ogg",
-        "plate_stop":"mods/bkrr/sound/ui/plate_stop.ogg",
-        "meow":"mods/bkrr/sound/sfx/meow4.ogg"
+        "paper": BKRR_ROOT_DIR + "sound/ui/paper.ogg",
+        "plate_stop": BKRR_ROOT_DIR + "sound/ui/plate_stop.ogg",
+        "meow": BKRR_ROOT_DIR + "sound/sfx/meow4.ogg"
     }
 
     # Ссылки на страницы мода
@@ -432,23 +433,23 @@ init 2:
 
     ##    Звуки    ##
 
-    $ bkrr_sfx_list = bkrr_form_files_list("mods/bkrr/sound/sfx/")
-    $ bkrr_ambience_list = bkrr_form_files_list("mods/bkrr/sound/ambience/")
-    $ bkrr_music_list = bkrr_form_files_list("mods/bkrr/sound/music/")
+    $ bkrr_sfx_list = bkrr_form_files_list(BKRR_ROOT_DIR + "sound/sfx/")
+    $ bkrr_ambience_list = bkrr_form_files_list(BKRR_ROOT_DIR + "sound/ambience/")
+    $ bkrr_music_list = bkrr_form_files_list(BKRR_ROOT_DIR + "sound/music/")
 
     ##    Видео    ##
 
     $ bkrr_video_list = {
-        "intro":"mods/bkrr/video/intro.webm",
-        "credits":"mods/bkrr/video/credits.webm",
-        "black_credits":"mods/bkrr/video/black_credits.webm",
-        "ep1end":"mods/bkrr/video/ep1end.webm",
-        "ep2end":"mods/bkrr/video/ep2end.webm",
-        "ep3end":"mods/bkrr/video/ep3end.webm",
+        "intro":BKRR_ROOT_DIR + "video/intro.webm",
+        "credits":BKRR_ROOT_DIR + "video/credits.webm",
+        "black_credits":BKRR_ROOT_DIR + "video/black_credits.webm",
+        "ep1end":BKRR_ROOT_DIR + "video/ep1end.webm",
+        "ep2end":BKRR_ROOT_DIR + "video/ep2end.webm",
+        "ep3end":BKRR_ROOT_DIR + "video/ep3end.webm",
     }
 
-    $ bkrr_video_list["backdrop"] = {dn:("mods/bkrr/video/backdrop_day" + str(dn) + ".webm") for dn in range(4, 20)}
-    $ bkrr_video_list["backdrop"]["epilogue"] = "mods/bkrr/video/backdrop_epilogue.webm"
+    $ bkrr_video_list["backdrop"] = {dn:(BKRR_ROOT_DIR + "video/backdrop_day" + str(dn) + ".webm") for dn in range(4, 20)}
+    $ bkrr_video_list["backdrop"]["epilogue"] = BKRR_ROOT_DIR + "video/backdrop_epilogue.webm"
 
     ##    Логотип    ##
 
@@ -1611,7 +1612,7 @@ init 1:
     # Стиль текста для "служебных" сообщений
 
     $ style.bkrr_service = Style(style.default)
-    $ style.bkrr_service.font = "mods/bkrr/fonts/Balloon_XBd.ttf"
+    $ style.bkrr_service.font = BKRR_ROOT_DIR + "fonts/Balloon_XBd.ttf"
     $ style.bkrr_service.color = "#FFF"
     $ style.bkrr_service.drop_shadow = (2, 2)
     $ style.bkrr_service.drop_shadow_color = "#222"
@@ -1624,7 +1625,7 @@ init 1:
     $ bkrr_ending_message = u"Продолжение следует…"
 
     $ style.bkrr_service2 = Style(style.bkrr_service)
-    $ style.bkrr_service2.font = "mods/bkrr/fonts/capitalist.ttf"
+    $ style.bkrr_service2.font = BKRR_ROOT_DIR + "fonts/capitalist.ttf"
     $ style.bkrr_service2.color = "#FCF3EC"
     $ style.bkrr_service2.drop_shadow = [(1, 1), (1, 1), (1, 1), (1, 1)]
     $ style.bkrr_service2.drop_shadow_color = "#47240A"
@@ -3514,8 +3515,8 @@ init 2:
 
     # Музыка
 
-    $ bkrr_music_list["i_am_a_cat"] = "mods/bkrr/sound/music/i_am_a_cat.ogg"
+    $ bkrr_music_list["i_am_a_cat"] = BKRR_ROOT_DIR + "sound/music/i_am_a_cat.ogg"
 
     # Видео
 
-    $ bkrr_video_list["catday_ending"] = "mods/bkrr/video/catday_ending.webm"
+    $ bkrr_video_list["catday_ending"] = BKRR_ROOT_DIR + "video/catday_ending.webm"
