@@ -748,11 +748,7 @@ init 2:
     image bkrr_claws = BKRR_IMAGES + "misc/claws.png"
     image bg int_music_club_mattresses_night_closed_piano = bkrr_fast_composite(BKRR_IMAGES + "bg/int_music_club_mattresses_night.jpg", BKRR_IMAGES + "misc/int_music_club_mattresses_night_closed_piano.png")
     image bkrr_uv_piano = BKRR_IMAGES + "misc/uv_piano.png"
-    image bkrr_uv_mattress:
-        contains:
-            "bkrr_uv_piano"
-            truecenter
-            pos (0.78, 0.67)
+    image bkrr_uv_mattress = BKRR_IMAGES + "misc/uv_mattress.png"
 
     image bg ext_dining_hall_away_sunset_no_headlamps = bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_dining_hall_away_sunset.jpg", BKRR_IMAGES  + "misc/headlamps_missing_far.png")
     image bg ext_dining_hall_near_sunset_no_headlamps = bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_dining_hall_near_sunset.jpg", BKRR_IMAGES  + "misc/headlamps_missing_close_sunset.png")
