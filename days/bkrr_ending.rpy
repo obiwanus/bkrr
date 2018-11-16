@@ -1975,7 +1975,7 @@ label bkrr_epilogue_common:
 
     stop music fadeout 10
 
-    scene bg int_entrance_day with fade3
+    scene bg int_entrance_bkrr with fade3
 
     window show
 
@@ -2004,7 +2004,7 @@ label bkrr_epilogue_common:
     "Иногда в подъезде появлялись подкидыши, а потом куда-то исчезали. Никогда не задумывался, куда."
 
     play music bkrr_music_list["i_am_a_cat"] fadein 5
-    scene bg int_entrance_day_with_cat with dissolve
+    scene bg int_entrance_bkrr_with_cat with dissolve
 
     "Запах мусорника жёг глаза не хуже иприта, но я задержал дыхание, нагнулся и взял котёнка в руку."
 
@@ -2021,7 +2021,7 @@ label bkrr_epilogue_common:
     window hide
 
     stop music fadeout 7
-    scene bg int_entrance_day with dissolve
+    scene bg int_entrance_bkrr with dissolve
 
     window show
 

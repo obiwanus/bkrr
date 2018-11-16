@@ -3104,24 +3104,24 @@ init 2:
     image bg int_bus_people_day_bkrr = BKRR_IMAGES + "bg/int_bus_people_day.jpg"
     image bg ext_bus_stop_night = BKRR_IMAGES + "bg/ext_bus_stop_night.jpg"
     image bg ext_street_night = BKRR_IMAGES + "bg/ext_street_night.jpg"
-    image bg int_entrance_day:
+    image bg int_entrance_bkrr:
         contains:
-            BKRR_IMAGES + "misc/int_entrance_day_outside.png"
-        contains:
-            "snow"
-            zoom 0.6
-        contains:
-             BKRR_IMAGES + "bg/int_entrance_day.png"
-    image bg int_entrance_day_with_cat:
-        contains:
-            BKRR_IMAGES + "misc/int_entrance_day_outside.png"
+            BKRR_IMAGES + "bg/int_entrance_outside.jpg"
         contains:
             "snow"
             zoom 0.6
         contains:
-             BKRR_IMAGES + "bg/int_entrance_day.png"
+             BKRR_IMAGES + "bg/int_entrance.png"
+    image bg int_entrance_bkrr_with_cat:
         contains:
-            BKRR_IMAGES + "misc/int_entrance_day_cat.png"
+            BKRR_IMAGES + "bg/int_entrance_outside.jpg"
+        contains:
+            "snow"
+            zoom 0.6
+        contains:
+             BKRR_IMAGES + "bg/int_entrance.png"
+        contains:
+            BKRR_IMAGES + "bg/int_entrance_cat.png"
     image bg int_school_night:
         contains:
             BKRR_IMAGES + "bg/int_school_ext.jpg"
