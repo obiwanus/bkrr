@@ -1370,8 +1370,7 @@ label bkrr_day17_common:
 
     show chair_c:
         chair_move_sd
-    show mt angry pioneer:
-        center
+    show mt angry pioneer at center:
         sit_down
     with dissolve
 
@@ -2321,7 +2320,7 @@ label bkrr_day17_common:
     mi "Рада познакомиться. Я вижу, Клаус тоже музыкант? Мику показала на гитару."
     "Немец смущённо кивнул."
 
-    show kla normal with dspr
+    show kla normal sport with dspr
 
     kla "Да!"
     mi "Тогда приходи к нам в клуб!"
