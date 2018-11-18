@@ -1734,7 +1734,7 @@ label bkrr_day18_common:
     "Я улыбнулся Мику."
     me "Обожаю, наблюдать, когда они ругаются."
 
-    show chair_c
+    show chair_c at center
     show mi grin pioneer at bkrr_sit_center
     with dissolve
 
@@ -1831,7 +1831,7 @@ label bkrr_day18_common:
     "Я подошёл к вожатой, присел рядом."
     me "Я не помешаю?"
 
-    show chair_c
+    show chair_c at center
     show mt normal pioneer close at bkrr_sit_center:
     with dissolve
 
@@ -2412,7 +2412,7 @@ label bkrr_day18_common:
 
     mi "Они не ссорятся! Это они так настраиваются на репетицию. Не волнуйся."
 
-    show kla normal with dspr
+    show kla normal pioneer with dspr
 
     kla "Какие вы… необычные."
 
@@ -2538,7 +2538,7 @@ label bkrr_day18_common:
     us "Алиска, ты зверь! Зачем нам Толик?"
     "Ульяна восхищённо прицокнула языком, а затем, не сбавляя тона, добавила:"
 
-    show us grin with dspr
+    show us grin pioneer with dspr
 
     us "Ты только ногу на усилок не задирай, а то сильно захватывающий вид открывается! Гостей засмущаешь.{w} Или так и задумано? Тогда ты вон те, красные, надень, что в шкафу… АЙ!!!"
 
@@ -3062,7 +3062,7 @@ label bkrr_day18_common:
     window hide
     show sh normal pioneer at cright with dissolve
     show us smile pioneer at cleft with dissolve
-    show us smile at center with ease
+    show us smile pioneer at center with ease
     window show
 
     "Ульяна заявила, что она хрупкая девушка и чужой инструмент носить не нанималась. Но хотела было взяться за пульт со стороны Шурика. Исключительно, чтобы помочь, конечно, совсем не для того, чтобы потереться об него бочком."
@@ -4154,7 +4154,7 @@ label bkrr_day18_common:
 
     play sound2 sfx_open_door_1
     show el sad_vedro vedro far with dissolve
-    show us surp2 with dspr
+    show us surp2 pioneer close with dspr
 
     "Нет, показалось. Появился всего лишь пионер с ведром на голове."
     "На ведре виднелась интригующая перевёрнутая надпись «для …идоров», оставляющая богатое пространство для воображения."
