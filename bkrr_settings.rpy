@@ -2549,6 +2549,7 @@ init 2:
         make_sprites_for('mi', 'pioneer sepia', ['es:body', 'es:pioneer', 'es:<emotion>'], exclude=['sad_smile'], sprite_define_func=_sepia_sprite)
         make_sprites_for('mi', 'pioneer sepia', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['sad_smile'], sprite_define_func=_sepia_sprite)
         make_sprites_for('dv', 'pioneer2 sepia', ['es:body', 'es:pioneer2', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
+        make_sprites_for('us', 'pioneer sepia', ['es:body', 'es:pioneer', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
         make_sprites_for('us', 'dress sepia', ['es:body', 'es:dress', 'es:<emotion>'], sprite_define_func=_sepia_sprite)
 
 
