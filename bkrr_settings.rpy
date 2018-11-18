@@ -2432,9 +2432,10 @@ init 2:
         # Объявляем спрайты
 
         make_sprites_for('dv', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
-        make_sprites_for('dv', 'swim', ['es:body', 'mod:swim', 'es:<emotion>'], emotions=('angry', 'guilty', 'rage', 'sad', 'shy'))
-        make_sprites_for('dv', 'swim_rose', ['es:body', 'mod:swim', 'mod:rose', 'es:<emotion>'], emotions=('angry', 'guilty', 'rage', 'sad', 'shy'), distances=['normal'])
-        make_sprites_for('dv', 'swim_rose', ['es:body', 'es:swim', 'mod:rose', 'es:<emotion>'], emotions=['surprise'], distances=['normal'])
+        make_sprites_for('dv', 'bkrr_swim', ['es:body', 'es:swim', 'es:<emotion>'], exclude=('angry', 'guilty', 'rage', 'sad', 'shy'))
+        make_sprites_for('dv', 'bkrr_swim', ['es:body', 'mod:swim', 'es:<emotion>'], emotions=('angry', 'guilty', 'rage', 'sad', 'shy'))
+        make_sprites_for('dv', 'bkrr_swim_rose', ['es:body', 'mod:swim', 'mod:rose', 'es:<emotion>'], emotions=('angry', 'guilty', 'rage', 'sad', 'shy'), distances=['normal'])
+        make_sprites_for('dv', 'bkrr_swim_rose', ['es:body', 'es:swim', 'mod:rose', 'es:<emotion>'], emotions=['surprise'], distances=['normal'])
         make_sprites_for('dv', 'pirate_with_hat', ['mod:pibody', 'es:<emotion>'])
         make_sprites_for('dv', 'pirate', ['mod:pibody2', 'es:<emotion>'])
         make_sprites_for('dv', 'pirate dress', ['mod:pidress', 'es:<emotion>'], emotions=['grin'], distances=['normal'])

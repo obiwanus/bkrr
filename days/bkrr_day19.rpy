@@ -4033,17 +4033,17 @@ label bkrr_day19_common:
     "Лена неторопливо водила фломастером по коже и под её умелыми руками на коже рыжей возникал рисунок. Две скрещённые розы."
     "Алиса увидела меня первой и виновато улыбнулась, словно я застал её за чем-то стыдным."
 
-    show dv surprise swim_rose at cleft with dissolve
+    show dv surprise bkrr_swim_rose at cleft with dissolve
 
     dv "Семён?"
     me "Что, решила сделать татуировку?"
 
-    show dv sad swim_rose with dspr
+    show dv sad bkrr_swim_rose with dspr
 
     dv "Тьфу на тебя. Я в юридический поступать хочу, туда с татуировками не берут."
     me "Тогда что это?"
 
-    show dv shy swim_rose with dspr
+    show dv shy bkrr_swim_rose with dspr
 
     dv "Это… Захотелось! Вот."
     "Всё-таки, Алиса совершенно не умеет врать."
@@ -4056,7 +4056,7 @@ label bkrr_day19_common:
     dv "Тихо! Ни слова больше!"
     me "Тайны, секреты… Вот возьму, и обижусь."
 
-    show dv normal swim with dspr
+    show dv normal bkrr_swim with dspr
 
     dv "Всё, всё. Не надо драмы. Ты вообще чего хотел?"
 
@@ -4066,7 +4066,7 @@ label bkrr_day19_common:
     dv "Бывало!"
     un "Не дружи с ними. Они тебе врали в глаза."
 
-    show dv angry swim_rose with dspr
+    show dv angry bkrr_swim_rose with dspr
 
     dv "Чего-о-о-о?"
 
@@ -4074,12 +4074,12 @@ label bkrr_day19_common:
 
     un "Ну что Семён может делать в домике своей девушки?"
 
-    show dv smile swim with dspr
+    show dv smile bkrr_swim with dspr
 
     dv "И правда… что это я. Только её здесь нет."
     me "Да я уже как-то и сам заметил. А где она?"
 
-    show dv normal swim with dspr
+    show dv normal bkrr_swim with dspr
 
     dv "Я даже не знаю… Тебе волноваться вредно. Да, Лен? Жара, давление поднимется…"
 
@@ -4088,7 +4088,7 @@ label bkrr_day19_common:
     un "Да… Пожалуй лучше ему не говорить."
     me "{b}Где!{w=0.5} Моя!{w=0.5} Мику?{/b}"
 
-    show dv smile swim with dspr
+    show dv smile bkrr_swim with dspr
 
     dv "Да успокойся ты так. В душе она. Сейчас придёт.{w} Не шуми, и так голова болит."
     un "Все так же плохо переносишь жару?"
@@ -4101,11 +4101,11 @@ label bkrr_day19_common:
     "Она протянула Алисе белый прямоугольник."
     me "А что это?"
 
-    show dv laugh swim with dspr
+    show dv laugh bkrr_swim with dspr
 
     dv "Волшебные таблетки для повышения музыкального мастерства!{w} Только тебе не дам, ты столько всё равно не съешь. Тебе ведро надо."
 
-    show dv smile swim with dspr
+    show dv smile bkrr_swim with dspr
 
     me "Что, правда есть такие таблетки?"
 
@@ -4113,11 +4113,11 @@ label bkrr_day19_common:
 
     un "Она шутит. Обычный «Цитрамон».{w} У Алисы всегда головные боли, когда погода меняется, вот и сейчас… Да и ногу, наверное, крутит, да?"
 
-    show dv sad swim_rose with dspr
+    show dv sad bkrr_swim_rose with dspr
 
     "Алиса кивнула, потом смутилась."
 
-    show dv shy swim_rose with dspr
+    show dv shy bkrr_swim_rose with dspr
 
     dv "Лена, ну давай не будем ему мои болячки перечислять, ладно?"
 
@@ -4174,7 +4174,7 @@ label bkrr_day19_common:
 
     mi "Сеня?"
 
-    show dv smile swim at left behind mi with dissolve
+    show dv smile bkrr_swim at left behind mi with dissolve
 
     dv "А вот он, сам нашёлся! Ворвался, дебош устроил, куда, говорит, Мику дели? Еле успокоили! Да, Лена?"
     "Лена кивнула… И я не был на сто процентов уверен, почему она отвернулась. От смущения или чтобы сдержать рвущийся наружу смех."
@@ -4187,7 +4187,7 @@ label bkrr_day19_common:
     "Я, не вставая, взял Мику за руку, ещё влажную после купания, и принялся шутливо отчитывать:"
     me "Нет, это я собирался вас искать. Если бы Ульяна не подсказала, где ты, я до сих пор нарезал бы круги по лагерю.{w} До концерта несколько часов, а весь музклуб в полном составе пропал. Хотел идти в лес, думал вы на какой-нибудь полянке сели репетировать."
 
-    show dv normal swim with dspr
+    show dv normal bkrr_swim with dspr
 
     dv "Кстати, мысль…"
 
@@ -4195,7 +4195,7 @@ label bkrr_day19_common:
 
     mi "Нет, дырку уже заделали, я проверяла. Мы были…{w} М-м-м… Алиса, как эта штука называется?"
 
-    show dv smile swim with dspr
+    show dv smile bkrr_swim with dspr
 
     dv "Де-бар-ка-дер."
 
@@ -4209,12 +4209,12 @@ label bkrr_day19_common:
     un "Это называется «брандвахта». Дебаркадер это просто причал такой, чтобы на пароход пересаживаться, а брандвахта – плавучий дом.{w} Мы сегодня с Ольгой Дмитриевной и Антоном Ивановичем ходили на пристань, он нам рассказывал, как жил в таком доме."
 
     hide un with dissolve
-    show dv guilty swim_rose with dspr
+    show dv guilty bkrr_swim_rose with dspr
 
     "Алиса посмотрела на неё, хотела что-то сказать… И смолчала."
     "Только согласно кивнула."
 
-    show dv normal swim with dspr
+    show dv normal bkrr_swim with dspr
 
     dv "Ладно, как скажешь."
     "Я ожидал какой-нибудь колкости про старичков с бородами или ещё чего-то в этом же духе, но Алиса сдержалась."
@@ -4227,13 +4227,13 @@ label bkrr_day19_common:
 
     mi "Раз мы поделали свои дела, я предлагаю собраться в клубе и в последний раз прогнать все мелодии.{w} Кто за? Кто против? Где Ульяна?"
 
-    show dv smile swim with dspr
+    show dv smile bkrr_swim with dspr
 
     dv "Не знаю, она вроде на пристани осталась, хотела искупаться."
     me "Последний раз когда я её видел, она двигалась вниз по течению с бешеной скоростью. Наверное, решила сбежать вплавь."
     us_outside "И ничего я не сбежала! Он врёт!"
 
-    show dv sad swim_rose with dspr
+    show dv sad bkrr_swim_rose with dspr
 
     "Алиса зыркнула на меня, потом на Мику и зловещим голосом предложила мне отвернуться, чтобы она могла одеться."
     me "Но я ведь видел тебя в купальнике…"

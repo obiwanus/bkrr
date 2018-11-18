@@ -646,7 +646,7 @@ label bkrr_day13_common:
     "Я расстелил полотенце, сбросил шорты, футболку снимать не стал. Спина моя выглядела не очень красиво, да и сгораю я легко."
     "Алиса раскатала большое покрывало и сбросила форму, затем посмотрела на солнце и покачала головой."
 
-    show dv guilty swim at cleft with dissolve
+    show dv guilty bkrr_swim at cleft with dissolve
 
     dv "Не сгореть бы. Не люблю в веснушках ходить!"
 
@@ -654,7 +654,7 @@ label bkrr_day13_common:
 
     us "Рыжая-рыжая-конопатая!"
 
-    show dv normal swim at cleft with dspr
+    show dv normal bkrr_swim at cleft with dspr
 
     "Я ожидал колкости, а то и подзатыльника, но Алиса беззлобно отмахнулась от подруги."
     dv "Сама такая!"
@@ -671,7 +671,7 @@ label bkrr_day13_common:
     "Ульяна посмотрела на меня, замолчала, потом махнула рукой."
     us "Нет, он не с нами. Алиска, посмотри на его лицо!"
 
-    show dv grin swim at cleft with dspr
+    show dv grin bkrr_swim at cleft with dspr
 
     dv "Счастливое и придурковатое. Как обычно."
 
@@ -747,12 +747,12 @@ label bkrr_day13_common:
 
     mi "Алис… А может, пойдёшь, присмотришь за ней? Вдруг судорога сведёт или ещё что."
 
-    show dv angry swim at bkrr_sit_right1 with easeinbottom
+    show dv angry bkrr_swim at bkrr_sit_right1 with easeinbottom
 
     dv "Микуська, я вот как-то упустила момент. Когда я её нянькой стала?"
     mt "Ульяна, не заплывай далеко!"
 
-    show dv guilty swim:
+    show dv guilty bkrr_swim:
         bkrr_sit_right1
         get_up
     with dspr
@@ -1143,7 +1143,7 @@ label bkrr_day13_common:
 
     "Алиса проводила Лену взглядом."
 
-    show dv normal swim at cleft
+    show dv normal bkrr_swim at cleft
     show mi smile swim at cright
     with dissolve
 
@@ -1421,7 +1421,7 @@ label bkrr_day13_common:
     "Поплескавшись ещё немного, мы выбрались из воды и присели на большом покрывале. {w}Ульяна достала колоду карт и предложила перекинуться в «дурака»."
     "Алиса подозрительно поинтересовалась:"
 
-    show dv normal swim at cleft
+    show dv normal bkrr_swim at cleft
     show us smile swim at cright
     with dissolve
 
@@ -1431,7 +1431,7 @@ label bkrr_day13_common:
 
     us "Места знать надо!"
 
-    show dv smile swim at cleft with dspr
+    show dv smile bkrr_swim at cleft with dspr
 
     dv "Неужели стащила?"
     us "Вот почему сразу «стащила»? {w}Одолжила!"
@@ -1457,7 +1457,7 @@ label bkrr_day13_common:
     "Кажется, я услышал потрескивание электрических разрядов… или это скрип зубов? Я тронул Алису за локоть и кивнул на Ульяну."
     me "Алиса…"
 
-    show dv normal swim at cleft
+    show dv normal bkrr_swim at cleft
     show us normal_dontlike_bkrr swim at cright
     with dissolve
 
@@ -1482,7 +1482,7 @@ label bkrr_day13_common:
     "Маленькая ревнивая пионерка бросила колоду и убежала к воде. Раздавая карты, Алиса старательно делала вид, что всё нормально. Мику задумчиво проводила Ульяну взглядом."
     me "Чего это с ней?"
 
-    show dv smile swim at cleft with dspr
+    show dv smile bkrr_swim at cleft with dspr
 
     dv "Слепой, что ли? Ревнует она. Не пойму я, почему его? Больной ведь на всю голову."
 
@@ -1497,7 +1497,7 @@ label bkrr_day13_common:
     mi "На пользу."
     me "Не знаю, не знаю. Мы с ним подолгу разговаривали. Знаешь, у меня такое чувство, что ему лет двадцать, а то и больше."
 
-    show dv normal swim at cleft with dspr
+    show dv normal bkrr_swim at cleft with dspr
 
     "Алиса согласно кивнула, не прекращая раздачу."
     dv "Есть такое. Что козырь-то?"
@@ -1674,35 +1674,35 @@ label bkrr_day13_common:
     "После небольшого спора она согласилась остаться, с условием, что вечером зайдёт навестить."
     "Я собрался уходить, но меня перехватили Алиса и Ульяна."
 
-    show dv normal swim close at cleft
+    show dv normal bkrr_swim close at cleft
     show us normal swim close at cright
     with dissolve
 
     dv "Куда это ты сбегаешь?"
 
-    show dv grin swim close at cleft with dspr
+    show dv grin bkrr_swim close at cleft with dspr
 
     "Я пояснил. Алиса сочувственно хлопнула меня по плечу."
     dv "Эх, зараза ты ходячая. Кто же летом болеет? А репетиции?"
     me "Мне разрешили в изоляторе играть. Дадите мне акустический бас? Буду репетировать."
 
-    show dv smile swim close at cleft with dspr
+    show dv smile bkrr_swim close at cleft with dspr
 
     dv "Конечно… {w}Он всё равно плохо звучит, с тех пор как я тебя по голове огрела. Забирай!"
     me "Ты хоть вид сделай, что тебе стыдно за тот удар, что ли?"
 
-    show dv guilty swim close at cleft with dspr
+    show dv guilty bkrr_swim close at cleft with dspr
 
     "Алиса опустила плечи, потупила глаза и жалобно протянула:"
     dv "Прости, Семёныч, фигня вышла…"
 
-    show dv laugh swim close at cleft with dspr
+    show dv laugh bkrr_swim close at cleft with dspr
 
     "Потом она насмешливо глянула мне в глаза."
     dv "Пойдёт?"
     me "Убедительно!"
 
-    show dv normal swim close at cleft with dspr
+    show dv normal bkrr_swim close at cleft with dspr
 
     dv "А то. А теперь иди отсюда, бациллоноситель! И не надейся, что будешь бездельничать, я проверю, что ты нарепетировал самостоятельно."
     me "Обещаю. А вы за Мику присмотрите, ладно? Чтобы не сгорела, не простыла и вообще."
@@ -1713,7 +1713,7 @@ label bkrr_day13_common:
     "Ульяна хитро подмигнула."
     us "Ты её не слушай, Алиска переживает на самом деле. Только показать стесняется. Вот увидишь, сейчас уйдёшь, а она станет губы кусать и волноваться, как ты себя чувствуешь."
 
-    show dv angry swim close at cleft with dspr
+    show dv angry bkrr_swim close at cleft with dspr
 
     dv "Ульянка!"
 
@@ -1721,7 +1721,7 @@ label bkrr_day13_common:
 
     us "Что? Правда глаза режет? А нечего было арбуз отбирать! А ведь я ещё не рассказала, как ты в клубе в ту среду…"
 
-    show dv rage swim close at cleft with dspr
+    show dv rage bkrr_swim close at cleft with dspr
 
     dv "Вот я тебя!"
 
