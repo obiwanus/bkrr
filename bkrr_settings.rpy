@@ -1256,7 +1256,7 @@ init 2:
     image misc_d18_sheet = BKRR_IMAGES + "misc/d18_sheet.jpg"
     image cg d18_alisarape = BKRR_IMAGES + "cg/d18_alisarape.jpg"
     image cg d18_alisarape2 = bkrr_fast_composite(BKRR_IMAGES + "cg/d18_alisarape.jpg", BKRR_IMAGES + "cg/d18_alisarape_2.png")
-    image cg d18_young_od = BKRR_IMAGES + "cg/d18_young_od.png"
+    image cg d18_young_od = im.Sepia(BKRR_IMAGES + "cg/d18_young_od.png")
     image cg d18_no_squirrel_1 = BKRR_IMAGES + "cg/d9_squirrel_1.png"
     image cg d18_no_squirrel_2:
         contains:
