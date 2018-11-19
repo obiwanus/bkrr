@@ -719,7 +719,7 @@ label bkrr_epilogue_common:
 
     th "Во всяком случае, я очень-очень на это надеюсь."
 
-    show mi cry_smile close bkrr_sport at cright with dissolve
+    show mi cry_smile bkrr_sport at cright with dissolve
 
     "Мику шмыгнула носом, коснулась уголка глаза и тихо попросила:"
     mi "Девочки, дайте ключи от клуба, пожалуйста."

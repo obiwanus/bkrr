@@ -18,7 +18,7 @@ init python:
 
     # Возможные пути к графическим ресурсам для совместимости с обеими версиями
 
-    BKRR_ROOT_DIR = "mods/bkrr/"  # для стима будет просто "bkrr/"
+    BKRR_ROOT_DIR = ""  # для стима ничего не надо
     BKRR_ES_IMAGES = "images/" if config.version == "1.2" else "images/1080/"
     BKRR_IMAGES = BKRR_ROOT_DIR + "images/"
 
