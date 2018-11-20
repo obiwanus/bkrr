@@ -299,7 +299,7 @@ init 2:
                         scrollbars None
 
                         grid columns rows:
-                            spacing 25
+                            spacing 10
 
                             for ach in bkrr_ach_list:
                                 if persistent.bkrr_ach[ach[0]]:
@@ -311,7 +311,7 @@ init 2:
                                     text ach[1]:
                                         style "bkrr_service2"
                                         size 36
-                                        kerning 1.7
+                                        kerning 1.25
                                         align(1.0, 0.5)
                                 else:
                                     add im.Alpha(ImageReference("bkrr_ach_blank"), 0.42):
@@ -319,7 +319,7 @@ init 2:
                                     text u"Достижение не открыто.":
                                         style "bkrr_service2"
                                         size 36
-                                        kerning 1.7
+                                        kerning 1.25
                                         align(1.0, 0.5)
 
                             null
@@ -497,20 +497,26 @@ init 2:
 
                         # pages
 
-                        vbox:
-                            yalign 0.5
-                            spacing -15
+                        viewport:
+                            id "menu_gallery_viewport"
+                            draggable True
+                            mousewheel True
+                            scrollbars None
 
-                            for page in range(len(bkrr_gallery_grid[bkrr_gallery_mode])):
-                                if bkrr_gallery_page != page:
-                                    imagebutton:
-                                        action SetVariable("bkrr_gallery_page", page)
-                                        idle im.Alpha(im.FactorScale(bkrr_ui["img"]["button_1"], 0.75), 0.7)
-                                        hover im.FactorScale(bkrr_ui["img"]["button_1"], 0.75)
-                                        align(0.5, 0.5)
-                                else:
-                                    add im.FactorScale(bkrr_ui["img"]["button_2"], 0.6):
-                                        align(0.5, 0.5)
+                            vbox:
+                                yalign 0.5
+                                spacing -22
+
+                                for page in range(len(bkrr_gallery_grid[bkrr_gallery_mode])):
+                                    if bkrr_gallery_page != page:
+                                        imagebutton:
+                                            action SetVariable("bkrr_gallery_page", page)
+                                            idle im.Alpha(im.FactorScale(bkrr_ui["img"]["button_1"], 0.75), 0.7)
+                                            hover im.FactorScale(bkrr_ui["img"]["button_1"], 0.75)
+                                            align(0.5, 0.5)
+                                    else:
+                                        add im.FactorScale(bkrr_ui["img"]["button_2"], 0.6):
+                                            align(0.5, 0.5)
 
     ## Экран галереи: ATL
 
