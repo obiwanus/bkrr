@@ -2406,7 +2406,7 @@ label bkrr_day12_common:
 
     $ renpy.pause(2.0, hard=True)
 
-    scene bg semen_room_clean_bkrr:
+    scene bg lena_room_bkrr:
         truecenter
         zoom 1.3
         ease 8.0 zoom 1.0

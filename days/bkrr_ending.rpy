@@ -2262,7 +2262,11 @@ label bkrr_epilogue_common:
 
     "Идиллию прервал звонок в дверь."
 
+    window hide
     play sound2 bkrr_sfx_list["meow1"] fadein 3
+    $ renpy.pause(1.5, hard=True)
+    scene bg semen_room_clean_kot_bkrr with dissolve
+    window show
 
     "Я согнал кота с рук и пошёл открывать."
 
@@ -2287,7 +2291,7 @@ label bkrr_epilogue_common:
     "Я не отказывался, она чем-то напоминала мне Ульяну, хотя разрушений от неё было куда меньше."
 
     window hide
-    scene bg semen_room_clean_bkrr
+    scene bg semen_room_clean_kot_bkrr
     show sta smile inside at cright
     with fade2
     window show

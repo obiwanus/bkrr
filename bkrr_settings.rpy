@@ -696,7 +696,9 @@ init 2:
         contains:
             (BKRR_IMAGES + "misc/five_roses_aidpost.png")
 
+    image bg lena_room_bkrr = BKRR_IMAGES + "bg/lena_room.jpg"
     image bg semen_room_clean_bkrr = BKRR_IMAGES + "bg/semen_room_clean.jpg"
+    image bg semen_room_clean_kot_bkrr = bkrr_fast_composite(BKRR_IMAGES + "bg/semen_room_clean.jpg", BKRR_IMAGES + "bg/semen_room_clean_kot.png")
     image bg semen_room_half_clean_bkrr = BKRR_IMAGES + "bg/semen_room_half_clean.jpg"
 
     image bg ext_infirmary_sunset:
