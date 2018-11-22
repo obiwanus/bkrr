@@ -2506,6 +2506,7 @@ init 2:
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'bkrr_sport_loo', ['mod:body_loo', 'mod:sport', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'apron', ['es:body', 'mod:apron', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'dirt apron', ['es:body', 'mod:apron', 'mod:apron_dirt', 'es:<emotion>'])
+        make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'shorts', ['mod:body_loo', 'mod:shorts', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'shorts_hair', ['mod:body_loo', 'mod:shorts', 'mod:hair', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'body_loo', ['mod:body_loo', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'body', ['es:body', 'es:<emotion>'])
