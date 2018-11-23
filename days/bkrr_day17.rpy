@@ -3965,10 +3965,13 @@ label bkrr_day17_common:
 
     "Тут он согнулся и сжал виски руками."
 
+    window hide
     scene expression bkrr_vertigo_atl("bg int_mine_coalface", 1.1, 0.6, 0.6)
     show black:
         alpha 0.3
     with None
+    $ renpy.pause(2.0, hard=True)
+    window show
 
     "Мне тоже стало дурно, как тогда, на пирсе, когда я чуть не упал в воду. Голова закружилась, но тут же всё прошло.{w=2.5}{nw}"
 
@@ -4065,7 +4068,7 @@ label bkrr_day17_common:
         alpha 0.9
         ease 3.5 alpha 0.0
     with Dissolve(1.0)
-
+    $ renpy.pause(2.0, hard=True)
     window show
 
     "Ещё пара минут, и я увидел взволнованную Ольгу. Она стояла в нескольких шагах, освещая меня фонарём."
@@ -4073,16 +4076,16 @@ label bkrr_day17_common:
     "Но меня поразило не это. Рядом с вожатой стояла Мику с Пиратом на поводке.{w} В рейтинге версий о происхождении лагеря, вариант «шизофрения» резко ушёл в отрыв."
 
     scene bg int_mine_halt:
-    show mi sad_smile pioneer far at center
+    show mi sad pioneer far at center
     show mt sad pioneer far at cright
-    with flash
+    with bkrr_fade(1.0, "black")
 
     mi "Вот он! Я же говорила, Пират его найдёт!"
 
     "Мику рванулась ко мне, но вожатая удержала её за руку."
 
     mt "Стой на месте! Что-то здесь не так…"
-    mi "Какая ловушка? О чем ты?"
+    mi "Какая ловушка? О чем вы?"
     mt "Что с тобой? Почему ты лежишь?"
     me "Я… это…"
     "Мой двойник из тени подсказал:"
