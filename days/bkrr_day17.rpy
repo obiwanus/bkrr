@@ -1262,6 +1262,7 @@ label bkrr_day17_common:
     mi "Ничего особенного."
 
     show mi normal pioneer close:
+        subpixel True
         truecenter
         ease 1.0 zoom 1.1
     with dspr
@@ -1269,6 +1270,7 @@ label bkrr_day17_common:
     "Она осторожно надела шнурок мне на шею и спрятала медиатор под футболку. Когда её пальцы скользнули под воротник, по мне словно пропустили разряд тока."
 
     show mi normal pioneer close:
+        subpixel True
         zoom 1.1
         ease 1.0 zoom 1.0
     with None
@@ -3684,15 +3686,10 @@ label bkrr_day17_common:
 
     window hide
     $ renpy.pause(1.0, hard=True)
-    $ bkrr_timeskip()
+    $ bkrr_timeskip(sounded=False)
 
     scene black with fade2
     $ bkrr_set_time("night")
-
-    #НАС ВОЛОКУТ ПО ТУННЕЛЯМ.
-    #Чернота. Можно даже дать пару проблесков – фонцы коридоров, И звук шагов с эхом, фон кристаллическая пещера, на фоне звучит капающая вода
-
-    # ПРИНЕСЛИ, КОМНАТА С КРИСТАЛЛАМИ
 
     play ambience ambience_catacombs fadein 10
     $ bkrr_set_volume("sound_loop", 0.3)
