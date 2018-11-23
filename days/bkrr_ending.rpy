@@ -1416,7 +1416,7 @@ label bkrr_epilogue_common:
 
     window hide
 
-    scene cg bkrr_epilogue_4 at bkrr_bus_shaking with Dissolve(3.0)
+    scene cg bkrr_epilogue_3 at bkrr_bus_shaking with Dissolve(3.0)
 
     window show
 
@@ -1424,7 +1424,11 @@ label bkrr_epilogue_common:
 
     window hide
 
-    scene cg bkrr_epilogue_5 at bkrr_bus_shaking with Dissolve(1.5)
+    scene cg bkrr_epilogue_3 at bkrr_bus_shaking
+    show cg bkrr_epilogue_4 as cg2 at bkrr_bus_shaking:
+        alpha 0.0
+        ease 3.0 alpha 1.0
+    with dissolve
 
     play music music_list["orchid"] fadein 5
 
@@ -1443,13 +1447,15 @@ label bkrr_epilogue_common:
 
     window hide
 
-    scene bg int_bus_people_day_bkrr at bkrr_bus_shaking with dissolve
+    scene cg bkrr_epilogue_4 at bkrr_bus_shaking
+    show cg bkrr_epilogue_5 as cg2 at bkrr_bus_shaking:
+        alpha 0.0
+        ease 3.0 alpha 1.0
+    with None
+    $ renpy.pause(2.0, hard=True)
 
     window show
 
-    "Мику услышала меня, улыбаясь, открыла глаза, посмотрела на меня, шевельнула губами, но я не услышал ни звука."
-
-    scene cg bkrr_epilogue_6 at bkrr_bus_shaking with dissolve
 
     "Ещё несколько секунд – и она исчезла совсем."
     "Без следа. Только сорванный по пути к автобусу цветок мягко упал на сиденье."
@@ -1693,7 +1699,8 @@ label bkrr_epilogue_common:
 
     window hide
 
-    hide black
+    show black:
+        alpha 0.3
     show unblink
     with None
 
@@ -2053,6 +2060,8 @@ label bkrr_epilogue_common:
 
     # GOVNOKOD ALERT
     scene anim prolog_1 with Dissolve(2.0)
+
+    $ renpy.pause(1.0, hard=True)
 
     show bkrr_calendar:
         truecenter
@@ -2767,7 +2776,6 @@ label bkrr_epilogue_common:
     scene stars:
         subpixel True
         truecenter
-        pause 0.5
         ease 15.0 zoom 1.4 rotate 7.5
         ease 40.0 zoom 1.8 rotate -30
     with dissolve
