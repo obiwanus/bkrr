@@ -1255,7 +1255,7 @@ init 2:
 
     image cg d17_alisa_klaus = BKRR_IMAGES + "cg/d17_alisa_klaus.jpg"
     image cg d17_alisa_klaus2 = bkrr_fast_composite(BKRR_IMAGES + "cg/d17_alisa_klaus.jpg", BKRR_IMAGES + "cg/d17_alisa_klaus2.png")
-    image cg d17_klaus_guitar = im.Scale(BKRR_IMAGES + "cg/d17_klaus_guitar.jpg", config.screen_width, config.screen_height)
+    image cg d17_klaus_guitar = BKRR_IMAGES + "cg/d17_klaus_guitar.jpg"
     image cg d17_mt_mine = BKRR_IMAGES + "cg/d17_mt_mine.jpg"
     image cg d17_sex = BKRR_IMAGES + "cg/d17_sex.jpg"
     image cg d18_bed_middle = im.Scale(BKRR_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height)

@@ -3345,7 +3345,15 @@ label bkrr_day17_common:
 
     window hide
     $ renpy.pause(1.0, hard=True)
-    scene cg d17_klaus_guitar with dissolve
+    scene cg d17_klaus_guitar:
+        subpixel True
+        truecenter
+        zoom 1.7
+        xalign 1.0
+        yalign 1.0
+        ease 5.0 xalign 0.0 yalign 0.0
+        ease 2.0 xalign 0.5 yalign 0.5 zoom 1.0
+    with flash
     window show
 
     "Наконец, замок со щелчком поддался и Алиса открыла кофр."
