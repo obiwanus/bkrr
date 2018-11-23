@@ -97,6 +97,11 @@ init python:
                 args.append(Transform(imgn, alpha=random.uniform(0.1, 0.2)))
         return LiveComposite((config.screen_width, config.screen_height), (0, 0), imgn, *args)
 
+    # Внесение изображения в число просмотренных
+
+    def bkrr_add_to_seen(img):
+        persistent._seen_images[img] = True
+
     ##    Звуковые функции    ##
 
     def bkrr_mute(fade=2.5):
@@ -152,20 +157,31 @@ init python:
         "bg":(
             (["ext_music_club_verandah_day_v1", False], ["ext_music_club_verandah_day_v7", False], ["ext_music_club_verandah_night_v2", False], ["int_music_club_mattresses_day", False], ["int_music_club_mattresses_sunset", False], ["int_music_club_mattresses_night", False]),
             (["int_cinema_people", False], ["int_shed_bkrr_v1", False], ["int_old_building_room_day_rainy_bkrr", BKRR_IMAGES + "bg/int_old_building_room_day_rainy.jpg"], ["int_old_building_room_night_bkrr_v1", bkrr_fast_composite(BKRR_IMAGES + "bg/int_old_building_room_night_rainy.jpg", BKRR_IMAGES + "misc/int_old_building_room_mugs_fire.png", BKRR_IMAGES + "misc/int_old_building_room_fire1.png", BKRR_IMAGES + "misc/int_old_building_room_steam1.png")], ["int_old_building_room_day_bkrr_v2", False], ["ext_path3_day_bkrr", False]),
-            (["semen_room_clean_bkrr", False], ["ext_beach_water_day", BKRR_IMAGES + "bg/ext_beach_water_day.jpg"], ["int_infirmary_day", False], ["int_infirmary_sunset", False], ["int_infirmary_night", False], ["int_infirmary_day_guitar", False]),
-            (["int_infirmary_sunset_guitar", False], ["int_infirmary_night_guitar", False], ["int_infirmary_night_v2", False], ["int_infirmary_night_guitar_v2", False], ["int_infirmary_night_v3", False], ["int_infirmary_night_guitar_v3", False])
+            (["semen_room_clean_bkrr", False], ["ext_beach_water_day", BKRR_IMAGES + "bg/ext_beach_water_day.jpg"], ["int_infirmary_day_empty", False], ["int_infirmary_sunset_empty", False], ["int_infirmary_night_empty", False], ["int_infirmary_day_empty_food", False]),
+            (["int_infirmary_sunset_empty_food", False], ["int_infirmary_night_empty_food", False], ["int_infirmary_day", False], ["int_infirmary_sunset", False], ["int_infirmary_night", False], ["int_infirmary_day_guitar", False]),
+            (["int_infirmary_sunset_guitar", False], ["int_infirmary_night_guitar", False], ["int_infirmary_night_v3", False], ["int_infirmary_night_guitar_v3", False], ["int_infirmary_day_food", False], ["int_infirmary_sunset_food", False]),
+            (["int_infirmary_night_food", False], ["int_infirmary_night_food_v3", False], ["int_infirmary_day_guitar_food", False], ["int_infirmary_sunset_guitar_food", False], ["int_infirmary_night_guitar_food", False], ["int_infirmary_night_guitar_food_v3", False]),
+            (["ext_pier_day", False], ["ext_pier_sunset", False], ["int_clubs_male_day_wrecked", False], ["int_clubs_male_sunset_wrecked", False], ["ext_stage_big_day_str_bkrr", False], ["ext_stage_big_day_const_bkrr", False]),
+            (["ext_stage_big_day_evening_empty", False], ["ext_backstage_big_day_night", False], ["ext_backstage_big_day_night_noplank", False], ["int_bus_people_day_bkrr", False], ["ext_street_night", False], ["int_entrance_bkrr", bkrr_fast_composite(BKRR_IMAGES + "bg/int_entrance_outside.jpg", BKRR_IMAGES + "bg/int_entrance.png")]),
+            (["int_entrance_bkrr_with_cat", bkrr_fast_composite(BKRR_IMAGES + "bg/int_entrance_outside.jpg", BKRR_IMAGES + "bg/int_entrance.png", BKRR_IMAGES + "bg/int_entrance_cat.png")], ["int_school_night", bkrr_fast_composite(BKRR_IMAGES + "bg/int_school_ext.jpg", BKRR_IMAGES + "bg/int_school_night.png")], ["int_classroom_night", bkrr_fast_composite(BKRR_IMAGES + "bg/int_classroom_ext.jpg", BKRR_IMAGES + "bg/int_classroom_night.png")])
         ),
         "cg":(
             (["d5_cat_in_ventilation", False], ["d5_ghost", False], ["d6_sl_ass", False], ["d6_on_floor", False], ["d6_dv_guitar", False], ["d6_sem_guitar", False]),
             (["d7_mi_embrace", False], ["d7_mi_dance", False], ["d7_mi_walking", False], ["d8_deer", im.Crop(BKRR_IMAGES + "cg/d8_deer.jpg", 0, 180, 1920, 1080)], ["d8_chibi", False], ["d8_fstar_main", False]),
-            (["d9_walking", bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_houses_day.jpg", BKRR_IMAGES + "cg/d9_walking.png")], ["d9_wounded_dv_1", False], ["d9_wounded_dv_2", False], ["d9_squirrel_1", False], ["d9_squirrel_2", False], ["d9_kiss", False]),
-            (["d10_ghost", False], ["d11_shirt_1", im.Crop(BKRR_IMAGES + "cg/d11_shirt.jpg", 0, 180, 1920, 1080)], ["d11_forest", im.Crop(BKRR_IMAGES + "cg/d11_forest.jpg", 0, 0, 1920, 1080)], ["d11_forest_view_with_shadow", False], ["d11_forest_view_with_pi", False], ["d11_mi_sleep_1", BKRR_IMAGES + "cg/d11_mi_sleep_1.png"]),
-            (["d11_mi_sleep_2", BKRR_IMAGES + "cg/d11_mi_sleep_2.png"], ["d11_mi_sleep_3", im.Composite((config.screen_width, config.screen_height), (0, 0), BKRR_IMAGES + "cg/d11_mi_sleep_1.png", (1250, 375), im.Crop(BKRR_IMAGES + "cg/d11_mi_sleep_2.png", 1250, 375, 100, 100))], ["d11_night_guest", False], ["d12_mi_hair_sl", False], ["d12_mi_hair_sem", False], ["d12_mi_hair_sem_bite", False]),
-            (["d12_mi_bath_1", False], ["d12_mi_bath_2", False], ["d12_noon_rest_1", False], ["d12_noon_rest_2", False], ["d12_noon_rest_3", False], ["d12_noon_rest_4", False]),
-            (["d12_noon_rest_5", False], ["d12_us_kiss_2", False], ["d12_us_kiss_3", False], ["d12_us_kiss_4", False], ["d12_us_kiss_5", False], ["d12_us_kiss_6", BKRR_IMAGES + "cg/d12_us_kiss_6.png"]),
-            (["d13_beach", False], ["d14_un_sleep", False], ["d14_us_fall", False], ["d14_un_cry", False], ["d14_dv_spy", False], ["d14_dv_window_1", False]),
-            (["d14_dv_window_2", False], ["d14_mi_confession_1", False], ["d14_mi_confession_2", False], ["d14_mi_confession_3", False], ["d14_mi_confession_4", False], ["d14_rocket_1", False]),
-            (["d14_rocket_2", BKRR_IMAGES + "cg/d14_rocket_2.png"], ["d15_mi_sleep", False], ["d16_cryptography", False], ["d16_gulls", False], ["catday_warp_cat", False])
+            (["d9_walking", bkrr_fast_composite(BKRR_ES_IMAGES + "bg/ext_houses_day.jpg", BKRR_IMAGES + "cg/d9_walking.png")], ["d9_wounded_dv", False], ["d9_squirrel_1", False], ["d9_squirrel_2", False], ["d9_kiss", False], ["d10_ghost", False]),
+            (["d11_shirt_1", im.Crop(BKRR_IMAGES + "cg/d11_shirt.jpg", 0, 180, 1920, 1080)], ["d11_forest", im.Crop(BKRR_IMAGES + "cg/d11_forest.jpg", 0, 0, 1920, 1080)], ["d11_forest_view_with_shadow", False], ["d11_forest_view_with_pi", False], ["d11_mi_sleep_1", BKRR_IMAGES + "cg/d11_mi_sleep_1.png"], ["d11_mi_sleep_2", BKRR_IMAGES + "cg/d11_mi_sleep_2.png"]),
+            (["d11_mi_sleep_3", im.Composite((config.screen_width, config.screen_height), (0, 0), BKRR_IMAGES + "cg/d11_mi_sleep_1.png", (1250, 375), im.Crop(BKRR_IMAGES + "cg/d11_mi_sleep_2.png", 1250, 375, 100, 100))], ["d11_night_guest", False], ["d12_mi_hair_sl", False], ["d12_mi_hair_sem", False], ["d12_mi_hair_sem_bite", False], ["d12_mi_bath_1", False]),
+            (["d12_mi_bath_2", False], ["d12_noon_rest_1", False], ["d12_noon_rest_2", False], ["d12_noon_rest_3", False], ["d12_noon_rest_4", False], ["d12_noon_rest_5", False]),
+            (["d12_us_kiss_2", False], ["d12_us_kiss_3", False], ["d12_us_kiss_4", False], ["d12_us_kiss_5", False], ["d12_us_kiss_6", BKRR_IMAGES + "cg/d12_us_kiss_6.png"], ["d13_beach", False]),
+            (["d14_un_sleep", False], ["d14_us_fall", False], ["d14_un_cry", False], ["d14_dv_spy", False], ["d14_dv_window_1", False], ["d14_dv_window_2", False]),
+            (["d14_mi_confession_1", False], ["d14_mi_confession_2", False], ["d14_mi_confession_3", False], ["d14_mi_confession_4", False], ["d14_rocket_1", False], ["d14_rocket_2", BKRR_IMAGES + "cg/d14_rocket_2.png"]),
+            (["d15_mi_sleep", False], ["d16_catmiku", im.Crop(BKRR_IMAGES + "cg/d16_catmiku.jpg", 0, 0, 1920, 1080)], ["d16_cryptography", False], ["d16_cryptography2", False], ["d16_gulls", False], ["d16_picnic", BKRR_IMAGES + "cg/d16_picnic3.jpg"]),
+            (["d17_alisa_klaus", BKRR_IMAGES + "cg/d17_alisa_klaus.jpg"], ["d17_alisa_klaus2", bkrr_fast_composite(BKRR_IMAGES + "cg/d17_alisa_klaus.jpg", BKRR_IMAGES + "cg/d17_alisa_klaus2.png")], ["d17_klaus_guitar", im.Scale(BKRR_IMAGES + "cg/d17_klaus_guitar.jpg", config.screen_width, config.screen_height)], ["d17_mt_mine", bkrr_fast_composite(BKRR_ES_IMAGES + "bg/int_mine_halt.jpg", BKRR_IMAGES + "cg/d17_mt_mine.png")], ["d17_sex", False], ["d18_bed_middle", im.Scale(BKRR_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height)]),
+            (["d18_bed_sleep", bkrr_fast_composite(im.Scale(BKRR_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height), im.Scale(BKRR_IMAGES + "cg/d18_bed_mi_sleep.png", config.screen_width, config.screen_height))], ["d18_bed_open", bkrr_fast_composite(im.Scale(BKRR_IMAGES + "cg/d18_bed.jpg", config.screen_width, config.screen_height), im.Scale(BKRR_IMAGES + "cg/d18_bed_mi_open.png", config.screen_width, config.screen_height))], ["d18_alisarape", False], ["d18_alisarape2", bkrr_fast_composite(BKRR_IMAGES + "cg/d18_alisarape.jpg", BKRR_IMAGES + "cg/d18_alisarape_2.png")], ["d18_young_od", False], ["d18_ulyana_molotok", False]),
+            (["d18_sunset_original_mi", False], ["d19_truk_and_zmey", False], ["d19_truk_and_zmey_close", False], ["d19_bus_escape", False], ["d19_miku_bus_1", False], ["d19_miku_bus_2", False]),
+            (["d19_miku_bus_3", False], ["d19_concert_alisa", im.Scale(BKRR_IMAGES + "cg/d19_concert_alisa.jpg", config.screen_width, config.screen_height)], ["d19_concert_ulyana", False], ["d19_concert_miku_semen", False], ["d19_slavya_captured", False], ["d19_pirates_on_stage", BKRR_IMAGES + "cg/d19_pirates_on_stage.jpg"]),
+            (["d19_alisa_miku_song", bkrr_fast_composite(BKRR_IMAGES + "cg/d19_alisa_miku_song/bg.png", BKRR_IMAGES + "cg/d19_alisa_miku_song/singers.png", BKRR_IMAGES + "cg/d19_alisa_miku_song/mic.png")], ["d19_chibi_alisa", BKRR_IMAGES + "cg/d19_chibi_alisa.jpg"], ["d19_final_campfire", False], ["bkrr_epilogue_1", False], ["bkrr_epilogue_2", False], ["bkrr_epilogue_3", False]),
+            (["bkrr_epilogue_4", False], ["bkrr_epilogue_5", False], ["bkrr_epilogue_6", False], ["bkrr_epilogue_7", False], ["ep_mi", bkrr_fast_composite(BKRR_IMAGES + "cg/ep_mi_background.jpg", BKRR_IMAGES + "cg/ep_mi.png")], ["catday_warp_cat", False]),
         )
     }
 
@@ -878,7 +894,7 @@ init 2:
     image bg ext_backstage_big_day_night = bkrr_fast_composite(BKRR_IMAGES + "bg/ext_backstage_big_day_night.jpg", BKRR_IMAGES + "misc/backstage_plank.png")
     image bg ext_backstage_big_day_night_noplank = BKRR_IMAGES + "bg/ext_backstage_big_day_night.jpg"
 
-    image cg1 d19_concert_alisa:
+    image cg d19_concert_alisa:
         contains:
             im.Scale(BKRR_IMAGES + "cg/d19_concert_alisa.jpg", config.screen_width, config.screen_height)
             subpixel True
@@ -886,8 +902,7 @@ init 2:
             rotate -10
             zoom 1.5
             ease 1.0 zoom 1.0 rotate 0.0
-
-    image cg1 d19_concert_alisa_photo:
+    image cg d19_concert_alisa_photo:
         contains:
             "white"
             truecenter
@@ -895,8 +910,8 @@ init 2:
         contains:
             im.Sepia(im.Scale(BKRR_IMAGES + "cg/d19_concert_alisa.jpg", config.screen_width, config.screen_height))
 
-    image cg2 d19_concert_ulyana = BKRR_IMAGES + "cg/d19_concert_ulyana.jpg"
-    image cg2 d19_concert_ulyana_photo:
+    image cg d19_concert_ulyana = BKRR_IMAGES + "cg/d19_concert_ulyana.jpg"
+    image cg d19_concert_ulyana_photo:
         contains:
             "white"
             truecenter
@@ -904,8 +919,8 @@ init 2:
         contains:
             im.Sepia(BKRR_IMAGES + "cg/d19_concert_ulyana.jpg")
 
-    image cg3 d19_concert_miku_semen = BKRR_IMAGES + "cg/d19_concert_miku_semen.jpg"
-    image cg3 d19_concert_miku_semen_photo:
+    image cg d19_concert_miku_semen = BKRR_IMAGES + "cg/d19_concert_miku_semen.jpg"
+    image cg d19_concert_miku_semen_photo:
         contains:
             "white"
             truecenter
@@ -3437,11 +3452,11 @@ init 2:
             alpha 0.7
 
     image bkrr_ep_ending_bg = BKRR_IMAGES + "cg/epilogue_ending_bg.jpg"
-    image bkrr_ep_ending = BKRR_IMAGES + "cg/epilogue_ending.png"
+    image cg bkrr_ep_ending = BKRR_IMAGES + "cg/epilogue_ending.png"
 
     python:
-        for i in range(9):
-            renpy.image("cg bkrr_epilogue_{0}".format(i + 1), BKRR_IMAGES + "cg/epilogue_inbus_{0}.jpg".format(i))
+        for i in range(1, 8):
+            renpy.image("cg bkrr_epilogue_{0}".format(i), BKRR_IMAGES + "cg/epilogue_inbus_{0}.jpg".format(i))
 
         def bkrr_calendar_sheets(day, month, year, tag):
             from datetime import datetime

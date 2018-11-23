@@ -5335,10 +5335,15 @@ label bkrr_day19_common:
 
     $ bkrr_set_volume("sound3", 1.0)
     window hide
+
+    python:
+        for i in ("miku_semen", "ulyana", "alisa"):
+            bkrr_add_to_seen(("cg", "d19_concert_%s"%(i)))
+
     scene bg ext_stage_concert
-    show cg3 d19_concert_miku_semen
-    show cg2 d19_concert_ulyana
-    show cg1 d19_concert_alisa
+    show cg d19_concert_miku_semen as cg3
+    show cg d19_concert_ulyana as cg2
+    show cg d19_concert_alisa as cg1
     with dissolve
     window show
 
@@ -5351,7 +5356,7 @@ label bkrr_day19_common:
 
     window hide
     play sound3 bkrr_sfx_list["photo_shot"]
-    show cg1 d19_concert_alisa_photo:
+    show cg d19_concert_alisa_photo as cg1:
         truecenter
         subpixel True
         ease 0.5 zoom 0.9
@@ -5367,7 +5372,7 @@ label bkrr_day19_common:
     window hide
     hide cg1 with None
     play sound3 bkrr_sfx_list["photo_shot"]
-    show cg2 d19_concert_ulyana_photo:
+    show cg d19_concert_ulyana_photo as cg2:
         truecenter
         subpixel True
         ease 0.5 zoom 0.9
@@ -5392,7 +5397,7 @@ label bkrr_day19_common:
     window hide
     hide cg2
     play sound3 bkrr_sfx_list["photo_shot"]
-    show cg3 d19_concert_miku_semen_photo:
+    show cg d19_concert_miku_semen_photo as cg3:
         truecenter
         subpixel True
         ease 0.5 zoom 0.9

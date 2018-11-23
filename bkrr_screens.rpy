@@ -277,7 +277,7 @@ init 2:
 
             frame:
                 background "#0005"
-                area(0.07, 0.035, 0.58, 0.924)
+                area(128, 38, 1160, 985)
 
                 vbox:
                     align(0.5, 0.0)
@@ -299,7 +299,7 @@ init 2:
                         scrollbars None
 
                         grid columns rows:
-                            spacing 10
+                            spacing 15
 
                             for ach in bkrr_ach_list:
                                 if persistent.bkrr_ach[ach[0]]:
@@ -454,7 +454,7 @@ init 2:
 
             frame:
                 background "#0005"
-                area(0.07, 0.035, 0.58, 0.924)
+                area(128, 38, 1080, 985)
 
                 vbox:
                     align(0.5, 0.0)
