@@ -1359,7 +1359,7 @@ label bkrr_day18_common:
     "Ульяна огляделась, взяла меня под руку и потащила к столовой."
 
     window hide
-    scene bg ext_dining_hall_away_sunset with dissolve
+    scene bg ext_dining_hall_away_sunset_bkrr_poster with dissolve
     window show
 
     show us normal pioneer with dissolve
@@ -1467,7 +1467,7 @@ label bkrr_day18_common:
     us "А… Ну, Алиска-то зря не скажет. Заслужил, значит!"
 
     window hide
-    scene bg ext_dining_hall_near_sunset with dissolve
+    scene bg ext_dining_hall_near_sunset_bkrr_poster with dissolve
     stop music fadeout 5
     window show
 
@@ -1887,7 +1887,7 @@ label bkrr_day18_common:
     $ bkrr_set_time("day")
     window hide
     stop ambience fadeout 2
-    scene bg ext_dining_hall_away_sunset with fade2
+    scene bg ext_dining_hall_away_sunset_bkrr_poster with fade2
     play ambience ambience_camp_center_day fadein 3
     window show
 
@@ -4086,7 +4086,7 @@ label bkrr_day18_common:
 
     window hide
     stop ambience fadeout 2
-    scene bg ext_dining_hall_near_sunset with bkrr_blindstoleft_transition
+    scene bg ext_dining_hall_near_sunset_bkrr_poster with bkrr_blindstoleft_transition
     play ambience ambience_camp_center_day fadein 3
     window show
 

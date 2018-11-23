@@ -2836,7 +2836,7 @@ label bkrr_day16_common:
 
     window hide
 
-    scene bg ext_dining_hall_near_day with dissolve
+    scene bg ext_dining_hall_near_day_bkrr_poster with dissolve
 
     play ambience ambience_camp_center_day fadein 3
 
@@ -2876,7 +2876,7 @@ label bkrr_day16_common:
 
     window hide
 
-    scene bg ext_dining_hall_away_day with dissolve
+    scene bg ext_dining_hall_away_day_bkrr_poster with dissolve
 
     $ renpy.pause(1.0, hard=True)
 
@@ -3802,7 +3802,7 @@ label bkrr_day16_common:
 
     stop ambience fadeout 0.5
 
-    scene bg ext_dining_hall_near_sunset with dissolve
+    scene bg ext_dining_hall_near_sunset_bkrr_poster with dissolve
 
     play ambience ambience_camp_center_day fadein 3
 

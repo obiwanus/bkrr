@@ -2839,7 +2839,7 @@ label bkrr_day17_common:
 
     window hide
     stop ambience fadeout 3
-    scene bg ext_dining_hall_near_day with fade2
+    scene bg ext_dining_hall_near_day_bkrr_poster with fade2
     play ambience ambience_camp_center_day fadein 3
     window show
 
