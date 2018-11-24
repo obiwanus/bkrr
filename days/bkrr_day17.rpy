@@ -2319,7 +2319,8 @@ label bkrr_day17_common:
     show mi normal pioneer at cleft with dissolve
     show tr normal cas far with dspr
 
-    mi "Рада познакомиться. Я вижу, Клаус тоже музыкант? Мику показала на гитару."
+    mi "Рада познакомиться. Я вижу, Клаус тоже музыкант?"
+    "Мику показала на гитару."
     "Немец смущённо кивнул."
 
     show kla normal sport with dspr
