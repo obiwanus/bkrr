@@ -2510,7 +2510,7 @@ init 2:
         make_sprites_for('un', 'sport', ['es:body', 'es:sport', 'mod:<emotion>'], emotions=['shy_smile'])
 
         make_sprites_for('us', 'bra', ['es:body', 'mod:bra', 'es:<emotion>'])
-        make_sprites_for('us', 'bkrr_dress', ['es:body', 'mod:dress', 'es:<emotion>'])
+        make_sprites_for('us', 'bkrr_dress', ['mod:dress', 'es:<emotion>'])
         make_sprites_for('us', 'swim', ['es:body', 'es:swim', 'mod:<emotion>'], emotions=['normal_dontlike_bkrr', 'evsmile'])
         make_sprites_for('us', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['normal_dontlike_bkrr', 'evsmile'])
         make_sprites_for('us', 'sport', ['es:body', 'es:sport', 'mod:<emotion>'], emotions=['normal_dontlike_bkrr', 'evsmile'])
