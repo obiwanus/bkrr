@@ -2536,7 +2536,6 @@ init 2:
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'bkrr_dress', ['es:body', 'mod:dress', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'wet pioneer', ['mod:wet_pioneer', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'swim_loo', ['mod:body_loo', 'es:swim', 'es:<emotion>'])
-        make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'swim', ['es:body', 'mod:underwear', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'jacket', ['es:body', 'mod:underwear', 'mod:jacket', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'yukata', ['mod:yukata', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'pirate', ['mod:pirate', 'es:<emotion>'])
@@ -2564,6 +2563,7 @@ init 2:
         make_sprites_for('mi', 'civil', ['mod:civil', 'es:<emotion>'])
         make_sprites_for('mi', 'civil', ['mod:civil', 'mod:<emotion>'], emotions=['sad_smile'])
         make_sprites_for('mi', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['sad_smile'])
+        make_sprites_for('mi', 'swim', ['es:body', 'es:swim', 'mod:<emotion>'], emotions=['sad_smile'])
 
         make_sprites_for('mii', 'inside', ['mod:inside', 'mod:<emotion>'])
         make_sprites_for('mii', 'outside', ['mod:outside', 'mod:<emotion>'], sprite_define_func=_miku_epilogue_sprite)
