@@ -783,7 +783,7 @@ label bkrr_day11_common:
 
     window show
 
-    "Алиса покачала головой. Я вздохнул."
+
     me "Хорошо, я понял. А почему ты решила, что это я?"
 
     show dv guilty pioneer at cright with dissolve
@@ -1631,7 +1631,7 @@ label bkrr_day11_common:
     show mt surprise pioneer at center with dspr
 
     mt "Кого-кого? Каких ещё «спасателей»? Ты про милицию? Нет. До утра мы сами по себе. До завтра точно никто не доедет, засядут на просёлке."
-    "Я покачал головой."
+
     me "Да и что они сделают… Собаки после дождя не помогут. {w}И вам неприятности лишние."
 
     show mt sad pioneer at center with dspr

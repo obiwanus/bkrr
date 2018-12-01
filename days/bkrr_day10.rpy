@@ -813,7 +813,7 @@ label bkrr_day10_common:
 
     show mi smile pioneer close at center with dspr
 
-    "Мику улыбнулась, покачала головой."
+    "Мику улыбнулась."
     mi "Да нет, ничего. Обозналась, наверное. Шурик нам усилитель, кстати, не починил?"
     me "Вроде бы. Обещал в обед отдать."
 
@@ -2054,7 +2054,7 @@ label bkrr_day10_common:
 
     show sl smile pioneer at cright with ease
 
-    "Славяна взъерошила её рыжие волосы и покачала головой."
+    "Славяна взъерошила её рыжие волосы."
     sl "Я знаю."
 
     show sl normal pioneer at center with ease

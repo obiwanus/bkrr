@@ -633,7 +633,7 @@ label bkrr_day15_common:
 
     show cs shy civil2 at center with dspr
 
-    "Медсестра улыбнулась и покачала головой."
+    "Медсестра улыбнулась."
     cs "Стандартная мужская отговорка."
 
     show cs normal civil2 at center with dspr
