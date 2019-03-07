@@ -1,3 +1,4 @@
 *.rpyc
 
 venv
+.DS_Store
