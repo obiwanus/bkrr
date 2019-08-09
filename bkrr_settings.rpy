@@ -22,6 +22,10 @@ init python:
     BKRR_ES_IMAGES = "images/" if config.version == "1.2" else "images/1080/"
     BKRR_IMAGES = BKRR_ROOT_DIR + "images/"
 
+    # По умолчанию показываются новые спрайты
+    if not persistent.bkrr_old_sprites:
+        persistent.bkrr_old_sprites = {"nt":True, "tol":True}
+
     # Функция, составляющая словарь ссылок на файлы в определённой директории
 
     def bkrr_form_files_list(path):
@@ -126,7 +130,7 @@ init python:
 
     # Графические элементы меню
 
-    bkrr_ui["img"] = {img:(BKRR_IMAGES + "ui/menu/" + img + ".png") for img in ("achievements", "back", "base", "catday", "credits", "epilogue", "gallery", "main_menu", "plate", "prologue", "shadow", "steam", "tree_shadow", "vbar_full", "vbar_null", "vk", "day_no")}
+    bkrr_ui["img"] = {img:(BKRR_IMAGES + "ui/menu/" + img + ".png") for img in ("achievements", "back", "base", "catday", "credits", "epilogue", "gallery", "main_menu", "plate", "prologue", "shadow", "sprites_pref", "steam", "tree_shadow", "vbar_full", "vbar_null", "vk", "day_no")}
 
     for dn in range(4, 20):
         bkrr_ui["img"]["day"+str(dn)] = (BKRR_IMAGES + "ui/menu/day" + str(dn) + ".png", random.randint(-15, 15))
@@ -185,6 +189,11 @@ init python:
             for img in page:
                 img.append(str(random.randrange(1, 5, 1)))
                 img.append(str(random.randrange(1, 4, 1)))
+
+    # Графические элементы меню выбора спрайтов
+
+    for img in ("nt_on", "nt_off", "nt_new_on", "nt_new_off", "tol_on", "tol_off", "tol_new_on", "tol_new_off"):
+        bkrr_ui["img"][img] = BKRR_IMAGES + "ui/sprites_pref/" + img + ".png"
 
     ##    Интерфейс и игровой процесс    ##
 
@@ -2412,7 +2421,7 @@ init 2:
 
         # Генератор новых спрайтов для персонажей из оригинального БЛ
 
-        def make_sprites_for(character, sprite_name, layers, emotions=None, distances=None, exclude=None, sprite_define_func=None):
+        def make_sprites_for(character, sprite_name, layers, emotions=None, distances=None, exclude=None, sprite_define_func=None, default=True):
             """
             Позволяет объявить почти любой спрайт, состоящий из нескольких слоев,
             каждый слой может идти либо из мода, либо из оригинала.
@@ -2445,9 +2454,14 @@ init 2:
                     for layer in layers:
                         source, file_name = layer.split(':')
                         base_path = BKRR_IMAGES if source == 'mod' else BKRR_ES_IMAGES
-                        image_path = base_path + "sprites/%s/%s/%s_%s_%s.png" % (
-                            distance, character, character, pose, file_name if file_name != '<emotion>' else emotion,
-                        )
+                        if default:
+                            image_path = base_path + "sprites/%s/%s/%s_%s_%s.png" % (
+                                distance, character, character, pose, file_name if file_name != '<emotion>' else emotion,
+                            )
+                        else:
+                            image_path = base_path + "sprites/%s/%s/old/%s_%s_%s.png" % (
+                                distance, character, character, pose, file_name if file_name != '<emotion>' else emotion,
+                            )
                         image_parts += [(0, 0), image_path]
                     composite_image = im.Composite(*image_parts)
 
@@ -2578,8 +2592,8 @@ init 2:
         make_sprites_for('kla', 'sport', ['mod:body', 'mod:sport', 'mod:<emotion>'])
         make_sprites_for('kla', 'pioneer', ['mod:body', 'mod:pioneer', 'mod:<emotion>'])
         make_sprites_for('kla', 'pioneer claw_marks', ['mod:body', 'mod:pioneer', 'mod:claw_marks', 'mod:<emotion>'], distances=['normal'])
-        make_sprites_for('nt', 'cook', ['mod:cook', 'mod:<emotion>'])
-        make_sprites_for('tol', 'pioneer', ['mod:pioneer', 'mod:<emotion>'])
+        make_sprites_for('nt', 'cook', ['mod:cook', 'mod:<emotion>'], default=persistent.bkrr_old_sprites['nt'])
+        make_sprites_for('tol', 'pioneer', ['mod:pioneer', 'mod:<emotion>'], default=persistent.bkrr_old_sprites['tol'])
         make_sprites_for('tr', 'pioneer', ['mod:pioneer', 'mod:<emotion>'])
         make_sprites_for('tr', 'cas', ['mod:cas', 'mod:<emotion>'])
 

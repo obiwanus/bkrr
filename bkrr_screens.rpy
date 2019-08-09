@@ -138,7 +138,7 @@ init 2:
                 idle bkrr_ui["img"]["gallery"]
                 hover menu_img_status(bkrr_ui["img"]["gallery"])
                 hovered menu_hovered_action_common
-                at bkrr_menu_pos_atl(0.68, 0.858, 0.76, -5.2)
+                at bkrr_menu_pos_atl(0.68, 0.858, 0.66, -5.2)
 
             # achievements
 
@@ -147,7 +147,16 @@ init 2:
                 idle bkrr_ui["img"]["achievements"]
                 hover menu_img_status(bkrr_ui["img"]["achievements"])
                 hovered menu_hovered_action_common
-                at bkrr_menu_pos_atl(0.667, 0.86, 0.85, -6.7)
+                at bkrr_menu_pos_atl(0.667, 0.86, 0.75, -6.7)
+
+            # sprites preferences
+
+            imagebutton:
+                action ShowMenu("bkrr_sprites_pref")
+                idle bkrr_ui["img"]["sprites_pref"]
+                hover menu_img_status(bkrr_ui["img"]["sprites_pref"])
+                hovered menu_hovered_action_common
+                at bkrr_menu_pos_atl(0.69, 0.86, 0.86, -3.7)
 
             # shadows
 
@@ -547,6 +556,148 @@ init 2:
             action Show("bkrr_gallery", transition=Fade(0.25, 0.0, 0.25, color="#000"))
             idle ImageReference(item)
             hover ImageReference(item)
+
+    ##    Экран выбора спрайтов для новых персонажей    ##
+
+    screen bkrr_sprites_pref():
+
+        tag menu
+        modal True
+
+        key "game_menu":
+            action NullAction()
+
+        key "screenshot":
+            action NullAction()
+
+        # functions
+
+        python:
+
+            def togglePersistentDictKey(persistentDict, key):
+                persistentDict[key] = not persistentDict[key]
+    
+            TogglePDK = renpy.curry(togglePersistentDictKey)
+
+        # Основные элементы
+
+        frame:
+            background bkrr_ui["img"]["base"]
+            area(0.0, 0.0, 1.0, 1.0)
+
+            # photos
+
+            add im.Sepia(bkrr_ui["img"]["bg"]):
+                at bkrr_menu_pos_atl(2.3, 0.86, 0.85, -9.7)
+
+            add im.Sepia(bkrr_ui["img"]["cg"]):
+                at bkrr_menu_pos_atl(2.6, 0.178, 0.82, 13.4)
+
+            # back
+
+            imagebutton:
+                action Return
+                idle bkrr_ui["img"]["back"]
+                hover bkrr_ui["img"]["back"]
+                at bkrr_menu_pos_atl(0.82, 0.86, 0.85, -6.7)
+
+            # plate
+
+            add bkrr_ui["img"]["plate"]:
+                at bkrr_menu_pos_atl(1.22, 0.935, 0.132, 27.0)
+
+            # shadows
+
+            # необходимость перезагрузки экрана после каждого переключения спрайтов лишает нас возможности использовать анимацию в данном экране
+            #add bkrr_ui["img"]["tree_shadow"]:
+                #at bkrr_menu_tree_shadow_atl
+
+            add bkrr_ui["img"]["shadow"]:
+                at bkrr_menu_shadow_atl
+
+            # triggers
+
+            frame:
+                background "#0005"
+                area(128, 38, 1160, 985)
+
+                vbox:
+
+                    null height 50
+    
+                    text u"Выбор спрайтов":
+                        align(0.5, 0.0)
+                        style "bkrr_service2"
+                        size 42
+                        kerning 2.2
+    
+                    null height 25
+
+                    viewport:
+                        id "menu_spr_viewport"
+                        draggable True
+                        mousewheel True
+                        scrollbars None
+                        at Transform(align=(0.5, 0.0))
+
+                        vbox:
+                            for character in (("nt", "Натальи"), ("tol", "Толика")):
+                                $ char_img = [im.FactorScale(bkrr_ui["img"][character[0]+"_"+img], 0.5) for img in ("on", "off", "new_on", "new_off")]
+                                vbox:
+                                    align(0.5, 0.0)
+                                    xfill True
+                                    text u"Спрайты %s" % (character[1]):
+                                        align(0.5, 0.0)
+                                        style "bkrr_service2"
+                                        size 36
+                                        kerning 1.25
+                                    null height 10
+                                    hbox:
+                                        align(0.5, 0.0)
+                                        spacing 75
+                                        imagebutton:
+                                            align(0.5, 1.0)
+                                            if persistent.bkrr_old_sprites[character[0]]:
+                                                idle char_img[1]
+                                                action [TogglePDK(persistent.bkrr_old_sprites, character[0]), ShowMenu("bkrr_sprites_pref")]
+                                            else:
+                                                idle char_img[0]
+                                                action NullAction()
+                                            hover char_img[0]
+                                        imagebutton:
+                                            align(0.5, 1.0)
+                                            if persistent.bkrr_old_sprites[character[0]]:
+                                                idle char_img[2]
+                                                action NullAction()
+                                            else:
+                                                idle char_img[3]
+                                                action [TogglePDK(persistent.bkrr_old_sprites, character[0]), ShowMenu("bkrr_sprites_pref")]
+                                            hover char_img[2]
+                                    null height 75
+
+                            null height 15
+
+                            textbutton u"Применить":
+                                align(0.5, 0.0)
+                                background None
+                                text_style "bkrr_service2"
+                                text_size 36
+                                text_hover_color "#00FF3E"
+                                text_kerning 1.25
+                                action (Function(stop_music), Function(renpy.utter_restart))
+
+                            text u"(требуется перезапуск игры)":
+                                align(0.5, 0.0)
+                                style "bkrr_service2"
+                                size 36
+                                kerning 1.25
+
+                vbar:
+                    value YScrollValue("menu_spr_viewport")
+                    bottom_bar Frame(bkrr_ui["img"]["vbar_full"], 0, 0)
+                    top_bar Frame(bkrr_ui["img"]["vbar_null"], 0, 0)
+                    thumb "null"
+                    at Transform(alpha=0.74, align=(0.02, 0.5), xzoom=1.5, yzoom=0.92)
 
     screen bkrr_disable_keys():
         key "mouseup_1" action NullAction()
