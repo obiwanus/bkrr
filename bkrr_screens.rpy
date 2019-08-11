@@ -661,7 +661,7 @@ init 2:
                                             align(0.5, 1.0)
                                             if persistent.bkrr_old_sprites[character[0]]:
                                                 idle char_img[1]
-                                                action [TogglePDK(persistent.bkrr_old_sprites, character[0]), ShowMenu("bkrr_sprites_pref")]
+                                                action [sprites_pref_action, TogglePDK(persistent.bkrr_old_sprites, character[0]), ShowMenu("bkrr_sprites_pref")]
                                             else:
                                                 idle char_img[0]
                                                 action NullAction()
@@ -688,7 +688,7 @@ init 2:
                                 text_kerning 1.25
                                 action (Function(stop_music), Function(renpy.utter_restart))
 
-                            text u"(требуется перезапуск игры)":
+                            text u"(игра будет перезапущена)":
                                 align(0.5, 0.0)
                                 style "bkrr_service2"
                                 size 36
