@@ -574,6 +574,8 @@ init 2:
 
         python:
 
+            sprites_pref_action = Play("test_one", bkrr_ui["sound"]["paper"])
+
             def togglePersistentDictKey(persistentDict, key):
                 persistentDict[key] = not persistentDict[key]
     
@@ -671,7 +673,7 @@ init 2:
                                                 action NullAction()
                                             else:
                                                 idle char_img[3]
-                                                action [TogglePDK(persistent.bkrr_old_sprites, character[0]), ShowMenu("bkrr_sprites_pref")]
+                                                action [sprites_pref_action, TogglePDK(persistent.bkrr_old_sprites, character[0]), ShowMenu("bkrr_sprites_pref")]
                                             hover char_img[2]
                                     null height 75
 
