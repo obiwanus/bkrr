@@ -180,7 +180,7 @@ init python:
             (["d18_sunset_original_mi", False], ["d19_truk_and_zmey", False], ["d19_truk_and_zmey_close", False], ["d19_bus_escape", False], ["d19_miku_bus_1", False], ["d19_miku_bus_2", False]),
             (["d19_miku_bus_3", False], ["d19_concert_alisa", im.Scale(BKRR_IMAGES + "cg/d19_concert_alisa.jpg", config.screen_width, config.screen_height)], ["d19_concert_ulyana", False], ["d19_concert_miku_semen", False], ["d19_slavya_captured", False], ["d19_pirates_on_stage", BKRR_IMAGES + "cg/d19_pirates_on_stage.jpg"]),
             (["d19_alisa_miku_song", bkrr_fast_composite(BKRR_IMAGES + "cg/d19_alisa_miku_song/bg.png", BKRR_IMAGES + "cg/d19_alisa_miku_song/singers.png", BKRR_IMAGES + "cg/d19_alisa_miku_song/mic.png")], ["d19_chibi_alisa", BKRR_IMAGES + "cg/d19_chibi_alisa.jpg"], ["d19_final_campfire", False], ["bkrr_epilogue_1", False], ["bkrr_epilogue_2", False], ["bkrr_epilogue_3", False]),
-            (["bkrr_epilogue_4", False], ["bkrr_epilogue_5", False], ["bkrr_epilogue_6", False], ["bkrr_epilogue_7", False], ["ep_mi", bkrr_fast_composite(BKRR_IMAGES + "cg/ep_mi_background.jpg", BKRR_IMAGES + "cg/ep_mi.png")], ["catday_warp_cat", False]),
+            (["bkrr_epilogue_4", False], ["bkrr_epilogue_7", False], ["ep_mi", bkrr_fast_composite(BKRR_IMAGES + "cg/ep_mi_background.jpg", BKRR_IMAGES + "cg/ep_mi.png")], ["catday_warp_cat", False]),
         )
     }
 
