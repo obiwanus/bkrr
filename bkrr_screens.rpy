@@ -29,12 +29,10 @@ init 2:
                 if condition == "insensitive":
                     return im.Alpha(imgf, 0.38)
 
-            if config.version == "1.2":
-                menu_hovered_action_common = Play("test_one", bkrr_ui["sound"]["paper"])
-                menu_hovered_action_catday = Play("test_two", bkrr_ui["sound"]["meow"])
-                menu_hovered_action_plate = Play("sound", bkrr_ui["sound"]["plate_stop"], fadein=1.8)
-            else:
-                menu_hovered_action_common = menu_hovered_action_catday = menu_hovered_action_plate = NullAction()
+            menu_hovered_action_common = Play("test_one", bkrr_ui["sound"]["paper"])
+            menu_hovered_action_catday = Play("test_two", bkrr_ui["sound"]["meow"])
+            menu_hovered_action_plate = Play("sound", bkrr_ui["sound"]["plate_stop"], fadein=1.8)
+
 
         # Основные элементы
 
@@ -578,7 +576,7 @@ init 2:
 
             def togglePersistentDictKey(persistentDict, key):
                 persistentDict[key] = not persistentDict[key]
-    
+
             TogglePDK = renpy.curry(togglePersistentDictKey)
 
         # Основные элементы
@@ -626,13 +624,13 @@ init 2:
                 vbox:
 
                     null height 50
-    
+
                     text u"Выбор спрайтов":
                         align(0.5, 0.0)
                         style "bkrr_service2"
                         size 42
                         kerning 2.2
-    
+
                     null height 25
 
                     viewport:

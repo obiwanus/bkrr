@@ -18,8 +18,8 @@ init python:
 
     # Возможные пути к графическим ресурсам для совместимости с обеими версиями
 
-    BKRR_ROOT_DIR = "mods/bkrr/"
-    BKRR_ES_IMAGES = "images/" if config.version == "1.2" else "images/1080/"
+    BKRR_ROOT_DIR = "bkrr/"
+    BKRR_ES_IMAGES = "images/"
     BKRR_IMAGES = BKRR_ROOT_DIR + "images/"
 
     # По умолчанию показываются новые спрайты
@@ -981,6 +981,9 @@ init 2:
 
     image cg d19_slavya_captured = BKRR_IMAGES + "cg/d19_slavya_captured.jpg"
     image cg d19_final_campfire = BKRR_IMAGES + "cg/d19_final_campfire.jpg"
+
+    image cg d4_od_v_truhanah = BKRR_IMAGES + "cg/d4_od_v_truhanah.jpg"
+    image cg d19_dv_zharit = BKRR_IMAGES + "cg/d19_dv_zharit.jpg"
 
     python:
         def bkrr_imagelist_anim(img_list, pause=0.5, transition=None):
@@ -2482,7 +2485,7 @@ init 2:
 
         # Объявляем спрайты
 
-        make_sprites_for('dv', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
+        make_sprites_for('dv', 'bkrr_sport', ['mod:sport', 'es:<emotion>'])
         make_sprites_for('dv', 'bkrr_swim', ['es:body', 'es:swim', 'es:<emotion>'], exclude=('angry', 'guilty', 'rage', 'sad', 'shy'))
         make_sprites_for('dv', 'bkrr_swim', ['es:body', 'mod:swim', 'es:<emotion>'], emotions=('angry', 'guilty', 'rage', 'sad', 'shy'))
         make_sprites_for('dv', 'bkrr_swim_rose', ['es:body', 'mod:swim', 'mod:rose', 'es:<emotion>'], emotions=('angry', 'guilty', 'rage', 'sad', 'shy'), distances=['normal'])
@@ -2492,15 +2495,15 @@ init 2:
         make_sprites_for('dv', 'pirate dress', ['mod:pidress', 'es:<emotion>'], emotions=['grin'], distances=['normal'])
         make_sprites_for('dv', 'civil', ['es:body', 'mod:civil', 'es:<emotion>'])
 
-        make_sprites_for('mz', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
-        make_sprites_for('mz', 'mask bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>', 'mod:mask'])
+        make_sprites_for('mz', 'bkrr_sport', ['mod:sport', 'es:<emotion>'])
+        make_sprites_for('mz', 'mask bkrr_sport', ['mod:sport', 'es:<emotion>', 'mod:mask'])
         make_sprites_for('mz', 'zombie', ['mod:zomb'], emotions=['normal'], distances=['far'])
-        make_sprites_for('mz', 'glasses bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>', 'es:glasses'])
+        make_sprites_for('mz', 'glasses bkrr_sport', ['mod:sport', 'es:<emotion>', 'es:glasses'])
         make_sprites_for('mz', 'glasses bkrr_dress', ['es:body', 'mod:dress', 'es:<emotion>', 'es:glasses'])
         make_sprites_for('mz', 'bdsm', ['mod:bdsm', 'es:<emotion>'])  # не все эмоции доступны
 
         make_sprites_for('mt', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
-        make_sprites_for('mt', 'nightdress', ['es:body', 'mod:nightdress', 'es:<emotion>'])
+        make_sprites_for('mt', 'nightdress', ['mod:nightdress', 'es:<emotion>'])
         make_sprites_for('mt', 'pioneer blood', ['es:body', 'es:pioneer', 'mod:blb', 'es:<emotion>'])
         make_sprites_for('mt', 'pioneer blood2', ['es:body', 'es:pioneer', 'mod:blb', 'mod:blf', 'es:<emotion>'])
         make_sprites_for('mt', 'torn', ['es:body', 'mod:torn', 'mod:blb', 'es:<emotion>'], distances=['normal'])
@@ -2513,17 +2516,17 @@ init 2:
 
         make_sprites_with_custom_emotions(['shy_smile'], 'un', 'bkrr_dress', ['es:body', 'mod:dress', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['shy_smile'], 'un', 'paint sport', ['es:body', 'es:sport', 'mod:pn', 'es:<emotion>'])
-        make_sprites_for('un', 'bra', ['es:body', 'mod:bra', 'es:<emotion>'], emotions=['cry', 'cry_smile', 'sad', 'scared', 'shocked', 'surprise'])
+        make_sprites_for('un', 'bra', ['mod:bra', 'es:<emotion>'], emotions=['cry', 'cry_smile', 'sad', 'scared', 'shocked', 'surprise'])
         make_sprites_for('un', 'jacket', ['es:body', 'mod:jacket', 'es:<emotion>'])
         make_sprites_for('un', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['shy_smile'])
         make_sprites_for('un', 'sport', ['es:body', 'es:sport', 'mod:<emotion>'], emotions=['shy_smile'])
 
-        make_sprites_for('us', 'bra', ['es:body', 'mod:bra', 'es:<emotion>'])
+        make_sprites_for('us', 'bra', ['mod:bra', 'es:<emotion>'])
         make_sprites_for('us', 'bkrr_dress', ['mod:dress', 'es:<emotion>'])
         make_sprites_for('us', 'swim', ['es:body', 'es:swim', 'mod:<emotion>'], emotions=['normal_dontlike_bkrr', 'evsmile'])
         make_sprites_for('us', 'pioneer', ['es:body', 'es:pioneer', 'mod:<emotion>'], emotions=['normal_dontlike_bkrr', 'evsmile'])
         make_sprites_for('us', 'sport', ['es:body', 'es:sport', 'mod:<emotion>'], emotions=['normal_dontlike_bkrr', 'evsmile'])
-        make_sprites_for('us', 'bdsm', ['es:body', 'mod:bdsm', 'es:<emotion>'])  # не все эмоции доступны
+        make_sprites_for('us', 'bdsm', ['mod:bdsm', 'es:<emotion>'])  # не все эмоции доступны
         make_sprites_for('us', 'night_shirt', ['mod:night_shirt', 'es:<emotion>'])
         make_sprites_for('us', 'night_shirt', ['mod:night_shirt', 'mod:<emotion>'], emotions=['yawn'])
         make_sprites_for('us', 'backpack sport', ['es:body', 'es:sport', 'mod:backpack', 'es:<emotion>'], distances=['normal'])
@@ -2542,7 +2545,7 @@ init 2:
         make_sprites_with_custom_emotions(['sad'], 'cs', 'dress', ['mod:body', 'mod:dress', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad'], 'cs', 'swim', ['mod:body', 'es:<emotion>', 'mod:swim'])
 
-        make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'bkrr_dress', ['es:body', 'mod:dress', 'es:<emotion>'])
+        make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'bkrr_dress', ['mod:dress', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'wet pioneer', ['mod:wet_pioneer', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'swim_loo', ['mod:body_loo', 'es:swim', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'jacket', ['es:body', 'mod:underwear', 'mod:jacket', 'es:<emotion>'])
@@ -2550,7 +2553,7 @@ init 2:
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'pirate', ['mod:pirate', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'pioneer_loo', ['mod:body_loo', 'es:pioneer', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'underwear', ['es:body', 'mod:underwear', 'es:<emotion>'])
-        make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'bkrr_sport', ['es:body', 'mod:sport', 'es:<emotion>'])
+        make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'bkrr_sport', ['mod:sport', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'bkrr_sport_loo', ['mod:body_loo', 'mod:sport', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'apron', ['es:body', 'mod:apron', 'es:<emotion>'])
         make_sprites_with_custom_emotions(['sad_smile'], 'mi', 'dirt apron', ['es:body', 'mod:apron', 'mod:apron_dirt', 'es:<emotion>'])

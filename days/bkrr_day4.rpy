@@ -92,7 +92,7 @@ label bkrr_day4_common:
 
     python:
 
-        for cg in ["cg d2_mt_undressed", "cg d2_slavya_forest", "cg d2_ussr_falling", "cg d3_dv_guitar", "cg d3_ussr_catched", "cg d3_sl_library"]:
+        for cg in ["cg d4_od_v_truhanah", "cg d2_slavya_forest", "cg d2_ussr_falling", "cg d3_dv_guitar", "cg d3_ussr_catched", "cg d3_sl_library"]:
             renpy.scene()
             renpy.show("cg", [d4_mttalk_cgs_atl(renpy.random.choice([-7.5, 7.5]))], what=bkrr_make_sepia_img(cg))
             renpy.with_statement(flash)

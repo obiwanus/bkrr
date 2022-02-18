@@ -406,7 +406,7 @@ label bkrr_day19_common:
         alpha 0.8
     with flash
     $ renpy.pause(2.0, hard=True)
-    scene expression bkrr_make_sepia_img("cg d6_dv_hentai_2"):
+    scene expression bkrr_make_sepia_img("cg d19_dv_zharit"):
         truecenter
         yalign 0.2
         xalign 1.0
