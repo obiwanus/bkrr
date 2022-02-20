@@ -2487,6 +2487,7 @@ init 2:
 
         make_sprites_for('dv', 'bkrr_sport', ['mod:sport', 'es:<emotion>'])
         make_sprites_for('dv', 'bkrr_swim', ['es:body', 'es:swim', 'es:<emotion>'], exclude=('angry', 'guilty', 'rage', 'sad', 'shy'))
+        make_sprites_for('dv', 'bkrr_swim', ['mod:swim', 'es:<emotion>'], emotions=('angry', 'guilty', 'rage', 'sad', 'shy'))
         make_sprites_for('dv', 'bkrr_swim_rose', ['es:body', 'mod:swim', 'mod:rose', 'es:<emotion>'], emotions=('angry', 'guilty', 'rage', 'sad', 'shy'), distances=['normal'])
         make_sprites_for('dv', 'bkrr_swim_rose', ['es:body', 'es:swim', 'mod:rose', 'es:<emotion>'], emotions=['surprise'], distances=['normal'])
         make_sprites_for('dv', 'pirate_with_hat', ['mod:pibody', 'es:<emotion>'])
