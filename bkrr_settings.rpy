@@ -352,10 +352,7 @@ init python:
 
     def bkrr_set_savename(ch):
         global save_name
-        if config.version == "1.2":
-            title = bkrr_title[0] + "\n"
-        else:
-            title = bkrr_title[1] + ". " # в 1.1 используется аббревиатура
+        title = bkrr_title[0] + "\n"
         if ch in range(4, 20):
             save_name = title + u"День №" + str(ch)
         else:

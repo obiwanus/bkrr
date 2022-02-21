@@ -262,7 +262,7 @@ init 2:
             # back
 
             imagebutton:
-                action Return
+                action Return()
                 idle bkrr_ui["img"]["back"]
                 hover bkrr_ui["img"]["back"]
                 at bkrr_menu_pos_atl(0.82, 0.86, 0.85, -6.7)
@@ -362,7 +362,7 @@ init 2:
             # back
 
             imagebutton:
-                action Return
+                action Return()
                 idle bkrr_ui["img"]["back"]
                 hover bkrr_ui["img"]["back"]
                 at bkrr_menu_pos_atl(0.82, 0.86, 0.85, -6.7)
@@ -596,7 +596,7 @@ init 2:
             # back
 
             imagebutton:
-                action Return
+                action Return()
                 idle bkrr_ui["img"]["back"]
                 hover bkrr_ui["img"]["back"]
                 at bkrr_menu_pos_atl(0.82, 0.86, 0.85, -6.7)
